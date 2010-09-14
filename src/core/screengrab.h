@@ -33,7 +33,6 @@
 #include <QtGui/QPixmap>
 #include <QtGui/QClipboard>
 #include <QtCore/QTime>
-#include <QtCore/QTimer>
 
 #ifdef Q_WS_X11
 #include <QtGui/QX11Info>
@@ -41,25 +40,23 @@
 
 #include <QDebug>
 
-// class MainWindow;
-
 class screengrab : public QObject
 {
     Q_OBJECT
-    
+
 public Q_SLOTS:
     void slotQuit();
 //     bool getScreen();
     void screenShot();
-    
+
 public:
     static screengrab* instance();
     ~screengrab();
-    
+
     static QString getVersionPrintable();
-    
+
     QPixmap getPixmap();
-    
+
     bool writeScreen(QString& fileName, QString& format);
     void copyScreen();
     void autoSave();
@@ -70,22 +67,22 @@ public:
 
 Q_SIGNALS:
     void newScreenShot(QPixmap *pixmap);
-    
+
 //private Q_SLOTS:
-        
+
 private:
     screengrab();
     screengrab(const screengrab &);
     screengrab& operator=(const screengrab &);
-    
+
     static screengrab *corePtr;
-    
-    // functions    
+
+    // functions
 #ifdef Q_WS_WIN
     void getActiveWind_Win32();
 #endif
 #ifdef Q_WS_X11
-    void getActiveWind_X11();    
+    void getActiveWind_X11();
 #endif
 
     // vars
@@ -93,7 +90,7 @@ private:
 
     bool hided;
     int scrNum; // screen num in session
-        
+
 };
 
 #endif // SCREENGRAB_H

@@ -32,6 +32,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QHashIterator>
 #include <QtCore/QRegExp>
+#include <QtCore/QTimer>
 
 #ifdef Q_WS_WIN
 #include <windows.h>
@@ -49,41 +50,39 @@ using namespace netwm;
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     m_ui(new Ui::MainWindow), core(screengrab::instance())
-{    
+{
     m_ui->setupUi(this);
-    
+
     // connect  actions slotss
-    
-//     m_ui->cbxTypeScr->setCurrentIndex(conf->getTypeScreen());    
+
 //     trayed = false;
 
-//     update UI (first run)
-//     trayIcon = NULL;
-//     updateUI(); c
-    createTray();
-    
+    trayIcon = NULL;
+    updateUI();
+//     createTray();
+
 
 //     on_delayBox_valueChanged(conf->getDelay());
     m_ui->delayBox->setValue(core->conf->getDelay());
     m_ui->cbxTypeScr->setCurrentIndex(core->conf->getTypeScreen());
-    
+
 //     signal mapper
 //     globalShortcutSignals = new QSignalMapper(this);
-    
+
 //     global shirtcuts
 //     fullScreen = new QxtGlobalShortcut(this);
 //     activeWindow = new QxtGlobalShortcut(this);
 //     areaSelection = new QxtGlobalShortcut(this);
 //     globalShortcuts << fullScreen << activeWindow << areaSelection;
-    
+
 //     for (int i = 0; i < globalShortcuts.count(); ++i )
-//     {	
+//     {
 // 	connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
 // 	globalShortcutSignals->setMapping(globalShortcuts[i], i);
 //     }
 //     connect(fullScreen, SIGNAL(activated()), this, SLOT(showAbout()));
 //     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
-    
+
 //     connect buttons to slots
     connect(m_ui->butOpt, SIGNAL(clicked()), this, SLOT(showOptions()));
     connect(m_ui->butSave, SIGNAL(clicked()), this, SLOT(saveScreen()));
@@ -92,7 +91,7 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(m_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(m_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
     connect(m_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
-    connect(m_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));    
+    connect(m_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(m_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
 
     connect(core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()) );
@@ -106,7 +105,7 @@ MainWindow::MainWindow(QWidget* parent) :
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
 //     createShortcuts();
-//     show();     
+//     show();
     displayPixmap();
     qDebug() << "creating wnd object";
 }
@@ -122,8 +121,8 @@ void MainWindow::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
     switch (e->type()) {
-    case QEvent::LanguageChange:        
-        m_ui->retranslateUi(this);        
+    case QEvent::LanguageChange:
+        m_ui->retranslateUi(this);
         break;
     default:
         break;
@@ -132,14 +131,14 @@ void MainWindow::changeEvent(QEvent *e)
 
 /*-------------------------------------
 void MainWindow::closeEvent(QCloseEvent *e)
-{    
+{
     if (conf->getCloseInTray() == true && conf->getShowTrayIcon() == true)
-    {     
+    {
         windowHideShow();
         e->ignore();
     }
     else
-    {        
+    {
         //exit();
         screengrab->quit();)
     }
@@ -158,7 +157,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     if (!m_ui->scrLabel->pixmap() || scaleSize != m_ui->scrLabel->pixmap()->size())
     {
         displayPixmap();
-    }    
+    }
 
 }
 /*
@@ -166,8 +165,8 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 void MainWindow::exit()
 {
     if (conf->getSavedSizeOnExit() == true)
-    {        
-        conf->setRestoredWndSize(width(), height());       
+    {
+        conf->setRestoredWndSize(width(), height());
         conf->saveWndSize();
     }
     qApp->quit();
@@ -178,17 +177,17 @@ void MainWindow::showHelp()
 {
     // open help file
     QString localeHelpFile;
-    
+
     #ifdef Q_WS_X11
     //    defaultHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1en%1index.html";
     localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1"+Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-    
+
     if (QFile::exists(localeHelpFile) != true)
     {
 	localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1"+Config::getSysLang().section("_", 0, 0)  +"%1index.html";
 	localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-	
+
 	if (QFile::exists(localeHelpFile) != true)
 	{
 	    localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1en%1index.html";
@@ -199,12 +198,12 @@ void MainWindow::showHelp()
     #ifdef Q_WS_WIN
     localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang()+QString("%1index.html");
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-    
+
     if (QFile::exists(localeHelpFile) != true)
     {
 	localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang().section("_", 0, 0)+QString("%1index.html");
 	localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-	
+
 	if (QFile::exists(localeHelpFile) != true)
 	{
 	    localeHelpFile = QApplication::applicationDirPath()+"%1docs%1html%1en%1index.html";
@@ -212,7 +211,7 @@ void MainWindow::showHelp()
 	}
     }
     #endif
-    
+
     // open find localize or eng help help
     QDesktopServices::openUrl(QUrl::fromLocalFile(localeHelpFile));
 }
@@ -229,7 +228,7 @@ void MainWindow::showOptions()
 //     {
 //         showNormal();
 //         int result = options->exec();
-// 
+//
 //         if (result == QDialog::Accepted)
 //         {
 //             updateUI();
@@ -239,19 +238,19 @@ void MainWindow::showOptions()
 //     else
 //     {
 //         int result = options->exec();
-// 
+//
 //         if (result == QDialog::Accepted)
 //         {
 //             updateUI();
 //         }
 //     }
     int result = options->exec();
-    
+
     if (result == QDialog::Accepted)
     {
-	//updateUI();
+	updateUI();
     }
-    
+
     delete options;
 }
 
@@ -259,7 +258,7 @@ void MainWindow::showAbout()
 {
     aboutWidget *about;
     about = new aboutWidget(this);
-    
+
     // fi minimized main wnd
     //     if (trayed == true)
     //     {
@@ -273,7 +272,7 @@ void MainWindow::showAbout()
     //     }
     // FIXME add trayed mode
     about->exec();
-    
+
     delete about;
 }
 
@@ -283,25 +282,25 @@ void MainWindow::showAbout()
 */
 void MainWindow::newScreen()
 {
-    setHidden(true); 
-    
+    setHidden(true);
+
     //     screenShot();
-    
+
     qDebug() << "delay " << core->conf->getDelay();;
     if (core->conf->getDelay() == 0)
-    {        
+    {
 	// if select 0s delay & hide window -- make 0.25sdelay for hiding window
 // 	QTimer::singleShot(200, core, SLOT(getScreen()) );
 QTimer::singleShot(200, core, SLOT(screenShot()) );
-	
+
     }
     else
-    {        
+    {
 	qDebug() << "else";
-// 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(getScreen()));	
-	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));	
+// 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(getScreen()));
+	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
     }
-//     setVisible(true);        
+//     setVisible(true);
 }
 
 void MainWindow::copyScreen()
@@ -322,17 +321,17 @@ void MainWindow::createTray()
     mAbout = new QAction(tr("About"), this);
     mOptions = new QAction(tr("Options"), this);
     mHelp = new QAction(tr("Help"), this);
-    
+
     // connect to slots
     connect(mQuit, SIGNAL(triggered()), core, SLOT(slotQuit()) );
     connect(mSave, SIGNAL(triggered()), this, SLOT(saveScreen()) );
     connect(mCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
     connect(mNew, SIGNAL(triggered()), this, SLOT(newScreen()));
-//     connect(mHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow())  );    
+//     connect(mHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow())  );
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(mHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
     connect(mAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
-    
+
     // create tray menu
     menuTray = new QMenu(this);
     menuTray->addAction(mHideShow);
@@ -351,20 +350,19 @@ void MainWindow::createTray()
     // icon menu
     QIcon icon(":/res/img/logo.png");
 
-//     trayIcon = new QSystemTrayIcon(this );
-//     trayIcon->setContextMenu(menuTray);
-//     trayIcon->setIcon(icon);
-//     trayIcon->show();
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setContextMenu(menuTray);
+    trayIcon->setIcon(icon);
+    trayIcon->show();
 //        connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
 //             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
 }
 
 void MainWindow::killTray()
 {
-//     delete trayIcon;
-//     trayIcon = NULL;
-    delete menuTray;
-    
+    delete trayIcon;
+    trayIcon = NULL;
+
     delete mHelp;
     delete mOptions;
     delete mAbout;
@@ -389,29 +387,30 @@ void MainWindow::typeScreenShotChange(int type)
     core->conf->setTypeScreen(type);
 }
 
-/*
+
 // updating UI from configdata
 void MainWindow::updateUI()
 {
+    qDebug() << "update ui";
     // update delay spinbox
-    m_ui->delayBox->setValue(conf->getDelay());
+    m_ui->delayBox->setValue(core->conf->getDelay());
 
     // update shortcuts
-    createShortcuts();
+//     createShortcuts();
     // create tray object
-    if (conf->getShowTrayIcon() == true && trayIcon == NULL)
+    if (core->conf->getShowTrayIcon() == true && trayIcon == NULL)
     {
         createTray();
 
     }
 
     // kill tray object, if created
-    if (conf->getShowTrayIcon() == false && trayIcon != NULL)
+    if (core->conf->getShowTrayIcon() == false && trayIcon != NULL)
     {
         killTray();
     }
 }
-
+/*
 // obrabotka mouse clicks on tray icom
 void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
 {
@@ -457,7 +456,7 @@ void MainWindow::showWindow(const QString& str)
     netwm::init(); // initialize NETWM
     netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
 #endif
-#ifdef Q_WS_WIN	
+#ifdef Q_WS_WIN
 	// TODO -- make normal activate window with Wim32API
 	ShowWindow(this->winId(), SW_RESTORE);
 	SetForegroundWindow(this->winId());
@@ -467,7 +466,7 @@ void MainWindow::showWindow(const QString& str)
 
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
-{    
+{
     if (conf->getShowTrayIcon() == true)
     {
         switch(conf->getTrayMessages())
@@ -497,7 +496,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 void MainWindow::displayPixmap()
 {
     m_ui->scrLabel->setPixmap(core->getPixmap().scaled(m_ui->scrLabel->size(),
-                Qt::KeepAspectRatio, Qt::SmoothTransformation));    
+                Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
 void MainWindow::restoreWindow()
@@ -508,8 +507,8 @@ void MainWindow::restoreWindow()
 	showNormal();
 // 	setVisible(true);
     }
-    
-    // autosave screenshot 
+
+    // autosave screenshot
     // move to private screenshot
     //core->autoSave();
 //     if (core->conf->getAutoSave() == true)
@@ -521,14 +520,14 @@ void MainWindow::restoreWindow()
 //     {
 // 	trayShowMessage(tr("New screen"), tr("New screen is getting!"));
 //     }
-    
+
     // if show trat
     if (core->conf->getShowTrayIcon() == true)
     {
 	//  unblock tray signals
 	// 	trayIcon->blockSignals(false);
 	// 	trayIcon->setContextMenu(menuTray); // enable context menu
-    }    
+    }
 }
 
 
@@ -547,13 +546,13 @@ void MainWindow::on_butNew_clicked()
     setHidden(true);
 
     if (conf->getDelay() == 0)
-    {        
+    {
         // if select 0s delay & hide window -- make 0.25sdelay for hiding window
         QTimer::singleShot(200, this, SLOT(newScreenUI()) );
 
     }
     else
-    {        
+    {
         QTimer::singleShot(1000*conf->getDelay(), this, SLOT(newScreenUI()) );
 
     }
@@ -571,26 +570,26 @@ void MainWindow::saveScreen()
     qDebug() << "saved slot";
     // create initial filepath
     QHash<QString, QString> formatsAvalible;
-    
+
     formatsAvalible["png"] = tr("PNG Files");
     formatsAvalible["jpg"] = tr("JPEG Files");
     formatsAvalible["bmp"] = tr("BMP Files");
-    
+
     qDebug() << formatsAvalible;
         ;
-    QString format = core->conf->getSaveFormat(); 
+    QString format = core->conf->getSaveFormat();
     QString filePath = core->getSaveFilePath(format);
-    
+
     qDebug() << "file path == " << format;
     qDebug() << "file path == " << filePath;
-    
+
     // create file filters
     QString fileFilters;
 //     fileFilters = "PNG (*.png);;JPEG (*.jpg);;BMP (*.bmp)";
     QString filterSelected;
     filterSelected = formatsAvalible[format];
     qDebug() << "filterSelected" << filterSelected;
-    
+
     // TODO - kill em all =)
 //     if (format == "png")
 //     {
@@ -606,7 +605,7 @@ void MainWindow::saveScreen()
 //     }
 
     QHash<QString, QString>::const_iterator iter = formatsAvalible.constBegin();
-    
+
     while(iter != formatsAvalible.constEnd())
     {
 	if (qgetenv("DESKTOP_SESSION") == "kde" && iter.key() == format )
@@ -616,7 +615,7 @@ void MainWindow::saveScreen()
 	else
 	{
 	    fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
-	}	
+	}
 	++iter;
     }
     fileFilters.chop(2);
@@ -653,13 +652,13 @@ QString fileName;
 #ifdef Q_WS_WIN
     fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
 #endif
-        
-    QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");    
+
+    QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
-    
+
     filterSelected.chop(tmp + 1);
     format = formatsAvalible.key(filterSelected);
-    
+
     // detecting selected format
 //     if (filterSelected.toAscii() == "PNG (*.png)" )
 //     {
@@ -699,7 +698,7 @@ void MainWindow::createShortcuts()
     m_ui->butCopy->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutCopy));
     m_ui->butOpt->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutOptions));
     m_ui->butHelp->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutHelp));
-    
+
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
 	globalShortcuts[i]->setShortcut(QKeySequence(conf->shortcuts()->getShortcut(i)));
@@ -710,7 +709,7 @@ void MainWindow::createShortcuts()
 // E X P E R I M E N T A L   C O D E
 // *********************************
 void MainWindow::globalShortcutActivate(int type)
-{    
+{
     m_ui->cbxTypeScr->setCurrentIndex(type);
     on_cbxTypeScr_activated(type);
 #ifdef Q_WS_X11
@@ -729,21 +728,21 @@ void MainWindow::globalShortcutActivate(int type)
     }
     if (isMinimized() == true && trayed != true)
     {
-// 	FIXME -- non activate window if it minimized 
+// 	FIXME -- non activate window if it minimized
 // 	(KDE 4.5|qt 4.7.0)) not worked
 // 	fluxbox is worked
 // 	crash on GNOME 23.31.x
 	on_butNew_clicked();
-	
+
 	activateWindow();
 	return;
-    }    
+    }
 
-#endif	    
-#ifdef Q_WS_WIN	
+#endif
+#ifdef Q_WS_WIN
     on_butNew_clicked();
     activateWindow();
-#endif	    
+#endif
 }
 
 */

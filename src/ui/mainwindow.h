@@ -51,20 +51,20 @@ class MainWindow : public QMainWindow //, public screengrab
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    
+
 // public slots:
 //     void windowHideShow();
 //     void showWindow(const QString& str);
-// 
+//
 // protected:
 //     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window
-// 
+//
 private:
-    Ui::MainWindow *m_ui;   
+    Ui::MainWindow *m_ui;
     screengrab *core;
-    
+
     QSystemTrayIcon *trayIcon;
     QAction *mQuit;
     QAction *mAbout;
@@ -75,24 +75,24 @@ private:
     QAction *mHelp;
     QAction *mHideShow;
     QMenu *menuTray;
-// 
+//
 //     bool trayed;
 //     QString *savedFile;
-//     
+//
 //     QxtGlobalShortcut *fullScreen;
 //     QxtGlobalShortcut *activeWindow;
 //     QxtGlobalShortcut *areaSelection;
-//     
+//
 //     QVector<QxtGlobalShortcut*> globalShortcuts;
 //     QSignalMapper *globalShortcutSignals;
-//     
+//
 //     void displayPixmap();
-// 
+//
     void createTray();
     void killTray();
 //     void trayShowMessage(QString titleMsg, QString bodyMsg );
 //     void createShortcuts();
-// 
+//
  private Q_SLOTS:
     void displayPixmap();
     void restoreWindow();
@@ -105,16 +105,16 @@ private:
 //     void on_butCopy_clicked();
     void saveScreen();
     void showHelp();
-    void showOptions(); 
+    void showOptions();
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
-// 
-//     void updateUI();
+//
+    void updateUI();
 //     void trayClick(QSystemTrayIcon::ActivationReason reason);
-// 
+//
 //     void exit();
-//     
+//
 //     void globalShortcutActivate(int type);
 
 };
