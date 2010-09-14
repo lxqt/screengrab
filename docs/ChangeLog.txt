@@ -1,0 +1,70 @@
+0.8.1
+ * [Linux] fixed incorrect select default saving format in KDE 4.4.x save file dialog
+ * add de_DE translation
+0.8
+ * add command line parametrs for grab modes (fullscren, active window, selection area)
+ * add BMP support
+ * add pt_BR translation
+ * add automaticaly hiding main window on grab process
+ * {linux] fixed grab active window screenshot without decorations
+ * [linux] add option "no window decoration"
+ * add shortcuts for main window buttons
+
+0.6.2 [Linux only]
+ * fixed non-translated tray menu (closed issue #7)
+
+0.6.1 [Linux only]
+ * fixed incorretc detect system language in some Linux distro
+
+0.6
+ * default value of hiding main wnd changed to true.
+ * add input template for insering date-time in saved filename
+ * add zoom around mouse cursor in area selection mode
+ * small modified configuraion dialog
+ * add html help info (eng & rus)
+
+0.5
+ * add instering date|time in saving filename [optional]
+ * add auto saving screens in grabbing process [option]
+ * add change time of display tray messages [1 - 10 src]
+ * add help info
+ * add tool tips fo ui elements
+ * small fixes config file syntax
+
+v0.4
+ * add grabbing selection screen area
+ * add copying into clipboard
+ * add saving size of main window on exit [default is turned off]
+ * decreased in 2 times the volume occupied by the memory at startup
+ * [win32] fixed bug with place screengrab.ini
+ * change structure of some source code
+ * change buttons tab order of main window
+ * new application icon
+ * some fixes
+
+v0.3.1
+ * fixed bug with non-displayed main window icon
+
+v0.3
+ * main window now based on ui-file (remaked UI)
+ * add grabbing active window
+ * add option for allowing multiple copies of app
+ * add option for select between minimizing in tray  and closing (by close window button)
+
+v0.2
+ * add JPEG support
+ * add options dialog.
+ * add settings for default saving dir, filename and image format.
+ * add saving options into INI-file.
+ * add i18n support and Russian localiaztion.
+ * some fixes and changes in code.
+ * Windows version now avalible as installer
+
+v0.1
+ * first public version.
+ * add system tray icon and menu.
+ * add hiding in systray.
+ * add blocking second instance application.
+
+v0.0.3
+ - first worked build.

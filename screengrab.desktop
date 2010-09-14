@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=ScreenGrab
+Comment=Qt4-based Screen Capture Program
+Comment[ru]=Программа  для создания снимков экрана на базе Qt4
+Comment[uk]=Програма  для створення знімків екрану на базі Qt4
+GenericName=Screen Capture Program
+GenericName[ru]=Создание снимков экрана
+GenericName[uk]=Створення знімків екрану
+Exec=screengrab
+Icon=screengrab
+Terminal=false
+Type=Application
+Categories=Graphics;RasterGraphics;Qt;
+X-KDE-StartupNotify=false
