@@ -339,7 +339,7 @@ void MainWindow::createTray()
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(mHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
     connect(mAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
-    connect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(trayDisplayStateNotifyMessage(StateNotifyMessage)));
+    connect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
     menuTray = new QMenu(this);
@@ -369,7 +369,7 @@ void MainWindow::createTray()
 
 void MainWindow::killTray()
 {
-    disconnect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(trayDisplayStateNotifyMessage(StateNotifyMessage)));
+    disconnect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     delete trayIcon;
     trayIcon = NULL;
@@ -399,10 +399,11 @@ void MainWindow::typeScreenShotChange(int type)
 }
 
 
-void MainWindow::trayDisplayStateNotifyMessage(StateNotifyMessage state)
+void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
 {
     qDebug() << " header " << state.header;
     qDebug() << " message " << state.message;
+    trayShowMessage(state.header, state.message);
 }
 
 
@@ -481,35 +482,36 @@ void MainWindow::showWindow(const QString& str)
 	this->activateWindow();
 #endif
 }
+*/
 
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 {
-    if (conf->getShowTrayIcon() == true)
+    if (core->conf->getShowTrayIcon() == true)
     {
-        switch(conf->getTrayMessages())
+        switch(core->conf->getTrayMessages())
         {
             case 0: break; // is never sjow
             case 1: // is hidden main wnd
             {
-                if (isHidden() == true && trayed == true)
+                if (isHidden() == true )//&& trayed == true
                 {
                     trayIcon->showMessage(titleMsg, bodyMsg,
-                    QSystemTrayIcon::MessageIcon(), conf->getTimeTrayMess()*1000 ); //5000
+                    QSystemTrayIcon::MessageIcon(), core->conf->getTimeTrayMess()*1000 ); //5000
                 }
                 break;
             }
             case 2: // always show
             {
                 trayIcon->showMessage(titleMsg, bodyMsg,
-                QSystemTrayIcon::MessageIcon(), conf->getTimeTrayMess()*1000 );
+                QSystemTrayIcon::MessageIcon(), core->conf->getTimeTrayMess()*1000 );
                 break;
             }
             default: break;
         }
     }
 }
-*/
+
 
 void MainWindow::displayPixmap()
 {

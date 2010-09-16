@@ -91,7 +91,7 @@ private:
 //
     void createTray();
     void killTray();
-//     void trayShowMessage(QString titleMsg, QString bodyMsg );
+    void trayShowMessage(QString titleMsg, QString bodyMsg );
 //     void createShortcuts();
 //
  private Q_SLOTS:
@@ -110,7 +110,7 @@ private:
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
-    void trayDisplayStateNotifyMessage(StateNotifyMessage state);
+    void receivedStateNotifyMessage(StateNotifyMessage state);
 //
     void updateUI();
 //     void trayClick(QSystemTrayIcon::ActivationReason reason);
