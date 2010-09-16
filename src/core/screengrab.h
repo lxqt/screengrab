@@ -24,7 +24,7 @@
 #define STR_PROC "screengrab-qt"
 #endif
 
-#include "src/ui/mainwindow.h"
+// #include "src/ui/mainwindow.h"
 
 #include "src/core/config.h"
 #include "src/core/regionselect.h"
@@ -39,6 +39,23 @@
 #endif
 
 #include <QDebug>
+
+struct StateNotifyMessage {
+    QString header;
+    QString message;
+    StateNotifyMessage()
+    {
+	qDebug() << "create empty statne Notifi";
+	header = "";
+	message = "";
+    };
+    StateNotifyMessage(QString h, QString m)
+    {
+	qDebug() << "create NOT-empty statne Notifi";
+	header = h;
+	message = m;
+    };
+};
 
 class screengrab : public QObject
 {
@@ -67,6 +84,7 @@ public:
 
 Q_SIGNALS:
     void newScreenShot(QPixmap *pixmap);
+    void sendStateNotifyMessage(StateNotifyMessage state);
 
 //private Q_SLOTS:
 

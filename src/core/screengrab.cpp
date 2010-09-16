@@ -39,8 +39,9 @@ using namespace netwm;
 
 screengrab* screengrab::corePtr = 0;
 
-screengrab::screengrab() 
-{        
+screengrab::screengrab()
+{
+    qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
     // load configuration
     conf = Config::instance();
     conf->loadSettings();
@@ -63,8 +64,8 @@ screengrab::screengrab()
         QString format = conf->getSaveFormat();
         QString filePath = getSaveFilePath(format);
         writeScreen(filePath, format);
-    }      
-    qDebug() << "creating scrreengrab obkect";    
+    }
+    qDebug() << "creating scrreengrab obkect";
 }
 
 screengrab::screengrab(const screengrab& ): QObject()
@@ -74,7 +75,7 @@ screengrab::screengrab(const screengrab& ): QObject()
 
 screengrab& screengrab::operator=(const screengrab& )
 {
-    
+
 }
 
 screengrab* screengrab::instance()
@@ -87,16 +88,16 @@ screengrab* screengrab::instance()
 }
 
 screengrab::~screengrab()
-{    
+{
     delete pixelMap;
-    conf->killInstance();    
+    conf->killInstance();
 //     if (corePtr)
 //     {
 // 	delete corePtr;
 // 	corePtr = NULL;
 //     }
-    
-    
+
+
     qDebug() << "destroing scrreengrab obkect";
 }
 
@@ -112,8 +113,8 @@ void screengrab::slotQuit()
     qDebug() << "quit";
     qApp->quit();
 //     if (conf->getSavedSizeOnExit() == true)
-//     {        
-// 	conf->setRestoredWndSize(width(), height());       
+//     {
+// 	conf->setRestoredWndSize(width(), height());
 // 	conf->saveWndSize();
 //     }
 //     qApp->quit();
@@ -158,12 +159,18 @@ void screengrab::screenShot()
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
-    
+
     Q_EMIT newScreenShot(pixelMap);
-    
+
     if (conf->getAutoSave() == true)
     {
 	autoSave();
+	return ;
+    }
+    else
+    {
+	StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+	Q_EMIT 	sendStateNotifyMessage(message);
     }
 }
 
@@ -298,8 +305,8 @@ void screengrab::getActiveWind_Win32()
 
 // TODO - rebuild in Config class
 QString screengrab::getSaveFilePath(QString format)
-{    
-    QString initPath;    
+{
+    QString initPath;
     if (conf->getDateTimeInFilename() == true)
     {
         #ifdef Q_WS_X11
@@ -330,7 +337,7 @@ QString screengrab::getSaveFilePath(QString format)
         #endif
         }
 
-    } 
+    }
 
     return initPath;
 }
@@ -363,13 +370,15 @@ bool screengrab::writeScreen(QString& fileName, QString& format)
     if (fileName.isEmpty() == false)
     {        ;
         if (pixelMap->save(fileName,format.toAscii()) == true)
-        {            
+        {
             saved = true;
+	    StateNotifyMessage message(tr("Save"), tr("Saved to ") + fileName);
+	    Q_EMIT 	sendStateNotifyMessage(message);
         }
         else
         {
             saved = false;
-        }        
+        }
     }
     else
     {
@@ -382,18 +391,20 @@ bool screengrab::writeScreen(QString& fileName, QString& format)
 void screengrab::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*pixelMap, QClipboard::Clipboard);
+    StateNotifyMessage message(tr("Copy"), tr("Screenshot is copied to clipboard"));
+    Q_EMIT sendStateNotifyMessage(message);
 }
 
 void screengrab::autoSave()
 {
-    
+
 //     if (conf->getAutoSave() == true)
 //     {
 	QString format = conf->getSaveFormat();
 	QString fileName = getSaveFilePath(format);
-	
+
 	if (writeScreen(fileName, format) == true)
-	{    
+	{
 	    qDebug() << "autosaved";
 // 	    return fileName;
 	    // 	     trayShowMessage(tr("Saved"),tr("Saved")+ fileName + tr(" is saved"));
@@ -403,7 +414,7 @@ void screengrab::autoSave()
 // 	    return "";
 // 	}
 //     }
-        
+
 //     else
     /*{
 		    trayShowMessage(tr("New screen"), tr("New screen is getting!"));

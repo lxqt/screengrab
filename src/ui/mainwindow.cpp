@@ -331,6 +331,7 @@ void MainWindow::createTray()
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(mHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
     connect(mAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
+    connect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(trayDisplayStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
     menuTray = new QMenu(this);
@@ -360,6 +361,8 @@ void MainWindow::createTray()
 
 void MainWindow::killTray()
 {
+    disconnect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(trayDisplayStateNotifyMessage(StateNotifyMessage)));
+
     delete trayIcon;
     trayIcon = NULL;
 
@@ -385,6 +388,13 @@ void MainWindow::delayBoxChange(int delay)
 void MainWindow::typeScreenShotChange(int type)
 {
     core->conf->setTypeScreen(type);
+}
+
+
+void MainWindow::trayDisplayStateNotifyMessage(StateNotifyMessage state)
+{
+    qDebug() << " header " << state.header;
+    qDebug() << " message " << state.message;
 }
 
 

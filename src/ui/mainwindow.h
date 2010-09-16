@@ -25,6 +25,7 @@
 
 // #include "src/core/screengrab.h"
 
+#include "src/core/screengrab.h"
 #include "src/ui/about.h"
 #include "src/ui/configwidget.h"
 
@@ -43,7 +44,7 @@ namespace Ui {
     class MainWindow;
 }
 
-class screengrab;
+// class screengrab;
 
 class MainWindow : public QMainWindow //, public screengrab
 {
@@ -109,6 +110,7 @@ private:
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
+    void trayDisplayStateNotifyMessage(StateNotifyMessage state);
 //
     void updateUI();
 //     void trayClick(QSystemTrayIcon::ActivationReason reason);
