@@ -284,6 +284,14 @@ void MainWindow::newScreen()
 {
     setHidden(true);
 
+    // if show trat
+    if (core->conf->getShowTrayIcon() == true)
+    {
+	//  unblock tray signals
+	trayIcon->blockSignals(true);
+	trayIcon->setContextMenu(NULL); // enable context menu
+    }
+
     //     screenShot();
 
     qDebug() << "delay " << core->conf->getDelay();;
@@ -535,8 +543,8 @@ void MainWindow::restoreWindow()
     if (core->conf->getShowTrayIcon() == true)
     {
 	//  unblock tray signals
-	// 	trayIcon->blockSignals(false);
-	// 	trayIcon->setContextMenu(menuTray); // enable context menu
+	trayIcon->blockSignals(false);
+	trayIcon->setContextMenu(menuTray); // enable context menu
     }
 }
 
