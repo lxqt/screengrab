@@ -461,7 +461,6 @@ void MainWindow::windowHideShow()
     }
 }
 
-/*
 void MainWindow::showWindow(const QString& str)
 {
     Q_UNUSED(str)
@@ -469,7 +468,7 @@ void MainWindow::showWindow(const QString& str)
     if (isHidden() == true)
     {
         mHideShow->setText(tr("Hide"));
-        trayed = false;
+//         trayed = false;
         showNormal();
     }
 
@@ -484,7 +483,7 @@ void MainWindow::showWindow(const QString& str)
 	this->activateWindow();
 #endif
 }
-*/
+
 
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )

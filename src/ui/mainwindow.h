@@ -53,10 +53,10 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-// public slots:
-//     void showWindow(const QString& str);
+public Q_SLOTS:
+    void showWindow(const QString& str);
 //
-// protected:
+protected:
 //     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window

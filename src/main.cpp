@@ -26,7 +26,7 @@
 #include "src/ui/mainwindow.h"
 
 int main(int argc, char *argv[])
-{        
+{
     SingleApp scr(argc, argv, VERSION);
     scr.setApplicationVersion(VERSION);
 
@@ -55,15 +55,15 @@ int main(int argc, char *argv[])
     screengrab *ScreenGrab = screengrab::instance();
     MainWindow mainWnd;
     mainWnd.show();
-    
-//     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &ScreenGrab, SLOT(showWindow(const QString&) ) );
+
+    QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
 
     if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
     {
         scr.sendMessage("wake up");
         return 0;
     }
-      
+
     if (ScreenGrab->conf->cmdLine()->isCreated() &&
 ScreenGrab->conf->cmdLine()->getParam("help"))
     {
