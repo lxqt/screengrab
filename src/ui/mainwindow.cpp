@@ -224,32 +224,32 @@ void MainWindow::showOptions()
 
     // FIXME uncomen fo a trayed mode
     // fi minimized main wnd
-//     if (trayed == true)
-//     {
-//         showNormal();
-//         int result = options->exec();
-//
-//         if (result == QDialog::Accepted)
-//         {
-//             updateUI();
-//         }
-//         hide();
-//     }
-//     else
-//     {
-//         int result = options->exec();
-//
-//         if (result == QDialog::Accepted)
-//         {
-//             updateUI();
-//         }
-//     }
-    int result = options->exec();
-
-    if (result == QDialog::Accepted)
+    if (isMinimized() == true)
     {
-	updateUI();
+        showNormal();
+        int result = options->exec();
+
+        if (result == QDialog::Accepted)
+        {
+            updateUI();
+        }
+        hide();
     }
+    else
+    {
+        int result = options->exec();
+
+        if (result == QDialog::Accepted)
+        {
+            updateUI();
+        }
+    }
+//     int result = options->exec();
+//
+//     if (result == QDialog::Accepted)
+//     {
+// 	updateUI();
+//     }
 
     delete options;
 }
@@ -260,18 +260,18 @@ void MainWindow::showAbout()
     about = new aboutWidget(this);
 
     // fi minimized main wnd
-    //     if (trayed == true)
-    //     {
-	//         showNormal();
-    //         about->exec();
-    //         hide();
-    //     }
-    //     else
-    //     {
-	//         about->exec();
-    //     }
+        if (isMinimized() == true)
+        {
+	    showNormal();
+            about->exec();
+            hide();
+        }
+        else
+        {
+	    about->exec();
+        }
     // FIXME add trayed mode
-    about->exec();
+//     about->exec();
 
     delete about;
 }
