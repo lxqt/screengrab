@@ -76,7 +76,7 @@ private:
     QAction *mHideShow;
     QMenu *menuTray;
 //
-//     bool trayed;
+    bool trayed;
 //     QString *savedFile;
 //
 //     QxtGlobalShortcut *fullScreen;

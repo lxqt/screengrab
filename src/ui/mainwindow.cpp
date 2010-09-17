@@ -53,10 +53,6 @@ MainWindow::MainWindow(QWidget* parent) :
 {
     m_ui->setupUi(this);
 
-    // connect  actions slotss
-
-//     trayed = false;
-
     trayIcon = NULL;
     updateUI();
 //     createTray();
@@ -292,15 +288,11 @@ void MainWindow::newScreen()
 	trayIcon->setContextMenu(NULL); // enable context menu
     }
 
-    //     screenShot();
-
-    qDebug() << "delay " << core->conf->getDelay();;
     if (core->conf->getDelay() == 0)
     {
 	// if select 0s delay & hide window -- make 0.25sdelay for hiding window
 // 	QTimer::singleShot(200, core, SLOT(getScreen()) );
-QTimer::singleShot(200, core, SLOT(screenShot()) );
-
+	QTimer::singleShot(200, core, SLOT(screenShot()) );
     }
     else
     {
@@ -320,6 +312,7 @@ void MainWindow::copyScreen()
 // crete tray
 void MainWindow::createTray()
 {
+    trayed = false;
     // create actions menu
     mQuit = new QAction(tr("Quit"), this);
     mSave = new QAction(tr("Save"), this);
@@ -448,7 +441,7 @@ void MainWindow::windowHideShow()
     if (isHidden() == true)
     {
         mHideShow->setText(tr("Hide"));
-//         trayed = false;
+        trayed = false;
         showNormal();
         activateWindow();
     }
@@ -457,7 +450,7 @@ void MainWindow::windowHideShow()
         mHideShow->setText(tr("Show"));
         showMinimized();
         hide();
-//         trayed = true;
+        trayed = true;
     }
 }
 
@@ -523,7 +516,7 @@ void MainWindow::displayPixmap()
 void MainWindow::restoreWindow()
 {
     displayPixmap();
-    if (isVisible() == false)
+    if (isVisible() == false && trayed == false)
     {
 	showNormal();
 // 	setVisible(true);
