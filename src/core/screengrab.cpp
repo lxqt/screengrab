@@ -160,18 +160,19 @@ void screengrab::screenShot()
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
 
-    Q_EMIT newScreenShot(pixelMap);
+// Q_EMIT newScreenShot(pixelMap);
 
     if (conf->getAutoSave() == true)
     {
 	autoSave();
-	return ;
+// 	return ;
     }
     else
     {
 	StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
 	Q_EMIT 	sendStateNotifyMessage(message);
     }
+    Q_EMIT newScreenShot(pixelMap);
 }
 
 #ifdef Q_WS_X11

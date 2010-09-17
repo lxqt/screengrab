@@ -335,7 +335,7 @@ void MainWindow::createTray()
     connect(mSave, SIGNAL(triggered()), this, SLOT(saveScreen()) );
     connect(mCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
     connect(mNew, SIGNAL(triggered()), this, SLOT(newScreen()));
-//     connect(mHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow())  );
+    connect(mHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(mHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
     connect(mAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
@@ -363,8 +363,8 @@ void MainWindow::createTray()
     trayIcon->setContextMenu(menuTray);
     trayIcon->setIcon(icon);
     trayIcon->show();
-//        connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
-//             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
+    connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
+             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
 }
 
 void MainWindow::killTray()
@@ -429,14 +429,15 @@ void MainWindow::updateUI()
         killTray();
     }
 }
-/*
+
 // obrabotka mouse clicks on tray icom
 void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
 {
     switch(reason)
     {
         case QSystemTrayIcon::Trigger:
-            windowHideShow();   break;
+            windowHideShow();
+	    break;
         default: ;
     }
 }
@@ -447,7 +448,7 @@ void MainWindow::windowHideShow()
     if (isHidden() == true)
     {
         mHideShow->setText(tr("Hide"));
-        trayed = false;
+//         trayed = false;
         showNormal();
         activateWindow();
     }
@@ -456,10 +457,11 @@ void MainWindow::windowHideShow()
         mHideShow->setText(tr("Show"));
         showMinimized();
         hide();
-        trayed = true;
+//         trayed = true;
     }
 }
 
+/*
 void MainWindow::showWindow(const QString& str)
 {
     Q_UNUSED(str)

@@ -54,7 +54,6 @@ public:
     ~MainWindow();
 
 // public slots:
-//     void windowHideShow();
 //     void showWindow(const QString& str);
 //
 // protected:
@@ -99,6 +98,7 @@ private:
     void restoreWindow();
     void newScreen();
     void copyScreen();
+    void windowHideShow();
 //     void on_cbxTypeScr_activated(int index);
 //     void on_butHelp_clicked();
 //     void on_delayBox_valueChanged(int );
@@ -113,7 +113,7 @@ private:
     void receivedStateNotifyMessage(StateNotifyMessage state);
 //
     void updateUI();
-//     void trayClick(QSystemTrayIcon::ActivationReason reason);
+    void trayClick(QSystemTrayIcon::ActivationReason reason);
 //
 //     void exit();
 //
