@@ -63,14 +63,13 @@ MainWindow::MainWindow(QWidget* parent) :
     areaSelection = new QxtGlobalShortcut(this);
     globalShortcuts << fullScreen << activeWindow << areaSelection;
 
-    //     for (int i = 0; i < globalShortcuts.count(); ++i )
-    //     {
-	// 	connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
-    // 	globalShortcutSignals->setMapping(globalShortcuts[i], i);
-    //     }
+        for (int i = 0; i < globalShortcuts.count(); ++i )
+        {
+	    connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
+    	globalShortcutSignals->setMapping(globalShortcuts[i], i);
+        }
     /////connect(fullScreen, SIGNAL(activated()), this, SLOT(showAbout()));
-    //     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
-
+    connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 
     trayIcon = NULL;
     updateUI();
@@ -294,7 +293,7 @@ void MainWindow::newScreen()
     {
 	// if select 0s delay & hide window -- make 0.25sdelay for hiding window
 // 	QTimer::singleShot(200, core, SLOT(getScreen()) );
-	QTimer::singleShot(200, core, SLOT(screenShot()) );
+	QTimer::singleShot(200, core, SLOT(screenShot()));
     }
     else
     {
@@ -720,45 +719,22 @@ void MainWindow::createShortcuts()
 	globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
 }
-/*
+
 // *********************************
 // E X P E R I M E N T A L   C O D E
 // *********************************
 void MainWindow::globalShortcutActivate(int type)
 {
     m_ui->cbxTypeScr->setCurrentIndex(type);
-    on_cbxTypeScr_activated(type);
-#ifdef Q_WS_X11
-    if (trayed == true)
-    {
-	newScreenUI(); // work
-	displayPixmap();
-	showNormal();
-	return;
-    }
-    else
-    {
-	on_butNew_clicked();
-	displayPixmap();
-	return;
-    }
-    if (isMinimized() == true && trayed != true)
-    {
-// 	FIXME -- non activate window if it minimized
-// 	(KDE 4.5|qt 4.7.0)) not worked
-// 	fluxbox is worked
-// 	crash on GNOME 23.31.x
-	on_butNew_clicked();
+    typeScreenShotChange(type);
 
-	activateWindow();
-	return;
+// #ifdef Q_WS_X11
+    if (trayed == false)
+    {
+	hide();
     }
+//     core->screenShot();
+    QTimer::singleShot(200, core, SLOT(screenShot()));
 
-#endif
-#ifdef Q_WS_WIN
-    on_butNew_clicked();
-    activateWindow();
-#endif
 }
 
-*/

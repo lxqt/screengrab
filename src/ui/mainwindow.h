@@ -117,7 +117,7 @@ private:
 //
 //     void exit();
 //
-//     void globalShortcutActivate(int type);
+    void globalShortcutActivate(int type);
 
 };
 
