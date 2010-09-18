@@ -53,6 +53,25 @@ MainWindow::MainWindow(QWidget* parent) :
 {
     m_ui->setupUi(this);
 
+
+    //     signal mapper
+    globalShortcutSignals = new QSignalMapper(this);
+
+    //     global shirtcuts
+    fullScreen = new QxtGlobalShortcut(this);
+    activeWindow = new QxtGlobalShortcut(this);
+    areaSelection = new QxtGlobalShortcut(this);
+    globalShortcuts << fullScreen << activeWindow << areaSelection;
+
+    //     for (int i = 0; i < globalShortcuts.count(); ++i )
+    //     {
+	// 	connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
+    // 	globalShortcutSignals->setMapping(globalShortcuts[i], i);
+    //     }
+    /////connect(fullScreen, SIGNAL(activated()), this, SLOT(showAbout()));
+    //     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
+
+
     trayIcon = NULL;
     updateUI();
 //     createTray();
@@ -61,23 +80,6 @@ MainWindow::MainWindow(QWidget* parent) :
 //     on_delayBox_valueChanged(conf->getDelay());
     m_ui->delayBox->setValue(core->conf->getDelay());
     m_ui->cbxTypeScr->setCurrentIndex(core->conf->getTypeScreen());
-
-//     signal mapper
-//     globalShortcutSignals = new QSignalMapper(this);
-
-//     global shirtcuts
-//     fullScreen = new QxtGlobalShortcut(this);
-//     activeWindow = new QxtGlobalShortcut(this);
-//     areaSelection = new QxtGlobalShortcut(this);
-//     globalShortcuts << fullScreen << activeWindow << areaSelection;
-
-//     for (int i = 0; i < globalShortcuts.count(); ++i )
-//     {
-// 	connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
-// 	globalShortcutSignals->setMapping(globalShortcuts[i], i);
-//     }
-//     connect(fullScreen, SIGNAL(activated()), this, SLOT(showAbout()));
-//     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 
 //     connect buttons to slots
     connect(m_ui->butOpt, SIGNAL(clicked()), this, SLOT(showOptions()));
@@ -100,7 +102,7 @@ MainWindow::MainWindow(QWidget* parent) :
                 QApplication::desktop()->screenNumber() ).width()/2 - width()/2,
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
-//     createShortcuts();
+     createShortcuts();
 //     show();
     displayPixmap();
     qDebug() << "creating wnd object";
@@ -408,7 +410,7 @@ void MainWindow::updateUI()
     m_ui->delayBox->setValue(core->conf->getDelay());
 
     // update shortcuts
-//     createShortcuts();
+    createShortcuts();
     // create tray object
     if (core->conf->getShowTrayIcon() == true && trayIcon == NULL)
     {
@@ -703,22 +705,22 @@ QString fileName;
        qDebug() << "Error saving file";
     }
 }
-/*
+
 
 void MainWindow::createShortcuts()
 {
-    m_ui->butNew->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutNew));
-    m_ui->butSave->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutSave));
-    m_ui->butCopy->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutCopy));
-    m_ui->butOpt->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutOptions));
-    m_ui->butHelp->setShortcut(conf->shortcuts()->getShortcut(Config::shortcutHelp));
+    m_ui->butNew->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutNew));
+    m_ui->butSave->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutSave));
+    m_ui->butCopy->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
+    m_ui->butOpt->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
+    m_ui->butHelp->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
 
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
-	globalShortcuts[i]->setShortcut(QKeySequence(conf->shortcuts()->getShortcut(i)));
+	globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
 }
-
+/*
 // *********************************
 // E X P E R I M E N T A L   C O D E
 // *********************************

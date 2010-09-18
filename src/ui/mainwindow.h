@@ -79,19 +79,19 @@ private:
     bool trayed;
 //     QString *savedFile;
 //
-//     QxtGlobalShortcut *fullScreen;
-//     QxtGlobalShortcut *activeWindow;
-//     QxtGlobalShortcut *areaSelection;
-//
-//     QVector<QxtGlobalShortcut*> globalShortcuts;
-//     QSignalMapper *globalShortcutSignals;
+    QxtGlobalShortcut *fullScreen;
+    QxtGlobalShortcut *activeWindow;
+    QxtGlobalShortcut *areaSelection;
+
+    QVector<QxtGlobalShortcut*> globalShortcuts;
+    QSignalMapper *globalShortcutSignals;
 //
 //     void displayPixmap();
 //
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
-//     void createShortcuts();
+    void createShortcuts();
 //
  private Q_SLOTS:
     void displayPixmap();
