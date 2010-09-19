@@ -55,16 +55,6 @@ screengrab::screengrab()
     QWaitCondition pause;
     pause.wait(&mutex, 250);
 
-    // get screen
-    screenShot();
-
-    // auto saving first screenshot
-    if (conf->getAutoSave() == true)
-    {
-        QString format = conf->getSaveFormat();
-        QString filePath = getSaveFilePath(format);
-        writeScreen(filePath, format);
-    }
     qDebug() << "creating scrreengrab obkect";
 }
 
@@ -172,6 +162,7 @@ void screengrab::screenShot()
 	StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
 	Q_EMIT 	sendStateNotifyMessage(message);
     }
+
     Q_EMIT newScreenShot(pixelMap);
 }
 

@@ -52,8 +52,6 @@ MainWindow::MainWindow(QWidget* parent) :
     m_ui(new Ui::MainWindow), core(screengrab::instance())
 {
     m_ui->setupUi(this);
-
-
     //     signal mapper
     globalShortcutSignals = new QSignalMapper(this);
 
@@ -73,8 +71,6 @@ MainWindow::MainWindow(QWidget* parent) :
 
     trayIcon = NULL;
     updateUI();
-//     createTray();
-
 
 //     on_delayBox_valueChanged(conf->getDelay());
     m_ui->delayBox->setValue(core->conf->getDelay());
@@ -95,15 +91,17 @@ MainWindow::MainWindow(QWidget* parent) :
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
 
-//     resize(conf->getRestoredWndSize().width(), conf->getRestoredWndSize().height());
+    resize(core->conf->getRestoredWndSize().width(), core->conf->getRestoredWndSize().height());
+
+    core->screenShot();
+    displayPixmap();
 
     move(QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber() ).width()/2 - width()/2,
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
-     createShortcuts();
-//     show();
-    displayPixmap();
+
+    createShortcuts();
     qDebug() << "creating wnd object";
 }
 
@@ -145,6 +143,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
 // resize main window
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
+    qDebug() << "resize event";
     // get size dcreen pixel map
     QSize scaleSize = core->getPixmap().size(); // get orig size pixmap
 
@@ -153,6 +152,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     // if not scrlabel pixmap
     if (!m_ui->scrLabel->pixmap() || scaleSize != m_ui->scrLabel->pixmap()->size())
     {
+	qDebug() << "if not scrlabel pixmap";
         displayPixmap();
     }
 
@@ -512,6 +512,7 @@ void MainWindow::displayPixmap()
 {
     m_ui->scrLabel->setPixmap(core->getPixmap().scaled(m_ui->scrLabel->size(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    qDebug() << " display pixmap";
 }
 
 void MainWindow::restoreWindow()
