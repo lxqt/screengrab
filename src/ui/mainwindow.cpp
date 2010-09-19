@@ -124,10 +124,9 @@ void MainWindow::changeEvent(QEvent *e)
     }
 }
 
-/*-------------------------------------
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    if (conf->getCloseInTray() == true && conf->getShowTrayIcon() == true)
+    if (core->conf->getCloseInTray() == true && core->conf->getShowTrayIcon() == true)
     {
         windowHideShow();
         e->ignore();
@@ -135,11 +134,11 @@ void MainWindow::closeEvent(QCloseEvent *e)
     else
     {
         //exit();
-        screengrab->quit();)
+        core->slotQuit();
     }
 
 }
-*/
+
 // resize main window
 void MainWindow::resizeEvent(QResizeEvent *event)
 {

@@ -57,7 +57,7 @@ public Q_SLOTS:
     void showWindow(const QString& str);
 //
 protected:
-//     void closeEvent(QCloseEvent *e);
+    void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window
 //
