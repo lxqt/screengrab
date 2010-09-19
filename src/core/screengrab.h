@@ -62,7 +62,7 @@ class screengrab : public QObject
     Q_OBJECT
 
 public Q_SLOTS:
-    void slotQuit();
+    void coreQuit();
 //     bool getScreen();
     void screenShot();
 

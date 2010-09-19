@@ -80,7 +80,7 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(m_ui->butOpt, SIGNAL(clicked()), this, SLOT(showOptions()));
     connect(m_ui->butSave, SIGNAL(clicked()), this, SLOT(saveScreen()));
     connect(m_ui->butInfo, SIGNAL(clicked()), this, SLOT(showAbout()));
-    connect(m_ui->butQuit, SIGNAL(clicked()), core, SLOT(slotQuit()));
+    connect(m_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(m_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(m_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
     connect(m_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
@@ -133,10 +133,8 @@ void MainWindow::closeEvent(QCloseEvent *e)
     }
     else
     {
-        //exit();
-        core->slotQuit();
+	quit();
     }
-
 }
 
 // resize main window
@@ -324,7 +322,7 @@ void MainWindow::createTray()
     mHelp = new QAction(tr("Help"), this);
 
     // connect to slots
-    connect(mQuit, SIGNAL(triggered()), core, SLOT(slotQuit()) );
+    connect(mQuit, SIGNAL(triggered()), this, SLOT(quit()));
     connect(mSave, SIGNAL(triggered()), this, SLOT(saveScreen()) );
     connect(mCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
     connect(mNew, SIGNAL(triggered()), this, SLOT(newScreen()));
@@ -397,6 +395,16 @@ void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
     qDebug() << " header " << state.header;
     qDebug() << " message " << state.message;
     trayShowMessage(state.header, state.message);
+}
+
+void MainWindow::quit()
+{
+    if (core->conf->getSavedSizeOnExit() == true)
+    {
+	core->conf->setRestoredWndSize(width(), height());
+	core->conf->saveWndSize();
+    }
+    core->coreQuit();
 }
 
 

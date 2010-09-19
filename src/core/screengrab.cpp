@@ -91,7 +91,7 @@ screengrab::~screengrab()
     qDebug() << "destroing scrreengrab obkect";
 }
 
-void screengrab::slotQuit()
+void screengrab::coreQuit()
 {
     // quit appen
     if (corePtr)
@@ -102,13 +102,6 @@ void screengrab::slotQuit()
     }
     qDebug() << "quit";
     qApp->quit();
-//     if (conf->getSavedSizeOnExit() == true)
-//     {
-// 	conf->setRestoredWndSize(width(), height());
-// 	conf->saveWndSize();
-//     }
-//     qApp->quit();
-    // TODO -- check close to tray options
 }
 
 

@@ -23,7 +23,7 @@
 
 #include <QtGui/QMainWindow>
 
-// #include "src/core/screengrab.h"
+#include "src/core/screengrab.h"
 
 #include "src/core/screengrab.h"
 #include "src/ui/about.h"
@@ -111,6 +111,7 @@ private:
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
     void receivedStateNotifyMessage(StateNotifyMessage state);
+    void quit();
 //
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
