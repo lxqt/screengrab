@@ -148,8 +148,11 @@ void screengrab::screenShot(bool first)
     }
     else
     {
-	StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-	Q_EMIT 	sendStateNotifyMessage(message);
+	if (first == false)
+	{
+	    StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+	    Q_EMIT 	sendStateNotifyMessage(message);
+	}
     }
 
     Q_EMIT newScreenShot(pixelMap);
