@@ -370,27 +370,13 @@ void screengrab::copyScreen()
 void screengrab::autoSave()
 {
 
-//     if (conf->getAutoSave() == true)
-//     {
 	QString format = conf->getSaveFormat();
 	QString fileName = getSaveFilePath(format);
 
 	if (writeScreen(fileName, format) == true)
 	{
 	    qDebug() << "autosaved";
-// 	    return fileName;
-	    // 	     trayShowMessage(tr("Saved"),tr("Saved")+ fileName + tr(" is saved"));
 	}
-// 	else
-// 	{
-// 	    return "";
-// 	}
-//     }
-
-//     else
-    /*{
-		    trayShowMessage(tr("New screen"), tr("New screen is getting!"));
-    }*/
 }
 
 

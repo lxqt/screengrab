@@ -268,8 +268,7 @@ void MainWindow::newScreen()
 
     if (core->conf->getDelay() == 0)
     {
-	// if select 0s delay & hide window -- make 0.25sdelay for hiding window
-// 	QTimer::singleShot(200, core, SLOT(getScreen()) );
+	// if select 0s delay & hide window -- make 0.2s delay for hiding window
 	QTimer::singleShot(200, core, SLOT(screenShot()));
     }
     else
@@ -278,13 +277,11 @@ void MainWindow::newScreen()
 // 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(getScreen()));
 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
     }
-//     setVisible(true);
 }
 
 void MainWindow::copyScreen()
 {
     core->copyScreen();
-//     trayShowMessage(tr("Copied"),tr("Screenshot copied"));
 }
 
 // crete tray
@@ -538,7 +535,7 @@ void MainWindow::saveScreen()
 
     // create file filters
     QString fileFilters;
-//     fileFilters = "PNG (*.png);;JPEG (*.jpg);;BMP (*.bmp)";
+
     QString filterSelected;
     filterSelected = formatsAvalible[format];
 
@@ -608,13 +605,11 @@ void MainWindow::globalShortcutActivate(int type)
     m_ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
 
-// #ifdef Q_WS_X11
     if (trayed == false)
     {
 	hide();
     }
-//     core->screenShot();
-    QTimer::singleShot(200, core, SLOT(screenShot()));
 
+    QTimer::singleShot(200, core, SLOT(screenShot()));
 }
 
