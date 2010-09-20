@@ -42,7 +42,7 @@ screengrab* screengrab::corePtr = 0;
 screengrab::screengrab()
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
-    // load configuration
+
     conf = Config::instance();
     conf->loadSettings();
 
@@ -54,8 +54,6 @@ screengrab::screengrab()
     mutex.lock();
     QWaitCondition pause;
     pause.wait(&mutex, 250);
-
-    qDebug() << "creating scrreengrab obkect";
 }
 
 screengrab::screengrab(const screengrab& ): QObject()
@@ -81,32 +79,23 @@ screengrab::~screengrab()
 {
     delete pixelMap;
     conf->killInstance();
-//     if (corePtr)
-//     {
-// 	delete corePtr;
-// 	corePtr = NULL;
-//     }
-
-
-    qDebug() << "destroing scrreengrab obkect";
 }
 
 void screengrab::coreQuit()
 {
-    // quit appen
     if (corePtr)
     {
 	delete corePtr;
 	corePtr = NULL;
 	qDebug() << "kill corePtr";
     }
-    qDebug() << "quit";
+
     qApp->quit();
 }
 
 
 // get screenshot
-void screengrab::screenShot()
+void screengrab::screenShot(bool first)
 {
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
@@ -143,12 +132,19 @@ void screengrab::screenShot()
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
 
-// Q_EMIT newScreenShot(pixelMap);
 
     if (conf->getAutoSave() == true)
     {
-	autoSave();
-// 	return ;
+	// small hack for display tray message on first screenshot (on starting
+	// ScreenGrab in KDE, fluxbox and something wm)
+	if (first == true)
+	{
+	    QTimer::singleShot(300, this, SLOT(autoSave()));
+	}
+	else
+	{
+	    autoSave();
+	}
     }
     else
     {
@@ -186,7 +182,6 @@ void screengrab::getActiveWind_X11()
       Window rt, *children, parent;
 
     // Find window manager frame
-    // TODO -- check to optimize infinity loop
     while (true)
     {
         status = XQueryTree(QX11Info::display(), *wnd, &rt, &parent, &children, &d);
@@ -280,14 +275,6 @@ void screengrab::getActiveWind_Win32()
 }
 #endif
 
-// new dcreen
-// bool screengrab::getScreen()
-// {
-//     screenShot();
-//     qDebug() << 'get screen slot';
-//     return true;
-// }
-
 // TODO - rebuild in Config class
 QString screengrab::getSaveFilePath(QString format)
 {
@@ -321,9 +308,7 @@ QString screengrab::getSaveFilePath(QString format)
             initPath = conf->getSaveDir()+conf->getSaveFileName();
         #endif
         }
-
     }
-
     return initPath;
 }
 
@@ -331,13 +316,12 @@ QString screengrab::getDateTimeFileName()
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(conf->getDateTimeTpl());
 
-    return currentDateTime ;// + "-" + currentTime;
+    return currentDateTime;
 }
 
 // save screen
 bool screengrab::writeScreen(QString& fileName, QString& format)
 {
-
     // aitoncrement number screen in autosaving
     if (conf->getAutoSave() == true && conf->getDateTimeInFilename() == false)
     {

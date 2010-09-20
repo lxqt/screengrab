@@ -93,13 +93,13 @@ MainWindow::MainWindow(QWidget* parent) :
 
     resize(core->conf->getRestoredWndSize().width(), core->conf->getRestoredWndSize().height());
 
-    core->screenShot();
-    displayPixmap();
-
     move(QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber() ).width()/2 - width()/2,
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
+
+    core->screenShot(true);
+    displayPixmap();
 
     createShortcuts();
     qDebug() << "creating wnd object";
@@ -154,18 +154,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     }
 
 }
-/*
-// close button clicked
-void MainWindow::exit()
-{
-    if (conf->getSavedSizeOnExit() == true)
-    {
-        conf->setRestoredWndSize(width(), height());
-        conf->saveWndSize();
-    }
-    qApp->quit();
-}
-*/
 
 void MainWindow::showHelp()
 {
@@ -238,12 +226,6 @@ void MainWindow::showOptions()
             updateUI();
         }
     }
-//     int result = options->exec();
-//
-//     if (result == QDialog::Accepted)
-//     {
-// 	updateUI();
-//     }
 
     delete options;
 }
@@ -264,8 +246,6 @@ void MainWindow::showAbout()
         {
 	    about->exec();
         }
-    // FIXME add trayed mode
-//     about->exec();
 
     delete about;
 }
@@ -392,8 +372,6 @@ void MainWindow::typeScreenShotChange(int type)
 
 void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
 {
-    qDebug() << " header " << state.header;
-    qDebug() << " message " << state.message;
     trayShowMessage(state.header, state.message);
 }
 
@@ -421,7 +399,6 @@ void MainWindow::updateUI()
     if (core->conf->getShowTrayIcon() == true && trayIcon == NULL)
     {
         createTray();
-
     }
 
     // kill tray object, if created
@@ -469,7 +446,7 @@ void MainWindow::showWindow(const QString& str)
     if (isHidden() == true)
     {
         mHideShow->setText(tr("Hide"));
-//         trayed = false;
+        trayed = false;
         showNormal();
     }
 
@@ -531,19 +508,6 @@ void MainWindow::restoreWindow()
 // 	setVisible(true);
     }
 
-    // autosave screenshot
-    // move to private screenshot
-    //core->autoSave();
-//     if (core->conf->getAutoSave() == true)
-//     {
-	// qstring autosavew
-// 	     trayShowMessage(tr("Saved"),tr("Saved")+ fileName + tr(" is saved"));
-//     }
-//     else
-//     {
-// 	trayShowMessage(tr("New screen"), tr("New screen is getting!"));
-//     }
-
     // if show trat
     if (core->conf->getShowTrayIcon() == true)
     {
@@ -554,40 +518,6 @@ void MainWindow::restoreWindow()
 }
 
 
-/*
-void MainWindow::on_butNew_clicked()
-{
-    m_ui->butNew->setEnabled(false);
-
-    // if show tray  is enbled
-    if (conf->getShowTrayIcon() == true)
-    {
-        trayIcon->setContextMenu(0); // disable context menu
-        trayIcon->blockSignals(true); // block tray signals
-    }
-
-    setHidden(true);
-
-    if (conf->getDelay() == 0)
-    {
-        // if select 0s delay & hide window -- make 0.25sdelay for hiding window
-        QTimer::singleShot(200, this, SLOT(newScreenUI()) );
-
-    }
-    else
-    {
-        QTimer::singleShot(1000*conf->getDelay(), this, SLOT(newScreenUI()) );
-
-    }
-}
-
-// copy screen into clipboarad
-void MainWindow::on_butCopy_clicked()
-{
-    copyScreen();
-//     trayShowMessage(tr("Copied"),tr("Screenshot copied"));
-}
-*/
 void MainWindow::saveScreen()
 {
     qDebug() << "saved slot";
@@ -611,21 +541,6 @@ void MainWindow::saveScreen()
 //     fileFilters = "PNG (*.png);;JPEG (*.jpg);;BMP (*.bmp)";
     QString filterSelected;
     filterSelected = formatsAvalible[format];
-    qDebug() << "filterSelected" << filterSelected;
-
-    // TODO - kill em all =)
-//     if (format == "png")
-//     {
-//         filterSelected = "PNG (*.png)";
-//     }
-//     if (format == "jpg")
-//     {
-//         filterSelected = "JPEG (*.jpg)";
-//     }
-//     if (format == "bmp")
-//     {
-//         filterSelected = "BMP (*.bmp)";
-//     }
 
     QHash<QString, QString>::const_iterator iter = formatsAvalible.constBegin();
 
@@ -642,25 +557,7 @@ void MainWindow::saveScreen()
 	++iter;
     }
     fileFilters.chop(2);
-    qDebug() << "fileFilters =  " << fileFilters;
-    // if is KDE (fix bug in kde 4.4.x with native filedialog)
-//     if (qgetenv("DESKTOP_SESSION") == "kde")
-//     {
-//         if (format == "png")
-//         {
-//             fileFilters = "PNG (*.png);;JPEG (*.jpg);;BMP (*.bmp)";
-//         }
-//         if (format == "jpg")
-//         {
-//             fileFilters = "JPEG (*.jpg);;PNG (*.png);;BMP (*.bmp)";
-//         }
-//         if (format == "bmp")
-//         {
-//             fileFilters = "BMP (*.bmp);;PNG (*.png);;JPEG (*.jpg)";
-//         }
-//     }
 
-    // show file save dialog
 QString fileName;
 #ifdef Q_WS_X11
     if (qgetenv("DESKTOP_SESSION") == "kde" || qgetenv("DESKTOP_SESSION") == "gnome")
@@ -682,35 +579,13 @@ QString fileName;
     filterSelected.chop(tmp + 1);
     format = formatsAvalible.key(filterSelected);
 
-    // detecting selected format
-//     if (filterSelected.toAscii() == "PNG (*.png)" )
-//     {
-//         format = "png";
-//     }
-//     if (filterSelected.toAscii() == "JPEG (*.jpg)")
-//     {
-//         format = "jpg";
-//     }
-//     if (filterSelected.toAscii() == "BMP (*.bmp)")
-//     {
-//         format = "bmp";
-//     }
-
     // if user canceled saving
     if (fileName.isEmpty() == true)
     {
         return ;
     }
 
-    if (core->writeScreen(fileName, format) == true)
-    {
-//         trayShowMessage(tr("Saved"),tr("Saved")+ fileName + tr(" is saved"));
-	qDebug() << "saved " ;
-    }
-    else
-    {
-       qDebug() << "Error saving file";
-    }
+    core->writeScreen(fileName, format);
 }
 
 
@@ -728,9 +603,6 @@ void MainWindow::createShortcuts()
     }
 }
 
-// *********************************
-// E X P E R I M E N T A L   C O D E
-// *********************************
 void MainWindow::globalShortcutActivate(int type)
 {
     m_ui->cbxTypeScr->setCurrentIndex(type);

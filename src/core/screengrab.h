@@ -24,12 +24,11 @@
 #define STR_PROC "screengrab-qt"
 #endif
 
-// #include "src/ui/mainwindow.h"
-
 #include "src/core/config.h"
 #include "src/core/regionselect.h"
 
 #include <QtCore/QObject>
+#include <QtCore/QTimer>
 #include <QtGui/QPixmap>
 #include <QtGui/QClipboard>
 #include <QtCore/QTime>
@@ -63,8 +62,8 @@ class screengrab : public QObject
 
 public Q_SLOTS:
     void coreQuit();
-//     bool getScreen();
-    void screenShot();
+    void screenShot(bool first = false);
+    void autoSave();
 
 public:
     static screengrab* instance();
@@ -76,7 +75,6 @@ public:
 
     bool writeScreen(QString& fileName, QString& format);
     void copyScreen();
-    void autoSave();
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
@@ -85,8 +83,6 @@ public:
 Q_SIGNALS:
     void newScreenShot(QPixmap *pixmap);
     void sendStateNotifyMessage(StateNotifyMessage state);
-
-//private Q_SLOTS:
 
 private:
     screengrab();

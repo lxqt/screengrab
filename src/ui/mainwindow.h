@@ -24,18 +24,14 @@
 #include <QtGui/QMainWindow>
 
 #include "src/core/screengrab.h"
-
-#include "src/core/screengrab.h"
 #include "src/ui/about.h"
 #include "src/ui/configwidget.h"
 
-//#include "gui/qxtglobalshortcut.h"
 #include <QxtGui/QxtGlobalShortcut>
 
 #include <QtGui/QMenu>
 #include <QtGui/QSystemTrayIcon>
 #include <QtGui/QDesktopServices>
-//#include <QtCore/QTimer>
 #include <QtGui/QCloseEvent>
 #include <QtCore/QUrl>
 #include <QtCore/QSignalMapper>
@@ -43,8 +39,6 @@
 namespace Ui {
     class MainWindow;
 }
-
-// class screengrab;
 
 class MainWindow : public QMainWindow //, public screengrab
 {
@@ -75,35 +69,27 @@ private:
     QAction *mHelp;
     QAction *mHideShow;
     QMenu *menuTray;
-//
+
     bool trayed;
-//     QString *savedFile;
-//
+
     QxtGlobalShortcut *fullScreen;
     QxtGlobalShortcut *activeWindow;
     QxtGlobalShortcut *areaSelection;
 
     QVector<QxtGlobalShortcut*> globalShortcuts;
     QSignalMapper *globalShortcutSignals;
-//
-//     void displayPixmap();
-//
+
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
     void createShortcuts();
-//
+
  private Q_SLOTS:
     void displayPixmap();
     void restoreWindow();
     void newScreen();
     void copyScreen();
     void windowHideShow();
-//     void on_cbxTypeScr_activated(int index);
-//     void on_butHelp_clicked();
-//     void on_delayBox_valueChanged(int );
-//     void on_butNew_clicked();
-//     void on_butCopy_clicked();
     void saveScreen();
     void showHelp();
     void showOptions();
@@ -115,11 +101,7 @@ private:
 //
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
-//
-//     void exit();
-//
     void globalShortcutActivate(int type);
-
 };
 
 #endif // MAINWINDOW_H
