@@ -21,7 +21,6 @@
 #include "src/ui/mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "src/core/screengrab.h"
 #include "src/core/shortcutmanager.h"
 
 #include <QDebug>
@@ -49,7 +48,7 @@ using namespace netwm;
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
-    m_ui(new Ui::MainWindow), core(screengrab::instance())
+    m_ui(new Ui::MainWindow), core(Core::instance())
 {
     m_ui->setupUi(this);
     //     signal mapper

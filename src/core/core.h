@@ -56,7 +56,7 @@ struct StateNotifyMessage {
     };
 };
 
-class screengrab : public QObject
+class Core : public QObject
 {
     Q_OBJECT
 
@@ -66,8 +66,8 @@ public Q_SLOTS:
     void autoSave();
 
 public:
-    static screengrab* instance();
-    ~screengrab();
+    static Core* instance();
+    ~Core();
 
     static QString getVersionPrintable();
 
@@ -85,11 +85,11 @@ Q_SIGNALS:
     void sendStateNotifyMessage(StateNotifyMessage state);
 
 private:
-    screengrab();
-    screengrab(const screengrab &);
-    screengrab& operator=(const screengrab &);
+    Core();
+    Core(const Core &);
+    Core& operator=(const Core &);
 
-    static screengrab *corePtr;
+    static Core *corePtr;
 
     // functions
 #ifdef Q_WS_WIN

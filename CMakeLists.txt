@@ -37,7 +37,7 @@ if(${CMAKE_BUILD_TYPE} MATCHES "Release")
     add_definitions("-O2")
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
-    
+
 set(CMAKE_CXX_FLAGS "-Wnon-virtual-dtor -Woverloaded-virtual -Wall")
 # ------ install prefix --------------------------
 
@@ -63,16 +63,16 @@ add_definitions(-DBUILD_QXT_GUI)
 # with SET() command you can change variables or define new ones
 # here we define SAMPLE_SRCS variable that contains a list of all .cpp files
 # note that we don't need \ at the end of line
-set(SCREENGRAB_SRC 
+set(SCREENGRAB_SRC
     src/main.cpp
-    src/core/screengrab.cpp
+    src/core/core.cpp
     src/core/config.cpp
     src/core/regionselect.cpp
-    src/core/cmdline.cpp    
-    src/core/shortcutmanager.cpp  
-    src/ui/configwidget.cpp    
+    src/core/cmdline.cpp
+    src/core/shortcutmanager.cpp
+    src/ui/configwidget.cpp
     src/ui/about.cpp
-    src/ui/mainwindow.cpp 
+    src/ui/mainwindow.cpp
 )
 
 if(UNIX AND NOT APPLE)
@@ -85,24 +85,24 @@ endif(WIN32)
 
 # set headers to moc
 set(SCREENGRAB_MOC
-    src/core/screengrab.h 
+    src/core/core.h
     src/ui/configwidget.h
     src/ui/about.h
-    src/ui/mainwindow.h    
+    src/ui/mainwindow.h
 )
 
 # set headers to moc
-set(SCREENGRAB_UI 
+set(SCREENGRAB_UI
     src/ui/configwidget.ui
     src/ui/aboutwidget.ui
     src/ui/mainwindow.ui
 )
 
 # documentation files
-set(DOCS 
-  ${CMAKE_CURRENT_SOURCE_DIR}/docs/ChangeLog.txt  
-  ${CMAKE_CURRENT_SOURCE_DIR}/docs/LICENSE.txt 
-  ${CMAKE_CURRENT_SOURCE_DIR}/docs/README.txt   
+set(DOCS
+  ${CMAKE_CURRENT_SOURCE_DIR}/docs/ChangeLog.txt
+  ${CMAKE_CURRENT_SOURCE_DIR}/docs/LICENSE.txt
+  ${CMAKE_CURRENT_SOURCE_DIR}/docs/README.txt
 )
 
 #  include headers produced by uic in our code
@@ -180,7 +180,7 @@ target_link_libraries( screengrab qkeysequencewidget singleapp qxt ${QT_LIBRARIE
 if(WIN32)
     if(NOT MSVC)
 
-        set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-mwindows")        
+        set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-mwindows")
 
     endif(NOT MSVC)
 endif(WIN32)

@@ -21,7 +21,7 @@
 #include "about.h"
 #include "ui_aboutwidget.h"
 
-#include "src/core/screengrab.h"
+#include "src/core/core.h"
 #include <QtGui/QDesktopServices>
 
 aboutWidget::aboutWidget(QWidget *parent):

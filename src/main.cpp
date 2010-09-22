@@ -22,7 +22,7 @@
 
 #include "src/common/singleapp/singleapp.h"
 #include <QDebug>
-#include "src/core/screengrab.h"
+#include "src/core/core.h"
 #include "src/ui/mainwindow.h"
 
 int main(int argc, char *argv[])
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     // creating main window
 //    MainWindow ScreenGrab;
-    screengrab *ScreenGrab = screengrab::instance();
+    Core *ScreenGrab = Core::instance();
     MainWindow mainWnd;
     mainWnd.show();
 
@@ -78,7 +78,7 @@ ScreenGrab->conf->cmdLine()->getParam("help"))
     if (ScreenGrab->conf->cmdLine()->isCreated() &&
 ScreenGrab->conf->cmdLine()->getParam("version"))
     {
-        QString version = screengrab::getVersionPrintable();
+        QString version = Core::getVersionPrintable();
         CmdLine::print(version);
         return 0;
     }

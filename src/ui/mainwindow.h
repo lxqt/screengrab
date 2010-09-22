@@ -23,7 +23,7 @@
 
 #include <QtGui/QMainWindow>
 
-#include "src/core/screengrab.h"
+#include "src/core/core.h"
 #include "src/ui/about.h"
 #include "src/ui/configwidget.h"
 
@@ -57,7 +57,7 @@ protected:
 //
 private:
     Ui::MainWindow *m_ui;
-    screengrab *core;
+    Core *core;
 
     QSystemTrayIcon *trayIcon;
     QAction *mQuit;

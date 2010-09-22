@@ -22,7 +22,7 @@
 #include <QtCore/QWaitCondition>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
-#include "src/core/screengrab.h"
+#include "src/core/core.h"
 
 #ifdef Q_WS_WIN
 #include <windows.h>
@@ -37,9 +37,9 @@ using namespace netwm;
 #include <QX11Info>
 #endif
 
-screengrab* screengrab::corePtr = 0;
+Core* Core::corePtr = 0;
 
-screengrab::screengrab()
+Core::Core()
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
 
@@ -56,32 +56,32 @@ screengrab::screengrab()
     pause.wait(&mutex, 250);
 }
 
-screengrab::screengrab(const screengrab& ): QObject()
+Core::Core(const Core& ): QObject()
 {
 
 }
 
-screengrab& screengrab::operator=(const screengrab& )
+Core& Core::operator=(const Core& )
 {
 
 }
 
-screengrab* screengrab::instance()
+Core* Core::instance()
 {
     if (!corePtr)
     {
-	corePtr = new screengrab;
+	corePtr = new Core;
     }
     return corePtr;
 }
 
-screengrab::~screengrab()
+Core::~Core()
 {
     delete pixelMap;
     conf->killInstance();
 }
 
-void screengrab::coreQuit()
+void Core::coreQuit()
 {
     if (corePtr)
     {
@@ -95,7 +95,7 @@ void screengrab::coreQuit()
 
 
 // get screenshot
-void screengrab::screenShot(bool first)
+void Core::screenShot(bool first)
 {
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
@@ -159,7 +159,7 @@ void screengrab::screenShot(bool first)
 }
 
 #ifdef Q_WS_X11
-void screengrab::getActiveWind_X11()
+void Core::getActiveWind_X11()
 {
     netwm::init();
     Window *wnd = reinterpret_cast<ulong *>(netwm::property(QX11Info::appRootWindow(), NET_ACTIVE_WINDOW, XA_WINDOW));
@@ -279,7 +279,7 @@ void screengrab::getActiveWind_Win32()
 #endif
 
 // TODO - rebuild in Config class
-QString screengrab::getSaveFilePath(QString format)
+QString Core::getSaveFilePath(QString format)
 {
     QString initPath;
     if (conf->getDateTimeInFilename() == true)
@@ -315,7 +315,7 @@ QString screengrab::getSaveFilePath(QString format)
     return initPath;
 }
 
-QString screengrab::getDateTimeFileName()
+QString Core::getDateTimeFileName()
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(conf->getDateTimeTpl());
 
@@ -323,7 +323,7 @@ QString screengrab::getDateTimeFileName()
 }
 
 // save screen
-bool screengrab::writeScreen(QString& fileName, QString& format)
+bool Core::writeScreen(QString& fileName, QString& format)
 {
     // aitoncrement number screen in autosaving
     if (conf->getAutoSave() == true && conf->getDateTimeInFilename() == false)
@@ -360,14 +360,14 @@ bool screengrab::writeScreen(QString& fileName, QString& format)
     return saved;
 }
 
-void screengrab::copyScreen()
+void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copy"), tr("Screenshot is copied to clipboard"));
     Q_EMIT sendStateNotifyMessage(message);
 }
 
-void screengrab::autoSave()
+void Core::autoSave()
 {
 
 	QString format = conf->getSaveFormat();
@@ -380,14 +380,14 @@ void screengrab::autoSave()
 }
 
 
-QString screengrab::getVersionPrintable()
+QString Core::getVersionPrintable()
 {
     QString str = "ScreenGrab: " + qApp->applicationVersion() + QString("\n");
     str += "Qt: " + QString(qVersion()) + QString("\n");
     return str;
 }
 
-QPixmap screengrab::getPixmap()
+QPixmap Core::getPixmap()
 {
     return *pixelMap;
 }
