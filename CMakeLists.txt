@@ -113,7 +113,7 @@ set(DOCS
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
 
 # Qt resource file
-set( SCREENGRAB_QRC ./screengrab.qrc )
+set( SCREENGRAB_QRC screengrab.qrc )
 
 
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")

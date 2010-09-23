@@ -51,6 +51,8 @@ MainWindow::MainWindow(QWidget* parent) :
     m_ui(new Ui::MainWindow), core(Core::instance())
 {
     m_ui->setupUi(this);
+    trayed =false;
+    qDebug() << "trayed " << trayed;
     //     signal mapper
     globalShortcutSignals = new QSignalMapper(this);
 
@@ -102,6 +104,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
     createShortcuts();
     qDebug() << "creating wnd object";
+    qDebug() << "trayed " << trayed;
 }
 
 MainWindow::~MainWindow()
@@ -338,6 +341,7 @@ void MainWindow::killTray()
 {
     disconnect(core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
+    trayed = false;
     delete trayIcon;
     trayIcon = NULL;
 
@@ -433,13 +437,14 @@ void MainWindow::windowHideShow()
         hide();
         trayed = true;
     }
+    qDebug() << "trayed " << trayed;
 }
 
 void MainWindow::showWindow(const QString& str)
 {
     Q_UNUSED(str)
-    qDebug() << "show window";
-    if (isHidden() == true)
+    qDebug() << "show window"; // add && core->conf->getShowTrayIcon() == true
+    if (isHidden() == true && core->conf->getShowTrayIcon() == true)
     {
         mHideShow->setText(tr("Hide"));
         trayed = false;
@@ -500,6 +505,7 @@ void MainWindow::restoreWindow()
     displayPixmap();
     if (isVisible() == false && trayed == false)
     {
+	qDebug() << "showNormal() " << trayed;
 	showNormal();
 // 	setVisible(true);
     }
@@ -608,7 +614,7 @@ void MainWindow::globalShortcutActivate(int type)
     {
 	hide();
     }
-
     QTimer::singleShot(200, core, SLOT(screenShot()));
+
 }
 

@@ -117,16 +117,16 @@ void Core::screenShot(bool first)
             }
         case 2:
             {
-            RegionSelect *selector;
-            selector = new RegionSelect(conf);
-            int resilt = selector->exec();
+		RegionSelect *selector;
+		selector = new RegionSelect(conf);
+		int resilt = selector->exec();
 
-            if (resilt == QDialog::Accepted)
-            {
-                *pixelMap = selector->getSelection();
-            }
-            delete selector;
-            break;
+		if (resilt == QDialog::Accepted)
+		{
+		    *pixelMap = selector->getSelection();
+		}
+		delete selector;
+		break;
             }
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
