@@ -503,6 +503,15 @@ void MainWindow::displayPixmap()
 void MainWindow::restoreWindow()
 {
     displayPixmap();
+
+#ifdef Q_WS_WIN
+    // small hack for blocking segfault on shortcuted selection area screen on win32
+    if (core->conf->getShowTrayIcon() == true && trayed == true && core->conf->getTypeScreen() == 2 )
+    {
+	hide();
+    }
+#endif
+
     if (isVisible() == false && trayed == false)
     {
 	qDebug() << "showNormal() " << trayed;
@@ -609,6 +618,13 @@ void MainWindow::globalShortcutActivate(int type)
 {
     m_ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
+#ifdef Q_WS_WIN
+    // small hack for blocking segfault on shortcuted selection area screen on win32
+    if (core->conf->getShowTrayIcon() == true && trayed == true && type == 2 )
+    {
+	showMaximized();
+    }
+#endif
 
     if (trayed == false)
     {
