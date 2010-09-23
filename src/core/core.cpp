@@ -139,7 +139,7 @@ void Core::screenShot(bool first)
 	// ScreenGrab in KDE, fluxbox and something wm)
 	if (first == true)
 	{
-	    QTimer::singleShot(300, this, SLOT(autoSave()));
+	    QTimer::singleShot(600, this, SLOT(autoSave()));
 	}
 	else
 	{
@@ -223,7 +223,7 @@ void Core::getActiveWind_X11()
 #endif
 
 #ifdef Q_WS_WIN
-void screengrab::getActiveWind_Win32()
+void Core::getActiveWind_Win32()
 {
     HWND findWindow = GetForegroundWindow();
 
