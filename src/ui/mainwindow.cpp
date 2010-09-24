@@ -52,8 +52,8 @@ MainWindow::MainWindow(QWidget* parent) :
 {
     m_ui->setupUi(this);
     trayed =false;
-    qDebug() << "trayed " << trayed;
-    //     signal mapper
+
+    // signal mapper
     globalShortcutSignals = new QSignalMapper(this);
 
     //     global shirtcuts
@@ -103,14 +103,11 @@ MainWindow::MainWindow(QWidget* parent) :
     displayPixmap();
 
     createShortcuts();
-    qDebug() << "creating wnd object";
-    qDebug() << "trayed " << trayed;
 }
 
 MainWindow::~MainWindow()
 {
     delete m_ui;
-    qDebug() << "deleting wnd object";
 }
 
 
@@ -142,7 +139,6 @@ void MainWindow::closeEvent(QCloseEvent *e)
 // resize main window
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
-    qDebug() << "resize event";
     // get size dcreen pixel map
     QSize scaleSize = core->getPixmap().size(); // get orig size pixmap
 
@@ -151,7 +147,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     // if not scrlabel pixmap
     if (!m_ui->scrLabel->pixmap() || scaleSize != m_ui->scrLabel->pixmap()->size())
     {
-	qDebug() << "if not scrlabel pixmap";
         displayPixmap();
     }
 
@@ -275,8 +270,6 @@ void MainWindow::newScreen()
     }
     else
     {
-	qDebug() << "else";
-// 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(getScreen()));
 	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
     }
 }
@@ -389,7 +382,6 @@ void MainWindow::quit()
 // updating UI from configdata
 void MainWindow::updateUI()
 {
-    qDebug() << "update ui";
     // update delay spinbox
     m_ui->delayBox->setValue(core->conf->getDelay());
 
@@ -437,13 +429,11 @@ void MainWindow::windowHideShow()
         hide();
         trayed = true;
     }
-    qDebug() << "trayed " << trayed;
 }
 
 void MainWindow::showWindow(const QString& str)
 {
     Q_UNUSED(str)
-    qDebug() << "show window"; // add && core->conf->getShowTrayIcon() == true
     if (isHidden() == true && core->conf->getShowTrayIcon() == true)
     {
         mHideShow->setText(tr("Hide"));
@@ -497,7 +487,6 @@ void MainWindow::displayPixmap()
 {
     m_ui->scrLabel->setPixmap(core->getPixmap().scaled(m_ui->scrLabel->size(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation));
-    qDebug() << " display pixmap";
 }
 
 void MainWindow::restoreWindow()
@@ -514,7 +503,6 @@ void MainWindow::restoreWindow()
 
     if (isVisible() == false && trayed == false)
     {
-	qDebug() << "showNormal() " << trayed;
 	showNormal();
 // 	setVisible(true);
     }
@@ -531,7 +519,6 @@ void MainWindow::restoreWindow()
 
 void MainWindow::saveScreen()
 {
-    qDebug() << "saved slot";
     // create initial filepath
     QHash<QString, QString> formatsAvalible;
 
@@ -539,13 +526,8 @@ void MainWindow::saveScreen()
     formatsAvalible["jpg"] = tr("JPEG Files");
     formatsAvalible["bmp"] = tr("BMP Files");
 
-    qDebug() << formatsAvalible;
-        ;
     QString format = core->conf->getSaveFormat();
     QString filePath = core->getSaveFilePath(format);
-
-    qDebug() << "file path == " << format;
-    qDebug() << "file path == " << filePath;
 
     // create file filters
     QString fileFilters;

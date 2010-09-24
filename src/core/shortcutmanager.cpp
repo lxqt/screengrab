@@ -40,26 +40,26 @@ const QString KEY_SHORTCUT_SAVE = "SaveScreen";
 const QString KEY_SHORTCUT_COPY = "CopyScreen";
 const QString KEY_SHORTCUT_OPT = "Options";
 const QString KEY_SHORTCUT_HELP = "Help";
-    
+
 ShortcutManager::ShortcutManager(QSettings *settings) :
     shortcutSettings(new QSettings)
 {
-    shortcutSettings = settings;    
-    // TODO -- make 2 different lists to shortcut storage
+    shortcutSettings = settings;
+
     for(int i = Config::shortcutFullScreen; i <= Config::shortcutHelp; ++i)
     {
 	listShortcuts << Shortcut();
-    } 
+    }
 }
 
 ShortcutManager::~ShortcutManager()
 {
     shortcutSettings = NULL;
-    delete shortcutSettings;    
+    delete shortcutSettings;
 }
 
 void ShortcutManager::loadSettings()
-{    
+{
     shortcutSettings->beginGroup("LocalShortcuts");
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_NEW, DEF_SHORTCUT_NEW).toString(),Config::shortcutNew, Config::localShortcut);
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_SAVE, DEF_SHORTCUT_SAVE).toString(),Config::shortcutSave, Config::localShortcut);
@@ -67,7 +67,7 @@ void ShortcutManager::loadSettings()
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_OPT, DEF_SHORTCUT_OPT).toString(),Config::shortcutOptions, Config::localShortcut);
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_HELP, DEF_SHORTCUT_HELP).toString(),Config::shortcutHelp, Config::localShortcut);
     shortcutSettings->endGroup();
-    
+
     shortcutSettings->beginGroup("GlobalShortcuts");
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_FULL, DEF_SHORTCUT_FULL).toString(),Config::shortcutFullScreen, Config::globalShortcut);
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_ACTW, DEF_SHORTCUT_ACTW).toString(),Config::shortcutActiveWnd, Config::globalShortcut);
@@ -78,18 +78,18 @@ void ShortcutManager::loadSettings()
 void ShortcutManager::saveSettings()
 {
     shortcutSettings->beginGroup("LocalShortcuts");
-    shortcutSettings->setValue(KEY_SHORTCUT_NEW, getShortcut(Config::shortcutNew)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_SAVE, getShortcut(Config::shortcutSave)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_COPY, getShortcut(Config::shortcutCopy)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_OPT, getShortcut(Config::shortcutOptions)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_HELP, getShortcut(Config::shortcutHelp)); 
+    shortcutSettings->setValue(KEY_SHORTCUT_NEW, getShortcut(Config::shortcutNew));
+    shortcutSettings->setValue(KEY_SHORTCUT_SAVE, getShortcut(Config::shortcutSave));
+    shortcutSettings->setValue(KEY_SHORTCUT_COPY, getShortcut(Config::shortcutCopy));
+    shortcutSettings->setValue(KEY_SHORTCUT_OPT, getShortcut(Config::shortcutOptions));
+    shortcutSettings->setValue(KEY_SHORTCUT_HELP, getShortcut(Config::shortcutHelp));
     shortcutSettings->endGroup();
-    
+
     shortcutSettings->beginGroup("GlobalShortcuts");
-    shortcutSettings->setValue(KEY_SHORTCUT_FULL, getShortcut(Config::shortcutFullScreen)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_ACTW, getShortcut(Config::shortcutActiveWnd)); 
-    shortcutSettings->setValue(KEY_SHORTCUT_AREA, getShortcut(Config::shortcutAreaSelect)); 
-    shortcutSettings->endGroup();    
+    shortcutSettings->setValue(KEY_SHORTCUT_FULL, getShortcut(Config::shortcutFullScreen));
+    shortcutSettings->setValue(KEY_SHORTCUT_ACTW, getShortcut(Config::shortcutActiveWnd));
+    shortcutSettings->setValue(KEY_SHORTCUT_AREA, getShortcut(Config::shortcutAreaSelect));
+    shortcutSettings->endGroup();
 }
 
 void ShortcutManager::setDefaultSettings()
@@ -99,7 +99,7 @@ void ShortcutManager::setDefaultSettings()
     setShortcut(DEF_SHORTCUT_COPY,Config::shortcutCopy, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_OPT,Config::shortcutOptions, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_HELP,Config::shortcutHelp, Config::localShortcut);
-    
+
     setShortcut(DEF_SHORTCUT_FULL,Config::shortcutFullScreen, Config::globalShortcut);
     setShortcut(DEF_SHORTCUT_ACTW,Config::shortcutActiveWnd, Config::globalShortcut);
     setShortcut(DEF_SHORTCUT_AREA,Config::shortcutAreaSelect, Config::globalShortcut);

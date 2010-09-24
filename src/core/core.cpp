@@ -87,7 +87,6 @@ void Core::coreQuit()
     {
 	delete corePtr;
 	corePtr = NULL;
-	qDebug() << "kill corePtr";
     }
 
     qApp->quit();
@@ -373,10 +372,7 @@ void Core::autoSave()
 	QString format = conf->getSaveFormat();
 	QString fileName = getSaveFilePath(format);
 
-	if (writeScreen(fileName, format) == true)
-	{
-	    qDebug() << "autosaved";
-	}
+	writeScreen(fileName, format);
 }
 
 

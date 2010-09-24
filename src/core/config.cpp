@@ -64,10 +64,10 @@ Config::Config()
 
     // check existing config file
     if (!QFile::exists(getConfigFile()))
-    {                
+    {
         // creating conf fole from set defaults
         setDefaultSettings();
-        saveSettings();        
+        saveSettings();
     }
 
 // Qt >= 4.5.0
@@ -83,7 +83,7 @@ Config::~Config()
 
     if (QApplication::argc() > 1)
     {
-        delete cmd;        
+        delete cmd;
     }
 
 }
@@ -140,7 +140,7 @@ QString Config::getSaveDir()
 }
 
 void Config::setSaveDir(QString path)
-{    
+{
     setValue(KEY_SAVEDIR, path);
 }
 
@@ -338,8 +338,8 @@ void Config::saveWndSize()
 }
 
 // load all settings  from conf file
-void Config::loadSettings() // TODO - kill configData*
-{    
+void Config::loadSettings()
+{
     settings->beginGroup("Base");
     setSaveDir(settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
     setSaveFileName(settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
@@ -384,14 +384,14 @@ void Config::loadSettings() // TODO - kill configData*
         if (cmd->getParam(QString("region")))
         {
             setTypeScreen(2);
-        }        
+        }
     }
-    
+
     _shortcuts->loadSettings();
 }
 
 void Config::saveSettings()
-{    
+{
     settings->beginGroup("Base");
     settings->setValue(KEY_SAVEDIR, getSaveDir());
     settings->setValue(KEY_SAVENAME, getSaveFileName());
@@ -400,7 +400,7 @@ void Config::saveSettings()
     settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
     settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
     settings->setValue(KEY_AUTOSAVE, getAutoSave());
-#ifdef Q_WS_X11    
+#ifdef Q_WS_X11
     settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
     settings->endGroup();
@@ -418,13 +418,13 @@ void Config::saveSettings()
     settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
     settings->endGroup();
-    
+
     _shortcuts->saveSettings();
 }
 
 // set default values
 void Config::setDefaultSettings()
-{    
+{
     setSaveDir(getDirNameDefault());
     setSaveFileName(DEF_SAVE_NAME);
     setSaveFormat(DEF_SAVE_FORMAT);
@@ -432,14 +432,14 @@ void Config::setDefaultSettings()
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
     setAutoSave(DEF_AUTO_SAVE);
-    setTrayMessages(DEF_TRAY_MESS_TYPE);    
+    setTrayMessages(DEF_TRAY_MESS_TYPE);
     setZoomAroundMouse(DEF_ZOOM_AROUND_MOUSE);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
     setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOWTRAY);
-    
+
     _shortcuts->setDefaultSettings();
 
 #ifdef Q_WS_X11
@@ -447,12 +447,12 @@ void Config::setDefaultSettings()
 #endif
 
     setDelay(DEF_DELAY);
-    setSavedSizeOnExit(DEF_SAVED_SIZE);   
+    setSavedSizeOnExit(DEF_SAVED_SIZE);
 }
 
 // get defaukt directory path
 QString Config::getDirNameDefault()
-{    
+{
 #ifdef Q_WS_X11
     return QDir::homePath()+QDir::separator();    ;
 #endif
@@ -463,7 +463,7 @@ QString Config::getDirNameDefault()
 
 // get id of default save format
 int Config::getDefaultFormatID()
-{    
+{
 
     if (getSaveFormat() == "png")
     {
