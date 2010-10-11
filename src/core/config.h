@@ -46,24 +46,25 @@ const int DEF_WND_HEIGHT = 281;
 const int DEF_TIME_TRAY_MESS = 5;
 const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
+const bool DEF_AUTO_SAVE_FIRST = false;
 const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
 const bool DEF_SHOWTRAY = false;
 
 // class worker with conf data
 class Config
-{            
-public:         
+{
+public:
     //type of shortcut
-    enum Type {	
+    enum Type {
 	globalShortcut = 0,
 	localShortcut = 1
     };
-    
+
     Q_DECLARE_FLAGS(ShortcutType, Type)
-    
+
     //defination of shortcut
-    
-    enum Actions {	
+
+    enum Actions {
 	shortcutFullScreen = 0,
 	shortcutActiveWnd = 1,
 	shortcutAreaSelect = 2,
@@ -73,10 +74,10 @@ public:
 	shortcutOptions = 6,
 	shortcutHelp = 7
     };
-    
-    Q_DECLARE_FLAGS(ShortcutAction, Actions)    
-    
-    
+
+    Q_DECLARE_FLAGS(ShortcutAction, Actions)
+
+
     /**
      * Get current instance of configuration object
      * @return Pointer on created object
@@ -152,8 +153,13 @@ public:
     bool getDateTimeInFilename();
     void setDateTimeInFilename(bool val);
 
+    // auto save screenshot
     bool getAutoSave();
     void setAutoSave(bool val);
+
+    // aoutosave first screenshot
+    bool getAutoSaveFirst();
+    void setAutoSaveFirst(bool val);
 
     // size wnd
     QSize getRestoredWndSize();
@@ -161,7 +167,7 @@ public:
     void saveWndSize();
 
     // get default image save format
-    int getDefaultFormatID();       
+    int getDefaultFormatID();
     QString getDirNameDefault();
 
     // datetime template
@@ -179,14 +185,14 @@ public:
 #ifdef Q_WS_X11
     // no decoration wnd on X11
     bool getNoDecorX11();
-    void setNoDecorX11(bool val);    
+    void setNoDecorX11(bool val);
 #endif
 
-    // shortcuts 
-    
-    
+    // shortcuts
+
+
     static QString getSysLang();
-     
+
     CmdLine* cmdLine();
     ShortcutManager* shortcuts();
 
