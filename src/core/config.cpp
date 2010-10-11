@@ -360,7 +360,7 @@ void Config::loadSettings()
     setDateTimeInFilename(settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
     setDateTimeTpl(settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
-    setAutoSave(settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
+    setAutoSaveFirst(settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
 #ifdef Q_WS_X11
     setNoDecorX11(settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
