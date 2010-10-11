@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -265,7 +265,14 @@
            <string>Automaticaly saving screenshots in grabbing process</string>
           </property>
           <property name="text">
-           <string>Autosave screen</string>
+           <string>Autosave screenshot</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkAutoSaveFirst">
+          <property name="text">
+           <string>Save first screenshot</string>
           </property>
          </widget>
         </item>
@@ -606,7 +613,7 @@
  <customwidgets>
   <customwidget>
    <class>QKeySequenceWidget</class>
-   <extends></extends>
+   <extends>QWidget</extends>
    <header>qkeysequencewidget.h</header>
   </customwidget>
  </customwidgets>

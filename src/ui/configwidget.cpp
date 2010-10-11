@@ -40,7 +40,9 @@ configwidget::configwidget(QWidget *parent) :
     m_ui->tabWidget->setCurrentIndex(0);
     loadSettings();
     on_defDelay_valueChanged(conf->getDefDelay());
-    setVisibleDateTplEdit(conf->getDateTimeInFilename());    
+    setVisibleDateTplEdit(conf->getDateTimeInFilename());
+
+    setVisibleAutoSaveFirst(conf->getAutoSave());
 
     connect(m_ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
     connect(m_ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
@@ -49,12 +51,14 @@ configwidget::configwidget(QWidget *parent) :
     connect(m_ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
     connect(m_ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     connect(m_ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
+    connect(m_ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
+
     on_editDateTmeTpl_textEdited(conf->getDateTimeTpl());
 
     m_ui->treeKeys->expandAll();
     m_ui->treeKeys->header()->setResizeMode(QHeaderView::Stretch);
-    
-    // adding shortcut values in treewidget    
+
+    // adding shortcut values in treewidge
     int action = 0;
     QTreeWidgetItemIterator iter(m_ui->treeKeys);
     while(*iter)
@@ -66,7 +70,7 @@ configwidget::configwidget(QWidget *parent) :
 	}
 	++iter;
     }
-    
+
     // set false visibility to edit hokey controls
     m_ui->labUsedShortcut->setVisible(false);
     m_ui->keyWidget->setVisible(false);
@@ -83,8 +87,8 @@ configwidget::~configwidget()
 
 
 void configwidget::loadSettings()
-{    
-    // main tab    
+{
+    // main tab
     m_ui->editDir->setText(conf->getSaveDir());
     m_ui->editFileName->setText(conf->getSaveFileName());
 
@@ -98,11 +102,12 @@ void configwidget::loadSettings()
     m_ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
 
     // display tab
-    m_ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());    
+    m_ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
     on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
     m_ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
     m_ui->timeTrayMess->setValue(conf->getTimeTrayMess());
     m_ui->checkAutoSave->setChecked(conf->getAutoSave());;
+    m_ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());;
     m_ui->checkZommMouseArea->setChecked(conf->getZoomAroundMouse());
 
     // integration tab
@@ -139,8 +144,13 @@ void configwidget::on_butCancel_clicked()
     reject();
 }
 
+void configwidget::setVisibleAutoSaveFirst(bool status)
+{
+    m_ui->checkAutoSaveFirst->setVisible(status);
+}
+
 void configwidget::saveSettings()
-{    
+{
     // set new values of general settings
     conf->setSaveDir(m_ui->editDir->text());
     conf->setSaveFileName(m_ui->editFileName->text());
@@ -149,6 +159,7 @@ void configwidget::saveSettings()
     conf->setDateTimeInFilename(m_ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(m_ui->editDateTmeTpl->text());
     conf->setAutoSave(m_ui->checkAutoSave->isChecked());
+    conf->setAutoSaveFirst(m_ui->checkAutoSaveFirst->isChecked());
     conf->setTrayMessages(m_ui->cbxTrayMsg->currentIndex());
     conf->setCloseInTray(m_ui->checkInTray->isChecked());
     conf->setZoomAroundMouse(m_ui->checkZommMouseArea->isChecked());
@@ -173,18 +184,18 @@ void configwidget::saveSettings()
 		    break;
 		case 5:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
-		    break;		    
+		    break;
 		default:
 		    break;
-	    }	    
+	    }
 	    ++action;
 	}
 	++iter;
     }
-    
+
     // update values of front-end settings
     conf->saveSettings();
-    conf->setDelay(conf->getDefDelay()); 
+    conf->setDelay(conf->getDefDelay());
     // accep changes
     accept();
 }
@@ -255,7 +266,7 @@ void configwidget::on_cbxTrayMsg_currentIndexChanged(int index)
     switch(m_ui->cbxTrayMsg->currentIndex())
     {
         case 0:
-        {        
+        {
             m_ui->labTimeTrayMess->setVisible(false);
             m_ui->timeTrayMess->setVisible(false);
             break;
@@ -280,7 +291,7 @@ void configwidget::setVisibleDateTplEdit(bool checked)
         else
         {
             m_ui->editDateTmeTpl->setVisible(true);
-            m_ui->labMask->setVisible(true);            
+            m_ui->labMask->setVisible(true);
             m_ui->labMaskExample->setVisible(true);
         }
 }
@@ -324,7 +335,7 @@ void configwidget::on_treeKeys_clicked(QModelIndex index)
 	//QTreeWidgetItem item =
 	QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
 	m_ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
-        
+
     }
     else
     {
@@ -406,7 +417,7 @@ bool configwidget::checkUsedShortcuts()
 	{
 	    return true;
 	}
-	++iter;	
+	++iter;
     }
     return false;
 }

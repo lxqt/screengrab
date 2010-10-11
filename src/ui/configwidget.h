@@ -44,12 +44,12 @@ protected:
 
 private:
     Ui::configwidget *m_ui;
-    void loadSettings();    
+    void loadSettings();
     QString getFormat();
     bool checkUsedShortcuts();
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
 
-private slots:                            
+private slots:
     void on_treeKeys_expanded(QModelIndex index);
     void on_treeKeys_collapsed(QModelIndex index);
     void on_treeKeys_clicked(QModelIndex index);
@@ -60,12 +60,14 @@ private slots:
     void on_timeTrayMess_valueChanged(int );
     void on_defDelay_valueChanged(int );
     void on_butCancel_clicked();
-    void  saveSettings();
+
+    void setVisibleAutoSaveFirst(bool status);
+    void saveSettings();
     void selectDir();
     void restoreDefaults();
     void acceptShortcut(const QKeySequence &seq);
     void changeShortcut(const QKeySequence &seq);
-    void keyNotSupported();        
+    void keyNotSupported();
 };
 
 #endif // CONFIGWIDGET_H
