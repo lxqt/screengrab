@@ -39,7 +39,7 @@ configwidget::configwidget(QWidget *parent) :
 
     m_ui->tabWidget->setCurrentIndex(0);
     loadSettings();
-    on_defDelay_valueChanged(conf->getDefDelay());
+    changeDefDelay(conf->getDefDelay());
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
 
     setVisibleAutoSaveFirst(conf->getAutoSave());
@@ -52,8 +52,17 @@ configwidget::configwidget(QWidget *parent) :
     connect(m_ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     connect(m_ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
     connect(m_ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
+    connect(m_ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
+    connect(m_ui->treeKeys, SIGNAL(expanded(QModelIndex)), m_ui->treeKeys, SLOT(clearSelection()));
+    connect(m_ui->treeKeys, SIGNAL(collapsed(QModelIndex)), this, SLOT(collapsTreeKeys(QModelIndex)));
+    connect(m_ui->treeKeys, SIGNAL(clicked(QModelIndex)), this, SLOT(clickTreeKeys(QModelIndex)));
+    connect(m_ui->checkShowTray, SIGNAL(toggled(bool)), this, SLOT(toggleCheckShowTray(bool)));
+    connect(m_ui->editDateTmeTpl, SIGNAL(textEdited(QString)), this, SLOT(editDateTmeTpl(QString)));
+    connect(m_ui->defDelay, SIGNAL(valueChanged(int)), this, SLOT(changeDefDelay(int)));
+    connect(m_ui->timeTrayMess, SIGNAL(valueChanged(int)), this, SLOT(changeTimeTrayMess(int)));
+    connect(m_ui->cbxTrayMsg, SIGNAL(currentIndexChanged(int)), this, SLOT(changeTrayMsgType(int)));
 
-    on_editDateTmeTpl_textEdited(conf->getDateTimeTpl());
+    editDateTmeTpl(conf->getDateTimeTpl());
 
     m_ui->treeKeys->expandAll();
     m_ui->treeKeys->header()->setResizeMode(QHeaderView::Stretch);
@@ -103,7 +112,8 @@ void configwidget::loadSettings()
 
     // display tab
     m_ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
-    on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
+    changeTrayMsgType(m_ui->cbxTrayMsg->currentIndex());
+//     on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
     m_ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
     m_ui->timeTrayMess->setValue(conf->getTimeTrayMess());
     m_ui->checkAutoSave->setChecked(conf->getAutoSave());;
@@ -121,7 +131,8 @@ void configwidget::loadSettings()
     m_ui->checkNoDecorX11->setVisible(false);
 #endif
     m_ui->checkShowTray->setChecked(conf->getShowTrayIcon());
-    on_checkShowTray_toggled(conf->getShowTrayIcon());
+//     on_checkShowTray_toggled(conf->getShowTrayIcon());
+    toggleCheckShowTray(conf->getShowTrayIcon());
 
 }
 
@@ -136,12 +147,6 @@ void configwidget::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-void configwidget::on_butCancel_clicked()
-{
-    // rejecting changes
-    reject();
 }
 
 void configwidget::setVisibleAutoSaveFirst(bool status)
@@ -248,35 +253,35 @@ void configwidget::restoreDefaults()
     accept();
 }
 
-void configwidget::on_defDelay_valueChanged(int )
+void configwidget::changeDefDelay(int val)
 {
-    if (m_ui->defDelay->value() == 0 )
+    if (val == 0 )
     {
-        m_ui->defDelay->setSpecialValueText(tr( "None"));
+	m_ui->defDelay->setSpecialValueText(tr( "None"));
     }
 }
 
-void configwidget::on_timeTrayMess_valueChanged(int )
+void configwidget::changeTimeTrayMess(int sec)
 {
-    conf->setTimeTrayMess(m_ui->timeTrayMess->value());
+    conf->setTimeTrayMess(sec);
 }
 
-void configwidget::on_cbxTrayMsg_currentIndexChanged(int index)
+void configwidget::changeTrayMsgType(int type)
 {
-    switch(m_ui->cbxTrayMsg->currentIndex())
+    switch(type)
     {
-        case 0:
-        {
-            m_ui->labTimeTrayMess->setVisible(false);
-            m_ui->timeTrayMess->setVisible(false);
-            break;
-        }
-        default:
-        {
-                m_ui->labTimeTrayMess->setVisible(true);
-                m_ui->timeTrayMess->setVisible(true);
-                break;
-        }
+	case 0:
+	{
+	    m_ui->labTimeTrayMess->setVisible(false);
+	    m_ui->timeTrayMess->setVisible(false);
+	    break;
+	}
+	default:
+	{
+	    m_ui->labTimeTrayMess->setVisible(true);
+	    m_ui->timeTrayMess->setVisible(true);
+	    break;
+	}
     }
 }
 
@@ -297,41 +302,27 @@ void configwidget::setVisibleDateTplEdit(bool checked)
 }
 
 
-
-void configwidget::on_editDateTmeTpl_textEdited(QString str)
+void configwidget::editDateTmeTpl(QString str)
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(str );
     m_ui->labMaskExample->setText(tr("Example: ") + currentDateTime);
 }
 
-
-void configwidget::on_checkShowTray_toggled(bool checked)
+void configwidget::toggleCheckShowTray(bool checked)
 {
-    if (checked == true)
-    {
-        m_ui->labTrayMessages->setVisible(true);
-        m_ui->cbxTrayMsg->setVisible(true);
-        m_ui->timeTrayMess->setVisible(true);
-        m_ui->labTimeTrayMess->setVisible(true);
-        m_ui->checkInTray->setVisible(true);
-    }
-    else
-    {
-        m_ui->labTrayMessages->setVisible(false);
-        m_ui->cbxTrayMsg->setVisible(false);
-        m_ui->timeTrayMess->setVisible(false);
-        m_ui->labTimeTrayMess->setVisible(false);
-        m_ui->checkInTray->setVisible(false);
-    }
+    m_ui->labTrayMessages->setVisible(checked);
+    m_ui->cbxTrayMsg->setVisible(checked);
+    m_ui->timeTrayMess->setVisible(checked);
+    m_ui->labTimeTrayMess->setVisible(checked);
+    m_ui->checkInTray->setVisible(checked);
 }
 
-
-void configwidget::on_treeKeys_clicked(QModelIndex index)
+void configwidget::clickTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == true)
     {
 	m_ui->labUsedShortcut->setVisible(true);
-        m_ui->keyWidget->setVisible(true);
+	m_ui->keyWidget->setVisible(true);
 	//QTreeWidgetItem item =
 	QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
 	m_ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
@@ -340,22 +331,17 @@ void configwidget::on_treeKeys_clicked(QModelIndex index)
     else
     {
 	m_ui->labUsedShortcut->setVisible(false);
-        m_ui->keyWidget->setVisible(false);
+	m_ui->keyWidget->setVisible(false);
     }
 }
 
-void configwidget::on_treeKeys_collapsed(QModelIndex index)
+void configwidget::collapsTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == false)
     {
-        m_ui->labUsedShortcut->setVisible(false);
-        m_ui->keyWidget->setVisible(false);
+	m_ui->labUsedShortcut->setVisible(false);
+	m_ui->keyWidget->setVisible(false);
     }
-}
-
-void configwidget::on_treeKeys_expanded(QModelIndex index)
-{
-    m_ui->treeKeys->clearSelection();
 }
 
 void configwidget::acceptShortcut(const QKeySequence& seq)

@@ -50,17 +50,14 @@ private:
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
 
 private slots:
-    void on_treeKeys_expanded(QModelIndex index);
-    void on_treeKeys_collapsed(QModelIndex index);
-    void on_treeKeys_clicked(QModelIndex index);
-    void on_checkShowTray_toggled(bool checked);
-    void on_editDateTmeTpl_textEdited(QString );
+    void collapsTreeKeys(QModelIndex index);
+    void clickTreeKeys(QModelIndex index);
+    void toggleCheckShowTray(bool checked);
+    void editDateTmeTpl(QString str);
     void setVisibleDateTplEdit(bool);
-    void on_cbxTrayMsg_currentIndexChanged(int index);
-    void on_timeTrayMess_valueChanged(int );
-    void on_defDelay_valueChanged(int );
-    void on_butCancel_clicked();
-
+    void changeTrayMsgType(int type);
+    void changeTimeTrayMess(int sec);
+    void changeDefDelay(int val);
     void setVisibleAutoSaveFirst(bool status);
     void saveSettings();
     void selectDir();
