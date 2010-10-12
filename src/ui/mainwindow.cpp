@@ -453,7 +453,6 @@ void MainWindow::showWindow(const QString& str)
 #endif
 }
 
-
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 {
@@ -464,7 +463,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
             case 0: break; // is never sjow
             case 1: // is hidden main wnd
             {
-                if (isHidden() == true )//&& trayed == true
+		if (isHidden() == true && trayed == true)
                 {
                     trayIcon->showMessage(titleMsg, bodyMsg,
                     QSystemTrayIcon::MessageIcon(), core->conf->getTimeTrayMess()*1000 ); //5000
