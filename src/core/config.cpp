@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
+#include <QtCore/QVector>
 #include <QtGui/QDesktopServices>
 
 #include <QDebug>
@@ -71,7 +72,8 @@ Config::Config()
         saveSettings();
     }
 
-// Qt >= 4.5.0
+    imageFormats << "png" << "jpg" << "bmp";
+
 #if QT_VERSION >= 0x040500
     settings->setIniCodec("UTF-8");
 #endif
@@ -479,25 +481,7 @@ QString Config::getDirNameDefault()
 // get id of default save format
 int Config::getDefaultFormatID()
 {
-
-    if (getSaveFormat() == "png")
-    {
-        return 0;
-    }
-    else if (getSaveFormat() == "jpg")
-    {
-        return 1;
-    }
-    else if (getSaveFormat() == "bmp")
-    {
-        return 2;
-    }
-
-    else
-    {
-        return 0;
-    }
-
+    return imageFormats.indexOf(getSaveFormat());
 }
 
 QString Config::getSysLang()

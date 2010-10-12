@@ -224,6 +224,8 @@ private:
 
     CmdLine *cmd;
     ShortcutManager *_shortcuts;
+
+    QVector<QString> imageFormats;
 };
 
 #endif // CONFIG_H
