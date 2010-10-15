@@ -200,9 +200,8 @@ void MainWindow::showOptions()
 {
     ConfigDialog *options;
     options = new ConfigDialog();
+    globalShortcutBlock(true);
 
-    // FIXME uncomen fo a trayed mode
-    // fi minimized main wnd
     if (isMinimized() == true)
     {
         showNormal();
@@ -224,6 +223,7 @@ void MainWindow::showOptions()
         }
     }
 
+    globalShortcutBlock(false);
     delete options;
 }
 
@@ -594,6 +594,15 @@ void MainWindow::createShortcuts()
 	globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
 }
+
+void MainWindow::globalShortcutBlock(bool state)
+{
+    for (int i = 0; i < globalShortcuts.count(); ++i )
+    {
+	globalShortcuts[i]->setDisabled(state);
+    }
+}
+
 
 void MainWindow::globalShortcutActivate(int type)
 {
