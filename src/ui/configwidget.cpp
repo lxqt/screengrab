@@ -343,7 +343,7 @@ void configwidget::doubleclickTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == true)
     {
-	qDebug() << "d-click";
+	m_ui->keyWidget->captureKeySequence();
     }
 }
 

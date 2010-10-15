@@ -40,27 +40,27 @@ class QKeySequenceWidgetPrivate;
   \class QKeySequenceWidget
 
   \brief The QKeySequenceWidget is a widget to input a QKeySequence.
-  
+
   This widget lets the user choose a QKeySequence, which is usually used as a
   shortcut key. The recording is initiated by calling captureKeySequence() or
   the user clicking into the widget.
-  
+
   \code
     // create new QKeySequenceWidget with empty sequence
     QKeySequenceWidget *keyWidget = new QKeySequenceWidget;
-    
+
     // Set sequence as "Ctrl+Alt+Space"
     keyWidget->setJeySequence(QKeySequence("Ctrl+Alt+Space"));
-    
+
     // set clear button position is left
     setClearButtonShow(QKeySequenceWidget::ShowLeft);
-    
+
     // set cutom clear button icon
     setClearButtonIcon(QIcon("/path/to/icon.png"));
-    
+
     // connecting keySequenceChanged signal to slot
     connect(keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(slotKeySequenceChanged(QKeySequence)));
-  \endcode 
+  \endcode
 */
 class QKeySequenceWidget : public QWidget
 {
@@ -76,9 +76,6 @@ class QKeySequenceWidget : public QWidget
 private:
     QKeySequenceWidgetPrivate * const d_ptr;
     void _connectingSlots();
-
-private Q_SLOTS:
-    void captureKeySequence();
 
 public:
     explicit QKeySequenceWidget(QWidget *parent = 0);
@@ -111,12 +108,13 @@ Q_SIGNALS:
     void keySequenceAccepted(const QKeySequence &seq);
     void keyNotSupported();
 
-public Q_SLOTS:    
+public Q_SLOTS:
     void setKeySequence(const QKeySequence &key);
     void clearKeySequence();
-    void setNoneText(const QString text);        
+    void setNoneText(const QString text);
     void setClearButtonIcon(const QIcon& icon);
     void setClearButtonShow(QKeySequenceWidget::ClearButtonShow show);
+    void captureKeySequence();
 };
 
 #endif // QKEYSEQUENCEWIDGET_H

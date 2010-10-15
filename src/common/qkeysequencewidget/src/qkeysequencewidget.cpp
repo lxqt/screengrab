@@ -171,7 +171,10 @@ void QKeySequenceWidget::clearKeySequence()
     setKeySequence(QKeySequence());
 }
 
-// slot for capture key sequence starting (private)
+/*!
+ * Start process capturing key sequence.
+ * This slot is designed for software process capturing key sequence.
+ */
 void QKeySequenceWidget::captureKeySequence()
 {
     d_ptr->startRecording();
