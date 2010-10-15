@@ -55,12 +55,15 @@ configwidget::configwidget(QWidget *parent) :
     connect(m_ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
     connect(m_ui->treeKeys, SIGNAL(expanded(QModelIndex)), m_ui->treeKeys, SLOT(clearSelection()));
     connect(m_ui->treeKeys, SIGNAL(collapsed(QModelIndex)), this, SLOT(collapsTreeKeys(QModelIndex)));
-    connect(m_ui->treeKeys, SIGNAL(clicked(QModelIndex)), this, SLOT(clickTreeKeys(QModelIndex)));
+//     connect(m_ui->treeKeys, SIGNAL(clicked(QModelIndex)), this, SLOT(clickTreeKeys(QModelIndex)));
     connect(m_ui->checkShowTray, SIGNAL(toggled(bool)), this, SLOT(toggleCheckShowTray(bool)));
     connect(m_ui->editDateTmeTpl, SIGNAL(textEdited(QString)), this, SLOT(editDateTmeTpl(QString)));
     connect(m_ui->defDelay, SIGNAL(valueChanged(int)), this, SLOT(changeDefDelay(int)));
     connect(m_ui->timeTrayMess, SIGNAL(valueChanged(int)), this, SLOT(changeTimeTrayMess(int)));
     connect(m_ui->cbxTrayMsg, SIGNAL(currentIndexChanged(int)), this, SLOT(changeTrayMsgType(int)));
+    connect(m_ui->treeKeys, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
+    connect(m_ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
+    connect(m_ui->treeKeys, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 
     editDateTmeTpl(conf->getDateTimeTpl());
 
@@ -317,23 +320,33 @@ void configwidget::toggleCheckShowTray(bool checked)
     m_ui->checkInTray->setVisible(checked);
 }
 
-void configwidget::clickTreeKeys(QModelIndex index)
+void configwidget::currentItemChanged(QTreeWidgetItem* c, QTreeWidgetItem* p)
 {
-    if (index.parent().isValid() == true)
+    QKeySequence ks("");
+    qDebug() << "c->parent() " << c->parent();
+    qDebug() << "p " << p << "  " << c->data(1, Qt::DisplayRole).toString();
+    if (c->parent() != NULL)
     {
 	m_ui->labUsedShortcut->setVisible(true);
-	m_ui->keyWidget->setVisible(true);
-	//QTreeWidgetItem item =
-	QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
-	m_ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
+    	m_ui->keyWidget->setVisible(true);
 
+    	m_ui->keyWidget->setKeySequence(QKeySequence(c->data(1, Qt::DisplayRole).toString()));
     }
     else
     {
 	m_ui->labUsedShortcut->setVisible(false);
-	m_ui->keyWidget->setVisible(false);
+    	m_ui->keyWidget->setVisible(false);
     }
 }
+
+void configwidget::doubleclickTreeKeys(QModelIndex index)
+{
+    if (index.parent().isValid() == true)
+    {
+	qDebug() << "d-click";
+    }
+}
+
 
 void configwidget::collapsTreeKeys(QModelIndex index)
 {

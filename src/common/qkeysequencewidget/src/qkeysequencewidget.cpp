@@ -29,7 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDebug>
 #include <QEvent>
 #include <QKeyEvent>
-#include <QIcon>	
+#include <QIcon>
 
 #include "qkeysequencewidget_p.h"
 #include "qkeysequencewidget.h"
@@ -44,11 +44,11 @@ QKeySequenceWidget::QKeySequenceWidget(QWidget *parent) :
     d->q_ptr = this;
     d->init(QKeySequence(), QString());
 
-    _connectingSlots();    
+    _connectingSlots();
 }
 
 /*!
-  Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence 
+  Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
   and string for \a noneString
 */
 QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWidget *parent) :
@@ -62,7 +62,7 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWi
 }
 
 /*!
-  Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence   
+  Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
 */
 QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
@@ -149,8 +149,6 @@ void QKeySequenceWidget::setKeySequence(const QKeySequence& key)
 
     d_ptr->currentSequence = key;
     d_ptr->doneRecording();
-    qDebug() << "soft changer sequence";
-//     d_ptr->updateDisplayShortcut();
 }
 
 /*!
@@ -222,7 +220,7 @@ QIcon QKeySequenceWidget::clearButtonIcon() const
 
 // connection internal signals & slots
 void QKeySequenceWidget::_connectingSlots()
-{ 
+{
     // connect signals to slots
     connect(d_ptr->clearButton, SIGNAL(clicked()), this,
 SLOT(clearKeySequence()));
@@ -272,7 +270,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence keySeq, const QString no
     q_ptr->clearKeySequence();
     currentSequence = keySeq;
 
-    shortcutButton->setFocusPolicy(Qt::StrongFocus);    
+    shortcutButton->setFocusPolicy(Qt::StrongFocus);
 
     layout->addWidget(shortcutButton);
 
@@ -347,8 +345,12 @@ void QKeySequenceWidgetPrivate::doneRecording()
     }
     else
     {
-	emit q_ptr->keySequenceChanged(currentSequence);
+	if (oldSequence.isEmpty() != true)
+	{
+	    emit q_ptr->keySequenceChanged(currentSequence);
+	}
     }
+
     isRecording = false;
     shortcutButton->releaseKeyboard();
     shortcutButton->setDown(false);
@@ -361,10 +363,6 @@ void QKeySequenceWidgetPrivate::doneRecording()
 
         return;
     }
-
-    // key sequnce is changed
-//      emit q_ptr->keySequenceChanged(currentSequence);
-    
 
     // update Shortcut display
     updateDisplayShortcut();
@@ -428,8 +426,8 @@ void QKeySequenceWidgetPrivate::updateDisplayShortcut()
 
     // if is noting
     if (str.isEmpty() == true)
-    {	
-        str = noneSequenceText;        
+    {
+        str = noneSequenceText;
     }
 
     shortcutButton->setText(str);

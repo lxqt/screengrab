@@ -27,6 +27,7 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QDateTime>
 #include <QtCore/QModelIndex>
+#include <QtGui/QTreeWidgetItem>
 
 namespace Ui {
     class configwidget;
@@ -51,8 +52,9 @@ private:
 
 private slots:
     void collapsTreeKeys(QModelIndex index);
-    void clickTreeKeys(QModelIndex index);
+    void doubleclickTreeKeys(QModelIndex index);
     void toggleCheckShowTray(bool checked);
+    void currentItemChanged(QTreeWidgetItem *c ,QTreeWidgetItem *p);
     void editDateTmeTpl(QString str);
     void setVisibleDateTplEdit(bool);
     void changeTrayMsgType(int type);
