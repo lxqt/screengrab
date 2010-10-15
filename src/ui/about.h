@@ -31,11 +31,11 @@ namespace Ui {
     class aboutWidget;
 }
 
-class aboutWidget : public QDialog {
+class AboutDialog : public QDialog {
     Q_OBJECT
 public:
-    explicit aboutWidget(QWidget *parent = 0);
-    ~aboutWidget();
+    explicit AboutDialog(QWidget *parent = 0);
+    ~AboutDialog();
 
 protected:
     void changeEvent(QEvent *e);

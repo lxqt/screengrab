@@ -198,8 +198,8 @@ void MainWindow::showHelp()
 
 void MainWindow::showOptions()
 {
-    configwidget *options;
-    options = new configwidget();
+    ConfigDialog *options;
+    options = new ConfigDialog();
 
     // FIXME uncomen fo a trayed mode
     // fi minimized main wnd
@@ -229,8 +229,8 @@ void MainWindow::showOptions()
 
 void MainWindow::showAbout()
 {
-    aboutWidget *about;
-    about = new aboutWidget(this);
+    AboutDialog *about;
+    about = new AboutDialog(this);
 
     // fi minimized main wnd
         if (isMinimized() == true)

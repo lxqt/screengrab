@@ -33,18 +33,18 @@ namespace Ui {
     class configwidget;
 }
 // , public Config
-class configwidget : public QDialog{
+class ConfigDialog : public QDialog{
     Q_OBJECT
 public:
-    configwidget( QWidget *parent = 0);
-    ~configwidget();
+    ConfigDialog( QWidget *parent = 0);
+    ~ConfigDialog();
     Config *conf;
 
 protected:
     void changeEvent(QEvent *e);
 
 private:
-    Ui::configwidget *m_ui;
+    Ui::configwidget *ui;
     void loadSettings();
     QString getFormat();
     bool checkUsedShortcuts();
