@@ -133,14 +133,16 @@ void Core::screenShot(bool first)
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
 
-
     if (conf->getAutoSave() == true)
     {
 	// small hack for display tray message on first screenshot (on starting
 	// ScreenGrab in KDE, fluxbox and something wm)
 	if (first == true)
 	{
-	    QTimer::singleShot(600, this, SLOT(autoSave()));
+	    if (conf->getAutoSaveFirst() == true)
+	    {
+		QTimer::singleShot(600, this, SLOT(autoSave()));
+	    }
 	}
 	else
 	{

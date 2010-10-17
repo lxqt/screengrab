@@ -27,45 +27,46 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QDateTime>
 #include <QtCore/QModelIndex>
+#include <QtGui/QTreeWidgetItem>
 
 namespace Ui {
     class configwidget;
 }
 // , public Config
-class configwidget : public QDialog{
+class ConfigDialog : public QDialog{
     Q_OBJECT
 public:
-    configwidget( QWidget *parent = 0);
-    ~configwidget();
+    ConfigDialog( QWidget *parent = 0);
+    ~ConfigDialog();
     Config *conf;
 
 protected:
     void changeEvent(QEvent *e);
 
 private:
-    Ui::configwidget *m_ui;
-    void loadSettings();    
+    Ui::configwidget *ui;
+    void loadSettings();
     QString getFormat();
     bool checkUsedShortcuts();
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
 
-private slots:                            
-    void on_treeKeys_expanded(QModelIndex index);
-    void on_treeKeys_collapsed(QModelIndex index);
-    void on_treeKeys_clicked(QModelIndex index);
-    void on_checkShowTray_toggled(bool checked);
-    void on_editDateTmeTpl_textEdited(QString );
+private slots:
+    void collapsTreeKeys(QModelIndex index);
+    void doubleclickTreeKeys(QModelIndex index);
+    void toggleCheckShowTray(bool checked);
+    void currentItemChanged(QTreeWidgetItem *c ,QTreeWidgetItem *p);
+    void editDateTmeTpl(QString str);
     void setVisibleDateTplEdit(bool);
-    void on_cbxTrayMsg_currentIndexChanged(int index);
-    void on_timeTrayMess_valueChanged(int );
-    void on_defDelay_valueChanged(int );
-    void on_butCancel_clicked();
-    void  saveSettings();
+    void changeTrayMsgType(int type);
+    void changeTimeTrayMess(int sec);
+    void changeDefDelay(int val);
+    void setVisibleAutoSaveFirst(bool status);
+    void saveSettings();
     void selectDir();
     void restoreDefaults();
     void acceptShortcut(const QKeySequence &seq);
     void changeShortcut(const QKeySequence &seq);
-    void keyNotSupported();        
+    void keyNotSupported();
 };
 
 #endif // CONFIGWIDGET_H

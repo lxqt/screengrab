@@ -46,6 +46,7 @@ const int DEF_WND_HEIGHT = 281;
 const int DEF_TIME_TRAY_MESS = 5;
 const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
+const bool DEF_AUTO_SAVE_FIRST = false;
 const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
 const bool DEF_SHOWTRAY = false;
 
@@ -152,8 +153,13 @@ public:
     bool getDateTimeInFilename();
     void setDateTimeInFilename(bool val);
 
+    // auto save screenshot
     bool getAutoSave();
     void setAutoSave(bool val);
+
+    // aoutosave first screenshot
+    bool getAutoSaveFirst();
+    void setAutoSaveFirst(bool val);
 
     // size wnd
     QSize getRestoredWndSize();
@@ -218,6 +224,8 @@ private:
 
     CmdLine *cmd;
     ShortcutManager *_shortcuts;
+
+    QVector<QString> imageFormats;
 };
 
 #endif // CONFIG_H

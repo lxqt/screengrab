@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
+#include <QtCore/QVector>
 #include <QtGui/QDesktopServices>
 
 #include <QDebug>
@@ -35,6 +36,7 @@ const QString KEY_DELAY = "delay";
 const QString KEY_FILENAMEDATE = "insDateTimeInFilename";
 const QString KEY_DATETIME_TPL = "templateDateTime";
 const QString KEY_AUTOSAVE = "autoSave";
+const QString KEY_AUTOSAVE_FIRST = "autoSaveFirst";
 const QString KEY_SHOW_TRAY = "showTrayIcon";
 
 const QString KEY_SAVEWND = "zoomAroundMouse";
@@ -70,7 +72,8 @@ Config::Config()
         saveSettings();
     }
 
-// Qt >= 4.5.0
+    imageFormats << "png" << "jpg" << "bmp";
+
 #if QT_VERSION >= 0x040500
     settings->setIniCodec("UTF-8");
 #endif
@@ -286,6 +289,17 @@ void Config::setAutoSave(bool val)
     setValue(KEY_AUTOSAVE, val);
 }
 
+bool Config::getAutoSaveFirst()
+{
+    return value(KEY_AUTOSAVE_FIRST).toBool();
+}
+
+void Config::setAutoSaveFirst(bool val)
+{
+    setValue(KEY_AUTOSAVE_FIRST, val);
+}
+
+
 QString Config::getDateTimeTpl()
 {
     return value(KEY_DATETIME_TPL).toString();
@@ -348,6 +362,7 @@ void Config::loadSettings()
     setDateTimeInFilename(settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
     setDateTimeTpl(settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
+    setAutoSaveFirst(settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
 #ifdef Q_WS_X11
     setNoDecorX11(settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
@@ -400,6 +415,7 @@ void Config::saveSettings()
     settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
     settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
     settings->setValue(KEY_AUTOSAVE, getAutoSave());
+    settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
 #ifdef Q_WS_X11
     settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
@@ -432,6 +448,7 @@ void Config::setDefaultSettings()
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
     setAutoSave(DEF_AUTO_SAVE);
+    setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
     setTrayMessages(DEF_TRAY_MESS_TYPE);
     setZoomAroundMouse(DEF_ZOOM_AROUND_MOUSE);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
@@ -464,25 +481,7 @@ QString Config::getDirNameDefault()
 // get id of default save format
 int Config::getDefaultFormatID()
 {
-
-    if (getSaveFormat() == "png")
-    {
-        return 0;
-    }
-    else if (getSaveFormat() == "jpg")
-    {
-        return 1;
-    }
-    else if (getSaveFormat() == "bmp")
-    {
-        return 2;
-    }
-
-    else
-    {
-        return 0;
-    }
-
+    return imageFormats.indexOf(getSaveFormat());
 }
 
 QString Config::getSysLang()

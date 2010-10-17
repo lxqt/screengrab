@@ -199,11 +199,10 @@ void MainWindow::showHelp()
 
 void MainWindow::showOptions()
 {
-    configwidget *options;
-    options = new configwidget();
+    ConfigDialog *options;
+    options = new ConfigDialog();
+    globalShortcutBlock(true);
 
-    // FIXME uncomen fo a trayed mode
-    // fi minimized main wnd
     if (isMinimized() == true)
     {
         showNormal();
@@ -225,13 +224,14 @@ void MainWindow::showOptions()
         }
     }
 
+    globalShortcutBlock(false);
     delete options;
 }
 
 void MainWindow::showAbout()
 {
-    aboutWidget *about;
-    about = new aboutWidget(this);
+    AboutDialog *about;
+    about = new AboutDialog(this);
 
     // fi minimized main wnd
         if (isMinimized() == true)
@@ -454,7 +454,6 @@ void MainWindow::showWindow(const QString& str)
 #endif
 }
 
-
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 {
@@ -465,7 +464,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
             case 0: break; // is never sjow
             case 1: // is hidden main wnd
             {
-                if (isHidden() == true )//&& trayed == true
+		if (isHidden() == true && trayed == true)
                 {
                     trayIcon->showMessage(titleMsg, bodyMsg,
                     QSystemTrayIcon::MessageIcon(), core->conf->getTimeTrayMess()*1000 ); //5000
@@ -596,6 +595,15 @@ void MainWindow::createShortcuts()
 	globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
 }
+
+void MainWindow::globalShortcutBlock(bool state)
+{
+    for (int i = 0; i < globalShortcuts.count(); ++i )
+    {
+	globalShortcuts[i]->setDisabled(state);
+    }
+}
+
 
 void MainWindow::globalShortcutActivate(int type)
 {

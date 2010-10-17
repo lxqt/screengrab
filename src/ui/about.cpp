@@ -24,7 +24,7 @@
 #include "src/core/core.h"
 #include <QtGui/QDesktopServices>
 
-aboutWidget::aboutWidget(QWidget *parent):
+AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),
     ui(new Ui::aboutWidget)
 {    
@@ -58,12 +58,12 @@ aboutWidget::aboutWidget(QWidget *parent):
     ui->txtArea->setHtml(getAbouT());
 }
 
-aboutWidget::~aboutWidget()
+AboutDialog::~AboutDialog()
 {
     delete ui;
 }
 
-void aboutWidget::changeTab(int tabIndex)
+void AboutDialog::changeTab(int tabIndex)
 {    
     // trnder text info
     switch(tabIndex)
@@ -79,7 +79,7 @@ void aboutWidget::changeTab(int tabIndex)
     }
 }
 
-void aboutWidget::changeEvent(QEvent *e)
+void AboutDialog::changeEvent(QEvent *e)
 {
     QDialog::changeEvent(e);
     switch (e->type()) {
@@ -91,17 +91,17 @@ void aboutWidget::changeEvent(QEvent *e)
     }
 }
 
-void aboutWidget::on_butAboutQt_clicked()
+void AboutDialog::on_butAboutQt_clicked()
 {
     qApp->aboutQt();
 }
 
-void aboutWidget::on_butClose_clicked()
+void AboutDialog::on_butClose_clicked()
 {
     accept();
 }
 
-QString aboutWidget::getAbouT()
+QString AboutDialog::getAbouT()
 {
     QString str;
     str += "<b>ScreenGrab</b> ";
@@ -114,7 +114,7 @@ QString aboutWidget::getAbouT()
     return str;
 }
 
-QString aboutWidget::getContscts()
+QString AboutDialog::getContscts()
 {
     QString str;
     str += tr("E-Mail")+" ";
@@ -127,7 +127,7 @@ QString aboutWidget::getContscts()
     return str;
 }
 
-QString aboutWidget::getThanks()
+QString AboutDialog::getThanks()
 {
     QString str;
     str += "<b>" + tr("Translate:") + "</b>";
@@ -144,7 +144,7 @@ QString aboutWidget::getThanks()
     return str;
 }
 
-void aboutWidget::on_txtArea_anchorClicked(QUrl url)
+void AboutDialog::on_txtArea_anchorClicked(QUrl url)
 {
     QDesktopServices::openUrl(url);
 }

@@ -30,33 +30,49 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QTreeWidgetItemIterator>
 
-configwidget::configwidget(QWidget *parent) :
+ConfigDialog::ConfigDialog(QWidget *parent) :
     QDialog(parent),
-    m_ui(new Ui::configwidget)
+    ui(new Ui::configwidget)
 {
-    m_ui->setupUi(this);
+    ui->setupUi(this);
     conf = Config::instance();
 
-    m_ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setCurrentIndex(0);
     loadSettings();
-    on_defDelay_valueChanged(conf->getDefDelay());
-    setVisibleDateTplEdit(conf->getDateTimeInFilename());    
+    changeDefDelay(conf->getDefDelay());
+    setVisibleDateTplEdit(conf->getDateTimeInFilename());
 
-    connect(m_ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
-    connect(m_ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
-    connect(m_ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
-    connect(m_ui->checkIncDate, SIGNAL(toggled(bool)), this, SLOT(setVisibleDateTplEdit(bool)));
-    connect(m_ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
-    connect(m_ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
-    connect(m_ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
-    on_editDateTmeTpl_textEdited(conf->getDateTimeTpl());
+    setVisibleAutoSaveFirst(conf->getAutoSave());
 
-    m_ui->treeKeys->expandAll();
-    m_ui->treeKeys->header()->setResizeMode(QHeaderView::Stretch);
-    
-    // adding shortcut values in treewidget    
+    connect(ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
+    connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
+    connect(ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
+    connect(ui->checkIncDate, SIGNAL(toggled(bool)), this, SLOT(setVisibleDateTplEdit(bool)));
+    connect(ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
+    connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
+    connect(ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
+    connect(ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
+    connect(ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
+    connect(ui->treeKeys, SIGNAL(expanded(QModelIndex)), ui->treeKeys, SLOT(clearSelection()));
+    connect(ui->treeKeys, SIGNAL(collapsed(QModelIndex)), this, SLOT(collapsTreeKeys(QModelIndex)));
+//     connect(m_ui->treeKeys, SIGNAL(clicked(QModelIndex)), this, SLOT(clickTreeKeys(QModelIndex)));
+    connect(ui->checkShowTray, SIGNAL(toggled(bool)), this, SLOT(toggleCheckShowTray(bool)));
+    connect(ui->editDateTmeTpl, SIGNAL(textEdited(QString)), this, SLOT(editDateTmeTpl(QString)));
+    connect(ui->defDelay, SIGNAL(valueChanged(int)), this, SLOT(changeDefDelay(int)));
+    connect(ui->timeTrayMess, SIGNAL(valueChanged(int)), this, SLOT(changeTimeTrayMess(int)));
+    connect(ui->cbxTrayMsg, SIGNAL(currentIndexChanged(int)), this, SLOT(changeTrayMsgType(int)));
+    connect(ui->treeKeys, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
+    connect(ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
+    connect(ui->treeKeys, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+
+    editDateTmeTpl(conf->getDateTimeTpl());
+
+    ui->treeKeys->expandAll();
+    ui->treeKeys->header()->setResizeMode(QHeaderView::Stretch);
+
+    // adding shortcut values in treewidge
     int action = 0;
-    QTreeWidgetItemIterator iter(m_ui->treeKeys);
+    QTreeWidgetItemIterator iter(ui->treeKeys);
     while(*iter)
     {
 	if ((*iter)->parent() != NULL)
@@ -66,102 +82,105 @@ configwidget::configwidget(QWidget *parent) :
 	}
 	++iter;
     }
-    
+
     // set false visibility to edit hokey controls
-    m_ui->labUsedShortcut->setVisible(false);
-    m_ui->keyWidget->setVisible(false);
+    ui->labUsedShortcut->setVisible(false);
+    ui->keyWidget->setVisible(false);
 
 }
 
-configwidget::~configwidget()
+ConfigDialog::~ConfigDialog()
 {
-    delete m_ui;
+    delete ui;
     conf = NULL;
     delete conf;
 
 }
 
 
-void configwidget::loadSettings()
-{    
-    // main tab    
-    m_ui->editDir->setText(conf->getSaveDir());
-    m_ui->editFileName->setText(conf->getSaveFileName());
+void ConfigDialog::loadSettings()
+{
+    // main tab
+    ui->editDir->setText(conf->getSaveDir());
+    ui->editFileName->setText(conf->getSaveFileName());
 
-    m_ui->cbxFormat->addItem("png");
-    m_ui->cbxFormat->addItem("jpg");
-    m_ui->cbxFormat->addItem("bmp");
-    m_ui->cbxFormat->setCurrentIndex(conf->getDefaultFormatID());
+    ui->cbxFormat->addItem("png");
+    ui->cbxFormat->addItem("jpg");
+    ui->cbxFormat->addItem("bmp");
+    ui->cbxFormat->setCurrentIndex(conf->getDefaultFormatID());
 
-    m_ui->defDelay->setValue(conf->getDefDelay());
-    m_ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
-    m_ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
+    ui->defDelay->setValue(conf->getDefDelay());
+    ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
+    ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
 
     // display tab
-    m_ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());    
-    on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
-    m_ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
-    m_ui->timeTrayMess->setValue(conf->getTimeTrayMess());
-    m_ui->checkAutoSave->setChecked(conf->getAutoSave());;
-    m_ui->checkZommMouseArea->setChecked(conf->getZoomAroundMouse());
+    ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
+    changeTrayMsgType(ui->cbxTrayMsg->currentIndex());
+//     on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
+    ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
+    ui->timeTrayMess->setValue(conf->getTimeTrayMess());
+    ui->checkAutoSave->setChecked(conf->getAutoSave());;
+    ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());;
+    ui->checkZommMouseArea->setChecked(conf->getZoomAroundMouse());
 
     // integration tab
-    m_ui->checkInTray->setChecked(conf->getCloseInTray());
-    m_ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
+    ui->checkInTray->setChecked(conf->getCloseInTray());
+    ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
 
 #ifdef Q_WS_X11
-    m_ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
+    ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
 #endif
 #ifdef Q_WS_WIN
     m_ui->checkNoDecorX11->setVisible(false);
 #endif
-    m_ui->checkShowTray->setChecked(conf->getShowTrayIcon());
-    on_checkShowTray_toggled(conf->getShowTrayIcon());
+    ui->checkShowTray->setChecked(conf->getShowTrayIcon());
+//     on_checkShowTray_toggled(conf->getShowTrayIcon());
+    toggleCheckShowTray(conf->getShowTrayIcon());
 
 }
 
 
-void configwidget::changeEvent(QEvent *e)
+void ConfigDialog::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        m_ui->retranslateUi(this);
+        ui->retranslateUi(this);
         break;
     default:
         break;
     }
 }
 
-void configwidget::on_butCancel_clicked()
+void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 {
-    // rejecting changes
-    reject();
+    ui->checkAutoSaveFirst->setVisible(status);
 }
 
-void configwidget::saveSettings()
-{    
+void ConfigDialog::saveSettings()
+{
     // set new values of general settings
-    conf->setSaveDir(m_ui->editDir->text());
-    conf->setSaveFileName(m_ui->editFileName->text());
-    conf->setSaveFormat(m_ui->cbxFormat->currentText());
-    conf->setDefDelay(m_ui->defDelay->value());
-    conf->setDateTimeInFilename(m_ui->checkIncDate->isChecked());
-    conf->setDateTimeTpl(m_ui->editDateTmeTpl->text());
-    conf->setAutoSave(m_ui->checkAutoSave->isChecked());
-    conf->setTrayMessages(m_ui->cbxTrayMsg->currentIndex());
-    conf->setCloseInTray(m_ui->checkInTray->isChecked());
-    conf->setZoomAroundMouse(m_ui->checkZommMouseArea->isChecked());
-    conf->setAllowMultipleInstance(m_ui->checkAllowCopies->isChecked());
-    conf->setSavedSizeOnExit(m_ui->checkSaveSize->isChecked());
-    conf->setTimeTrayMess(m_ui->timeTrayMess->value());
-    conf->setShowTrayIcon(m_ui->checkShowTray->isChecked());
+    conf->setSaveDir(ui->editDir->text());
+    conf->setSaveFileName(ui->editFileName->text());
+    conf->setSaveFormat(ui->cbxFormat->currentText());
+    conf->setDefDelay(ui->defDelay->value());
+    conf->setDateTimeInFilename(ui->checkIncDate->isChecked());
+    conf->setDateTimeTpl(ui->editDateTmeTpl->text());
+    conf->setAutoSave(ui->checkAutoSave->isChecked());
+    conf->setAutoSaveFirst(ui->checkAutoSaveFirst->isChecked());
+    conf->setTrayMessages(ui->cbxTrayMsg->currentIndex());
+    conf->setCloseInTray(ui->checkInTray->isChecked());
+    conf->setZoomAroundMouse(ui->checkZommMouseArea->isChecked());
+    conf->setAllowMultipleInstance(ui->checkAllowCopies->isChecked());
+    conf->setSavedSizeOnExit(ui->checkSaveSize->isChecked());
+    conf->setTimeTrayMess(ui->timeTrayMess->value());
+    conf->setShowTrayIcon(ui->checkShowTray->isChecked());
 #ifdef Q_WS_X11
-    conf->setNoDecorX11(m_ui->checkNoDecorX11->isChecked());
+    conf->setNoDecorX11(ui->checkNoDecorX11->isChecked());
 #endif
     // save shortcuts in shortcutmanager
     int action = 0;
-    QTreeWidgetItemIterator iter(m_ui->treeKeys);
+    QTreeWidgetItemIterator iter(ui->treeKeys);
     while(*iter)
     {
 	if ((*iter)->parent() != NULL)
@@ -173,26 +192,26 @@ void configwidget::saveSettings()
 		    break;
 		case 5:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
-		    break;		    
+		    break;
 		default:
 		    break;
-	    }	    
+	    }
 	    ++action;
 	}
 	++iter;
     }
-    
+
     // update values of front-end settings
     conf->saveSettings();
-    conf->setDelay(conf->getDefDelay()); 
+    conf->setDelay(conf->getDefDelay());
     // accep changes
     accept();
 }
 
 
-QString configwidget::getFormat()
+QString ConfigDialog::getFormat()
 {
-    switch (m_ui->cbxFormat->currentIndex())
+    switch (ui->cbxFormat->currentIndex())
     {
         case 0: return "png";
         case 1: return "jpg";
@@ -200,17 +219,17 @@ QString configwidget::getFormat()
     }
 }
 
-void configwidget::selectDir()
+void ConfigDialog::selectDir()
 {
 QString *directory;
 directory = new QString;
 #ifdef Q_WS_X11
 {
     *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-             m_ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();
+             ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();
     if (directory->toUtf8() != QDir::separator())
     {
-        m_ui->editDir->setText( *directory);
+        ui->editDir->setText( *directory);
     }
 }
 #endif
@@ -225,7 +244,7 @@ directory = new QString;
     delete directory;
 }
 
-void configwidget::restoreDefaults()
+void ConfigDialog::restoreDefaults()
 {
     conf->setDefaultSettings();
     conf->saveSettings();
@@ -237,117 +256,108 @@ void configwidget::restoreDefaults()
     accept();
 }
 
-void configwidget::on_defDelay_valueChanged(int )
+void ConfigDialog::changeDefDelay(int val)
 {
-    if (m_ui->defDelay->value() == 0 )
+    if (val == 0 )
     {
-        m_ui->defDelay->setSpecialValueText(tr( "None"));
+	ui->defDelay->setSpecialValueText(tr( "None"));
     }
 }
 
-void configwidget::on_timeTrayMess_valueChanged(int )
+void ConfigDialog::changeTimeTrayMess(int sec)
 {
-    conf->setTimeTrayMess(m_ui->timeTrayMess->value());
+    conf->setTimeTrayMess(sec);
 }
 
-void configwidget::on_cbxTrayMsg_currentIndexChanged(int index)
+void ConfigDialog::changeTrayMsgType(int type)
 {
-    switch(m_ui->cbxTrayMsg->currentIndex())
+    switch(type)
     {
-        case 0:
-        {        
-            m_ui->labTimeTrayMess->setVisible(false);
-            m_ui->timeTrayMess->setVisible(false);
-            break;
-        }
-        default:
-        {
-                m_ui->labTimeTrayMess->setVisible(true);
-                m_ui->timeTrayMess->setVisible(true);
-                break;
-        }
+	case 0:
+	{
+	    ui->labTimeTrayMess->setVisible(false);
+	    ui->timeTrayMess->setVisible(false);
+	    break;
+	}
+	default:
+	{
+	    ui->labTimeTrayMess->setVisible(true);
+	    ui->timeTrayMess->setVisible(true);
+	    break;
+	}
     }
 }
 
-void configwidget::setVisibleDateTplEdit(bool checked)
+void ConfigDialog::setVisibleDateTplEdit(bool checked)
 {
         if (checked == false)
         {
-            m_ui->editDateTmeTpl->setVisible(false);
-            m_ui->labMask->setVisible(false);
-            m_ui->labMaskExample->setVisible(false);
+            ui->editDateTmeTpl->setVisible(false);
+            ui->labMask->setVisible(false);
+            ui->labMaskExample->setVisible(false);
         }
         else
         {
-            m_ui->editDateTmeTpl->setVisible(true);
-            m_ui->labMask->setVisible(true);            
-            m_ui->labMaskExample->setVisible(true);
+            ui->editDateTmeTpl->setVisible(true);
+            ui->labMask->setVisible(true);
+            ui->labMaskExample->setVisible(true);
         }
 }
 
 
-
-void configwidget::on_editDateTmeTpl_textEdited(QString str)
+void ConfigDialog::editDateTmeTpl(QString str)
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(str );
-    m_ui->labMaskExample->setText(tr("Example: ") + currentDateTime);
+    ui->labMaskExample->setText(tr("Example: ") + currentDateTime);
 }
 
-
-void configwidget::on_checkShowTray_toggled(bool checked)
+void ConfigDialog::toggleCheckShowTray(bool checked)
 {
-    if (checked == true)
+    ui->labTrayMessages->setVisible(checked);
+    ui->cbxTrayMsg->setVisible(checked);
+    ui->timeTrayMess->setVisible(checked);
+    ui->labTimeTrayMess->setVisible(checked);
+    ui->checkInTray->setVisible(checked);
+}
+
+void ConfigDialog::currentItemChanged(QTreeWidgetItem* c, QTreeWidgetItem* p)
+{
+    QKeySequence ks("");
+    qDebug() << "c->parent() " << c->parent();
+    qDebug() << "p " << p << "  " << c->data(1, Qt::DisplayRole).toString();
+    if (c->parent() != NULL)
     {
-        m_ui->labTrayMessages->setVisible(true);
-        m_ui->cbxTrayMsg->setVisible(true);
-        m_ui->timeTrayMess->setVisible(true);
-        m_ui->labTimeTrayMess->setVisible(true);
-        m_ui->checkInTray->setVisible(true);
+	ui->labUsedShortcut->setVisible(true);
+    	ui->keyWidget->setVisible(true);
+
+    	ui->keyWidget->setKeySequence(QKeySequence(c->data(1, Qt::DisplayRole).toString()));
     }
     else
     {
-        m_ui->labTrayMessages->setVisible(false);
-        m_ui->cbxTrayMsg->setVisible(false);
-        m_ui->timeTrayMess->setVisible(false);
-        m_ui->labTimeTrayMess->setVisible(false);
-        m_ui->checkInTray->setVisible(false);
+	ui->labUsedShortcut->setVisible(false);
+    	ui->keyWidget->setVisible(false);
     }
 }
 
-
-void configwidget::on_treeKeys_clicked(QModelIndex index)
+void ConfigDialog::doubleclickTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == true)
     {
-	m_ui->labUsedShortcut->setVisible(true);
-        m_ui->keyWidget->setVisible(true);
-	//QTreeWidgetItem item =
-	QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
-	m_ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
-        
-    }
-    else
-    {
-	m_ui->labUsedShortcut->setVisible(false);
-        m_ui->keyWidget->setVisible(false);
+	ui->keyWidget->captureKeySequence();
     }
 }
 
-void configwidget::on_treeKeys_collapsed(QModelIndex index)
+
+void ConfigDialog::collapsTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == false)
     {
-        m_ui->labUsedShortcut->setVisible(false);
-        m_ui->keyWidget->setVisible(false);
+	ui->labUsedShortcut->setVisible(false);
+	ui->keyWidget->setVisible(false);
     }
 }
 
-void configwidget::on_treeKeys_expanded(QModelIndex index)
-{
-    m_ui->treeKeys->clearSelection();
-}
-
-void configwidget::acceptShortcut(const QKeySequence& seq)
+void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 {
     if (checkUsedShortcuts() == false)
     {
@@ -364,7 +374,7 @@ void configwidget::acceptShortcut(const QKeySequence& seq)
 	    msg.setIcon(QMessageBox::Information);
 	    msg.setStandardButtons(QMessageBox::Ok);
 	    msg.exec();
-	    m_ui->keyWidget->clearKeySequence();
+	    ui->keyWidget->clearKeySequence();
 	}
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
@@ -375,18 +385,18 @@ void configwidget::acceptShortcut(const QKeySequence& seq)
 	msg.setIcon(QMessageBox::Information);
 	msg.setStandardButtons(QMessageBox::Ok);
 	msg.exec();
-	m_ui->keyWidget->clearKeySequence();
+	ui->keyWidget->clearKeySequence();
     }
 }
 
-void configwidget::changeShortcut(const QKeySequence& seq)
+void ConfigDialog::changeShortcut(const QKeySequence& seq)
 {
-    QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
+    QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
     item->setData(1, Qt::DisplayRole, seq.toString());
 }
 
 
-void configwidget::keyNotSupported()
+void ConfigDialog::keyNotSupported()
 {
     QMessageBox msg;
     msg.setWindowTitle(tr("Error"));
@@ -396,22 +406,22 @@ void configwidget::keyNotSupported()
     msg.exec();
 }
 
-bool configwidget::checkUsedShortcuts()
+bool ConfigDialog::checkUsedShortcuts()
 {
-    QTreeWidgetItem *item = m_ui->treeKeys->selectedItems().first();
-    QTreeWidgetItemIterator iter(m_ui->treeKeys);
+    QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
+    QTreeWidgetItemIterator iter(ui->treeKeys);
     while (*iter)
     {
-	if ((*iter) != item && (*iter)->data(1, Qt::DisplayRole) == m_ui->keyWidget->keySequence().toString())
+	if ((*iter) != item && (*iter)->data(1, Qt::DisplayRole) == ui->keyWidget->keySequence().toString())
 	{
 	    return true;
 	}
-	++iter;	
+	++iter;
     }
     return false;
 }
 
-bool configwidget::avalibelGlobalShortcuts(const QKeySequence& seq)
+bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
 {
     bool ok = false;
     QxtGlobalShortcut tmpShortcut;

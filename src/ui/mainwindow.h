@@ -98,10 +98,10 @@ private:
     void typeScreenShotChange(int type);
     void receivedStateNotifyMessage(StateNotifyMessage state);
     void quit();
-//
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
     void globalShortcutActivate(int type);
+    void globalShortcutBlock(bool state);
 };
 
 #endif // MAINWINDOW_H
