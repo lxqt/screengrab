@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2010 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,48 +18,24 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef REGIONSELECT_H
-#define REGIONSELECT_H
+#include <core/core.h>
 
-#include "config.h"
+#include "uploader.h"
+#include "uploaderdialog.h"
 
-#include <QtGui/QDialog>
+#include <QDebug>
 
-#include <QtGui/QMouseEvent>
-#include <QtGui/QPainter>
-#include <QtGui/QPixmap>
-#include <QtCore/QSize>
-#include <QtCore/QPoint>
-
-class RegionSelect : public QDialog
+Uploader::Uploader()
 {
-public:
-    RegionSelect(Config *mainconf, QWidget *parent = 0);
-    ~RegionSelect();
-    QPixmap getSelection();
+    UploaderDialog *dlg = new UploaderDialog(this);
+    dlg->show();
 
-protected:
-    bool event(QEvent *event);
-    void paintEvent(QPaintEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
+    qDebug() << "create uploader";
+//     Core::instance()->getPixmap().c
+}
 
-private:
-    QRect selectRect;
-    QSize sizeDesktop;
+Uploader::~Uploader()
+{
+    qDebug() << "kill uploader";
+}
 
-    QPoint selStartPoint;
-    QPoint selEndPoint;
-
-    bool palBackground;
-
-    QPixmap desktopPixmapBkg;
-    QPixmap desktopPixmapClr;
-
-    void drawBackGround();
-    void drawRectSelection(QPainter &painter);
-
-    Config *conf;
-
-};
-
-#endif // REGIONSELECT_H

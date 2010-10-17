@@ -24,8 +24,8 @@
 #define STR_PROC "screengrab-qt"
 #endif
 
-#include "src/core/config.h"
-#include "src/core/regionselect.h"
+#include "config.h"
+#include "regionselect.h"
 
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
@@ -64,6 +64,7 @@ public Q_SLOTS:
     void coreQuit();
     void screenShot(bool first = false);
     void autoSave();
+    void upload();
 
 public:
     static Core* instance();

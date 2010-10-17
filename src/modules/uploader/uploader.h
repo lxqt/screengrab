@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2010 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,48 +18,21 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef REGIONSELECT_H
-#define REGIONSELECT_H
+#ifndef UPLOADER_H
+#define UPLOADER_H
 
-#include "config.h"
+#include <QObject>
+#include <QByteArray>
 
-#include <QtGui/QDialog>
-
-#include <QtGui/QMouseEvent>
-#include <QtGui/QPainter>
-#include <QtGui/QPixmap>
-#include <QtCore/QSize>
-#include <QtCore/QPoint>
-
-class RegionSelect : public QDialog
+class Uploader : public QObject
 {
+    Q_OBJECT
 public:
-    RegionSelect(Config *mainconf, QWidget *parent = 0);
-    ~RegionSelect();
-    QPixmap getSelection();
-
-protected:
-    bool event(QEvent *event);
-    void paintEvent(QPaintEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
+    Uploader();
+    virtual ~Uploader();
 
 private:
-    QRect selectRect;
-    QSize sizeDesktop;
-
-    QPoint selStartPoint;
-    QPoint selEndPoint;
-
-    bool palBackground;
-
-    QPixmap desktopPixmapBkg;
-    QPixmap desktopPixmapClr;
-
-    void drawBackGround();
-    void drawRectSelection(QPainter &painter);
-
-    Config *conf;
-
+    QByteArray imageData;
 };
 
-#endif // REGIONSELECT_H
+#endif // UPLOADER_H

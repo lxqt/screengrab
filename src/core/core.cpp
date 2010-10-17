@@ -22,7 +22,9 @@
 #include <QtCore/QWaitCondition>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
-#include "src/core/core.h"
+#include "core.h"
+
+#include "src/modules/uploader/uploader.h"
 
 #ifdef Q_WS_WIN
 #include <windows.h>
@@ -373,6 +375,11 @@ void Core::autoSave()
 	QString fileName = getSaveFilePath(format);
 
 	writeScreen(fileName, format);
+}
+
+void Core::upload()
+{
+    Uploader *upl = new Uploader;
 }
 
 

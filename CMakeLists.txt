@@ -51,14 +51,19 @@ add_definitions( -DPREFIX="${CMAKE_INSTALL_PREFIX}")
 
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
+set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
+message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})
+
 #------- qtsingleapplication  --------
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
 # build QxtGui
 add_definitions(-DBUILD_QXT_GUI)
@@ -178,7 +183,7 @@ endif(WIN32)
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_MOC_CPP} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
 
-target_link_libraries( screengrab qkeysequencewidget singleapp qxt ${QT_LIBRARIES} )
+target_link_libraries( screengrab qkeysequencewidget singleapp qxt uploader ${QT_LIBRARIES} )
 
 
 if(WIN32)

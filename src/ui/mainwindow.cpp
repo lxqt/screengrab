@@ -84,6 +84,7 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(m_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(m_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(m_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
+    connect(m_ui->butUpload, SIGNAL(clicked()), core, SLOT(upload()));
     connect(m_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
     connect(m_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(m_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
