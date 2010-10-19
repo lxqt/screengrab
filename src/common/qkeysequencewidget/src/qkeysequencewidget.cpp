@@ -56,7 +56,6 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWi
 {
     Q_D(QKeySequenceWidget);
     d->q_ptr = this;
-    qDebug() << "q_prt " << this;
     d->init(seq, noneString);
     _connectingSlots();
 }
@@ -67,13 +66,10 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWi
 QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
-    qDebug() << "widget constructor";
     Q_D(QKeySequenceWidget);
     d->q_ptr = this;
-    qDebug() << "q_prt " << this;
     d->init(seq, QString());
     _connectingSlots();
-
 }
 
 /*!
@@ -82,10 +78,8 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QWidget *parent) :
 QKeySequenceWidget::QKeySequenceWidget(QString noneString, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
-    qDebug() << "widget constructor";
     Q_D(QKeySequenceWidget);
     d->q_ptr = this;
-    qDebug() << "q_prt " << this;
     d->init(QKeySequence(), noneString);
 
     _connectingSlots();
@@ -168,7 +162,7 @@ QKeySequence QKeySequenceWidget::keySequence() const
  */
 void QKeySequenceWidget::clearKeySequence()
 {
-    setKeySequence(QKeySequence());
+    d_ptr->clearSequence();
 }
 
 /*!
@@ -272,6 +266,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence keySeq, const QString no
 
     q_ptr->clearKeySequence();
     currentSequence = keySeq;
+    oldSequence = currentSequence;
 
     shortcutButton->setFocusPolicy(Qt::StrongFocus);
 
@@ -299,7 +294,6 @@ void QKeySequenceWidgetPrivate::setToolTip(const QString &tip)
 // update the location of widgets
 void QKeySequenceWidgetPrivate::updateView()
 {
-    qDebug() << "update view ";
     switch(showClearButton)
     {
     case QKeySequenceWidget::ShowLeft:
@@ -366,7 +360,6 @@ void QKeySequenceWidgetPrivate::doneRecording()
 
         return;
     }
-
     // update Shortcut display
     updateDisplayShortcut();
 }
@@ -375,6 +368,12 @@ inline void QKeySequenceWidgetPrivate::cancelRecording()
 {
     currentSequence = oldSequence;
     doneRecording();
+}
+
+inline void QKeySequenceWidgetPrivate::clearSequence()
+{
+    q_ptr->setKeySequence(QKeySequence());
+    emit q_ptr->keySequenceCleared();
 }
 
 inline void QKeySequenceWidgetPrivate::controlModifierlessTimout()
@@ -468,7 +467,6 @@ bool QShortcutButton::event(QEvent *e)
 
 void QShortcutButton::keyPressEvent(QKeyEvent *keyEvent)
 {
-    qDebug() << "key pressed";
     int keyQt =  keyEvent->key();
 
 // Qt sometimes returns garbage keycodes, I observed -1,
@@ -555,7 +553,6 @@ void QShortcutButton::keyPressEvent(QKeyEvent *keyEvent)
 
 void QShortcutButton::keyReleaseEvent(QKeyEvent *keyEvent)
 {
-    qDebug() << "key released";
     if (keyEvent->key() == -1)
     {
         // ignore garbage, see keyPressEvent()

@@ -49,7 +49,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
     connect(ui->checkIncDate, SIGNAL(toggled(bool)), this, SLOT(setVisibleDateTplEdit(bool)));
     connect(ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
-    connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
+//     connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     connect(ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
     connect(ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
     connect(ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
@@ -63,7 +63,10 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->cbxTrayMsg, SIGNAL(currentIndexChanged(int)), this, SLOT(changeTrayMsgType(int)));
     connect(ui->treeKeys, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
     connect(ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
-    connect(ui->treeKeys, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+    connect(ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
+    connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
+
+//     connect(ui->treeKeys, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 
     editDateTmeTpl(conf->getDateTimeTpl());
 
@@ -320,29 +323,51 @@ void ConfigDialog::toggleCheckShowTray(bool checked)
     ui->checkInTray->setVisible(checked);
 }
 
-void ConfigDialog::currentItemChanged(QTreeWidgetItem* c, QTreeWidgetItem* p)
+// void ConfigDialog::currentItemChanged(QTreeWidgetItem* c, QTreeWidgetItem* p)
+// {
+//     QKeySequence ks("");
+//     qDebug() << "c->parent() " << c->parent();
+//     qDebug() << "p " << p << "  " << c->data(1, Qt::DisplayRole).toString();
+//     if (c->parent() != NULL)
+//     {
+// 	ui->labUsedShortcut->setVisible(true);
+//     	ui->keyWidget->setVisible(true);
+//
+//     	ui->keyWidget->setKeySequence(QKeySequence(c->data(1, Qt::DisplayRole).toString()));
+//     }
+//     else
+//     {
+// 	ui->labUsedShortcut->setVisible(false);
+//     	ui->keyWidget->setVisible(false);
+//     }
+// }
+
+void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
-    QKeySequence ks("");
-    qDebug() << "c->parent() " << c->parent();
-    qDebug() << "p " << p << "  " << c->data(1, Qt::DisplayRole).toString();
-    if (c->parent() != NULL)
+    qDebug() << c.parent() ;
+    if (c.parent().isValid() == true)
     {
 	ui->labUsedShortcut->setVisible(true);
-    	ui->keyWidget->setVisible(true);
+	ui->keyWidget->setVisible(true);
 
-    	ui->keyWidget->setKeySequence(QKeySequence(c->data(1, Qt::DisplayRole).toString()));
+	qDebug() << "ui->treeKeys " << ui->treeKeys->currentItem();
+	QTreeWidgetItem *item = ui->treeKeys->currentItem();
+	qDebug() << "get key str " << item->data(1, Qt::DisplayRole).toString();
+	ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
     }
     else
     {
 	ui->labUsedShortcut->setVisible(false);
-    	ui->keyWidget->setVisible(false);
+	ui->keyWidget->setVisible(false);
     }
 }
+
 
 void ConfigDialog::doubleclickTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == true)
     {
+	connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
 	ui->keyWidget->captureKeySequence();
     }
 }
@@ -391,8 +416,17 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 
 void ConfigDialog::changeShortcut(const QKeySequence& seq)
 {
+    qDebug() << "---- " << ui->treeKeys->selectedItems().first();
+    disconnect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
     item->setData(1, Qt::DisplayRole, seq.toString());
+}
+
+void ConfigDialog::clearShrtcut()
+{
+    qDebug() << "clear slot";
+    QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
+    item->setData(1, Qt::DisplayRole, QString(""));
 }
 
 

@@ -106,6 +106,7 @@ public:
 Q_SIGNALS:
     void keySequenceChanged(const QKeySequence &seq);
     void keySequenceAccepted(const QKeySequence &seq);
+    void keySequenceCleared();
     void keyNotSupported();
 
 public Q_SLOTS:
