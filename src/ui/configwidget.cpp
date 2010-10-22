@@ -49,13 +49,11 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
     connect(ui->checkIncDate, SIGNAL(toggled(bool)), this, SLOT(setVisibleDateTplEdit(bool)));
     connect(ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
-//     connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     connect(ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
     connect(ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
     connect(ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
     connect(ui->treeKeys, SIGNAL(expanded(QModelIndex)), ui->treeKeys, SLOT(clearSelection()));
     connect(ui->treeKeys, SIGNAL(collapsed(QModelIndex)), this, SLOT(collapsTreeKeys(QModelIndex)));
-//     connect(m_ui->treeKeys, SIGNAL(clicked(QModelIndex)), this, SLOT(clickTreeKeys(QModelIndex)));
     connect(ui->checkShowTray, SIGNAL(toggled(bool)), this, SLOT(toggleCheckShowTray(bool)));
     connect(ui->editDateTmeTpl, SIGNAL(textEdited(QString)), this, SLOT(editDateTmeTpl(QString)));
     connect(ui->defDelay, SIGNAL(valueChanged(int)), this, SLOT(changeDefDelay(int)));
@@ -65,8 +63,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
     connect(ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
     connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
-
-//     connect(ui->treeKeys, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 
     editDateTmeTpl(conf->getDateTimeTpl());
 
@@ -119,7 +115,6 @@ void ConfigDialog::loadSettings()
     // display tab
     ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
     changeTrayMsgType(ui->cbxTrayMsg->currentIndex());
-//     on_cbxTrayMsg_currentIndexChanged(m_ui->cbxTrayMsg->currentIndex() );
     ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
     ui->timeTrayMess->setValue(conf->getTimeTrayMess());
     ui->checkAutoSave->setChecked(conf->getAutoSave());;
@@ -134,7 +129,7 @@ void ConfigDialog::loadSettings()
     ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
 #endif
 #ifdef Q_WS_WIN
-    m_ui->checkNoDecorX11->setVisible(false);
+    ui->checkNoDecorX11->setVisible(false);
 #endif
     ui->checkShowTray->setChecked(conf->getShowTrayIcon());
 //     on_checkShowTray_toggled(conf->getShowTrayIcon());
@@ -238,10 +233,10 @@ directory = new QString;
 #endif
 #ifdef Q_WS_WIN
     *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-             m_ui->editDir->text(), QFileDialog::ShowDirsOnly)+ "/";
+             ui->editDir->text(), QFileDialog::ShowDirsOnly)+ "/";
     if (directory->toUtf8() != "/")
     {
-        m_ui->editDir->setText( QDir::toNativeSeparators(*directory));
+        ui->editDir->setText( QDir::toNativeSeparators(*directory));
     }
 #endif
     delete directory;
