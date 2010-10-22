@@ -49,6 +49,7 @@ private:
     QString getFormat();
     bool checkUsedShortcuts();
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
+    void showErrorMessage(QString text);
 
 private slots:
     void collapsTreeKeys(QModelIndex index);

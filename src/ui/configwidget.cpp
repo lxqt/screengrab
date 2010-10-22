@@ -318,25 +318,6 @@ void ConfigDialog::toggleCheckShowTray(bool checked)
     ui->checkInTray->setVisible(checked);
 }
 
-// void ConfigDialog::currentItemChanged(QTreeWidgetItem* c, QTreeWidgetItem* p)
-// {
-//     QKeySequence ks("");
-//     qDebug() << "c->parent() " << c->parent();
-//     qDebug() << "p " << p << "  " << c->data(1, Qt::DisplayRole).toString();
-//     if (c->parent() != NULL)
-//     {
-// 	ui->labUsedShortcut->setVisible(true);
-//     	ui->keyWidget->setVisible(true);
-//
-//     	ui->keyWidget->setKeySequence(QKeySequence(c->data(1, Qt::DisplayRole).toString()));
-//     }
-//     else
-//     {
-// 	ui->labUsedShortcut->setVisible(false);
-//     	ui->keyWidget->setVisible(false);
-//     }
-// }
-
 void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
     qDebug() << c.parent() ;
@@ -388,24 +369,12 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 	}
 	else
 	{
-	    QMessageBox msg;
-	    msg.setWindowTitle(tr("Error"));
-	    msg.setText(tr("This key is exist in global shortcuts on yoy system! Please select other keys"));
-	    msg.setIcon(QMessageBox::Information);
-	    msg.setStandardButtons(QMessageBox::Ok);
-	    msg.exec();
-	    ui->keyWidget->clearKeySequence();
+            showErrorMessage(tr("This key is exist in global shortcuts on yoy system! Please select other keys"));
 	}
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
-	QMessageBox msg;
-	msg.setWindowTitle(tr("Error"));
-	msg.setText(tr("This key is exist! Please select other keys"));
-	msg.setIcon(QMessageBox::Information);
-	msg.setStandardButtons(QMessageBox::Ok);
-	msg.exec();
-	ui->keyWidget->clearKeySequence();
+        showErrorMessage(tr("This key is exist! Please select other keys"));
     }
 }
 
@@ -427,12 +396,7 @@ void ConfigDialog::clearShrtcut()
 
 void ConfigDialog::keyNotSupported()
 {
-    QMessageBox msg;
-    msg.setWindowTitle(tr("Error"));
-    msg.setText(tr("This key is not supported on your system!"));
-    msg.setIcon(QMessageBox::Information);
-    msg.setStandardButtons(QMessageBox::Ok);
-    msg.exec();
+    showErrorMessage(tr("This key is not supported on your system!"));
 }
 
 bool ConfigDialog::checkUsedShortcuts()
@@ -453,11 +417,23 @@ bool ConfigDialog::checkUsedShortcuts()
 bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
 {
     bool ok = false;
-    QxtGlobalShortcut tmpShortcut;
-    if (tmpShortcut.setShortcut(QKeySequence(seq)) == true)
+    QxtGlobalShortcut *tmpShortcut = new QxtGlobalShortcut;
+    if (tmpShortcut->setShortcut(QKeySequence(seq)) == true)
     {
-	tmpShortcut.setDisabled(true);
+        tmpShortcut->setDisabled(true);
 	ok = true;
     }
+    delete tmpShortcut;
     return ok;
+}
+
+void ConfigDialog::showErrorMessage(QString text)
+{
+    ui->keyWidget->clearKeySequence();
+    QMessageBox msg;
+    msg.setWindowTitle(tr("Error"));
+    msg.setText(text);
+    msg.setIcon(QMessageBox::Information);
+    msg.setStandardButtons(QMessageBox::Ok);
+    msg.exec();
 }
