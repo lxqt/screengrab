@@ -27,7 +27,7 @@
 AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),
     ui(new Ui::aboutWidget)
-{    
+{
     setWindowFlags(Qt::Dialog |  Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
 
     ui->setupUi(this);
@@ -64,7 +64,7 @@ AboutDialog::~AboutDialog()
 }
 
 void AboutDialog::changeTab(int tabIndex)
-{    
+{
     // trnder text info
     switch(tabIndex)
     {
@@ -108,8 +108,8 @@ QString AboutDialog::getAbouT()
     str += tr("is crossplatform application for fast creation screenshots of your desktop.");
     str += "<br><br>";
     str += tr("Copyright &copy; 2009-2010, Artem 'DOOMer' Galichkin");
-//    str += "<br>";
-    str += tr("<div align=right>Licensed under the ");
+    str += "<div align=right>";
+    str += tr("Licensed under the ");
     str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a></div>";
     return str;
 }
@@ -132,14 +132,16 @@ QString AboutDialog::getThanks()
     QString str;
     str += "<b>" + tr("Translate:") + "</b>";
     str += "<br>";
-    str += "<u>Márcio Moraes</u> <br>";
-    str += tr(" Brazilian Portuguese translation");
-
-    str += "<br><br>";
+    str += tr(" Brazilian Portuguese translation")  + "<br>";
+    str += tr("Marcio Moraes") + " &lt;marciopanto@gmail.com&gt;<br>";
+    str += "<br>";
+    str += tr(" Ukrainian translation") + "<br>";
+    str += tr("Gennadi Motsyo") + " &lt;drool@altlinux.ru&gt;<br>";
+    str += "<br>";
     str += "<b>" + tr("Testing:") + "</b>";
     str += "<br>";
-    str += QString("<u>Alexantia</u> - ")   + tr("win32-build [Windows XP]") + "<br>";
-    str += QString("<u>iNight</u> - ") + tr("win32-build [Windows Vista]") + "<br>";
+    str += "Alexantia - " + tr("win32-build [Windows XP]") + "<br>";
+    str += "iNight - " + tr("win32-build [Windows Vista]") + "<br>";
 
     return str;
 }

@@ -369,12 +369,12 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 	}
 	else
 	{
-            showErrorMessage(tr("This key is exist in global shortcuts on yoy system! Please select other keys"));
+            showErrorMessage(tr("This keys is used in your system! Please select other keys"));
 	}
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
-        showErrorMessage(tr("This key is exist! Please select other keys"));
+        showErrorMessage(tr("This keys is used in ScreenGrab! Please select other keys"));
     }
 }
 

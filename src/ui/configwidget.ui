@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -121,7 +121,7 @@
             <item>
              <widget class="QComboBox" name="cbxFormat">
               <property name="toolTip">
-               <string>Defaukt saving image format</string>
+               <string>Default saving image format</string>
               </property>
              </widget>
             </item>
@@ -356,7 +356,7 @@
         <item>
          <widget class="QCheckBox" name="checkShowTray">
           <property name="text">
-           <string>Show tray</string>
+           <string>Use tray</string>
           </property>
          </widget>
         </item>
@@ -466,7 +466,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Hotkeys</string>
+       <string>Shortcuts</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
@@ -481,12 +481,12 @@
          </column>
          <column>
           <property name="text">
-           <string>Hotkey</string>
+           <string>Shortcut</string>
           </property>
          </column>
          <item>
           <property name="text">
-           <string>Glpbal hotkeys</string>
+           <string>Global shortcuts</string>
           </property>
           <property name="text">
            <string/>
@@ -509,7 +509,7 @@
          </item>
          <item>
           <property name="text">
-           <string>Local hotkeys</string>
+           <string>Local shortcutss</string>
           </property>
           <item>
            <property name="text">
@@ -544,7 +544,7 @@
          <item>
           <widget class="QLabel" name="labUsedShortcut">
            <property name="text">
-            <string>Used shortcut:</string>
+            <string>Selected shortcut:</string>
            </property>
           </widget>
          </item>
