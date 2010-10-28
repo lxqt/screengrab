@@ -15,8 +15,8 @@
 </div>
 <div id="menu">
     <ul>
-        <li><a href="#main">Description</a></li>        
-        <li><a href="#usage">Usage</a></li>		
+        <li><a href="#main">Description</a></li>
+        <li><a href="#usage">Usage</a></li>
 		<li><a href="#license">License</a></li>
         <li><a href="#versions">Version history</a></li>
     </ul>
@@ -26,7 +26,7 @@
         <h2>ScreenGrab - fast creation of screenshots</h2>
         <p>
 This is a crossplatform application designed to quickly get screenshots
-ScreenGrab created using the Qt Framework, thanks which the program can work in the 
+ScreenGrab created using the Qt Framework, thanks which the program can work in the
 Microsoft Windows and GNU/Linux.
                 </p>
         <p>
@@ -47,20 +47,21 @@ ScreenGrab at the time of the screenshot</li>
 
                     <li>Ability to minimize application to system tray, and
 control via context menu</li>
+	    <li>Getting screenshots using global shortcuts</li>
 	    <li>Auto-save screenshot when received</li>
 	    <li>Ability to insert the current date and time in filename and save</li>
         </ul>
 
-<a name='usage'></a>  	
+<a name='usage'></a>
 
-            <h2>Usage  <a href='#main'>To start page</a></h2> 
+            <h2>Usage  <a href='#main'>To start page</a></h2>
             <p>
-                It is a very simple.	
+                It is a very simple.
             </p>
             <p>
-                On first run application get current state of your desktop. 
+                On first run application get current state of your desktop.
 					  Preview screen displays into main window.
-                
+
 All management of the program can be implemented
 kotekstnoe a button or menu in the notification area of the desktop.
             </p>
@@ -69,12 +70,12 @@ kotekstnoe a button or menu in the notification area of the desktop.
             </p>
         <ul>
                     <li><b>New Screen</b> [Ctrl+N] -- take new screenshot</li>
-                    <li><b>Save Screen</b> [Ctrl+S] -- write getting screenshtit 
+                    <li><b>Save Screen</b> [Ctrl+S] -- write getting screenshtit
   on hard disk (in PNG or JPEG format).</li>
 <li><b>Copy Screen</b> [Ctrl+C] -- copy screen to clipboard.</li>
                     <li><b>Optionsи</b> [Ctrl+O] -- show program options window.</li>
 		    <li><b>Help</b> [Ctrl+H] -- display help information.</li>
-                    <li><b>Information</b> [Ctrl+I] -- display information about ScreenGrab, 
+                    <li><b>Information</b> [Ctrl+I] -- display information about ScreenGrab,
 	  developer and license.</li>
                     <li><b>Quit</b> [Ctrl+Q] -- Exit program</li>
         </ul>
@@ -86,18 +87,24 @@ kotekstnoe a button or menu in the notification area of the desktop.
             </p>
         <ul>
 						<li><b>Delay</b> -- delay in seconds before grab screen.</li>
-                    <li><b>Type</b> -- type of grabbing [full sacreen 
+                    <li><b>Type</b> -- type of grabbing [full sacreen
 or active window]. </li>
         </ul>
             <p>
-                Settings:
+                <b><u>Main settings:</u></b>
             </p>
         <ul>
                     <li><b>Default directory</b> -- default directory for save screenshots</li>
                     <li><b>Default filename</b> -- name of saved file by default.</li>
                     <li><b>Format</b> -- default saving image format (you can select other format  in saving)</li>
-<li><b>Format</b> -- grab screenshot of active window without window decorations</li>
-                    <li><b>Insert DateTime in filename</b> -- insetring date and time in saving filename 
+<li><b>No window decoration</b> -- grab screenshot of active window without window decorations</li>
+	</ul>
+            <p>
+                <b><u>Advanced settings:</u></b>
+            </p>
+        <ul>
+
+                    <li><b>Insert DateTime in filename</b> -- insetring date and time in saving filename
 <br />
 <br />These expressions may be used for the date part of the format string::
 <br />
@@ -138,20 +145,45 @@ or active window]. </li>
 </table>
 <br />
 				</li>
-                    <li><b>Autosave screen</b> -- automaticaly saving 
+                    <li><b>Autosave screen</b> -- automaticaly saving
 screenshot in grab process</li>
-                    <li><b>Tray messages</b> -- mode of displays tray messages 9on grab|save events. Can be "none" 
+		    <li><b>Save first screenshot</b> -- enabled | disabled automaticaly saving first screenshot, which get on run application</li>
+		    <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>
+	</ul>
+            <p>
+                <b><u>Display settings:</u></b>
+            </p>
+        <ul>
+	    <li><b>Save window size on exit</b> -- saving current size of main window
+at the exit (and restore at next run)</li>
+	    <li><b>Zoom area around mouse in selection mode</b> -- the ability to display the magnified area around the mouse pointer when receiving a screenshot selected area.</li>
+	</ul>
+            <p>
+                <b><u>System tray settings:</u></b>
+            </p>
+        <ul>
+		<li><b>Use tray</b> -- use the notification area (system tray) )of the operating system (desktop environment) for displaying messages and application management.</li>
+                    <li><b>Tray messages</b> -- mode of displays tray messages 9on grab|save events. Can be "none"
 or "if hiden" or "always"</li>
                     <li><b>Time of display tray messages</b> -- time within which notices are displayed </li>
-                    <li><b>Save window size on exit</b> -- saving current size of main window 
-at the exit (and restore at next run)</li>
-                    <li><b>Close in tray</b> -- minimize main window in tray 
+                    <li><b>Close in tray</b> -- minimize main window in tray
 by click on close window button.</li>
-                  <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>
-        </ul>
 
+        </ul>
+	<p>
+	    <u><b>shortcuts settings:</u></b>
+	</p>
+	<p>
+	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick access to application functions. There are two kinds of key combinations used in screenGrab - local and global.
+	</p>
+	<p>
+	    Local duplicative actions performed by pressing the button in the main window. They work only when the ScreenGrab main window is active.
+	</p>
+	<p>
+	    Global shortcuts can use the get a new screenshot when working with another application in your operating system.
+	</p>
 			<p>
-                Command line parameters:
+                <u><b>Command line parameters:</u></b>
             </p>
 			<ul>
 			  <li><b>--fullscreen</b> -- set fullscreen mode [default].
@@ -161,20 +193,20 @@ by click on close window button.</li>
 			  <li><b>--help</b> -- display command line parameters information {linux only].
 			</ul>
 
-<a name='license'></a> 
-			
-            <h2>License  <a href='#main'>To start page</a></h2>			
-<p> 
-  <strong>Copyright:</strong> 
+<a name='license'></a>
+
+            <h2>License  <a href='#main'>To start page</a></h2>
+<p>
+  <strong>Copyright:</strong>
 </p>
-<p> 
-  Artem 'DOOMer' Galichkin <a href=mailto:doomer3d@gmail.com>doomer3d@gmail.com</a> 
+<p>
+  Artem 'DOOMer' Galichkin <a href=mailto:doomer3d@gmail.com>doomer3d@gmail.com</a>
 </p>
 <p>
 <strong>License:</strong>
 </p>
 <p>
-  ScreenGrab is a freeware licensed by <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
+  ScreenGrab is a freeware licensed by <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  target=_blank>GNU General Public License version 2</a>
 </p>
 <p>
@@ -185,8 +217,8 @@ by click on close window button.</li>
 	<strong>Translarors:</strong>
 </p>
 <ul>
-	<li><strong>MÃ¡rcio Moraes</strong><br> 
-Brazilian Portuguese translation</strong> </li>	
+	<li><strong>MÃ¡rcio Moraes</strong> -- Brazilian Portuguese translation</strong> </li>
+	<li><strong>Gennadi Motsyo</strong> -- Ukrainian Portuguese translation</strong> </li>
 </ul>
 <p>
 	<strong>Beta-testers:</strong>
@@ -199,21 +231,40 @@ Brazilian Portuguese translation</strong> </li>
 <p>
 And all those who use ScreenGrab :)
 </p>
-<a name='versions'></a> 
+<a name='versions'></a>
             <h2>Version history  <a href='#main'>В начало</a></h2>
 
+	    <p>
+                <strong>Version 0.9:</strong>
+			</p>
+			<ul>
+				<li>added global shortcus. </li>
+				<li>added option for enable|disable system tray. </li>
+				<li>added switch to the already running instance of an application when you start a second copy (non-operating mode to allow multiple copies). </li>
+				<li>added autosave first screenshot which been take in start application (enabled | disabled optional). </li>
+				<li>redesign config dialog ui. </li>
+			</ul>
+
+            <p>
+            <p>
+                <strong>Version 0.8.1:</strong>
+			</p>
+		<ul>
+		    <li>[Linux] fixed incorrect select default saving format in KDE 4.4.x save file dialog </li>
+		    <li>added de_DE translation</li>
+		</ul>
             <p>
                 <strong>Version 0.8:</strong>
 			</p>
 			<ul>
-				<li>add command line parametrs 
+				<li>added command line parametrs
 		  for grab modes (fullscren, active window, selection area). </li>
-				<li>add BMP support. </li>
-				<li>add  Brazilian Portuguese translation. </li>
-				<li>add automaticaly hiding main window on grab process. </li>
+				<li>added BMP support. </li>
+				<li>added  Brazilian Portuguese translation. </li>
+				<li>added automaticaly hiding main window on grab process. </li>
 				<li>{linux] fixed grab active window screenshot without decorations. </li>
 				<li>[linux] add option "no window decoration". </li>
-				<li>add shortcuts for main window buttons. </li>
+				<li>added shortcuts for main window buttons. </li>
 			</ul>
 
             <p>
@@ -233,10 +284,10 @@ And all those who use ScreenGrab :)
             </p>
         <ul>
                     <li>default value of hiding main wnd changed to true. </li>
-                    <li>add input template for insering date-time in saved filename.</li>
-                    <li>add zoom around mouse cursor in area selection mode.</li>
+                    <li>added input template for insering date-time in saved filename.</li>
+                    <li>added zoom around mouse cursor in area selection mode.</li>
                     <li>small modified configuraion dialog.</li>
-		    <li>add html help info (eng & rus).</li>		    
+		    <li>added html help info (eng & rus).</li>
         </ul>
 
 
@@ -244,11 +295,11 @@ And all those who use ScreenGrab :)
                 <strong>Version 0.5:</strong>
             </p>
         <ul>
-                    <li>add instering date|time in saving filename [optional]. </li>
-                    <li>add auto saving screens in grabbing process [option].</li>
-                    <li>add change time of display tray messages [1 - 10 src].</li>
-                    <li>add help info.</li>
-		    <li>add tool tips fo ui elements.</li>
+                    <li>added instering date|time in saving filename [optional]. </li>
+                    <li>added auto saving screens in grabbing process [option].</li>
+                    <li>added change time of display tray messages [1 - 10 src].</li>
+                    <li>added help info.</li>
+		    <li>added tool tips fo ui elements.</li>
 		    <li>small fixes config file syntax.</li>
 
         </ul>
@@ -259,9 +310,9 @@ And all those who use ScreenGrab :)
                 <strong>Version 0.4:</strong>
             </p>
         <ul>
-                    <li>add grabbing selection screen area. </li>
-                    <li>add copying into clipboard.</li>
-                    <li>add saving size of main window on exit [default is turned off].</li>
+                    <li>added grabbing selection screen area. </li>
+                    <li>added copying into clipboard.</li>
+                    <li>added saving size of main window on exit [default is turned off].</li>
                     <li>decreased in 2 times the volume occupied by the memory at startup.</li>
                     <li>[win32] fixed bug with place screengrab.ini.</li>
 		    <li>change structure of some source code (work with config data).</li>
@@ -281,10 +332,10 @@ And all those who use ScreenGrab :)
                 <strong>Version 0.3:</strong>
             </p>
         <ul>
-                    <li>main window now based on ui-file (remaked UI). </li>                    
-                    <li>add grabbing active window.</li>
-                    <li>add option for allowing multiple copies of ScreenGrab.</li>
-                    <li>add option for select between minimizing in tray  and closing
+                    <li>main window now based on ui-file (remaked UI). </li>
+                    <li>added grabbing active window.</li>
+                    <li>added option for allowing multiple copies of ScreenGrab.</li>
+                    <li>added option for select between minimizing in tray  and closing
  (by close window button).</li>
         </ul>
 
@@ -292,11 +343,11 @@ And all those who use ScreenGrab :)
                 <strong>Version 0.2:</strong>
             </p>
         <ul>
-                    <li>add JPEG support.</li>
-                    <li>add options dialog.</li>
-                    <li>add settings for default saving dir, filename and image format. </li>
-                    <li>add saving options into INI-file.</li>
-                    <li>add i18n support and Russian localiaztion.</li>
+                    <li>added JPEG support.</li>
+                    <li>added options dialog.</li>
+                    <li>added settings for default saving dir, filename and image format. </li>
+                    <li>added saving options into INI-file.</li>
+                    <li>added i18n support and Russian localiaztion.</li>
                     <li>some fixes and changes in code.</li>
                     <li>now avalible as installer (Windows) and deb packages (ubuntu 9.04).</li>
         </ul>
@@ -305,9 +356,9 @@ And all those who use ScreenGrab :)
             </p>
         <ul>
                     <li>first public version.</li>
-                    <li>add system tray icon and menu.</li>
-                    <li>add hiding in systray. </li>
-                    <li>add blocking second instance application.</li>
+                    <li>added system tray icon and menu.</li>
+                    <li>added hiding in systray. </li>
+                    <li>added blocking second instance application.</li>
         </ul>
             <p>
                 <strong>Version 0.0.3:</strong>
