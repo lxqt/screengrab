@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="136"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished">Марсио Мораес</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="138"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/ui/configwidget.cpp" line="372"/>
         <source>This keys is used in your system! Please select other keys</source>
-        <translation>Эта комбинация клавиш уже используется в  в вашей системе!  Выберите другую.</translation>
+        <translation>Эта комбинация клавиш уже используется  в вашей системе!  Выберите другую.</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="377"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../src/ui/configwidget.cpp" line="399"/>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation type="unfinished">Эта комбинация не поддерживается вашей системой!</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="434"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="154"/>
         <source>New screen is getted!</source>
-        <translation></translation>
+        <translation>Получен новый скриншот</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="348"/>
@@ -429,7 +429,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="124"/>
         <source>Default saving image format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат скриншотов по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="268"/>
@@ -439,7 +439,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="275"/>
         <source>Save first screenshot</source>
-        <translation type="unfinished">Сохранять первый сриншот</translation>
+        <translation>Сохранять первый сриншот</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="344"/>
@@ -454,7 +454,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="489"/>
         <source>Global shortcuts</source>
-        <translation type="unfinished">Глобальные</translation>
+        <translation>Глобальные</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="496"/>
@@ -494,7 +494,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="554"/>
         <source>Not defined</source>
-        <translation type="unfinished">Не определена</translation>
+        <translation>Не определена</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="569"/>
@@ -695,7 +695,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="323"/>
         <source>Zoom area around mouse in selection mode</source>
-        <translation type="unfinished">Масштабирование области курсора в режиме выбора</translation>
+        <translation>Масштабирование области курсора в режиме выбора</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="444"/>

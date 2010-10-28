@@ -6,87 +6,87 @@
     <message>
         <location filename="../src/ui/about.cpp" line="37"/>
         <source>built on </source>
-        <translation type="unfinished">дата збірки </translation>
+        <translation>дата збірки </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="42"/>
         <source>using Qt </source>
-        <translation type="unfinished">використовує Qt </translation>
+        <translation>використовує Qt </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="53"/>
         <source>About</source>
-        <translation type="unfinished">Про програму</translation>
+        <translation>Про програму</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="54"/>
         <source>Contacts</source>
-        <translation type="unfinished">Контакти</translation>
+        <translation>Контакти</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="55"/>
         <source>Thanks</source>
-        <translation type="unfinished">Подяки</translation>
+        <translation>Подяки</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="108"/>
         <source>is crossplatform application for fast creation screenshots of your desktop.</source>
-        <translation type="unfinished">кросплатформене програмне забезпечення для швидкого створення скріншотів.</translation>
+        <translation>кросплатформна програма для швидкого створення скріншотів.</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="110"/>
         <source>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished">Copyright &amp;copy; 2009-2010, Артем &apos;DOOMer&apos; Галічкін</translation>
+        <translation>Copyright &amp;copy; 2009-2010, Артем &apos;DOOMer&apos; Галічкін</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="112"/>
         <source>Licensed under the </source>
-        <translation type="unfinished"></translation>
+        <translation>За ліцензією </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="120"/>
         <source>E-Mail</source>
-        <translation type="unfinished">Електронна пошта</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="133"/>
         <source>Translate:</source>
-        <translation type="unfinished">Переклади:</translation>
+        <translation>Переклади:</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="135"/>
         <source> Brazilian Portuguese translation</source>
-        <translation type="unfinished">Бразильська португальська локалізація</translation>
+        <translation>Бразильська португальська локалізація</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="136"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="138"/>
         <source> Ukrainian translation</source>
-        <translation type="unfinished"></translation>
+        <translation> Український переклад</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="139"/>
         <source>Gennadi Motsyo</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="141"/>
         <source>Testing:</source>
-        <translation type="unfinished">Тестування:</translation>
+        <translation>Тестування:</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="143"/>
         <source>win32-build [Windows XP]</source>
-        <translation type="unfinished">win32-збірка [Windows XP]</translation>
+        <translation>win32-збірка [Windows XP]</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="144"/>
         <source>win32-build [Windows Vista]</source>
-        <translation type="unfinished">win32-збірка [Windows Vista]</translation>
+        <translation>win32-збірка [Windows Vista]</translation>
     </message>
 </context>
 <context>
@@ -95,47 +95,47 @@
         <location filename="../src/ui/configwidget.cpp" line="226"/>
         <location filename="../src/ui/configwidget.cpp" line="235"/>
         <source>Select directory</source>
-        <translation type="unfinished">Вибір теки</translation>
+        <translation>Вибір теки</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="251"/>
         <source>Message</source>
-        <translation type="unfinished">Повідомлення</translation>
+        <translation>Повідомлення</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="251"/>
         <source>Settings will be restored to default values!</source>
-        <translation type="unfinished">Налаштування були скинуті в початкові значення!</translation>
+        <translation>Налаштування були скинуті в початкові значення!</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="261"/>
         <source>None</source>
-        <translation type="unfinished">Немає</translation>
+        <translation>Немає</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="309"/>
         <source>Example: </source>
-        <translation type="unfinished">Приклад: </translation>
+        <translation>Приклад: </translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="372"/>
         <source>This keys is used in your system! Please select other keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця комбінація вже задіяна в Вашій системі! Виберіть іншу</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="377"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця комбінація вже задіяна в ScreenGrab! Виберіть іншу</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="399"/>
         <source>This key is not supported on your system!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця комбінація не підтримується вашою системою!</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="434"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
 </context>
 <context>
@@ -143,32 +143,32 @@
     <message>
         <location filename="../src/core/core.cpp" line="154"/>
         <source>New screen</source>
-        <translation type="unfinished">Новий скріншот</translation>
+        <translation>Новий скріншот</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="154"/>
         <source>New screen is getted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий знімок отримано!</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="348"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Збережено</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="367"/>
         <source>Copied</source>
-        <translation type="unfinished"></translation>
+        <translation>Скопійовано</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="348"/>
         <source>Saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Збережено до</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="367"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Скріншот скопійовано до кишені</translation>
     </message>
 </context>
 <context>
@@ -208,17 +208,17 @@
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="524"/>
         <source>PNG Files</source>
-        <translation type="unfinished"></translation>
+        <translation>файли PNG</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="525"/>
         <source>JPEG Files</source>
-        <translation type="unfinished"></translation>
+        <translation>файли JPEG</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="526"/>
         <source>BMP Files</source>
-        <translation type="unfinished"></translation>
+        <translation>файли BMP</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="285"/>
@@ -429,72 +429,72 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="124"/>
         <source>Default saving image format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат зображень за замовчанням</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="268"/>
         <source>Autosave screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозберігання скріншотів</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="275"/>
         <source>Save first screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберігати перший скріншот</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="344"/>
         <source>Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Трей</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="479"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Дія</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="489"/>
         <source>Global shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Глобальні</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="496"/>
         <source>Fill screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Весь екран</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="501"/>
         <source>Active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Активне вікно</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="506"/>
         <source>Area select</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрану ділянку</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="516"/>
         <source>New screen</source>
-        <translation type="unfinished">Новий скріншот</translation>
+        <translation>Новий скріншот</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="521"/>
         <source>Save screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти скріншот</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="526"/>
         <source>Copy screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати скріншот</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="536"/>
         <source>Help</source>
-        <translation type="unfinished">Довідка</translation>
+        <translation>Довідка</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="554"/>
         <source>Not defined</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вибрана</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="569"/>
@@ -625,7 +625,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="359"/>
         <source>Use tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати трей</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="368"/>
@@ -655,22 +655,22 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="469"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Комбінації клавіш</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="484"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавіші</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="512"/>
         <source>Local shortcutss</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальні</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="547"/>
         <source>Selected shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрана комбінація:</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="313"/>
