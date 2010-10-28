@@ -345,7 +345,7 @@ bool Core::writeScreen(QString& fileName, QString& format)
         if (pixelMap->save(fileName,format.toAscii()) == true)
         {
             saved = true;
-	    StateNotifyMessage message(tr("Save"), tr("Saved to ") + fileName);
+	    StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
 	    Q_EMIT 	sendStateNotifyMessage(message);
         }
         else
@@ -364,7 +364,7 @@ bool Core::writeScreen(QString& fileName, QString& format)
 void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*pixelMap, QClipboard::Clipboard);
-    StateNotifyMessage message(tr("Copy"), tr("Screenshot is copied to clipboard"));
+    StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
     Q_EMIT sendStateNotifyMessage(message);
 }
 
