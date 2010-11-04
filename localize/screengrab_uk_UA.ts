@@ -394,10 +394,10 @@
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="106"/>
-        <source>Use your mouse to draw a rectangle to screenshot or  exit pressing
+        <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
         <translation>Використовуйте ліву клавішу мишки для виділення частини екрану. 
-	Клавіатурні клавіші і права кнопка мишки відміняють режим виділення області.</translation>
+Клавіатурні клавіші і права кнопка мишки відміняють режим виділення області.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="143"/>
@@ -422,7 +422,7 @@ any key or using the right or middle mouse buttons.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/ui/configwidget.ui" line="26"/>
-        <location filename="../src/ui/configwidget.ui" line="531"/>
+        <location filename="../src/ui/configwidget.ui" line="525"/>
         <source>Options</source>
         <translation>Налаштування</translation>
     </message>
@@ -432,97 +432,107 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Формат зображень за замовчанням</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="268"/>
+        <location filename="../src/ui/configwidget.ui" line="144"/>
+        <source>Default delay before grabbing screen</source>
+        <translation>Затримка перед отримання скріншоту</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="206"/>
+        <source>Inserting current date time into saved filename</source>
+        <translation>Вставка дати та часу в ім&apos;я файлу при збереженні</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="256"/>
         <source>Autosave screenshot</source>
         <translation>Автозберігання скріншотів</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="275"/>
+        <location filename="../src/ui/configwidget.ui" line="268"/>
         <source>Save first screenshot</source>
         <translation>Зберігати перший скріншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="344"/>
+        <location filename="../src/ui/configwidget.ui" line="338"/>
         <source>Tray</source>
         <translation>Трей</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="479"/>
+        <location filename="../src/ui/configwidget.ui" line="473"/>
         <source>Action</source>
         <translation>Дія</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="489"/>
+        <location filename="../src/ui/configwidget.ui" line="483"/>
         <source>Global shortcuts</source>
         <translation>Глобальні</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="496"/>
+        <location filename="../src/ui/configwidget.ui" line="490"/>
         <source>Fill screen</source>
         <translation>Весь екран</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="501"/>
+        <location filename="../src/ui/configwidget.ui" line="495"/>
         <source>Active window</source>
         <translation>Активне вікно</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="506"/>
+        <location filename="../src/ui/configwidget.ui" line="500"/>
         <source>Area select</source>
         <translation>Вибрану ділянку</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="516"/>
+        <location filename="../src/ui/configwidget.ui" line="510"/>
         <source>New screen</source>
         <translation>Новий скріншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="521"/>
+        <location filename="../src/ui/configwidget.ui" line="515"/>
         <source>Save screen</source>
         <translation>Зберегти скріншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="526"/>
+        <location filename="../src/ui/configwidget.ui" line="520"/>
         <source>Copy screen</source>
         <translation>Копіювати скріншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="536"/>
+        <location filename="../src/ui/configwidget.ui" line="530"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="554"/>
+        <location filename="../src/ui/configwidget.ui" line="548"/>
         <source>Not defined</source>
         <translation>Не вибрана</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="569"/>
-        <source>restore default settings</source>
+        <location filename="../src/ui/configwidget.ui" line="563"/>
+        <source>Restore default settings</source>
         <translation>Відновити початкові налаштування</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="572"/>
+        <location filename="../src/ui/configwidget.ui" line="566"/>
         <source>Defaults</source>
         <translation>За умовчанням</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="592"/>
+        <location filename="../src/ui/configwidget.ui" line="586"/>
         <source>Save settings</source>
         <translation>Зберегти налаштування</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="595"/>
+        <location filename="../src/ui/configwidget.ui" line="589"/>
         <source>Save</source>
         <translation>Зберегти</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="602"/>
+        <location filename="../src/ui/configwidget.ui" line="596"/>
         <source>Discard changes</source>
         <translation>Закрити без змін</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="605"/>
+        <location filename="../src/ui/configwidget.ui" line="599"/>
         <source>Cancel</source>
         <translation>Відміна</translation>
     </message>
@@ -572,13 +582,8 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Затримка:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="144"/>
-        <source>Default delya before grabbing screen</source>
-        <translation>Затримка перед отримання скріншоту</translation>
-    </message>
-    <message>
         <location filename="../src/ui/configwidget.ui" line="150"/>
-        <location filename="../src/ui/configwidget.ui" line="426"/>
+        <location filename="../src/ui/configwidget.ui" line="420"/>
         <source> sec</source>
         <translation> сек</translation>
     </message>
@@ -593,127 +598,122 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Розширені</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="218"/>
-        <source>Inserting current date time into asved filename</source>
-        <translation>Вставка дати та часу в ім&apos;я файлу при збереженні</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/configwidget.ui" line="221"/>
+        <location filename="../src/ui/configwidget.ui" line="209"/>
         <source>Insert DateTime in filename</source>
         <translation>Вставляти дату та час в ім&apos;я файлу</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="230"/>
+        <location filename="../src/ui/configwidget.ui" line="218"/>
         <source>Template: </source>
         <translation>Шаблон: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="255"/>
+        <location filename="../src/ui/configwidget.ui" line="243"/>
         <source>Example: </source>
         <translation>Приклад: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="265"/>
+        <location filename="../src/ui/configwidget.ui" line="253"/>
         <source>Automaticaly saving screenshots in grabbing process</source>
         <translation>Автоматичне збереження скріншотів при їх отриманні</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="307"/>
+        <location filename="../src/ui/configwidget.ui" line="301"/>
         <source>Display</source>
         <translation>Відображення</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="359"/>
+        <location filename="../src/ui/configwidget.ui" line="353"/>
         <source>Use tray</source>
         <translation>Використовувати трей</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="368"/>
+        <location filename="../src/ui/configwidget.ui" line="362"/>
         <source>Tray messages:</source>
         <translation>Спливаючі повідомлення:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="381"/>
+        <location filename="../src/ui/configwidget.ui" line="375"/>
         <source>Tray messages display mode</source>
         <translation>Режим відображення спливаючих повідомлень</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="385"/>
+        <location filename="../src/ui/configwidget.ui" line="379"/>
         <source>Never</source>
         <translation>Ніколи</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="390"/>
+        <location filename="../src/ui/configwidget.ui" line="384"/>
         <source>Tray mode</source>
         <translation>Якщо згорнуто</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="395"/>
+        <location filename="../src/ui/configwidget.ui" line="389"/>
         <source>Always</source>
         <translation>Завжди</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="469"/>
+        <location filename="../src/ui/configwidget.ui" line="463"/>
         <source>Shortcuts</source>
         <translation>Комбінації клавіш</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="484"/>
+        <location filename="../src/ui/configwidget.ui" line="478"/>
         <source>Shortcut</source>
         <translation>Клавіші</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="512"/>
+        <location filename="../src/ui/configwidget.ui" line="506"/>
         <source>Local shortcutss</source>
         <translation>Локальні</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="547"/>
+        <location filename="../src/ui/configwidget.ui" line="541"/>
         <source>Selected shortcut:</source>
         <translation>Вибрана комбінація:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="313"/>
+        <location filename="../src/ui/configwidget.ui" line="307"/>
         <source>Saving main window size on exit</source>
         <translation>Збереження розмірів вікна програми при виході</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="316"/>
+        <location filename="../src/ui/configwidget.ui" line="310"/>
         <source>Save window size on exit</source>
         <translation>Зберігати розмір вікна при виході</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="407"/>
+        <location filename="../src/ui/configwidget.ui" line="401"/>
         <source>Time of display tray messages</source>
         <translation>Час показу спливаючих повідомлень</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="423"/>
+        <location filename="../src/ui/configwidget.ui" line="417"/>
         <source>Time to display tray messages</source>
         <translation>Час показу спливаючих повідомлень</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="323"/>
+        <location filename="../src/ui/configwidget.ui" line="317"/>
         <source>Zoom area around mouse in selection mode</source>
         <translation>Масштаб області курсора в режимі вибору</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="444"/>
+        <location filename="../src/ui/configwidget.ui" line="438"/>
         <source>Minimize in tray on click close button</source>
         <translation>Ховатись в трей при закритті</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="447"/>
+        <location filename="../src/ui/configwidget.ui" line="441"/>
         <source>Close in tray</source>
         <translation>Закривати в трей</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="282"/>
+        <location filename="../src/ui/configwidget.ui" line="277"/>
         <source>Allow run multiplies copy of Screen Grab</source>
         <translation>Дозволити запуск кількох копій програми</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="285"/>
+        <location filename="../src/ui/configwidget.ui" line="280"/>
         <source>Allow multiple copies</source>
         <translation>Кілька копій програми</translation>
     </message>

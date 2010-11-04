@@ -141,7 +141,7 @@
           <item>
            <widget class="QSpinBox" name="defDelay">
             <property name="toolTip">
-             <string>Default delya before grabbing screen</string>
+             <string>Default delay before grabbing screen</string>
             </property>
             <property name="wrapping">
              <bool>false</bool>
@@ -203,7 +203,7 @@
        <item>
         <widget class="QCheckBox" name="checkIncDate">
          <property name="toolTip">
-          <string>Inserting current date time into asved filename</string>
+          <string>Inserting current date time into saved filename</string>
          </property>
          <property name="text">
           <string>Insert DateTime in filename</string>
@@ -560,7 +560,7 @@
      <item>
       <widget class="QPushButton" name="butRestoreOpt">
        <property name="toolTip">
-        <string>restore default settings</string>
+        <string>Restore default settings</string>
        </property>
        <property name="text">
         <string>Defaults</string>
