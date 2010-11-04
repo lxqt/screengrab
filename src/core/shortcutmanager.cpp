@@ -21,8 +21,6 @@
 #include "shortcutmanager.h"
 #include "src/core/config.h"
 
-#include <QDebug>
-
 const QString DEF_SHORTCUT_NEW = "Ctrl+N";
 const QString DEF_SHORTCUT_SAVE = "Ctrl+S";
 const QString DEF_SHORTCUT_COPY = "Ctrl+C";

@@ -21,7 +21,6 @@
 #include <QTranslator>
 
 #include "src/common/singleapp/singleapp.h"
-#include <QDebug>
 #include "src/core/core.h"
 #include "src/ui/mainwindow.h"
 

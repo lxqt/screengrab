@@ -26,8 +26,6 @@
 #include <QtCore/QVector>
 #include <QtGui/QDesktopServices>
 
-#include <QDebug>
-
 const QString KEY_SAVEDIR = "defDir";
 const QString KEY_SAVENAME = "defFilename";
 const QString KEY_SAVEFORMAT = "defImgFormat";
@@ -61,7 +59,6 @@ Config::Config()
 {
     settings = new QSettings(getConfigFile(), QSettings::IniFormat );
 
-    qDebug() << settings;
     _shortcuts = new ShortcutManager(settings);
 
     // check existing config file

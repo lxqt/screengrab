@@ -207,7 +207,7 @@ void Core::getActiveWind_X11()
 
     if ((stat == False) || (attr.map_state != IsViewable))
     {
-        qDebug() << "return NULL";
+	CmdLine::print("Not window attributes.");
     }
 
     // get wnd size

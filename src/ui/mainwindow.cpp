@@ -23,8 +23,6 @@
 
 #include "src/core/shortcutmanager.h"
 
-#include <QDebug>
-
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 #include <QtGui/QDesktopWidget>

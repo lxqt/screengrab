@@ -320,15 +320,12 @@ void ConfigDialog::toggleCheckShowTray(bool checked)
 
 void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
-    qDebug() << c.parent() ;
     if (c.parent().isValid() == true)
     {
 	ui->labUsedShortcut->setVisible(true);
 	ui->keyWidget->setVisible(true);
 
-	qDebug() << "ui->treeKeys " << ui->treeKeys->currentItem();
 	QTreeWidgetItem *item = ui->treeKeys->currentItem();
-	qDebug() << "get key str " << item->data(1, Qt::DisplayRole).toString();
 	ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
     }
     else
@@ -380,7 +377,6 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 
 void ConfigDialog::changeShortcut(const QKeySequence& seq)
 {
-    qDebug() << "---- " << ui->treeKeys->selectedItems().first();
     disconnect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
     QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
     item->setData(1, Qt::DisplayRole, seq.toString());
@@ -388,7 +384,6 @@ void ConfigDialog::changeShortcut(const QKeySequence& seq)
 
 void ConfigDialog::clearShrtcut()
 {
-    qDebug() << "clear slot";
     QTreeWidgetItem *item = ui->treeKeys->selectedItems().first();
     item->setData(1, Qt::DisplayRole, QString(""));
 }
