@@ -260,7 +260,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
          <property name="leftMargin">
-          <number>14</number>
+          <number>16</number>
          </property>
          <item>
           <widget class="QCheckBox" name="checkAutoSaveFirst">
