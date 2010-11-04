@@ -6,87 +6,87 @@
     <message>
         <location filename="../src/ui/about.cpp" line="37"/>
         <source>built on </source>
-        <translation type="unfinished">construído em</translation>
+        <translation>construído em</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="42"/>
         <source>using Qt </source>
-        <translation type="unfinished">usando o QT</translation>
+        <translation>usando o QT</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="53"/>
         <source>About</source>
-        <translation type="unfinished">Sobre</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="54"/>
         <source>Contacts</source>
-        <translation type="unfinished">Contatos</translation>
+        <translation>Contatos</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="55"/>
         <source>Thanks</source>
-        <translation type="unfinished">Agradecimentos</translation>
+        <translation>Agradecimentos</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="108"/>
         <source>is crossplatform application for fast creation screenshots of your desktop.</source>
-        <translation type="unfinished">é um programa multi-plataforma para rápida criação de caprturas de tela de seu desktop.</translation>
+        <translation>é um programa multi-plataforma para rápida criação de capturas de tela de seu desktop.</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="110"/>
         <source>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished">Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="112"/>
         <source>Licensed under the </source>
-        <translation type="unfinished"></translation>
+        <translation>Licenciado sob a </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="120"/>
         <source>E-Mail</source>
-        <translation type="unfinished">E-Mail</translation>
+        <translation>E-Mail</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="133"/>
         <source>Translate:</source>
-        <translation type="unfinished">Tradução:</translation>
+        <translation>Tradução:</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="135"/>
         <source> Brazilian Portuguese translation</source>
-        <translation type="unfinished">Tradução para o Português do Brasil</translation>
+        <translation>Tradução para o Português do Brasil</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="136"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished"></translation>
+        <translation>Márcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="138"/>
         <source> Ukrainian translation</source>
-        <translation type="unfinished"></translation>
+        <translation>Tradução para o Ucraniano</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="139"/>
         <source>Gennadi Motsyo</source>
-        <translation type="unfinished"></translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="141"/>
         <source>Testing:</source>
-        <translation type="unfinished">Testado em:</translation>
+        <translation>Testado em:</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="143"/>
         <source>win32-build [Windows XP]</source>
-        <translation type="unfinished">win32-build [Windows XP]</translation>
+        <translation>win32-build [Windows XP]</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="144"/>
         <source>win32-build [Windows Vista]</source>
-        <translation type="unfinished">win32-build [Windows Vista]</translation>
+        <translation>win32-build [Windows Vista]</translation>
     </message>
 </context>
 <context>
@@ -95,47 +95,47 @@
         <location filename="../src/ui/configwidget.cpp" line="226"/>
         <location filename="../src/ui/configwidget.cpp" line="235"/>
         <source>Select directory</source>
-        <translation type="unfinished">Selecionar diretório</translation>
+        <translation>Selecionar diretório</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="251"/>
         <source>Message</source>
-        <translation type="unfinished">Mensagem</translation>
+        <translation>Mensagem</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="251"/>
         <source>Settings will be restored to default values!</source>
-        <translation type="unfinished">As configurações serão restauradas para os valores padrões!</translation>
+        <translation>As configurações serão restauradas para os valores padrões!</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="261"/>
         <source>None</source>
-        <translation type="unfinished">Nenhum</translation>
+        <translation>Nenhum</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="309"/>
         <source>Example: </source>
-        <translation type="unfinished">Exemplo:</translation>
+        <translation>Exemplo:</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="372"/>
         <source>This keys is used in your system! Please select other keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas teclas já estão em uso no sistema! Por favor, selecione outras teclas</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="377"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Estas teclas já estão em uso no ScreenGrab! Por favor, selecione outras teclas</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="399"/>
         <source>This key is not supported on your system!</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta tecla não é suportada no seu sistema!</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="434"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>
@@ -143,32 +143,32 @@
     <message>
         <location filename="../src/core/core.cpp" line="154"/>
         <source>New screen</source>
-        <translation type="unfinished">Nova tela</translation>
+        <translation>Nova tela</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="154"/>
         <source>New screen is getted!</source>
-        <translation type="unfinished"></translation>
+        <translation>A nova tela foi obtida!</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="348"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="367"/>
         <source>Copied</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiada</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="348"/>
         <source>Saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Salva em </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="367"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>A captura de tela foi copiada para a área de transferência</translation>
     </message>
 </context>
 <context>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/ui/mainwindow.ui" line="156"/>
         <source>Getting new screenshot</source>
-        <translation>Obtendo nova captura de tela</translation>
+        <translation>Obtendo uma nova captura de tela</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="159"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/ui/mainwindow.ui" line="194"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Atrasar em segundos antes de tirar a captura de tela</translation>
+        <translation>Atrasar em segundos antes de obter a captura de tela</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="197"/>
@@ -370,24 +370,24 @@
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="524"/>
         <source>PNG Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos PNG</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="525"/>
         <source>JPEG Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos JPEG</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="526"/>
         <source>BMP Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos BMP</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="557"/>
         <location filename="../src/ui/mainwindow.cpp" line="561"/>
         <location filename="../src/ui/mainwindow.cpp" line="565"/>
         <source>Save As...</source>
-        <translation>Salvar como...</translation>
+        <translation>Salvar Como...</translation>
     </message>
 </context>
 <context>
@@ -429,72 +429,72 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="124"/>
         <source>Default saving image format</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvando formato de imagem padrão</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="268"/>
         <source>Autosave screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar automaticamente a captura de tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="275"/>
         <source>Save first screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar primeiro a captura de tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="344"/>
         <source>Tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Área de notificação</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="479"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Ação</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="489"/>
         <source>Global shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalhos globais</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="496"/>
         <source>Fill screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Toda a tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="501"/>
         <source>Active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela ativa</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="506"/>
         <source>Area select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar área</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="516"/>
         <source>New screen</source>
-        <translation type="unfinished">Nova tela</translation>
+        <translation>Nova tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="521"/>
         <source>Save screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="526"/>
         <source>Copy screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="536"/>
         <source>Help</source>
-        <translation type="unfinished">Ajuda</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="554"/>
         <source>Not defined</source>
-        <translation type="unfinished"></translation>
+        <translation>Não definida</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="569"/>
@@ -534,12 +534,12 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="62"/>
         <source>Default save directory:</source>
-        <translation>Salvar no diretório por padrão:</translation>
+        <translation>Salvar no diretório padrão:</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="71"/>
         <source>Path to default selection dir for saving</source>
-        <translation>Caminho do diretório para salvar por padrão</translation>
+        <translation>Caminho do diretório padrão para salvar</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="78"/>
@@ -574,7 +574,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="144"/>
         <source>Default delya before grabbing screen</source>
-        <translation>Atraso padrão antes de capturar tela</translation>
+        <translation>Atraso padrão antes de capturar a tela</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="150"/>
@@ -600,7 +600,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="221"/>
         <source>Insert DateTime in filename</source>
-        <translation>Inserir data no nome do arquivo</translation>
+        <translation>Inserir Data no nome do arquivo</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="230"/>
@@ -625,7 +625,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="359"/>
         <source>Use tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar área de notificação</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="368"/>
@@ -665,32 +665,32 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="469"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalhos</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="484"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalho</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="512"/>
         <source>Local shortcutss</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalhos locais</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="547"/>
         <source>Selected shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalho selecionado:</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="313"/>
         <source>Saving main window size on exit</source>
-        <translation>Salvando tamanho da janela principal ao sair</translation>
+        <translation>Salvar o tamanho da janela principal ao sair</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="316"/>
         <source>Save window size on exit</source>
-        <translation>Salvar tamanho da janela ao sair</translation>
+        <translation>Salvar o tamanho da janela ao sair</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="323"/>
