@@ -48,7 +48,7 @@ const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
 const bool DEF_AUTO_SAVE_FIRST = false;
 const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
-const bool DEF_SHOWTRAY = false;
+const bool DEF_SHOW_TRAY = true;
 
 // class worker with conf data
 class Config
