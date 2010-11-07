@@ -26,7 +26,7 @@
         <h2>ScreenGrab - rápida criação de capturas de telas</h2>
         <p>
 Esta é uma aplicação multi-plataforma projetada para obter rapidamente capturas de telas.
-ScreenGrab foi criado usando o Framework Qt, graças a qual o programa pode trabalhar no
+O ScreenGrab foi criado usando o Framework Qt, graças a qual o programa pode trabalhar no
 Microsoft Windows e GNU/Linux.
                 </p>
         <p>
@@ -34,9 +34,9 @@ Microsoft Windows e GNU/Linux.
                 </p>
         <ul>
                     <li>Funciona no Windows & Linux</li>
-                    <li>Obtem captura de telas do desktop</li>
-                    <li>Obtem captura de tela da janela ativa</li>
-		    <li>Obtem captura de tela de uma região do desktop</li>
+                    <li>Obtém captura de telas do desktop</li>
+                    <li>Obtém captura de tela da janela ativa</li>
+		    <li>Obtém captura de tela de uma região do desktop</li>
 		    <li>Copia a captura de tela para a área de transferência</li>
                     <li>Salva seus arquivos de imagens no formato PNG
 ou JPEG ou BMP</li>
@@ -47,7 +47,8 @@ ScreenGrab no momento da captura de tela</li>
 
                     <li>Habilidade para minimizar o programa para a área de notificação do sistema, e
 controlá-lo via menu de contexto</li>
-	    <li>Salvar automaticamente captura de tela ao ser recebido</li>
+	    <li>Obtém a captura de tela usando atalhos globais</li>
+	    <li>Salva automaticamente a captura de tela ao ser recebido</li>
 	    <li>Habilidade de inserir data e hora no nome do arquivo e salvar</li>
         </ul>
 
@@ -83,23 +84,26 @@ através dos botões ou pelo menu de contexto na área de notificação do deskt
                 Controles adicionais, localizado na janela principal.
             </p>
         <ul>
-						<li><b>Atrasar</b> -- atrasa em segundos antes de tirar a tela.</li>
-                    <li><b>Ocultar janela</b> -- oculta a janela do programa no processo de obtenção
- [para tirar tela de menus]. </li>
+						<li><b>Atraso</b> -- atrasa em segundos antes de capturar a tela.</li>
                     <li><b>Tipo</b> -- tipo de obtenção [tela cheia
 ou janela ativa]. </li>
         </ul>
             <p>
-                Configurações:
+                <b><u>Configurações principais:</u></b>
             </p>
         <ul>
                     <li><b>Diretório padrão</b> -- diretório padrão para salvar as capturas de telas.</li>
                     <li><b>Nome do arquivo padrão</b> -- nome do arquivo salvo por padrão.</li>
                     <li><b>Formato</b> -- padrão do formato da imagem salva (você pode selecionar outro formato ao salvar).</li>
-<li><b>Formato</b> -- obtem a captura da tela da janela ativa sem decorações da janela.</li>
-                    <li><b>Inserir data no nome do arquivo</b> -- inseri data e hora no nome do arquivo salvo.
+<li><b>Nenhuma decoração da janela</b> -- captura a janela ativa sem as decoraçãos da janela.</li>
+	</ul>
+            <p>
+                <b><u>Configurações avançadas:</u></b>
+            </p>
+        <ul>
+                    <li><b>Inserir Data/Hora no nome do arquivo</b> -- inseri data e hora no nome do arquivo salvo.
 <br />
-<br />Estas expressões podem ser utilizadas como parte dos caractres do formato da data::
+<br />Estas expressões podem ser utilizadas como parte dos caracteres do formato da data::
 <br />
 <table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
 <thead><tr valign="top" class="qt-style"><th>Saída das</th><th>expressões</th></tr></thead>
@@ -139,15 +143,39 @@ ou janela ativa]. </li>
 <br />
 				</li>
                     <li><b>Auto-salvar tela</b> -- salva automaticamente capturas de telas no processo de captura.</li>
-                    <li><b>Mensagens na área de notificação</b> -- modo de exibir as mensagens na área de notificação ao tirar|salvar os eventos. Pode ser "nenhum" ou "ocultar" ou "sempre".</li>
-                    <li><b>Tempo de exibição das mensagens na área de notificação</b> -- o tempo em que as mensagens são exibidas.</li>
-                    <li><b>Salva o tamanho da janela ao sair</b> -- salva o tamanho da janela principal ao sair (e restaura na próxima execução).</li>
-                    <li><b>Fechar para área de notificação</b> -- minimiza a janela principal para a área de notificação ao clicar no botão fechar da janela.</li>
+		    <li><b>Salvar a primeira captura de tela</b> -- habilitado | desabilitado automaticamente ao salvar a primeira captura de tela, que se obtém ao executar o programa.</li>
                   <li><b>Permitir múltiplas instâncias</b> -- permite executar múltiplas instâncias do ScreenGrab.</li>
+	</ul>
+            <p>
+                <b><u>Exibir configurações:</u></b>
+            </p>
+        <ul>
+                    <li><b>Salvar o tamanho da janela ao sair</b> -- salva o tamanho da janela principal ao sair (e restaura na próxima execução).</li>
+		    <li><b>Zoom da área ao redor do mouse no modo de seleção</b> -- a capacidade de exibir a área ampliada em torno do ponteiro do mouse ao receber uma tela de área selecionada.</li>
+	</ul>
+            <p>
+                <b><u>Configurações da área de notificação dos sistema:</u></b>
+            </p>
+        <ul>
+		    <li><b>Usar a área de notificação</b> -- usar a área de notificação (system tray) do sistema operacional (ambiente de trabalho) para mostrar as mensagens e gerenciar o programa.
+                    <li><b>Mensagens na área de notificação</b> -- modo de exibir as mensagens na área de notificação ao tirar|salvar os eventos. Pode ser "nenhum" ou "ocultar" ou "sempre".</li>
+                    <li><b>Tempo de exibição das mensagens na área de notificação</b> -- tempo em que as mensagens são exibidas.</li>
+                    <li><b>Fechar para área de notificação</b> -- minimiza a janela principal para a área de notificação ao clicar no botão fechar da janela.</li>
         </ul>
-
-                      <p>
-                Parâmetros de linha de comando:
+	<p>
+	    <u><b>configurações dos atalhos:</u></b>
+	</p>
+	<p>
+	    Na aba "Atalhos" na janela opções, você pode definir teclas de atalho para o acesso rápido das funções do programa. Existem dois tipos de combinações de teclas usadas no Screengrab - local e global.
+	</p>
+	<p>
+	    Local duplica as ações executadas ao pressionar o botão na janela principal. Eles só funcionam quando a janela principal do Screengrab está ativa.
+	</p>
+	<p>
+	    Atalhos globais podem ser usados para se obter uma nova captura de tela, ao trabalhar com outra aplicação no seu sistema operacional.
+	</p>
+			<p>
+                <u><b>Parâmetros da linha de comando:</u></b>
             </p>
                       <ul>
                         <li><b>--fullscreen</b> -- define o modo tela cheia [padrão].
@@ -181,14 +209,15 @@ ou janela ativa]. </li>
       <strong>Tradutores:</strong>
 </p>
 <ul>
-      <li><strong>Márcio Moraes</strong><br>
-Tradução para o Português do Brasil</strong> </li>
+      <li><strong>Márcio Moraes</strong> -- Tradução para o Português do Brasil</strong> </li>
+	<li><strong>Gennadi Motsyo</strong> -- Tradução para o Ucraniano</strong> </li>
 </ul>
 <p>
       <strong>Beta-testers:</strong>
 <ul>
       <li><strong>Alexantia</strong> </li>
       <li><strong>iNight</strong> </li>
+</ul>
 
 <p>
 E a todos aqueles que utilizam ScreenGrab :)
@@ -196,8 +225,28 @@ E a todos aqueles que utilizam ScreenGrab :)
 <a name='versions'></a> 
             <h2>Histórico das versões  <a href='#main'>Para o início da página</a></h2>
 
+	    <p>
+                <strong>Versão 0.9:</strong>
+			</p>
+			<ul>
+				<li>adicionados atalhos globais. </li>
+				<li>adicionado a opção habilitar|desabilitar na área de notificação do sistema. </li>
+				<li>adicionado alternar para a instância já em execução do programa quando você iniciar uma segunda instância (modo de operação não permitir múltiplas instâncias). </li>
+				<li>adicionado salvar automaticmente a primeira captura de tela que foi obtida no início do programa (ocional habilitar | desabilitar). </li>
+				<li>redesenhada a interface do diálogo de configuração. </li>
+			</ul>
+
             <p>
-                <strong>Version 0.8:</strong>
+            <p>
+                <strong>Versão 0.8.1:</strong>
+			</p>
+		<ul>
+		    <li>[Linux] corrigido a incorreta seleção padrão ao salvar o formato no KDE 4.4.x no diálogo salvar arquivo. </li>
+		    <li>adicionada a tradução de_DE. </li>
+		</ul>
+            <p>
+            <p>
+                <strong>Versão 0.8:</strong>
                         </p>
                         <ul>
                                 <li>adicionado parâmetros de linha de comando
@@ -211,7 +260,7 @@ E a todos aqueles que utilizam ScreenGrab :)
                         </ul>
 
             <p>
-                <strong>Version 0.6.2 [Somente Linux]:</strong>
+                <strong>Versão 0.6.2 [Somente Linux]:</strong>
                         </p>
                         <ul>
                           <li>corrigido o não traduzido menu da área de notificação (publicação fechada #7). </li>
