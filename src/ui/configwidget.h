@@ -49,12 +49,13 @@ private:
     QString getFormat();
     bool checkUsedShortcuts();
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
+    void showErrorMessage(QString text);
 
 private slots:
     void collapsTreeKeys(QModelIndex index);
     void doubleclickTreeKeys(QModelIndex index);
     void toggleCheckShowTray(bool checked);
-    void currentItemChanged(QTreeWidgetItem *c ,QTreeWidgetItem *p);
+    void currentItemChanged(const QModelIndex c ,const QModelIndex p);
     void editDateTmeTpl(QString str);
     void setVisibleDateTplEdit(bool);
     void changeTrayMsgType(int type);
@@ -66,6 +67,7 @@ private slots:
     void restoreDefaults();
     void acceptShortcut(const QKeySequence &seq);
     void changeShortcut(const QKeySequence &seq);
+    void clearShrtcut();
     void keyNotSupported();
 };
 

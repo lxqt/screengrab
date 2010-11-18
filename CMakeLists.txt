@@ -10,8 +10,8 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9-dev")
-set(SCREENGRAB_VERSION_DEV "0.8.88")
+set(SCREENGRAB_VERSION "0.9.5")
+set(SCREENGRAB_VERSION_DEV "1.0-dev")
 
 if(SCREENGRAB_VERSION_DEV)
    set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV})")
@@ -36,7 +36,7 @@ if(${CMAKE_BUILD_TYPE} MATCHES "Release")
     add_definitions(-DQT_NO_DEBUG_OUTPUT)
     if(WIN32)
     if(NOT MSVC)
-        set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE} "-O3")
+        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
     endif(NOT MSVC)
 endif(WIN32)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
@@ -95,7 +95,7 @@ endif(WIN32)
 # set headers to moc
 set(SCREENGRAB_MOC
     src/core/core.h
-    src/ui/configwidget.h
+	src/ui/configwidget.h
     src/ui/about.h
     src/ui/mainwindow.h
 )

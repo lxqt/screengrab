@@ -25,7 +25,7 @@
 
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QDialog(parent)
-{    
+{
     conf = mainconf;
 
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint );
@@ -101,9 +101,9 @@ void RegionSelect::drawBackGround()
 
     // draw rect of desktop size in poainter
     painter.drawRect(QApplication::desktop()->rect());
-        
+
     QRect txtRect = QApplication::desktop()->screenGeometry(QApplication::desktop()->primaryScreen());
-    QString txtTip = QApplication::tr("Use your mouse to draw a rectangle to screenshot or  exit pressing\nany key or using the right or middle mouse buttons.");
+    QString txtTip = QApplication::tr("Use your mouse to draw a rectangle to screenshot or exit pressing\nany key or using the right or middle mouse buttons.");
 
     txtRect.setHeight(qRound(txtRect.height() / 10)); // rounded val of text rect height
 
@@ -180,4 +180,4 @@ QPixmap RegionSelect::getSelection()
     QPixmap sel;
     sel = desktopPixmapClr.copy(selectRect);
     return sel;
-}   
+}

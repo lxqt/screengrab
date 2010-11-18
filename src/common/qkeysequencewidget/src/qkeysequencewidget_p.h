@@ -46,7 +46,7 @@ class QKeySequenceWidgetPrivate // : public QObject
 {
     //Q_OBJECT
     Q_DECLARE_PUBLIC(QKeySequenceWidget);
-    
+
 public:
     QKeySequenceWidget * q_ptr;
 
@@ -59,6 +59,7 @@ public:
     void startRecording();
     void doneRecording();
     inline void cancelRecording();
+    inline void clearSequence();
     inline void controlModifierlessTimout();
     inline void keyNotSupported();
 
@@ -95,17 +96,13 @@ public:
         :  QPushButton(parent)
         , d(p)
     {
-        qDebug() << "qShortcut button Create";
-        qDebug() << "parent----" << parent;
-
-        qDebug() << "visible " << isVisible();      
         setMinimumWidth(QPushButton::minimumWidth());
         QPushButton::setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     }
 
     virtual ~QShortcutButton()
     {
-        qDebug() << "qShortcut button delete";
+
     }
 
     virtual QSize sizeHint() const;

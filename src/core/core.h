@@ -37,20 +37,16 @@
 #include <QtGui/QX11Info>
 #endif
 
-#include <QDebug>
-
 struct StateNotifyMessage {
     QString header;
     QString message;
     StateNotifyMessage()
     {
-	qDebug() << "create empty statne Notifi";
 	header = "";
 	message = "";
     };
     StateNotifyMessage(QString h, QString m)
     {
-	qDebug() << "create NOT-empty statne Notifi";
 	header = h;
 	message = m;
     };
