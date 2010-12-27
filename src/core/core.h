@@ -37,6 +37,8 @@
 #include <QtGui/QX11Info>
 #endif
 
+#include <QDebug>
+
 struct StateNotifyMessage {
     QString header;
     QString message;
@@ -64,7 +66,8 @@ public Q_SLOTS:
 public:
     static Core* instance();
     ~Core();
-
+    
+    void sleep(quint8 msec = 350);
     static QString getVersionPrintable();
 
     QPixmap getPixmap();

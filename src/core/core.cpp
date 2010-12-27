@@ -49,11 +49,12 @@ Core::Core()
     pixelMap = new QPixmap;
     scrNum = 0;
 
+    sleep(250);
     // delay on 250 msec
-    QMutex mutex;
-    mutex.lock();
-    QWaitCondition pause;
-    pause.wait(&mutex, 250);
+//     QMutex mutex;
+//     mutex.lock();
+//     QWaitCondition pause;
+//     pause.wait(&mutex, 250);
 }
 
 Core::Core(const Core& ): QObject()
@@ -81,6 +82,16 @@ Core::~Core()
     conf->killInstance();
 }
 
+void Core::sleep(quint8 msec)
+{
+    QMutex mutex;
+    mutex.lock();
+    QWaitCondition pause;
+    pause.wait(&mutex, msec); // def 240
+    mutex.unlock();
+}
+
+
 void Core::coreQuit()
 {
     if (corePtr)
@@ -96,6 +107,15 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
+    if (first == true)
+    {
+        qDebug() << "first screen";
+    }
+    else
+    {
+        qDebug() << "NON first screen";
+    }
+    
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
     {

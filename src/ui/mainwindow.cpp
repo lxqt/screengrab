@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget* parent) :
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
 
-    core->screenShot(true);
+//     core->screenShot(true);
     displayPixmap();
 
     createShortcuts();
@@ -438,6 +438,10 @@ void MainWindow::showWindow(const QString& str)
     // change type scrren in config & on main window
     m_ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
+    
+    core->sleep(250); // it hack for non capture  interface of apss
+    core->screenShot();
+    
     Q_UNUSED(str)
     if (isHidden() == true && core->conf->getShowTrayIcon() == true)
     {
