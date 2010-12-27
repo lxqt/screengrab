@@ -24,6 +24,8 @@
 #include "src/core/core.h"
 #include "src/ui/mainwindow.h"
 
+#include <QDebug>
+
 int main(int argc, char *argv[])
 {
     SingleApp scr(argc, argv, VERSION);
@@ -59,7 +61,8 @@ int main(int argc, char *argv[])
 
     if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
     {
-        scr.sendMessage("wake up");
+        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
+        scr.sendMessage("screengrab --type=" + type);
         return 0;
     }
 

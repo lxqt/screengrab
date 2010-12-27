@@ -431,6 +431,13 @@ void MainWindow::windowHideShow()
 
 void MainWindow::showWindow(const QString& str)
 {
+    // get char of type screen (last) form reviewd string
+    QString typeNum = str[str.size() - 1];
+    int type = typeNum.toInt();
+    
+    // change type scrren in config & on main window
+    m_ui->cbxTypeScr->setCurrentIndex(type);
+    typeScreenShotChange(type);
     Q_UNUSED(str)
     if (isHidden() == true && core->conf->getShowTrayIcon() == true)
     {
@@ -610,13 +617,13 @@ void MainWindow::globalShortcutActivate(int type)
     // small hack for blocking segfault on shortcuted selection area screen on win32
     if (core->conf->getShowTrayIcon() == true && trayed == true && type == 2 )
     {
-	showMaximized();
+        showMaximized();
     }
 #endif
 
     if (trayed == false)
     {
-	hide();
+        hide();
     }
     QTimer::singleShot(200, core, SLOT(screenShot()));
 
