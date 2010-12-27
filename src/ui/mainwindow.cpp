@@ -536,21 +536,21 @@ void MainWindow::saveScreen()
 
     while(iter != formatsAvalible.constEnd())
     {
-	if (qgetenv("DESKTOP_SESSION") == "kde" && iter.key() == format )
-	{
-	    fileFilters.prepend(iter.value() + " (*." + iter.key() + ");;");
-	}
-	else
-	{
-	    fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
-	}
+        if (QString(qgetenv("DESKTOP_SESSION")).contains("kde") && iter.key() == format )
+        {
+            fileFilters.prepend(iter.value() + " (*." + iter.key() + ");;");
+        }
+        else
+        {
+            fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
+        }
 	++iter;
     }
     fileFilters.chop(2);
 
 QString fileName;
 #ifdef Q_WS_X11
-    if (qgetenv("DESKTOP_SESSION") == "kde" || qgetenv("DESKTOP_SESSION") == "gnome")
+    if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")    
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
     }
