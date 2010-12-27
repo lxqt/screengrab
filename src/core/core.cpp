@@ -107,15 +107,6 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
-    if (first == true)
-    {
-        qDebug() << "first screen";
-    }
-    else
-    {
-        qDebug() << "NON first screen";
-    }
-    
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
     {
@@ -163,17 +154,17 @@ void Core::screenShot(bool first)
 	    }
 	}
 	else
-	{
-	    autoSave();
-	}
+        {
+            autoSave();
+        }
     }
     else
     {
-	if (first == false)
-	{
-	    StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-	    Q_EMIT 	sendStateNotifyMessage(message);
-	}
+        if (first == false)
+        {
+            StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+            Q_EMIT 	sendStateNotifyMessage(message);
+        }
     }
 
     Q_EMIT newScreenShot(pixelMap);

@@ -46,6 +46,7 @@ class MainWindow : public QMainWindow //, public screengrab
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void show();
 
 public Q_SLOTS:
     void showWindow(const QString& str);
@@ -53,7 +54,7 @@ public Q_SLOTS:
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
-    void resizeEvent(QResizeEvent *event); // event resuze window
+    void resizeEvent(QResizeEvent *event); // event resuze window    
 //
 private:
     Ui::MainWindow *m_ui;

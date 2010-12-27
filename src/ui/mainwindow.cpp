@@ -150,6 +150,18 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 }
 
+void MainWindow::show()
+{
+    qDebug() << "strt show";
+    if (trayIcon != NULL)
+    {
+        trayIcon->setVisible(true);
+    }
+    QMainWindow::show();
+    qDebug() << "end show";
+}
+
+
 void MainWindow::showHelp()
 {
     // open help file
@@ -279,8 +291,9 @@ void MainWindow::copyScreen()
 
 // crete tray
 void MainWindow::createTray()
-{
+{    
     trayed = false;
+    
     // create actions menu
     mQuit = new QAction(tr("Quit"), this);
     mSave = new QAction(tr("Save"), this);
@@ -321,11 +334,12 @@ void MainWindow::createTray()
     QIcon icon(":/res/img/logo.png");
 
     trayIcon = new QSystemTrayIcon(this);
+    
     trayIcon->setContextMenu(menuTray);
     trayIcon->setIcon(icon);
     trayIcon->show();
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
-             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
+             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );    
 }
 
 void MainWindow::killTray()
