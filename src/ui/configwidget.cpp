@@ -247,7 +247,7 @@ void ConfigDialog::restoreDefaults()
     QMessageBox msg;
     msg.setText(tr("Do you want reset settings to defaults?"));
     msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
-    msg.setIcon(QMessageBox::Information);
+    msg.setIcon(QMessageBox::Question);
     msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     
     int res = msg.exec();
@@ -264,7 +264,7 @@ void ConfigDialog::changeDefDelay(int val)
 {
     if (val == 0 )
     {
-	ui->defDelay->setSpecialValueText(tr( "None"));
+        ui->defDelay->setSpecialValueText(tr( "None"));
     }
 }
 

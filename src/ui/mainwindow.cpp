@@ -71,7 +71,8 @@ MainWindow::MainWindow(QWidget* parent) :
     trayIcon = NULL;
     updateUI();
 
-//     on_delayBox_valueChanged(conf->getDelay());
+    core->screenShot(true);
+    
     m_ui->delayBox->setValue(core->conf->getDelay());
     m_ui->cbxTypeScr->setCurrentIndex(core->conf->getTypeScreen());
 
@@ -152,13 +153,11 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::show()
 {
-    qDebug() << "strt show";
     if (trayIcon != NULL)
     {
         trayIcon->setVisible(true);
     }
     QMainWindow::show();
-    qDebug() << "end show";
 }
 
 

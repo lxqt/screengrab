@@ -24,8 +24,6 @@
 #include "src/core/core.h"
 #include "src/ui/mainwindow.h"
 
-#include <QDebug>
-
 int main(int argc, char *argv[])
 {
     SingleApp scr(argc, argv, VERSION);
@@ -53,10 +51,7 @@ int main(int argc, char *argv[])
 
     Core *ScreenGrab = Core::instance();
     MainWindow mainWnd;    
-    if (scr.isRunning() == false)
-    {
-        ScreenGrab->screenShot(true);
-    }
+
     mainWnd.show();
 
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
