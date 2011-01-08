@@ -53,7 +53,8 @@ bool CmdLine::isCreated()
 bool CmdLine::parseOpt(char* opt)
 {
     QString str ;
-
+    bool retVal = false;
+    
     if (opt[0] == '-' && opt[1] == '-')
     {        
         for (unsigned int i = 2; i != strlen(opt); ++i )
@@ -62,7 +63,7 @@ bool CmdLine::parseOpt(char* opt)
         }
         if (addParam(str) == true)
         {
-            return true;
+            retVal = true;
         }
 
         // парсинг длинного параметра
@@ -70,13 +71,16 @@ bool CmdLine::parseOpt(char* opt)
     else
     {
         qDebug() << "'" << opt << "' is incorrect option"; // TODO -- print out normal
-        return false;
-    } 
+        retVal = false;
+    }
+    
+    return retVal;
 }
 
 
 bool CmdLine::addParam(QString param)
 {
+    bool retVal = false;
     if (optsLong.contains(param))
     {
         if (typeDefined == false && (param == "fullscreen" || param == "active" || param == "region"))
@@ -88,12 +92,9 @@ bool CmdLine::addParam(QString param)
         {
             optsFound << param;
         }
-        return true;
+        retVal = true;
     }
-    else
-    {
-        return false;
-    }
+    return retVal;
 }
 
 bool CmdLine::getParam(QString name)
