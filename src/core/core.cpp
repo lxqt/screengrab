@@ -62,9 +62,9 @@ Core::Core(const Core& ): QObject()
 
 }
 
-Core& Core::operator=(const Core& )
+Core& Core::operator=(const Core &)
 {
-
+    return *this;
 }
 
 Core* Core::instance()
