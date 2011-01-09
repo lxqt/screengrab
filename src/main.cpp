@@ -51,8 +51,12 @@ int main(int argc, char *argv[])
 
     Core *ScreenGrab = Core::instance();
     MainWindow mainWnd;    
-
-    mainWnd.show();
+    
+    if (scr.isRunning() == false)
+    {
+        ScreenGrab->screenShot(true);
+        mainWnd.show();
+    }
 
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
 
@@ -81,7 +85,6 @@ ScreenGrab->conf->cmdLine()->getParam("version"))
         CmdLine::print(version);
         return 0;
     }
-    
     
     return scr.exec();
 }

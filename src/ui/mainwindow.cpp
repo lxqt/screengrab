@@ -65,13 +65,11 @@ MainWindow::MainWindow(QWidget* parent) :
 	    connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
     	globalShortcutSignals->setMapping(globalShortcuts[i], i);
         }
-    /////connect(fullScreen, SIGNAL(activated()), this, SLOT(showAbout()));
+    
     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 
     trayIcon = NULL;
     updateUI();
-
-    core->screenShot(true);
     
     m_ui->delayBox->setValue(core->conf->getDelay());
     m_ui->cbxTypeScr->setCurrentIndex(core->conf->getTypeScreen());
@@ -518,22 +516,20 @@ void MainWindow::restoreWindow()
     // small hack for blocking segfault on shortcuted selection area screen on win32
     if (core->conf->getShowTrayIcon() == true && trayed == true && core->conf->getTypeScreen() == 2 )
     {
-	hide();
+        hide();
     }
 #endif
 
     if (isVisible() == false && trayed == false)
     {
-	showNormal();
-// 	setVisible(true);
+        showNormal();
     }
 
     // if show trat
     if (core->conf->getShowTrayIcon() == true)
     {
-	//  unblock tray signals
-	trayIcon->blockSignals(false);
-	trayIcon->setContextMenu(menuTray); // enable context menu
+        trayIcon->blockSignals(false);
+        trayIcon->setContextMenu(menuTray); // enable context menu
     }
 }
 
