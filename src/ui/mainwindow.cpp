@@ -464,6 +464,13 @@ void MainWindow::showWindow(const QString& str)
 #ifdef Q_WS_X11
     netwm::init(); // initialize NETWM
     netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
+    
+    // small gnome hack
+    if (qgetenv("DESKTOP_SESSION") == "gnome")
+    {
+        showNormal();
+    }
+    
 #endif
 #ifdef Q_WS_WIN
 	// TODO -- make normal activate window with Wim32API
