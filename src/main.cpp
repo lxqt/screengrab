@@ -1,5 +1,5 @@
-/***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+c   /***************************************************************************
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
