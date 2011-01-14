@@ -1,3 +1,7 @@
+0.9.1
+ * fixed non-switching combo-box "Type of Screeen" when grab screenshot from signal by another instance application.
+ * fixed incorect grab active window screens in GNOME (when disabled "Allow multiple copies" option and run another instance of application)
+
 0.9
  * added global shortcus
  * added option for enable|disable system tray
