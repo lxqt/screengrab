@@ -36,7 +36,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="110"/>
         <source>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2010, Артем &apos;DOOMer&apos; Галічкін</translation>
+        <translation type="unfinished">Авторські права &amp;copy; 2009-2011, Артем &apos;DOOMer&apos; Галічкін {2009-2010,?}</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="112"/>
@@ -98,42 +98,42 @@
         <translation>Вибір теки</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Message</source>
-        <translation>Повідомлення</translation>
+        <location filename="../src/ui/configwidget.cpp" line="248"/>
+        <source>Do you want reset settings to defaults?</source>
+        <translation>Ви хочете скинути налаштування за замовчуванням?</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Settings will be restored to default values!</source>
-        <translation>Налаштування були скинуті в початкові значення!</translation>
+        <location filename="../src/ui/configwidget.cpp" line="249"/>
+        <source>Warning</source>
+        <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="261"/>
+        <location filename="../src/ui/configwidget.cpp" line="267"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="309"/>
+        <location filename="../src/ui/configwidget.cpp" line="315"/>
         <source>Example: </source>
         <translation>Приклад: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="372"/>
+        <location filename="../src/ui/configwidget.cpp" line="375"/>
         <source>This keys is used in your system! Please select other keys</source>
         <translation>Ця комбінація вже задіяна в Вашій системі! Виберіть іншу</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/ui/configwidget.cpp" line="380"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
         <translation>Ця комбінація вже задіяна в ScreenGrab! Виберіть іншу</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="399"/>
+        <location filename="../src/ui/configwidget.cpp" line="400"/>
         <source>This key is not supported on your system!</source>
         <translation>Ця комбінація не підтримується вашою системою!</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="434"/>
+        <location filename="../src/ui/configwidget.cpp" line="435"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -141,32 +141,32 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen</source>
         <translation>Новий скріншот</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen is getted!</source>
         <translation>Новий знімок отримано!</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved</source>
         <translation>Збережено</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Copied</source>
         <translation>Скопійовано</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved to </source>
         <translation>Збережено до</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Скріншот скопійовано до кишені</translation>
     </message>
@@ -174,72 +174,72 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="287"/>
+        <location filename="../src/ui/mainwindow.cpp" line="295"/>
         <source>Quit</source>
         <translation>Вихід</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="288"/>
+        <location filename="../src/ui/mainwindow.cpp" line="296"/>
         <source>Save</source>
         <translation>Зберегти</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="289"/>
+        <location filename="../src/ui/mainwindow.cpp" line="297"/>
         <source>New</source>
         <translation>Новий</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="290"/>
+        <location filename="../src/ui/mainwindow.cpp" line="298"/>
         <source>Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="291"/>
-        <location filename="../src/ui/mainwindow.cpp" line="420"/>
-        <location filename="../src/ui/mainwindow.cpp" line="439"/>
+        <location filename="../src/ui/mainwindow.cpp" line="299"/>
+        <location filename="../src/ui/mainwindow.cpp" line="429"/>
+        <location filename="../src/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation>Сховати вікно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="292"/>
+        <location filename="../src/ui/mainwindow.cpp" line="300"/>
         <source>About</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="524"/>
+        <location filename="../src/ui/mainwindow.cpp" line="549"/>
         <source>PNG Files</source>
         <translation>файли PNG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="525"/>
+        <location filename="../src/ui/mainwindow.cpp" line="550"/>
         <source>JPEG Files</source>
         <translation>файли JPEG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="526"/>
+        <location filename="../src/ui/mainwindow.cpp" line="551"/>
         <source>BMP Files</source>
         <translation>файли BMP</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="285"/>
-        <location filename="../src/ui/mainwindow.cpp" line="293"/>
+        <location filename="../src/ui/mainwindow.cpp" line="301"/>
         <source>Options</source>
         <translation>Налаштування</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/ui/mainwindow.cpp" line="364"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="427"/>
+        <location filename="../src/ui/mainwindow.cpp" line="436"/>
         <source>Show</source>
         <translation>Показати вікно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
-        <location filename="../src/ui/mainwindow.cpp" line="561"/>
-        <location filename="../src/ui/mainwindow.cpp" line="565"/>
+        <location filename="../src/ui/mainwindow.cpp" line="582"/>
+        <location filename="../src/ui/mainwindow.cpp" line="586"/>
+        <location filename="../src/ui/mainwindow.cpp" line="590"/>
         <source>Save As...</source>
         <translation>Зберегти як...</translation>
     </message>
@@ -350,7 +350,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="298"/>
-        <location filename="../src/ui/mainwindow.cpp" line="294"/>
+        <location filename="../src/ui/mainwindow.cpp" line="302"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>

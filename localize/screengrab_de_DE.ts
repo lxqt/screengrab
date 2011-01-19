@@ -98,42 +98,42 @@
         <translation type="unfinished">Verzeichnis waehlen</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Message</source>
-        <translation type="unfinished">Nachricht</translation>
+        <location filename="../src/ui/configwidget.cpp" line="248"/>
+        <source>Do you want reset settings to defaults?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Settings will be restored to default values!</source>
-        <translation type="unfinished">Standard-Werte wiederherstellen!</translation>
+        <location filename="../src/ui/configwidget.cpp" line="249"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="261"/>
+        <location filename="../src/ui/configwidget.cpp" line="267"/>
         <source>None</source>
         <translation type="unfinished">Keine</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="309"/>
+        <location filename="../src/ui/configwidget.cpp" line="315"/>
         <source>Example: </source>
         <translation type="unfinished">Beispiel:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="372"/>
+        <location filename="../src/ui/configwidget.cpp" line="375"/>
         <source>This keys is used in your system! Please select other keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/ui/configwidget.cpp" line="380"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="399"/>
+        <location filename="../src/ui/configwidget.cpp" line="400"/>
         <source>This key is not supported on your system!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="434"/>
+        <location filename="../src/ui/configwidget.cpp" line="435"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -141,32 +141,32 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen</source>
         <translation type="unfinished">Neues Foto</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen is getted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Screenshot is copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -270,7 +270,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="285"/>
-        <location filename="../src/ui/mainwindow.cpp" line="293"/>
+        <location filename="../src/ui/mainwindow.cpp" line="301"/>
         <source>Options</source>
         <translation>Optionen</translation>
     </message>
@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="298"/>
-        <location filename="../src/ui/mainwindow.cpp" line="294"/>
+        <location filename="../src/ui/mainwindow.cpp" line="302"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
@@ -326,66 +326,66 @@
         <translation>Strg+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="287"/>
+        <location filename="../src/ui/mainwindow.cpp" line="295"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="288"/>
+        <location filename="../src/ui/mainwindow.cpp" line="296"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="289"/>
+        <location filename="../src/ui/mainwindow.cpp" line="297"/>
         <source>New</source>
         <translation>Neu</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="290"/>
+        <location filename="../src/ui/mainwindow.cpp" line="298"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="291"/>
-        <location filename="../src/ui/mainwindow.cpp" line="420"/>
-        <location filename="../src/ui/mainwindow.cpp" line="439"/>
+        <location filename="../src/ui/mainwindow.cpp" line="299"/>
+        <location filename="../src/ui/mainwindow.cpp" line="429"/>
+        <location filename="../src/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation>Verbergen</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="292"/>
+        <location filename="../src/ui/mainwindow.cpp" line="300"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/ui/mainwindow.cpp" line="364"/>
         <source>None</source>
         <translation>Keine</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="427"/>
+        <location filename="../src/ui/mainwindow.cpp" line="436"/>
         <source>Show</source>
         <translation>Zeigen</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="524"/>
+        <location filename="../src/ui/mainwindow.cpp" line="549"/>
         <source>PNG Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="525"/>
+        <location filename="../src/ui/mainwindow.cpp" line="550"/>
         <source>JPEG Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="526"/>
+        <location filename="../src/ui/mainwindow.cpp" line="551"/>
         <source>BMP Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
-        <location filename="../src/ui/mainwindow.cpp" line="561"/>
-        <location filename="../src/ui/mainwindow.cpp" line="565"/>
+        <location filename="../src/ui/mainwindow.cpp" line="582"/>
+        <location filename="../src/ui/mainwindow.cpp" line="586"/>
+        <location filename="../src/ui/mainwindow.cpp" line="590"/>
         <source>Save As...</source>
         <translation>Speichern als...</translation>
     </message>
