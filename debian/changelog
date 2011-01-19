@@ -1,0 +1,24 @@
+screengrab (0.9.1-ubuntu1) karmic; urgency=low
+
+  * released version 0.9.1 (bugfix release)
+
+ -- Artem Galichkin (arched) <doomer3d@gmail.com>  Thu, 20 Jan 2011 00:43:15 +0300
+
+screengrab (0.9-ubuntu2) karmic; urgency=low
+
+  * added forgotten imgage resources
+
+ -- Artem Galichkin (arched) <doomer3d@gmail.com>  Mon, 15 Nov 2010 03:12:52 +0300
+
+screengrab (0.9-ubuntu1) karmic; urgency=low
+
+  * released version 0.9
+
+ -- Artem Galichkin (arched) <doomer3d@gmail.com>  Mon, 15 Nov 2010 01:22:11 +0300
+
+screengrab (0.8.1-ubuntu1) karmic; urgency=low
+
+  * First package release
+
+ -- Artem Galichkin (arched) <doomer3d@gmail.com>  Tue, 01 Nov 2010 21:12:31 +0300
+
