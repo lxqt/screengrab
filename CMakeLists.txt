@@ -90,7 +90,7 @@ endif(WIN32)
 # set headers to moc
 set(SCREENGRAB_MOC
     src/core/core.h
-	src/ui/configwidget.h
+    src/ui/configwidget.h
     src/ui/about.h
     src/ui/mainwindow.h
 )
@@ -177,9 +177,12 @@ endif(WIN32)
 #-------  build executable from sources ----------
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_MOC_CPP} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
-
-target_link_libraries( screengrab qkeysequencewidget singleapp qxt ${QT_LIBRARIES} )
-
+if(WIN32)
+    target_link_libraries( screengrab qkeysequencewidget singleapp qxt ${QT_LIBRARIES} )
+endif(WIN32)
+if(UNIX)
+    target_link_libraries( screengrab qkeysequencewidget singleapp qxt X11 ${QT_LIBRARIES} )
+endif(UNIX)
 
 if(WIN32)
     if(NOT MSVC)

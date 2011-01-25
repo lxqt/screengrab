@@ -36,7 +36,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="110"/>
         <source>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation type="unfinished">Copyright &amp;copy; 2009-2011, Artem &apos;DOOMer&apos; Galichkin {2009-2010,?}</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="112"/>
@@ -98,42 +98,42 @@
         <translation>Selecionar diretório</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Message</source>
-        <translation>Mensagem</translation>
+        <location filename="../src/ui/configwidget.cpp" line="248"/>
+        <source>Do you want reset settings to defaults?</source>
+        <translation>Você deseja redefinir as configurações para os padrões?</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Settings will be restored to default values!</source>
-        <translation>As configurações serão restauradas para os valores padrões!</translation>
+        <location filename="../src/ui/configwidget.cpp" line="249"/>
+        <source>Warning</source>
+        <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="261"/>
+        <location filename="../src/ui/configwidget.cpp" line="267"/>
         <source>None</source>
         <translation>Nenhum</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="309"/>
+        <location filename="../src/ui/configwidget.cpp" line="315"/>
         <source>Example: </source>
         <translation>Exemplo:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="372"/>
+        <location filename="../src/ui/configwidget.cpp" line="375"/>
         <source>This keys is used in your system! Please select other keys</source>
         <translation>Estas teclas já estão em uso no sistema! Por favor, selecione outras teclas</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/ui/configwidget.cpp" line="380"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
         <translation>Estas teclas já estão em uso no ScreenGrab! Por favor, selecione outras teclas</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="399"/>
+        <location filename="../src/ui/configwidget.cpp" line="400"/>
         <source>This key is not supported on your system!</source>
         <translation>Esta tecla não é suportada no seu sistema!</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="434"/>
+        <location filename="../src/ui/configwidget.cpp" line="435"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -141,32 +141,32 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen</source>
         <translation>Nova tela</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen is getted!</source>
         <translation>A nova tela foi obtida!</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved</source>
         <translation>Salva</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Copied</source>
         <translation>Copiada</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved to </source>
         <translation>Salva em </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>A captura de tela foi copiada para a área de transferência</translation>
     </message>
@@ -270,7 +270,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="285"/>
-        <location filename="../src/ui/mainwindow.cpp" line="293"/>
+        <location filename="../src/ui/mainwindow.cpp" line="301"/>
         <source>Options</source>
         <translation>Opções</translation>
     </message>
@@ -286,7 +286,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="298"/>
-        <location filename="../src/ui/mainwindow.cpp" line="294"/>
+        <location filename="../src/ui/mainwindow.cpp" line="302"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
@@ -326,66 +326,66 @@
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="287"/>
+        <location filename="../src/ui/mainwindow.cpp" line="295"/>
         <source>Quit</source>
         <translation>Sair</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="288"/>
+        <location filename="../src/ui/mainwindow.cpp" line="296"/>
         <source>Save</source>
         <translation>Salvar</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="289"/>
+        <location filename="../src/ui/mainwindow.cpp" line="297"/>
         <source>New</source>
         <translation>Nova</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="290"/>
+        <location filename="../src/ui/mainwindow.cpp" line="298"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="291"/>
-        <location filename="../src/ui/mainwindow.cpp" line="420"/>
-        <location filename="../src/ui/mainwindow.cpp" line="439"/>
+        <location filename="../src/ui/mainwindow.cpp" line="299"/>
+        <location filename="../src/ui/mainwindow.cpp" line="429"/>
+        <location filename="../src/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation>Ocultar</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="292"/>
+        <location filename="../src/ui/mainwindow.cpp" line="300"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/ui/mainwindow.cpp" line="364"/>
         <source>None</source>
         <translation>Nenhum</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="427"/>
+        <location filename="../src/ui/mainwindow.cpp" line="436"/>
         <source>Show</source>
         <translation>Mostrar</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="524"/>
+        <location filename="../src/ui/mainwindow.cpp" line="549"/>
         <source>PNG Files</source>
         <translation>Arquivos PNG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="525"/>
+        <location filename="../src/ui/mainwindow.cpp" line="550"/>
         <source>JPEG Files</source>
         <translation>Arquivos JPEG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="526"/>
+        <location filename="../src/ui/mainwindow.cpp" line="551"/>
         <source>BMP Files</source>
         <translation>Arquivos BMP</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
-        <location filename="../src/ui/mainwindow.cpp" line="561"/>
-        <location filename="../src/ui/mainwindow.cpp" line="565"/>
+        <location filename="../src/ui/mainwindow.cpp" line="582"/>
+        <location filename="../src/ui/mainwindow.cpp" line="586"/>
+        <location filename="../src/ui/mainwindow.cpp" line="590"/>
         <source>Save As...</source>
         <translation>Salvar Como...</translation>
     </message>

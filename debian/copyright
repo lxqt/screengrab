@@ -1,6 +1,6 @@
 This work was packaged for Debian by:
 
-    Artem Galichkin <doomer3d@gmail.com> on Mon, 01 Nov 2010 20:23:31 +0300
+    Artem Galichkin <doomer3d@gmail.com> on Thu, 20 Jan 2011 00:36:44 +0300
 
 It was downloaded from:
 
@@ -12,7 +12,7 @@ Upstream Author(s):
 
 Copyright:
 
-    <Copyright (C) 2009-2010 Artem Galichkin     
+    <Copyright (C) 2009-2011 Artem Galichkin     
 
 License:
 
@@ -20,7 +20,7 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2010 Artem Galichkin <doomer3d@gmail.com>
+    Copyright (C) 2010-2011 Artem Galichkin <doomer3d@gmail.com>
 
 # Please chose a license for your packaging work. If the program you package
 # uses a mainstream license, using the same license is the safest choice.

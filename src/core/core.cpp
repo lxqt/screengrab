@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -49,11 +49,12 @@ Core::Core()
     pixelMap = new QPixmap;
     scrNum = 0;
 
+    sleep(250);
     // delay on 250 msec
-    QMutex mutex;
-    mutex.lock();
-    QWaitCondition pause;
-    pause.wait(&mutex, 250);
+//     QMutex mutex;
+//     mutex.lock();
+//     QWaitCondition pause;
+//     pause.wait(&mutex, 250);
 }
 
 Core::Core(const Core& ): QObject()
@@ -61,9 +62,9 @@ Core::Core(const Core& ): QObject()
 
 }
 
-Core& Core::operator=(const Core& )
+Core& Core::operator=(const Core &)
 {
-
+    return *this;
 }
 
 Core* Core::instance()
@@ -80,6 +81,16 @@ Core::~Core()
     delete pixelMap;
     conf->killInstance();
 }
+
+void Core::sleep(quint8 msec)
+{
+    QMutex mutex;
+    mutex.lock();
+    QWaitCondition pause;
+    pause.wait(&mutex, msec); // def 240
+    mutex.unlock();
+}
+
 
 void Core::coreQuit()
 {
@@ -143,17 +154,17 @@ void Core::screenShot(bool first)
 	    }
 	}
 	else
-	{
-	    autoSave();
-	}
+        {
+            autoSave();
+        }
     }
     else
     {
-	if (first == false)
-	{
-	    StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-	    Q_EMIT 	sendStateNotifyMessage(message);
-	}
+        if (first == false)
+        {
+            StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+            Q_EMIT 	sendStateNotifyMessage(message);
+        }
     }
 
     Q_EMIT newScreenShot(pixelMap);

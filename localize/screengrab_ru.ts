@@ -98,42 +98,42 @@
         <translation>Выбор каталога</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Message</source>
-        <translation>Сообщение</translation>
+        <location filename="../src/ui/configwidget.cpp" line="248"/>
+        <source>Do you want reset settings to defaults?</source>
+        <translation>Вы хотите установить настройки в значения по умолчанию?</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="251"/>
-        <source>Settings will be restored to default values!</source>
-        <translation>Настройки были установлены в исходные значения!</translation>
+        <location filename="../src/ui/configwidget.cpp" line="249"/>
+        <source>Warning</source>
+        <translation>Предупрждение</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="261"/>
+        <location filename="../src/ui/configwidget.cpp" line="267"/>
         <source>None</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="309"/>
+        <location filename="../src/ui/configwidget.cpp" line="315"/>
         <source>Example: </source>
         <translation>Пример: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="372"/>
+        <location filename="../src/ui/configwidget.cpp" line="375"/>
         <source>This keys is used in your system! Please select other keys</source>
         <translation>Эта комбинация клавиш уже используется  в вашей системе!  Выберите другую.</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/ui/configwidget.cpp" line="380"/>
         <source>This keys is used in ScreenGrab! Please select other keys</source>
         <translation>Эта комбинация клавиш уже используется в  ScreenGrab!  Выберите другую.</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="399"/>
+        <location filename="../src/ui/configwidget.cpp" line="400"/>
         <source>This key is not supported on your system!</source>
         <translation>Эта комбинация не поддерживается вашей системой!</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="434"/>
+        <location filename="../src/ui/configwidget.cpp" line="435"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -141,32 +141,32 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen</source>
         <translation>Новый скриншот</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="154"/>
+        <location filename="../src/core/core.cpp" line="165"/>
         <source>New screen is getted!</source>
         <translation>Получен новый скриншот</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved</source>
         <translation>Сохранено</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Copied</source>
         <translation>Скопировано</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="348"/>
+        <location filename="../src/core/core.cpp" line="359"/>
         <source>Saved to </source>
         <translation>Слхранено в </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="367"/>
+        <location filename="../src/core/core.cpp" line="378"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Скриншот скопирован в буфер обмена</translation>
     </message>
@@ -174,72 +174,72 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="287"/>
+        <location filename="../src/ui/mainwindow.cpp" line="295"/>
         <source>Quit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="288"/>
+        <location filename="../src/ui/mainwindow.cpp" line="296"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="289"/>
+        <location filename="../src/ui/mainwindow.cpp" line="297"/>
         <source>New</source>
         <translation>Новый</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="290"/>
+        <location filename="../src/ui/mainwindow.cpp" line="298"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="291"/>
-        <location filename="../src/ui/mainwindow.cpp" line="420"/>
-        <location filename="../src/ui/mainwindow.cpp" line="439"/>
+        <location filename="../src/ui/mainwindow.cpp" line="299"/>
+        <location filename="../src/ui/mainwindow.cpp" line="429"/>
+        <location filename="../src/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation>Скрыть окно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="292"/>
+        <location filename="../src/ui/mainwindow.cpp" line="300"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="524"/>
+        <location filename="../src/ui/mainwindow.cpp" line="549"/>
         <source>PNG Files</source>
         <translation>файлы PNG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="525"/>
+        <location filename="../src/ui/mainwindow.cpp" line="550"/>
         <source>JPEG Files</source>
         <translation>файлы JPEG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="526"/>
+        <location filename="../src/ui/mainwindow.cpp" line="551"/>
         <source>BMP Files</source>
         <translation>файлы BMP</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="285"/>
-        <location filename="../src/ui/mainwindow.cpp" line="293"/>
+        <location filename="../src/ui/mainwindow.cpp" line="301"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/ui/mainwindow.cpp" line="364"/>
         <source>None</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="427"/>
+        <location filename="../src/ui/mainwindow.cpp" line="436"/>
         <source>Show</source>
         <translation>Показать окно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
-        <location filename="../src/ui/mainwindow.cpp" line="561"/>
-        <location filename="../src/ui/mainwindow.cpp" line="565"/>
+        <location filename="../src/ui/mainwindow.cpp" line="582"/>
+        <location filename="../src/ui/mainwindow.cpp" line="586"/>
+        <location filename="../src/ui/mainwindow.cpp" line="590"/>
         <source>Save As...</source>
         <translation>Сохранить как...</translation>
     </message>
@@ -350,7 +350,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="298"/>
-        <location filename="../src/ui/mainwindow.cpp" line="294"/>
+        <location filename="../src/ui/mainwindow.cpp" line="302"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>

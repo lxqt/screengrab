@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -244,21 +244,27 @@ directory = new QString;
 
 void ConfigDialog::restoreDefaults()
 {
-    conf->setDefaultSettings();
-    conf->saveSettings();
-
-    // show inf message
-    QMessageBox::information(this, tr("Message"), tr("Settings will be restored to default values!"), QMessageBox::Ok );
-
-    // close config window with accepting
-    accept();
+    QMessageBox msg;
+    msg.setText(tr("Do you want reset settings to defaults?"));
+    msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
+    msg.setIcon(QMessageBox::Question);
+    msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    
+    int res = msg.exec();
+    
+    if (res == QMessageBox::Yes)
+    {
+        conf->setDefaultSettings();
+        conf->saveSettings();
+        QDialog::accept();
+    }      
 }
 
 void ConfigDialog::changeDefDelay(int val)
 {
     if (val == 0 )
     {
-	ui->defDelay->setSpecialValueText(tr( "None"));
+        ui->defDelay->setSpecialValueText(tr( "None"));
     }
 }
 
