@@ -62,8 +62,8 @@ MainWindow::MainWindow(QWidget* parent) :
 
         for (int i = 0; i < globalShortcuts.count(); ++i )
         {
-	    connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
-    	globalShortcutSignals->setMapping(globalShortcuts[i], i);
+            connect(globalShortcuts[i], SIGNAL(activated()), globalShortcutSignals, SLOT(map()) );
+            globalShortcutSignals->setMapping(globalShortcuts[i], i);
         }
     
     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
@@ -396,6 +396,7 @@ void MainWindow::updateUI()
 
     // update shortcuts
     createShortcuts();
+    
     // create tray object
     if (core->conf->getShowTrayIcon() == true && trayIcon == NULL)
     {
@@ -613,10 +614,11 @@ void MainWindow::createShortcuts()
     m_ui->butCopy->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
     m_ui->butOpt->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
     m_ui->butHelp->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
+    m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
 
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
-	globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
+        globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
 }
 
