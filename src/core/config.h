@@ -56,8 +56,8 @@ class Config
 public:
     //type of shortcut
     enum Type {
-	globalShortcut = 0,
-	localShortcut = 1
+        globalShortcut = 0,
+        localShortcut = 1
     };
 
     Q_DECLARE_FLAGS(ShortcutType, Type)
@@ -65,14 +65,15 @@ public:
     //defination of shortcut
 
     enum Actions {
-	shortcutFullScreen = 0,
-	shortcutActiveWnd = 1,
-	shortcutAreaSelect = 2,
-	shortcutNew = 3,
-	shortcutSave = 4,
-	shortcutCopy = 5,
-	shortcutOptions = 6,
-	shortcutHelp = 7
+        shortcutFullScreen = 0,
+        shortcutActiveWnd = 1,
+        shortcutAreaSelect = 2,
+        shortcutNew = 3,
+        shortcutSave = 4,
+        shortcutCopy = 5,
+        shortcutOptions = 6,
+        shortcutHelp = 7,
+        shortcutClose = 8
     };
 
     Q_DECLARE_FLAGS(ShortcutAction, Actions)
