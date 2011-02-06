@@ -188,7 +188,7 @@ void ConfigDialog::saveSettings()
 		case 3:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 0);
 		    break;
-		case 5:
+		case 6:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
 		    break;
 		default:

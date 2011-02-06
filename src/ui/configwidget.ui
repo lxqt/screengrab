@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -530,6 +530,11 @@
             <string>Help</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Exit</string>
+           </property>
+          </item>
          </item>
         </widget>
        </item>
@@ -543,8 +548,8 @@
           </widget>
          </item>
          <item>
-          <widget class="QKeySequenceWidget" name="keyWidget">
-           <property name="noneText">
+          <widget class="QKeySequenceWidget" name="keyWidget" native="true">
+           <property name="noneText" stdset="0">
             <string>Not defined</string>
            </property>
           </widget>
