@@ -55,6 +55,7 @@ public:
     
     void setShortcut(QString key, int action, int type);
     QKeySequence getShortcut(int action);
+    int getShortcutType(int action);
     QStringList getShortcutsList(int type);        
     
 private:

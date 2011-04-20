@@ -47,9 +47,12 @@ private:
     Ui::configwidget *ui;
     void loadSettings();
     QString getFormat();
-    bool checkUsedShortcuts();
-    bool avalibelGlobalShortcuts(const QKeySequence& seq);
+    bool checkUsedShortcuts();    
     void showErrorMessage(QString text);
+
+#ifdef SG_GLOBAL_SHORTCUTS
+    bool avalibelGlobalShortcuts(const QKeySequence& seq);
+#endif
 
 private slots:
     void collapsTreeKeys(QModelIndex index);

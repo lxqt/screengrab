@@ -51,9 +51,10 @@ MainWindow::MainWindow(QWidget* parent) :
     m_ui->setupUi(this);
     trayed =false;
 
+#ifdef SG_GLOBAL_SHORTCUTS
     // signal mapper
     globalShortcutSignals = new QSignalMapper(this);
-
+    
     //     global shirtcuts
     fullScreen = new QxtGlobalShortcut(this);
     activeWindow = new QxtGlobalShortcut(this);
@@ -67,7 +68,8 @@ MainWindow::MainWindow(QWidget* parent) :
         }
     
     connect(globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
-
+#endif
+    
     trayIcon = NULL;
     updateUI();
     
@@ -207,8 +209,10 @@ void MainWindow::showOptions()
 {
     ConfigDialog *options;
     options = new ConfigDialog();
+#ifdef SG_GLOBAL_SHORTCUTS    
     globalShortcutBlock(true);
-
+#endif
+    
     if (isMinimized() == true)
     {
         showNormal();
@@ -229,8 +233,9 @@ void MainWindow::showOptions()
             updateUI();
         }
     }
-
+#ifdef SG_GLOBAL_SHORTCUTS        
     globalShortcutBlock(false);
+#endif
     delete options;
 }
 
@@ -616,12 +621,15 @@ void MainWindow::createShortcuts()
     m_ui->butHelp->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
     m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
 
+#ifdef SG_GLOBAL_SHORTCUTS     
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
         globalShortcuts[i]->setShortcut(QKeySequence(core->conf->shortcuts()->getShortcut(i)));
     }
+#endif    
 }
 
+#ifdef SG_GLOBAL_SHORTCUTS
 void MainWindow::globalShortcutBlock(bool state)
 {
     for (int i = 0; i < globalShortcuts.count(); ++i )
@@ -650,4 +658,4 @@ void MainWindow::globalShortcutActivate(int type)
     QTimer::singleShot(200, core, SLOT(screenShot()));
 
 }
-
+#endif

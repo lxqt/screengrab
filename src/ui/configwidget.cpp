@@ -23,7 +23,9 @@
 #include "src/ui/configwidget.h"
 #include "ui_configwidget.h"
 
+#ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
+#endif
 
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
@@ -74,11 +76,28 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     QTreeWidgetItemIterator iter(ui->treeKeys);
     while(*iter)
     {
-	if ((*iter)->parent() != NULL)
-	{
-	    (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
-	    ++action;
-	}
+        if ((*iter)->parent() != NULL)
+        {
+            (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));        
+            
+#ifndef SG_GLOBAL_SHORTCUTS
+            if (conf->shortcuts()->getShortcutType(action) == Config::globalShortcut)
+            {
+                (*iter)->setHidden(true);
+            }
+#endif
+            ++action;        
+        }
+        else
+        {
+#ifndef SG_GLOBAL_SHORTCUTS
+            int numGlobalShortcuts = conf->shortcuts()->getShortcutsList(Config::globalShortcut).count();
+            if ((*iter)->childCount() == numGlobalShortcuts)
+            {
+                (*iter)->setHidden(true);
+            }
+#endif
+        }
 	++iter;
     }
 
@@ -365,15 +384,18 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 {
     if (checkUsedShortcuts() == false)
     {
-	// iterate for
-	if (avalibelGlobalShortcuts(seq) == true)
-	{
-	    changeShortcut(seq);
-	}
-	else
-	{
-            showErrorMessage(tr("This keys is used in your system! Please select other keys"));
-	}
+#ifdef SG_GLOBAL_SHORTCUTS
+        if (avalibelGlobalShortcuts(seq) == true)
+        {
+            changeShortcut(seq);
+        }
+        else
+        {
+                showErrorMessage(tr("This keys is used in your system! Please select other keys"));
+        }
+#else
+    changeShortcut(seq);
+#endif        
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
@@ -415,6 +437,7 @@ bool ConfigDialog::checkUsedShortcuts()
     return false;
 }
 
+#ifdef SG_GLOBAL_SHORTCUTS
 bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
 {
     bool ok = false;
@@ -427,6 +450,7 @@ bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
     delete tmpShortcut;
     return ok;
 }
+#endif
 
 void ConfigDialog::showErrorMessage(QString text)
 {

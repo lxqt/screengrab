@@ -120,6 +120,12 @@ QKeySequence ShortcutManager::getShortcut(int action)
     return QKeySequence(listShortcuts[action].key);;
 }
 
+int ShortcutManager::getShortcutType(int action)
+{
+    return listShortcuts[action].type;
+}
+
+
 QStringList ShortcutManager::getShortcutsList(int type)
 {
     QStringList retList;
