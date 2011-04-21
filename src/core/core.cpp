@@ -290,7 +290,6 @@ void Core::getActiveWind_Win32()
 }
 #endif
 
-// TODO - rebuild in Config class
 QString Core::getSaveFilePath(QString format)
 {
     QString initPath;
@@ -305,13 +304,13 @@ QString Core::getSaveFilePath(QString format)
     }
     else
     {
-        if (scrNum != 0 && conf->getAutoSave() == true)
+        if (scrNum != 0)
         {
         #ifdef Q_WS_X11
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+"-" +QString::number(scrNum) +"."+format;
+            initPath = conf->getSaveDir()+conf->getSaveFileName() +QString::number(scrNum) +"."+format;
         #endif
         #ifdef Q_WS_WIN
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+"-"+QString::number(scrNum);
+            initPath = conf->getSaveDir()+conf->getSaveFileName()+QString::number(scrNum);
         #endif
         }
         else
@@ -337,8 +336,8 @@ QString Core::getDateTimeFileName()
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format)
 {
-    // aitoncrement number screen in autosaving
-    if (conf->getAutoSave() == true && conf->getDateTimeInFilename() == false)
+    // aitoncrement number screen 
+    if (conf->getDateTimeInFilename() == false)
     {
         scrNum++;
     }

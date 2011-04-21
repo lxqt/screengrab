@@ -89,6 +89,8 @@ private:
     Core& operator=(const Core &);
 
     static Core *corePtr;
+    
+    bool compareSaveName(QString& fileName);
 
     // functions
 #ifdef Q_WS_WIN
