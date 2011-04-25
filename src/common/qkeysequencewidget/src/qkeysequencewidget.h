@@ -31,8 +31,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "qkeysequencewidget_p.h"
 
-#include <QWidget>
-#include <QIcon>
+#include <QtGui/QWidget>
+#include <QtGui/QIcon>
 
 class QKeySequenceWidgetPrivate;
 
