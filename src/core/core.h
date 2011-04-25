@@ -71,7 +71,7 @@ public:
     static QString getVersionPrintable();
 
     QPixmap getPixmap();
-
+    
     bool writeScreen(QString& fileName, QString& format);
     void copyScreen();
 
@@ -100,6 +100,7 @@ private:
     void getActiveWind_X11();
 #endif
 
+    QString copyFileNameToCliipboard(QString file);
     // vars
     QPixmap *pixelMap; // pixel map
 

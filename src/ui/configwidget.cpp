@@ -130,6 +130,7 @@ void ConfigDialog::loadSettings()
     ui->defDelay->setValue(conf->getDefDelay());
     ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
     ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
+    ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
 
     // display tab
     ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
@@ -183,6 +184,7 @@ void ConfigDialog::saveSettings()
     conf->setDefDelay(ui->defDelay->value());
     conf->setDateTimeInFilename(ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(ui->editDateTmeTpl->text());
+    conf->setAutoCopyFilenameOnSaving(ui->cbxCopyFileName->currentIndex());
     conf->setAutoSave(ui->checkAutoSave->isChecked());
     conf->setAutoSaveFirst(ui->checkAutoSaveFirst->isChecked());
     conf->setTrayMessages(ui->cbxTrayMsg->currentIndex());

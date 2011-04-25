@@ -36,7 +36,7 @@ const QString DEF_SAVE_FORMAT = "png";
 const quint8 DEF_DELAY = 0;
 const bool DEF_X11_NODECOR = false;
 const quint8 DEF_TRAY_MESS_TYPE = 1;
-
+const quint8 DEF_FILENAME_TO_CLB = 0;
 const bool DEF_CLOSE_IN_TRAY = false;
 const bool DEF_ALLOW_COPIES = true;
 const bool DEF_SAVED_SIZE = false;
@@ -78,6 +78,13 @@ public:
 
     Q_DECLARE_FLAGS(ShortcutAction, Actions)
 
+    enum AutoCopyFilename {
+        nameToClipboardOff = 0,
+        nameToClipboardFile = 1,
+        nameToClipboardPath = 2
+    };
+
+    Q_DECLARE_FLAGS(FilenameToClipboard, AutoCopyFilename)
 
     /**
      * Get current instance of configuration object
@@ -126,6 +133,9 @@ public:
 
     quint8 getDelay();
     void setDelay(quint8 sec);
+    
+    quint8 getAutoCopyFilenameOnSaving();
+    void setAutoCopyFilenameOnSaving(quint8 val);
 
     // trayMessages
     quint8 getTrayMessages();

@@ -20,7 +20,7 @@
 
 #include "src/core/config.h"
 
-#include <QApplication>
+#include <QtGui/QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
 #include <QtCore/QVector>
@@ -33,6 +33,7 @@ const QString KEY_DELAY_DEF = "defDelay";
 const QString KEY_DELAY = "delay";
 const QString KEY_FILENAMEDATE = "insDateTimeInFilename";
 const QString KEY_DATETIME_TPL = "templateDateTime";
+const QString KEY_FILENAME_TO_CLB = "CopyFilenameToClipboard";
 const QString KEY_AUTOSAVE = "autoSave";
 const QString KEY_AUTOSAVE_FIRST = "autoSaveFirst";
 const QString KEY_SHOW_TRAY = "showTrayIcon";
@@ -183,6 +184,17 @@ void Config::setDelay(quint8 sec)
 {
     setValue(KEY_DELAY, sec);
 }
+
+quint8 Config::getAutoCopyFilenameOnSaving()
+{
+    return value(KEY_FILENAME_TO_CLB).toInt();
+}
+
+void Config::setAutoCopyFilenameOnSaving(quint8 val)
+{
+    setValue(KEY_FILENAME_TO_CLB, val);
+}
+
 
 quint8 Config::getTrayMessages()
 {
@@ -356,6 +368,7 @@ void Config::loadSettings()
     setSaveFileName(settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
     setSaveFormat(settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
     setDefDelay(settings->value(KEY_DELAY, DEF_DELAY).toInt());
+    setAutoCopyFilenameOnSaving(settings->value(KEY_FILENAME_TO_CLB, DEF_FILENAME_TO_CLB).toInt());
     setDateTimeInFilename(settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
     setDateTimeTpl(settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
@@ -409,6 +422,7 @@ void Config::saveSettings()
     settings->setValue(KEY_SAVENAME, getSaveFileName());
     settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
     settings->setValue(KEY_DELAY, getDefDelay());
+    settings->setValue(KEY_FILENAME_TO_CLB, getAutoCopyFilenameOnSaving());
     settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
     settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
     settings->setValue(KEY_AUTOSAVE, getAutoSave());
@@ -444,6 +458,7 @@ void Config::setDefaultSettings()
     setDefDelay(DEF_DELAY);
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
+    setAutoCopyFilenameOnSaving(DEF_FILENAME_TO_CLB);
     setAutoSave(DEF_AUTO_SAVE);
     setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
     setTrayMessages(DEF_TRAY_MESS_TYPE);
