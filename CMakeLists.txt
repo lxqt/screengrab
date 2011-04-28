@@ -10,7 +10,7 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9.5")
+set(SCREENGRAB_VERSION "0.9.60")
 set(SCREENGRAB_VERSION_DEV "1.0-dev")
 
 if(SCREENGRAB_VERSION_DEV)
@@ -23,7 +23,7 @@ add_definitions( -DVERSION="${VERSION}")
 message(STATUS "Version: " ${VERSION})
 #${CMAKE_SYSTEM_NAME} [${CMAKE_HOST_SYSTEM_PROCESSOR}]" )
 
-#message(STATUS "Use qmake: " ${QT_QMAKE_EXECUTABLE})
+message(STATUS "Use qmake: " ${QT_QMAKE_EXECUTABLE})
 # ------ build type ------------------------
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -43,6 +43,14 @@ endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
 set(CMAKE_CXX_FLAGS "-Wnon-virtual-dtor -Woverloaded-virtual -Wall")
+# ------ options ---------------------------------
+OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
+
+if(SG_GLOBALSHORTCUTS)
+    add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
+endif(SG_GLOBALSHORTCUTS)
+
+message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 # ------ install prefix --------------------------
 
 set(CMAKE_INSTALL_PREFIX "/usr")
@@ -57,13 +65,19 @@ message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})
 #------- qtsingleapplication  --------
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
+
+if(SG_GLOBALSHORTCUTS)
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")    
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
+endif(SG_GLOBALSHORTCUTS)
 
 # build QxtGui
 add_definitions(-DBUILD_QXT_GUI)
@@ -95,7 +109,7 @@ endif(WIN32)
 # set headers to moc
 set(SCREENGRAB_MOC
     src/core/core.h
-	src/ui/configwidget.h
+    src/ui/configwidget.h
     src/ui/about.h
     src/ui/mainwindow.h
 )
@@ -163,28 +177,28 @@ endif(QT_LRELEASE_EXECUTABLE)
 
 if(WIN32)
     if(NOT MSVC)
-
-        find_program(WINDRES
-        NAMES windres.exe
-        PATHS ${PATH}
-        NO_DEFAULT_PATH
-        )
-
         add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o
-        COMMAND ${WINDRES} -I${CMAKE_CURRENT_SOURCE_DIR} -i${CMAKE_CURRENT_SOURCE_DIR}/screengrab.rc
+        COMMAND ${CMAKE_RC_COMPILER} -I${CMAKE_CURRENT_SOURCE_DIR} -i${CMAKE_CURRENT_SOURCE_DIR}/screengrab.rc
         -o ${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o )
 
         set(SCREENGRAB_SRC ${SCREENGRAB_SRC} ${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o)
     endif(NOT MSVC)
 endif(WIN32)
 
-
 #-------  build executable from sources ----------
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_MOC_CPP} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
+if(SG_GLOBALSHORTCUTS)
+    target_link_libraries( screengrab qxt)
+endif(SG_GLOBALSHORTCUTS)
 
-target_link_libraries( screengrab qkeysequencewidget singleapp qxt uploader ${QT_LIBRARIES} )
-
+if(WIN32)
+    target_link_libraries( screengrab qkeysequencewidget singleapp uploader ${QT_LIBRARIES} )
+endif(WIN32)
+if(UNIX)
+    target_link_libraries( screengrab qkeysequencewidget singleapp uploader  X11 
+${QT_LIBRARIES} )
+endif(UNIX)
 
 if(WIN32)
     if(NOT MSVC)

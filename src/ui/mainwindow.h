@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,9 @@
 #include "src/ui/about.h"
 #include "src/ui/configwidget.h"
 
+#ifdef SG_GLOBAL_SHORTCUTS 
 #include <QxtGui/QxtGlobalShortcut>
+#endif
 
 #include <QtGui/QMenu>
 #include <QtGui/QSystemTrayIcon>
@@ -46,6 +48,7 @@ class MainWindow : public QMainWindow //, public screengrab
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void show();
 
 public Q_SLOTS:
     void showWindow(const QString& str);
@@ -53,7 +56,7 @@ public Q_SLOTS:
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
-    void resizeEvent(QResizeEvent *event); // event resuze window
+    void resizeEvent(QResizeEvent *event); // event resuze window    
 //
 private:
     Ui::MainWindow *m_ui;
@@ -72,13 +75,15 @@ private:
 
     bool trayed;
 
+#ifdef SG_GLOBAL_SHORTCUTS
     QxtGlobalShortcut *fullScreen;
     QxtGlobalShortcut *activeWindow;
     QxtGlobalShortcut *areaSelection;
 
     QVector<QxtGlobalShortcut*> globalShortcuts;
     QSignalMapper *globalShortcutSignals;
-
+#endif
+    
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
@@ -100,8 +105,11 @@ private:
     void quit();
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
+    
+#ifdef SG_GLOBAL_SHORTCUTS 
     void globalShortcutActivate(int type);
     void globalShortcutBlock(bool state);
+#endif
 };
 
 #endif // MAINWINDOW_H

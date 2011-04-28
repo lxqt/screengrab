@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,6 +26,7 @@ const QString DEF_SHORTCUT_SAVE = "Ctrl+S";
 const QString DEF_SHORTCUT_COPY = "Ctrl+C";
 const QString DEF_SHORTCUT_OPT = "Ctrl+O";
 const QString DEF_SHORTCUT_HELP = "F1";
+const QString DEF_SHORTCUT_CLOSE = "Ctrl+Q";
 const QString DEF_SHORTCUT_FULL = "";
 const QString DEF_SHORTCUT_ACTW = "";
 const QString DEF_SHORTCUT_AREA = "";
@@ -38,15 +39,16 @@ const QString KEY_SHORTCUT_SAVE = "SaveScreen";
 const QString KEY_SHORTCUT_COPY = "CopyScreen";
 const QString KEY_SHORTCUT_OPT = "Options";
 const QString KEY_SHORTCUT_HELP = "Help";
+const QString KEY_SHORTCUT_CLOSE = "Close";
 
 ShortcutManager::ShortcutManager(QSettings *settings) :
     shortcutSettings(new QSettings)
 {
     shortcutSettings = settings;
 
-    for(int i = Config::shortcutFullScreen; i <= Config::shortcutHelp; ++i)
+    for(int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
     {
-	listShortcuts << Shortcut();
+        listShortcuts << Shortcut();
     }
 }
 
@@ -64,6 +66,7 @@ void ShortcutManager::loadSettings()
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_COPY, DEF_SHORTCUT_COPY).toString(),Config::shortcutCopy, Config::localShortcut);
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_OPT, DEF_SHORTCUT_OPT).toString(),Config::shortcutOptions, Config::localShortcut);
     setShortcut(shortcutSettings->value(KEY_SHORTCUT_HELP, DEF_SHORTCUT_HELP).toString(),Config::shortcutHelp, Config::localShortcut);
+    setShortcut(shortcutSettings->value(KEY_SHORTCUT_CLOSE, DEF_SHORTCUT_CLOSE).toString(),Config::shortcutClose, Config::localShortcut);
     shortcutSettings->endGroup();
 
     shortcutSettings->beginGroup("GlobalShortcuts");
@@ -81,6 +84,7 @@ void ShortcutManager::saveSettings()
     shortcutSettings->setValue(KEY_SHORTCUT_COPY, getShortcut(Config::shortcutCopy));
     shortcutSettings->setValue(KEY_SHORTCUT_OPT, getShortcut(Config::shortcutOptions));
     shortcutSettings->setValue(KEY_SHORTCUT_HELP, getShortcut(Config::shortcutHelp));
+    shortcutSettings->setValue(KEY_SHORTCUT_CLOSE, getShortcut(Config::shortcutClose));
     shortcutSettings->endGroup();
 
     shortcutSettings->beginGroup("GlobalShortcuts");
@@ -97,6 +101,7 @@ void ShortcutManager::setDefaultSettings()
     setShortcut(DEF_SHORTCUT_COPY,Config::shortcutCopy, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_OPT,Config::shortcutOptions, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_HELP,Config::shortcutHelp, Config::localShortcut);
+    setShortcut(DEF_SHORTCUT_CLOSE,Config::shortcutClose, Config::localShortcut);
 
     setShortcut(DEF_SHORTCUT_FULL,Config::shortcutFullScreen, Config::globalShortcut);
     setShortcut(DEF_SHORTCUT_ACTW,Config::shortcutActiveWnd, Config::globalShortcut);
@@ -115,10 +120,16 @@ QKeySequence ShortcutManager::getShortcut(int action)
     return QKeySequence(listShortcuts[action].key);;
 }
 
+int ShortcutManager::getShortcutType(int action)
+{
+    return listShortcuts[action].type;
+}
+
+
 QStringList ShortcutManager::getShortcutsList(int type)
 {
     QStringList retList;
-    for (int i = Config::shortcutFullScreen; i <= Config::shortcutHelp; ++i)
+    for (int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
     {
 	if (listShortcuts[i].type == type)
 	{

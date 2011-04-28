@@ -272,6 +272,45 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labCopyFileName">
+           <property name="text">
+            <string>Filenames to clipboard on saving</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbxCopyFileName">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string>No copy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Only filename</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Full path to file</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <widget class="QCheckBox" name="checkAllowCopies">
          <property name="toolTip">
           <string>Allow run multiplies copy of Screen Grab</string>
@@ -530,6 +569,11 @@
             <string>Help</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Exit</string>
+           </property>
+          </item>
          </item>
         </widget>
        </item>
@@ -543,8 +587,8 @@
           </widget>
          </item>
          <item>
-          <widget class="QKeySequenceWidget" name="keyWidget">
-           <property name="noneText">
+          <widget class="QKeySequenceWidget" name="keyWidget" native="true">
+           <property name="noneText" stdset="0">
             <string>Not defined</string>
            </property>
           </widget>

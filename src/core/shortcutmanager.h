@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -55,6 +55,7 @@ public:
     
     void setShortcut(QString key, int action, int type);
     QKeySequence getShortcut(int action);
+    int getShortcutType(int action);
     QStringList getShortcutsList(int type);        
     
 private:

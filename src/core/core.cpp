@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,9 +22,11 @@
 #include <QtCore/QWaitCondition>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
-#include "core.h"
 
 #include "src/modules/uploader/uploader.h"
+#include <QtCore/QChar>
+
+#include "src/core/core.h"
 
 #ifdef Q_WS_WIN
 #include <windows.h>
@@ -51,11 +53,12 @@ Core::Core()
     pixelMap = new QPixmap;
     scrNum = 0;
 
+    sleep(250);
     // delay on 250 msec
-    QMutex mutex;
-    mutex.lock();
-    QWaitCondition pause;
-    pause.wait(&mutex, 250);
+//     QMutex mutex;
+//     mutex.lock();
+//     QWaitCondition pause;
+//     pause.wait(&mutex, 250);
 }
 
 Core::Core(const Core& ): QObject()
@@ -63,9 +66,9 @@ Core::Core(const Core& ): QObject()
 
 }
 
-Core& Core::operator=(const Core& )
+Core& Core::operator=(const Core &)
 {
-
+    return *this;
 }
 
 Core* Core::instance()
@@ -82,6 +85,16 @@ Core::~Core()
     delete pixelMap;
     conf->killInstance();
 }
+
+void Core::sleep(quint8 msec)
+{
+    QMutex mutex;
+    mutex.lock();
+    QWaitCondition pause;
+    pause.wait(&mutex, msec); // def 240
+    mutex.unlock();
+}
+
 
 void Core::coreQuit()
 {
@@ -145,17 +158,17 @@ void Core::screenShot(bool first)
 	    }
 	}
 	else
-	{
-	    autoSave();
-	}
+        {
+            autoSave();
+        }
     }
     else
     {
-	if (first == false)
-	{
-	    StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-	    Q_EMIT 	sendStateNotifyMessage(message);
-	}
+        if (first == false)
+        {
+            StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+            Q_EMIT 	sendStateNotifyMessage(message);
+        }
     }
 
     Q_EMIT newScreenShot(pixelMap);
@@ -281,7 +294,6 @@ void Core::getActiveWind_Win32()
 }
 #endif
 
-// TODO - rebuild in Config class
 QString Core::getSaveFilePath(QString format)
 {
     QString initPath;
@@ -296,13 +308,13 @@ QString Core::getSaveFilePath(QString format)
     }
     else
     {
-        if (scrNum != 0 && conf->getAutoSave() == true)
+        if (scrNum != 0)
         {
         #ifdef Q_WS_X11
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+"-" +QString::number(scrNum) +"."+format;
+            initPath = conf->getSaveDir()+conf->getSaveFileName() +QString::number(scrNum) +"."+format;
         #endif
         #ifdef Q_WS_WIN
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+"-"+QString::number(scrNum);
+            initPath = conf->getSaveDir()+conf->getSaveFileName()+QString::number(scrNum);
         #endif
         }
         else
@@ -325,19 +337,33 @@ QString Core::getDateTimeFileName()
     return currentDateTime;
 }
 
+bool Core::compareSaveName(QString& fileName)
+{
+    bool ok = false;
+    QString compared = conf->getSaveFileName() + "." + conf->getSaveFormat();
+    
+    if (scrNum != 0)
+    {
+        compared = conf->getSaveFileName() + QString::number(scrNum) + "." + conf->getSaveFormat();
+    }
+        
+    ok = fileName.contains(compared);    
+    return ok;
+}
+
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format)
-{
-    // aitoncrement number screen in autosaving
-    if (conf->getAutoSave() == true && conf->getDateTimeInFilename() == false)
-    {
-        scrNum++;
-    }
-
+{    
     // adding extension  format
     if (!fileName.contains("."+format) )
     {
         fileName.append("."+format);
+    }
+
+    // aitoncrement number screen 
+    if (conf->getDateTimeInFilename() == false && compareSaveName(fileName) == true)
+    {
+        scrNum++;
     }
 
     // writing file
@@ -347,8 +373,11 @@ bool Core::writeScreen(QString& fileName, QString& format)
         if (pixelMap->save(fileName,format.toAscii()) == true)
         {
             saved = true;
-	    StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
-	    Q_EMIT 	sendStateNotifyMessage(message);
+            StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
+            
+            message.message = message.message + copyFileNameToCliipboard(fileName);
+            
+            Q_EMIT 	sendStateNotifyMessage(message);
         }
         else
         {
@@ -362,6 +391,35 @@ bool Core::writeScreen(QString& fileName, QString& format)
 
     return saved;
 }
+
+QString Core::copyFileNameToCliipboard(QString file)
+{
+    QString retString = "";
+    switch (conf->getAutoCopyFilenameOnSaving())
+    {
+//         case Config::nameToClipboardOff:
+//         {
+//             break;
+//         }
+        case Config::nameToClipboardFile:
+        {
+            file = file.section('/', -1);
+            QApplication::clipboard()->setText(file);
+            retString = QChar(QChar::LineSeparator) + tr("Name of saved file is copied to the clipboard");
+            break;
+        }
+        case Config::nameToClipboardPath:
+        {
+            QApplication::clipboard()->setText(file);
+            retString = QChar(QChar::LineSeparator) + tr("Path to saved file is copyed to the clipboard");
+            break;
+        }
+        default:
+            break;
+    }
+    return retString;
+}
+
 
 void Core::copyScreen()
 {

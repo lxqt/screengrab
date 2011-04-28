@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -47,9 +47,12 @@ private:
     Ui::configwidget *ui;
     void loadSettings();
     QString getFormat();
-    bool checkUsedShortcuts();
-    bool avalibelGlobalShortcuts(const QKeySequence& seq);
+    bool checkUsedShortcuts();    
     void showErrorMessage(QString text);
+
+#ifdef SG_GLOBAL_SHORTCUTS
+    bool avalibelGlobalShortcuts(const QKeySequence& seq);
+#endif
 
 private slots:
     void collapsTreeKeys(QModelIndex index);

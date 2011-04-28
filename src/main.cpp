@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -49,17 +49,21 @@ int main(int argc, char *argv[])
 
     scr.installTranslator(&localize);
 
-    // creating main window
-//    MainWindow ScreenGrab;
     Core *ScreenGrab = Core::instance();
-    MainWindow mainWnd;
-    mainWnd.show();
+    MainWindow mainWnd;    
+    
+    if (scr.isRunning() == false)
+    {
+        ScreenGrab->screenShot(true);
+        mainWnd.show();
+    }
 
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
 
     if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
     {
-        scr.sendMessage("wake up");
+        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
+        scr.sendMessage("screengrab --type=" + type);
         return 0;
     }
 
@@ -81,7 +85,7 @@ ScreenGrab->conf->cmdLine()->getParam("version"))
         CmdLine::print(version);
         return 0;
     }
-
+    
     return scr.exec();
 }
 

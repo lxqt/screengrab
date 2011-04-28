@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,7 +23,9 @@
 #include "src/ui/configwidget.h"
 #include "ui_configwidget.h"
 
+#ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
+#endif
 
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
@@ -74,11 +76,28 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     QTreeWidgetItemIterator iter(ui->treeKeys);
     while(*iter)
     {
-	if ((*iter)->parent() != NULL)
-	{
-	    (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
-	    ++action;
-	}
+        if ((*iter)->parent() != NULL)
+        {
+            (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));        
+            
+#ifndef SG_GLOBAL_SHORTCUTS
+            if (conf->shortcuts()->getShortcutType(action) == Config::globalShortcut)
+            {
+                (*iter)->setHidden(true);
+            }
+#endif
+            ++action;        
+        }
+        else
+        {
+#ifndef SG_GLOBAL_SHORTCUTS
+            int numGlobalShortcuts = conf->shortcuts()->getShortcutsList(Config::globalShortcut).count();
+            if ((*iter)->childCount() == numGlobalShortcuts)
+            {
+                (*iter)->setHidden(true);
+            }
+#endif
+        }
 	++iter;
     }
 
@@ -111,6 +130,7 @@ void ConfigDialog::loadSettings()
     ui->defDelay->setValue(conf->getDefDelay());
     ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
     ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
+    ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
 
     // display tab
     ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
@@ -164,6 +184,7 @@ void ConfigDialog::saveSettings()
     conf->setDefDelay(ui->defDelay->value());
     conf->setDateTimeInFilename(ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(ui->editDateTmeTpl->text());
+    conf->setAutoCopyFilenameOnSaving(ui->cbxCopyFileName->currentIndex());
     conf->setAutoSave(ui->checkAutoSave->isChecked());
     conf->setAutoSaveFirst(ui->checkAutoSaveFirst->isChecked());
     conf->setTrayMessages(ui->cbxTrayMsg->currentIndex());
@@ -188,7 +209,7 @@ void ConfigDialog::saveSettings()
 		case 3:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 0);
 		    break;
-		case 5:
+		case 6:
 		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
 		    break;
 		default:
@@ -244,21 +265,27 @@ directory = new QString;
 
 void ConfigDialog::restoreDefaults()
 {
-    conf->setDefaultSettings();
-    conf->saveSettings();
-
-    // show inf message
-    QMessageBox::information(this, tr("Message"), tr("Settings will be restored to default values!"), QMessageBox::Ok );
-
-    // close config window with accepting
-    accept();
+    QMessageBox msg;
+    msg.setText(tr("Do you want reset settings to defaults?"));
+    msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
+    msg.setIcon(QMessageBox::Question);
+    msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    
+    int res = msg.exec();
+    
+    if (res == QMessageBox::Yes)
+    {
+        conf->setDefaultSettings();
+        conf->saveSettings();
+        QDialog::accept();
+    }      
 }
 
 void ConfigDialog::changeDefDelay(int val)
 {
     if (val == 0 )
     {
-	ui->defDelay->setSpecialValueText(tr( "None"));
+        ui->defDelay->setSpecialValueText(tr( "None"));
     }
 }
 
@@ -359,15 +386,18 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 {
     if (checkUsedShortcuts() == false)
     {
-	// iterate for
-	if (avalibelGlobalShortcuts(seq) == true)
-	{
-	    changeShortcut(seq);
-	}
-	else
-	{
-            showErrorMessage(tr("This keys is used in your system! Please select other keys"));
-	}
+#ifdef SG_GLOBAL_SHORTCUTS
+        if (avalibelGlobalShortcuts(seq) == true)
+        {
+            changeShortcut(seq);
+        }
+        else
+        {
+                showErrorMessage(tr("This keys is used in your system! Please select other keys"));
+        }
+#else
+    changeShortcut(seq);
+#endif        
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
@@ -409,6 +439,7 @@ bool ConfigDialog::checkUsedShortcuts()
     return false;
 }
 
+#ifdef SG_GLOBAL_SHORTCUTS
 bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
 {
     bool ok = false;
@@ -421,6 +452,7 @@ bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
     delete tmpShortcut;
     return ok;
 }
+#endif
 
 void ConfigDialog::showErrorMessage(QString text)
 {

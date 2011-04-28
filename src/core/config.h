@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -36,7 +36,7 @@ const QString DEF_SAVE_FORMAT = "png";
 const quint8 DEF_DELAY = 0;
 const bool DEF_X11_NODECOR = false;
 const quint8 DEF_TRAY_MESS_TYPE = 1;
-
+const quint8 DEF_FILENAME_TO_CLB = 0;
 const bool DEF_CLOSE_IN_TRAY = false;
 const bool DEF_ALLOW_COPIES = true;
 const bool DEF_SAVED_SIZE = false;
@@ -56,8 +56,8 @@ class Config
 public:
     //type of shortcut
     enum Type {
-	globalShortcut = 0,
-	localShortcut = 1
+        globalShortcut = 0,
+        localShortcut = 1
     };
 
     Q_DECLARE_FLAGS(ShortcutType, Type)
@@ -65,18 +65,26 @@ public:
     //defination of shortcut
 
     enum Actions {
-	shortcutFullScreen = 0,
-	shortcutActiveWnd = 1,
-	shortcutAreaSelect = 2,
-	shortcutNew = 3,
-	shortcutSave = 4,
-	shortcutCopy = 5,
-	shortcutOptions = 6,
-	shortcutHelp = 7
+        shortcutFullScreen = 0,
+        shortcutActiveWnd = 1,
+        shortcutAreaSelect = 2,
+        shortcutNew = 3,
+        shortcutSave = 4,
+        shortcutCopy = 5,
+        shortcutOptions = 6,
+        shortcutHelp = 7,
+        shortcutClose = 8
     };
 
     Q_DECLARE_FLAGS(ShortcutAction, Actions)
 
+    enum AutoCopyFilename {
+        nameToClipboardOff = 0,
+        nameToClipboardFile = 1,
+        nameToClipboardPath = 2
+    };
+
+    Q_DECLARE_FLAGS(FilenameToClipboard, AutoCopyFilename)
 
     /**
      * Get current instance of configuration object
@@ -125,6 +133,9 @@ public:
 
     quint8 getDelay();
     void setDelay(quint8 sec);
+    
+    quint8 getAutoCopyFilenameOnSaving();
+    void setAutoCopyFilenameOnSaving(quint8 val);
 
     // trayMessages
     quint8 getTrayMessages();

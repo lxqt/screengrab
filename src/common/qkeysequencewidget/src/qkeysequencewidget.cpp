@@ -26,9 +26,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *******************************************************************************/
 
-#include <QEvent>
-#include <QKeyEvent>
-#include <QIcon>
+#include <QtCore/QEvent>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QIcon>
 
 #include "qkeysequencewidget_p.h"
 #include "qkeysequencewidget.h"

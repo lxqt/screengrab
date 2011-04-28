@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,6 +37,8 @@
 #include <QtGui/QX11Info>
 #endif
 
+#include <QDebug>
+
 struct StateNotifyMessage {
     QString header;
     QString message;
@@ -65,11 +67,12 @@ public Q_SLOTS:
 public:
     static Core* instance();
     ~Core();
-
+    
+    void sleep(quint8 msec = 350);
     static QString getVersionPrintable();
 
     QPixmap getPixmap();
-
+    
     bool writeScreen(QString& fileName, QString& format);
     void copyScreen();
 
@@ -87,6 +90,8 @@ private:
     Core& operator=(const Core &);
 
     static Core *corePtr;
+    
+    bool compareSaveName(QString& fileName);
 
     // functions
 #ifdef Q_WS_WIN
@@ -96,6 +101,7 @@ private:
     void getActiveWind_X11();
 #endif
 
+    QString copyFileNameToCliipboard(QString file);
     // vars
     QPixmap *pixelMap; // pixel map
 
