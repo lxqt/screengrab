@@ -45,10 +45,7 @@ private:
     Uploader *loader;
 
 private Q_SLOTS:
-    void changeHost(int hostIndex);
-
-public Q_SLOTS:
-    void slotClose();
+    
 };
 
 #endif // UPLOADERDIALOG_H
