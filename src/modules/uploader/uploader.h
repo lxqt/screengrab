@@ -31,8 +31,21 @@ public:
     Uploader();
     virtual ~Uploader();
 
+public Q_SLOTS:
+    void uploadScreen();    
+    
+Q_SIGNALS:
+    void uploadStart();
+    void uploadFail();
+    void uploadDone();
+    
 private:
+    QByteArray& boundary();
+    QByteArray createUploadData();
+    QByteArray createRequest();
+    
     QByteArray imageData;
+    QByteArray strBoundary;
 };
 
 #endif // UPLOADER_H

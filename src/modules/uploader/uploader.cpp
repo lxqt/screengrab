@@ -27,10 +27,12 @@
 
 Uploader::Uploader()
 {
+    strBoundary = "uploadbound";
     UploaderDialog *dlg = new UploaderDialog(this);
     dlg->show();
-
+    
     qDebug() << "create uploader";
+    qDebug() << "Boundary is " << boundary();
 //     Core::instance()->getPixmap().c
 }
 
@@ -39,3 +41,32 @@ Uploader::~Uploader()
     qDebug() << "kill uploader";
 }
 
+void Uploader::uploadScreen()
+{
+    qDebug() << "upload screen slot";
+}
+
+QByteArray& Uploader::boundary()
+{
+    QByteArray& retBoundary = strBoundary;
+    
+    return retBoundary;
+}
+
+QByteArray Uploader::createUploadData()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " start";
+    QByteArray uploadData;
+    
+    return uploadData;
+    qDebug() << __PRETTY_FUNCTION__ << " end";
+}
+
+QByteArray Uploader::createRequest()
+{
+    qDebug() << __PRETTY_FUNCTION__ << " start";
+    QByteArray request;
+    
+    return request;
+    qDebug() << __PRETTY_FUNCTION__ << " end";
+}
