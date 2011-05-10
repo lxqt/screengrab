@@ -36,7 +36,8 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     QString pixmapSize = QString::number(width) + "x" + QString::number(height) + tr(" pixel");
     ui->shotLabel->setToolTip(pixmapSize);
 
-    connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close())) ;    
+    connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
+    connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
 
     qDebug() << "Core::instance()->getPixmap().width() " << Core::instance()->getPixmap().width();
 }
