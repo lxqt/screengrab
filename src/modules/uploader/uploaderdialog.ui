@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>479</width>
-    <height>235</height>
+    <width>448</width>
+    <height>208</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="butClose">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>200</y>
+     <x>330</x>
+     <y>170</y>
      <width>102</width>
      <height>27</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="butUpload">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>200</y>
+     <x>10</x>
+     <y>170</y>
      <width>102</width>
      <height>27</height>
     </rect>
@@ -39,26 +39,13 @@
     <string>Ulpload</string>
    </property>
   </widget>
-  <widget class="QProgressBar" name="progressBar">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>431</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>24</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="shotLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>81</width>
-     <height>71</height>
+     <width>101</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -69,6 +56,29 @@
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labResize">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>20</y>
+     <width>241</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Resize uploaded image</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbxResize">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>50</y>
+     <width>281</width>
+     <height>24</height>
+    </rect>
    </property>
   </widget>
  </widget>
