@@ -23,6 +23,9 @@
 #include "uploader.h"
 #include "uploaderdialog.h"
 
+#include <QtCore/QTemporaryFile>
+#include <QtCore/QFileInfo>
+#include <QtCore/QDir>
 #include <QDebug>
 
 Uploader::Uploader()
@@ -44,6 +47,8 @@ Uploader::~Uploader()
 void Uploader::uploadScreen()
 {
     qDebug() << "upload screen slot";
+    
+    QByteArray data = createUploadData();
 }
 
 QByteArray& Uploader::boundary()
@@ -57,6 +62,23 @@ QByteArray Uploader::createUploadData()
 {
     qDebug() << __PRETTY_FUNCTION__ << " start";
     QByteArray uploadData;
+    
+    QString tmpFileName = QDir::tempPath() + QDir::separator() + "uplodscreen";   
+    QTemporaryFile tempFile(tmpFileName);
+    if (tempFile.open() == true)
+    {
+        QFileInfo info(tempFile);
+        qDebug() << "tempfile is " << info.absoluteFilePath();
+        
+        // save screenshot totemp file
+        Core *core = Core::instance();
+        QString format = core->conf->getSaveFormat();
+        tmpFileName = info.absoluteFilePath();
+        core->writeScreen(tmpFileName, format, true);
+        
+        qDebug() << "tempfile size " << info.size();
+    }
+    
     
     return uploadData;
     qDebug() << __PRETTY_FUNCTION__ << " end";
