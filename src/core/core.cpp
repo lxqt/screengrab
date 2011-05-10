@@ -392,6 +392,20 @@ bool Core::writeScreen(QString& fileName, QString& format)
     return saved;
 }
 
+bool Core::writeScreen(QString& fileName, QString& format, bool temp)
+{
+    Q_UNUSED(temp);
+    
+    bool saved = false;
+    if (fileName.isEmpty() == false)
+    {        ;
+        saved = pixelMap->save(fileName,format.toAscii());
+    }
+    
+    return saved;
+}
+
+
 QString Core::copyFileNameToCliipboard(QString file)
 {
     QString retString = "";
