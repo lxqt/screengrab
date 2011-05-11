@@ -32,6 +32,7 @@
 #include <QtGui/QPixmap>
 #include <QtGui/QClipboard>
 #include <QtCore/QTime>
+#include <QtCore/QByteArray>
 
 #ifdef Q_WS_X11
 #include <QtGui/QX11Info>
@@ -72,6 +73,7 @@ public:
     static QString getVersionPrintable();
 
     QPixmap getPixmap();
+    QByteArray getScreen();
     
     bool writeScreen(QString& fileName, QString& format);
     bool writeScreen(QString& fileName, QString& format, bool temp);

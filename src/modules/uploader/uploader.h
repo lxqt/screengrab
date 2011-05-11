@@ -21,8 +21,10 @@
 #ifndef UPLOADER_H
 #define UPLOADER_H
 
-#include <QObject>
-#include <QByteArray>
+#include <QtCore/QObject>
+#include <QtCore/QByteArray>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 
 class Uploader : public QObject
 {
@@ -32,20 +34,29 @@ public:
     virtual ~Uploader();
 
 public Q_SLOTS:
-    void uploadScreen();    
+    void uploadScreen();
+    
+private Q_SLOTS:
+    void replyFinished(QNetworkReply* reply);
+    void replyProgress(qint64 bytesSent, qint64 bytesTotal);
     
 Q_SIGNALS:
     void uploadStart();
     void uploadFail();
-    void uploadDone();
+    void uploadDone(const QVector<QByteArray>& resultStrings);
+    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);
     
 private:
-    QByteArray& boundary();
+    QByteArray boundary(bool cleared = false);
     QByteArray createUploadData();
-    QByteArray createRequest();
+    QNetworkRequest createRequest(const QByteArray& requestData);
     
     QByteArray imageData;
     QByteArray strBoundary;
+    QNetworkAccessManager *net;
+    QNetworkReply *serverReply;
+    
+    QString createFilename(QString& format);
 };
 
 #endif // UPLOADER_H

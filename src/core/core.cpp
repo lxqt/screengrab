@@ -25,6 +25,7 @@
 
 #include "src/modules/uploader/uploader.h"
 #include <QtCore/QChar>
+#include <QtCore/QBuffer>
 
 #include "src/core/core.h"
 
@@ -467,4 +468,15 @@ QString Core::getVersionPrintable()
 QPixmap Core::getPixmap()
 {
     return *pixelMap;
+}
+
+QByteArray Core::getScreen()
+{
+    QByteArray bytes;
+    QBuffer buffer(&bytes);
+    buffer.open(QIODevice::WriteOnly);
+    pixelMap->save(&buffer, conf->getSaveFormat().toAscii());
+    
+    qDebug() << "GET SCREEN SIZE " << bytes;
+    return bytes;
 }

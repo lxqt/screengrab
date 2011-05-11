@@ -23,17 +23,23 @@
 #include "uploader.h"
 #include "uploaderdialog.h"
 
+#include <QtCore/QTemporaryFile>
+#include <QtCore/QFileInfo>
+#include <QtCore/QDir>
+#include <QtCore/QUrl>
+#include <QtCore/QRegExp>
+#include <QtCore/QVector>
+#include <QtCore/QUuid>
+#include <QtNetwork/QNetworkRequest>
+
 #include <QDebug>
 
 Uploader::Uploader()
 {
     strBoundary = "uploadbound";
+    net = new QNetworkAccessManager(this);
     UploaderDialog *dlg = new UploaderDialog(this);
     dlg->show();
-    
-    qDebug() << "create uploader";
-    qDebug() << "Boundary is " << boundary();
-//     Core::instance()->getPixmap().c
 }
 
 Uploader::~Uploader()
@@ -44,29 +50,144 @@ Uploader::~Uploader()
 void Uploader::uploadScreen()
 {
     qDebug() << "upload screen slot";
+    
+    QByteArray data = createUploadData();
+    QNetworkRequest request = createRequest(data);    
+
+    
+    connect(net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
+    serverReply = net->post(request, data);
+    connect(serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64)));    
 }
 
-QByteArray& Uploader::boundary()
+QByteArray Uploader::boundary(bool cleared)
 {
-    QByteArray& retBoundary = strBoundary;
+    QByteArray retBoundary = strBoundary;
+    
+    if (cleared == false)
+    {
+        retBoundary.append("\r\n");
+        retBoundary.prepend("--");
+    }
     
     return retBoundary;
 }
 
 QByteArray Uploader::createUploadData()
-{
-    qDebug() << __PRETTY_FUNCTION__ << " start";
+{    
     QByteArray uploadData;
     
-    return uploadData;
-    qDebug() << __PRETTY_FUNCTION__ << " end";
+    Core *core = Core::instance();
+    QString format = core->conf->getSaveFormat();
+    QString tmpFileName = createFilename(format);
+    core->writeScreen(tmpFileName, format , true);
+
+    QByteArray screenData;
+    screenData = core->getScreen();
+            
+    uploadData.append(boundary());
+    uploadData.append("content-disposition: ");
+    uploadData.append("form-data; name=\"public\"\r\n");
+    uploadData.append("\r\n");
+    uploadData.append("yes");
+    uploadData.append("\r\n");
+        
+    uploadData.append(boundary());
+    uploadData.append("content-disposition: ");
+    uploadData.append("form-data; name=\"key\"\r\n");
+    uploadData.append("\r\n");
+    uploadData.append("BXT1Z35V8f6ee0522939d8d7852dbe67b1eb9595");
+    uploadData.append("\r\n");
+        
+        //fileupload
+    uploadData.append(boundary());
+    uploadData.append("content-disposition: ");
+    uploadData.append("form-data; name='fileupload'; ");
+    uploadData.append("filename='" + tmpFileName + "'\r\n");
+    uploadData.append("Content-Type: image/" + format + "\r\n");
+    uploadData.append("\r\n");
+    uploadData.append(screenData);
+    uploadData.append("\r\n");
+
+    uploadData.append(boundary());
+
+    return uploadData;    
 }
 
-QByteArray Uploader::createRequest()
+QNetworkRequest Uploader::createRequest(const QByteArray& requestData)
 {
-    qDebug() << __PRETTY_FUNCTION__ << " start";
-    QByteArray request;
+    QNetworkRequest request;
     
+    request.setUrl(QUrl("http://imageshack.us/upload_api.php"));
+    request.setRawHeader("Host", "imageshack.us");
+    request.setRawHeader("Content-Type", "multipart/form-data; boundary=" + boundary(true));
+    request.setRawHeader("Connection", "Keep-Alive");
+    request.setRawHeader("User-Agent", "My User-Agent");
+    request.setRawHeader("Content-Length", QByteArray::number(requestData.size()));
+        
     return request;
-    qDebug() << __PRETTY_FUNCTION__ << " end";
+}
+
+void Uploader::replyFinished(QNetworkReply* reply)
+{
+    if (reply->error() == QNetworkReply::NoError)
+    {   
+        QByteArray replyXmalText = reply->readAll();
+        QVector<QByteArray> listXmlNodes;
+        QRegExp re;      
+        QRegExp re2;
+        
+        //  creating list of element names
+        listXmlNodes << "image_link" << "image_html" << "image_bb" << "image_bb2";
+        int inStart = 0;
+        int outStart = 0;
+        int len = 0;
+        
+        // parsing xml 
+        for (int i = 0; i < listXmlNodes.count(); ++i)
+        {
+            // FIXME -- dirty hack for capture link text without right unversal regexp
+            // set patterns  for full lenght item
+            re.setPattern("<"+listXmlNodes[i]+">"); // open tag
+            re2.setPattern("</"+listXmlNodes[i]+">"); //close tag
+            
+            // get start pos and lenght ite in xml
+            inStart = re.indexIn(replyXmalText); // ops open tag start
+            outStart = re2.indexIn(replyXmalText); // pos close tag start
+            len = outStart - inStart + re2.matchedLength(); // length of full string
+            
+            // extract item and replase spec html sumbols
+            QByteArray extractedText = replyXmalText.mid(inStart, len);
+            extractedText = extractedText.replace("&quot;","'");
+            extractedText = extractedText.replace("&lt;","<");
+            extractedText = extractedText.replace("&gt;",">");
+            extractedText = extractedText.replace("<"+listXmlNodes[i]+">","");
+            extractedText = extractedText.replace("</"+listXmlNodes[i]+">","");
+            
+            listXmlNodes[i] = extractedText;
+        }
+        
+        Q_EMIT uploadDone(listXmlNodes);
+    }
+    else
+    {
+        qDebug() << "reply error" ;
+    }
+    reply->deleteLater();
+}
+
+void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
+{
+    Q_EMIT uploadProgress(bytesSent, bytesTotal);
+}
+
+QString Uploader::createFilename(QString& format)
+{
+    QString tmpFileName = QUuid::createUuid().toString();
+    int size = tmpFileName.size() - 2;
+    tmpFileName = tmpFileName.mid(1, size).left(8);
+    
+    tmpFileName = QDir::tempPath() + QDir::separator() + "screenshot-" + tmpFileName + "." + format;  
+    
+    return tmpFileName;
 }
