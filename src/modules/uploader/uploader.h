@@ -23,6 +23,8 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QByteArray>
+#include <QtCore/QVector>
+#include <QtCore/QSize>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 
@@ -35,6 +37,7 @@ public:
 
 public Q_SLOTS:
     void uploadScreen();
+    void selectResizeMode(int mode);
     
 private Q_SLOTS:
     void replyFinished(QNetworkReply* reply);
@@ -57,6 +60,8 @@ private:
     QNetworkReply *serverReply;
     
     QString createFilename(QString& format);
+    QVector<QSize> sizes;
+    qint8 selectedSize;
 };
 
 #endif // UPLOADER_H

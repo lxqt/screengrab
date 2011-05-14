@@ -46,6 +46,7 @@ protected:
 private:
     Ui::UploaderDialog *ui;
     Uploader *loader;
+    QVector<QByteArray> extCodes;
     
     inline void copyLink(const QString& link);
 
@@ -57,9 +58,8 @@ private Q_SLOTS:
     void uploadDone(const QVector<QByteArray>& resultStrings);
     
     void copyDirectLink();
-    void copyHTML();
-    void copyBbCode();
-    void copyBbCode2();
+    void copyExtCode();
+    void changeExtCode(int code);
 };
 
 #endif // UPLOADERDIALOG_H

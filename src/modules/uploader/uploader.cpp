@@ -37,6 +37,9 @@
 Uploader::Uploader()
 {
     strBoundary = "uploadbound";
+    sizes << QSize(100,75) << QSize(150,112) << QSize(320,240) << QSize(640,480) << QSize(800,600) << QSize(1024,768) << QSize(1280,1024) << QSize(1600,1200);;
+    selectedSize = -1;
+    
     net = new QNetworkAccessManager(this);
     UploaderDialog *dlg = new UploaderDialog(this);
     dlg->show();
@@ -91,14 +94,34 @@ QByteArray Uploader::createUploadData()
     uploadData.append("\r\n");
     uploadData.append("yes");
     uploadData.append("\r\n");
+    
+    // resize image    
+    if (selectedSize != -1)
+    {
+        QByteArray newSize = QByteArray::number(sizes[selectedSize].width()) + "x" + QByteArray::number(sizes[selectedSize].height());
         
+        uploadData.append(boundary());
+        uploadData.append("content-disposition: ");
+        uploadData.append("form-data; name=\"optimage\"\r\n");
+        uploadData.append("\r\n");
+        uploadData.append("1");
+        uploadData.append("\r\n");
+        
+        uploadData.append(boundary());
+        uploadData.append("content-disposition: ");
+        uploadData.append("form-data; name=\"optsize\"\r\n");
+        uploadData.append("\r\n");
+        uploadData.append(newSize);
+        uploadData.append("\r\n");
+    }
+    
     uploadData.append(boundary());
     uploadData.append("content-disposition: ");
     uploadData.append("form-data; name=\"key\"\r\n");
     uploadData.append("\r\n");
     uploadData.append("BXT1Z35V8f6ee0522939d8d7852dbe67b1eb9595");
-    uploadData.append("\r\n");
-        
+    uploadData.append("\r\n");        
+    
         //fileupload
     uploadData.append(boundary());
     uploadData.append("content-disposition: ");
@@ -138,7 +161,7 @@ void Uploader::replyFinished(QNetworkReply* reply)
         QRegExp re2;
         
         //  creating list of element names
-        listXmlNodes << "image_link" << "image_html" << "image_bb" << "image_bb2";
+        listXmlNodes << "image_link" << "image_html" << "image_bb" << "image_bb2" << "thumb_html" << "thumb_bb" << "thumb_bb2";
         int inStart = 0;
         int outStart = 0;
         int len = 0;
@@ -190,4 +213,10 @@ QString Uploader::createFilename(QString& format)
     tmpFileName = QDir::tempPath() + QDir::separator() + "screenshot-" + tmpFileName + "." + format;  
     
     return tmpFileName;
+}
+
+void Uploader::selectResizeMode(int mode)
+{
+    selectedSize = mode-1;
+    qDebug() << "mode " << selectedSize;
 }

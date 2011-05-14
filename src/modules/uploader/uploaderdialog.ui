@@ -17,18 +17,68 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QComboBox" name="cbxResize">
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>60</y>
+         <y>70</y>
          <width>281</width>
          <height>24</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>No resize</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>100x75</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>150x112</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>320x240</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>640x480</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>800x600</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1024x768</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1280x1024</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1600x1200</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Custom</string>
+        </property>
+       </item>
       </widget>
       <widget class="QLabel" name="shotLabel">
        <property name="geometry">
@@ -94,9 +144,38 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QLabel" name="labStatus">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>170</y>
+         <width>401</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labResizeWarning">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>100</y>
+         <width>291</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Resize makes on servers imageshack.us</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_2">
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QLabel" name="labSuccessfully">
          <property name="text">
@@ -129,67 +208,85 @@
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="labHTML">
-         <property name="text">
-          <string>HTML code:</string>
+        <widget class="QGroupBox" name="groupExtCode">
+         <property name="title">
+          <string>More </string>
          </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="labExtCode">
+              <property name="text">
+               <string>Extended preformed html or bb codes:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cbxExtCode">
+              <item>
+               <property name="text">
+                <string>HTML Code</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Bb Code</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Bb Code 2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Thumbnail HTML</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Thumbnail BB Code</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Thumbnail Bb Code 2</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLineEdit" name="editExtCode"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="butCopyExtCode">
+              <property name="text">
+               <string>Copy</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>54</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLineEdit" name="editHTML"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="butCopyHTML">
-           <property name="text">
-            <string>Copy</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="labBbCode">
-         <property name="text">
-          <string>Bb code:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLineEdit" name="editBbCode"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="butCopyBbCode">
-           <property name="text">
-            <string>Copy</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="labBbCode2">
-         <property name="text">
-          <string>Bb code (version 2):</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLineEdit" name="editBbCode2"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="butCopyBbCode2">
-           <property name="text">
-            <string>Copy</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
        </item>
       </layout>
      </widget>

@@ -40,19 +40,23 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(uploadStart()));
-//     connect(loader, SIGNAL(uploadStart()), this, SLOT(uploadStart()));
+    
     connect(loader, SIGNAL(uploadDone(QVector<QByteArray>)), this, SLOT(uploadDone(QVector<QByteArray>)));
     connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
     
     connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(copyDirectLink()));
-    connect(ui->butCopyHTML, SIGNAL(clicked(bool)), this, SLOT(copyHTML()));
-    connect(ui->butCopyBbCode, SIGNAL(clicked(bool)), this, SLOT(copyBbCode()));
-    connect(ui->butCopyBbCode2, SIGNAL(clicked(bool)), this, SLOT(copyBbCode2()));
+//     connect(ui->butCopyHTML, SIGNAL(clicked(bool)), this, SLOT(copyHTML()));
+//     connect(ui->butCopyBbCode, SIGNAL(clicked(bool)), this, SLOT(copyBbCode()));
+//     connect(ui->butCopyBbCode2, SIGNAL(clicked(bool)), this, SLOT(copyBbCode2()));
+    connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(changeExtCode(int)));
+    
+    connect(ui->cbxResize, SIGNAL(currentIndexChanged(int)), loader, SLOT(selectResizeMode(int)));
     
     qDebug() << "Core::instance()->getPixmap().width() " << Core::instance()->getPixmap().width();
     
     ui->progressBar->setFormat(tr("Uploaded ") + "%p%" + " (" + "%v" + " of " + "%m bytes");
     ui->progressBar->setVisible(false);
+    ui->labStatus->setVisible(false);
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -73,7 +77,13 @@ void UploaderDialog::updateProgerssbar(qint64 bytesSent, qint64 bytesTotal)
 {
     ui->progressBar->setMaximum(bytesTotal);
     ui->progressBar->setValue(bytesSent);
-//     ui->progressBar->setT
+    
+    if (bytesSent == bytesTotal)
+    {
+        qDebug() << "all is send!!!!";
+        ui->progressBar->setFormat(tr("Upload completed!"));
+        ui->labStatus->setText(tr("Receiving a response from the server"));
+    }
 }
 
 void UploaderDialog::uploadStart()
@@ -81,6 +91,8 @@ void UploaderDialog::uploadStart()
     ui->butClose->setEnabled(false);
     ui->butUpload->setEnabled(false);
     ui->progressBar->setVisible(true);
+    ui->labStatus->setVisible(true);
+    ui->labStatus->setText(tr("Sending screenshot on the server"));
 }
 
 void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
@@ -90,10 +102,16 @@ void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
     ui->butUpload->setVisible(false);
     
     ui->editDirectLink->setText(resultStrings.at(0));
-    ui->editHTML->setText(resultStrings.at(1));
-    ui->editBbCode->setText(resultStrings.at(2));
-    ui->editBbCode2->setText(resultStrings.at(3));
     
+    extCodes.resize(resultStrings.count() - 1);
+    for (int i = 1; i < resultStrings.count(); i++)
+    {
+        extCodes[i-1] = resultStrings[i];
+        qDebug() << "i = " << i << resultStrings[i];
+    }
+        
+    ui->editExtCode->setText(extCodes[ui->cbxExtCode->currentIndex()]);
+
     ui->stackedWidget->setCurrentIndex(1);
 }
 
@@ -107,17 +125,13 @@ void UploaderDialog::copyDirectLink()
     copyLink(ui->editDirectLink->text());
 }
 
-void UploaderDialog::copyHTML()
+void UploaderDialog::copyExtCode()
 {
-    copyLink(ui->editHTML->text());
+    copyLink(ui->editExtCode->text());
 }
 
-void UploaderDialog::copyBbCode()
-{
-    copyLink(ui->editBbCode->text());
-}
 
-void UploaderDialog::copyBbCode2()
+void UploaderDialog::changeExtCode(int code)
 {
-    copyLink(ui->editBbCode2->text());
+    ui->editExtCode->setText(extCodes[code]);
 }
