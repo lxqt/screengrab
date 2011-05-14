@@ -21,7 +21,10 @@
 #ifndef UPLOADERDIALOG_H
 #define UPLOADERDIALOG_H
 
+#include <QtCore/QByteArray>
+#include <QtCore/QVector>
 #include <QtGui/QDialog>
+
 #include "uploader.h"
 
 class Uploader;
@@ -43,9 +46,20 @@ protected:
 private:
     Ui::UploaderDialog *ui;
     Uploader *loader;
-
-private Q_SLOTS:
     
+    inline void copyLink(const QString& link);
+
+public Q_SLOTS:
+    void updateProgerssbar(qint64 bytesSent, qint64 bytesTotal);
+    
+private Q_SLOTS:
+    void uploadStart();
+    void uploadDone(const QVector<QByteArray>& resultStrings);
+    
+    void copyDirectLink();
+    void copyHTML();
+    void copyBbCode();
+    void copyBbCode2();
 };
 
 #endif // UPLOADERDIALOG_H

@@ -22,6 +22,7 @@
 #include "ui_uploaderdialog.h"
 #include "core/core.h"
 
+// #include <QtGui/QClipboard>
 #include <QDebug>
 
 UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
@@ -38,8 +39,21 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
 
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
-
+    connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(uploadStart()));
+//     connect(loader, SIGNAL(uploadStart()), this, SLOT(uploadStart()));
+    connect(loader, SIGNAL(uploadDone(QVector<QByteArray>)), this, SLOT(uploadDone(QVector<QByteArray>)));
+    connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
+    
+    connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(copyDirectLink()));
+    connect(ui->butCopyHTML, SIGNAL(clicked(bool)), this, SLOT(copyHTML()));
+    connect(ui->butCopyBbCode, SIGNAL(clicked(bool)), this, SLOT(copyBbCode()));
+    connect(ui->butCopyBbCode2, SIGNAL(clicked(bool)), this, SLOT(copyBbCode2()));
+    
     qDebug() << "Core::instance()->getPixmap().width() " << Core::instance()->getPixmap().width();
+    
+    ui->progressBar->setFormat(tr("Uploaded ") + "%p%" + " (" + "%v" + " of " + "%m bytes");
+    ui->progressBar->setVisible(false);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 UploaderDialog::~UploaderDialog()
@@ -53,4 +67,57 @@ void UploaderDialog::closeEvent(QCloseEvent* e)
     delete loader;
 
     QDialog::closeEvent(e);
+}
+
+void UploaderDialog::updateProgerssbar(qint64 bytesSent, qint64 bytesTotal)
+{
+    ui->progressBar->setMaximum(bytesTotal);
+    ui->progressBar->setValue(bytesSent);
+//     ui->progressBar->setT
+}
+
+void UploaderDialog::uploadStart()
+{
+    ui->butClose->setEnabled(false);
+    ui->butUpload->setEnabled(false);
+    ui->progressBar->setVisible(true);
+}
+
+void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
+{
+    ui->labSuccessfully->setText(tr("Screenshot uploaded successfully!"));
+    ui->butClose->setEnabled(true);
+    ui->butUpload->setVisible(false);
+    
+    ui->editDirectLink->setText(resultStrings.at(0));
+    ui->editHTML->setText(resultStrings.at(1));
+    ui->editBbCode->setText(resultStrings.at(2));
+    ui->editBbCode2->setText(resultStrings.at(3));
+    
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+inline void UploaderDialog::copyLink(const QString& link)
+{
+    qApp->clipboard()->setText(link);
+}
+
+void UploaderDialog::copyDirectLink()
+{
+    copyLink(ui->editDirectLink->text());
+}
+
+void UploaderDialog::copyHTML()
+{
+    copyLink(ui->editHTML->text());
+}
+
+void UploaderDialog::copyBbCode()
+{
+    copyLink(ui->editBbCode->text());
+}
+
+void UploaderDialog::copyBbCode2()
+{
+    copyLink(ui->editBbCode2->text());
 }
