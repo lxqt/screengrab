@@ -395,7 +395,11 @@ bool Core::writeScreen(QString& fileName, QString& format)
 
 bool Core::writeScreen(QString& fileName, QString& format, bool temp)
 {
-    Q_UNUSED(temp);
+    // adding extension  format
+    if (!fileName.contains("."+format) )
+    {
+        fileName.append("."+format);
+    }
     
     bool saved = false;
     if (fileName.isEmpty() == false)

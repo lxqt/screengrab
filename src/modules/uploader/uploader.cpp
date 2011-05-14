@@ -55,12 +55,15 @@ void Uploader::uploadScreen()
     qDebug() << "upload screen slot";
     
     QByteArray data = createUploadData();
+<<<<<<< HEAD
     QNetworkRequest request = createRequest(data);    
 
     
     connect(net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
     serverReply = net->post(request, data);
     connect(serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64)));    
+=======
+>>>>>>> uploader
 }
 
 QByteArray Uploader::boundary(bool cleared)
@@ -80,6 +83,7 @@ QByteArray Uploader::createUploadData()
 {    
     QByteArray uploadData;
     
+<<<<<<< HEAD
     Core *core = Core::instance();
     QString format = core->conf->getSaveFormat();
     QString tmpFileName = createFilename(format);
@@ -135,6 +139,27 @@ QByteArray Uploader::createUploadData()
     uploadData.append(boundary());
 
     return uploadData;    
+=======
+    QString tmpFileName = QDir::tempPath() + QDir::separator() + "uplodscreen";   
+    QTemporaryFile tempFile(tmpFileName);
+    if (tempFile.open() == true)
+    {
+        QFileInfo info(tempFile);
+        qDebug() << "tempfile is " << info.absoluteFilePath();
+        
+        // save screenshot totemp file
+        Core *core = Core::instance();
+        QString format = core->conf->getSaveFormat();
+        tmpFileName = info.absoluteFilePath();
+        core->writeScreen(tmpFileName, format, true);
+        
+        qDebug() << "tempfile size " << info.size();
+    }
+    
+    
+    return uploadData;
+    qDebug() << __PRETTY_FUNCTION__ << " end";
+>>>>>>> uploader
 }
 
 QNetworkRequest Uploader::createRequest(const QByteArray& requestData)
