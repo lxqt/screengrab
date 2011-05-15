@@ -29,13 +29,22 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     :QDialog(parent), ui(new Ui::UploaderDialog), loader(uploader)
 {
     ui->setupUi(this);
-    ui->shotLabel->setPixmap(Core::instance()->getPixmap().scaled(ui->shotLabel->size(), 						      Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    
+    ui->shotLabel->setFixedWidth(150);
+    ui->shotLabel->setFixedHeight(128);
 
+    ui->shotLabel->setPixmap(Core::instance()->getPixmap().scaled(ui->shotLabel->size(),                              Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    
     // set suze to tooltip for preview pixmap
     int width = Core::instance()->getPixmap().width();
     int height = Core::instance()->getPixmap().height();
     QString pixmapSize = QString::number(width) + "x" + QString::number(height) + tr(" pixel");
     ui->shotLabel->setToolTip(pixmapSize);
+    
+    QString warningTitle = tr("Warning!");
+    QString warningText =  tr("Resize makes on servers imageshack.us");
+    
+    ui->labResizeWarning->setText("<font color='red'><b>" + warningTitle + "</b></font><br />" + warningText);
 
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
@@ -45,11 +54,8 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
     
     connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(copyDirectLink()));
-//     connect(ui->butCopyHTML, SIGNAL(clicked(bool)), this, SLOT(copyHTML()));
-//     connect(ui->butCopyBbCode, SIGNAL(clicked(bool)), this, SLOT(copyBbCode()));
-//     connect(ui->butCopyBbCode2, SIGNAL(clicked(bool)), this, SLOT(copyBbCode2()));
+    connect(ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(copyExtCode()));
     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(changeExtCode(int)));
-    
     connect(ui->cbxResize, SIGNAL(currentIndexChanged(int)), loader, SLOT(selectResizeMode(int)));
     
     qDebug() << "Core::instance()->getPixmap().width() " << Core::instance()->getPixmap().width();
@@ -90,6 +96,7 @@ void UploaderDialog::uploadStart()
 {
     ui->butClose->setEnabled(false);
     ui->butUpload->setEnabled(false);
+    ui->cbxResize->setEnabled(false);
     ui->progressBar->setVisible(true);
     ui->labStatus->setVisible(true);
     ui->labStatus->setText(tr("Sending screenshot on the server"));
@@ -106,8 +113,7 @@ void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
     extCodes.resize(resultStrings.count() - 1);
     for (int i = 1; i < resultStrings.count(); i++)
     {
-        extCodes[i-1] = resultStrings[i];
-        qDebug() << "i = " << i << resultStrings[i];
+        extCodes[i-1] = resultStrings[i];        
     }
         
     ui->editExtCode->setText(extCodes[ui->cbxExtCode->currentIndex()]);
