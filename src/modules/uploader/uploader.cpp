@@ -30,6 +30,7 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QVector>
 #include <QtCore/QUuid>
+#include <QtCore/QStringList>
 #include <QtNetwork/QNetworkRequest>
 
 #include <QDebug>
@@ -155,6 +156,21 @@ void Uploader::replyFinished(QNetworkReply* reply)
     if (reply->error() == QNetworkReply::NoError)
     {   
         QByteArray replyXmalText = reply->readAll();
+        
+        // error parsing
+        if (replyXmalText.contains("error id=") == true)
+        {
+            qDebug() << "error";
+            
+            // TODO -- emiting error signal (rerror type == errList(0))
+                        
+            QRegExp err("<error id=\"([^<]*)\"");
+            int pos = err.indexIn(replyXmalText);
+            int len = err.matchedLength();
+;
+            QByteArray errorStrCode = replyXmalText.mid(pos, len).replace("<error id=\"", "").replace("\"", "");
+        }
+        
         QVector<QByteArray> listXmlNodes;
         QRegExp re;      
         QRegExp re2;
