@@ -179,6 +179,9 @@ void Uploader::replyFinished(QNetworkReply* reply)
             int len = err.matchedLength();
 ;
             QByteArray errorStrCode = replyXmalText.mid(pos, len).replace("<error id=\"", "").replace("\"", "");
+            
+            Q_EMIT uploadFail(errorStrCode);
+            exit;
         }
         
         QVector<QByteArray> listXmlNodes;

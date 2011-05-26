@@ -45,7 +45,7 @@ private Q_SLOTS:
     
 Q_SIGNALS:
     void uploadStart();
-    void uploadFail();
+    void uploadFail(const QByteArray &error);
     void uploadDone(const QVector<QByteArray>& resultStrings);
     void uploadProgress(qint64 bytesSent, qint64 bytesTotal);
     

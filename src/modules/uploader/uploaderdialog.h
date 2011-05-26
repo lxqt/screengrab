@@ -56,6 +56,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void uploadStart();
     void uploadDone(const QVector<QByteArray>& resultStrings);
+    void uploadFailed(const QByteArray& errorCode);
     
     void copyDirectLink();
     void copyExtCode();

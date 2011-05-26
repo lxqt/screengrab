@@ -22,7 +22,7 @@
 #include "ui_uploaderdialog.h"
 #include "core/core.h"
 
-// #include <QtGui/QClipboard>
+#include <QtGui/QMessageBox>
 #include <QDebug>
 
 UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
@@ -52,6 +52,7 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     
     connect(loader, SIGNAL(uploadDone(QVector<QByteArray>)), this, SLOT(uploadDone(QVector<QByteArray>)));
     connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
+    connect(loader, SIGNAL(uploadFail(QByteArray)), this, SLOT(uploadFailed(QByteArray)));
     
     connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(copyDirectLink()));
     connect(ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(copyExtCode()));
@@ -74,8 +75,9 @@ UploaderDialog::~UploaderDialog()
 void UploaderDialog::closeEvent(QCloseEvent* e)
 {
     qDebug() << "loader ;" <<  loader;
-    delete loader;
-
+//     delete loader;
+    loader = 0;
+    
     QDialog::closeEvent(e);
 }
 
@@ -120,6 +122,30 @@ void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
 
     ui->stackedWidget->setCurrentIndex(1);
 }
+
+void UploaderDialog::uploadFailed(const QByteArray& errorCode)
+{
+    qDebug() << "upload screenshot is failed - " << errorCode;
+    
+    // genetate messagebox text
+    QString errorMessageText;
+    QString errorMessageTitle = tr("Error uploading screenshot!");
+    
+    if (errorCode == "wrong_file_type" )
+    {
+        errorMessageText = tr("Server is not support this image type");
+    }
+    
+    // show messagebox
+    QMessageBox msg;
+    msg.setWindowTitle(errorMessageTitle);
+    msg.setText(errorMessageText);
+    msg.setIcon(QMessageBox::Warning);
+    msg.exec();
+    
+    close();
+}
+
 
 inline void UploaderDialog::copyLink(const QString& link)
 {
