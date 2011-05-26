@@ -121,17 +121,33 @@ void Config::killInstance()
 QString Config::getConfigFile()
 {
     QString configFile;
+
 #ifdef Q_WS_X11
-    configFile.append(QDir::homePath()+ QDir::separator()+".screengrab"+
-                             QDir::separator()+"screengrab.conf");
+    configFile = Config::getConfigDir() + "screengrab.conf";
 #endif
 
-// if win32
 #ifdef Q_WS_WIN
-    configFile.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "ScreenGrab" + QDir::toNativeSeparators(QDir::separator()) + "screengrab.ini" );
+    configFile = Config::getConfigDir() + +"screengrab.ini";
 #endif
+    
     return configFile;
 }
+
+QString Config::getConfigDir()
+{
+    QString configDir;
+#ifdef Q_WS_X11
+    configDir.append(QDir::homePath()+ QDir::separator()+".screengrab"+
+    QDir::separator());
+#endif
+    
+    // if win32
+#ifdef Q_WS_WIN
+    configDir.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "ScreenGrab" + QDir::toNativeSeparators(QDir::separator()));
+#endif
+    return configDir;
+}
+
 
 // public methods
 

@@ -99,7 +99,8 @@ public:
     ~Config();
 
     static QString getConfigFile();
-
+    static QString getConfigDir();
+    
     /**
      * Load configuration data from conf file
      */
