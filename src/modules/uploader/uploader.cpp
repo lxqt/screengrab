@@ -127,7 +127,17 @@ QByteArray Uploader::createUploadData()
     uploadData.append("content-disposition: ");
     uploadData.append("form-data; name='fileupload'; ");
     uploadData.append("filename='" + tmpFileName + "'\r\n");
-    uploadData.append("Content-Type: image/" + format + "\r\n");
+    
+    if (format == "jpg")
+    {
+        uploadData.append("Content-Type: image/jpeg\r\n");
+    }
+    else
+    {
+        uploadData.append("Content-Type: image/" + format + "\r\n");
+    }
+    
+    
     uploadData.append("\r\n");
     uploadData.append(screenData);
     uploadData.append("\r\n");
