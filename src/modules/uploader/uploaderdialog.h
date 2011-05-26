@@ -61,6 +61,8 @@ private Q_SLOTS:
     void copyDirectLink();
     void copyExtCode();
     void changeExtCode(int code);
+    
+    void useAccount(bool use);
 };
 
 #endif // UPLOADERDIALOG_H

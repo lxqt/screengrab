@@ -49,6 +49,7 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(uploadStart()));
+    connect(ui->cbxUseAccount, SIGNAL(toggled(bool)), this, SLOT(useAccount(bool)));
     
     connect(loader, SIGNAL(uploadDone(QVector<QByteArray>)), this, SLOT(uploadDone(QVector<QByteArray>)));
     connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
@@ -64,6 +65,8 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     ui->progressBar->setFormat(tr("Uploaded ") + "%p%" + " (" + "%v" + " of " + "%m bytes");
     ui->progressBar->setVisible(false);
     ui->labStatus->setVisible(false);
+    
+    useAccount(false); 
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -166,4 +169,12 @@ void UploaderDialog::copyExtCode()
 void UploaderDialog::changeExtCode(int code)
 {
     ui->editExtCode->setText(extCodes[code]);
+}
+
+void UploaderDialog::useAccount(bool use)
+{
+    ui->labUsername->setVisible(use);
+    ui->labPassword->setVisible(use);
+    ui->editUsername->setVisible(use);
+    ui->editPassword->setVisible(use);
 }
