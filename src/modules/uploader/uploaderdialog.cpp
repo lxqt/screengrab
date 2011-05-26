@@ -47,7 +47,6 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     ui->labResizeWarning->setText("<font color='red'><b>" + warningTitle + "</b></font><br />" + warningText);
 
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
-    connect(ui->butUpload, SIGNAL(clicked(bool)), loader, SLOT(uploadScreen()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(uploadStart()));
     connect(ui->cbxUseAccount, SIGNAL(toggled(bool)), this, SLOT(useAccount(bool)));
     
@@ -105,6 +104,17 @@ void UploaderDialog::uploadStart()
     ui->progressBar->setVisible(true);
     ui->labStatus->setVisible(true);
     ui->labStatus->setText(tr("Sending screenshot on the server"));
+    
+    loader->setUsername(ui->editUsername->text());
+    loader->setPassword(ui->editPassword->text());
+    
+    ui->labUsername->setVisible(false);
+    ui->labPassword->setVisible(false);
+    ui->editUsername->setVisible(false);
+    ui->editPassword->setVisible(false);
+    ui->cbxUseAccount->setVisible(false);
+    
+    loader->uploadScreen();
 }
 
 void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
@@ -177,4 +187,5 @@ void UploaderDialog::useAccount(bool use)
     ui->labPassword->setVisible(use);
     ui->editUsername->setVisible(use);
     ui->editPassword->setVisible(use);
+    loader->useAccount(use);
 }

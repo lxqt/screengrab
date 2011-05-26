@@ -34,6 +34,10 @@ class Uploader : public QObject
 public:
     Uploader();
     virtual ~Uploader();
+    
+    void setUsername(const QString& name);
+    void setPassword(const QString& pass);
+    void useAccount(bool use);
 
 public Q_SLOTS:
     void uploadScreen();
@@ -62,6 +66,10 @@ private:
     QString createFilename(QString& format);
     QVector<QSize> sizes;
     qint8 selectedSize;
+    
+    bool _useAccount;
+    QString _username;
+    QString _password;
 };
 
 #endif // UPLOADER_H

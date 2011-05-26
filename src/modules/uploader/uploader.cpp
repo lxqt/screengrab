@@ -51,6 +51,22 @@ Uploader::~Uploader()
     qDebug() << "kill uploader";
 }
 
+void Uploader::setUsername(const QString& name)
+{
+    _username = name;
+}
+
+void Uploader::setPassword(const QString& pass)
+{
+    _password = pass;
+}
+
+void Uploader::useAccount(bool use)
+{
+    _useAccount = use;
+}
+
+
 void Uploader::uploadScreen()
 {
     qDebug() << "upload screen slot";
@@ -95,6 +111,9 @@ QByteArray Uploader::createUploadData()
     uploadData.append("yes");
     uploadData.append("\r\n");
     
+    qDebug() << "USERNAME " << _username;
+    qDebug() << "PASSWORD " << _password;
+    
     // resize image    
     if (selectedSize != -1)
     {
@@ -113,6 +132,23 @@ QByteArray Uploader::createUploadData()
         uploadData.append("\r\n");
         uploadData.append(newSize);
         uploadData.append("\r\n");
+    }
+    
+    if (_useAccount == true)
+    {
+        uploadData.append(boundary());
+        uploadData.append("content-disposition: ");
+        uploadData.append("form-data; name=\"a_username\"\r\n");
+        uploadData.append("\r\n");
+        uploadData.append(_username);
+        uploadData.append("\r\n"); 
+        
+        uploadData.append(boundary());
+        uploadData.append("content-disposition: ");
+        uploadData.append("form-data; name=\"a_password\"\r\n");
+        uploadData.append("\r\n");
+        uploadData.append(_password);
+        uploadData.append("\r\n");         
     }
     
     uploadData.append(boundary());
