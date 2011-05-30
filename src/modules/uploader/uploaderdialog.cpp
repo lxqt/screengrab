@@ -1,25 +1,26 @@
-/*
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-*/
+/***************************************************************************
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
+ *   doomer3d@gmail.com                                                    *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
 
 #include "uploaderdialog.h"
 #include "ui_uploaderdialog.h"
+#include "uploaderconfig.h"
 #include "core/core.h"
 
 #include <QtGui/QMessageBox>
@@ -47,8 +48,9 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     ui->labResizeWarning->setText("<font color='red'><b>" + warningTitle + "</b></font><br />" + warningText);
 
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
+    connect(ui->butSettings, SIGNAL(clicked(bool)), this, SLOT(showSettings()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(uploadStart()));
-    connect(ui->cbxUseAccount, SIGNAL(toggled(bool)), this, SLOT(useAccount(bool)));
+    connect(ui->checkUseAccount, SIGNAL(toggled(bool)), this, SLOT(useAccount(bool)));
     
     connect(loader, SIGNAL(uploadDone(QVector<QByteArray>)), this, SLOT(uploadDone(QVector<QByteArray>)));
     connect(loader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(updateProgerssbar(qint64,qint64)));
@@ -65,7 +67,9 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     ui->progressBar->setVisible(false);
     ui->labStatus->setVisible(false);
     
-    useAccount(false); 
+    // load settings
+    loadSettings();
+    
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -74,13 +78,48 @@ UploaderDialog::~UploaderDialog()
 
 }
 
+void UploaderDialog::loadSettings()
+{
+    UploaderConfig conf;
+    
+    QStringList settingsList = conf.loadSettings();
+    ui->editUsername->setText(settingsList.at(0));
+    ui->editPassword->setText(settingsList.at(1));
+    
+    bool copyLink = conf.loadparam("autoCopyDirectLink").toBool();
+    qDebug() << "copylin " << copyLink;
+    ui->checkCopyDirectLink->setChecked(copyLink);
+    
+    bool useAcc = conf.loadparam("useAccount").toBool();
+    ui->checkUseAccount->setChecked(useAcc);
+    loader->useAccount(useAcc);
+    
+    useAccount(useAcc); 
+}
+
+
 void UploaderDialog::closeEvent(QCloseEvent* e)
 {
-    qDebug() << "loader ;" <<  loader;
-//     delete loader;
-    loader = 0;
-    
-    QDialog::closeEvent(e);
+    if (ui->stackedWidget->currentIndex() == 2)
+    {
+        ui->stackedWidget->setCurrentIndex(0);
+        ui->butClose->setText(tr("Close"));
+        ui->butSettings->setVisible(true);
+        ui->butUpload->setVisible(true);
+        ui->butSettings->setText(tr("Settings"));
+
+        // return original dialpog ttitle
+        setWindowTitle(tr("Upload screenshot"));
+        e->ignore();
+    }
+    else
+    {
+        qDebug() << "loader ;" <<  loader;
+ 
+        loader = 0;
+        
+        QDialog::closeEvent(e);   
+    }
 }
 
 void UploaderDialog::updateProgerssbar(qint64 bytesSent, qint64 bytesTotal)
@@ -98,6 +137,7 @@ void UploaderDialog::updateProgerssbar(qint64 bytesSent, qint64 bytesTotal)
 
 void UploaderDialog::uploadStart()
 {
+    ui->butSettings->setVisible(false);
     ui->butClose->setEnabled(false);
     ui->butUpload->setEnabled(false);
     ui->cbxResize->setEnabled(false);
@@ -112,7 +152,9 @@ void UploaderDialog::uploadStart()
     ui->labPassword->setVisible(false);
     ui->editUsername->setVisible(false);
     ui->editPassword->setVisible(false);
-    ui->cbxUseAccount->setVisible(false);
+    ui->checkUseAccount->setVisible(false);
+    
+
     
     loader->uploadScreen();
 }
@@ -133,6 +175,15 @@ void UploaderDialog::uploadDone(const QVector< QByteArray >& resultStrings)
         
     ui->editExtCode->setText(extCodes[ui->cbxExtCode->currentIndex()]);
 
+    // check autocopy direct link
+    UploaderConfig conf;
+    bool copyLink = conf.loadparam("autoCopyDirectLink").toBool();
+    
+    if (copyLink == true)
+    {
+        copyDirectLink();
+    }
+    
     ui->stackedWidget->setCurrentIndex(1);
 }
 
@@ -181,11 +232,49 @@ void UploaderDialog::changeExtCode(int code)
     ui->editExtCode->setText(extCodes[code]);
 }
 
+void UploaderDialog::showSettings()
+{
+    if (ui->stackedWidget->currentIndex() == 2)
+    {
+        //saveSettings
+        UploaderConfig conf;
+        
+        QStringList settingsList;
+        settingsList << ui->editUsername->text();
+        settingsList << ui->editPassword->text();
+        
+        conf.saveSettings(settingsList);
+        
+        bool copyLink = ui->checkCopyDirectLink->isChecked();                
+        conf.saveParameter("autoCopyDirectLink", copyLink);
+        
+        bool useAcc = ui->checkUseAccount->isChecked();
+        conf.saveParameter("useAccount", useAcc);
+        ui->butSettings->setText(tr("Settings"));
+        setWindowTitle(tr("Upload screenshot"));
+        ui->stackedWidget->setCurrentIndex(0);
+        ui->butClose->setText(tr("Close"));
+        ui->butUpload->setVisible(true);
+        loader->useAccount(useAcc);
+    }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(2);
+        ui->butClose->setText(tr("Cancel"));
+        ui->butSettings->setText(tr("Save"));
+        ui->butUpload->setVisible(false);
+        setWindowTitle(tr("Settings upload screenshot"));
+        
+        loadSettings(); 
+    }
+}
+
+
 void UploaderDialog::useAccount(bool use)
 {
     ui->labUsername->setVisible(use);
     ui->labPassword->setVisible(use);
     ui->editUsername->setVisible(use);
     ui->editPassword->setVisible(use);
-    loader->useAccount(use);
+//     loader->useAccount(use);
 }

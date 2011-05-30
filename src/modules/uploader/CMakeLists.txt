@@ -8,6 +8,7 @@ message(STATUS "SG_CORE_INCLUDE-2: " ${SG_INCLUDE})
 
 set (uploader_SRC uploader.cpp
     uploaderdialog.cpp
+    uploaderconfig.cpp
 )
 
 set (uploader_HDR

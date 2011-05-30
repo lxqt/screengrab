@@ -18,58 +18,28 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef UPLOADER_H
-#define UPLOADER_H
+#ifndef UPLOADERCONFIG_H
+#define UPLOADERCONFIG_H
 
-#include <QtCore/QObject>
-#include <QtCore/QByteArray>
-#include <QtCore/QVector>
-#include <QtCore/QSize>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
+#include <QtCore/QSettings>
+#include <QtCore/QStringList>
+#include <QtCore/QVariant>
 
-class Uploader : public QObject
+class UploaderConfig
 {
-    Q_OBJECT
-public:
-    Uploader();
-    virtual ~Uploader();
-    
-    void setUsername(const QString& name);
-    void setPassword(const QString& pass);
-    void useAccount(bool use);
 
-public Q_SLOTS:
-    void uploadScreen();
-    void selectResizeMode(int mode);
+public:
+    UploaderConfig();
+    ~UploaderConfig();
     
-private Q_SLOTS:
-    void replyFinished(QNetworkReply* reply);
-    void replyProgress(qint64 bytesSent, qint64 bytesTotal);
-    
-Q_SIGNALS:
-    void uploadStart();
-    void uploadFail(const QByteArray &error);
-    void uploadDone(const QVector<QByteArray>& resultStrings);
-    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);
+    void saveSettings(const QStringList& settings);
+    QStringList loadSettings();
+    void saveParameter(const QString& param, const QVariant& val);
+    QVariant loadparam(const QString& param);
     
 private:
-    QByteArray boundary(bool cleared = false);
-    QByteArray createUploadData();
-    QNetworkRequest createRequest(const QByteArray& requestData);
-    
-    QByteArray imageData;
-    QByteArray strBoundary;
-    QNetworkAccessManager *net;
-    QNetworkReply *serverReply;
-    
-    QString createFilename(QString& format);
-    QVector<QSize> sizes;
-    qint8 selectedSize;
-    
-    bool _useAccount;
-    QString _username;
-    QString _password;
+    QSettings *_settings;
+    QStringList _settingsList;
 };
 
-#endif // UPLOADER_H
+#endif // UPLOADERCONFIG_H

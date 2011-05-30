@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -136,6 +136,11 @@ QByteArray Uploader::createUploadData()
     
     if (_useAccount == true)
     {
+        
+        qDebug() << "use acc" << _useAccount;
+        qDebug() << "use acc" << _username;
+        qDebug() << "use acc" << _password;
+        
         uploadData.append(boundary());
         uploadData.append("content-disposition: ");
         uploadData.append("form-data; name=\"a_username\"\r\n");
