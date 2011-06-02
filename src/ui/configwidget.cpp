@@ -27,10 +27,12 @@
 #include <QxtGui/QxtGlobalShortcut>
 #endif
 
+#include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QTreeWidgetItemIterator>
+// #include <X11/Xlib.h>
 
 ConfigDialog::ConfigDialog(QWidget *parent) :
     QDialog(parent),
@@ -177,6 +179,34 @@ void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 
 void ConfigDialog::saveSettings()
 {
+    QDir screenshotDir(ui->editDir->text());
+    if (screenshotDir.exists() == false)
+    {
+        QMessageBox msg;
+        msg.setText(tr("Directory %1 does not exists. Do you eant to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
+        msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
+        msg.setIcon(QMessageBox::Question);
+        msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        
+        int res = msg.exec();
+        
+        if (res == QMessageBox::No)
+        {
+            return ;
+        }
+        else
+        {            
+            screenshotDir.mkpath(screenshotDir.path());
+            
+            if (screenshotDir.path().endsWith(QDir::separator()) == false)
+            {
+                QString updatedPath = screenshotDir.path() + QDir::separator();
+                updatedPath = QDir::toNativeSeparators(updatedPath);
+                ui->editDir->setText(updatedPath);
+            }
+        }
+    }
+
     // set new values of general settings
     conf->setSaveDir(ui->editDir->text());
     conf->setSaveFileName(ui->editFileName->text());
@@ -240,8 +270,7 @@ QString ConfigDialog::getFormat()
 
 void ConfigDialog::selectDir()
 {
-QString *directory;
-directory = new QString;
+QString *directory = new QString;
 #ifdef Q_WS_X11
 {
     *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),

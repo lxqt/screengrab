@@ -10,11 +10,22 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9.80")
-set(SCREENGRAB_VERSION_DEV "1.0-beta")
+set(SCREENGRAB_VERSION "0.9.81")
+set(SCREENGRAB_VERSION_DEV "1.0")
 
 if(SCREENGRAB_VERSION_DEV)
-   set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV})")
+
+# search git executable
+find_package(Git)
+if (GIT_FOUND)
+
+    # executable git for check HEAD rev hash
+    execute_process (COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
+                OUTPUT_VARIABLE GIT_HASH
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+endif(GIT_FOUND)
+
+    set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV}-git-${GIT_HASH})")
 elseif(NOT SCREENGRAB_VERSION_DEV)
   set(VERSION ${SCREENGRAB_VERSION})
 endif(SCREENGRAB_VERSION_DEV)
