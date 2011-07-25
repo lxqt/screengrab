@@ -10,7 +10,7 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9.81")
+set(SCREENGRAB_VERSION "0.9.82")
 set(SCREENGRAB_VERSION_DEV "1.0")
 
 if(SCREENGRAB_VERSION_DEV)
