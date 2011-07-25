@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     Core *ScreenGrab = Core::instance();
     MainWindow mainWnd;    
     
-    if (scr.isRunning() == false)
+    if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
     {
         ScreenGrab->screenShot(true);
         mainWnd.show();
