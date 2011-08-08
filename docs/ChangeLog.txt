@@ -1,3 +1,12 @@
+0.9.85 (1.0-beta)
+ * Added uploading screenshots on imageshack.use_mangled_mesa(
+ * Fixed bug with cut button text on mainwindow
+ * Fixed regression with not capture screenshot when second instance running
+ * fixed bug with not create path to autosave screenshots (when it is typed manually  in configuration dialog)
+ * added build key SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
+ * autoincrement filenames when saving screenshots in manual mode (in one running session)
+ * added the ability to customize shortcut to close the application
+
 0.9.1
  * fixed non-switching combo-box "Type of Screeen" when grab screenshot from signal by another instance application.
  * fixed incorect grab active window screens in GNOME (when disabled "Allow multiple copies" option and run another instance of application)

@@ -10,11 +10,12 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9.82")
-set(SCREENGRAB_VERSION_DEV "1.0")
+set(SCREENGRAB_VERSION "0.9.85")
+set(SCREENGRAB_VERSION_DEV "1.0-beta")
+# set(DEV_BUILD True)
 
 if(SCREENGRAB_VERSION_DEV)
-
+if (DEV_BUILD)
 # search git executable
 find_package(Git)
 if (GIT_FOUND)
@@ -26,6 +27,9 @@ if (GIT_FOUND)
 endif(GIT_FOUND)
 
     set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV}-git-${GIT_HASH})")
+else (DEV_BUILD)
+    set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV})")
+endif(DEV_BUILD)
 elseif(NOT SCREENGRAB_VERSION_DEV)
   set(VERSION ${SCREENGRAB_VERSION})
 endif(SCREENGRAB_VERSION_DEV)
@@ -184,6 +188,31 @@ else(QT_LRELEASE_EXECUTABLE)
 message(FATAL_ERROR "Could NOT find lrelease executable")
 endif(QT_LRELEASE_EXECUTABLE)
 
+#------- create source package in *nix ------------
+
+IF (UNIX)
+    ADD_CUSTOM_TARGET (dist @echo create source package )
+    set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
+    add_custom_command(COMMAND cp 
+        ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}" 
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        TARGET  dist
+    )
+
+    ADD_CUSTOM_COMMAND(COMMAND tar 
+        ARGS cvfz ${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"  
+        WORKING_DIRECTORY "/tmp"
+        TARGET  dist
+    )
+
+    add_custom_command(COMMAND rm 
+        ARGS -rf "/tmp/${SCREENGRAB_DIST}"
+        WORKING_DIRECTORY "/tmp"
+        TARGET  dist
+    )
+ENDIF(UNIX)
+
+# --exclude-backups --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32
 #------- add icon & trmove console in win32 (mingw) ----------
 
 if(WIN32)

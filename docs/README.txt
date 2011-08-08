@@ -1,5 +1,5 @@
 ScreenGrab  readme file
-version 0.9.1
+version 0.9.85 (1.0-beta)
 
 ScreenGrab - program geting screenshots working in Linux and Windows. The program uses Qt and is independent of any desktop environment.
 
@@ -18,7 +18,7 @@ Installing:
 
 Linux
 0. Install Qt package from our Linux disto repos (and Qt development packages, if need).
-1. Unpack screengrab-0.9.1.tar.gz)  into same directory.
+1. Unpack screengrab-0.9.85.tar.gz)  into same directory.
 2. Run cmake from directory with CMakeLists.txt and make.
 3. Run make install (as root) to installing.4
 4. Run screengrab.
