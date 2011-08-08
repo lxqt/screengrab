@@ -73,7 +73,7 @@ MainWindow::MainWindow(QWidget* parent) :
     trayIcon = NULL;
     updateUI();
     
-    m_ui->delayBox->setValue(core->conf->getDelay());
+    delayBoxChange(core->conf->getDelay());
     m_ui->cbxTypeScr->setCurrentIndex(core->conf->getTypeScreen());
 
 //     connect buttons to slots
@@ -102,7 +102,7 @@ MainWindow::MainWindow(QWidget* parent) :
 //     core->screenShot(true);
     displayPixmap();
 
-    createShortcuts();
+    createShortcuts();      
 }
 
 MainWindow::~MainWindow()

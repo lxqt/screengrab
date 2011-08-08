@@ -1,3 +1,4 @@
+
 /***************************************************************************
  *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
@@ -105,8 +106,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 
     // set false visibility to edit hokey controls
     ui->labUsedShortcut->setVisible(false);
-    ui->keyWidget->setVisible(false);
-
+    ui->keyWidget->setVisible(false);        
 }
 
 ConfigDialog::~ConfigDialog()
