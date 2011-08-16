@@ -34,8 +34,8 @@ UploaderConfig::UploaderConfig()
     configFile += "uploader.conf";
 #endif
     
-#ifdef Q_WS_Win
-    configFile += "uploader.conf";
+#ifdef Q_WS_WIN
+    configFile += "uploader.ini";
 #endif
     _settings = new QSettings(configFile, QSettings::IniFormat);        
     _settingsList << "username" << "password";
