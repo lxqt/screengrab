@@ -35,7 +35,7 @@ elseif(NOT SCREENGRAB_VERSION_DEV)
 endif(SCREENGRAB_VERSION_DEV)
 
 add_definitions( -DVERSION="${VERSION}")
-message(STATUS "Version: " ${VERSION})
+message(STATUS "Version				: " ${VERSION})
 #${CMAKE_SYSTEM_NAME} [${CMAKE_HOST_SYSTEM_PROCESSOR}]" )
 
 message(STATUS "Use qmake: " ${QT_QMAKE_EXECUTABLE})
@@ -50,8 +50,8 @@ if(${CMAKE_BUILD_TYPE} MATCHES "Release")
     add_definitions(-DNDEBUG)
     add_definitions(-DQT_NO_DEBUG_OUTPUT)
     if(WIN32)
-    if(NOT MSVC)
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+    if(NOT MSVC)	
+		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
     endif(NOT MSVC)
 endif(WIN32)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
@@ -188,30 +188,6 @@ else(QT_LRELEASE_EXECUTABLE)
 message(FATAL_ERROR "Could NOT find lrelease executable")
 endif(QT_LRELEASE_EXECUTABLE)
 
-#------- create source package in *nix ------------
-
-IF (UNIX)
-    ADD_CUSTOM_TARGET (dist @echo create source package )
-    set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
-    add_custom_command(COMMAND cp 
-        ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}" 
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        TARGET  dist
-    )
-
-    ADD_CUSTOM_COMMAND(COMMAND tar 
-        ARGS cvfz ${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"  
-        WORKING_DIRECTORY "/tmp"
-        TARGET  dist
-    )
-
-    add_custom_command(COMMAND rm 
-        ARGS -rf "/tmp/${SCREENGRAB_DIST}"
-        WORKING_DIRECTORY "/tmp"
-        TARGET  dist
-    )
-ENDIF(UNIX)
-
 # --exclude-backups --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32
 #------- add icon & trmove console in win32 (mingw) ----------
 
@@ -248,24 +224,66 @@ if(WIN32)
     endif(NOT MSVC)
 endif(WIN32)
 
-#installs unix
+#-------  make src packae and installing ----------
+
 if(UNIX AND NOT APPLE)
-#INSTALL_TARGETS(/bin screengrab)
-  INSTALL(TARGETS screengrab RUNTIME DESTINATION bin)
+    # make src.tar.gz
+    ADD_CUSTOM_TARGET (dist @echo create source package )
+    set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
+    add_custom_command(COMMAND cp 
+        ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}" 
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        TARGET  dist
+    )
 
-  # install txt docs
-  INSTALL(FILES ${DOCS} DESTINATION share/doc/screengrab)
-  # install html docs
-  INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION share/doc/screengrab/html)
+    ADD_CUSTOM_COMMAND(COMMAND tar 
+        ARGS cvfz ${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"  
+        WORKING_DIRECTORY "/tmp"
+        TARGET  dist
+    )
 
-  # install desktop files
-  INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
+    add_custom_command(COMMAND rm 
+        ARGS -rf "/tmp/${SCREENGRAB_DIST}"
+        WORKING_DIRECTORY "/tmp"
+        TARGET  dist
+    )
 
-  # install pixmap
-  INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
+    # installing
+    INSTALL(TARGETS screengrab RUNTIME DESTINATION bin)
 
-  # istall localize
-#  FILE(GLOB qm "${CMAKE_CURRENT_SOURCE_DIR}/localize/*.qm")
-#  INSTALL(FILES ${qm} DESTINATION share/screengrab/localize)
-  INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION share/screengrab/localize FILES_MATCHING PATTERN "*.qm")
+    # install txt docs
+    INSTALL(FILES ${DOCS} DESTINATION share/doc/screengrab)
+    # install html docs
+    INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION share/doc/screengrab/html)
+
+    # install desktop files
+    INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
+
+    # install pixmap
+    INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
+
+    INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION share/screengrab/localize FILES_MATCHING PATTERN "*.qm")
 endif(UNIX AND NOT APPLE)
+
+if(WIN32)
+    set(WIN32_BINARY_RUNTIME 
+#         ${CMAKE_FIND_ROOT_PATH}/bin/libgcc_s_sjlj-1.dll
+#         ${CMAKE_FIND_ROOT_PATH}/bin/libstdc++-6.dll
+        ${CMAKE_FIND_ROOT_PATH}/bin/zlib1.dll
+    )
+
+    set(WIN32_BINARY_QT_LIBS 
+        ${QT_BINARY_DIR}/QtCore4.dll
+        ${QT_BINARY_DIR}/QtGui4.dll
+        ${QT_BINARY_DIR}/QtNetwork4.dll
+    )
+    
+    INSTALL(TARGETS screengrab RUNTIME DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro)
+    install(FILES ${WIN32_BINARY_RUNTIME} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro) 
+    install(FILES ${WIN32_BINARY_QT_LIBS} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro)
+    install(FILES ${QT_JPEG_LIBRARY} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/imageformats)
+    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro/localize FILES_MATCHING PATTERN "*.qm")
+    install(FILES ${DOCS} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro/docs)
+    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/distro/docs/html)
+
+endif(WIN32)

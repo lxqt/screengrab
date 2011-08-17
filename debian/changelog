@@ -1,3 +1,9 @@
+screengrab (0.9.85-ubuntu1) karmic; urgency=low
+
+  * released version 0.9.85 (1.0-beta release)
+
+ -- Artem Galichkin (arched) <doomer3d@gmail.com>  Wed, 17 Aug 2011 06:57:27  +0300
+
 screengrab (0.9.1-ubuntu1) karmic; urgency=low
 
   * released version 0.9.1 (bugfix release)
