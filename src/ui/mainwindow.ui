@@ -338,7 +338,7 @@
            <string>Information about ScreenGrab</string>
           </property>
           <property name="text">
-           <string>Information</string>
+           <string>About</string>
           </property>
           <property name="shortcut">
            <string>Ctrl+I</string>
