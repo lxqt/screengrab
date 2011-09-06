@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>444</width>
+    <width>600</width>
     <height>303</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>444</width>
+    <width>600</width>
     <height>303</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>444</width>
+    <width>600</width>
     <height>303</height>
    </size>
   </property>
@@ -27,590 +27,608 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_8">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3"/>
-   </item>
-   <item>
-    <widget class="QTabWidget" name="tabWidget">
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="tab">
-      <attribute name="title">
-       <string>Main</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>4</x>
-         <y>11</y>
-         <width>401</width>
-         <height>211</height>
-        </rect>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="spacing">
-           <number>4</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="labDirectory">
-            <property name="text">
-             <string>Default save directory:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <widget class="QLineEdit" name="editDir">
-              <property name="toolTip">
-               <string>Path to default selection dir for saving</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="buttonBrowse">
-              <property name="toolTip">
-               <string>Browse filesystem</string>
-              </property>
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
-            <item>
-             <widget class="QLabel" name="labFilename">
-              <property name="text">
-               <string>Default filename:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="editFileName">
-              <property name="toolTip">
-               <string>Default filename</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_6">
-            <item>
-             <widget class="QLabel" name="labFormat">
-              <property name="text">
-               <string>Format</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="cbxFormat">
-              <property name="toolTip">
-               <string>Default saving image format</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Delay:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="defDelay">
-            <property name="toolTip">
-             <string>Default delay before grabbing screen</string>
-            </property>
-            <property name="wrapping">
-             <bool>false</bool>
-            </property>
-            <property name="suffix">
-             <string> sec</string>
-            </property>
-            <property name="prefix">
-             <string/>
-            </property>
-            <property name="maximum">
-             <number>90</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkNoDecorX11">
-            <property name="text">
-             <string>No window decoration</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="tabAdvanced">
-      <attribute name="title">
-       <string>Advanced</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <item>
-        <widget class="QCheckBox" name="checkIncDate">
-         <property name="toolTip">
-          <string>Inserting current date time into saved filename</string>
-         </property>
-         <property name="text">
-          <string>Insert DateTime in filename</string>
-         </property>
-        </widget>
+        <property name="text">
+         <string>Main</string>
+        </property>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <property name="text">
+         <string>Advanced</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Display</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tray</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Shortcuts</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="page_6">
+        <layout class="QVBoxLayout" name="verticalLayout_15">
          <item>
-          <widget class="QLabel" name="labMask">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="labDirectory">
+               <property name="text">
+                <string>Default save directory:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLineEdit" name="editDir">
+                 <property name="toolTip">
+                  <string>Path to default selection dir for saving</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="buttonBrowse">
+                 <property name="toolTip">
+                  <string>Browse filesystem</string>
+                 </property>
+                 <property name="text">
+                  <string>Browse</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QLabel" name="labFilename">
+                 <property name="text">
+                  <string>Default filename:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="editFileName">
+                 <property name="toolTip">
+                  <string>Default filename</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLabel" name="labFormat">
+                 <property name="text">
+                  <string>Format</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="cbxFormat">
+                 <property name="toolTip">
+                  <string>Default saving image format</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Delay:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="defDelay">
+               <property name="toolTip">
+                <string>Default delay before grabbing screen</string>
+               </property>
+               <property name="wrapping">
+                <bool>false</bool>
+               </property>
+               <property name="suffix">
+                <string> sec</string>
+               </property>
+               <property name="prefix">
+                <string/>
+               </property>
+               <property name="maximum">
+                <number>90</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkNoDecorX11">
+               <property name="text">
+                <string>No window decoration</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_2">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkIncDate">
+           <property name="toolTip">
+            <string>Inserting current date time into saved filename</string>
+           </property>
            <property name="text">
-            <string>Template: </string>
+            <string>Insert DateTime in filename</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="editDateTmeTpl">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="labMask">
+             <property name="text">
+              <string>Template: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="editDateTmeTpl">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>256</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="labMaskExample">
+           <property name="text">
+            <string>Example: </string>
            </property>
-           <property name="minimumSize">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkAutoSave">
+           <property name="toolTip">
+            <string>Automaticaly saving screenshots in grabbing process</string>
+           </property>
+           <property name="text">
+            <string>Autosave screenshot</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="checkAutoSaveFirst">
+             <property name="text">
+              <string>Save first screenshot</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <property name="leftMargin">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labCopyFileName">
+             <property name="text">
+              <string>Filenames to clipboard on saving</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbxCopyFileName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>No copy</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Only filename</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Full path to file</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkAllowCopies">
+           <property name="toolTip">
+            <string>Allow run multiplies copy of Screen Grab</string>
+           </property>
+           <property name="text">
+            <string>Allow multiple copies</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>256</width>
-             <height>0</height>
+             <width>20</width>
+             <height>66</height>
             </size>
            </property>
-          </widget>
+          </spacer>
          </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="labMaskExample">
-         <property name="text">
-          <string>Example: </string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkAutoSave">
-         <property name="toolTip">
-          <string>Automaticaly saving screenshots in grabbing process</string>
-         </property>
-         <property name="text">
-          <string>Autosave screenshot</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <property name="leftMargin">
-          <number>16</number>
-         </property>
+       </widget>
+       <widget class="QWidget" name="page_3">
+        <layout class="QVBoxLayout" name="verticalLayout_12">
          <item>
-          <widget class="QCheckBox" name="checkAutoSaveFirst">
+          <widget class="QCheckBox" name="checkSaveSize">
+           <property name="toolTip">
+            <string>Saving main window size on exit</string>
+           </property>
            <property name="text">
-            <string>Save first screenshot</string>
+            <string>Save window size on exit</string>
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_11">
-         <property name="leftMargin">
-          <number>4</number>
-         </property>
          <item>
-          <widget class="QLabel" name="labCopyFileName">
+          <widget class="QCheckBox" name="checkZommMouseArea">
            <property name="text">
-            <string>Filenames to clipboard on saving</string>
+            <string>Zoom area around mouse in selection mode</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cbxCopyFileName">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>200</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_4">
+        <layout class="QVBoxLayout" name="verticalLayout_13">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QCheckBox" name="checkShowTray">
+             <property name="text">
+              <string>Use tray</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="labTrayMessages">
+               <property name="text">
+                <string>Tray messages:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbxTrayMsg">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="toolTip">
+                <string>Tray messages display mode</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Never</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Tray mode</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Always</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QLabel" name="labTimeTrayMess">
+               <property name="text">
+                <string>Time of display tray messages</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::PlainText</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="timeTrayMess">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="toolTip">
+                <string>Time to display tray messages</string>
+               </property>
+               <property name="suffix">
+                <string> sec</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>10</number>
+               </property>
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkInTray">
+             <property name="toolTip">
+              <string>Minimize in tray on click close button</string>
+             </property>
+             <property name="text">
+              <string>Close in tray</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_5">
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <widget class="QTreeWidget" name="treeKeys">
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <column>
+            <property name="text">
+             <string>Action</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Shortcut</string>
+            </property>
+           </column>
            <item>
             <property name="text">
-             <string>No copy</string>
+             <string>Global shortcuts</string>
             </property>
+            <property name="text">
+             <string/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Fill screen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Active window</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Area select</string>
+             </property>
+            </item>
            </item>
            <item>
             <property name="text">
-             <string>Only filename</string>
+             <string>Local shortcutss</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Full path to file</string>
-            </property>
+            <item>
+             <property name="text">
+              <string>New screen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Save screen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Copy screen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Options</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Help</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Exit</string>
+             </property>
+            </item>
            </item>
           </widget>
          </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="labUsedShortcut">
+             <property name="text">
+              <string>Selected shortcut:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QKeySequenceWidget" name="keyWidget" native="true">
+             <property name="noneText" stdset="0">
+              <string>Not defined</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkAllowCopies">
-         <property name="toolTip">
-          <string>Allow run multiplies copy of Screen Grab</string>
-         </property>
-         <property name="text">
-          <string>Allow multiple copies</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>60</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_2">
-      <attribute name="title">
-       <string>Display</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <widget class="QCheckBox" name="checkSaveSize">
-         <property name="toolTip">
-          <string>Saving main window size on exit</string>
-         </property>
-         <property name="text">
-          <string>Save window size on exit</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkZommMouseArea">
-         <property name="text">
-          <string>Zoom area around mouse in selection mode</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_3">
-      <attribute name="title">
-       <string>Tray</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>401</width>
-         <height>201</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="QCheckBox" name="checkShowTray">
-          <property name="text">
-           <string>Use tray</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLabel" name="labTrayMessages">
-            <property name="text">
-             <string>Tray messages:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="cbxTrayMsg">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Tray messages display mode</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>Never</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Tray mode</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Always</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <widget class="QLabel" name="labTimeTrayMess">
-            <property name="text">
-             <string>Time of display tray messages</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::PlainText</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="timeTrayMess">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Time to display tray messages</string>
-            </property>
-            <property name="suffix">
-             <string> sec</string>
-            </property>
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10</number>
-            </property>
-            <property name="value">
-             <number>5</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="checkInTray">
-          <property name="toolTip">
-           <string>Minimize in tray on click close button</string>
-          </property>
-          <property name="text">
-           <string>Close in tray</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+       </widget>
       </widget>
-     </widget>
-     <widget class="QWidget" name="tab_4">
-      <attribute name="title">
-       <string>Shortcuts</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_9">
-       <item>
-        <widget class="QTreeWidget" name="treeKeys">
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <column>
-          <property name="text">
-           <string>Action</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Shortcut</string>
-          </property>
-         </column>
-         <item>
-          <property name="text">
-           <string>Global shortcuts</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <item>
-           <property name="text">
-            <string>Fill screen</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Active window</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Area select</string>
-           </property>
-          </item>
-         </item>
-         <item>
-          <property name="text">
-           <string>Local shortcutss</string>
-          </property>
-          <item>
-           <property name="text">
-            <string>New screen</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Save screen</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Copy screen</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Options</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Help</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Exit</string>
-           </property>
-          </item>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item>
-          <widget class="QLabel" name="labUsedShortcut">
-           <property name="text">
-            <string>Selected shortcut:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceWidget" name="keyWidget" native="true">
-           <property name="noneText" stdset="0">
-            <string>Not defined</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="butRestoreOpt">
-       <property name="toolTip">
-        <string>Restore default settings</string>
-       </property>
-       <property name="text">
-        <string>Defaults</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
@@ -623,6 +641,16 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="butRestoreOpt">
+       <property name="toolTip">
+        <string>Restore default settings</string>
+       </property>
+       <property name="text">
+        <string>Defaults</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="butSaveOpt">
@@ -656,19 +684,8 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>editDir</tabstop>
-  <tabstop>buttonBrowse</tabstop>
-  <tabstop>editFileName</tabstop>
-  <tabstop>cbxFormat</tabstop>
-  <tabstop>defDelay</tabstop>
-  <tabstop>butRestoreOpt</tabstop>
   <tabstop>butSaveOpt</tabstop>
   <tabstop>butCancel</tabstop>
-  <tabstop>checkIncDate</tabstop>
-  <tabstop>checkAutoSave</tabstop>
-  <tabstop>checkSaveSize</tabstop>
-  <tabstop>checkInTray</tabstop>
  </tabstops>
  <resources/>
  <connections/>

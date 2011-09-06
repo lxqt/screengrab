@@ -72,6 +72,7 @@ private slots:
     void changeShortcut(const QKeySequence &seq);
     void clearShrtcut();
     void keyNotSupported();
+
 };
 
 #endif // CONFIGWIDGET_H

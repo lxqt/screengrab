@@ -42,7 +42,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     ui->setupUi(this);
     conf = Config::instance();
 
-    ui->tabWidget->setCurrentIndex(0);
     loadSettings();
     changeDefDelay(conf->getDefDelay());
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
@@ -68,7 +67,10 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
     connect(ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
     connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
+	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
 
+	ui->listWidget->setCurrentRow(0);
+	
     editDateTmeTpl(conf->getDateTimeTpl());
 
     ui->treeKeys->expandAll();
