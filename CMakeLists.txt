@@ -86,7 +86,7 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
+#openarenainclude_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
 
 if(SG_GLOBALSHORTCUTS)

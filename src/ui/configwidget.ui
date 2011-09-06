@@ -78,7 +78,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -110,6 +110,12 @@
                </item>
                <item>
                 <widget class="QPushButton" name="buttonBrowse">
+                 <property name="minimumSize">
+                  <size>
+                   <width>112</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="toolTip">
                   <string>Browse filesystem</string>
                  </property>
@@ -156,6 +162,12 @@
                </item>
                <item>
                 <widget class="QComboBox" name="cbxFormat">
+                 <property name="minimumSize">
+                  <size>
+                   <width>112</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="toolTip">
                   <string>Default saving image format</string>
                  </property>
@@ -630,6 +642,22 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <widget class="QPushButton" name="butRestoreOpt">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Restore default settings</string>
+       </property>
+       <property name="text">
+        <string>Defaults</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -643,17 +671,13 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="butRestoreOpt">
-       <property name="toolTip">
-        <string>Restore default settings</string>
-       </property>
-       <property name="text">
-        <string>Defaults</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="butSaveOpt">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="toolTip">
         <string>Save settings</string>
        </property>
@@ -664,6 +688,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="butCancel">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="toolTip">
         <string>Discard changes</string>
        </property>

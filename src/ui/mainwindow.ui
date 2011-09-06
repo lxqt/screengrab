@@ -147,7 +147,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>
@@ -210,7 +210,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>
@@ -235,7 +235,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>
@@ -257,6 +257,12 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>112</width>
+            <height>0</height>
+           </size>
           </property>
           <property name="text">
            <string>Upload</string>
@@ -286,7 +292,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>
@@ -309,6 +315,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>112</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="toolTip">
            <string>Show help information</string>
           </property>
@@ -330,7 +342,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>
@@ -355,7 +367,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>112</width>
             <height>0</height>
            </size>
           </property>

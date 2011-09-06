@@ -52,7 +52,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../screengrab.qrc">:/res/img/logo.png</pixmap>
+        <pixmap resource="../../screengrab.qrc">:/res/img/logo.png</pixmap>
        </property>
       </widget>
      </item>
@@ -118,6 +118,12 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="butAboutQt">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>About Qt</string>
        </property>
@@ -138,6 +144,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="butClose">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>Close</string>
        </property>
@@ -148,6 +160,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../../screengrab.qrc"/>
   <include location="../screengrab.qrc"/>
  </resources>
  <connections/>
