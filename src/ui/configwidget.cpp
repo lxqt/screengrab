@@ -1,4 +1,3 @@
-
 /***************************************************************************
  *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
@@ -67,10 +66,10 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
     connect(ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
     connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
-	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
+    connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
 
-	ui->listWidget->setCurrentRow(0);
-	
+    ui->listWidget->setCurrentRow(0);
+    
     editDateTmeTpl(conf->getDateTimeTpl());
 
     ui->treeKeys->expandAll();
@@ -103,7 +102,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
             }
 #endif
         }
-	++iter;
+    ++iter;
     }
 
     // set false visibility to edit hokey controls
@@ -234,22 +233,22 @@ void ConfigDialog::saveSettings()
     QTreeWidgetItemIterator iter(ui->treeKeys);
     while(*iter)
     {
-	if ((*iter)->parent() != NULL)
-	{
-	    switch((*iter)->parent()->childCount())
-	    {
-		case 3:
-		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 0);
-		    break;
-		case 6:
-		    conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
-		    break;
-		default:
-		    break;
-	    }
-	    ++action;
-	}
-	++iter;
+    if ((*iter)->parent() != NULL)
+    {
+        switch((*iter)->parent()->childCount())
+        {
+        case 3:
+            conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 0);
+            break;
+        case 6:
+            conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
+            break;
+        default:
+            break;
+        }
+        ++action;
+    }
+    ++iter;
     }
 
     // update values of front-end settings
@@ -329,18 +328,18 @@ void ConfigDialog::changeTrayMsgType(int type)
 {
     switch(type)
     {
-	case 0:
-	{
-	    ui->labTimeTrayMess->setVisible(false);
-	    ui->timeTrayMess->setVisible(false);
-	    break;
-	}
-	default:
-	{
-	    ui->labTimeTrayMess->setVisible(true);
-	    ui->timeTrayMess->setVisible(true);
-	    break;
-	}
+    case 0:
+    {
+        ui->labTimeTrayMess->setVisible(false);
+        ui->timeTrayMess->setVisible(false);
+        break;
+    }
+    default:
+    {
+        ui->labTimeTrayMess->setVisible(true);
+        ui->timeTrayMess->setVisible(true);
+        break;
+    }
     }
 }
 
@@ -380,16 +379,16 @@ void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
     if (c.parent().isValid() == true)
     {
-	ui->labUsedShortcut->setVisible(true);
-	ui->keyWidget->setVisible(true);
+    ui->labUsedShortcut->setVisible(true);
+    ui->keyWidget->setVisible(true);
 
-	QTreeWidgetItem *item = ui->treeKeys->currentItem();
-	ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
+    QTreeWidgetItem *item = ui->treeKeys->currentItem();
+    ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
     }
     else
     {
-	ui->labUsedShortcut->setVisible(false);
-	ui->keyWidget->setVisible(false);
+    ui->labUsedShortcut->setVisible(false);
+    ui->keyWidget->setVisible(false);
     }
 }
 
@@ -398,8 +397,8 @@ void ConfigDialog::doubleclickTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == true)
     {
-	connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
-	ui->keyWidget->captureKeySequence();
+    connect(ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
+    ui->keyWidget->captureKeySequence();
     }
 }
 
@@ -408,8 +407,8 @@ void ConfigDialog::collapsTreeKeys(QModelIndex index)
 {
     if (index.parent().isValid() == false)
     {
-	ui->labUsedShortcut->setVisible(false);
-	ui->keyWidget->setVisible(false);
+    ui->labUsedShortcut->setVisible(false);
+    ui->keyWidget->setVisible(false);
     }
 }
 
@@ -461,11 +460,11 @@ bool ConfigDialog::checkUsedShortcuts()
     QTreeWidgetItemIterator iter(ui->treeKeys);
     while (*iter)
     {
-	if ((*iter) != item && (*iter)->data(1, Qt::DisplayRole) == ui->keyWidget->keySequence().toString())
-	{
-	    return true;
-	}
-	++iter;
+    if ((*iter) != item && (*iter)->data(1, Qt::DisplayRole) == ui->keyWidget->keySequence().toString())
+    {
+        return true;
+    }
+    ++iter;
     }
     return false;
 }
@@ -478,7 +477,7 @@ bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
     if (tmpShortcut->setShortcut(QKeySequence(seq)) == true)
     {
         tmpShortcut->setDisabled(true);
-	ok = true;
+    ok = true;
     }
     delete tmpShortcut;
     return ok;
