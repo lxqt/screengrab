@@ -41,6 +41,7 @@ UploaderDialog::UploaderDialog(Uploader* uploader, QWidget* parent)
     int height = Core::instance()->getPixmap().height();
     QString pixmapSize = QString::number(width) + "x" + QString::number(height) + tr(" pixel");
     ui->shotLabel->setToolTip(pixmapSize);
+	ui->butUpload->setFixedWidth(ui->shotLabel->geometry().width());
     
     QString warningTitle = tr("Warning!");
     QString warningText =  tr("Resize makes on servers imageshack.us");
@@ -139,7 +140,8 @@ void UploaderDialog::uploadStart()
 {
     ui->butSettings->setVisible(false);
     ui->butClose->setEnabled(false);
-    ui->butUpload->setEnabled(false);
+//     ui->butUpload->setEnabled(false);
+	ui->butUpload->setVisible(false);
     ui->cbxResize->setEnabled(false);
     ui->progressBar->setVisible(true);
     ui->labStatus->setVisible(true);
@@ -153,9 +155,7 @@ void UploaderDialog::uploadStart()
     ui->editUsername->setVisible(false);
     ui->editPassword->setVisible(false);
     ui->checkUseAccount->setVisible(false);
-    
 
-    
     loader->uploadScreen();
 }
 
