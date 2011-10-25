@@ -353,12 +353,25 @@ bool Core::compareSaveName(QString& fileName)
 }
 
 // save screen
-bool Core::writeScreen(QString& fileName, QString& format)
+bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {    
     // adding extension  format
     if (!fileName.contains("."+format) )
     {
         fileName.append("."+format);
+    }
+    
+    // saving temp fole (for uploder module)
+    if (tmpScreen == true)
+    {
+        if (fileName.isEmpty() == false)
+        {        ;
+            return pixelMap->save(fileName,format.toAscii());
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // aitoncrement number screen 
@@ -392,24 +405,6 @@ bool Core::writeScreen(QString& fileName, QString& format)
 
     return saved;
 }
-
-bool Core::writeScreen(QString& fileName, QString& format, bool temp)
-{
-    // adding extension  format
-    if (!fileName.contains("."+format) )
-    {
-        fileName.append("."+format);
-    }
-    
-    bool saved = false;
-    if (fileName.isEmpty() == false)
-    {        ;
-        saved = pixelMap->save(fileName,format.toAscii());
-    }
-    
-    return saved;
-}
-
 
 QString Core::copyFileNameToCliipboard(QString file)
 {

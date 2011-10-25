@@ -75,8 +75,7 @@ public:
     QPixmap getPixmap();
     QByteArray getScreen();
     
-    bool writeScreen(QString& fileName, QString& format);
-    bool writeScreen(QString& fileName, QString& format, bool temp);
+    bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
 
     QString getSaveFilePath(QString format);
