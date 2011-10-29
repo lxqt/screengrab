@@ -37,6 +37,7 @@ const quint8 DEF_DELAY = 0;
 const bool DEF_X11_NODECOR = false;
 const quint8 DEF_TRAY_MESS_TYPE = 1;
 const quint8 DEF_FILENAME_TO_CLB = 0;
+const quint8 DEF_IMG_QUALITY = 80;
 const bool DEF_CLOSE_IN_TRAY = false;
 const bool DEF_ALLOW_COPIES = true;
 const bool DEF_SAVED_SIZE = false;
@@ -168,6 +169,10 @@ public:
     // auto save screenshot
     bool getAutoSave();
     void setAutoSave(bool val);
+    
+    // umage qualuty
+    quint8 getImageQuality();
+    void setImageQuality(quint8 qualuty);
 
     // aoutosave first screenshot
     bool getAutoSaveFirst();

@@ -81,166 +81,199 @@
         <number>0</number>
        </property>
        <widget class="QWidget" name="page_6">
-        <layout class="QVBoxLayout" name="verticalLayout_15">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <property name="spacing">
-              <number>4</number>
+            <widget class="QLabel" name="labDirectory">
+             <property name="text">
+              <string>Default save directory:</string>
              </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labDirectory">
-               <property name="text">
-                <string>Default save directory:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <item>
-                <widget class="QLineEdit" name="editDir">
-                 <property name="toolTip">
-                  <string>Path to default selection dir for saving</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="buttonBrowse">
-                 <property name="minimumSize">
-                  <size>
-                   <width>112</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="toolTip">
-                  <string>Browse filesystem</string>
-                 </property>
-                 <property name="text">
-                  <string>Browse</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
+            </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_5">
-               <item>
-                <widget class="QLabel" name="labFilename">
-                 <property name="text">
-                  <string>Default filename:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="editFileName">
-                 <property name="toolTip">
-                  <string>Default filename</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_6">
-               <item>
-                <widget class="QLabel" name="labFormat">
-                 <property name="text">
-                  <string>Format</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QComboBox" name="cbxFormat">
-                 <property name="minimumSize">
-                  <size>
-                   <width>112</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="toolTip">
-                  <string>Default saving image format</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <widget class="QLabel" name="label">
-               <property name="text">
-                <string>Delay:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="defDelay">
+              <widget class="QLineEdit" name="editDir">
                <property name="toolTip">
-                <string>Default delay before grabbing screen</string>
-               </property>
-               <property name="wrapping">
-                <bool>false</bool>
-               </property>
-               <property name="suffix">
-                <string> sec</string>
-               </property>
-               <property name="prefix">
-                <string/>
-               </property>
-               <property name="maximum">
-                <number>90</number>
+                <string>Path to default selection dir for saving</string>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
+              <widget class="QPushButton" name="buttonBrowse">
+               <property name="minimumSize">
                 <size>
-                 <width>40</width>
-                 <height>20</height>
+                 <width>112</width>
+                 <height>0</height>
                 </size>
                </property>
-              </spacer>
+               <property name="toolTip">
+                <string>Browse filesystem</string>
+               </property>
+               <property name="text">
+                <string>Browse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="labFilename">
+               <property name="text">
+                <string>Default filename:</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkNoDecorX11">
-               <property name="text">
-                <string>No window decoration</string>
+              <widget class="QLineEdit" name="editFileName">
+               <property name="toolTip">
+                <string>Default filename</string>
                </property>
               </widget>
              </item>
             </layout>
            </item>
            <item>
-            <spacer name="verticalSpacer">
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QLabel" name="labFormat">
+               <property name="text">
+                <string>Format</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbxFormat">
+               <property name="minimumSize">
+                <size>
+                 <width>112</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Default saving image format</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Delay:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="defDelay">
+             <property name="toolTip">
+              <string>Default delay before grabbing screen</string>
+             </property>
+             <property name="wrapping">
+              <bool>false</bool>
+             </property>
+             <property name="suffix">
+              <string> sec</string>
+             </property>
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
              <property name="orientation">
-              <enum>Qt::Vertical</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>40</height>
+               <width>40</width>
+               <height>20</height>
               </size>
              </property>
             </spacer>
            </item>
+           <item>
+            <widget class="QCheckBox" name="checkNoDecorX11">
+             <property name="text">
+              <string>No window decoration</string>
+             </property>
+            </widget>
+           </item>
           </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="labImgQuality">
+           <property name="text">
+            <string>Image quality</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QSlider" name="slideImgQuality">
+             <property name="toolTip">
+              <string>Image quality (1 - small file, 100 - high quality)</string>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="singleStep">
+              <number>1</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labImgQualityCurrent">
+             <property name="text">
+              <string notr="true">Current</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>66</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>

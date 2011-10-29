@@ -366,7 +366,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (fileName.isEmpty() == false)
         {        ;
-            return pixelMap->save(fileName,format.toAscii());
+            return pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
         }
         else
         {
@@ -384,7 +384,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     bool saved;
     if (fileName.isEmpty() == false)
     {        ;
-        if (pixelMap->save(fileName,format.toAscii()) == true)
+    if (pixelMap->save(fileName,format.toAscii(), conf->getImageQuality()) == true)
         {
             saved = true;
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);

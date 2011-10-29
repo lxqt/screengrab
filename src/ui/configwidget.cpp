@@ -41,11 +41,11 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     ui->setupUi(this);
     conf = Config::instance();
 
-    loadSettings();
-    changeDefDelay(conf->getDefDelay());
-    setVisibleDateTplEdit(conf->getDateTimeInFilename());
-
-    setVisibleAutoSaveFirst(conf->getAutoSave());
+//     loadSettings();
+//     changeDefDelay(conf->getDefDelay());
+//     setVisibleDateTplEdit(conf->getDateTimeInFilename());
+// 
+//     setVisibleAutoSaveFirst(conf->getAutoSave());
 
     connect(ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
     connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
@@ -67,7 +67,14 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
     connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
+    connect(ui->slideImgQuality, SIGNAL(valueChanged(int)), this, SLOT(changeImgQualituSlider(int)));
 
+    loadSettings();
+    changeDefDelay(conf->getDefDelay());
+    setVisibleDateTplEdit(conf->getDateTimeInFilename());
+    
+    setVisibleAutoSaveFirst(conf->getAutoSave());
+    
     ui->listWidget->setCurrentRow(0);
     
     editDateTmeTpl(conf->getDateTimeTpl());
@@ -158,6 +165,7 @@ void ConfigDialog::loadSettings()
 //     on_checkShowTray_toggled(conf->getShowTrayIcon());
     toggleCheckShowTray(conf->getShowTrayIcon());
 
+    ui->slideImgQuality->setValue(conf->getImageQuality());
 }
 
 
@@ -176,6 +184,12 @@ void ConfigDialog::changeEvent(QEvent *e)
 void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 {
     ui->checkAutoSaveFirst->setVisible(status);
+}
+
+void ConfigDialog::changeImgQualituSlider(int pos)
+{
+    QString text = " " + QString::number(pos) + "%";
+    ui->labImgQualityCurrent->setText(text);
 }
 
 void ConfigDialog::saveSettings()
@@ -225,6 +239,7 @@ void ConfigDialog::saveSettings()
     conf->setSavedSizeOnExit(ui->checkSaveSize->isChecked());
     conf->setTimeTrayMess(ui->timeTrayMess->value());
     conf->setShowTrayIcon(ui->checkShowTray->isChecked());
+    conf->setImageQuality(ui->slideImgQuality->value());
 #ifdef Q_WS_X11
     conf->setNoDecorX11(ui->checkNoDecorX11->isChecked());
 #endif

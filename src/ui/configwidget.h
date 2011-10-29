@@ -65,6 +65,7 @@ private slots:
     void changeTimeTrayMess(int sec);
     void changeDefDelay(int val);
     void setVisibleAutoSaveFirst(bool status);
+    void changeImgQualituSlider(int pos);
     void saveSettings();
     void selectDir();
     void restoreDefaults();

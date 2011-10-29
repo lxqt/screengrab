@@ -31,6 +31,7 @@ const QString KEY_SAVENAME = "defFilename";
 const QString KEY_SAVEFORMAT = "defImgFormat";
 const QString KEY_DELAY_DEF = "defDelay";
 const QString KEY_DELAY = "delay";
+const QString KEY_IMG_QUALITY = "imageQuality";
 const QString KEY_FILENAMEDATE = "insDateTimeInFilename";
 const QString KEY_DATETIME_TPL = "templateDateTime";
 const QString KEY_FILENAME_TO_CLB = "CopyFilenameToClipboard";
@@ -314,6 +315,16 @@ void Config::setAutoSave(bool val)
     setValue(KEY_AUTOSAVE, val);
 }
 
+quint8 Config::getImageQuality()
+{
+    return value(KEY_IMG_QUALITY).toInt();
+}
+
+void Config::setImageQuality(quint8 qualuty)
+{
+    setValue(KEY_IMG_QUALITY, qualuty);
+}
+
 bool Config::getAutoSaveFirst()
 {
     return value(KEY_AUTOSAVE_FIRST).toBool();
@@ -392,6 +403,7 @@ void Config::loadSettings()
 #ifdef Q_WS_X11
     setNoDecorX11(settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
+    setImageQuality(settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
     settings->endGroup();
 
     settings->beginGroup("Display");
@@ -443,6 +455,7 @@ void Config::saveSettings()
     settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
     settings->setValue(KEY_AUTOSAVE, getAutoSave());
     settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
+    settings->setValue(KEY_IMG_QUALITY, getImageQuality());
 #ifdef Q_WS_X11
     settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
@@ -472,6 +485,7 @@ void Config::setDefaultSettings()
     setSaveFileName(DEF_SAVE_NAME);
     setSaveFormat(DEF_SAVE_FORMAT);
     setDefDelay(DEF_DELAY);
+    setImageQuality(DEF_IMG_QUALITY);
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
     setAutoCopyFilenameOnSaving(DEF_FILENAME_TO_CLB);
