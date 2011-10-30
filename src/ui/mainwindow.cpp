@@ -139,6 +139,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
 // resize main window
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
+    Q_UNUSED(event)
     // get size dcreen pixel map
     QSize scaleSize = core->getPixmap().size(); // get orig size pixmap
 

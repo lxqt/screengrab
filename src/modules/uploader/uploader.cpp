@@ -222,7 +222,7 @@ void Uploader::replyFinished(QNetworkReply* reply)
             QByteArray errorStrCode = replyXmalText.mid(pos, len).replace("<error id=\"", "").replace("\"", "");
             
             Q_EMIT uploadFail(errorStrCode);
-            exit;
+            return ;
         }
         
         QVector<QByteArray> listXmlNodes;

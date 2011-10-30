@@ -75,6 +75,7 @@ bool RegionSelect::event(QEvent *event)
 
 void RegionSelect::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event)
     QPainter painter(this);
 
     if (!palBackground)

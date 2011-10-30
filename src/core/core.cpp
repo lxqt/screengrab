@@ -454,6 +454,7 @@ void Core::autoSave()
 void Core::upload()
 {
     Uploader *upl = new Uploader;
+    Q_UNUSED(upl)
 }
 
 

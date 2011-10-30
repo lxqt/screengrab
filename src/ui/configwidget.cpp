@@ -392,6 +392,7 @@ void ConfigDialog::toggleCheckShowTray(bool checked)
 
 void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
+    Q_UNUSED(p)
     if (c.parent().isValid() == true)
     {
     ui->labUsedShortcut->setVisible(true);

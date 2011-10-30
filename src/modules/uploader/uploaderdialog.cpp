@@ -116,7 +116,8 @@ void UploaderDialog::closeEvent(QCloseEvent* e)
     else
     {
         qDebug() << "loader ;" <<  loader;
- 
+        
+        delete loader;
         loader = 0;
         
         QDialog::closeEvent(e);   
