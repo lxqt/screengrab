@@ -92,10 +92,10 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/s
 if(SG_GLOBALSHORTCUTS)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")    
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
-endif(SG_GLOBALSHORTCUTS)
-
 # build QxtGui
 add_definitions(-DBUILD_QXT_GUI)
+endif(SG_GLOBALSHORTCUTS)
+
 #------- sources --------
 
 # with SET() command you can change variables or define new ones
