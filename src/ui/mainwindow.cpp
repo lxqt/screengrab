@@ -168,24 +168,23 @@ void MainWindow::showHelp()
     // open help file
     QString localeHelpFile;
 
-    #ifdef Q_WS_X11
-    //    defaultHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1en%1index.html";
-    localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1"+Config::getSysLang()+"%1index.html";
+#ifdef Q_WS_X11
+    localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
     if (QFile::exists(localeHelpFile) != true)
     {
-	localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1"+Config::getSysLang().section("_", 0, 0)  +"%1index.html";
+        localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section("_", 0, 0)  + "%1index.html";
 	localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
 	if (QFile::exists(localeHelpFile) != true)
 	{
-	    localeHelpFile = QString(PREFIX)+"%1share%1doc%1screengrab%1html%1en%1index.html";
+        localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
 	    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 	}
     }
-    #endif
-    #ifdef Q_WS_WIN
+#endif
+#ifdef Q_WS_WIN
     localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang()+QString("%1index.html");
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
@@ -200,7 +199,7 @@ void MainWindow::showHelp()
 	    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 	}
     }
-    #endif
+#endif
 
     // open find localize or eng help help
     QDesktopServices::openUrl(QUrl::fromLocalFile(localeHelpFile));

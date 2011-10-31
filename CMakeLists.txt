@@ -58,14 +58,7 @@ endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
 set(CMAKE_CXX_FLAGS "-Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
-# ------ options ---------------------------------
-OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 
-if(SG_GLOBALSHORTCUTS)
-    add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
-endif(SG_GLOBALSHORTCUTS)
-
-message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 # ------ install prefix --------------------------
 
 set(CMAKE_INSTALL_PREFIX "/usr")
@@ -73,6 +66,25 @@ set(CMAKE_INSTALL_PREFIX "/usr")
 add_definitions( -DPREFIX="${CMAKE_INSTALL_PREFIX}")
 
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
+
+# ------ options ---------------------------------
+OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
+
+if(SG_GLOBALSHORTCUTS)
+    add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
+endif(SG_GLOBALSHORTCUTS)
+
+# ------ doc dir name ---------------------------------
+if(UNIX AND NOT APPLE)
+    if (NOT SG_DOCDIR)
+         set(SG_DOCDIR "share/doc/screengrab" CACHE STRING "Documantation directory name")        
+    endif (NOT SG_DOCDIR)
+    set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documantation directory name")
+    message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
+    add_definitions( -DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
+endif(UNIX AND NOT APPLE)
+
+message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})
@@ -219,7 +231,7 @@ endif(UNIX)
 if(WIN32)
     if(NOT MSVC)
 
-        set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-mwindows")
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mwindows ")
 
     endif(NOT MSVC)
 endif(WIN32)
@@ -252,9 +264,9 @@ if(UNIX AND NOT APPLE)
     INSTALL(TARGETS screengrab RUNTIME DESTINATION bin)
 
     # install txt docs
-    INSTALL(FILES ${DOCS} DESTINATION share/doc/screengrab)
+    INSTALL(FILES ${DOCS} DESTINATION ${DOCPATH})
     # install html docs
-    INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION share/doc/screengrab/html)
+    INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${DOCPATH}/html")
 
     # install desktop files
     INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
