@@ -68,6 +68,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
     connect(ui->slideImgQuality, SIGNAL(valueChanged(int)), this, SLOT(changeImgQualituSlider(int)));
+    connect(ui->cbxFormat, SIGNAL(currentIndexChanged(int)), this, SLOT(changeFormatType(int)));
 
     loadSettings();
     changeDefDelay(conf->getDefDelay());
@@ -185,6 +186,23 @@ void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 {
     ui->checkAutoSaveFirst->setVisible(status);
 }
+
+void ConfigDialog::changeFormatType(int type)
+{
+    if (type == 2)
+    {
+        ui->slideImgQuality->setEnabled(false);
+        ui->labImgQuality->setEnabled(false);
+        ui->labImgQualityCurrent->setEnabled(false);;
+    }
+    else
+    {
+        ui->slideImgQuality->setEnabled(true);;
+        ui->labImgQuality->setEnabled(true);
+        ui->labImgQualityCurrent->setEnabled(true);;
+    }
+}
+
 
 void ConfigDialog::changeImgQualituSlider(int pos)
 {
