@@ -132,7 +132,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
     }
     else
     {
-	quit();
+    quit();
     }
 }
 
@@ -175,13 +175,13 @@ void MainWindow::showHelp()
     if (QFile::exists(localeHelpFile) != true)
     {
         localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section("_", 0, 0)  + "%1index.html";
-	localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
-	if (QFile::exists(localeHelpFile) != true)
-	{
+    if (QFile::exists(localeHelpFile) != true)
+    {
         localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
-	    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-	}
+        localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+    }
     }
 #endif
 #ifdef Q_WS_WIN
@@ -190,14 +190,14 @@ void MainWindow::showHelp()
 
     if (QFile::exists(localeHelpFile) != true)
     {
-	localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang().section("_", 0, 0)+QString("%1index.html");
-	localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+    localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang().section("_", 0, 0)+QString("%1index.html");
+    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
-	if (QFile::exists(localeHelpFile) != true)
-	{
-	    localeHelpFile = QApplication::applicationDirPath()+"%1docs%1html%1en%1index.html";
-	    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-	}
+    if (QFile::exists(localeHelpFile) != true)
+    {
+        localeHelpFile = QApplication::applicationDirPath()+"%1docs%1html%1en%1index.html";
+        localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+    }
     }
 #endif
 
@@ -248,13 +248,13 @@ void MainWindow::showAbout()
     // fi minimized main wnd
         if (isMinimized() == true)
         {
-	    showNormal();
+        showNormal();
             about->exec();
             hide();
         }
         else
         {
-	    about->exec();
+        about->exec();
         }
 
     delete about;
@@ -271,19 +271,19 @@ void MainWindow::newScreen()
     // if show trat
     if (core->conf->getShowTrayIcon() == true)
     {
-	//  unblock tray signals
-	trayIcon->blockSignals(true);
-	trayIcon->setContextMenu(NULL); // enable context menu
+    //  unblock tray signals
+    trayIcon->blockSignals(true);
+    trayIcon->setContextMenu(NULL); // enable context menu
     }
 
     if (core->conf->getDelay() == 0)
     {
-	// if select 0s delay & hide window -- make 0.2s delay for hiding window
-	QTimer::singleShot(200, core, SLOT(screenShot()));
+    // if select 0s delay & hide window -- make 0.2s delay for hiding window
+    QTimer::singleShot(200, core, SLOT(screenShot()));
     }
     else
     {
-	QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
+    QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
     }
 }
 
@@ -387,8 +387,8 @@ void MainWindow::quit()
 {
     if (core->conf->getSavedSizeOnExit() == true)
     {
-	core->conf->setRestoredWndSize(width(), height());
-	core->conf->saveWndSize();
+    core->conf->setRestoredWndSize(width(), height());
+    core->conf->saveWndSize();
     }
     core->coreQuit();
 }
@@ -423,7 +423,7 @@ void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
     {
         case QSystemTrayIcon::Trigger:
             windowHideShow();
-	    break;
+        break;
         default: ;
     }
 }
@@ -480,10 +480,10 @@ void MainWindow::showWindow(const QString& str)
     
 #endif
 #ifdef Q_WS_WIN
-	// TODO -- make normal activate window with Wim32API
-	ShowWindow(this->winId(), SW_RESTORE);
-	SetForegroundWindow(this->winId());
-	this->activateWindow();
+    // TODO -- make normal activate window with Wim32API
+    ShowWindow(this->winId(), SW_RESTORE);
+    SetForegroundWindow(this->winId());
+    this->activateWindow();
 #endif
 }
 
@@ -497,7 +497,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
             case 0: break; // is never sjow
             case 1: // is hidden main wnd
             {
-		if (isHidden() == true && trayed == true)
+        if (isHidden() == true && trayed == true)
                 {
                     trayIcon->showMessage(titleMsg, bodyMsg,
                     QSystemTrayIcon::MessageIcon(), core->conf->getTimeTrayMess()*1000 ); //5000
@@ -578,7 +578,7 @@ void MainWindow::saveScreen()
         {
             fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
         }
-	++iter;
+    ++iter;
     }
     fileFilters.chop(2);
 
@@ -635,7 +635,7 @@ void MainWindow::globalShortcutBlock(bool state)
 {
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
-	globalShortcuts[i]->setDisabled(state);
+    globalShortcuts[i]->setDisabled(state);
     }
 }
 
