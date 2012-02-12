@@ -41,6 +41,8 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     move(0, 0);
     drawBackGround();
 
+    processSelection = false;
+    
     mainconf = NULL;
     delete mainconf;
 
@@ -50,27 +52,6 @@ RegionSelect::~RegionSelect()
 {
     conf = NULL;
     delete conf;
-}
-
-bool RegionSelect::event(QEvent *event)
-{
-  if (event->type() == QEvent::MouseButtonRelease
-   || event->type() == QEvent::KeyPress)
-  {
-    accept();
-  }
-  if (event->type() == QEvent::MouseButtonPress)
-  {
-    QMouseEvent *mouseEvent = static_cast<QMouseEvent*> (event);
-
-    if (mouseEvent->button() != Qt::LeftButton)
-      reject();
-
-    selStartPoint = mouseEvent->pos();
-    selectRect = QRect(selStartPoint, QSize());
-  }
-
-  return QDialog::event(event);
 }
 
 void RegionSelect::paintEvent(QPaintEvent *event)
@@ -84,13 +65,58 @@ void RegionSelect::paintEvent(QPaintEvent *event)
     drawRectSelection(painter);
 }
 
-void RegionSelect::mouseMoveEvent(QMouseEvent *event)
+void RegionSelect::mousePressEvent(QMouseEvent* event)
 {
-    QMouseEvent *mouseEvent = static_cast<QMouseEvent*> (event);
-    selectRect = QRect(selStartPoint, mouseEvent->pos()).normalized();
-    selEndPoint  = mouseEvent->pos();
-    update();
+    if (event->button() != Qt::LeftButton)
+    {
+        return;
+    }
+    
+    selStartPoint = event->pos();
+    processSelection = true;
 }
+
+
+void RegionSelect::mouseReleaseEvent(QMouseEvent* event)
+{
+    selEndPoint = event->pos();
+    processSelection = false;
+}
+
+void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
+{
+    if (event->button() != Qt::LeftButton)
+    {
+        return;
+    }
+    
+    accept();
+}
+
+
+void RegionSelect::mouseMoveEvent(QMouseEvent *event)
+{    
+    if (processSelection == true)
+    {
+        selEndPoint = event->pos();
+        selectRect = QRect(selStartPoint, selEndPoint).normalized();  
+        update();
+    }
+}
+
+void RegionSelect::keyPressEvent(QKeyEvent* event)
+{
+    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
+    {
+        accept();
+    }
+    
+    if (event->key() == Qt::Key_Escape)
+    {
+        reject();
+    }
+}
+
 
 void RegionSelect::drawBackGround()
 {

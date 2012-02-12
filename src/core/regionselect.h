@@ -39,9 +39,12 @@ public:
     QPixmap getSelection();
 
 protected:
-    bool event(QEvent *event);
     void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 
 private:
     QRect selectRect;
@@ -51,6 +54,8 @@ private:
     QPoint selEndPoint;
 
     bool palBackground;
+    bool processSelection;
+
 
     QPixmap desktopPixmapBkg;
     QPixmap desktopPixmapClr;
