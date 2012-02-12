@@ -42,10 +42,6 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     drawBackGround();
 
     processSelection = false;
-    
-    mainconf = NULL;
-    delete mainconf;
-
 }
 
 RegionSelect::~RegionSelect()
@@ -59,8 +55,7 @@ void RegionSelect::paintEvent(QPaintEvent *event)
     Q_UNUSED(event)
     QPainter painter(this);
 
-    if (!palBackground)
-      painter.drawPixmap(QPoint(0, 0), desktopPixmapBkg);
+    painter.drawPixmap(QPoint(0, 0), desktopPixmapBkg);
 
     drawRectSelection(painter);
 }
@@ -150,15 +145,10 @@ void RegionSelect::drawBackGround()
     painter.setPen(QPen(Qt::black)); // black color pen
     painter.drawText(txtBgRect, Qt::AlignCenter, txtTip);
 
-    palBackground = (qApp->desktop()->numScreens() > 1);
-
     // set bkg to pallette widget
-    if (palBackground)
-    {
-        QPalette newPalette = palette();
-        newPalette.setBrush(QPalette::Window, QBrush(desktopPixmapBkg));
-        setPalette(newPalette);
-    }
+    QPalette newPalette = palette();
+    newPalette.setBrush(QPalette::Window, QBrush(desktopPixmapBkg));
+    setPalette(newPalette);
 }
 
 void RegionSelect::drawRectSelection(QPainter &painter)

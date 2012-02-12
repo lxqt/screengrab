@@ -53,9 +53,7 @@ private:
     QPoint selStartPoint;
     QPoint selEndPoint;
 
-    bool palBackground;
     bool processSelection;
-
 
     QPixmap desktopPixmapBkg;
     QPixmap desktopPixmapClr;
