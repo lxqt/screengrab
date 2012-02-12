@@ -94,6 +94,7 @@ private:
     static Core *corePtr;
     
     bool compareSaveName(QString& fileName);
+    void checkAutoSave(bool first = false);
 
     // functions
 #ifdef Q_WS_WIN

@@ -118,6 +118,7 @@ void Core::screenShot(bool first)
         case 0:
         {
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+            checkAutoSave(first);
             break;
         }
         case 1:
@@ -128,6 +129,7 @@ void Core::screenShot(bool first)
 #ifdef Q_WS_X11
     getActiveWind_X11();
 #endif
+            checkAutoSave(first);
                 break;
             }
         case 2:
@@ -139,26 +141,37 @@ void Core::screenShot(bool first)
 		if (resilt == QDialog::Accepted)
 		{
 		    *pixelMap = selector->getSelection();
+            checkAutoSave(first);
+            delete selector;
 		}
-		delete selector;
+		else // if reguin select is canceled - exit without new screen
+        {
+            qDebug() << " selectuiincanceled";
+            delete selector;
+        }
 		break;
             }
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
+    
+    Q_EMIT newScreenShot(pixelMap);
+}
 
+void Core::checkAutoSave(bool first)
+{
     if (conf->getAutoSave() == true)
     {
-	// small hack for display tray message on first screenshot (on starting
-	// ScreenGrab in KDE, fluxbox and something wm)
-	if (first == true)
-	{
-	    if (conf->getAutoSaveFirst() == true)
-	    {
-		QTimer::singleShot(600, this, SLOT(autoSave()));
-	    }
-	}
-	else
+        // small hack for display tray message on first screenshot (on starting
+        // ScreenGrab in KDE, fluxbox and something wm)
+        if (first == true)
+        {
+            if (conf->getAutoSaveFirst() == true)
+            {
+                QTimer::singleShot(600, this, SLOT(autoSave()));
+            }
+        }
+        else
         {
             autoSave();
         }
@@ -168,11 +181,9 @@ void Core::screenShot(bool first)
         if (first == false)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            Q_EMIT 	sendStateNotifyMessage(message);
+            Q_EMIT  sendStateNotifyMessage(message);
         }
     }
-
-    Q_EMIT newScreenShot(pixelMap);
 }
 
 #ifdef Q_WS_X11
