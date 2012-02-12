@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2011 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -107,7 +107,7 @@ QString AboutDialog::getAbouT()
     str += "<b>ScreenGrab</b> ";
     str += tr("is crossplatform application for fast creation screenshots of your desktop.");
     str += "<br><br>";
-    str += tr("Copyright &copy; 2009-2010, Artem 'DOOMer' Galichkin");
+    str += tr("Copyright &copy; 2009-2012, Artem 'DOOMer' Galichkin");
     str += "<div align=right>";
     str += tr("Licensed under the ");
     str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a></div>";
