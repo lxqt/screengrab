@@ -28,7 +28,7 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
 {
     conf = mainconf;
 
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint );
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
     setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
 
