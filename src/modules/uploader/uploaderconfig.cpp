@@ -20,6 +20,8 @@
 
 #include "uploaderconfig.h"
 #include <QString>
+#include <QFile>
+#include <QDir>
 
 #include "core/config.h"
 
@@ -28,10 +30,19 @@
 const QString  groupName = "imageshack.us";
 
 UploaderConfig::UploaderConfig()
-{
+{    
     QString configFile = Config::getConfigDir();
-#ifdef Q_WS_X11    
+#ifdef Q_WS_X11 
+    // old style config settings storage
+    QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "uploader.conf";
+    
     configFile += "uploader.conf";
+    
+    // move config  file to new location
+    if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
+    {
+        QFile::rename(oldConfigFile, configFile);
+    }
 #endif
     
 #ifdef Q_WS_WIN

@@ -26,6 +26,8 @@
 #include <QtCore/QVector>
 #include <QtGui/QDesktopServices>
 
+#include <QDebug>
+
 const QString KEY_SAVEDIR = "defDir";
 const QString KEY_SAVENAME = "defFilename";
 const QString KEY_SAVEFORMAT = "defImgFormat";
@@ -125,6 +127,13 @@ QString Config::getConfigFile()
 
 #ifdef Q_WS_X11
     configFile = Config::getConfigDir() + "screengrab.conf";
+    
+    // moving old stile storange setting to XDG_CONFIG_HOME storage
+    QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "screengrab.conf";
+    if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
+    {
+        QFile::rename(oldConfigFile, configFile);
+    }
 #endif
 
 #ifdef Q_WS_WIN
@@ -138,8 +147,21 @@ QString Config::getConfigDir()
 {
     QString configDir;
 #ifdef Q_WS_X11
-    configDir.append(QDir::homePath()+ QDir::separator()+".screengrab"+
-    QDir::separator());
+    // old style config path
+    QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
+    configDir = qgetenv("XDG_CONFIG_HOME");
+    
+    // Ubuntu hack -- if XDG_CONFIG_HOME is missing
+    if (configDir.isEmpty() == true)
+    {
+        configDir = QDir::homePath();
+        configDir += QDir::separator();
+        configDir += ".config";
+    }
+    
+    configDir.append(QDir::separator());
+    configDir.append("screengrab");
+    configDir.append(QDir::separator());   
 #endif
     
     // if win32
