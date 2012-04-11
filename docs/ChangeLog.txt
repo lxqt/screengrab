@@ -1,3 +1,7 @@
+0.9.9x
+ * Fixed sual monitor support
+ * Added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
+
 0.9.85 (1.0-beta)
  * Added uploading screenshots on imageshack.use_mangled_mesa(
  * Fixed bug with cut button text on mainwindow
