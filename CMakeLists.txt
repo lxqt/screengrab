@@ -10,7 +10,7 @@ find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "0.9.90")
+set(SCREENGRAB_VERSION "0.9.91")
 set(SCREENGRAB_VERSION_DEV "1.0")
 set(DEV_BUILD True)
 
@@ -69,10 +69,18 @@ message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
+OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)
 
 if(SG_GLOBALSHORTCUTS)
     add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
 endif(SG_GLOBALSHORTCUTS)
+
+if(SG_XDG_CONFIG_SUPPORT)
+    add_definitions( -DSG_XDG_CONFIG_SUPPORT="1")
+endif(SG_XDG_CONFIG_SUPPORT)
+
+message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
+message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
 
 # ------ doc dir name ---------------------------------
 if(UNIX AND NOT APPLE)
@@ -83,8 +91,6 @@ if(UNIX AND NOT APPLE)
     message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
     add_definitions( -DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
 endif(UNIX AND NOT APPLE)
-
-message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})

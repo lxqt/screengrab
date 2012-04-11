@@ -147,21 +147,25 @@ QString Config::getConfigDir()
 {
     QString configDir;
 #ifdef Q_WS_X11
-    // old style config path
-    QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-    configDir = qgetenv("XDG_CONFIG_HOME");
-    
-    // Ubuntu hack -- if XDG_CONFIG_HOME is missing
-    if (configDir.isEmpty() == true)
-    {
-        configDir = QDir::homePath();
-        configDir += QDir::separator();
-        configDir += ".config";
-    }
-    
-    configDir.append(QDir::separator());
-    configDir.append("screengrab");
-    configDir.append(QDir::separator());   
+    #ifdef SG_XDG_CONFIG_SUPPORT
+        // old style config path    
+        QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
+        configDir = qgetenv("XDG_CONFIG_HOME");
+        
+        // Ubuntu hack -- if XDG_CONFIG_HOME is missing
+        if (configDir.isEmpty() == true)
+        {
+            configDir = QDir::homePath();
+            configDir += QDir::separator();
+            configDir += ".config";
+        }
+        
+        configDir.append(QDir::separator());
+        configDir.append("screengrab");
+        configDir.append(QDir::separator());
+    #else
+        configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
+    #endif    
 #endif
     
     // if win32

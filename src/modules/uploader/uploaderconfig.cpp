@@ -32,17 +32,18 @@ const QString  groupName = "imageshack.us";
 UploaderConfig::UploaderConfig()
 {    
     QString configFile = Config::getConfigDir();
-#ifdef Q_WS_X11 
-    // old style config settings storage
-    QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "uploader.conf";
-    
+#ifdef Q_WS_X11     
     configFile += "uploader.conf";
-    
-    // move config  file to new location
-    if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
-    {
-        QFile::rename(oldConfigFile, configFile);
-    }
+    #ifdef SG_XDG_CONFIG_SUPPORT
+        // old style config settings storage
+        QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "uploader.conf";
+        
+        // move config  file to new location
+        if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
+        {
+            QFile::rename(oldConfigFile, configFile);
+        }
+    #endif
 #endif
     
 #ifdef Q_WS_WIN
