@@ -26,6 +26,7 @@
 #include "src/modules/uploader/uploader.h"
 #include <QtCore/QChar>
 #include <QtCore/QBuffer>
+#include <QtCore/QFile>
 
 #include "src/core/core.h"
 
@@ -320,26 +321,41 @@ QString Core::getSaveFilePath(QString format)
     }
     else
     {
-        if (scrNum != 0)
+        do
         {
-        #ifdef Q_WS_X11
-            initPath = conf->getSaveDir()+conf->getSaveFileName() +QString::number(scrNum) +"."+format;
-        #endif
-        #ifdef Q_WS_WIN
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+QString::number(scrNum);
-        #endif
-        }
-        else
-        {
-        #ifdef Q_WS_X11
-            initPath = conf->getSaveDir() + conf->getSaveFileName()+"."+format;
-        #endif
-        #ifdef Q_WS_WIN
-            initPath = conf->getSaveDir()+conf->getSaveFileName();
-        #endif
-        }
+            if (scrNum != 0)
+            {
+                #ifdef Q_WS_X11
+                initPath = conf->getSaveDir()+conf->getSaveFileName() +QString::number(scrNum) +"."+format;
+                #endif
+                #ifdef Q_WS_WIN
+                initPath = conf->getSaveDir()+conf->getSaveFileName()+QString::number(scrNum);
+                #endif
+            }
+            else
+            {
+                #ifdef Q_WS_X11
+                initPath = conf->getSaveDir() + conf->getSaveFileName()+"."+format;
+                #endif
+                #ifdef Q_WS_WIN
+                initPath = conf->getSaveDir()+conf->getSaveFileName();
+                #endif
+            }
+        } while(checkExsistFile(initPath) == true);
     }
     return initPath;
+}
+
+bool Core::checkExsistFile(QString path)
+{
+    bool exist = QFile::exists(path);
+    
+    if (exist == true)
+    {
+        scrNum++;
+    }
+    
+    return exist;
 }
 
 QString Core::getDateTimeFileName()

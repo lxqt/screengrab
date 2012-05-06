@@ -104,6 +104,7 @@ private:
     void getActiveWind_X11();
 #endif
 
+    bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
     // vars
     QPixmap *pixelMap; // pixel map
