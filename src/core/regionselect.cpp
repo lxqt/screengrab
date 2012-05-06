@@ -24,14 +24,14 @@
 #include <QtGui/QApplication>
 
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
-    :QDialog(parent)
+    :QWidget(parent)
 {
     conf = mainconf;
 
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
     setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
-
+    
     sizeDesktop = QApplication::desktop()->size();
     resize(sizeDesktop);
 
@@ -41,7 +41,12 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     move(0, 0);
     drawBackGround();
 
-    processSelection = false;
+    processSelection = false;    
+    
+    show();
+    
+    grabKeyboard();
+    grabMouse();    
 }
 
 RegionSelect::~RegionSelect()
@@ -85,7 +90,7 @@ void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
         return;
     }
     
-    accept();
+    Q_EMIT processDone(true);
 }
 
 
@@ -101,15 +106,21 @@ void RegionSelect::mouseMoveEvent(QMouseEvent *event)
 
 void RegionSelect::keyPressEvent(QKeyEvent* event)
 {
-    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
-    {
-        accept();
-    }
-    
     if (event->key() == Qt::Key_Escape)
     {
-        reject();
+        // canceled select screen area
+        Q_EMIT processDone(false);
     }
+    else if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
+    {
+        // accept selection screenarea
+        Q_EMIT processDone(true);
+    }
+    else
+    {
+        event->ignore();
+    }
+
 }
 
 

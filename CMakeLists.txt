@@ -142,6 +142,7 @@ endif(WIN32)
 # set headers to moc
 set(SCREENGRAB_MOC
     src/core/core.h
+    src/core/regionselect.h
     src/ui/configwidget.h
     src/ui/about.h
     src/ui/mainwindow.h

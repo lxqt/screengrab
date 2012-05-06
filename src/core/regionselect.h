@@ -23,7 +23,8 @@
 
 #include "config.h"
 
-#include <QtGui/QDialog>
+//#include <QtGui/QDialog>
+#include <QtGui/QWidget>
 
 #include <QtGui/QMouseEvent>
 #include <QtGui/QPainter>
@@ -31,11 +32,13 @@
 #include <QtCore/QSize>
 #include <QtCore/QPoint>
 
-class RegionSelect : public QDialog
+// class RegionSelect : public QDialog
+class RegionSelect : public QWidget
 {
+    Q_OBJECT
 public:
     RegionSelect(Config *mainconf, QWidget *parent = 0);
-    ~RegionSelect();
+    virtual ~RegionSelect();
     QPixmap getSelection();
 
 protected:
@@ -45,6 +48,9 @@ protected:
     void mouseDoubleClickEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
+
+Q_SIGNALS:
+    void processDone(bool grabbed);
 
 private:
     QRect selectRect;

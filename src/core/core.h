@@ -108,9 +108,13 @@ private:
     QString copyFileNameToCliipboard(QString file);
     // vars
     QPixmap *pixelMap; // pixel map
+    RegionSelect *selector; // region grabber widget
 
     bool hided;
     int scrNum; // screen num in session
+    
+private Q_SLOTS:
+    void regionGrabbed();
 
 };
 

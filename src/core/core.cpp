@@ -28,6 +28,8 @@
 #include <QtCore/QBuffer>
 #include <QtCore/QFile>
 
+#include <QDebug>
+
 #include "src/core/core.h"
 
 #ifdef Q_WS_WIN
@@ -55,6 +57,8 @@ Core::Core()
     pixelMap = new QPixmap;
     scrNum = 0;
 
+    selector = 0;
+    
     sleep(250);
     // delay on 250 msec
 //     QMutex mutex;
@@ -120,6 +124,7 @@ void Core::screenShot(bool first)
         {
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
             checkAutoSave(first);
+            Q_EMIT newScreenShot(pixelMap);
             break;
         }
         case 1:
@@ -131,32 +136,38 @@ void Core::screenShot(bool first)
     getActiveWind_X11();
 #endif
             checkAutoSave(first);
+            Q_EMIT newScreenShot(pixelMap);
                 break;
             }
         case 2:
             {
-		RegionSelect *selector;
+// 		RegionSelect *selector;
 		selector = new RegionSelect(conf);
-		int resilt = selector->exec();
+        connect(selector, SIGNAL(processDone()), this, SLOT(regionGrabbed()));
+        Q_EMIT newScreenShot(pixelMap);
+        /* classic code
+        // int resilt = selector->exec();
+        int resilt = selector->
 
 		if (resilt == QDialog::Accepted)
 		{
 		    *pixelMap = selector->getSelection();
             checkAutoSave(first);
-            delete selector;
+//             delete selector;
 		}
-		else // if reguin select is canceled - exit without new screen
-        {
-            qDebug() << " selectuiincanceled";
+// 		else // if reguin select is canceled - exit without new screen
+//         {
+//             qDebug() << " selectuiincanceled";
             delete selector;
-        }
+//         }
+             // end of classic code */
 		break;
             }
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
     
-    Q_EMIT newScreenShot(pixelMap);
+    // Q_EMIT newScreenShot(pixelMap);  classic code
 }
 
 void Core::checkAutoSave(bool first)
@@ -506,4 +517,9 @@ QByteArray Core::getScreen()
     
     qDebug() << "GET SCREEN SIZE " << bytes;
     return bytes;
+}
+
+void Core::regionGrabbed()
+{
+    qDebug() << "refion is grabbed";
 }
