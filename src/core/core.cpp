@@ -299,18 +299,19 @@ void Core::getActiveWind_Win32()
 QString Core::getSaveFilePath(QString format)
 {
     QString initPath;
-    if (conf->getDateTimeInFilename() == true)
+    
+    do
     {
-        #ifdef Q_WS_X11
-            initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
-        #endif
-        #ifdef Q_WS_WIN
-            initPath = conf->getSaveDir()+conf->getSaveFileName()+"-"+getDateTimeFileName();
-        #endif
-    }
-    else
-    {
-        do
+        if (conf->getDateTimeInFilename() == true)
+        {
+            #ifdef Q_WS_X11
+                initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
+            #endif
+            #ifdef Q_WS_WIN
+                initPath = conf->getSaveDir()+conf->getSaveFileName()+"-"+getDateTimeFileName();
+            #endif
+        }
+        else
         {
             if (conf->getScrNum() != 0)
             {
@@ -330,8 +331,9 @@ QString Core::getSaveFilePath(QString format)
                 initPath = conf->getSaveDir()+conf->getSaveFileName();
                 #endif
             }
-        } while(checkExsistFile(initPath) == true);
-    }
+        }
+    } while(checkExsistFile(initPath) == true);
+    
     return initPath;
 }
 
@@ -350,7 +352,16 @@ bool Core::checkExsistFile(QString path)
 QString Core::getDateTimeFileName()
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(conf->getDateTimeTpl());
-
+    
+    if (currentDateTime == conf->getLastSaveDate().toString(conf->getDateTimeTpl()) && conf->getScrNum() != 0)
+    {
+        currentDateTime += "-" + conf->getScrNumStr();     
+    }
+    else
+    {
+        conf->resetScrNum();
+    }
+    
     return currentDateTime;
 }
 
@@ -386,7 +397,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
             qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
-            
+            conf->updateLastSaveDate();
             Q_EMIT 	sendStateNotifyMessage(message);
         }
         else

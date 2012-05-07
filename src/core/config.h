@@ -29,6 +29,7 @@
 #include <QtCore/QSize>
 #include <QtCore/QHash>
 #include <QtCore/QVariant>
+#include <QtCore/QDateTime>
 
 //  default values const
 const QString DEF_SAVE_NAME = "screen";
@@ -210,6 +211,9 @@ public:
     void increaseScrNum();
     void resetScrNum();
     
+    void updateLastSaveDate();
+    QDateTime getLastSaveDate() const;
+    
     // shortcuts
 
 
@@ -250,6 +254,7 @@ private:
     QVector<QString> imageFormats;
     
     int scrNum; // screen num in session
+    QDateTime dateLastSaving;
 };
 
 #endif // CONFIG_H

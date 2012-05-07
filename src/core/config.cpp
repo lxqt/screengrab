@@ -199,6 +199,16 @@ void Config::resetScrNum()
     scrNum = 0;
 }
 
+void Config::updateLastSaveDate()
+{
+    dateLastSaving = QDateTime::currentDateTime();
+}
+
+QDateTime Config::getLastSaveDate() const
+{
+    return dateLastSaving;
+}
+
 QString Config::getSaveDir()
 {
     return value(KEY_SAVEDIR).toString();
