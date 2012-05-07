@@ -181,7 +181,14 @@ QString Config::getConfigDir()
 
 QString Config::getScrNumStr()
 {
-    return QString::number(scrNum);
+    QString str = QString::number(scrNum);
+    
+    if (scrNum < 10)
+    {
+        str.prepend("0");
+    }
+    
+    return str;
 }
 
 int Config::getScrNum() const
