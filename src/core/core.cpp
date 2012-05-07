@@ -56,6 +56,7 @@ Core::Core()
 
     pixelMap = new QPixmap;
     selector = 0;
+    firstScreen = true;
     
     sleep(250);
     // delay on 250 msec
@@ -115,6 +116,13 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
+    firstScreen = first;
+    // Update date last crenshot, if it is  a first screen
+    if (firstScreen == true)
+    {
+        conf->updateLastSaveDate();
+    }
+    
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
     {

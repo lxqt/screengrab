@@ -110,6 +110,7 @@ private:
     RegionSelect *selector; // region grabber widget
 
     bool hided;
+    bool firstScreen;
     
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
