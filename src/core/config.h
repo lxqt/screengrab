@@ -205,6 +205,11 @@ public:
     void setNoDecorX11(bool val);
 #endif
 
+    QString getScrNumStr();
+    int getScrNum() const;
+    void increaseScrNum();
+    void resetScrNum();
+    
     // shortcuts
 
 
@@ -243,6 +248,8 @@ private:
     ShortcutManager *_shortcuts;
 
     QVector<QString> imageFormats;
+    
+    int scrNum; // screen num in session
 };
 
 #endif // CONFIG_H

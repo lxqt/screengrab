@@ -111,10 +111,9 @@ private:
     RegionSelect *selector; // region grabber widget
 
     bool hided;
-    int scrNum; // screen num in session
     
 private Q_SLOTS:
-    void regionGrabbed();
+    void regionGrabbed(bool grabbed);
 
 };
 

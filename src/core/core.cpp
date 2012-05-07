@@ -55,8 +55,6 @@ Core::Core()
     conf->loadSettings();
 
     pixelMap = new QPixmap;
-    scrNum = 0;
-
     selector = 0;
     
     sleep(250);
@@ -140,34 +138,14 @@ void Core::screenShot(bool first)
                 break;
             }
         case 2:
-            {
-// 		RegionSelect *selector;
-		selector = new RegionSelect(conf);
-        connect(selector, SIGNAL(processDone()), this, SLOT(regionGrabbed()));
-        Q_EMIT newScreenShot(pixelMap);
-        /* classic code
-        // int resilt = selector->exec();
-        int resilt = selector->
-
-		if (resilt == QDialog::Accepted)
-		{
-		    *pixelMap = selector->getSelection();
-            checkAutoSave(first);
-//             delete selector;
-		}
-// 		else // if reguin select is canceled - exit without new screen
-//         {
-//             qDebug() << " selectuiincanceled";
-            delete selector;
-//         }
-             // end of classic code */
-		break;
-            }
+        {
+            selector = new RegionSelect(conf);
+            connect(selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+            break;
+        }
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
-    
-    // Q_EMIT newScreenShot(pixelMap);  classic code
 }
 
 void Core::checkAutoSave(bool first)
@@ -334,13 +312,13 @@ QString Core::getSaveFilePath(QString format)
     {
         do
         {
-            if (scrNum != 0)
+            if (conf->getScrNum() != 0)
             {
                 #ifdef Q_WS_X11
-                initPath = conf->getSaveDir()+conf->getSaveFileName() +QString::number(scrNum) +"."+format;
+                initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr() +"."+format;
                 #endif
                 #ifdef Q_WS_WIN
-                initPath = conf->getSaveDir()+conf->getSaveFileName()+QString::number(scrNum);
+                initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr();
                 #endif
             }
             else
@@ -363,7 +341,7 @@ bool Core::checkExsistFile(QString path)
     
     if (exist == true)
     {
-        scrNum++;
+        conf->increaseScrNum();        
     }
     
     return exist;
@@ -381,9 +359,9 @@ bool Core::compareSaveName(QString& fileName)
     bool ok = false;
     QString compared = conf->getSaveFileName() + "." + conf->getSaveFormat();
     
-    if (scrNum != 0)
+    if (conf->getScrNum() != 0)
     {
-        compared = conf->getSaveFileName() + QString::number(scrNum) + "." + conf->getSaveFormat();
+        compared = conf->getSaveFileName() + QString::number(conf->getScrNum()) + "." + conf->getSaveFormat();
     }
         
     ok = fileName.contains(compared);    
@@ -412,21 +390,21 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
         }
     }
 
-    // aitoncrement number screen 
+    // autoncrement number screen 
     if (conf->getDateTimeInFilename() == false && compareSaveName(fileName) == true)
     {
-        scrNum++;
+        conf->increaseScrNum();
     }
 
     // writing file
     bool saved;
     if (fileName.isEmpty() == false)
     {        ;
-    if (pixelMap->save(fileName,format.toAscii(), conf->getImageQuality()) == true)
+        if (pixelMap->save(fileName,format.toAscii(), conf->getImageQuality()) == true)
         {
             saved = true;
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
-            
+            qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
             
             Q_EMIT 	sendStateNotifyMessage(message);
@@ -519,7 +497,14 @@ QByteArray Core::getScreen()
     return bytes;
 }
 
-void Core::regionGrabbed()
+void Core::regionGrabbed(bool grabbed)
 {
-    qDebug() << "refion is grabbed";
+    if (grabbed == true)
+    {
+        *pixelMap = selector->getSelection();
+        checkAutoSave();
+    }
+    
+    Q_EMIT newScreenShot(pixelMap);
+    selector->deleteLater();
 }

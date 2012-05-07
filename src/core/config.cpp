@@ -78,6 +78,7 @@ Config::Config()
 #if QT_VERSION >= 0x040500
     settings->setIniCodec("UTF-8");
 #endif
+    scrNum = 0;
 }
 
 Config::~Config()
@@ -177,6 +178,26 @@ QString Config::getConfigDir()
 
 
 // public methods
+
+QString Config::getScrNumStr()
+{
+    return QString::number(scrNum);
+}
+
+int Config::getScrNum() const
+{
+    return scrNum;
+}
+
+void Config::increaseScrNum()
+{
+    scrNum++;
+}
+
+void Config::resetScrNum()
+{
+    scrNum = 0;
+}
 
 QString Config::getSaveDir()
 {
@@ -502,6 +523,8 @@ void Config::saveSettings()
     settings->endGroup();
 
     _shortcuts->saveSettings();
+    
+    resetScrNum();
 }
 
 // set default values
