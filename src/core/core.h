@@ -92,8 +92,7 @@ private:
     Core& operator=(const Core &);
 
     static Core *corePtr;
-    
-    bool compareSaveName(QString& fileName);
+
     void checkAutoSave(bool first = false);
 
     // functions

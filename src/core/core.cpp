@@ -354,20 +354,6 @@ QString Core::getDateTimeFileName()
     return currentDateTime;
 }
 
-bool Core::compareSaveName(QString& fileName)
-{
-    bool ok = false;
-    QString compared = conf->getSaveFileName() + "." + conf->getSaveFormat();
-    
-    if (conf->getScrNum() != 0)
-    {
-        compared = conf->getSaveFileName() + QString::number(conf->getScrNum()) + "." + conf->getSaveFormat();
-    }
-        
-    ok = fileName.contains(compared);    
-    return ok;
-}
-
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {    
@@ -388,12 +374,6 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
         {
             return false;
         }
-    }
-
-    // autoncrement number screen 
-    if (conf->getDateTimeInFilename() == false && compareSaveName(fileName) == true)
-    {
-        conf->increaseScrNum();
     }
 
     // writing file
