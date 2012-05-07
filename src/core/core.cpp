@@ -312,32 +312,17 @@ QString Core::getSaveFilePath(QString format)
     {
         if (conf->getDateTimeInFilename() == true)
         {
-            #ifdef Q_WS_X11
-                initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
-            #endif
-            #ifdef Q_WS_WIN
-                initPath = conf->getSaveDir()+conf->getSaveFileName()+"-"+getDateTimeFileName();
-            #endif
+            initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
         }
         else
         {
             if (conf->getScrNum() != 0)
             {
-                #ifdef Q_WS_X11
                 initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr() +"."+format;
-                #endif
-                #ifdef Q_WS_WIN
-                initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr();
-                #endif
             }
             else
             {
-                #ifdef Q_WS_X11
                 initPath = conf->getSaveDir() + conf->getSaveFileName()+"."+format;
-                #endif
-                #ifdef Q_WS_WIN
-                initPath = conf->getSaveDir()+conf->getSaveFileName();
-                #endif
             }
         }
     } while(checkExsistFile(initPath) == true);
