@@ -23,53 +23,66 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QByteArray>
-#include <QtCore/QVector>
-#include <QtCore/QSize>
+#include <QtCore/QMap>
+#include <QtCore/QPair>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
+#include <QtCore/QUrl>
+
+typedef QPair<QByteArray, QString> ResultString_t;
+
+const QByteArray UL_DIRECT_LINK = "direct_link";
+const QByteArray UL_HTML_CODE = "html_code";
+const QByteArray UL_BB_CODE = "bb_code";
+const QByteArray UL_HTML_CODE_THUMB = "html_code_thumb";
+const QByteArray UL_BB_CODE_THUMB = "bb_code_thumb";
 
 class Uploader : public QObject
 {
     Q_OBJECT
 public:
-    Uploader();
+    explicit Uploader(QObject *parent = 0);
     virtual ~Uploader();
     
-    void setUsername(const QString& name);
-    void setPassword(const QString& pass);
-    void useAccount(bool use);
-
-public Q_SLOTS:
-    void uploadScreen();
-    void selectResizeMode(int mode);
-    
-private Q_SLOTS:
-    void replyFinished(QNetworkReply* reply);
-    void replyProgress(qint64 bytesSent, qint64 bytesTotal);
+    // overriding methods
+    virtual void startUploading();
+	QMap<QByteArray, ResultString_t> parsedLinks();
     
 Q_SIGNALS:
     void uploadStart();
     void uploadFail(const QByteArray &error);
-    void uploadDone(const QVector<QByteArray>& resultStrings);
-    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);
+//     void uploadDone(const QVector<QByteArray>& resultStrings);
+	void uploadDone();
+    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);    
     
-private:
+public Q_SLOTS:
+	
+protected Q_SLOTS:
+    virtual void replyFinished(QNetworkReply* reply) {};
+	void replyProgress(qint64 bytesSent, qint64 bytesTotal);
+	
+protected:
+    // methods
     QByteArray boundary(bool cleared = false);
-    QByteArray createUploadData();
-    QNetworkRequest createRequest(const QByteArray& requestData);
-    
-    QByteArray imageData;
-    QByteArray strBoundary;
-    QNetworkAccessManager *net;
-    QNetworkReply *serverReply;
-    
     QString createFilename(QString& format);
-    QVector<QSize> sizes;
-    qint8 selectedSize;
+	QMap<QByteArray, QByteArray> parseResultStrings(const QVector<QByteArray>& keytags, const QByteArray& result);
     
-    bool _useAccount;
-    QString _username;
-    QString _password;
+    virtual QUrl apiUrl();    
+    virtual void createData(bool inBase64 = false); 
+	virtual void createRequest(const QByteArray& requestData, const QUrl url);
+    
+    // vars
+    QByteArray imageData;
+    QString _uploadFilename;
+    QString _formatString;
+    QByteArray _strBoundary;
+	QMap<QByteArray, ResultString_t> _uploadedStrings;
+    QNetworkAccessManager *_net;
+    QNetworkRequest _request;
+    QNetworkReply *serverReply;
+
+private:
+	void initUploadedStrList();
 };
 
 #endif // UPLOADER_H

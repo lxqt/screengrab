@@ -6,17 +6,24 @@ include_directories(${SG_INCLUDE})
 
 message(STATUS "SG_CORE_INCLUDE-2: " ${SG_INCLUDE})
 
-set (uploader_SRC uploader.cpp
-    uploaderdialog.cpp
+set (uploader_SRC 
+	moduleuploader.cpp
+	uploader.cpp
+    imgshack/uploader_imgshack.cpp
+	imgur/uploader_imgur.cpp
     uploaderconfig.cpp
+    dialoguploader.cpp
 )
 
 set (uploader_HDR
     uploader.h
-    uploaderdialog.h
+	imgshack/uploader_imgshack.h
+	
+	imgur/uploader_imgur.h
+    dialoguploader.h
 )
 
-set(uploader_UI uploaderdialog.ui)
+set(uploader_UI dialoguploader.ui)
 
 qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})
 

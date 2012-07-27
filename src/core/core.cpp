@@ -23,7 +23,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
 
-#include "src/modules/uploader/uploader.h"
+#include "src/modules/uploader/moduleuploader.h"
 #include <QtCore/QChar>
 #include <QtCore/QBuffer>
 #include <QtCore/QFile>
@@ -453,8 +453,10 @@ void Core::autoSave()
 
 void Core::upload()
 {
-    Uploader *upl = new Uploader;
-    Q_UNUSED(upl)
+	//     Uploader *upl = new Uploader;
+	//     Q_UNUSED(upl)
+    ModuleUploader uploader;
+    uploader.init();
 }
 
 

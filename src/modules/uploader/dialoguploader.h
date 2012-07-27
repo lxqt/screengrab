@@ -18,53 +18,46 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef UPLOADERDIALOG_H
-#define UPLOADERDIALOG_H
-
-#include <QtCore/QByteArray>
-#include <QtCore/QVector>
-#include <QtGui/QDialog>
+#ifndef DIALOGUPLOADER_H
+#define DIALOGUPLOADER_H
 
 #include "uploader.h"
+#include "uploaderconfig.h"
 
-class Uploader;
+#include <QtGui/QDialog>
 
 namespace Ui {
-    class UploaderDialog;
+class DialogUploader;
 }
 
-class UploaderDialog : public QDialog
+class DialogUploader : public QDialog
 {
     Q_OBJECT
-public:
-    explicit UploaderDialog(Uploader *uploader, QWidget* parent = 0);
-    ~UploaderDialog();
-
-protected:
-    void closeEvent ( QCloseEvent *e);
-
-private:
-    Ui::UploaderDialog *ui;
-    Uploader *loader;
-    QVector<QByteArray> extCodes;
     
-    void loadSettings();
-    inline void copyLink(const QString& link);
-
-public Q_SLOTS:
-    void updateProgerssbar(qint64 bytesSent, qint64 bytesTotal);
+public:
+    explicit DialogUploader(QWidget *parent = 0);
+    ~DialogUploader();
+    
+protected:
+    void changeEvent(QEvent *e);
     
 private Q_SLOTS:
-    void uploadStart();
-    void uploadDone(const QVector<QByteArray>& resultStrings);
-    void uploadFailed(const QByteArray& errorCode);
+    void slotUploadStart();
+    void slotSeletHost(int type);
+	void slotUploadProgress(qint64 bytesSent, qint64 bytesTotal);
+	void slotUploadDone();
+	void slotUploadFail(const QByteArray &error);
+	void slotChangeExtCode(int code);
+	void slotCopyLink();
     
-    void copyDirectLink();
-    void copyExtCode();
-    void changeExtCode(int code);
-    void showSettings();
+private:
+    Ui::DialogUploader *ui;
     
-    void useAccount(bool use);
+    Uploader* uploader;
+    
+    // storage id curren selected img sho
+    quint8 selectedHost;
+    UploaderConfig UplConf;
 };
 
-#endif // UPLOADERDIALOG_H
+#endif // DIALOGUPLOADER_H

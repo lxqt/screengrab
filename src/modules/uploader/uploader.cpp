@@ -18,70 +18,37 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <core/core.h>
-
 #include "uploader.h"
-#include "uploaderdialog.h"
+#include "core/core.h"
 
-#include <QtCore/QTemporaryFile>
-#include <QtCore/QFileInfo>
 #include <QtCore/QDir>
-#include <QtCore/QUrl>
-#include <QtCore/QRegExp>
-#include <QtCore/QVector>
 #include <QtCore/QUuid>
-#include <QtCore/QStringList>
-#include <QtNetwork/QNetworkRequest>
+#include <QtCore/QRegExp>
 
 #include <QDebug>
 
-Uploader::Uploader()
+Uploader::Uploader(QObject *parent) :
+    QObject(parent)
 {
-    strBoundary = "uploadbound";
-    sizes << QSize(100,75) << QSize(150,112) << QSize(320,240) << QSize(640,480) << QSize(800,600) << QSize(1024,768) << QSize(1280,1024) << QSize(1600,1200);;
-    selectedSize = -1;
-    
-    net = new QNetworkAccessManager(this);
-    UploaderDialog *dlg = new UploaderDialog(this);
-    dlg->show();
+    qDebug() << "creating base uploader";
+    _strBoundary = "uploadbound";
+    _net = new QNetworkAccessManager(this);
+	serverReply = 0;
+	initUploadedStrList();
 }
 
 Uploader::~Uploader()
 {
-    qDebug() << "kill uploader";
+    qDebug() << " base uploader killed";
 }
 
-void Uploader::setUsername(const QString& name)
-{
-    _username = name;
-}
-
-void Uploader::setPassword(const QString& pass)
-{
-    _password = pass;
-}
-
-void Uploader::useAccount(bool use)
-{
-    _useAccount = use;
-}
-
-
-void Uploader::uploadScreen()
-{
-    qDebug() << "upload screen slot";
-    
-    QByteArray data = createUploadData();
-    QNetworkRequest request = createRequest(data);    
-
-    connect(net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
-    serverReply = net->post(request, data);
-    connect(serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64)));    
-}
-
+/*!
+ * Create boundary string
+ * \param cleared -detect for strt boyndary lin in httpRequest
+ */
 QByteArray Uploader::boundary(bool cleared)
 {
-    QByteArray retBoundary = strBoundary;
+    QByteArray retBoundary = _strBoundary;
     
     if (cleared == false)
     {
@@ -92,187 +59,9 @@ QByteArray Uploader::boundary(bool cleared)
     return retBoundary;
 }
 
-QByteArray Uploader::createUploadData()
-{    
-    QByteArray uploadData;
-    
-    Core *core = Core::instance();
-    QString format = core->conf->getSaveFormat();
-    QString tmpFileName = createFilename(format);
-    core->writeScreen(tmpFileName, format , true);
-
-    QByteArray screenData;
-    screenData = core->getScreen();
-            
-    uploadData.append(boundary());
-    uploadData.append("content-disposition: ");
-    uploadData.append("form-data; name=\"public\"\r\n");
-    uploadData.append("\r\n");
-    uploadData.append("yes");
-    uploadData.append("\r\n");
-    
-    qDebug() << "USERNAME " << _username;
-    qDebug() << "PASSWORD " << _password;
-    
-    // resize image    
-    if (selectedSize != -1)
-    {
-        QByteArray newSize = QByteArray::number(sizes[selectedSize].width()) + "x" + QByteArray::number(sizes[selectedSize].height());
-        
-        uploadData.append(boundary());
-        uploadData.append("content-disposition: ");
-        uploadData.append("form-data; name=\"optimage\"\r\n");
-        uploadData.append("\r\n");
-        uploadData.append("1");
-        uploadData.append("\r\n");
-        
-        uploadData.append(boundary());
-        uploadData.append("content-disposition: ");
-        uploadData.append("form-data; name=\"optsize\"\r\n");
-        uploadData.append("\r\n");
-        uploadData.append(newSize);
-        uploadData.append("\r\n");
-    }
-    
-    if (_useAccount == true)
-    {
-        
-        qDebug() << "use acc" << _useAccount;
-        qDebug() << "use acc" << _username;
-        qDebug() << "use acc" << _password;
-        
-        uploadData.append(boundary());
-        uploadData.append("content-disposition: ");
-        uploadData.append("form-data; name=\"a_username\"\r\n");
-        uploadData.append("\r\n");
-        uploadData.append(_username);
-        uploadData.append("\r\n"); 
-        
-        uploadData.append(boundary());
-        uploadData.append("content-disposition: ");
-        uploadData.append("form-data; name=\"a_password\"\r\n");
-        uploadData.append("\r\n");
-        uploadData.append(_password);
-        uploadData.append("\r\n");         
-    }
-    
-    uploadData.append(boundary());
-    uploadData.append("content-disposition: ");
-    uploadData.append("form-data; name=\"key\"\r\n");
-    uploadData.append("\r\n");
-    uploadData.append("BXT1Z35V8f6ee0522939d8d7852dbe67b1eb9595");
-    uploadData.append("\r\n");        
-    
-        //fileupload
-    uploadData.append(boundary());
-    uploadData.append("content-disposition: ");
-    uploadData.append("form-data; name='fileupload'; ");
-    uploadData.append("filename='" + tmpFileName + "'\r\n");
-    
-    if (format == "jpg")
-    {
-        uploadData.append("Content-Type: image/jpeg\r\n");
-    }
-    else
-    {
-        uploadData.append("Content-Type: image/" + format + "\r\n");
-    }
-    
-    
-    uploadData.append("\r\n");
-    uploadData.append(screenData);
-    uploadData.append("\r\n");
-
-    uploadData.append(boundary());
-
-    return uploadData;    
-}
-
-QNetworkRequest Uploader::createRequest(const QByteArray& requestData)
-{
-    QNetworkRequest request;
-    
-    request.setUrl(QUrl("http://imageshack.us/upload_api.php"));
-    request.setRawHeader("Host", "imageshack.us");
-    request.setRawHeader("Content-Type", "multipart/form-data; boundary=" + boundary(true));
-    request.setRawHeader("Connection", "Keep-Alive");
-    request.setRawHeader("User-Agent", "My User-Agent");
-    request.setRawHeader("Content-Length", QByteArray::number(requestData.size()));
-        
-    return request;
-}
-
-void Uploader::replyFinished(QNetworkReply* reply)
-{
-    if (reply->error() == QNetworkReply::NoError)
-    {   
-        QByteArray replyXmalText = reply->readAll();
-        
-        // error parsing
-        if (replyXmalText.contains("error id=") == true)
-        {
-            qDebug() << "error";
-            
-            // TODO -- emiting error signal (rerror type == errList(0))
-                        
-            QRegExp err("<error id=\"([^<]*)\"");
-            int pos = err.indexIn(replyXmalText);
-            int len = err.matchedLength();
-;
-            QByteArray errorStrCode = replyXmalText.mid(pos, len).replace("<error id=\"", "").replace("\"", "");
-            
-            Q_EMIT uploadFail(errorStrCode);
-            return ;
-        }
-        
-        QVector<QByteArray> listXmlNodes;
-        QRegExp re;      
-        QRegExp re2;
-        
-        //  creating list of element names
-        listXmlNodes << "image_link" << "image_html" << "image_bb" << "image_bb2" << "thumb_html" << "thumb_bb" << "thumb_bb2";
-        int inStart = 0;
-        int outStart = 0;
-        int len = 0;
-        
-        // parsing xml 
-        for (int i = 0; i < listXmlNodes.count(); ++i)
-        {
-            // FIXME -- dirty hack for capture link text without right unversal regexp
-            // set patterns  for full lenght item
-            re.setPattern("<"+listXmlNodes[i]+">"); // open tag
-            re2.setPattern("</"+listXmlNodes[i]+">"); //close tag
-            
-            // get start pos and lenght ite in xml
-            inStart = re.indexIn(replyXmalText); // ops open tag start
-            outStart = re2.indexIn(replyXmalText); // pos close tag start
-            len = outStart - inStart + re2.matchedLength(); // length of full string
-            
-            // extract item and replase spec html sumbols
-            QByteArray extractedText = replyXmalText.mid(inStart, len);
-            extractedText = extractedText.replace("&quot;","'");
-            extractedText = extractedText.replace("&lt;","<");
-            extractedText = extractedText.replace("&gt;",">");
-            extractedText = extractedText.replace("<"+listXmlNodes[i]+">","");
-            extractedText = extractedText.replace("</"+listXmlNodes[i]+">","");
-            
-            listXmlNodes[i] = extractedText;
-        }
-        
-        Q_EMIT uploadDone(listXmlNodes);
-    }
-    else
-    {
-        qDebug() << "reply error" ;
-    }
-    reply->deleteLater();
-}
-
-void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
-{
-    Q_EMIT uploadProgress(bytesSent, bytesTotal);
-}
-
+/*!
+ *  Generate filename for upload file
+ */
 QString Uploader::createFilename(QString& format)
 {
     QString tmpFileName = QUuid::createUuid().toString();
@@ -284,8 +73,125 @@ QString Uploader::createFilename(QString& format)
     return tmpFileName;
 }
 
-void Uploader::selectResizeMode(int mode)
+void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
 {
-    selectedSize = mode-1;
-    qDebug() << "mode " << selectedSize;
+    Q_EMIT uploadProgress(bytesSent, bytesTotal);
+}
+    
+/*!
+ *  Start uploadingin base class 
+ */
+void Uploader::startUploading()
+{
+	connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
+	serverReply = _net->post(_request, imageData);	
+
+	connect(serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64))); 
+}
+
+QMap< QByteArray, ResultString_t > Uploader::parsedLinks()
+{
+	return _uploadedStrings;
+}
+
+
+/*!
+ * 	Return url for upload image
+ */
+QUrl Uploader::apiUrl()
+{
+    return QUrl();
+}
+
+/*!
+ * 	Prepare image datafor uploading
+ */
+void Uploader::createData(bool inBase64)
+{
+    Core *core = Core::instance();
+    _formatString = core->conf->getSaveFormat();
+    _uploadFilename = createFilename(_formatString);
+    core->writeScreen(_uploadFilename, _formatString , true);
+    
+	if (inBase64 == false)
+	{
+		imageData = core->getScreen();
+	}
+	else
+	{
+		imageData = core->getScreen().toBase64();
+	}
+}
+
+/*!
+ *  Create request for send to server.
+ *  this method called from subclasses.
+ */
+void Uploader::createRequest(const QByteArray& requestData, const QUrl url)
+{
+    _request.setUrl(url);
+}
+
+/*!
+ *  Parsing server reply and get map with server returned links
+ *  \param keytags List of tags for parsing
+ *  \param result String wuth server reply
+ */
+QMap<QByteArray, QByteArray> Uploader::parseResultStrings(const QVector< QByteArray >& keytags, const QByteArray& result)
+{
+	QMap<QByteArray, QByteArray> replyMap;
+	
+	QRegExp re;      
+	QRegExp re2;
+	
+	int inStart = 0;
+    int outStart = 0;
+	int len = 0;
+	
+        // parsing xml 
+    for (int i = 0; i < keytags.count(); ++i)
+	{
+        // set patterns  for full lenght item
+        re.setPattern("<"+keytags[i]+">"); // open tag
+        re2.setPattern("</"+keytags[i]+">"); //close tag
+            
+        // get start pos and lenght ite in xml
+        inStart = re.indexIn(result); // ops open tag start
+        outStart = re2.indexIn(result); // pos close tag start
+        len = outStart - inStart + re2.matchedLength(); // length of full string
+            
+            // extract item and replase spec html sumbols
+        QByteArray extractedText = result.mid(inStart, len);
+        extractedText = extractedText.replace("&quot;","'");
+        extractedText = extractedText.replace("&lt;","<");
+        extractedText = extractedText.replace("&gt;",">");
+        extractedText = extractedText.replace("<"+keytags[i]+">","");
+        extractedText = extractedText.replace("</"+keytags[i]+">","");
+            
+			// to map
+		replyMap.insert(keytags[i], extractedText);
+			
+// 		keytags[i] = extractedText;
+	}
+	
+	return replyMap;
+}
+
+void Uploader::initUploadedStrList()
+{
+	qDebug() << "initialize final strings list";
+	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
+	this->_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
+	
+	strPair = qMakePair(QByteArray(), tr("HTML code"));
+	this->_uploadedStrings.insert(UL_HTML_CODE ,strPair);
+	
+	strPair = qMakePair(QByteArray(), tr("BB code"));
+	this->_uploadedStrings.insert(UL_BB_CODE, strPair);
+	
+	strPair = qMakePair(QByteArray(), tr("HTML code with thumb image"));
+	this->_uploadedStrings.insert(UL_HTML_CODE_THUMB ,strPair);
+	
+	strPair = qMakePair(QByteArray("bb_code_thumb"), tr("BB code with thumb image"));
+	this->_uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
 }

@@ -24,6 +24,7 @@
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
 #include <QtCore/QVariant>
+#include <QtCore/QMap>
 
 class UploaderConfig
 {
@@ -32,14 +33,17 @@ public:
     UploaderConfig();
     ~UploaderConfig();
     
-    void saveSettings(const QStringList& settings);
-    QStringList loadSettings();
-    void saveParameter(const QString& param, const QVariant& val);
-    QVariant loadparam(const QString& param);
+	QStringList labelsList() const;
+	
+	// load settings
+	// на вход методу даем стринглист ключей параметров
+	// на выходе получаем мап кувариантов - ключ параметр
     
 private:
     QSettings *_settings;
-    QStringList _settingsList;
+	
+	QStringList _groupsList;
+	QStringList _labelsList;
 };
 
 #endif // UPLOADERCONFIG_H

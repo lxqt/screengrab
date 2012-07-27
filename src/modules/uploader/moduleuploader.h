@@ -18,37 +18,15 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "uploaderconfig.h"
-#include <QString>
+#ifndef MODULEUPLOADER_H
+#define MODULEUPLOADER_H
 
-#include "core/config.h"
-
-#include <QDebug>
-
-const QString  groupName = "imageshack.us";
-
-UploaderConfig::UploaderConfig()
+class ModuleUploader
 {
-    QString configFile = Config::getConfigDir();
-#ifdef Q_WS_X11    
-    configFile += "uploader.conf";
-#endif
+public:
+    ModuleUploader();
+    
+    void init();
+};
 
-#ifdef Q_WS_WIN
-    configFile += "uploader.ini";
-#endif
-    _settings = new QSettings(configFile, QSettings::IniFormat);        
-	
-	_labelsList << "ImgUr" << "ImageShack" ;
-	_groupsList << "imgur.com" << "imageshack.us";
-}
-
-UploaderConfig::~UploaderConfig()
-{
-    delete _settings;
-}
-
-QStringList UploaderConfig::labelsList() const
-{
-	return _labelsList;
-}
+#endif // MODULEUPLOADER_H
