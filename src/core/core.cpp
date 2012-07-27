@@ -22,8 +22,10 @@
 #include <QtCore/QWaitCondition>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
-
+#ifdef SG_EXT_UPLOADS
 #include "src/modules/uploader/moduleuploader.h"
+#endif
+
 #include <QtCore/QChar>
 #include <QtCore/QBuffer>
 #include <QtCore/QFile>
@@ -442,6 +444,7 @@ void Core::copyScreen()
     Q_EMIT sendStateNotifyMessage(message);
 }
 
+
 void Core::autoSave()
 {
 
@@ -451,6 +454,7 @@ void Core::autoSave()
 	writeScreen(fileName, format);
 }
 
+#ifdef SG_EXT_UPLOADS
 void Core::upload()
 {
 	//     Uploader *upl = new Uploader;
@@ -458,7 +462,7 @@ void Core::upload()
     ModuleUploader uploader;
     uploader.init();
 }
-
+#endif
 
 QString Core::getVersionPrintable()
 {

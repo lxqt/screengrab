@@ -70,6 +70,7 @@ message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)
+OPTION (SG_EXT_UPLOADS "Enableupload screnshots to image hostings" ON)
 
 if(SG_GLOBALSHORTCUTS)
     add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
@@ -79,8 +80,13 @@ if(SG_XDG_CONFIG_SUPPORT)
     add_definitions( -DSG_XDG_CONFIG_SUPPORT="1")
 endif(SG_XDG_CONFIG_SUPPORT)
 
+if(SG_EXT_UPLOADS)
+    add_definitions( -DSG_EXT_UPLOADS="1")
+endif(SG_EXT_UPLOADS)
+
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
+message(STATUS "Upload to image hosings support: " ${SG_EXT_UPLOADS})
 
 # ------ doc dir name ---------------------------------
 if(UNIX AND NOT APPLE)
@@ -98,14 +104,17 @@ message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})
 #------- qtsingleapplication  --------
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 
 #openarenainclude_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
+
+if(SG_EXT_UPLOADS)
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
+endif(SG_EXT_UPLOADS)
 
 if(SG_GLOBALSHORTCUTS)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")    
@@ -227,11 +236,15 @@ if(SG_GLOBALSHORTCUTS)
     target_link_libraries( screengrab qxt)
 endif(SG_GLOBALSHORTCUTS)
 
+if(SG_EXT_UPLOADS)
+	target_link_libraries( screengrab uploader)
+endif(SG_EXT_UPLOADS)
+
 if(WIN32)
-    target_link_libraries( screengrab qkeysequencewidget singleapp uploader ${QT_LIBRARIES} )
+    target_link_libraries( screengrab qkeysequencewidget singleapp ${QT_LIBRARIES} )
 endif(WIN32)
 if(UNIX)
-    target_link_libraries( screengrab qkeysequencewidget singleapp uploader  X11 
+    target_link_libraries( screengrab qkeysequencewidget singleapp X11 
 ${QT_LIBRARIES} )
 endif(UNIX)
 

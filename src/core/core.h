@@ -63,7 +63,9 @@ public Q_SLOTS:
     void coreQuit();
     void screenShot(bool first = false);
     void autoSave();
+#ifdef SG_EXT_UPLOADS
     void upload();
+#endif
 
 public:
     static Core* instance();
