@@ -1,6 +1,9 @@
 0.9.9x
  * Fixed sual monitor support
  * Added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
+ * Added ability to upload to some image hosts
+ * Added build option for compile without upload feature
+ * Fixed non-minimize main window on "Exit" shortcut, when use "Minimize to tray" option
 
 0.9.85 (1.0-beta)
  * Added uploading screenshots on imageshack.use_mangled_mesa(
