@@ -104,10 +104,7 @@ MainWindow::MainWindow(QWidget* parent) :
          QApplication::desktop()->availableGeometry(
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
 
-//     core->screenShot(true);
     displayPixmap();
-
-//     createShortcuts();
 }
 
 MainWindow::~MainWindow()
@@ -137,7 +134,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
     }
     else
     {
-    quit();
+		quit();
     }
 }
 
@@ -276,19 +273,19 @@ void MainWindow::newScreen()
     // if show trat
     if (core->conf->getShowTrayIcon() == true)
     {
-    //  unblock tray signals
-    trayIcon->blockSignals(true);
-    trayIcon->setContextMenu(NULL); // enable context menu
+		//  unblock tray signals
+		trayIcon->blockSignals(true);
+		trayIcon->setContextMenu(NULL); // enable context menu
     }
 
     if (core->conf->getDelay() == 0)
     {
-    // if select 0s delay & hide window -- make 0.2s delay for hiding window
-    QTimer::singleShot(200, core, SLOT(screenShot()));
+		// if select 0s delay & hide window -- make 0.2s delay for hiding window
+		QTimer::singleShot(200, core, SLOT(screenShot()));
     }
     else
     {
-    QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
+		QTimer::singleShot(1000*core->conf->getDelay(), core, SLOT(screenShot()));
     }
 }
 
@@ -583,12 +580,12 @@ void MainWindow::saveScreen()
         {
             fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
         }
-    ++iter;
+		++iter;
     }
     fileFilters.chop(2);
 
-QString fileName;
-#ifdef Q_WS_X11
+	QString fileName;
+#ifdef Q_WS_X11		
     if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")    
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
@@ -596,7 +593,7 @@ QString fileName;
     else
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected, QFileDialog::DontUseNativeDialog);
-    }
+    }    
 #endif
 #ifdef Q_WS_WIN
     fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
@@ -614,19 +611,18 @@ QString fileName;
         return ;
     }
 
-    core->writeScreen(fileName, format);
+    core->writeScreen(fileName, format);	
 }
 
 
 void MainWindow::createShortcuts()
 {
-	qDebug() << "create shortcutz";
     m_ui->butNew->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutNew));
     m_ui->butSave->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutSave));
     m_ui->butCopy->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
     m_ui->butOpt->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
     m_ui->butHelp->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
-//     m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+
     if (core->conf->getCloseInTray() == true && core->conf->getShowTrayIcon() == true)
     {
 		m_ui->butQuit->setShortcut(QKeySequence());
@@ -656,7 +652,7 @@ void MainWindow::globalShortcutBlock(bool state)
 {
     for (int i = 0; i < globalShortcuts.count(); ++i )
     {
-    globalShortcuts[i]->setDisabled(state);
+		globalShortcuts[i]->setDisabled(state);
     }
 }
 
