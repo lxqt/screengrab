@@ -71,6 +71,7 @@ MainWindow::MainWindow(QWidget* parent) :
 #endif
     
     trayIcon = NULL;
+	hideWnd = NULL;
     updateUI();
     
     delayBoxChange(core->conf->getDelay());
@@ -106,7 +107,7 @@ MainWindow::MainWindow(QWidget* parent) :
 //     core->screenShot(true);
     displayPixmap();
 
-    createShortcuts();      
+//     createShortcuts();
 }
 
 MainWindow::~MainWindow()
@@ -619,12 +620,28 @@ QString fileName;
 
 void MainWindow::createShortcuts()
 {
+	qDebug() << "create shortcutz";
     m_ui->butNew->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutNew));
     m_ui->butSave->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutSave));
     m_ui->butCopy->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
     m_ui->butOpt->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
     m_ui->butHelp->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
-    m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+//     m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+    if (core->conf->getCloseInTray() == true && core->conf->getShowTrayIcon() == true)
+    {
+		m_ui->butQuit->setShortcut(QKeySequence());
+		hideWnd = new QShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose), this);
+		connect(hideWnd, SIGNAL(activated()), this, SLOT(close()));
+    }
+    else
+    {
+		if (hideWnd != NULL)
+		{
+			delete hideWnd;
+		}
+		m_ui->butQuit->setShortcut(core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+    }
+	
 
 #ifdef SG_GLOBAL_SHORTCUTS     
     for (int i = 0; i < globalShortcuts.count(); ++i )

@@ -35,6 +35,7 @@
 #include <QtGui/QSystemTrayIcon>
 #include <QtGui/QDesktopServices>
 #include <QtGui/QCloseEvent>
+#include <QtGui/QShortcut>
 #include <QtCore/QUrl>
 #include <QtCore/QSignalMapper>
 
@@ -72,6 +73,7 @@ private:
     QAction *mHelp;
     QAction *mHideShow;
     QMenu *menuTray;
+	QShortcut *hideWnd;
 
     bool trayed;
 
