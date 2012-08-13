@@ -385,10 +385,18 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     // writing file
     bool saved;
     if (fileName.isEmpty() == false)
-    {        ;
-        if (pixelMap->save(fileName,format.toAscii(), conf->getImageQuality()) == true)
+    {
+		if (format == "jpg")
+		{
+			saved = pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+		}
+		else
+		{
+			saved = pixelMap->save(fileName,format.toAscii(), -1);
+		}
+		
+        if (saved == true)
         {
-            saved = true;
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
             qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
@@ -397,7 +405,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
         }
         else
         {
-            saved = false;
+            qDebug() << "Error saving file " << fileName;
         }
     }
     else

@@ -189,18 +189,18 @@ void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 
 void ConfigDialog::changeFormatType(int type)
 {
-    if (type == 2)
-    {
-        ui->slideImgQuality->setEnabled(false);
-        ui->labImgQuality->setEnabled(false);
-        ui->labImgQualityCurrent->setEnabled(false);;
-    }
-    else
-    {
-        ui->slideImgQuality->setEnabled(true);;
-        ui->labImgQuality->setEnabled(true);
-        ui->labImgQualityCurrent->setEnabled(true);;
-    }
+	if (type == 1)
+	{
+		ui->slideImgQuality->setVisible(true);;
+		ui->labImgQuality->setVisible(true);
+		ui->labImgQualityCurrent->setVisible(true);;
+	}
+	else
+	{
+		ui->slideImgQuality->setVisible(false);
+		ui->labImgQuality->setVisible(false);
+		ui->labImgQualityCurrent->setVisible(false);;
+	}
 }
 
 
