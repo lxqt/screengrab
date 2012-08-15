@@ -26,6 +26,7 @@
 #include <QDebug>
 
 const QString  groupName = "imageshack.us";
+QStringList UploaderConfig::_labelsList = QStringList() << "ImgUr" << "ImageShack";
 
 UploaderConfig::UploaderConfig()
 {
@@ -38,8 +39,7 @@ UploaderConfig::UploaderConfig()
     configFile += "uploader.ini";
 #endif
     _settings = new QSettings(configFile, QSettings::IniFormat);        
-	
-	_labelsList << "ImgUr" << "ImageShack" ;
+		
 	_groupsList << "imgur.com" << "imageshack.us";
 }
 
@@ -48,7 +48,42 @@ UploaderConfig::~UploaderConfig()
     delete _settings;
 }
 
-QStringList UploaderConfig::labelsList() const
+QStringList UploaderConfig::labelsList()
 {
 	return _labelsList;
+}
+
+QVariantMap UploaderConfig::loadSettings(const QByteArray& group, QVariantMap& mapValues)
+{
+	QVariantMap map;
+	
+	_settings->beginGroup(group);
+	
+	QVariant defValue, iterValue;
+	QVariantMap::iterator iter = mapValues.begin();
+	while(iter != mapValues.end())
+	{
+		defValue =  iter.value();
+		iterValue = _settings->value(iter.key(), defValue);		
+		map.insert(iter.key(), iterValue);
+		++iter;		
+	}
+	
+	_settings->endGroup();
+	
+	return map;
+}
+
+void UploaderConfig::saveSettings(const QByteArray& group, QVariantMap& mapValues)
+{
+	_settings->beginGroup(group);
+
+	QVariantMap::iterator iter = mapValues.begin();
+	while(iter != mapValues.end())
+	{
+		_settings->setValue(iter.key(), iter.value());
+		++iter;
+	}
+
+	_settings->endGroup();
 }

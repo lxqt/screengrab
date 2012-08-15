@@ -21,6 +21,7 @@
 #include "dialoguploader.h"
 #include "ui_dialoguploader.h"
 
+#include "uploaderconfig.h"
 #include "imgshack/uploader_imgshack.h"
 #include "imgur/uploader_imgur.h"
 #include <core/core.h>
@@ -36,8 +37,8 @@ DialogUploader::DialogUploader(QWidget *parent) :
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
     uploader = 0;
-
-    ui->cbxUploaderList->addItems(UplConf.labelsList());
+	
+    ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
     selectedHost = 0;
 
     // load ishot preview

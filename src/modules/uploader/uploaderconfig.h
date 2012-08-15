@@ -33,8 +33,10 @@ public:
     UploaderConfig();
     ~UploaderConfig();
     
-	QStringList labelsList() const;
+	static QStringList labelsList();
 	
+	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
+	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
 	// load settings
 	// на вход методу даем стринглист ключей параметров
 	// на выходе получаем мап кувариантов - ключ параметр
@@ -43,7 +45,7 @@ private:
     QSettings *_settings;
 	
 	QStringList _groupsList;
-	QStringList _labelsList;
+	static QStringList _labelsList;
 };
 
 #endif // UPLOADERCONFIG_H

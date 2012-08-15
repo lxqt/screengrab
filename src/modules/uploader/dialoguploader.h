@@ -22,12 +22,11 @@
 #define DIALOGUPLOADER_H
 
 #include "uploader.h"
-#include "uploaderconfig.h"
 
 #include <QtGui/QDialog>
 
 namespace Ui {
-class DialogUploader;
+	class DialogUploader;
 }
 
 class DialogUploader : public QDialog
@@ -56,8 +55,7 @@ private:
     Uploader* uploader;
     
     // storage id curren selected img sho
-    quint8 selectedHost;
-    UploaderConfig UplConf;
+    quint8 selectedHost;    
 };
 
 #endif // DIALOGUPLOADER_H
