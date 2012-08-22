@@ -45,6 +45,7 @@ public:
     virtual ~Uploader();
     
     // overriding methods
+	void getUserSettings(const QVariantMap& settings);
     virtual void startUploading();
 	QMap<QByteArray, ResultString_t> parsedLinks();
     
@@ -53,7 +54,7 @@ Q_SIGNALS:
     void uploadFail(const QByteArray &error);
 //     void uploadDone(const QVector<QByteArray>& resultStrings);
 	void uploadDone();
-    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);    
+    void uploadProgress(qint64 bytesSent, qint64 bytesTotal);	
     
 public Q_SLOTS:
 	
@@ -77,9 +78,10 @@ protected:
     QString _formatString;
     QByteArray _strBoundary;
 	QMap<QByteArray, ResultString_t> _uploadedStrings;
+	QVariantMap _userSettings;
     QNetworkAccessManager *_net;
     QNetworkRequest _request;
-    QNetworkReply *serverReply;
+    QNetworkReply *serverReply;	
 
 private:
 	void initUploadedStrList();

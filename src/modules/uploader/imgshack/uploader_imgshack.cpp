@@ -1,14 +1,17 @@
 
 
 #include "uploader_imgshack.h"
+#include "uploaderconfig.h"
 
 #include <QtCore/QRegExp>
+#include <QtCore/QVariantMap>
 
 #include <QDebug>
 
 Uploader_ImgShack::Uploader_ImgShack(QObject* parent): Uploader(parent)
 {
     qDebug() << " create imageshack uploader";
+	_sizes << QSize(100,75) << QSize(150,112) << QSize(320,240) << QSize(640,480) << QSize(800,600) << QSize(1024,768) << QSize(1280,1024) << QSize(1600,1200);
 }
 
 Uploader_ImgShack::~Uploader_ImgShack()
@@ -56,50 +59,53 @@ void Uploader_ImgShack::createData()
     uploadData.append("\r\n");
     uploadData.append("yes");
     uploadData.append("\r\n");
-    
-/* not worked in current
- // resize image    
- if (selectedSize != -1)
- {
-     QByteArray newSize = QByteArray::number(sizes[selectedSize].width()) + "x" + QByteArray::number(sizes[selectedSize].height());
-		
-     uploadData.append(boundary());
-     uploadData.append("content-disposition: ");
-     uploadData.append("form-data; name=\"optimage\"\r\n");
-     uploadData.append("\r\n");
-     uploadData.append("1");
-     uploadData.append("\r\n");
-     
-     uploadData.append(boundary());
-     uploadData.append("content-disposition: ");
-     uploadData.append("form-data; name=\"optsize\"\r\n");
-     uploadData.append("\r\n");
-     uploadData.append(newSize);
-     uploadData.append("\r\n");
-}
 
-if (_useAccount == true)
-{
-    
-    qDebug() << "use acc" << _useAccount;
-    qDebug() << "use acc" << _username;
-    qDebug() << "use acc" << _password;
-    
-    uploadData.append(boundary());
-    uploadData.append("content-disposition: ");
-    uploadData.append("form-data; name=\"a_username\"\r\n");
-    uploadData.append("\r\n");
-    uploadData.append(_username);
-    uploadData.append("\r\n"); 
-    
-    uploadData.append(boundary());
-    uploadData.append("content-disposition: ");
-    uploadData.append("form-data; name=\"a_password\"\r\n");
-    uploadData.append("\r\n");
-    uploadData.append(_password);
-    uploadData.append("\r\n");         
-}   
-**************/
+	// resize image    
+	qint8 selectedSize = _userSettings["resize"].toInt();
+	
+	if (selectedSize != -1)
+	{
+		QByteArray newSize = QByteArray::number(_sizes[selectedSize].width()) + "x" + QByteArray::number(_sizes[selectedSize].height());
+			
+		uploadData.append(boundary());
+		uploadData.append("content-disposition: ");
+		uploadData.append("form-data; name=\"optimage\"\r\n");
+		uploadData.append("\r\n");
+		uploadData.append("1");
+		uploadData.append("\r\n");
+		
+		uploadData.append(boundary());
+		uploadData.append("content-disposition: ");
+		uploadData.append("form-data; name=\"optsize\"\r\n");
+		uploadData.append("\r\n");
+		uploadData.append(newSize);
+		uploadData.append("\r\n");
+	}
+
+	// use accounts
+	if (_userSettings["anonimous"].toBool() == false)
+	{
+		UploaderConfig config;
+		QVariantMap configParams;
+		configParams.insert("username", "");
+		configParams.insert("password", "");
+		configParams = config.loadSettings("imageshack.us", configParams);
+		
+		uploadData.append(boundary());
+		uploadData.append("content-disposition: ");
+		uploadData.append("form-data; name=\"a_username\"\r\n");
+		uploadData.append("\r\n");
+		uploadData.append(configParams["username"].toString());
+		uploadData.append("\r\n"); 
+		
+		uploadData.append(boundary());
+		uploadData.append("content-disposition: ");
+		uploadData.append("form-data; name=\"a_password\"\r\n");
+		uploadData.append("\r\n");
+		uploadData.append(configParams["password"].toString());
+		uploadData.append("\r\n");     		
+	}
+
     // key field
     uploadData.append(boundary());
     uploadData.append("content-disposition: ");

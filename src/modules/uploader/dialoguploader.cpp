@@ -23,7 +23,9 @@
 
 #include "uploaderconfig.h"
 #include "imgshack/uploader_imgshack.h"
+#include "imgshack/uploader_imgshack_widget.h"
 #include "imgur/uploader_imgur.h"
+#include "imgur/uploader_imgur_widget.h"
 #include <core/core.h>
 
 #include <QtGui/QMessageBox>
@@ -37,6 +39,8 @@ DialogUploader::DialogUploader(QWidget *parent) :
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
     uploader = 0;
+	_uploaderWidget = 0;
+	slotSeletHost(0);
 	
     ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
     selectedHost = 0;
@@ -70,7 +74,9 @@ DialogUploader::~DialogUploader()
     {
         delete uploader;
     }
-
+	
+	delete _uploaderWidget;
+	
     delete ui;
 }
 
@@ -106,6 +112,10 @@ void DialogUploader::slotUploadStart()
         uploader = new Uploader_ImgShack;
     }
 
+    QVariantMap userSettings;
+	QMetaObject::invokeMethod(_uploaderWidget, "settingsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariantMap, userSettings));	
+    uploader->getUserSettings(userSettings);;
+    
     // start uploading process
     connect(uploader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(slotUploadProgress(qint64,qint64)));
     uploader->startUploading();
@@ -119,6 +129,30 @@ void DialogUploader::slotUploadStart()
 void DialogUploader::slotSeletHost(int type)
 {
     selectedHost = type;
+	
+	if (_uploaderWidget)
+	{		
+		delete _uploaderWidget;		
+	}
+	
+	switch(selectedHost)
+	{
+		case 0:
+		{
+			_uploaderWidget = new Uploader_ImgUr_Widget();
+			break;
+		}
+		case 1:
+		{
+			_uploaderWidget = new Uploader_ImgShack_Widget();
+			break;
+		}
+		default:
+			_uploaderWidget = new Uploader_ImgUr_Widget();
+	}
+	
+	ui->stackedWidget->addWidget(_uploaderWidget);
+	ui->stackedWidget->setCurrentWidget(_uploaderWidget);
 }
 
 void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
@@ -151,11 +185,12 @@ void DialogUploader::slotUploadDone()
         }
     }
 
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(0);
     ui->labUploadStatus->setText(tr("Upload completed"));
     ui->progressBar->setVisible(false);
     ui->cbxUploaderList->setEnabled(false);
     qDebug() << "upload is done";
+	qDebug() << ui->stackedWidget->currentIndex();
 }
 
 void DialogUploader::slotUploadFail(const QByteArray& error)

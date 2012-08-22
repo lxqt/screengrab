@@ -79,6 +79,14 @@ void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
 }
     
 /*!
+ *  Get suser selected params from uploader widget (not from config file)
+ */
+void Uploader::getUserSettings(const QVariantMap& settings)
+{
+	_userSettings = settings;	
+}
+    
+/*!
  *  Start uploadingin base class 
  */
 void Uploader::startUploading()

@@ -53,9 +53,10 @@ private:
     Ui::DialogUploader *ui;
     
     Uploader* uploader;
+	QWidget* _uploaderWidget;
     
     // storage id curren selected img sho
-    quint8 selectedHost;    
+    quint8 selectedHost;
 };
 
 #endif // DIALOGUPLOADER_H

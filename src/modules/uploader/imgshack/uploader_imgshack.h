@@ -6,6 +6,8 @@
 #include <uploader.h>
 
 #include <QtCore/QUrl>
+#include <QtCore/QVector>
+#include <QtCore/QSize>
 
 class Uploader_ImgShack : public Uploader
 {
@@ -23,6 +25,9 @@ protected:
 
 protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);
+	
+private:
+	QVector<QSize> _sizes;
 };
 
 #endif // UPLOADER_IMGSHACK_H
