@@ -168,7 +168,7 @@ set(SCREENGRAB_UI
 set(DOCS
   ${CMAKE_CURRENT_SOURCE_DIR}/docs/ChangeLog.txt
   ${CMAKE_CURRENT_SOURCE_DIR}/docs/LICENSE.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/docs/README.txt
+  ${CMAKE_CURRENT_SOURCE_DIR}/README
 )
 
 #  include headers produced by uic in our code
