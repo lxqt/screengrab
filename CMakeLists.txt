@@ -91,7 +91,7 @@ message(STATUS "Upload to image hosings support: " ${SG_EXT_UPLOADS})
 # ------ doc dir name ---------------------------------
 if(UNIX AND NOT APPLE)
     if (NOT SG_DOCDIR)
-         set(SG_DOCDIR "share/doc/screengrab" CACHE STRING "Documantation directory name")        
+         set(SG_DOCDIR "screengrab" CACHE STRING "Documantation directory name")        
     endif (NOT SG_DOCDIR)
     set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documantation directory name")
     message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
