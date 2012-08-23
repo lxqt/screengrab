@@ -18,18 +18,28 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MODULEUPLOADER_H
-#define MODULEUPLOADER_H
+#ifndef UPLOADERCONFIGWIDGET_H
+#define UPLOADERCONFIGWIDGET_H
 
 #include <QtGui/QWidget>
 
-class ModuleUploader
+namespace Ui {
+class UploaderConfigWidget;
+}
+
+class UploaderConfigWidget : public QWidget
 {
-public:
-    ModuleUploader();
+    Q_OBJECT
     
-    void init();
-	QWidget* initConfigWidget();
+public:
+    explicit UploaderConfigWidget(QWidget *parent = 0);
+    ~UploaderConfigWidget();
+    
+protected:
+    void changeEvent(QEvent *e);
+    
+private:
+    Ui::UploaderConfigWidget *ui;
 };
 
-#endif // MODULEUPLOADER_H
+#endif // UPLOADERCONFIGWIDGET_H

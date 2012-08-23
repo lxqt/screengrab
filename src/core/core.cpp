@@ -470,6 +470,12 @@ void Core::upload()
     ModuleUploader uploader;
     uploader.init();
 }
+
+QWidget* Core::uploaderConfigWidget()
+{
+    ModuleUploader uploader;
+    return uploader.initConfigWidget();
+}
 #endif
 
 QString Core::getVersionPrintable()

@@ -65,6 +65,7 @@ public Q_SLOTS:
     void autoSave();
 #ifdef SG_EXT_UPLOADS
     void upload();
+	QWidget* uploaderConfigWidget();
 #endif
 
 public:

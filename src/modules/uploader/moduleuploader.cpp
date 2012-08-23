@@ -20,6 +20,7 @@
 
 #include "moduleuploader.h"
 #include "dialoguploader.h"
+#include "uploaderconfigwidget.h"
 
 ModuleUploader::ModuleUploader()
 {
@@ -30,4 +31,10 @@ void ModuleUploader::init()
 {
     DialogUploader *ui = new DialogUploader();
     ui->exec();
+}
+
+QWidget* ModuleUploader::initConfigWidget()
+{
+	QWidget* configWidget =  new UploaderConfigWidget;
+	return configWidget;
 }

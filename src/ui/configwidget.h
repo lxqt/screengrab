@@ -50,6 +50,10 @@ private:
     bool checkUsedShortcuts();    
     void showErrorMessage(QString text);
 
+#ifdef SG_EXT_UPLOADS
+	QWidget* _uploaderConfigWidget;
+#endif
+	
 #ifdef SG_GLOBAL_SHORTCUTS
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
 #endif

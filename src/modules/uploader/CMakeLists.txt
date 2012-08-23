@@ -13,6 +13,7 @@ set (uploader_SRC
 	imgur/uploader_imgur.cpp
     uploaderconfig.cpp
     dialoguploader.cpp 
+	uploaderconfigwidget.cpp 
 	imgur/uploader_imgur_widget.cpp 
 	imgshack/uploader_imgshack_widget.cpp 
 )
@@ -22,12 +23,14 @@ set (uploader_HDR
 	imgshack/uploader_imgshack.h
 	imgur/uploader_imgur.h
     dialoguploader.h
+	uploaderconfigwidget.h 
 	imgur/uploader_imgur_widget.h 
 	imgshack/uploader_imgshack_widget.h
 )
 
 set(uploader_UI 
 	dialoguploader.ui 
+	uploaderconfigwidget.ui 
 	imgur/uploader_imgur_widget.ui 
 	imgshack/uploader_imgshack_widget.ui
 )

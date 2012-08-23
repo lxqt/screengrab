@@ -25,6 +25,7 @@
 
 #ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
+#include <src/core/core.h>
 #endif
 
 #include <QtCore/QDir>
@@ -115,7 +116,14 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 
     // set false visibility to edit hokey controls
     ui->labUsedShortcut->setVisible(false);
-    ui->keyWidget->setVisible(false);        
+    ui->keyWidget->setVisible(false);
+
+#ifdef SG_EXT_UPLOADS
+	_uploaderConfigWidget = Core::instance()->uploaderConfigWidget();
+	ui->stackedWidget->addWidget(_uploaderConfigWidget);
+#else
+	delete ui->listWidget->takeItem(5);
+#endif	
 }
 
 ConfigDialog::~ConfigDialog()
