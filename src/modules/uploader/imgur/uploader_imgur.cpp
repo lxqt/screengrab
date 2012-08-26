@@ -40,7 +40,7 @@ void Uploader_ImgUr::startUploading()
     createData();
 	createRequest(imageData, apiUrl());
 	
-	this->_request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+	_request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 	
     Uploader::startUploading();
 }
@@ -58,7 +58,6 @@ QUrl Uploader_ImgUr::apiUrl()
  */
 void Uploader_ImgUr::createData()
 {
-    qDebug() << "create data in imagUR";
 	bool toBase64 = true;
     Uploader::createData(toBase64);
 	
@@ -87,14 +86,12 @@ void Uploader_ImgUr::replyFinished(QNetworkReply* reply)
         listXmlNodes << "original" << "imgur_page" << "large_thumbnail" << "small_square";
         
 		QMap<QByteArray, QByteArray> replyXmlMap = parseResultStrings(listXmlNodes, replyXmalText);
-		qDebug() << "original ";
-		qDebug() << replyXmlMap["original"];
 		
-		this->_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["original"];
-		this->_uploadedStrings[UL_HTML_CODE].first = "<img src=\"" + replyXmlMap["original"] + "\" />";
-		this->_uploadedStrings[UL_BB_CODE].first = "[img]" + replyXmlMap["original"] +"[/img]";
-		this->_uploadedStrings[UL_HTML_CODE_THUMB].first = "<a href=\"" + replyXmlMap["original"] + "\"><img src=\"" + replyXmlMap["small_square"] + "\" /></a>";
-		this->_uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["original"] +"[/img][/url]";
+		_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["original"];
+		_uploadedStrings[UL_HTML_CODE].first = "<img src=\"" + replyXmlMap["original"] + "\" />";
+		_uploadedStrings[UL_BB_CODE].first = "[img]" + replyXmlMap["original"] +"[/img]";
+		_uploadedStrings[UL_HTML_CODE_THUMB].first = "<a href=\"" + replyXmlMap["original"] + "\"><img src=\"" + replyXmlMap["small_square"] + "\" /></a>";
+		_uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["original"] +"[/img][/url]";
 		
 		Q_EMIT uploadDone();
 	}

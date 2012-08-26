@@ -95,7 +95,6 @@ void DialogUploader::changeEvent(QEvent *e)
 
 void DialogUploader::slotUploadStart()
 {
-    qDebug() << "Upload slot call";
     ui->progressBar->setVisible(true);
     ui->butUpload->setEnabled(false);
     ui->labUploadStatus->setText(tr("Upload preocessing... Please wait"));
@@ -157,13 +156,11 @@ void DialogUploader::slotSeletHost(int type)
 
 void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 {
-    qDebug() << "-- progress update" << bytesSent;
     ui->progressBar->setMaximum(bytesTotal);
     ui->progressBar->setValue(bytesSent);
 
     if (bytesSent == bytesTotal)
     {
-        qDebug() << "all is send!!!!";
         ui->progressBar->setFormat(tr("Receiving a response from the server"));
     }
 }
@@ -195,13 +192,10 @@ void DialogUploader::slotUploadDone()
 	{
 		QApplication::clipboard()->setText(ui->editDirectLink->text());
 	}
-	
-	qDebug() << ui->stackedWidget->currentIndex();
 }
 
 void DialogUploader::slotUploadFail(const QByteArray& error)
 {
-    qDebug() << "upload failure";
     QMessageBox msg(this);
     msg.setText(tr("Error uploading screenshot"));
     msg.setWindowTitle(tr("Error"));

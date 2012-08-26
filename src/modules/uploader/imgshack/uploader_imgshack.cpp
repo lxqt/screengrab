@@ -161,16 +161,13 @@ void Uploader_ImgShack::createData()
  */
 void Uploader_ImgShack::replyFinished(QNetworkReply* reply)
 {
-	qDebug() << "reply finished ImgShack";
-	
 	if (reply->error() == QNetworkReply::NoError)
 	{
 		QByteArray replyXmalText = reply->readAll();
 
         // error parsing
         if (replyXmalText.contains("error id=") == true)
-        {
-            qDebug() << "error";                        
+        {                      
             QRegExp err("<error id=\"([^<]*)\"");
             int pos = err.indexIn(replyXmalText);
             int len = err.matchedLength();
@@ -187,11 +184,11 @@ void Uploader_ImgShack::replyFinished(QNetworkReply* reply)
         
 		QMap<QByteArray, QByteArray> replyXmlMap = parseResultStrings(listXmlNodes, replyXmalText);
 
-		this->_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["image_link"];
-		this->_uploadedStrings[UL_HTML_CODE].first = replyXmlMap["image_html"];
-		this->_uploadedStrings[UL_BB_CODE].first = replyXmlMap["image_bb2"];
-		this->_uploadedStrings[UL_HTML_CODE_THUMB].first = replyXmlMap["thumb_htm"];
-		this->_uploadedStrings[UL_BB_CODE_THUMB].first = replyXmlMap["thumb_bb2"];
+		_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["image_link"];
+		_uploadedStrings[UL_HTML_CODE].first = replyXmlMap["image_html"];
+		_uploadedStrings[UL_BB_CODE].first = replyXmlMap["image_bb2"];
+		_uploadedStrings[UL_HTML_CODE_THUMB].first = replyXmlMap["thumb_htm"];
+		_uploadedStrings[UL_BB_CODE_THUMB].first = replyXmlMap["thumb_bb2"];
 		
 		Q_EMIT uploadDone();
 	}

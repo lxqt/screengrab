@@ -41,10 +41,7 @@ public:
 public Q_SLOTS:
 	void loadSettings();
 	void saveSettings();
-	
-private Q_SLOTS:
-	void selecteHost(qint8 hostNum);
-    
+	    
 protected:
     void changeEvent(QEvent *e);
     

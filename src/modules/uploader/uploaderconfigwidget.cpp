@@ -76,11 +76,6 @@ void UploaderConfigWidget::saveSettings()
 
 }
 
-void UploaderConfigWidget::selecteHost(qint8 hostNum)
-{
-	
-}
-
 void UploaderConfigWidget::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);

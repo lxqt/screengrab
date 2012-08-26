@@ -194,19 +194,18 @@ QMap<QByteArray, QByteArray> Uploader::parseResultStrings(const QVector< QByteAr
 
 void Uploader::initUploadedStrList()
 {
-	qDebug() << "initialize final strings list";
 	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
-	this->_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
+	_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
 	
 	strPair = qMakePair(QByteArray(), tr("HTML code"));
-	this->_uploadedStrings.insert(UL_HTML_CODE ,strPair);
+	_uploadedStrings.insert(UL_HTML_CODE ,strPair);
 	
 	strPair = qMakePair(QByteArray(), tr("BB code"));
-	this->_uploadedStrings.insert(UL_BB_CODE, strPair);
+	_uploadedStrings.insert(UL_BB_CODE, strPair);
 	
 	strPair = qMakePair(QByteArray(), tr("HTML code with thumb image"));
-	this->_uploadedStrings.insert(UL_HTML_CODE_THUMB ,strPair);
+	_uploadedStrings.insert(UL_HTML_CODE_THUMB ,strPair);
 	
 	strPair = qMakePair(QByteArray("bb_code_thumb"), tr("BB code with thumb image"));
-	this->_uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
+	_uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
 }
