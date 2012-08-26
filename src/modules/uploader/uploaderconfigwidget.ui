@@ -23,12 +23,25 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="commonSettings">
     <attribute name="title">
      <string>Common settings</string>
     </attribute>
+    <widget class="QCheckBox" name="checkAutoCopyMainLink">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>311</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Auto copy result link to clipboard</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="hostsSettings">
     <attribute name="title">

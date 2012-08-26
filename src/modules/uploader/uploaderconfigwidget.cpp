@@ -21,11 +21,19 @@
 #include "uploaderconfigwidget.h"
 #include "ui_uploaderconfigwidget.h"
 
+#include "uploaderconfig.h"
+
+#include <QtCore/QVariantMap>
+
+#include <QDebug>
+
+
 UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::UploaderConfigWidget)
 {
     ui->setupUi(this);
+	loadSettings();
 	ui->settings->setCurrentWidget(ui->commonSettings);
 }
 
@@ -33,6 +41,31 @@ UploaderConfigWidget::~UploaderConfigWidget()
 {
     delete ui;
 }
+
+void UploaderConfigWidget::loadSettings()
+{
+	qDebug() << "load uploder common settings";
+	
+	UploaderConfig config;
+	QVariantMap loadValues;
+	loadValues.insert("autoCopyDirectLink", QVariant(false));
+	loadValues = config.loadSettings("common", loadValues);
+	
+	ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
+	
+	// TODO add loading settings for hosts 
+}
+
+void UploaderConfigWidget::saveSettings()
+{
+	UploaderConfig config;
+	QVariantMap savingValues;
+	savingValues.insert(KEY_AUTO_COPY_RESULT_LIMK, ui->checkAutoCopyMainLink->isChecked());
+	config.saveSettings("common", savingValues);
+	
+	// TODO add saving settings for hosts 
+}
+
 
 void UploaderConfigWidget::changeEvent(QEvent *e)
 {

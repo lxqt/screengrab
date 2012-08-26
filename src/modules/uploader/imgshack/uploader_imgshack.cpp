@@ -105,22 +105,22 @@ void Uploader_ImgShack::createData()
 	{
 		UploaderConfig config;
 		QVariantMap configParams;
-		configParams.insert("username", "");
-		configParams.insert("password", "");
+		configParams.insert(KEY_IMGSHK_USER, "");
+		configParams.insert(KEY_IMGSHK_PASS, "");
 		configParams = config.loadSettings("imageshack.us", configParams);
 		
 		uploadData.append(boundary());
 		uploadData.append("content-disposition: ");
 		uploadData.append("form-data; name=\"a_username\"\r\n");
 		uploadData.append("\r\n");
-		uploadData.append(configParams["username"].toString());
+		uploadData.append(configParams[KEY_IMGSHK_USER].toString());
 		uploadData.append("\r\n"); 
 		
 		uploadData.append(boundary());
 		uploadData.append("content-disposition: ");
 		uploadData.append("form-data; name=\"a_password\"\r\n");
 		uploadData.append("\r\n");
-		uploadData.append(configParams["password"].toString());
+		uploadData.append(configParams[KEY_IMGSHK_PASS].toString());
 		uploadData.append("\r\n");     		
 	}
 

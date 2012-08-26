@@ -19,6 +19,9 @@
  ***************************************************************************/
 
 #include "src/core/config.h"
+#include "core.h"
+
+#include "src/modules/uploader/moduleuploader.h"
 
 #include <QtGui/QApplication>
 #include <QtCore/QDir>
@@ -573,6 +576,11 @@ void Config::setDefaultSettings()
 
     setDelay(DEF_DELAY);
     setSavedSizeOnExit(DEF_SAVED_SIZE);
+	
+#ifdef SG_EXT_UPLOADS
+	ModuleUploader uploader;
+	uploader.defaultSettings();
+#endif
 }
 
 // get defaukt directory path

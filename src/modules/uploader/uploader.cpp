@@ -20,6 +20,7 @@
 
 #include "uploader.h"
 #include "core/core.h"
+#include "uploaderconfig.h"
 
 #include <QtCore/QDir>
 #include <QtCore/QUuid>
@@ -35,6 +36,12 @@ Uploader::Uploader(QObject *parent) :
     _net = new QNetworkAccessManager(this);
 	serverReply = 0;
 	initUploadedStrList();
+	
+	UploaderConfig config;
+	if (config.checkExistsConfigFile() == false)
+	{
+		config.defaultSettings();		
+	}
 }
 
 Uploader::~Uploader()

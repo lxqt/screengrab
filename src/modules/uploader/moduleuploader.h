@@ -30,6 +30,7 @@ public:
     
     void init();
 	QWidget* initConfigWidget();
+	void defaultSettings();
 };
 
 #endif // MODULEUPLOADER_H

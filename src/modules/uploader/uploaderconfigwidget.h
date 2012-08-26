@@ -34,6 +34,11 @@ class UploaderConfigWidget : public QWidget
 public:
     explicit UploaderConfigWidget(QWidget *parent = 0);
     ~UploaderConfigWidget();
+	
+public Q_SLOTS:
+	void loadSettings();
+	void saveSettings();
+	
     
 protected:
     void changeEvent(QEvent *e);

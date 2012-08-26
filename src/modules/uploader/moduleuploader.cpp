@@ -21,6 +21,9 @@
 #include "moduleuploader.h"
 #include "dialoguploader.h"
 #include "uploaderconfigwidget.h"
+#include "uploaderconfig.h"
+
+#include <QDebug>
 
 ModuleUploader::ModuleUploader()
 {
@@ -37,4 +40,10 @@ QWidget* ModuleUploader::initConfigWidget()
 {
 	QWidget* configWidget =  new UploaderConfigWidget;
 	return configWidget;
+}
+
+void ModuleUploader::defaultSettings()
+{	
+	UploaderConfig config;
+	config.defaultSettings();
 }

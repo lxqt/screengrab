@@ -26,6 +26,13 @@
 #include <QtCore/QVariant>
 #include <QtCore/QMap>
 
+//  Uploader config file common keys
+const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";
+
+//  Uploader config file imageshack.us keys
+const QString KEY_IMGSHK_USER = "username";
+const QString KEY_IMGSHK_PASS = "password";
+
 class UploaderConfig
 {
 
@@ -37,9 +44,8 @@ public:
 	
 	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
 	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
-	// load settings
-	// на вход методу даем стринглист ключей параметров
-	// на выходе получаем мап кувариантов - ключ параметр
+	void defaultSettings();
+	bool checkExistsConfigFile() const;
     
 private:
     QSettings *_settings;

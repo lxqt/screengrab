@@ -19,11 +19,18 @@
  ***************************************************************************/
 
 #include "uploaderconfig.h"
-#include <QString>
-
 #include "core/config.h"
 
+#include <QtCore/QFile>
+
 #include <QDebug>
+
+// common defaults
+const bool DEF_AUTO_COPY_RESULT_LIMK = false;
+
+// imageshack.us defaults
+const QString DEF_IMGSHK_USER = "";
+const QString DEF_IMGSHK_PASS = "";
 
 const QString  groupName = "imageshack.us";
 QStringList UploaderConfig::_labelsList = QStringList() << "ImgUr" << "ImageShack";
@@ -86,4 +93,28 @@ void UploaderConfig::saveSettings(const QByteArray& group, QVariantMap& mapValue
 	}
 
 	_settings->endGroup();
+}
+
+void UploaderConfig::defaultSettings()
+{
+	_settings->beginGroup("common");
+	_settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
+	_settings->endGroup();
+
+	// imageshack.us settings
+	_settings->beginGroup(_groupsList[1]);
+	_settings->setValue(KEY_IMGSHK_USER, DEF_IMGSHK_USER);
+	_settings->setValue(KEY_IMGSHK_PASS, DEF_IMGSHK_PASS);
+	_settings->endGroup();
+	
+	// imgur.com settings
+	_settings->beginGroup(_groupsList[0]);
+	
+	_settings->endGroup();
+}
+
+
+bool UploaderConfig::checkExistsConfigFile() const
+{	
+	return QFile::exists(_settings->fileName());
 }

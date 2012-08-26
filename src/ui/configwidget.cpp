@@ -295,6 +295,11 @@ void ConfigDialog::saveSettings()
     // update values of front-end settings
     conf->saveSettings();
     conf->setDelay(conf->getDefDelay());
+	
+#ifdef SG_EXT_UPLOADS
+	QMetaObject::invokeMethod(_uploaderConfigWidget, "saveSettings");
+#endif
+		
     // accep changes
     accept();
 }
@@ -349,7 +354,7 @@ void ConfigDialog::restoreDefaults()
         conf->setDefaultSettings();
         conf->saveSettings();
         QDialog::accept();
-    }      
+    }
 }
 
 void ConfigDialog::changeDefDelay(int val)
