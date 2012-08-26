@@ -13,42 +13,57 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTabWidget" name="settings">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>521</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>0</number>
-   </property>
-   <widget class="QWidget" name="commonSettings">
-    <attribute name="title">
-     <string>Common settings</string>
-    </attribute>
-    <widget class="QCheckBox" name="checkAutoCopyMainLink">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>311</width>
-       <height>24</height>
-      </rect>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QTabWidget" name="settings">
+     <property name="currentIndex">
+      <number>1</number>
      </property>
-     <property name="text">
-      <string>Auto copy result link to clipboard</string>
-     </property>
+     <widget class="QWidget" name="commonSettings">
+      <attribute name="title">
+       <string>Common settings</string>
+      </attribute>
+      <widget class="QCheckBox" name="checkAutoCopyMainLink">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>311</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Auto copy result link to clipboard</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="hostsSettings">
+      <attribute name="title">
+       <string>Hosts settings</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="labHosts">
+           <property name="text">
+            <string>Settings for: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbxHosts"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedHosts"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
-   </widget>
-   <widget class="QWidget" name="hostsSettings">
-    <attribute name="title">
-     <string>Hosts settings</string>
-    </attribute>
-   </widget>
-  </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

@@ -18,42 +18,58 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef UPLOADERCONFIGWIDGET_H
-#define UPLOADERCONFIGWIDGET_H
+#include "uploaderconfigwidget_imgshack.h"
+#include "ui_uploaderconfigwidget_imgshack.h"
 
-#include <QtGui/QWidget>
+#include "uploaderconfig.h"
 
-#include "imgur/uploaderconfigwidget_imgur.h"
-#include "imgshack/uploaderconfigwidget_imgshack.h"
+#include <QtCore/QVariant>
 
-namespace Ui {
-class UploaderConfigWidget;
+UploaderConfigWidget_ImgShack::UploaderConfigWidget_ImgShack(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::UploaderConfigWidget_ImgShack)
+{
+    ui->setupUi(this);
+	
+	// load settings
+	UploaderConfig config;
+	
+	QVariantMap loadedValues;
+	loadedValues.insert(KEY_IMGSHK_USER, "");
+	loadedValues.insert(KEY_IMGSHK_PASS, "");
+	
+	loadedValues = config.loadSettings("imageshack.us", loadedValues);
+	
+	ui->editUsername->setText(loadedValues[KEY_IMGSHK_USER].toString());
+	ui->editPass->setText(loadedValues[KEY_IMGSHK_PASS].toString());
 }
 
-class UploaderConfigWidget : public QWidget
+UploaderConfigWidget_ImgShack::~UploaderConfigWidget_ImgShack()
 {
-    Q_OBJECT
-    
-public:
-    explicit UploaderConfigWidget(QWidget *parent = 0);
-    ~UploaderConfigWidget();
-	
-public Q_SLOTS:
-	void loadSettings();
-	void saveSettings();
-	
-private Q_SLOTS:
-	void selecteHost(qint8 hostNum);
-    
-protected:
-    void changeEvent(QEvent *e);
-    
-private:
-    Ui::UploaderConfigWidget *ui;
-	
-	// services widgets
-	UploaderConfigWidget_ImgUr *imgur;
-	UploaderConfigWidget_ImgShack *imgshack;
-};
+    delete ui;
+}
 
-#endif // UPLOADERCONFIGWIDGET_H
+void UploaderConfigWidget_ImgShack::saveSettings()
+{
+	UploaderConfig config;
+	
+	QVariantMap savingValues;
+	
+	savingValues.insert(KEY_IMGSHK_USER, ui->editUsername->text());
+	savingValues.insert(KEY_IMGSHK_PASS, ui->editPass->text());
+	
+	config.saveSettings("imageshack.us", savingValues);
+}
+
+
+void UploaderConfigWidget_ImgShack::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}

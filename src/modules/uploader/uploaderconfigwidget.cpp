@@ -35,6 +35,16 @@ UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
     ui->setupUi(this);
 	loadSettings();
 	ui->settings->setCurrentWidget(ui->commonSettings);
+	
+	ui->cbxHosts->addItems(UploaderConfig::labelsList());
+	
+	imgur = new UploaderConfigWidget_ImgUr(this);
+	imgshack = new UploaderConfigWidget_ImgShack(this);
+	
+	ui->stackedHosts->addWidget(imgur);
+	ui->stackedHosts->addWidget(imgshack);
+	
+	connect(ui->cbxHosts, SIGNAL(currentIndexChanged(int)), ui->stackedHosts, SLOT(setCurrentIndex(int)));
 }
 
 UploaderConfigWidget::~UploaderConfigWidget()
@@ -52,8 +62,6 @@ void UploaderConfigWidget::loadSettings()
 	loadValues = config.loadSettings("common", loadValues);
 	
 	ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
-	
-	// TODO add loading settings for hosts 
 }
 
 void UploaderConfigWidget::saveSettings()
@@ -63,9 +71,15 @@ void UploaderConfigWidget::saveSettings()
 	savingValues.insert(KEY_AUTO_COPY_RESULT_LIMK, ui->checkAutoCopyMainLink->isChecked());
 	config.saveSettings("common", savingValues);
 	
-	// TODO add saving settings for hosts 
+	QMetaObject::invokeMethod(imgur, "saveSettings");
+	QMetaObject::invokeMethod(imgshack, "saveSettings");
+
 }
 
+void UploaderConfigWidget::selecteHost(qint8 hostNum)
+{
+	
+}
 
 void UploaderConfigWidget::changeEvent(QEvent *e)
 {

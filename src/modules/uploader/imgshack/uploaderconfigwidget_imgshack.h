@@ -18,42 +18,31 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef UPLOADERCONFIGWIDGET_H
-#define UPLOADERCONFIGWIDGET_H
+#ifndef UPLOADERCONFIGWIDGET_IMGSHACK_H
+#define UPLOADERCONFIGWIDGET_IMGSHACK_H
 
 #include <QtGui/QWidget>
 
-#include "imgur/uploaderconfigwidget_imgur.h"
-#include "imgshack/uploaderconfigwidget_imgshack.h"
-
 namespace Ui {
-class UploaderConfigWidget;
+class UploaderConfigWidget_ImgShack;
 }
 
-class UploaderConfigWidget : public QWidget
+class UploaderConfigWidget_ImgShack : public QWidget
 {
     Q_OBJECT
     
 public:
-    explicit UploaderConfigWidget(QWidget *parent = 0);
-    ~UploaderConfigWidget();
+    explicit UploaderConfigWidget_ImgShack(QWidget *parent = 0);
+    ~UploaderConfigWidget_ImgShack();
 	
 public Q_SLOTS:
-	void loadSettings();
 	void saveSettings();
-	
-private Q_SLOTS:
-	void selecteHost(qint8 hostNum);
     
 protected:
     void changeEvent(QEvent *e);
     
 private:
-    Ui::UploaderConfigWidget *ui;
-	
-	// services widgets
-	UploaderConfigWidget_ImgUr *imgur;
-	UploaderConfigWidget_ImgShack *imgshack;
+    Ui::UploaderConfigWidget_ImgShack *ui;
 };
 
-#endif // UPLOADERCONFIGWIDGET_H
+#endif // UPLOADERCONFIGWIDGET_IMGSHACK_H

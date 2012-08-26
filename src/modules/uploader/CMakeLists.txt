@@ -15,7 +15,9 @@ set (uploader_SRC
     dialoguploader.cpp 
 	uploaderconfigwidget.cpp 
 	imgur/uploader_imgur_widget.cpp 
+	imgur/uploaderconfigwidget_imgur.cpp 
 	imgshack/uploader_imgshack_widget.cpp 
+	imgshack/uploaderconfigwidget_imgshack.cpp 
 )
 
 set (uploader_HDR
@@ -25,14 +27,18 @@ set (uploader_HDR
     dialoguploader.h
 	uploaderconfigwidget.h 
 	imgur/uploader_imgur_widget.h 
+	imgur/uploaderconfigwidget_imgur.h 
 	imgshack/uploader_imgshack_widget.h
+	imgshack/uploaderconfigwidget_imgshack.h 
 )
 
 set(uploader_UI 
 	dialoguploader.ui 
 	uploaderconfigwidget.ui 
 	imgur/uploader_imgur_widget.ui 
-	imgshack/uploader_imgshack_widget.ui
+	imgur/uploaderconfigwidget_imgur.ui 
+	imgshack/uploader_imgshack_widget.ui 
+	imgshack/uploaderconfigwidget_imgshack.ui
 )
 
 qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})

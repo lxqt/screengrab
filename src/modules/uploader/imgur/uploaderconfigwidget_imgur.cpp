@@ -18,42 +18,49 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef UPLOADERCONFIGWIDGET_H
-#define UPLOADERCONFIGWIDGET_H
+#include "uploaderconfigwidget_imgur.h"
+#include "ui_uploaderconfigwidget_imgur.h"
 
-#include <QtGui/QWidget>
+#include "uploaderconfig.h"
 
-#include "imgur/uploaderconfigwidget_imgur.h"
-#include "imgshack/uploaderconfigwidget_imgshack.h"
+#include <QVariant>
 
-namespace Ui {
-class UploaderConfigWidget;
+UploaderConfigWidget_ImgUr::UploaderConfigWidget_ImgUr(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::UploaderConfigWidget_ImgUr)
+{
+    ui->setupUi(this);
+	
+	// load settings
+	UploaderConfig config;
+	
+	QVariantMap loadedValues;
+	// TODO add imgur settings load
+	
+	
 }
 
-class UploaderConfigWidget : public QWidget
+UploaderConfigWidget_ImgUr::~UploaderConfigWidget_ImgUr()
 {
-    Q_OBJECT
-    
-public:
-    explicit UploaderConfigWidget(QWidget *parent = 0);
-    ~UploaderConfigWidget();
-	
-public Q_SLOTS:
-	void loadSettings();
-	void saveSettings();
-	
-private Q_SLOTS:
-	void selecteHost(qint8 hostNum);
-    
-protected:
-    void changeEvent(QEvent *e);
-    
-private:
-    Ui::UploaderConfigWidget *ui;
-	
-	// services widgets
-	UploaderConfigWidget_ImgUr *imgur;
-	UploaderConfigWidget_ImgShack *imgshack;
-};
+    delete ui;
+}
 
-#endif // UPLOADERCONFIGWIDGET_H
+void UploaderConfigWidget_ImgUr::saveSettings()
+{
+	UploaderConfig config;
+	
+	QVariantMap savingValues;
+}
+
+
+void UploaderConfigWidget_ImgUr::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
