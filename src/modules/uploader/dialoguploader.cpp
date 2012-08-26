@@ -189,7 +189,13 @@ void DialogUploader::slotUploadDone()
     ui->labUploadStatus->setText(tr("Upload completed"));
     ui->progressBar->setVisible(false);
     ui->cbxUploaderList->setEnabled(false);
-    qDebug() << "upload is done";
+
+	UploaderConfig config;
+	if (config.autoCopyResultLink() == true)
+	{
+		QApplication::clipboard()->setText(ui->editDirectLink->text());
+	}
+	
 	qDebug() << ui->stackedWidget->currentIndex();
 }
 

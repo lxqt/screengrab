@@ -113,6 +113,15 @@ void UploaderConfig::defaultSettings()
 	_settings->endGroup();
 }
 
+bool UploaderConfig::autoCopyResultLink()
+{
+	_settings->beginGroup("common");
+	bool ret = _settings->value(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK).toBool();
+	_settings->endGroup();
+	
+	return ret;
+}
+
 
 bool UploaderConfig::checkExistsConfigFile() const
 {	

@@ -46,6 +46,7 @@ public:
 	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
 	void defaultSettings();
 	bool checkExistsConfigFile() const;
+	bool autoCopyResultLink();
     
 private:
     QSettings *_settings;
