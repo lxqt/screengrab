@@ -19,6 +19,9 @@
      <property name="text">
       <string>Upload to imageshack.us</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
    <item>

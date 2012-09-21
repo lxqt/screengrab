@@ -21,6 +21,9 @@
        <property name="text">
         <string>Upload to</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
       </widget>
      </item>
      <item>
@@ -228,6 +231,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="butUpload">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>Upload</string>
        </property>
@@ -235,6 +244,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="butClose">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>Close</string>
        </property>
@@ -245,9 +260,12 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>12</width>
          <height>20</height>
         </size>
        </property>
