@@ -71,9 +71,25 @@ message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)
 OPTION (SG_EXT_UPLOADS "Enableupload screnshots to image hostings" ON)
+OPTION (SG_USE_SYSTEM_QXT "Use system version Qxt Library for global shortcuts" OFF)
+
+# The following line will add additional finders to CMake without the need to be placed in the CMake install path
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 
 if(SG_GLOBALSHORTCUTS)
     add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
+    
+	if(SG_USE_SYSTEM_QXT)
+		# find qxt
+		find_package(Qxt REQUIRED COMPONENTS QxtCore, QxtGui)
+		include_directories(${QXT_QXTCORE_INCLUDE_DIR} ${QXT_QXTGUI_INCLUDE_DIR})
+	else(SG_USE_SYSTEM_QXT)
+		include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")    
+		add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
+		# build QxtGui
+		add_definitions(-DBUILD_QXT_GUI)
+	endif(SG_USE_SYSTEM_QXT)
 endif(SG_GLOBALSHORTCUTS)
 
 if(SG_XDG_CONFIG_SUPPORT)
@@ -87,6 +103,7 @@ endif(SG_EXT_UPLOADS)
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
 message(STATUS "Upload to image hosings support: " ${SG_EXT_UPLOADS})
+message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 
 # ------ doc dir name ---------------------------------
 if(UNIX AND NOT APPLE)
@@ -115,13 +132,6 @@ if(SG_EXT_UPLOADS)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 endif(SG_EXT_UPLOADS)
-
-if(SG_GLOBALSHORTCUTS)
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")    
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
-# build QxtGui
-add_definitions(-DBUILD_QXT_GUI)
-endif(SG_GLOBALSHORTCUTS)
 
 #------- sources --------
 
@@ -233,7 +243,11 @@ endif(WIN32)
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_MOC_CPP} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
 if(SG_GLOBALSHORTCUTS)
-    target_link_libraries( screengrab qxt)
+	if(SG_USE_SYSTEM_QXT)
+		target_link_libraries( screengrab ${QXT_QXTCORE_LIB_RELEASE} ${QXT_QXTGUI_LIB_RELEASE})
+	else(SG_USE_SYSTEM_QXT)
+		target_link_libraries( screengrab qxt)
+    endif(SG_USE_SYSTEM_QXT)
 endif(SG_GLOBALSHORTCUTS)
 
 if(SG_EXT_UPLOADS)
