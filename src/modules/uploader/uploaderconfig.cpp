@@ -31,6 +31,7 @@ const bool DEF_AUTO_COPY_RESULT_LIMK = false;
 // imageshack.us defaults
 const QString DEF_IMGSHK_USER = "";
 const QString DEF_IMGSHK_PASS = "";
+const QString DEF_DEFAULT_HOST = "ImgUr";
 
 const QString  groupName = "imageshack.us";
 QStringList UploaderConfig::_labelsList = QStringList() << "ImgUr" << "ImageShack";

@@ -28,6 +28,7 @@
 
 //  Uploader config file common keys
 const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";
+const QString KEY_DEFAULT_HOST = "defaultHost";
 
 //  Uploader config file imageshack.us keys
 const QString KEY_IMGSHK_USER = "username";

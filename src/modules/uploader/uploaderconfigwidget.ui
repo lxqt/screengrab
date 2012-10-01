@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="settings">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="commonSettings">
       <attribute name="title">
@@ -34,6 +34,29 @@
        </property>
        <property name="text">
         <string>Auto copy result link to clipboard</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labDefaultHost">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>80</y>
+         <width>151</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Default upload to:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cbxDefaultHost">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>80</y>
+         <width>106</width>
+         <height>33</height>
+        </rect>
        </property>
       </widget>
      </widget>
