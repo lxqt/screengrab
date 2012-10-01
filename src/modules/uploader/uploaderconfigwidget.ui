@@ -23,42 +23,42 @@
       <attribute name="title">
        <string>Common settings</string>
       </attribute>
-      <widget class="QCheckBox" name="checkAutoCopyMainLink">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>30</y>
-         <width>311</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Auto copy result link to clipboard</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="labDefaultHost">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>80</y>
-         <width>151</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Default upload to:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="cbxDefaultHost">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>80</y>
-         <width>106</width>
-         <height>33</height>
-        </rect>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QCheckBox" name="checkAutoCopyMainLink">
+         <property name="text">
+          <string>Auto copy result link to clipboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="labDefaultHost">
+           <property name="text">
+            <string>Default upload to:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbxDefaultHost"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>165</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="hostsSettings">
       <attribute name="title">
