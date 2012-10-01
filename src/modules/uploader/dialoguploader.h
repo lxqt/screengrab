@@ -56,7 +56,7 @@ private:
 	QWidget* _uploaderWidget;
     
     // storage id curren selected img sho
-    quint8 selectedHost;
+    qint8 selectedHost;
 };
 
 #endif // DIALOGUPLOADER_H

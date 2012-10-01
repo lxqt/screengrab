@@ -43,8 +43,12 @@ DialogUploader::DialogUploader(QWidget *parent) :
 	slotSeletHost(0);
 	
     ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
-    selectedHost = 0;
-
+	
+	UploaderConfig config;
+	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
+	
+    selectedHost = config.labelsList().indexOf(defaultHost);	
+	
     // load ishot preview
     QSize imgSize = Core::instance()->getPixmap().size();
     QString pixmapSize = tr("Size: ") + QString::number(imgSize.width()) + "x" + QString::number(imgSize.height()) + tr(" pixel");
@@ -64,6 +68,8 @@ DialogUploader::DialogUploader(QWidget *parent) :
     connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(slotUploadStart()));
     connect(ui->cbxUploaderList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotSeletHost(int)));
+	
+	ui->cbxUploaderList->setCurrentIndex(selectedHost);
 }
 
 DialogUploader::~DialogUploader()

@@ -44,6 +44,7 @@ public:
 	static QStringList labelsList();
 	
 	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
+	QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
 	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
 	void defaultSettings();
 	bool checkExistsConfigFile() const;

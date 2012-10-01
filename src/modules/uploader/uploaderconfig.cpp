@@ -82,6 +82,18 @@ QVariantMap UploaderConfig::loadSettings(const QByteArray& group, QVariantMap& m
 	return map;
 }
 
+QVariant UploaderConfig::loadSingleParam(const QByteArray& group, const QByteArray& param)
+{
+	QVariant var;
+	
+	_settings->beginGroup(group);
+	var = _settings->value(param);
+	_settings->endGroup();
+	
+	return var;
+}
+
+
 void UploaderConfig::saveSettings(const QByteArray& group, QVariantMap& mapValues)
 {
 	_settings->beginGroup(group);
