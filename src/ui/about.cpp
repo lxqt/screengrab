@@ -51,11 +51,11 @@ AboutDialog::AboutDialog(QWidget *parent):
 
     tabs->setFixedHeight(24);
     tabs->insertTab(0, tr("About"));
-    tabs->insertTab(1, tr("Contacts"));
-    tabs->insertTab(2, tr("Thanks"));
+    tabs->insertTab(1, tr("Thanks"));
+    tabs->insertTab(2, tr("Help us"));
     connect(tabs, SIGNAL(currentChanged(int)), this, SLOT(changeTab(int)));
 
-    ui->txtArea->setHtml(getAbouT());
+    ui->txtArea->setHtml(tabAbout());
 }
 
 AboutDialog::~AboutDialog()
@@ -69,13 +69,16 @@ void AboutDialog::changeTab(int tabIndex)
     switch(tabIndex)
     {
     case 0:
-        ui->txtArea->setHtml(getAbouT()); break;
+        ui->txtArea->setHtml(tabAbout());
+        break;
     case 1:
-        ui->txtArea->setHtml(getContscts()); break;
+        ui->txtArea->setHtml(tabThanks());
+        break;
     case 2:
-        ui->txtArea->setHtml(getThanks()); break;
+        ui->txtArea->setHtml(tabHelpUs());
+        break;
     default:
-        ui->txtArea->setHtml(getAbouT());
+        ui->txtArea->setHtml(tabAbout());
     }
 }
 
@@ -101,33 +104,56 @@ void AboutDialog::on_butClose_clicked()
     accept();
 }
 
-QString AboutDialog::getAbouT()
+QString AboutDialog::tabAbout()
 {
     QString str;
     str += "<b>ScreenGrab</b> ";
     str += tr("is crossplatform application for fast creation screenshots of your desktop.");
     str += "<br><br>";
-    str += tr("Copyright &copy; 2009-2012, Artem 'DOOMer' Galichkin");
-    str += "<div align=right>";
+    str += tr("It's a light and powerfull application and had been written using Qt, so you can to use in Windows and Linux.");
+    str += "<br><br>";
+
+    str += tr("E-Mail")+" - ";
+    str += "<a href=mailto:doomer3d@gmail.com>doomer3d@gmail.com</a>";
+    str += "<br>";
+    str += tr("Web site")+" - ";
+    str += "<a href=http://screengrab.doomer.org>http://screengrab.doomer.org/</a>";
+    str += "<br><br>";
+
     str += tr("Licensed under the ");
-    str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a></div>";
+    str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a>";
+    str += "<br><br>";
+
+    str += tr("Copyright &copy; 2009-2012, Artem 'DOOMer' Galichkin");
     return str;
 }
 
-QString AboutDialog::getContscts()
+QString AboutDialog::tabHelpUs()
 {
     QString str;
-    str += tr("E-Mail")+" ";
+	str += tr("You can join us and help us if you want, is an invitation if you like this application.");
+	str += "<br><br>";
+	
+	str += tr("What you can do?");
+	
+	str += "<ul>";
+	str += "<li>" + tr("Translate to other language") + "</li>";
+	str += "<li>" + tr("Make suggestions for next releases") + "</li>";
+	str += "<li>" + tr("Report bugs and issues") + "</li>";
+	str += "</ul>";
+	
+    str += tr("E-Mail");
+	str += "<br>";
     str += "<a href=mailto:doomer3d@gmail.com>mailto:doomer3d@gmail.com</a>";
     str += "<br><br>";
-    str += "<a href=http://screengrab-qt.googlecode.com>http://screengrab-qt.googlecode.com</a> -- En";
-    str += "<br>";
-    str += "<a href=http://mapper.ru/screengrab>http://mapper.ru/screengrab/</a> -- Ru";
+	str += tr("Bug tracker");
+	str += "<br>";
+    str += "<a href=https://github.com/DOOMer/ScreenGrab/issues>https://github.com/DOOMer/ScreenGrab/issues/</a>";
 
     return str;
 }
 
-QString AboutDialog::getThanks()
+QString AboutDialog::tabThanks()
 {
     QString str;
     str += "<b>" + tr("Translate:") + "</b>";
@@ -138,10 +164,22 @@ QString AboutDialog::getThanks()
     str += tr(" Ukrainian translation") + "<br>";
     str += tr("Gennadi Motsyo") + " &lt;drool@altlinux.ru&gt;<br>";
     str += "<br>";
+    str += tr(" Spanish translation") + "<br>";
+    str += tr("Burjans L García D") + " &lt;burjans@gmail.com&gt;<br>";
+    str += "<br>";
+    str += tr(" Italian translation") + "<br>";
+    str += "speps &lt;dreamspepser@yahoo.it&gt;<br>";
+    str += "<br>";
+
     str += "<b>" + tr("Testing:") + "</b>";
     str += "<br>";
-    str += "Alexantia - " + tr("win32-build [Windows XP]") + "<br>";
-    str += "iNight - " + tr("win32-build [Windows Vista]") + "<br>";
+    str += "Jerome Leclanche - " + tr("Dual monitor support and other in Linux") + "<br>";
+    str += "Alexander Sokolov - " + tr("Dual monitor support in Linux") + "<br>";
+    str += "Alexantia - " + tr("win32-build [Windows XP and 7]") + "<br>";
+    str += "iNight - " + tr("old win32-build [Windows Vista]") + "<br>";
+    str += "burjans - " + tr("win32-build [Windows 7]") + "<br>";
+
+// Alexander Sokolov
 
     return str;
 }

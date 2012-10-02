@@ -50,9 +50,9 @@ private slots:
     void on_butClose_clicked();
     void on_butAboutQt_clicked();
 
-    QString getAbouT();
-    QString getContscts();
-    QString getThanks();
+    QString tabAbout();
+    QString tabHelpUs();
+    QString tabThanks();
 };
 
 #endif // ABOUT_H
