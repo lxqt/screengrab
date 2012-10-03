@@ -179,8 +179,6 @@ QString AboutDialog::tabThanks()
     str += "iNight - " + tr("old win32-build [Windows Vista]") + "<br>";
     str += "burjans - " + tr("win32-build [Windows 7]") + "<br>";
 
-// Alexander Sokolov
-
     return str;
 }
 

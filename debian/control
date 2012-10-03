@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Artem Galichkin [arched] <doomer3d@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~), cmake (>= 2.6), libqt4-dev (>= 4.5.0),
 Standards-Version: 3.8.4
-Homepage: http://screengrab-qt.googlecode.com/
+Homepage: http://screengrab.doomer.org/
 #Vcs-Git: git://git.debian.org/collab-maint/screengrab.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/screengrab.git;a=summary
 

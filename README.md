@@ -1,7 +1,7 @@
 ScreenGrab
 ==========
 
-version 0.9.x (1.0-dev)
+version 0.9.96 (1.0-rc)
 
 ScreenGrab - program for fast creating screenshots, and  simple publishing their on the internet  image hostings. It working on Linux and Windows operating systems. The program uses Qt and is independent of any desktop environment.
 

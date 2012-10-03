@@ -1,16 +1,13 @@
-0.9.9x
- * Fixed sual monitor support
+1.0
+ * Fixed dual monitor support
  * Added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
- * Added ability to upload to some image hosts
- * Added build option for compile without upload feature
+ * Added ability to upload to some image hosts (imgur.com and imgshack.us)
+ * Added build option for compile without upload feature (SG_EXT_UPLOADS bulld option)
  * Fixed non-minimize main window on "Exit" shortcut, when use "Minimize to tray" option
-
-0.9.85 (1.0-beta)
- * Added uploading screenshots on imageshack.use_mangled_mesa(
  * Fixed bug with cut button text on mainwindow
  * Fixed regression with not capture screenshot when second instance running
  * fixed bug with not create path to autosave screenshots (when it is typed manually  in configuration dialog)
- * added build key SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
+ * added build option SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
  * autoincrement filenames when saving screenshots in manual mode (in one running session)
  * added the ability to customize shortcut to close the application
 
