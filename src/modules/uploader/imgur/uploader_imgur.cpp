@@ -56,10 +56,10 @@ QUrl Uploader_ImgUr::apiUrl()
 /*!
  * 	Prepare image datafor uploading
  */
-void Uploader_ImgUr::createData()
+void Uploader_ImgUr::createData(bool inBase64)
 {
-	bool toBase64 = true;
-    Uploader::createData(toBase64);
+	inBase64 = true;
+    Uploader::createData(inBase64);
 	
 	// create data for upload 
     QByteArray uploadData;

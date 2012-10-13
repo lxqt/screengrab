@@ -202,6 +202,7 @@ void DialogUploader::slotUploadDone()
 
 void DialogUploader::slotUploadFail(const QByteArray& error)
 {
+	Q_UNUSED(error);
     QMessageBox msg(this);
     msg.setText(tr("Error uploading screenshot"));
     msg.setWindowTitle(tr("Error"));

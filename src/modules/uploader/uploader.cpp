@@ -144,7 +144,8 @@ void Uploader::createData(bool inBase64)
  */
 void Uploader::createRequest(const QByteArray& requestData, const QUrl url)
 {
-    _request.setUrl(url);
+	Q_UNUSED(requestData);
+	_request.setUrl(url);
 }
 
 /*!

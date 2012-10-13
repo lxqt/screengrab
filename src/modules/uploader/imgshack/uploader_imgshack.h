@@ -39,7 +39,7 @@ public:
 protected:
     virtual QUrl apiUrl();
 //     virtual QByteArray createData();
-    void createData();
+    void createData(bool inBase64 = false);
 
 protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);

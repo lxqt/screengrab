@@ -65,9 +65,9 @@ QUrl Uploader_ImgShack::apiUrl()
 /*!
  * 	Prepare image datafor uploading
  */
-void Uploader_ImgShack::createData()
+void Uploader_ImgShack::createData(bool inBase64)
 {
-    Uploader::createData();
+    Uploader::createData(inBase64);
 
     // create data for upload 
     QByteArray uploadData;

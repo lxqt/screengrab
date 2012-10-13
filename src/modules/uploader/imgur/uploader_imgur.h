@@ -45,8 +45,9 @@ public:
     virtual void startUploading();
     
 protected:
+// 	using Uploader::createData(bool inBase64 = false);
     virtual QUrl apiUrl();
-    virtual void createData();
+    virtual void createData(bool inBase64 = false);
 	
 protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);

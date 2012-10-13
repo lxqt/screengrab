@@ -59,7 +59,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 	
 protected Q_SLOTS:
-    virtual void replyFinished(QNetworkReply* reply) {};
+    virtual void replyFinished(QNetworkReply* reply) {Q_UNUSED(reply)};
 	void replyProgress(qint64 bytesSent, qint64 bytesTotal);
 	
 protected:
@@ -68,7 +68,7 @@ protected:
     QString createFilename(QString& format);
 	QMap<QByteArray, QByteArray> parseResultStrings(const QVector<QByteArray>& keytags, const QByteArray& result);
     
-    virtual QUrl apiUrl();    
+    virtual QUrl apiUrl();   	 
     virtual void createData(bool inBase64 = false); 
 	virtual void createRequest(const QByteArray& requestData, const QUrl url);
     
