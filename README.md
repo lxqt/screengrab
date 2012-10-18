@@ -35,6 +35,13 @@ You can use some or all of these params for customize your build.
  * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main cations to create screenshots. By default is ON.
  * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. By default if OFF.
  * **-DSG_DOCDIR** - Name for directory of user's documentation. By default is  "screengrab".
+ 
+**Build notes:**
+
+ * For Debian based Linux distro (Debian Squeezy, Ubuntu 12.04, etc) - if you want to build Screengrab wuth using system version of Qxt Library,  please use this command to run CMake:
+ 
+	cmake -DSG_USE_SYSTEM_QXT=ON -DQXT_QXTCORE_INCLUDE_DIR=/usr/include/qxt/QxtCore -DQXT_QXTGUI_INCLUDE_DIR=/usr/include/qxt -DCMAKE_INSTALL_PREFIX=/usr ../
+
 
 LICENSE
 -------
