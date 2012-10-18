@@ -47,8 +47,15 @@ DialogUploader::DialogUploader(QWidget *parent) :
 	UploaderConfig config;
 	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
 	
-    selectedHost = config.labelsList().indexOf(defaultHost);	
-	
+	if (defaultHost.isEmpty() == true)
+	{
+		selectedHost = 0;
+	}
+	else
+	{
+		selectedHost = config.labelsList().indexOf(defaultHost);
+	}
+
     // load ishot preview
     QSize imgSize = Core::instance()->getPixmap().size();
     QString pixmapSize = tr("Size: ") + QString::number(imgSize.width()) + "x" + QString::number(imgSize.height()) + tr(" pixel");
