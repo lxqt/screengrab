@@ -5,8 +5,8 @@ version 0.9.96 (1.0-rc)
 
 ScreenGrab - program for fast creating screenshots, and  simple publishing their on the internet  image hostings. It working on Linux and Windows operating systems. The program uses Qt and is independent of any desktop environment.
 
-Rquiriments
------------
+Build requirements
+------------------
 
  * Qt >= 4.6
  * CMake >= 2.6 (only for build)
