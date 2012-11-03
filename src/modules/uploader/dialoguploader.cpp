@@ -63,7 +63,8 @@ DialogUploader::DialogUploader(QWidget *parent) :
 
     ui->labImage->setFixedWidth(256);
     ui->labImage->setFixedHeight(192);
-    ui->labImage->setPixmap(Core::instance()->getPixmap().scaled(ui->labImage->sizeHint()));
+    ui->labImage->setPixmap(Core::instance()->getPixmap().scaled(ui->labImage->size(),
+                Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
     // progressbar
     ui->progressBar->setVisible(false);
