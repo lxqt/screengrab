@@ -478,7 +478,7 @@ void Config::loadSettings()
     setSavedSizeOnExit(settings->value(KEY_SAVEWND, DEF_SAVED_SIZE).toBool());
     setTimeTrayMess(settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
-    setRestoredWndSize(settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(),                        settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    setRestoredWndSize(settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
     setShowTrayIcon(settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     settings->endGroup();
 
