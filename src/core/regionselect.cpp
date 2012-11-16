@@ -27,16 +27,7 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QWidget(parent)
 {
     conf = mainconf;
-
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
-    setWindowState(Qt::WindowFullScreen);
-    setCursor(Qt::CrossCursor);
-    
-    sizeDesktop = QApplication::desktop()->size();
-    resize(sizeDesktop);
-
-    desktopPixmapBkg = QPixmap::grabWindow(QApplication::desktop()->winId());
-    desktopPixmapClr = desktopPixmapBkg;
+	sharedInit();
 
     move(0, 0);
     drawBackGround();
@@ -49,11 +40,43 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     grabMouse();    
 }
 
+RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
+	: QWidget(parent)
+{
+    conf = mainconf;
+	sharedInit();
+	selectRect = lastRect;
+	
+    move(0, 0);
+    drawBackGround();
+	
+    processSelection = false;
+
+    show();
+
+    grabKeyboard();
+    grabMouse();   
+}
+
 RegionSelect::~RegionSelect()
 {
     conf = NULL;
     delete conf;
 }
+
+void RegionSelect::sharedInit()
+{
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
+    setWindowState(Qt::WindowFullScreen);
+    setCursor(Qt::CrossCursor);
+
+    sizeDesktop = QApplication::desktop()->size();
+    resize(sizeDesktop);
+
+    desktopPixmapBkg = QPixmap::grabWindow(QApplication::desktop()->winId());
+    desktopPixmapClr = desktopPixmapBkg;
+}
+
 
 void RegionSelect::paintEvent(QPaintEvent *event)
 {
@@ -208,4 +231,9 @@ QPixmap RegionSelect::getSelection()
     QPixmap sel;
     sel = desktopPixmapClr.copy(selectRect);
     return sel;
+}
+
+QPoint RegionSelect::getSelectionStartPos()
+{
+	return selectRect.topLeft();
 }

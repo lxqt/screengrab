@@ -33,6 +33,7 @@
 #include <QtGui/QClipboard>
 #include <QtCore/QTime>
 #include <QtCore/QByteArray>
+#include <QtCore/QRect>
 
 #ifdef Q_WS_X11
 #include <QtGui/QX11Info>
@@ -111,6 +112,7 @@ private:
     // vars
     QPixmap *pixelMap; // pixel map
     RegionSelect *selector; // region grabber widget
+    QRect _lastSelectedArea; // store las
 
     bool hided;
     bool firstScreen;

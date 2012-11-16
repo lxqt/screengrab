@@ -3,6 +3,7 @@
  * Added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
  * Added ability to upload to some image hosts (imgur.com and imgshack.us)
  * Added build option for compile without upload feature (SG_EXT_UPLOADS bulld option)
+ * Add "Previous selection" mode (save last selected area and restoring it in next get area screenshot)
  * Fixed non-minimize main window on "Exit" shortcut, when use "Minimize to tray" option
  * Fixed bug with cut button text on mainwindow
  * Fixed regression with not capture screenshot when second instance running

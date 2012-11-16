@@ -113,6 +113,11 @@
               <string>Screen area</string>
              </property>
             </item>
+            <item>
+             <property name="text">
+              <string>Previous selection</string>
+             </property>
+            </item>
            </widget>
           </item>
           <item>

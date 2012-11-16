@@ -153,6 +153,12 @@ void Core::screenShot(bool first)
             connect(selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
             break;
         }
+		case 3:
+		{
+            selector = new RegionSelect(conf, _lastSelectedArea);
+            connect(selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+			break;
+		}
         default:
             *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId()); break;
     }
@@ -506,6 +512,13 @@ void Core::regionGrabbed(bool grabbed)
     if (grabbed == true)
     {
         *pixelMap = selector->getSelection();
+		
+		int x = selector->getSelectionStartPos().x();
+		int y = selector->getSelectionStartPos().y();
+		int w = pixelMap->rect().width();
+		int h = pixelMap->rect().height();
+		_lastSelectedArea.setRect(x, y, w, h);
+
         checkAutoSave();
     }
     

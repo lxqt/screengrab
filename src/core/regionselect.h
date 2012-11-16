@@ -38,8 +38,10 @@ class RegionSelect : public QWidget
     Q_OBJECT
 public:
     RegionSelect(Config *mainconf, QWidget *parent = 0);
+	RegionSelect(Config *mainconf, const QRect& lastRect, QWidget *parent = 0);
     virtual ~RegionSelect();
     QPixmap getSelection();
+	QPoint getSelectionStartPos();
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -64,6 +66,7 @@ private:
     QPixmap desktopPixmapBkg;
     QPixmap desktopPixmapClr;
 
+	void sharedInit();
     void drawBackGround();
     void drawRectSelection(QPainter &painter);
 

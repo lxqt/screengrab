@@ -74,7 +74,7 @@ ScreenGrab->conf->cmdLine()->getParam("help"))
         CmdLine::print("--version \tDisplay version info");
         CmdLine::print("--fullscreen \tSset fullscreen mode");
         CmdLine::print("--active \tSet active window mode");
-        CmdLine::print("--region \tSet region selet mode mode");
+        CmdLine::print("--region \tSet region select mode");		
         return 0;
     }
 
