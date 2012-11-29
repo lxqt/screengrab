@@ -50,9 +50,11 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void show();
+	bool isTrayed() const;
 
 public Q_SLOTS:
     void showWindow(const QString& str);
+	void windowHideShow();
 //
 protected:
     void closeEvent(QCloseEvent *e);
@@ -96,7 +98,6 @@ private:
     void restoreWindow();
     void newScreen();
     void copyScreen();
-    void windowHideShow();
     void saveScreen();
     void showHelp();
     void showOptions();

@@ -55,7 +55,22 @@ int main(int argc, char *argv[])
     if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
     {
         ScreenGrab->screenShot(true);
-        mainWnd.show();
+		if (ScreenGrab->conf->cmdLine()->isCreated() && ScreenGrab->conf->cmdLine()->getParam("minimized"))
+		{
+			if (mainWnd.isTrayed() == true)
+			{
+				mainWnd.windowHideShow();
+			}
+			else
+			{
+				mainWnd.showMinimized();
+			}
+		}
+		else
+		{		
+			mainWnd.show();
+		}
+//         mainWnd.show();
     }
 
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
@@ -74,7 +89,8 @@ ScreenGrab->conf->cmdLine()->getParam("help"))
         CmdLine::print("--version \tDisplay version info");
         CmdLine::print("--fullscreen \tSset fullscreen mode");
         CmdLine::print("--active \tSet active window mode");
-        CmdLine::print("--region \tSet region select mode");		
+        CmdLine::print("--region \tSet region select mode");
+		CmdLine::print("--minimized \tRun minimised");
         return 0;
     }
 

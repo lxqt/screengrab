@@ -42,12 +42,12 @@ public:
     CmdLine();
     ~CmdLine();
     bool isNotEmpty() const;
-    bool getParam(QString);
-
+    bool getParam(QString);	
+	
     static void print(QString&);
     static void print(const char *string);
 
-    static bool isCreated();    
+    static bool isCreated();	
 private:
     bool cmdNotEmpty;    
     bool parseOpt(char* );

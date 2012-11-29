@@ -11,6 +11,7 @@
  * added build option SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
  * autoincrement filenames when saving screenshots in manual mode (in one running session)
  * added the ability to customize shortcut to close the application
+ * added ability to run in minimized to ttray (or taskar, if tray is disabled) with "--minimized" comand line option
 
 0.9.1
  * fixed non-switching combo-box "Type of Screeen" when grab screenshot from signal by another instance application.

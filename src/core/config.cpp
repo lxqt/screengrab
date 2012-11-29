@@ -505,6 +505,10 @@ void Config::loadSettings()
         {
             setTypeScreen(2);
         }
+        if (cmd->getParam(QString("region")))
+        {
+            setTypeScreen(2);
+        }
     }
 
     _shortcuts->loadSettings();

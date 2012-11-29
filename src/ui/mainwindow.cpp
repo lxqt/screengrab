@@ -164,6 +164,18 @@ void MainWindow::show()
     QMainWindow::show();
 }
 
+bool MainWindow::isTrayed() const
+{
+    if (trayIcon != NULL)
+    {
+        return true;
+    }
+    else
+	{
+		return false;
+	}
+}
+
 
 void MainWindow::showHelp()
 {

@@ -29,7 +29,7 @@ CmdLine::CmdLine()
 {
     typeDefined = false;
     instance = true;
-    optsLong << "version" << "help" << "active" << "fullscreen" << "region";
+    optsLong << "version" << "help" << "active" << "fullscreen" << "region" << "minimized";
 
     for (int i= 1; i != QApplication::argc(); ++i)
     {        
