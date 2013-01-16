@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Upload to imgur.com</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Configuration for imageshack.us</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -29,7 +29,7 @@
      <item>
       <widget class="QLabel" name="labUsername">
        <property name="text">
-        <string>Username:</string>
+        <string>Username: </string>
        </property>
       </widget>
      </item>

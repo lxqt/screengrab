@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Upload to imageshack.us</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -27,7 +27,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>GroupBox</string>
+      <string notr="true"/>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -67,42 +67,42 @@
           </item>
           <item>
            <property name="text">
-            <string>100x75</string>
+            <string notr="true">100x75</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>150x112</string>
+            <string notr="true">150x112</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>320x240</string>
+            <string notr="true">320x240</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>640x480</string>
+            <string notr="true">640x480</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>800x600</string>
+            <string notr="true">800x600</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>1024x768</string>
+            <string notr="true">1024x768</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>1280x1024</string>
+            <string notr="true">1280x1024</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>1600x1200</string>
+            <string notr="true">1600x1200</string>
            </property>
           </item>
          </widget>
