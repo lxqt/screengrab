@@ -57,7 +57,7 @@ endif(WIN32)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_CXX_FLAGS "-Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
 
 # ------ install prefix --------------------------
 
