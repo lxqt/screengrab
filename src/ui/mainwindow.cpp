@@ -84,11 +84,26 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(m_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(m_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(m_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
+	
+	// Create advanced menu
+	QMenu *menuAdvanced = new QMenu(this);
+	
 #ifdef SG_EXT_UPLOADS
-    connect(m_ui->butUpload, SIGNAL(clicked()), core, SLOT(upload()));
-#else
-	m_ui->butUpload->deleteLater();
+	QAction* actUpload = new QAction(tr("Upload"), this);
+    connect(actUpload, SIGNAL(triggered()), core, SLOT(upload()));
+	menuAdvanced->addAction(actUpload);
 #endif
+	
+	if (menuAdvanced->actions().count() != 0)
+	{
+		m_ui->butAdvanced->setMenu(menuAdvanced);
+	}
+	else
+	{
+		m_ui->butAdvanced->deleteLater();
+	}
+	// end creation advanced menu
+
     connect(m_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
     connect(m_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(m_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
