@@ -70,7 +70,8 @@ message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)
-OPTION (SG_EXT_UPLOADS "Enableupload screnshots to image hostings" ON)
+OPTION (SG_EXT_UPLOADS "Enable upload screnshots to image hostings" ON)
+OPTION (SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 OPTION (SG_USE_SYSTEM_QXT "Use system version Qxt Library for global shortcuts" OFF)
 
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
@@ -99,6 +100,10 @@ endif(SG_XDG_CONFIG_SUPPORT)
 if(SG_EXT_UPLOADS)
     add_definitions( -DSG_EXT_UPLOADS="1")
 endif(SG_EXT_UPLOADS)
+
+if (SG_EXT_EDIT)
+	add_definitions( -DSG_EXT_EDIT="1")
+endif(SG_EXT_EDIT)
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
@@ -132,6 +137,11 @@ if(SG_EXT_UPLOADS)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
 endif(SG_EXT_UPLOADS)
+
+if (SG_EXT_EDIT)
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit/")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit/")
+endif(SG_EXT_EDIT)
 
 #------- sources --------
 
