@@ -94,6 +94,16 @@ MainWindow::MainWindow(QWidget* parent) :
 	menuAdvanced->addAction(actUpload);
 #endif
 	
+#ifdef SG_EXT_EDIT
+	QAction* actExtEdit = new QAction(tr("Edit in.."), this);
+	
+	QMenu *menuExtEditorsList = new QMenu(tr("Edit in.."),this);
+	
+	menuExtEditorsList->addAction(actExtEdit);
+	
+	menuAdvanced->addMenu(menuExtEditorsList);
+#endif
+	
 	if (menuAdvanced->actions().count() != 0)
 	{
 		m_ui->butAdvanced->setMenu(menuAdvanced);
