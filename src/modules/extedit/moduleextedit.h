@@ -21,10 +21,17 @@
 #ifndef MODULEEXTEDIT_H
 #define MODULEEXTEDIT_H
 
+#include "extedit.h"
+
 class ModuleExtEdit
 {
 public:
     ModuleExtEdit();
+	~ModuleExtEdit();
+	void init();
+	
+private:
+	ExtEdit *_extEdit;
 };
 
 #endif // MODULEEXTEDIT_H

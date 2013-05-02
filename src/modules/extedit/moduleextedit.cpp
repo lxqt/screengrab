@@ -22,4 +22,20 @@
 
 ModuleExtEdit::ModuleExtEdit()
 {
+	_extEdit = new ExtEdit();
 }
+
+ModuleExtEdit::~ModuleExtEdit()
+{
+	if (_extEdit)
+	{
+		delete _extEdit;
+	}
+}
+
+
+void ModuleExtEdit::init()
+{
+
+}
+
