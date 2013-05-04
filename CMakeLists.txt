@@ -108,6 +108,7 @@ endif(SG_EXT_EDIT)
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
 message(STATUS "Upload to image hosings support: " ${SG_EXT_UPLOADS})
+message(STATUS "Editing shots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 
 # ------ doc dir name ---------------------------------
