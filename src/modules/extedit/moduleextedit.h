@@ -21,6 +21,7 @@
 #ifndef MODULEEXTEDIT_H
 #define MODULEEXTEDIT_H
 
+#include <QtGui/QAction>
 #include "extedit.h"
 
 class ModuleExtEdit
@@ -28,7 +29,7 @@ class ModuleExtEdit
 public:
     ModuleExtEdit();
 	~ModuleExtEdit();
-	void init();
+	QList<QAction*> initModuleMenu();
 	
 private:
 	ExtEdit *_extEdit;

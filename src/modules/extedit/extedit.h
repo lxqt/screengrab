@@ -21,18 +21,30 @@
 #ifndef EXTEDIT_H
 #define EXTEDIT_H
 
-#include <QObject>
+#include <QtCore/QObject>
+
+struct ExtApp_t {
+	QByteArray exec;
+	QString name;
+};
+
+typedef QList<ExtApp_t> ExtAppsList_t;
 
 class ExtEdit : public QObject
 {
     Q_OBJECT
 public:
     explicit ExtEdit(QObject *parent = 0);
-    
-signals:
+    QStringList listAppNames();
     
 public slots:
     
+private:
+	void createAppList();
+	ExtApp_t readDesktopFile(QString filename);
+	
+	ExtAppsList_t _appList;		
+	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 };
 
 #endif // EXTEDIT_H

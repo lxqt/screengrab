@@ -155,7 +155,7 @@ set(SCREENGRAB_SRC
     src/core/config.cpp
     src/core/regionselect.cpp
     src/core/cmdline.cpp
-    src/core/shortcutmanager.cpp
+    src/core/shortcutmanager.cpp    
     src/ui/configwidget.cpp
     src/ui/about.cpp
     src/ui/mainwindow.cpp
@@ -267,7 +267,7 @@ endif(SG_EXT_UPLOADS)
 
 if(SG_EXT_EDIT)
 	target_link_libraries( screengrab extedit)
-endif(SG_EXT_UPLOADS)
+endif(SG_EXT_EDIT)
 
 if(WIN32)
     target_link_libraries( screengrab qkeysequencewidget singleapp ${QT_LIBRARIES} )

@@ -22,8 +22,13 @@
 #include <QtCore/QWaitCondition>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
+
 #ifdef SG_EXT_UPLOADS
 #include "src/modules/uploader/moduleuploader.h"
+#endif
+
+#ifdef SG_EXT_EDIT
+#include "src/modules/extedit/moduleextedit.h"
 #endif
 
 #include <QtCore/QChar>
@@ -60,6 +65,8 @@ Core::Core()
     selector = 0;
     firstScreen = true;
     
+// 	_extEdit = new ModuleExtEdit();
+	
     sleep(250);
     // delay on 250 msec
 //     QMutex mutex;
@@ -89,6 +96,11 @@ Core* Core::instance()
 
 Core::~Core()
 {
+// 	if (_extEdit)
+// 	{
+// 		delete _extEdit;
+// 	}
+	
     delete pixelMap;
     conf->killInstance();
 }
@@ -481,6 +493,18 @@ QWidget* Core::uploaderConfigWidget()
 {
     ModuleUploader uploader;
     return uploader.initConfigWidget();
+}
+#endif
+#ifdef SG_EXT_EDIT
+QList<QAction*> Core::initExtEditMenu()
+{
+	ModuleExtEdit extEdit;
+	return extEdit.initModuleMenu();
+}
+
+void Core::externalEdit()
+{
+	qDebug() << "ext edit slot " << sender();
 }
 #endif
 

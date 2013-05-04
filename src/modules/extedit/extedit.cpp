@@ -20,7 +20,103 @@
 
 #include "extedit.h"
 
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
+#include <QtCore/QStringList>
+#include <QDebug>
+
 ExtEdit::ExtEdit(QObject *parent) :
     QObject(parent)
 {
+	qDebug() << "Ext App module init ";
+	createAppList();
+}
+
+QStringList ExtEdit::listAppNames()
+{
+	QStringList list;
+	
+	for (int i =0; i < _appList.count(); ++i)
+	{
+		list << _appList.at(i).name;
+	}
+	
+	return list;
+}
+
+
+void ExtEdit::createAppList()
+{
+	qDebug() << "Create app list ";
+		
+	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
+	QFile file(globalMimeTypesList);
+	
+	if (file.open(QIODevice::ReadOnly) == true)
+	{
+		QString inLine;
+		QString mimetype;
+		QStringList desktopFiles;
+		
+		QTextStream in(&file);
+		while(in.atEnd() == false)
+		{
+			inLine = in.readLine();
+			if (inLine.split("=").count() > 1)
+			{
+				mimetype = inLine.split("=").at(0);
+				
+				if (mimetype == "image/png")
+				{
+					desktopFiles = inLine.split("=").at(1).split(";");
+					
+					if (desktopFiles.count() != 0)
+					{
+						for (int i = 0; i < desktopFiles.count(); ++i)
+						{
+							if (desktopFiles.at(i).isEmpty() == false)
+							{
+								_appList.append(readDesktopFile(desktopFiles.at(i)));
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ExtApp_t ExtEdit::readDesktopFile(QString filename)
+{	
+	ExtApp_t entry;
+
+	if (filename.startsWith("kde4-") == true)
+	{
+		filename = "kde4/" + filename.remove("kde4-");
+	}
+	filename = _globalAppListPath_c + filename;
+	qDebug() << "_ " << filename;
+	QFile file(filename);
+	if (file.open(QIODevice::ReadOnly) == true)
+	{
+		QTextStream in(&file);
+		QString inLine;
+		while(in.atEnd() == false)
+		{
+			inLine = in.readLine();
+			if (inLine.split("=").count() != 1)
+			{
+				if (inLine.split("=").at(0) == "Name")
+				{
+					entry.name = inLine.split("=").at(1);
+				}
+				if (inLine.split("=").at(0) == "Exec")
+				{
+					entry.exec = inLine.split("=").at(1).toAscii();
+				}
+			}
+		}
+	}
+		
+	return entry;
 }

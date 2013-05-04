@@ -95,13 +95,11 @@ MainWindow::MainWindow(QWidget* parent) :
 #endif
 	
 #ifdef SG_EXT_EDIT
-	QAction* actExtEdit = new QAction(tr("Edit in.."), this);
-	
 	QMenu *menuExtEditorsList = new QMenu(tr("Edit in.."),this);
 	
-	menuExtEditorsList->addAction(actExtEdit);
+	menuExtEditorsList->addActions(core->initExtEditMenu());
 	
-	menuAdvanced->addMenu(menuExtEditorsList);
+	menuAdvanced->addMenu(menuExtEditorsList);;
 #endif
 	
 	if (menuAdvanced->actions().count() != 0)

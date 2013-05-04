@@ -68,6 +68,10 @@ public Q_SLOTS:
     void upload();
 	QWidget* uploaderConfigWidget();
 #endif
+#ifdef SG_EXT_EDIT
+	QList<QAction*> initExtEditMenu();
+	void externalEdit();
+#endif
 
 public:
     static Core* instance();
@@ -114,6 +118,8 @@ private:
     RegionSelect *selector; // region grabber widget
     QRect _lastSelectedArea; // store las
 
+//     ModuleExtEdit *_extEdit;
+    
     bool hided;
     bool firstScreen;
     

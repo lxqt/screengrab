@@ -33,9 +33,19 @@ ModuleExtEdit::~ModuleExtEdit()
 	}
 }
 
-
-void ModuleExtEdit::init()
+QList<QAction*> ModuleExtEdit::initModuleMenu()
 {
-
+	QList<QAction*> list;
+	
+	QStringList appList = _extEdit->listAppNames();
+	
+	for (int i = 0; i < appList.count(); ++i)
+	{
+		QAction* action = new QAction(0);
+		action->setText(appList.at(i));
+		list.append(action);
+	}
+	
+	return list;
 }
 
