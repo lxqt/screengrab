@@ -265,6 +265,10 @@ if(SG_EXT_UPLOADS)
 	target_link_libraries( screengrab uploader)
 endif(SG_EXT_UPLOADS)
 
+if(SG_EXT_EDIT)
+	target_link_libraries( screengrab extedit)
+endif(SG_EXT_UPLOADS)
+
 if(WIN32)
     target_link_libraries( screengrab qkeysequencewidget singleapp ${QT_LIBRARIES} )
 endif(WIN32)
