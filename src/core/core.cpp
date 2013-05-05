@@ -23,13 +23,13 @@
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
 
-#ifdef SG_EXT_UPLOADS
-#include "src/modules/uploader/moduleuploader.h"
-#endif
-
-#ifdef SG_EXT_EDIT
-#include "src/modules/extedit/moduleextedit.h"
-#endif
+// #ifdef SG_EXT_UPLOADS
+// #include "src/modules/uploader/moduleuploader.h"
+// #endif
+// 
+// #ifdef SG_EXT_EDIT
+// #include "src/modules/extedit/moduleextedit.h"
+// #endif
 
 #include <QtCore/QChar>
 #include <QtCore/QBuffer>
@@ -470,6 +470,10 @@ void Core::copyScreen()
     Q_EMIT sendStateNotifyMessage(message);
 }
 
+ModuleManager* Core::modules()
+{
+	return &_modules;
+}
 
 void Core::autoSave()
 {
@@ -485,21 +489,25 @@ void Core::upload()
 {
 	//     Uploader *upl = new Uploader;
 	//     Q_UNUSED(upl)
-    ModuleUploader uploader;
-    uploader.init();
+	
+//     ModuleUploader uploader;
+//     uploader.init();
 }
 
 QWidget* Core::uploaderConfigWidget()
 {
-    ModuleUploader uploader;
-    return uploader.initConfigWidget();
+//     ModuleUploader uploader;
+//     return uploader.initConfigWidget();
 }
 #endif
 #ifdef SG_EXT_EDIT
 QList<QAction*> Core::initExtEditMenu()
 {
-	ModuleExtEdit extEdit;
-	return extEdit.initModuleMenu();
+// 	ModuleExtEdit extEdit;
+// 	return extEdit.initModuleMenu();
+	// TODO - create call module on modulamanager
+	QList<QAction*> a;
+	return a;
 }
 
 void Core::externalEdit()

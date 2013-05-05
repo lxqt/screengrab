@@ -27,6 +27,8 @@
 #include "config.h"
 #include "regionselect.h"
 
+#include "modulemanager.h"
+
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
 #include <QtGui/QPixmap>
@@ -85,6 +87,8 @@ public:
     
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
+	
+	ModuleManager* modules();
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
@@ -118,7 +122,7 @@ private:
     RegionSelect *selector; // region grabber widget
     QRect _lastSelectedArea; // store las
 
-//     ModuleExtEdit *_extEdit;
+	ModuleManager _modules;
     
     bool hided;
     bool firstScreen;

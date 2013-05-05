@@ -20,6 +20,8 @@
 
 #include "moduleextedit.h"
 
+#include <QtCore/QObject>
+
 ModuleExtEdit::ModuleExtEdit()
 {
 	_extEdit = new ExtEdit();
@@ -33,7 +35,13 @@ ModuleExtEdit::~ModuleExtEdit()
 	}
 }
 
-QList<QAction*> ModuleExtEdit::initModuleMenu()
+void ModuleExtEdit::init()
+{
+	
+}
+
+
+QMenu* ModuleExtEdit::initModuleMenu()
 {
 	QList<QAction*> list;
 	
@@ -46,6 +54,23 @@ QList<QAction*> ModuleExtEdit::initModuleMenu()
 		list.append(action);
 	}
 	
-	return list;
+	QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
+	menu->addActions(list);
+	return menu;
 }
 
+QWidget* ModuleExtEdit::initConfigWidget()
+{
+	return 0;
+}
+
+void ModuleExtEdit::defaultSettings()
+{
+
+}
+
+
+QAction* ModuleExtEdit::initModuleAction()
+{
+	return 0;
+}

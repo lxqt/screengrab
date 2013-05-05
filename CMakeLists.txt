@@ -122,6 +122,7 @@ if(UNIX AND NOT APPLE)
 endif(UNIX AND NOT APPLE)
 
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 message(STATUS "SG_INCLUDE: " ${SG_INCLUDE})
 
 #------- qtsingleapplication  --------
@@ -155,7 +156,8 @@ set(SCREENGRAB_SRC
     src/core/config.cpp
     src/core/regionselect.cpp
     src/core/cmdline.cpp
-    src/core/shortcutmanager.cpp    
+    src/core/shortcutmanager.cpp
+    src/core/modulemanager.cpp     
     src/ui/configwidget.cpp
     src/ui/about.cpp
     src/ui/mainwindow.cpp

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,23 +18,27 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MODULEUPLOADER_H
-#define MODULEUPLOADER_H
+#ifndef ABSTRACTMODULE_H
+#define ABSTRACTMODULE_H
 
-#include "src/modules/abstractmodule.h"
-
+#include <QtCore/QList>
 #include <QtGui/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QMenu>
 
-class ModuleUploader: public AbstractModule
+class AbstractModule
 {
 public:
-    ModuleUploader();
-    
-    void init();
-	QWidget* initConfigWidget();
-	void defaultSettings();
-	QMenu* initModuleMenu();
-	QAction* initModuleAction();
+	AbstractModule() {};
+	virtual ~AbstractModule() {};
+	
+	// intrface
+	virtual void init() = 0;
+	virtual QWidget* initConfigWidget() = 0;
+	virtual void defaultSettings() = 0;
+	virtual QMenu* initModuleMenu() = 0;
+	virtual QAction* initModuleAction() = 0;
 };
 
-#endif // MODULEUPLOADER_H
+
+#endif // ABSTRACTMODULE_H

@@ -47,3 +47,14 @@ void ModuleUploader::defaultSettings()
 	UploaderConfig config;
 	config.defaultSettings();
 }
+
+QMenu* ModuleUploader::initModuleMenu()
+{
+	return 0;
+}
+
+QAction* ModuleUploader::initModuleAction()
+{
+	QAction *act = new QAction(QObject::tr("Upload"), 0);
+	return act;
+}
