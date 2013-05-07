@@ -101,7 +101,6 @@ MainWindow::MainWindow(QWidget* parent) :
 		{			
 			if (modulesMenus.at(i) != 0)
 			{
-				qDebug() << " i " << i;
 				menuAdvanced->addMenu(modulesMenus.at(i));
 			}			
 		}

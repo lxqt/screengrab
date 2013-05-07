@@ -28,7 +28,6 @@
 ExtEdit::ExtEdit(QObject *parent) :
     QObject(parent)
 {
-	qDebug() << "Ext App module init ";
 	createAppList();
 }
 
@@ -46,9 +45,7 @@ QStringList ExtEdit::listAppNames()
 
 
 void ExtEdit::createAppList()
-{
-	qDebug() << "Create app list ";
-		
+{	
 	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
 	QFile file(globalMimeTypesList);
 	
@@ -95,7 +92,7 @@ ExtApp_t ExtEdit::readDesktopFile(QString filename)
 		filename = "kde4/" + filename.remove("kde4-");
 	}
 	filename = _globalAppListPath_c + filename;
-	qDebug() << "_ " << filename;
+
 	QFile file(filename);
 	if (file.open(QIODevice::ReadOnly) == true)
 	{
