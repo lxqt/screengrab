@@ -88,20 +88,25 @@ MainWindow::MainWindow(QWidget* parent) :
 	// Create advanced menu
 	QMenu *menuAdvanced = new QMenu(this);
 	
-#ifdef SG_EXT_UPLOADS
-	QAction* actUpload = new QAction(tr("Upload"), this);
-    connect(actUpload, SIGNAL(triggered()), core, SLOT(upload()));
-	menuAdvanced->addAction(actUpload);
-#endif
-	
-#ifdef SG_EXT_EDIT
-	QMenu *menuExtEditorsList = new QMenu(tr("Edit in.."),this);
-	
-	menuExtEditorsList->addActions(core->initExtEditMenu());
-	
-	menuAdvanced->addMenu(menuExtEditorsList);;
-#endif
-	
+	QList<QAction*> modulesActions = core->modules()->generateModulesActions();	
+	if (modulesActions.count() > 0)
+	{
+		menuAdvanced->addActions(modulesActions);
+	}
+// 	
+	QList<QMenu*> modulesMenus = core->modules()->generateModulesMenus();
+	if (modulesMenus.count() > 0)
+	{
+		for (int i = 0; i < modulesMenus.count(); ++i)
+		{			
+			if (modulesMenus.at(i) != 0)
+			{
+				qDebug() << " i " << i;
+				menuAdvanced->addMenu(modulesMenus.at(i));
+			}			
+		}
+	}
+
 	if (menuAdvanced->actions().count() != 0)
 	{
 		m_ui->butAdvanced->setMenu(menuAdvanced);
