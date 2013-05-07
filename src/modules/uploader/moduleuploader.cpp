@@ -25,7 +25,8 @@
 
 #include <QDebug>
 
-ModuleUploader::ModuleUploader()
+ModuleUploader::ModuleUploader(QObject *parent) :
+	QObject(parent)
 {
     
 }
@@ -56,5 +57,6 @@ QMenu* ModuleUploader::initModuleMenu()
 QAction* ModuleUploader::initModuleAction()
 {
 	QAction *act = new QAction(QObject::tr("Upload"), 0);
+	connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
 	return act;
 }

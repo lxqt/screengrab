@@ -23,18 +23,22 @@
 
 #include "src/modules/abstractmodule.h"
 
+#include <QtCore/QObject>
 #include <QtGui/QWidget>
 
-class ModuleUploader: public AbstractModule
+class ModuleUploader: public QObject, public AbstractModule
 {
+	Q_OBJECT
 public:
-    ModuleUploader();
-    
-    void init();
+    ModuleUploader(QObject *parent = 0);
+        
 	QWidget* initConfigWidget();
 	void defaultSettings();
 	QMenu* initModuleMenu();
 	QAction* initModuleAction();
+	
+private Q_SLOTS:
+	void init();
 };
 
 #endif // MODULEUPLOADER_H

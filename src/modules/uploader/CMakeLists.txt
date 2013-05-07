@@ -21,6 +21,7 @@ set (uploader_SRC
 )
 
 set (uploader_HDR
+    moduleuploader.h 
     uploader.h
 	imgshack/uploader_imgshack.h
 	imgur/uploader_imgur.h
