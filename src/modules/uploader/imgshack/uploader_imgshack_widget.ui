@@ -183,7 +183,7 @@
         <item>
          <widget class="QCheckBox" name="checkAnonimusUpload">
           <property name="text">
-           <string>Anonimus uploading</string>
+           <string>Anonymous upload</string>
           </property>
          </widget>
         </item>
