@@ -119,7 +119,8 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     ui->keyWidget->setVisible(false);
 
 #ifdef SG_EXT_UPLOADS
-	_uploaderConfigWidget = Core::instance()->uploaderConfigWidget();
+	// TODO - crate universal code for get Configuration Widgets for each modules
+	_uploaderConfigWidget = Core::instance()->modules()->getModule(MOD_UPLOADER)->initConfigWidget();
 	ui->stackedWidget->addWidget(_uploaderConfigWidget);
 #else
 	delete ui->listWidget->takeItem(5);
