@@ -209,4 +209,7 @@ void Uploader::initUploadedStrList()
 	
 	strPair = qMakePair(QByteArray("bb_code_thumb"), tr("BB code with thumb image"));
 	_uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
+	
+	strPair = qMakePair(QByteArray(), tr("URl to delete image"));
+	_uploadedStrings.insert(UL_DELETE_URL ,strPair);
 }

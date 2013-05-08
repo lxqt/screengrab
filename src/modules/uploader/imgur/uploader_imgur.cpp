@@ -83,15 +83,16 @@ void Uploader_ImgUr::replyFinished(QNetworkReply* reply)
 
         //  creating list of element names
 		QVector<QByteArray> listXmlNodes;
-        listXmlNodes << "original" << "imgur_page" << "large_thumbnail" << "small_square";
+        listXmlNodes << "original" << "imgur_page" << "large_thumbnail" << "small_square" << "delete_page";
         
 		QMap<QByteArray, QByteArray> replyXmlMap = parseResultStrings(listXmlNodes, replyXmalText);
-		
+
 		_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["original"];
 		_uploadedStrings[UL_HTML_CODE].first = "<img src=\"" + replyXmlMap["original"] + "\" />";
 		_uploadedStrings[UL_BB_CODE].first = "[img]" + replyXmlMap["original"] +"[/img]";
 		_uploadedStrings[UL_HTML_CODE_THUMB].first = "<a href=\"" + replyXmlMap["original"] + "\"><img src=\"" + replyXmlMap["small_square"] + "\" /></a>";
 		_uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["original"] +"[/img][/url]";
+		_uploadedStrings[UL_DELETE_URL].first = replyXmlMap["delete_page"];
 		
 		Q_EMIT uploadDone();
 	}

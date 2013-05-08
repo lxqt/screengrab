@@ -36,6 +36,7 @@ const QByteArray UL_HTML_CODE = "html_code";
 const QByteArray UL_BB_CODE = "bb_code";
 const QByteArray UL_HTML_CODE_THUMB = "html_code_thumb";
 const QByteArray UL_BB_CODE_THUMB = "bb_code_thumb";
+const QByteArray UL_DELETE_URL = "delete_url";
 
 class Uploader : public QObject
 {
