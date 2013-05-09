@@ -109,6 +109,41 @@ QMap< QByteArray, ResultString_t > Uploader::parsedLinks()
 	return _uploadedStrings;
 }
 
+QList<ResultString_t> Uploader::parsedLinksToGui()
+{
+	QList<ResultString_t> list;
+	ResultString_t delete_url;
+	ResultString_t direct_link;
+	
+	for (int i =  0; i < _uploadedStrings.count(); ++i)
+	{
+		QByteArray key = _uploadedStrings.keys().at(i);
+
+		if (key == "delete_url")
+		{
+			delete_url = _uploadedStrings[key];
+		}
+		else if(key == "direct_link")
+		{
+			direct_link = _uploadedStrings[key];
+		}
+		else
+		{
+			ResultString_t val = _uploadedStrings[key];		
+			list.append(val);	
+		}		
+	}
+	
+	list.prepend(direct_link);
+	
+	if (delete_url.first.isEmpty() == false)
+	{
+		list.append(delete_url);
+	}
+
+	return list;
+}
+
 
 /*!
  * 	Return url for upload image

@@ -49,6 +49,7 @@ public:
 	void getUserSettings(const QVariantMap& settings);
     virtual void startUploading();
 	QMap<QByteArray, ResultString_t> parsedLinks();
+	QList<ResultString_t> parsedLinksToGui();
     
 Q_SIGNALS:
     void uploadStart();

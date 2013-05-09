@@ -57,6 +57,8 @@ private:
     
     // storage id curren selected img sho
     qint8 selectedHost;
+	
+	QStringList _resultLinks;
 };
 
 #endif // DIALOGUPLOADER_H

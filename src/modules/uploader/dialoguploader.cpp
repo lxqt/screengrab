@@ -134,7 +134,7 @@ void DialogUploader::slotUploadStart()
     uploader->startUploading();
     connect(uploader, SIGNAL(uploadDone())	, this, SLOT(slotUploadDone()));
     connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(slotUploadFail(QByteArray)));
-    connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
+//     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
     connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 	connect(ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 }
@@ -181,21 +181,15 @@ void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 
 void DialogUploader::slotUploadDone()
 {
-    QMap<QByteArray, ResultString_t> links = uploader->parsedLinks();
-
-    QMap<QByteArray, ResultString_t>::const_iterator iter;
-    for (iter = links.constBegin(); iter != links.constEnd(); ++iter)
-    {
-        if (iter.key() == "direct_link")
-        {
-            ui->editDirectLink->setText(iter.value().first);
-        }
-        else
-        {
-            ui->cbxExtCode->addItem(iter.value().second);
-        }
-    }
-
+	QList<ResultString_t> links = uploader->parsedLinksToGui();
+	ui->editDirectLink->setText(links.first().first);
+	
+	for (int i =1; i < links.count(); ++i)
+	{
+		ui->cbxExtCode->addItem(links.at(i).second);
+		_resultLinks << links.at(i).first;
+	}
+    
     ui->stackedWidget->setCurrentIndex(0);
     ui->labUploadStatus->setText(tr("Upload completed"));
     ui->progressBar->setVisible(false);
@@ -206,6 +200,10 @@ void DialogUploader::slotUploadDone()
 	{
 		QApplication::clipboard()->setText(ui->editDirectLink->text());
 	}
+	
+	connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
+	ui->cbxExtCode->setCurrentIndex(0);
+	ui->editExtCode->setText(_resultLinks.at(0));
 }
 
 void DialogUploader::slotUploadFail(const QByteArray& error)
@@ -224,11 +222,7 @@ void DialogUploader::slotUploadFail(const QByteArray& error)
 
 void DialogUploader::slotChangeExtCode(int code)
 {
-    QMap<QByteArray, ResultString_t> links = uploader->parsedLinks();
-    links.remove("direct_link");
-    QList<QByteArray> keys = links.keys();
-    QByteArray selKey = keys.at(code);
-    ui->editExtCode->setText(links[selKey].first);
+	ui->editExtCode->setText(_resultLinks.at(code));
 }
 
 void DialogUploader::slotCopyLink()
