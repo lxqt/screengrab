@@ -51,7 +51,9 @@ QMenu* ModuleExtEdit::initModuleMenu()
 	{
 		QAction* action = new QAction(0);
 		action->setText(appList.at(i));
+		QObject::connect(action, SIGNAL(triggered(bool)), _extEdit, SLOT(runExternalEditor()));
 		list.append(action);
+		_extEdit->addAppAction(action);
 	}
 	
 	QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);

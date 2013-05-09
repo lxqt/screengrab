@@ -22,9 +22,11 @@
 #define EXTEDIT_H
 
 #include <QtCore/QObject>
+#include <QtCore/QProcess>
+#include <QtGui/QAction>
 
 struct ExtApp_t {
-	QByteArray exec;
+	QString exec;
 	QString name;
 };
 
@@ -36,14 +38,20 @@ class ExtEdit : public QObject
 public:
     explicit ExtEdit(QObject *parent = 0);
     QStringList listAppNames();
-    
-public slots:
-    
+    void addAppAction(QAction* act);
+	
+public Q_SLOTS:
+    void runExternalEditor();
+	
+private Q_SLOTS:
+	void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
+	
 private:
 	void createAppList();
 	ExtApp_t readDesktopFile(QString filename);
 	
-	ExtAppsList_t _appList;		
+	ExtAppsList_t _appList;
+	QList<QAction*> _actionList;
 	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 };
 

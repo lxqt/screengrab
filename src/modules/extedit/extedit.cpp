@@ -43,6 +43,32 @@ QStringList ExtEdit::listAppNames()
 	return list;
 }
 
+void ExtEdit::addAppAction(QAction* act)
+{
+	_actionList.append(act);
+}
+
+
+void ExtEdit::runExternalEditor()
+{
+	qDebug() << "recevier " << sender()->objectName();
+	QAction* selectedAction = qobject_cast<QAction*>(sender());
+	int selectedIndex = _actionList.indexOf(selectedAction);
+	
+	ExtApp_t selectedApp = _appList.at(selectedIndex);
+	QString exec = selectedApp.exec.split(" ").first();
+	qDebug() << "selApp " << exec;
+	
+	QProcess *execProcess = new QProcess(this);
+	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closedExternalEditor(int,QProcess::ExitStatus)));
+	execProcess->start(exec);
+}
+
+void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
+{
+	sender()->deleteLater();
+}
+
 
 void ExtEdit::createAppList()
 {	
