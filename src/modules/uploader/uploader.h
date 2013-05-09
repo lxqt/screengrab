@@ -67,7 +67,6 @@ protected Q_SLOTS:
 protected:
     // methods
     QByteArray boundary(bool cleared = false);
-    QString createFilename(QString& format);
 	QMap<QByteArray, QByteArray> parseResultStrings(const QVector<QByteArray>& keytags, const QByteArray& result);
     
     virtual QUrl apiUrl();   	 

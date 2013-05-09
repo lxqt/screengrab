@@ -77,6 +77,7 @@ public:
     QPixmap getPixmap();
     QByteArray getScreen();
     
+	QString getTempFilename(const QString& format);
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
 	
@@ -115,6 +116,7 @@ private:
     QRect _lastSelectedArea; // store las
 
 	ModuleManager _modules;
+	QString _tempFilename;
     
     bool hided;
     bool firstScreen;

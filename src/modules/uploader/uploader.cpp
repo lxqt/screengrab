@@ -66,20 +66,6 @@ QByteArray Uploader::boundary(bool cleared)
     return retBoundary;
 }
 
-/*!
- *  Generate filename for upload file
- */
-QString Uploader::createFilename(QString& format)
-{
-    QString tmpFileName = QUuid::createUuid().toString();
-    int size = tmpFileName.size() - 2;
-    tmpFileName = tmpFileName.mid(1, size).left(8);
-    
-    tmpFileName = QDir::tempPath() + QDir::separator() + "screenshot-" + tmpFileName + "." + format;  
-    
-    return tmpFileName;
-}
-
 void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
 {
     Q_EMIT uploadProgress(bytesSent, bytesTotal);
@@ -160,7 +146,7 @@ void Uploader::createData(bool inBase64)
 {
     Core *core = Core::instance();
     _formatString = core->conf->getSaveFormat();
-    _uploadFilename = createFilename(_formatString);
+	_uploadFilename = core->getTempFilename(_formatString);
     core->writeScreen(_uploadFilename, _formatString , true);
     
 	if (inBase64 == false)
