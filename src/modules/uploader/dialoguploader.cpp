@@ -204,6 +204,7 @@ void DialogUploader::slotUploadDone()
 	connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
 	ui->cbxExtCode->setCurrentIndex(0);
 	ui->editExtCode->setText(_resultLinks.at(0));
+	ui->butClose->setText(tr("Close"));
 }
 
 void DialogUploader::slotUploadFail(const QByteArray& error)
