@@ -215,10 +215,11 @@ void DialogUploader::slotUploadFail(const QByteArray& error)
     msg.setWindowTitle(tr("Error"));
     msg.setIcon(QMessageBox::Critical);
     msg.exec();
-    ui->stackedWidget->setCurrentIndex(0);
+
     ui->progressBar->setVisible(false);
     ui->labUploadStatus->setText(tr("Ready to upload"));
-    ui->butUpload->setEnabled(true	);
+    ui->butUpload->setEnabled(true);
+	ui->butClose->setText(tr("Close"));
 }
 
 void DialogUploader::slotChangeExtCode(int code)
