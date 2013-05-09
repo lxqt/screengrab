@@ -484,38 +484,6 @@ void Core::autoSave()
 	writeScreen(fileName, format);
 }
 
-#ifdef SG_EXT_UPLOADS
-void Core::upload()
-{
-	//     Uploader *upl = new Uploader;
-	//     Q_UNUSED(upl)
-	
-//     ModuleUploader uploader;
-//     uploader.init();
-}
-
-QWidget* Core::uploaderConfigWidget()
-{
-//     ModuleUploader uploader;
-//     return uploader.initConfigWidget();
-}
-#endif
-#ifdef SG_EXT_EDIT
-QList<QAction*> Core::initExtEditMenu()
-{
-// 	ModuleExtEdit extEdit;
-// 	return extEdit.initModuleMenu();
-	// TODO - create call module on modulamanager
-	QList<QAction*> a;
-	return a;
-}
-
-void Core::externalEdit()
-{
-	qDebug() << "ext edit slot " << sender();
-}
-#endif
-
 QString Core::getVersionPrintable()
 {
     QString str = "ScreenGrab: " + qApp->applicationVersion() + QString("\n");

@@ -66,14 +66,6 @@ public Q_SLOTS:
     void coreQuit();
     void screenShot(bool first = false);
     void autoSave();
-#ifdef SG_EXT_UPLOADS
-    void upload();
-	QWidget* uploaderConfigWidget();
-#endif
-#ifdef SG_EXT_EDIT
-	QList<QAction*> initExtEditMenu();
-	void externalEdit();
-#endif
 
 public:
     static Core* instance();

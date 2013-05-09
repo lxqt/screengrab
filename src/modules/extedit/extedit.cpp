@@ -67,6 +67,11 @@ void ExtEdit::runExternalEditor()
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	sender()->deleteLater();
+	
+//     Core *core = Core::instance();
+//     _formatString = core->conf->getSaveFormat();
+//     _uploadFilename = createFilename(_formatString);
+//     core->writeScreen(_uploadFilename, _formatString , true);
 }
 
 
