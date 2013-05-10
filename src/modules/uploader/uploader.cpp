@@ -157,6 +157,7 @@ void Uploader::createData(bool inBase64)
 	{
 		imageData = core->getScreen().toBase64();
 	}
+	core->killTempFile();
 }
 
 /*!
