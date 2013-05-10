@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include "extedit.h"
+#include "src/core/core.h"
 
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
@@ -57,21 +58,25 @@ void ExtEdit::runExternalEditor()
 	
 	ExtApp_t selectedApp = _appList.at(selectedIndex);
 	QString exec = selectedApp.exec.split(" ").first();
-	qDebug() << "selApp " << exec;
+
+    Core *core = Core::instance();
+    QString format = "png"; //core->conf->getSaveFormat();
+    _editFilename = core->getTempFilename(format);
+    core->writeScreen(_editFilename, format , true);
+	QStringList args;
+	args << _editFilename;
 	
 	QProcess *execProcess = new QProcess(this);
 	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closedExternalEditor(int,QProcess::ExitStatus)));
-	execProcess->start(exec);
+	execProcess->start(exec, args);
 }
 
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	sender()->deleteLater();
-	
-//     Core *core = Core::instance();
-//     _formatString = core->conf->getSaveFormat();
-//     _uploadFilename = createFilename(_formatString);
-//     core->writeScreen(_uploadFilename, _formatString , true);
+	Core *core = Core::instance();
+	core->killTempFile();
+	_editFilename.clear();
 }
 
 

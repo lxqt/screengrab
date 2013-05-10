@@ -53,6 +53,7 @@ private:
 	ExtAppsList_t _appList;
 	QList<QAction*> _actionList;
 	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
+	QString _editFilename;
 };
 
 #endif // EXTEDIT_H
