@@ -78,6 +78,7 @@ public:
     QByteArray getScreen();
     
 	QString getTempFilename(const QString& format);
+	void killTempFile();
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
 	

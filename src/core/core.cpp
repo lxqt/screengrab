@@ -391,6 +391,15 @@ QString Core::getTempFilename(const QString& format)
     return _tempFilename;
 }
 
+void Core::killTempFile()
+{
+	if (QFile::exists(_tempFilename) == true)
+	{
+		QFile::remove(_tempFilename);
+	}
+}
+
+
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
