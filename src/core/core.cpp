@@ -513,9 +513,9 @@ QString Core::getVersionPrintable()
     return str;
 }
 
-QPixmap Core::getPixmap()
+QPixmap* Core::getPixmap()
 {
-    return *pixelMap;
+    return pixelMap;
 }
 
 QByteArray Core::getScreen()

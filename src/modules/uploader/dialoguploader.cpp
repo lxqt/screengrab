@@ -57,13 +57,13 @@ DialogUploader::DialogUploader(QWidget *parent) :
 	}
 
     // load ishot preview
-    QSize imgSize = Core::instance()->getPixmap().size();
+    QSize imgSize = Core::instance()->getPixmap()->size();
     QString pixmapSize = tr("Size: ") + QString::number(imgSize.width()) + "x" + QString::number(imgSize.height()) + tr(" pixel");
     ui->labImgSize->setText(pixmapSize);
 
     ui->labImage->setFixedWidth(256);
     ui->labImage->setFixedHeight(192);
-    ui->labImage->setPixmap(Core::instance()->getPixmap().scaled(ui->labImage->size(),
+    ui->labImage->setPixmap(Core::instance()->getPixmap()->scaled(ui->labImage->size(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
     // progressbar

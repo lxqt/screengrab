@@ -170,7 +170,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
     // get size dcreen pixel map
-    QSize scaleSize = core->getPixmap().size(); // get orig size pixmap
+    QSize scaleSize = core->getPixmap()->size(); // get orig size pixmap
 
     scaleSize.scale(m_ui->scrLabel->size(), Qt::KeepAspectRatio);
 
@@ -559,7 +559,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 
 void MainWindow::displayPixmap()
 {
-    m_ui->scrLabel->setPixmap(core->getPixmap().scaled(m_ui->scrLabel->size(),
+    m_ui->scrLabel->setPixmap(core->getPixmap()->scaled(m_ui->scrLabel->size(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 

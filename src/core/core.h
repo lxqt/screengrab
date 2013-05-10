@@ -74,7 +74,7 @@ public:
     void sleep(quint8 msec = 350);
     static QString getVersionPrintable();
 
-    QPixmap getPixmap();
+    QPixmap* getPixmap();
     QByteArray getScreen();
     
 	QString getTempFilename(const QString& format);
