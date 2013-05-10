@@ -27,9 +27,11 @@
 #include <QDebug>
 
 ExtEdit::ExtEdit(QObject *parent) :
-    QObject(parent)
+    QObject(parent), _watcherEditedFile(new QFileSystemWatcher(this))
 {
 	createAppList();
+	_fileIsCnaged = false;
+	connect(_watcherEditedFile, SIGNAL(fileChanged(QString)), this, SLOT(editedFileChanged(QString)));
 }
 
 QStringList ExtEdit::listAppNames()
@@ -69,14 +71,28 @@ void ExtEdit::runExternalEditor()
 	QProcess *execProcess = new QProcess(this);
 	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closedExternalEditor(int,QProcess::ExitStatus)));
 	execProcess->start(exec, args);
+	_watcherEditedFile->addPath(_editFilename);
 }
 
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
+	if (_fileIsCnaged == true)
+	{
+		
+	}
+	
+	_fileIsCnaged = false;
+	_watcherEditedFile->removePath(_editFilename);
+	
 	sender()->deleteLater();
 	Core *core = Core::instance();
 	core->killTempFile();
 	_editFilename.clear();
+}
+
+void ExtEdit::editedFileChanged(const QString& path)
+{
+	_fileIsCnaged = true;
 }
 
 

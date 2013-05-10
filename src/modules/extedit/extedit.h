@@ -23,6 +23,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
+#include <QtCore/QFileSystemWatcher>
 #include <QtGui/QAction>
 
 struct ExtApp_t {
@@ -45,6 +46,7 @@ public Q_SLOTS:
 	
 private Q_SLOTS:
 	void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
+	void editedFileChanged(const QString & path);
 	
 private:
 	void createAppList();
@@ -54,6 +56,8 @@ private:
 	QList<QAction*> _actionList;
 	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 	QString _editFilename;
+	bool _fileIsCnaged;
+	QFileSystemWatcher *_watcherEditedFile;
 };
 
 #endif // EXTEDIT_H
