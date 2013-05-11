@@ -77,6 +77,7 @@ public:
     QPixmap* getPixmap();
     QByteArray getScreen();
     
+	void updatePixmap();
 	QString getTempFilename(const QString& format);
 	void killTempFile();
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);

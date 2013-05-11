@@ -76,16 +76,17 @@ void ExtEdit::runExternalEditor()
 
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
+	Core *core = Core::instance();
+	
 	if (_fileIsCnaged == true)
 	{
-		
+		core->updatePixmap();
 	}
 	
 	_fileIsCnaged = false;
 	_watcherEditedFile->removePath(_editFilename);
 	
-	sender()->deleteLater();
-	Core *core = Core::instance();
+	sender()->deleteLater();	
 	core->killTempFile();
 	_editFilename.clear();
 }

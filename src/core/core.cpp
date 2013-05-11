@@ -381,6 +381,16 @@ QString Core::getDateTimeFileName()
     return currentDateTime;
 }
 
+void Core::updatePixmap()
+{
+	if (QFile::exists(_tempFilename) == true)
+	{
+		pixelMap->load(_tempFilename, "png");
+		Q_EMIT newScreenShot(pixelMap);	
+	}
+}
+
+
 QString Core::getTempFilename(const QString& format)
 {
     _tempFilename = QUuid::createUuid().toString();
@@ -396,6 +406,7 @@ void Core::killTempFile()
 	if (QFile::exists(_tempFilename) == true)
 	{
 		QFile::remove(_tempFilename);
+		_tempFilename.clear();
 	}
 }
 
