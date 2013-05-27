@@ -26,6 +26,10 @@
 #include <QtCore/QStringList>
 #include <QDebug>
 
+#ifdef Q_WS_X11
+	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
+#endif
+
 ExtEdit::ExtEdit(QObject *parent) :
     QObject(parent), _watcherEditedFile(new QFileSystemWatcher(this))
 {

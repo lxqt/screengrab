@@ -56,7 +56,6 @@ private:
 	
 	ExtAppsList_t _appList;
 	QList<QAction*> _actionList;
-	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 	QString _editFilename;
 	bool _fileIsCnaged;
 	QFileSystemWatcher *_watcherEditedFile;
