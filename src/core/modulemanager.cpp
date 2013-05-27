@@ -85,3 +85,8 @@ QList<QAction*> ModuleManager::generateModulesActions(QStringList modules)
 	
 	return list;
 }
+
+quint8 ModuleManager::count()
+{
+	return _modules->count();
+}

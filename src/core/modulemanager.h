@@ -22,6 +22,7 @@ public:
 	AbstractModule* getModule(const QByteArray& name);
 	QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
 	QList<QAction*> generateModulesActions(QStringList modules = QStringList());
+	quint8 count();
 	
 private:
 	ModuleList_t *_modules;
