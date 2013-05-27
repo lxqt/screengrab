@@ -94,11 +94,6 @@
          <string>Shortcuts</string>
         </property>
        </item>
-       <item>
-        <property name="text">
-         <string>Uploader</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item>
