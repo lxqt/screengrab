@@ -580,11 +580,12 @@ void Config::setDefaultSettings()
 
     setDelay(DEF_DELAY);
     setSavedSizeOnExit(DEF_SAVED_SIZE);
-	
-#ifdef SG_EXT_UPLOADS
-	ModuleUploader uploader;
-	uploader.defaultSettings();
-#endif
+
+	quint8 countModules = Core::instance()->modules()->count();	
+	for (int i = 0; i < countModules; ++i) 
+	{
+		Core::instance()->modules()->getModule(i)->defaultSettings();
+	}
 }
 
 // get defaukt directory path
