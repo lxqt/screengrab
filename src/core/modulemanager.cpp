@@ -37,6 +37,20 @@ AbstractModule* ModuleManager::getModule(const QByteArray& name)
 	}
 }
 
+AbstractModule* ModuleManager::getModule(const quint8 numid)
+{
+	if (numid < _modules->count())
+	{
+		QByteArray key = _modules->keys().at(numid);
+		return _modules->value(key);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
 QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
 {
 	QList< QMenu* > list;
