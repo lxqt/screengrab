@@ -49,10 +49,8 @@ private:
     QString getFormat();
     bool checkUsedShortcuts();    
     void showErrorMessage(QString text);
-
-#ifdef SG_EXT_UPLOADS
-	QWidget* _uploaderConfigWidget;
-#endif
+	
+	QStringList _moduleWidgetNames;
 	
 #ifdef SG_GLOBAL_SHORTCUTS
     bool avalibelGlobalShortcuts(const QKeySequence& seq);

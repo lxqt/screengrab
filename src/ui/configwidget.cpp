@@ -118,13 +118,21 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     ui->labUsedShortcut->setVisible(false);
     ui->keyWidget->setVisible(false);
 
-#ifdef SG_EXT_UPLOADS
-	// TODO - crate universal code for get Configuration Widgets for each modules
-	_uploaderConfigWidget = Core::instance()->modules()->getModule(MOD_UPLOADER)->initConfigWidget();
-	ui->stackedWidget->addWidget(_uploaderConfigWidget);
-#else
-	delete ui->listWidget->takeItem(5);
-#endif	
+	// Load config widgets for modules
+	quint8 countModules = Core::instance()->modules()->count();
+	
+	for (int i = 0; i < countModules; ++i)
+	{
+		AbstractModule* currentModule = Core::instance()->modules()->getModule(i);
+		
+		if (currentModule->initConfigWidget() != 0)
+		{
+			ui->listWidget->addItem(currentModule->moduleName());
+			QWidget *currentModWidget = currentModule->initConfigWidget();
+			ui->stackedWidget->addWidget(currentModWidget);	
+			_moduleWidgetNames << currentModWidget->objectName();
+		}				
+	}
 }
 
 ConfigDialog::~ConfigDialog()
@@ -297,10 +305,17 @@ void ConfigDialog::saveSettings()
     conf->saveSettings();
     conf->setDelay(conf->getDefDelay());
 	
-#ifdef SG_EXT_UPLOADS
-	QMetaObject::invokeMethod(_uploaderConfigWidget, "saveSettings");
-#endif
-		
+	// call save method on modeule's configwidgets'	
+	for (int i = 0; i < _moduleWidgetNames.count(); ++i)
+	{
+		QString name = _moduleWidgetNames.at(i);
+		QWidget* currentWidget = ui->stackedWidget->findChild<QWidget*>(name);
+		if (currentWidget)
+		{
+			QMetaObject::invokeMethod(currentWidget, "saveSettings");
+		}
+	}
+	
     // accep changes
     accept();
 }
