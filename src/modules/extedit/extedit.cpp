@@ -99,6 +99,7 @@ void ExtEdit::editedFileChanged(const QString& path)
 
 void ExtEdit::createAppList()
 {	
+#ifdef Q_WS_X11
 	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
 	QFile file(globalMimeTypesList);
 	
@@ -134,8 +135,23 @@ void ExtEdit::createAppList()
 			}
 		}
 	}
+#endif
+#ifdef Q_WS_WIN
+	// TODO make read windows registry for get apps for image editing
+	
+	// WARNING this in dirty hack - hardcoded mspaint app
+	ExtApp_t app;
+	app.exec = "mspaint";
+	app.name = "Paint";
+	
+	_appList.append(app);
+#endif
 }
 
+#ifdef Q_WS_X11
+/*
+ *  This method call only in Linux
+ */
 ExtApp_t ExtEdit::readDesktopFile(QString filename)
 {	
 	ExtApp_t entry;
@@ -170,3 +186,4 @@ ExtApp_t ExtEdit::readDesktopFile(QString filename)
 		
 	return entry;
 }
+#endif
