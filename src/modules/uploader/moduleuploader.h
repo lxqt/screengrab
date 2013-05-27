@@ -31,7 +31,7 @@ class ModuleUploader: public QObject, public AbstractModule
 	Q_OBJECT
 public:
     ModuleUploader(QObject *parent = 0);
-        
+	QString moduleName();
 	QWidget* initConfigWidget();
 	void defaultSettings();
 	QMenu* initModuleMenu();

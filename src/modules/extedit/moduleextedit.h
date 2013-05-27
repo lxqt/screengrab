@@ -31,6 +31,7 @@ class ModuleExtEdit: public AbstractModule
 public:
     ModuleExtEdit();
 	virtual ~ModuleExtEdit();
+	QString moduleName();
 	void init();
 	QMenu* initModuleMenu();
 	QWidget* initConfigWidget();

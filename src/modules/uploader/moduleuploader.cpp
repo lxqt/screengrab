@@ -31,6 +31,12 @@ ModuleUploader::ModuleUploader(QObject *parent) :
     
 }
 
+QString ModuleUploader::moduleName()
+{
+	return tr("Uploader");
+}
+
+
 void ModuleUploader::init()
 {
     DialogUploader *ui = new DialogUploader();

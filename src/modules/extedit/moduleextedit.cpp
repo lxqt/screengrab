@@ -35,6 +35,12 @@ ModuleExtEdit::~ModuleExtEdit()
 	}
 }
 
+QString ModuleExtEdit::moduleName()
+{
+	return QObject::tr("External edit");
+}
+
+
 void ModuleExtEdit::init()
 {
 	

@@ -34,6 +34,7 @@ public:
 	
 	// intrface
 	virtual void init() = 0;
+	virtual QString moduleName() = 0;
 	virtual QWidget* initConfigWidget() = 0;
 	virtual void defaultSettings() = 0;
 	virtual QMenu* initModuleMenu() = 0;
