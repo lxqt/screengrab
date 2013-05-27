@@ -112,6 +112,7 @@ void UploaderConfig::defaultSettings()
 {
 	_settings->beginGroup("common");
 	_settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
+	_settings->setValue(KEY_DEFAULT_HOST, DEF_DEFAULT_HOST);
 	_settings->endGroup();
 
 	// imageshack.us settings
