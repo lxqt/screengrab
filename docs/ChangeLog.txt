@@ -1,9 +1,11 @@
 1.0
  * Fixed dual monitor support
- * Added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
- * Added ability to upload to some image hosts (imgur.com and imgshack.us)
- * Added build option for compile without upload feature (SG_EXT_UPLOADS bulld option)
- * Add "Previous selection" mode (save last selected area and restoring it in next get area screenshot)
+ * added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
+ * added ability to upload to some image hosts (imgur.com and imgshack.us)
+ * added build option for compile without upload feature (SG_EXT_UPLOADS bulld option)
+ * added "Previous selection" mode (save last selected area and restoring it in next get area screenshot)
+ * added ability to edit screenshot in external editor
+ * added option for preview screenshot in default image viewer by double click on screenshot area
  * Fixed non-minimize main window on "Exit" shortcut, when use "Minimize to tray" option
  * Fixed bug with cut button text on mainwindow
  * Fixed regression with not capture screenshot when second instance running
@@ -11,7 +13,7 @@
  * added build option SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
  * autoincrement filenames when saving screenshots in manual mode (in one running session)
  * added the ability to customize shortcut to close the application
- * added ability to run in minimized to ttray (or taskar, if tray is disabled) with "--minimized" comand line option
+ * added ability to run in minimized to tray (or taskar, if tray is disabled) with "--minimized" comand line option
 
 0.9.1
  * fixed non-switching combo-box "Type of Screeen" when grab screenshot from signal by another instance application.
