@@ -40,6 +40,8 @@ Microsoft Windows e GNU/Linux.
 		    <li>Copia a captura de tela para a área de transferência</li>
                     <li>Salva seus arquivos de imagens no formato PNG
 ou JPEG ou BMP</li>
+                    <li>Ability to view and edit screenshots in an external editor</li>
+                    <li>Ability to upload screenshots on several image hostings (currently support imgur.com and imgshack.us, in the future, the list will be expanded)</li>
                     <li>Habilidade em definir atraso ao obter as capturas de telas
 (de 1 até 90 segundos)</li>
                     <li>Ocultando a janela principal (com recuperação) do
@@ -72,6 +74,7 @@ através dos botões ou pelo menu de contexto na área de notificação do deskt
                     <li><b>Nova tela</b> [Ctrl+N] -- obtém nova captura de tela.</li>
                     <li><b>Salvar tela</b> [Ctrl+S] -- salva a captura da tela obtida no disco rígido (no formato PNG ou JPEG).</li>
 <li><b>Copiar tela</b> [Ctrl+C] -- copia tela para a área de transferência.</li>
+					<li><b>Advanced</b> - advanced abilities.</li>
                     <li><b>Opções</b> [Ctrl+O] -- mostra a janela de opções do programa.</li>
 		    <li><b>Ajuda</b> [Ctrl+H] -- exibe informações de ajuda.</li>
                     <li><b>Informações</b> [Ctrl+I] -- exibe informações sobre o ScreenGrab, desenvolvedor e licença.</li>
@@ -95,7 +98,7 @@ ou janela ativa]. </li>
                     <li><b>Diretório padrão</b> -- diretório padrão para salvar as capturas de telas.</li>
                     <li><b>Nome do arquivo padrão</b> -- nome do arquivo salvo por padrão.</li>
                     <li><b>Formato</b> -- padrão do formato da imagem salva (você pode selecionar outro formato ao salvar).</li>
-<li><b>Nenhuma decoração da janela</b> -- captura a janela ativa sem as decoraçãos da janela.</li>
+<li><b>Nenhuma decoração da janela</b> -- captura a janela ativa sem as decoraçãos da janela (only for linux version).</li>
 	</ul>
             <p>
                 <b><u>Configurações avançadas:</u></b>
@@ -144,7 +147,14 @@ ou janela ativa]. </li>
 				</li>
                     <li><b>Auto-salvar tela</b> -- salva automaticamente capturas de telas no processo de captura.</li>
 		    <li><b>Salvar a primeira captura de tela</b> -- habilitado | desabilitado automaticamente ao salvar a primeira captura de tela, que se obtém ao executar o programa.</li>
+		<li><b>Filenames to clipboard on saving</b> - send to the clipboard name of the saved file. You can select these params:</li>
+			<ul>
+				<li><b>No copy</b> - the name of saved file will not be transferred to the clipboard.</li>
+				<li><b>Only filename</b> - send to the clipboard only the file name.</li>
+				<li><b>Full path to file</b> - send to the clipboard full path to the file.</li>
+			</ul>
                   <li><b>Permitir múltiplas instâncias</b> -- permite executar múltiplas instâncias do ScreenGrab.</li>
+                  <li><b>Enable external viewer</b> -- enable or disable ability for preview screenshot in default image viewer (by double click on screenshot area in main window).</li>
 	</ul>
             <p>
                 <b><u>Exibir configurações:</u></b>
@@ -178,11 +188,12 @@ ou janela ativa]. </li>
                 <u><b>Parâmetros da linha de comando:</u></b>
             </p>
                       <ul>
-                        <li><b>--fullscreen</b> -- define o modo tela cheia [padrão].
-                        <li><b>--active</b> -- define o modo janela ativa.
-                        <li><b>--region</b> -- define o modo selecionar área da tela.
-                        <li><b>--version</b> -- exibe informações da versão {somente linux].
-                        <li><b>--help</b> -- mostra informações dos parâmetros de linha de comando {somente linux].
+                        <li><b>--fullscreen</b> -- define o modo tela cheia [padrão].</li>
+                        <li><b>--active</b> -- define o modo janela ativa.</li>
+                        <li><b>--region</b> -- define o modo selecionar área da tela.</li>
+                        <li><b>--minimized</b> -- run in minimized to the tray (or taskar, if tray is disabled).</li>
+                        <li><b>--version</b> -- exibe informações da versão {somente linux].</li>
+                        <li><b>--help</b> -- mostra informações dos parâmetros de linha de comando {somente linux].</li>
                       </ul>
 
 <a name='license'></a> 

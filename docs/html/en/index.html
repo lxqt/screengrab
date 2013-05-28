@@ -40,6 +40,8 @@ Microsoft Windows and GNU/Linux.
 		    <li>Copy screenshot to clipboard</li>
                     <li>Saving your image files in formats PNG
 or JPEG or BMP</li>
+                    <li>Ability to view and edit screenshots in an external editor</li>
+                    <li>Ability to upload screenshots on several image hostings (currently support imgur.com and imgshack.us, in the future, the list will be expanded)</li>
                     <li>Ability to set delay in getting screenshots
 (from 1 to 90 seconds)</li>
                     <li>Hiding the main window (with recovery)
@@ -73,6 +75,7 @@ kotekstnoe a button or menu in the notification area of the desktop.
                     <li><b>Save Screen</b> [Ctrl+S] -- write getting screenshtit
   on hard disk (in PNG or JPEG format).</li>
 <li><b>Copy Screen</b> [Ctrl+C] -- copy screen to clipboard.</li>
+					<li><b>Advanced</b> - advanced abilities.</li>
                     <li><b>Optionsи</b> [Ctrl+O] -- show program options window.</li>
 		    <li><b>Help</b> [Ctrl+H] -- display help information.</li>
                     <li><b>Information</b> [Ctrl+I] -- display information about ScreenGrab,
@@ -97,7 +100,7 @@ or active window]. </li>
                     <li><b>Default directory</b> -- default directory for save screenshots</li>
                     <li><b>Default filename</b> -- name of saved file by default.</li>
                     <li><b>Format</b> -- default saving image format (you can select other format  in saving)</li>
-<li><b>No window decoration</b> -- grab screenshot of active window without window decorations</li>
+<li><b>No window decoration</b> -- grab screenshot of active window without window decorations (only for linux version).</li>
 	</ul>
             <p>
                 <b><u>Advanced settings:</u></b>
@@ -148,7 +151,15 @@ or active window]. </li>
                     <li><b>Autosave screen</b> -- automaticaly saving
 screenshot in grab process</li>
 		    <li><b>Save first screenshot</b> -- enabled | disabled automaticaly saving first screenshot, which get on run application</li>
-		    <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>
+		<li><b>Filenames to clipboard on saving</b> - send to the clipboard name of the saved file. You can select these params:</li>
+			<ul>
+				<li><b>No copy</b> - the name of saved file will not be transferred to the clipboard.</li>
+				<li><b>Only filename</b> - send to the clipboard only the file name.</li>
+				<li><b>Full path to file</b> - send to the clipboard full path to the file.</li>
+			</ul>
+			
+		    <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>	
+		    <li><b>Enable external viewer</b> -- enable or disable ability for preview screenshot in default image viewer (by double click on screenshot area in main window).</li>
 	</ul>
             <p>
                 <b><u>Display settings:</u></b>
@@ -186,11 +197,12 @@ by click on close window button.</li>
                 <u><b>Command line parameters:</u></b>
             </p>
 			<ul>
-			  <li><b>--fullscreen</b> -- set fullscreen mode [default].
-			  <li><b>--active</b> -- set active window mode.
-			  <li><b>--region</b> -- set screen region select mode.
-			  <li><b>--version</b> -- display version information {linux only].
-			  <li><b>--help</b> -- display command line parameters information {linux only].
+			  <li><b>--fullscreen</b> -- set fullscreen mode [default].</li>
+			  <li><b>--active</b> -- set active window mode.</li>
+			  <li><b>--region</b> -- set screen region select mode.</li>
+			  <li><b>--minimized</b> -- run in minimized to the tray (or taskar, if tray is disabled).</li>
+			  <li><b>--version</b> -- display version information {linux only].</li>
+			  <li><b>--help</b> -- display command line parameters information {linux only].</li>
 			</ul>
 
 <a name='license'></a>
