@@ -503,6 +503,38 @@ void Core::copyScreen()
     Q_EMIT sendStateNotifyMessage(message);
 }
 
+void Core::openInExtViewer()
+{
+	if (conf->getEnableExtView() == 1)
+	{
+		QString format = "png";
+		QString tempFileName = getTempFilename(format);
+		writeScreen(tempFileName, format, true);
+		
+		QString exec;
+#ifdef Q_WS_X11
+		exec = "xdg-open";
+#endif
+#ifdef Q_WS_WIN
+		// WARNING this in dirty hack - hardcoded mspaint append
+		exec = "mspaint";
+#endif
+		QStringList args;
+		args << tempFileName;
+		
+		QProcess *execProcess = new QProcess(this);
+		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+		execProcess->start(exec, args);
+	}
+}
+
+void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
+{
+	sender()->deleteLater();	
+	killTempFile();
+}
+
+
 ModuleManager* Core::modules()
 {
     return &_modules;

@@ -133,7 +133,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
     displayPixmap();
 
-	m_ui->scrLabel->installEventFilter(this);
+	m_ui->scrLabel->installEventFilter(this);	
 }
 
 MainWindow::~MainWindow()
@@ -191,6 +191,12 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 		displatScreenToolTip();
 	}
 
+	if (obj == m_ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
+	{
+		core->openInExtViewer();
+	}
+	
+	
     return QObject::eventFilter(obj, event);
 }
 

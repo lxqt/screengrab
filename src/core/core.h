@@ -36,6 +36,7 @@
 #include <QtCore/QTime>
 #include <QtCore/QByteArray>
 #include <QtCore/QRect>
+#include <QtCore/QProcess>
 
 #ifdef Q_WS_X11
 #include <QtGui/QX11Info>
@@ -65,7 +66,7 @@ class Core : public QObject
 public Q_SLOTS:
     void coreQuit();
     void screenShot(bool first = false);
-    void autoSave();
+    void autoSave();	
 
 public:
     static Core* instance();
@@ -82,6 +83,7 @@ public:
 	void killTempFile();
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
+	void openInExtViewer();
 	
 	ModuleManager* modules();
 
@@ -125,6 +127,7 @@ private:
     
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
+	void closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus);
 
 };
 
