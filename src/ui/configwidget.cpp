@@ -184,6 +184,7 @@ void ConfigDialog::loadSettings()
     toggleCheckShowTray(conf->getShowTrayIcon());
 
     ui->slideImgQuality->setValue(conf->getImageQuality());
+	ui->cbxEnableExtView->setChecked(conf->getEnableExtView());
 }
 
 
@@ -275,6 +276,7 @@ void ConfigDialog::saveSettings()
     conf->setTimeTrayMess(ui->timeTrayMess->value());
     conf->setShowTrayIcon(ui->checkShowTray->isChecked());
     conf->setImageQuality(ui->slideImgQuality->value());
+	conf->setEnableExtView(ui->cbxEnableExtView->isChecked());
 #ifdef Q_WS_X11
     conf->setNoDecorX11(ui->checkNoDecorX11->isChecked());
 #endif
