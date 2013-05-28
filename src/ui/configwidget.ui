@@ -105,7 +105,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -430,6 +430,16 @@
            </property>
            <property name="text">
             <string>Allow multiple copies</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="cbxEnableExtView">
+           <property name="toolTip">
+            <string>Open screenshot in external viewer by double click on screen area</string>
+           </property>
+           <property name="text">
+            <string>Enable external viewer</string>
            </property>
           </widget>
          </item>
