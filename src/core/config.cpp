@@ -55,6 +55,8 @@ const QString KEY_ALLOW_COPIES = "AllowCopies";
 const QString KEY_CLOSE_INTRAY = "closeInTray";
 const QString KEY_TYPE_SCREEN = "typeScreenDefault";
 
+const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
+
 #ifdef Q_WS_X11
 const QString KEY_NODECOR = "noDecorations";
 #endif
@@ -218,6 +220,17 @@ QDateTime Config::getLastSaveDate() const
 {
     return dateLastSaving;
 }
+
+bool Config::getEnableExtView()
+{
+	return value(KEY_ENABLE_EXT_VIEWER).toBool();
+}
+
+void Config::setEnableExtView(bool val)
+{
+	setValue(KEY_ENABLE_EXT_VIEWER, val);
+}
+
 
 QString Config::getSaveDir()
 {
@@ -485,6 +498,7 @@ void Config::loadSettings()
     settings->beginGroup("System");
     setCloseInTray(settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
     setAllowMultipleInstance(settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
+	setEnableExtView(settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
     settings->endGroup();
 
     setDelay(getDefDelay());
@@ -544,6 +558,7 @@ void Config::saveSettings()
     settings->beginGroup("System");
     settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
+	settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
     settings->endGroup();
 
     _shortcuts->saveSettings();
@@ -571,6 +586,7 @@ void Config::setDefaultSettings()
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
     setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOW_TRAY);
+	setEnableExtView(DEF_ENABLE_EXT_VIEWER);
 
     _shortcuts->setDefaultSettings();
 

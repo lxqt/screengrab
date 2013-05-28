@@ -51,6 +51,7 @@ const bool DEF_AUTO_SAVE = false;
 const bool DEF_AUTO_SAVE_FIRST = false;
 const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
 const bool DEF_SHOW_TRAY = true;
+const bool DEF_ENABLE_EXT_VIEWER = 1;
 
 // class worker with conf data
 class Config
@@ -214,8 +215,8 @@ public:
     void updateLastSaveDate();
     QDateTime getLastSaveDate() const;
     
-    // shortcuts
-
+	bool getEnableExtView();
+	void setEnableExtView(bool val);
 
     static QString getSysLang();
 
