@@ -132,6 +132,8 @@ MainWindow::MainWindow(QWidget* parent) :
                 QApplication::desktop()->screenNumber()).height()/2 - height()/2);
 
     displayPixmap();
+
+	m_ui->scrLabel->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -180,6 +182,16 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         displayPixmap();
     }
 
+}
+
+bool MainWindow::eventFilter(QObject* obj, QEvent* event)
+{		
+	if (obj == m_ui->scrLabel && event->type() == QEvent::ToolTip)
+	{
+		displatScreenToolTip();
+	}
+
+    return QObject::eventFilter(obj, event);
 }
 
 void MainWindow::show()
@@ -332,6 +344,21 @@ void MainWindow::copyScreen()
 {
     core->copyScreen();
 }
+
+void MainWindow::displatScreenToolTip()
+{
+	quint16 w = core->getPixmap()->size().width();
+	quint16 h = core->getPixmap()->size().height();
+	QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
+	if (core->conf->getEnableExtView() == 1)
+	{
+		toolTip += "\n\n";
+		toolTip += tr("Double click for open screenshot in external default image viewer");
+	}
+
+	m_ui->scrLabel->setToolTip(toolTip);
+}
+
 
 // crete tray
 void MainWindow::createTray()

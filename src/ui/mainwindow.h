@@ -60,6 +60,7 @@ protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window    
+	bool eventFilter(QObject *obj, QEvent *event);
 //
 private:
     Ui::MainWindow *m_ui;
@@ -88,6 +89,7 @@ private:
     QSignalMapper *globalShortcutSignals;
 #endif
     
+	void displatScreenToolTip();
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
