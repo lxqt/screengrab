@@ -50,6 +50,14 @@ int main(int argc, char *argv[])
     scr.installTranslator(&localize);
 
     Core *ScreenGrab = Core::instance();
+	
+#ifdef SG_EXT_UPLOADS
+		if (ScreenGrab->conf->cmdLine()->isCreated() && ScreenGrab->conf->cmdLine()->getParam("upload"))
+		{
+			qDebug() << "Upload ";			
+		}
+#endif
+	
     MainWindow mainWnd;    
     
     if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
@@ -91,6 +99,9 @@ ScreenGrab->conf->cmdLine()->getParam("help"))
         CmdLine::print("--active \tSet active window mode");
         CmdLine::print("--region \tSet region select mode");
 		CmdLine::print("--minimized \tRun minimised");
+#ifdef SG_EXT_UPLOADS
+		CmdLine::print("--upload \tUpload scrennshot to selected image host");
+#endif
         return 0;
     }
 

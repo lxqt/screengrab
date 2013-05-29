@@ -30,6 +30,10 @@ CmdLine::CmdLine()
     typeDefined = false;
     instance = true;
     optsLong << "version" << "help" << "active" << "fullscreen" << "region" << "minimized";
+	
+#ifdef SG_EXT_UPLOADS
+	optsLong << "upload";
+#endif
 
     for (int i= 1; i != QApplication::argc(); ++i)
     {        
