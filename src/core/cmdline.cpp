@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,104 +19,137 @@
  ***************************************************************************/
 #include "cmdline.h"
 
-#include <QtCore/QStringListIterator>
-#include <QtCore/QDebug>
 #include <QtGui/QApplication>
 
-bool CmdLine::instance = false;
+#include <iostream>
 
 CmdLine::CmdLine()
 {
-    typeDefined = false;
-    instance = true;
-    optsLong << "version" << "help" << "active" << "fullscreen" << "region" << "minimized";
-	
-#ifdef SG_EXT_UPLOADS
-	optsLong << "upload";
-#endif
 
-    for (int i= 1; i != QApplication::argc(); ++i)
-    {        
-        if (parseOpt(QApplication::argv()[i]) != true)
-        {
-            qDebug() << QApplication::argv()[i] << " is not valid param";
-        }
-    }    
 }
 
 CmdLine::~CmdLine()
 {
-    instance = false;
+
 }
 
-bool CmdLine::isCreated()
-{
-    return instance;
+void CmdLine::registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType)
+{	
+	switch(paramType)
+	{
+		case CmdLineParam::ScreenType:
+		{
+			_screenTypeParams << param;
+			break;
+		}
+		case CmdLineParam::Util:
+		{
+			_utilityParams << param;
+			break;
+		}
+		case CmdLineParam::Printable:
+		{
+			_onlyPrintParams << param;
+			break;
+		}
+		default:
+			break;
+	}
+	
+	_regstredParams.insert(param, description);
 }
 
-bool CmdLine::parseOpt(char* opt)
+bool CmdLine::checkParam(const QString& param)
 {
-    QString str ;
-    bool retVal = false;
-    
-    if (opt[0] == '-' && opt[1] == '-')
-    {        
-        for (unsigned int i = 2; i != strlen(opt); ++i )
-        {
-            str += opt[i];
-        }
-        if (addParam(str) == true)
-        {
-            retVal = true;
-        }
+	return _usedParams.contains(param);
+}
 
-        // парсинг длинного параметра
-    }
-    else
+void CmdLine::parse()
+{
+	QString param;
+    for (int i= 1; i != QApplication::argc(); ++i)
     {
-        qDebug() << "'" << opt << "' is incorrect option"; // TODO -- print out normal
-        retVal = false;
+		param = QApplication::argv()[i];
+		
+		if (param.startsWith("--") != true)
+		{
+			_invalidParams << param;
+		}
+		else 
+		{
+			param = param.remove(0, 2);
+			
+			if (_regstredParams.contains(param) == true)
+			{
+				_usedParams << param;
+			}
+			else
+			{
+				_invalidParams << param;
+			}
+		}
     }
     
-    return retVal;
+    if (_invalidParams.count() > 0)
+	{
+		QString printable;
+		for (int i =0; i < _invalidParams.count(); ++i)
+		{
+			printable = "'" + _invalidParams.at(i) + "' is incorrect command line param.";
+			print(printable);
+		}
+	}
 }
 
-
-bool CmdLine::addParam(QString param)
+qint8 CmdLine::selectedScreenType()
 {
-    bool retVal = false;
-    if (optsLong.contains(param))
-    {
-        if (typeDefined == false && (param == "fullscreen" || param == "active" || param == "region"))
-        {
-            optsFound << param;
-            typeDefined = true;
-        }
-        if (param != "fullscreen" && param != "active" && param != "region")
-        {
-            optsFound << param;
-        }
-        retVal = true;
-    }
-    return retVal;
+	for (int i = 0; i < _screenTypeParams.count(); ++i)
+	{
+		if (_usedParams.contains(_screenTypeParams.at(i)))
+		{
+			return i;
+		}
+	}
+	return -1;
 }
 
-bool CmdLine::getParam(QString name)
+void CmdLine::printHelp()
 {
-    return optsFound.contains(name);
+	print("ScreenGrab usage:");
+	print("\nscreengrub [screentype] [additional param]");
+	
+	QString optStr;
+	
+	print("\nscreenshot type command line params:");
+		
+	for (int i = 0; i < _screenTypeParams.count(); ++i)
+	{
+		optStr += "--" + _screenTypeParams.at(i) + "\t" + _regstredParams.value(_screenTypeParams.at(i));
+		print(optStr);
+		optStr.clear();
+	}
+	
+	print("\nadditional command line params:");
+		
+	for (int i = 0; i < _utilityParams.count(); ++i)
+	{
+		optStr += "--" + _utilityParams.at(i) + "\t" + _regstredParams.value(_utilityParams.at(i));
+		print(optStr);
+		optStr.clear();
+	}
+	
+	print("\nMisc params:");
+		
+	for (int i = 0; i < _onlyPrintParams.count(); ++i)
+	{
+		optStr += "--" + _onlyPrintParams.at(i) + "\t" + _regstredParams.value(_onlyPrintParams.at(i));
+		print(optStr);
+		optStr.clear();
+	}
+	
 }
 
-bool CmdLine::isNotEmpty() const
+void CmdLine::print(const QString& string)
 {
-    return cmdNotEmpty;
-}
-
-void CmdLine::print(QString &string)
-{
-    fprintf(stdout, "%s", string.toUtf8().constData());
-}
-
-void CmdLine::print(const char *string)
-{
-    fprintf(stdout, "%s \n", string);
+	std::cout << string.toStdString() << std::endl;
 }

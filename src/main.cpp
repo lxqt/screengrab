@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -50,20 +50,15 @@ int main(int argc, char *argv[])
     scr.installTranslator(&localize);
 
     Core *ScreenGrab = Core::instance();
-	
-#ifdef SG_EXT_UPLOADS
-		if (ScreenGrab->conf->cmdLine()->isCreated() && ScreenGrab->conf->cmdLine()->getParam("upload"))
-		{
-			qDebug() << "Upload ";			
-		}
-#endif
+	ScreenGrab->modules()->initModules();
+	ScreenGrab->parseCmdLine();
 	
     MainWindow mainWnd;    
     
     if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
     {
         ScreenGrab->screenShot(true);
-		if (ScreenGrab->conf->cmdLine()->isCreated() && ScreenGrab->conf->cmdLine()->getParam("minimized"))
+		if ( ScreenGrab->cmdLine()->checkParam("minimized"))
 		{
 			if (mainWnd.isTrayed() == true)
 			{
@@ -90,23 +85,22 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    if (ScreenGrab->conf->cmdLine()->isCreated() &&
-ScreenGrab->conf->cmdLine()->getParam("help"))
+    if (ScreenGrab->cmdLine()->checkParam("help"))
     {
-        CmdLine::print("--help \t\tDisplay this screen");
-        CmdLine::print("--version \tDisplay version info");
-        CmdLine::print("--fullscreen \tSset fullscreen mode");
-        CmdLine::print("--active \tSet active window mode");
-        CmdLine::print("--region \tSet region select mode");
-		CmdLine::print("--minimized \tRun minimised");
-#ifdef SG_EXT_UPLOADS
-		CmdLine::print("--upload \tUpload scrennshot to selected image host");
-#endif
+		ScreenGrab->cmdLine()->printHelp();
+//         CmdLine::print("--help \t\tDisplay this screen");
+//         CmdLine::print("--version \tDisplay version info");
+//         CmdLine::print("--fullscreen \tSset fullscreen mode");
+//         CmdLine::print("--active \tSet active window mode");
+//         CmdLine::print("--region \tSet region select mode");
+// 		CmdLine::print("--minimized \tRun minimised");
+// #ifdef SG_EXT_UPLOADS
+// 		CmdLine::print("--upload \tUpload scrennshot to selected image host");
+// #endif
         return 0;
     }
 
-    if (ScreenGrab->conf->cmdLine()->isCreated() &&
-ScreenGrab->conf->cmdLine()->getParam("version"))
+    if (ScreenGrab->cmdLine()->checkParam("version"))
     {
         QString version = Core::getVersionPrintable();
         CmdLine::print(version);

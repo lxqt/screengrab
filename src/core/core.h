@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,6 +25,7 @@
 #endif
 
 #include "config.h"
+#include "cmdline.h"
 #include "regionselect.h"
 
 #include "modulemanager.h"
@@ -49,13 +50,13 @@ struct StateNotifyMessage {
     QString message;
     StateNotifyMessage()
     {
-	header = "";
-	message = "";
+        header = "";
+        message = "";
     };
     StateNotifyMessage(QString h, QString m)
     {
-	header = h;
-	message = m;
+        header = h;
+        message = m;
     };
 };
 
@@ -66,26 +67,28 @@ class Core : public QObject
 public Q_SLOTS:
     void coreQuit();
     void screenShot(bool first = false);
-    void autoSave();	
+    void autoSave();
 
 public:
     static Core* instance();
     ~Core();
-    
+
     void sleep(quint8 msec = 350);
     static QString getVersionPrintable();
 
     QPixmap* getPixmap();
     QByteArray getScreen();
-    
-	void updatePixmap();
-	QString getTempFilename(const QString& format);
-	void killTempFile();
+
+    void updatePixmap();
+    QString getTempFilename(const QString& format);
+    void killTempFile();
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
-	void openInExtViewer();
-	
-	ModuleManager* modules();
+    void openInExtViewer();
+	void parseCmdLine();
+
+    ModuleManager* modules();
+    CmdLine* cmdLine();
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
@@ -119,15 +122,16 @@ private:
     RegionSelect *selector; // region grabber widget
     QRect _lastSelectedArea; // store las
 
-	ModuleManager _modules;
-	QString _tempFilename;
-    
+    CmdLine *_cmd;
+    ModuleManager _modules;
+    QString _tempFilename;
+
     bool hided;
     bool firstScreen;
-    
+
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
-	void closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus);
+    void closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus);
 
 };
 

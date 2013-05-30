@@ -220,7 +220,7 @@ public:
 
     static QString getSysLang();
 
-    CmdLine* cmdLine();
+//     CmdLine* cmdLine();
     ShortcutManager* shortcuts();
 
 private:
@@ -249,7 +249,7 @@ private:
     QSettings *settings;
     QHash<QString, QVariant> confData;
 
-    CmdLine *cmd;
+//     CmdLine *cmd;
     ShortcutManager *_shortcuts;
 
     QVector<QString> imageFormats;

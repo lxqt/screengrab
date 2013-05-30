@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,42 +23,39 @@
 
 #include <stdio.h>
 
-#include <QtCore/QList>
+#include <QtCore/QMap>
 #include <QtCore/QStringList>
 
-// -f -- fuscreen
-// -a -- active window
-// -r -- region select
-
-struct optData
+namespace CmdLineParam
 {
-    QString shotName;
-    QString longName;
-};
+	enum CmdLineParam {
+		ScreenType = 0,
+		Util = 1,
+		Printable = 2,
+	};
+}
 
 class CmdLine
 {
 public:
     CmdLine();
     ~CmdLine();
-    bool isNotEmpty() const;
-    bool getParam(QString);	
 	
-    static void print(QString&);
-    static void print(const char *string);
+	void printHelp();
+    static void print(const QString& string);
 
-    static bool isCreated();	
+	void registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType);
+	bool checkParam(const QString& param);
+	void parse();
+	qint8 selectedScreenType();
+	
 private:
-    bool cmdNotEmpty;    
-    bool parseOpt(char* );
-    bool addParam(QString);
-
-    QStringList optsLong;
-    QStringList optsFound;
-
-    static bool instance;
-    bool typeDefined;
-
+	QStringList _screenTypeParams;
+	QStringList _utilityParams;
+	QStringList _onlyPrintParams;
+	QMap<QString, QString> _regstredParams;
+	QStringList _usedParams;
+	QStringList _invalidParams;
 };
 
 #endif // CMDLINE_H

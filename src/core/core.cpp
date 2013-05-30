@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -56,7 +56,8 @@ using namespace netwm;
 
 Core* Core::corePtr = 0;
 
-Core::Core()
+Core::Core() :
+	_cmd(new CmdLine)
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
 
@@ -65,10 +66,20 @@ Core::Core()
 
     pixelMap = new QPixmap;
     selector = 0;
-    firstScreen = true;
-
-// 	_extEdit = new ModuleExtEdit();
-
+    firstScreen = true;	
+	
+	// register screenshot types command line params
+	_cmd->registerParam("fullscreen", "Sset fullscreen mode", CmdLineParam::ScreenType);
+	_cmd->registerParam("active", "Set active window mode", CmdLineParam::ScreenType);
+	_cmd->registerParam("region", "Set region select mode", CmdLineParam::ScreenType);
+	
+	// set utility command line params
+	_cmd->registerParam("minimized", "Run minimised", CmdLineParam::Util);
+	
+	// set pints only command line params	
+	_cmd->registerParam("help", "Display this screen", CmdLineParam::Printable);
+	_cmd->registerParam("version", "Display version info", CmdLineParam::Printable);
+	
     sleep(250);
     // delay on 250 msec
 //     QMutex mutex;
@@ -102,7 +113,7 @@ Core::~Core()
 // 	{
 // 		delete _extEdit;
 // 	}
-
+	delete _cmd;
     delete pixelMap;
     conf->killInstance();
 }
@@ -528,6 +539,21 @@ void Core::openInExtViewer()
 	}
 }
 
+void Core::parseCmdLine()
+{
+	if (QApplication::argc() > 1)
+	{
+		_cmd->parse();
+		
+		int  screenType = _cmd->selectedScreenType();
+		if (screenType != -1)
+		{
+			conf->setTypeScreen(screenType);
+		}
+	}
+}
+
+
 void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	sender()->deleteLater();	
@@ -539,6 +565,12 @@ ModuleManager* Core::modules()
 {
     return &_modules;
 }
+
+CmdLine* Core::cmdLine()
+{
+	return _cmd;
+}
+
 
 void Core::autoSave()
 {

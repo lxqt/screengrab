@@ -91,10 +91,10 @@ Config::~Config()
     delete _shortcuts;
     delete settings;
 
-    if (QApplication::argc() > 1)
-    {
-        delete cmd;
-    }
+//     if (QApplication::argc() > 1)
+//     {
+//         delete cmd;
+//     }
 
 }
 
@@ -503,28 +503,6 @@ void Config::loadSettings()
 
     setDelay(getDefDelay());
 
-    if (QApplication::argc() > 1)
-    {
-        cmd = new CmdLine();
-
-        if (cmd->getParam(QString("fullscreen")))
-        {
-            setTypeScreen(0);
-        }
-        if (cmd->getParam(QString("active")))
-        {
-            setTypeScreen(1);
-        }
-        if (cmd->getParam(QString("region")))
-        {
-            setTypeScreen(2);
-        }
-        if (cmd->getParam(QString("region")))
-        {
-            setTypeScreen(2);
-        }
-    }
-
     _shortcuts->loadSettings();
 }
 
@@ -649,10 +627,10 @@ QString Config::getSysLang()
 }
 
 
-CmdLine* Config::cmdLine()
-{
-    return cmd;
-}
+// CmdLine* Config::cmdLine()
+// {
+//     return cmd;
+// }
 
 ShortcutManager* Config::shortcuts()
 {
