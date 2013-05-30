@@ -23,14 +23,6 @@
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
 
-// #ifdef SG_EXT_UPLOADS
-// #include "src/modules/uploader/moduleuploader.h"
-// #endif
-//
-// #ifdef SG_EXT_EDIT
-// #include "src/modules/extedit/moduleextedit.h"
-// #endif
-
 #include <QtCore/QChar>
 #include <QtCore/QBuffer>
 #include <QtCore/QFile>
@@ -81,11 +73,6 @@ Core::Core() :
 	_cmd->registerParam("version", "Display version info", CmdLineParam::Printable);
 	
     sleep(250);
-    // delay on 250 msec
-//     QMutex mutex;
-//     mutex.lock();
-//     QWaitCondition pause;
-//     pause.wait(&mutex, 250);
 }
 
 Core::Core(const Core& ): QObject()
@@ -109,10 +96,6 @@ Core* Core::instance()
 
 Core::~Core()
 {
-// 	if (_extEdit)
-// 	{
-// 		delete _extEdit;
-// 	}
 	delete _cmd;
     delete pixelMap;
     conf->killInstance();

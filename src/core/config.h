@@ -21,7 +21,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "cmdline.h"
 #include "shortcutmanager.h"
 
 #include <QtCore/QSettings>

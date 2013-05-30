@@ -21,8 +21,6 @@
 #include "src/core/config.h"
 #include "core.h"
 
-#include "src/modules/uploader/moduleuploader.h"
-
 #include <QtGui/QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
@@ -90,12 +88,6 @@ Config::~Config()
 {
     delete _shortcuts;
     delete settings;
-
-//     if (QApplication::argc() > 1)
-//     {
-//         delete cmd;
-//     }
-
 }
 
 Config* Config::instance()

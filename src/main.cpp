@@ -17,7 +17,6 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-//#include <QApplication>
 #include <QTranslator>
 
 #include "src/common/singleapp/singleapp.h"
@@ -73,7 +72,6 @@ int main(int argc, char *argv[])
 		{		
 			mainWnd.show();
 		}
-//         mainWnd.show();
     }
 
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
@@ -88,15 +86,6 @@ int main(int argc, char *argv[])
     if (ScreenGrab->cmdLine()->checkParam("help"))
     {
 		ScreenGrab->cmdLine()->printHelp();
-//         CmdLine::print("--help \t\tDisplay this screen");
-//         CmdLine::print("--version \tDisplay version info");
-//         CmdLine::print("--fullscreen \tSset fullscreen mode");
-//         CmdLine::print("--active \tSet active window mode");
-//         CmdLine::print("--region \tSet region select mode");
-// 		CmdLine::print("--minimized \tRun minimised");
-// #ifdef SG_EXT_UPLOADS
-// 		CmdLine::print("--upload \tUpload scrennshot to selected image host");
-// #endif
         return 0;
     }
 
