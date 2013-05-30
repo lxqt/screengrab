@@ -19,6 +19,7 @@ class ModuleManager
 {
 public:
     ModuleManager();
+	void initModules();
 	AbstractModule* getModule(const QByteArray& name);
 	AbstractModule* getModule(const quint8 numid);
 	QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());

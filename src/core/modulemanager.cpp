@@ -13,7 +13,10 @@
 ModuleManager::ModuleManager()
 {
 	_modules = new ModuleList_t();
-	
+}
+
+void ModuleManager::initModules()
+{
 #ifdef SG_EXT_UPLOADS
 	ModuleUploader *uploader = new ModuleUploader();
 	_modules->insert(MOD_UPLOADER , uploader);
@@ -24,6 +27,7 @@ ModuleManager::ModuleManager()
 	_modules->insert(MOD_EXT_EDIT.data(), extedit);
 #endif
 }
+
 
 AbstractModule* ModuleManager::getModule(const QByteArray& name)
 {
