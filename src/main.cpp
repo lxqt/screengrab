@@ -52,6 +52,11 @@ int main(int argc, char *argv[])
 	ScreenGrab->modules()->initModules();
 	ScreenGrab->parseCmdLine();
 	
+    if (ScreenGrab->cmdLine()->checkParam("upload"))
+    {
+		ScreenGrab->modules()->getModule(MOD_UPLOADER)->init();
+    }
+	
     MainWindow mainWnd;    
     
     if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))

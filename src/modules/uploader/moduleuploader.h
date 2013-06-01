@@ -34,11 +34,14 @@ public:
 	QString moduleName();
 	QWidget* initConfigWidget();
 	void defaultSettings();
-	QMenu* initModuleMenu();
+	QMenu* initModuleMenu();	
 	QAction* initModuleAction();
 	
 private Q_SLOTS:
 	void init();
+	
+private:
+	bool _ignoreCmdParam;
 };
 
 #endif // MODULEUPLOADER_H

@@ -22,13 +22,18 @@
 #include "dialoguploader.h"
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
+#include "src/core/core.h"
+#include "src/core/cmdline.h"
 
 #include <QDebug>
 
+const QString UPLOAD_CMD_PARAM = "upload";
+
 ModuleUploader::ModuleUploader(QObject *parent) :
-	QObject(parent)
+	QObject(parent), _ignoreCmdParam(false)
 {
-    
+    Core *core = Core::instance();
+	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "Automaticaly upload screenshot to default omage hosting", CmdLineParam::Util);	
 }
 
 QString ModuleUploader::moduleName()
@@ -39,8 +44,17 @@ QString ModuleUploader::moduleName()
 
 void ModuleUploader::init()
 {
-    DialogUploader *ui = new DialogUploader();
-    ui->exec();
+	Core *core = Core::instance();
+	if (core->cmdLine()->checkParam(UPLOAD_CMD_PARAM) == true  && _ignoreCmdParam == false)
+	{
+		// TODO - add implement shadow supload screenshot to selected host
+		_ignoreCmdParam = true;
+	}
+	else
+	{
+		DialogUploader *ui = new DialogUploader();
+		ui->exec();	
+	}
 }
 
 QWidget* ModuleUploader::initConfigWidget()
