@@ -22,9 +22,16 @@
 #include "dialoguploader.h"
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
+#include "imgshack/uploader_imgshack.h"
+#include "imgur/uploader_imgur.h"
+
 #include "src/core/core.h"
 #include "src/core/cmdline.h"
 
+#include <QApplication>
+#include <QtCore/QWaitCondition>
+#include <QtCore/QMutex>
+#include <QtGui/QClipboard>
 #include <QDebug>
 
 const QString UPLOAD_CMD_PARAM = "upload";
@@ -41,13 +48,32 @@ QString ModuleUploader::moduleName()
 	return tr("Uploader");
 }
 
-
 void ModuleUploader::init()
 {
 	Core *core = Core::instance();
 	if (core->cmdLine()->checkParam(UPLOAD_CMD_PARAM) == true  && _ignoreCmdParam == false)
 	{
 		// TODO - add implement shadow supload screenshot to selected host
+		UploaderConfig config;
+		QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
+		
+		Uploader *uploader = 0;
+		switch(config.labelsList().indexOf(selectedtHost))
+		{
+		case 0:
+			uploader = new Uploader_ImgUr;		
+			break;
+		case 1:
+			uploader = new Uploader_ImgShack;
+			break;
+		default:
+			uploader = new Uploader_ImgShack;
+		}
+		
+		connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
+		connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
+		uploader->startUploading();
+		
 		_ignoreCmdParam = true;
 	}
 	else
@@ -79,4 +105,20 @@ QAction* ModuleUploader::initModuleAction()
 	QAction *act = new QAction(QObject::tr("Upload"), 0);
 	connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
 	return act;
+}
+
+
+void ModuleUploader::shadowUploadDone(const QString& directLink)
+{
+	sender()->deleteLater();
+	QString str = "Upload done, direct link to image: " + directLink;
+	CmdLine::print(str);
+	Q_EMIT uploadCompleteWithQuit();
+}
+
+void ModuleUploader::shadowUploadFail(const QByteArray& error)
+{
+	sender()->deleteLater();
+	QString str = "Upload failed: " + error;
+	CmdLine::print(str);
 }

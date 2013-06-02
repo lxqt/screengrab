@@ -37,8 +37,15 @@ public:
 	QMenu* initModuleMenu();	
 	QAction* initModuleAction();
 	
-private Q_SLOTS:
-	void init();
+public Q_SLOTS:
+	void init(); 
+	
+private Q_SLOTS:	
+	void shadowUploadDone(const QString &directLink);
+	void shadowUploadFail(const QByteArray &error);
+	
+Q_SIGNALS:
+	void uploadCompleteWithQuit();
 	
 private:
 	bool _ignoreCmdParam;

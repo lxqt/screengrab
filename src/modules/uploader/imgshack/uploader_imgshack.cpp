@@ -189,7 +189,8 @@ void Uploader_ImgShack::replyFinished(QNetworkReply* reply)
 		_uploadedStrings[UL_BB_CODE].first = replyXmlMap["image_bb2"];
 		_uploadedStrings[UL_HTML_CODE_THUMB].first = replyXmlMap["thumb_htm"];
 		_uploadedStrings[UL_BB_CODE_THUMB].first = replyXmlMap["thumb_bb2"];
-		
+		qDebug() << "done " << _uploadedStrings[UL_DIRECT_LINK].first;
+		Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
 		Q_EMIT uploadDone();
 	}
 	else
