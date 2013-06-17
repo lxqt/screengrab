@@ -67,6 +67,15 @@ add_definitions( -DPREFIX="${CMAKE_INSTALL_PREFIX}")
 
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
+IF (IS64BITS AND RESPECTLIB64)
+    SET (LIBDIR "lib64")
+ELSE (IS64BITS AND RESPECTLIB64)
+    SET (LIBDIR "lib")
+ENDIF (IS64BITS AND RESPECTLIB64)
+set(SG_LIBDIR "${LIBDIR}/screengrab")
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
+message(STATUS "Library path: "${CMAKE_INSTALL_RPATH})
+
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)

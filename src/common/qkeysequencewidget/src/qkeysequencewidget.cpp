@@ -577,9 +577,11 @@ void QShortcutButton::keyReleaseEvent(QKeyEvent *keyEvent)
     }
 }
 
+#ifndef IS_SHARED
 #ifdef IS_CMAKE
 #include "moc_qkeysequencewidget.cxx"
 #include "qrc_qkeysequencewidget.cxx"
 #else
 #include "moc_qkeysequencewidget.cpp"
+#endif
 #endif

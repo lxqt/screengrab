@@ -34,6 +34,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QtGui/QWidget>
 #include <QtGui/QIcon>
 
+#ifdef Q_WS_X11
+#if defined IS_SHARED
+#define QKSW_EXPORT Q_DECL_EXPORT
+#else
+#define QKSW_EXPORT Q_DECL_IMPORT
+#endif
+#else
+#define QKSW_EXPORT
+#endif
+
 class QKeySequenceWidgetPrivate;
 
 /*!
@@ -62,7 +72,7 @@ class QKeySequenceWidgetPrivate;
     connect(keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(slotKeySequenceChanged(QKeySequence)));
   \endcode
 */
-class QKeySequenceWidget : public QWidget
+class QKSW_EXPORT QKeySequenceWidget : public QWidget
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QKeySequenceWidget);

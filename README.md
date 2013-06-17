@@ -35,6 +35,7 @@ You can use some or all of these params for customize your build.
  * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main cations to create screenshots. By default is ON.
  * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. By default if OFF.
  * **-DSG_DOCDIR** - Name for directory of user's documentation. By default is  "screengrab".
+ * **-DQKSW_SHARED** - Enable shared linking with qkeysequencewidget library (in src/common/qksysekwesewidget). By default is OFF.
  
 **Build notes:**
 
