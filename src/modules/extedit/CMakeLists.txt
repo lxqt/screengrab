@@ -26,5 +26,12 @@ qt4_wrap_cpp(extedit_SRC_MOC ${extedit_HDR})
 
 qt4_wrap_ui(extedit_UI_H ${extedit_UI} )
 
-add_library(extedit ${extedit_SRC} ${extedit_SRC_MOC}  ${extedit_QRC} ${extedit_UI_H})
+if (Q_WS_WIN)
+add_library(extedit STATIC ${extedit_SRC} ${extedit_SRC_MOC}  ${extedit_QRC} ${extedit_UI_H})
+else (Q_WS_WIN)
+add_library(extedit SHARED ${extedit_SRC} ${extedit_SRC_MOC}  ${extedit_QRC} ${extedit_UI_H})
+set_property (TARGET extedit PROPERTY SOVERSION 1.0.0)
+INSTALL (TARGETS extedit DESTINATION ${SG_LIBDIR})
+endif (Q_WS_WIN)
+
 target_link_libraries(extedit ${QT_LIBRARIES})

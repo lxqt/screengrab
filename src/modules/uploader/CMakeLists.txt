@@ -46,5 +46,12 @@ qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})
 
 qt4_wrap_ui(uploader_UI_H ${uploader_UI} )
 
-add_library(uploader ${uploader_SRC} ${uploader_SRC_MOC}  ${uploader_QRC} ${uploader_UI_H})
+if (Q_WS_WIN)
+add_library(uploader STATIC ${uploader_SRC} ${uploader_SRC_MOC}  ${uploader_QRC} ${uploader_UI_H})
+else (Q_WS_WIN)
+add_library(uploader SHARED ${uploader_SRC} ${uploader_SRC_MOC}  ${uploader_QRC} ${uploader_UI_H})
+set_property (TARGET uploader PROPERTY SOVERSION 1.0.0)
+INSTALL (TARGETS uploader DESTINATION ${SG_LIBDIR})
+endif (Q_WS_WIN)
+
 target_link_libraries(uploader ${QT_LIBRARIES})
