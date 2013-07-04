@@ -59,8 +59,8 @@ public:
     QStringList getShortcutsList(int type);        
     
 private:
-    ShortcutList listShortcuts;
-    QSettings *shortcutSettings;
+    ShortcutList _listShortcuts;
+    QSettings *_shortcutSettings;
 };
 
 #endif // SHORTCUTMANAGER_H

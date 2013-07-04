@@ -64,9 +64,9 @@ Config* Config::ptrInstance = 0;
 // constructor
 Config::Config()
 {
-    settings = new QSettings(getConfigFile(), QSettings::IniFormat );
+    _settings = new QSettings(getConfigFile(), QSettings::IniFormat );
 
-    _shortcuts = new ShortcutManager(settings);
+    _shortcuts = new ShortcutManager(_settings);
 
     // check existing config file
     if (!QFile::exists(getConfigFile()))
@@ -76,18 +76,18 @@ Config::Config()
         saveSettings();
     }
 
-    imageFormats << "png" << "jpg" << "bmp";
+    _imageFormats << "png" << "jpg" << "bmp";
 
 #if QT_VERSION >= 0x040500
-    settings->setIniCodec("UTF-8");
+    _settings->setIniCodec("UTF-8");
 #endif
-    scrNum = 0;
+    _scrNum = 0;
 }
 
 Config::~Config()
 {
     delete _shortcuts;
-    delete settings;
+    delete _settings;
 }
 
 Config* Config::instance()
@@ -102,12 +102,12 @@ Config* Config::instance()
 
 void Config::setValue(const QString &key, QVariant val)
 {
-    confData[key] = val;
+    _confData[key] = val;
 }
 
 QVariant Config::value(const QString &key)
 {
-    return confData[key];
+    return _confData[key];
 }
 
 void Config::killInstance()
@@ -178,9 +178,9 @@ QString Config::getConfigDir()
 
 QString Config::getScrNumStr()
 {
-    QString str = QString::number(scrNum);
+    QString str = QString::number(_scrNum);
     
-    if (scrNum < 10)
+    if (_scrNum < 10)
     {
         str.prepend("0");
     }
@@ -190,27 +190,27 @@ QString Config::getScrNumStr()
 
 int Config::getScrNum() const
 {
-    return scrNum;
+    return _scrNum;
 }
 
 void Config::increaseScrNum()
 {
-    scrNum++;
+    _scrNum++;
 }
 
 void Config::resetScrNum()
 {
-    scrNum = 0;
+    _scrNum = 0;
 }
 
 void Config::updateLastSaveDate()
 {
-    dateLastSaving = QDateTime::currentDateTime();
+    _dateLastSaving = QDateTime::currentDateTime();
 }
 
 QDateTime Config::getLastSaveDate() const
 {
-    return dateLastSaving;
+    return _dateLastSaving;
 }
 
 bool Config::getEnableExtView()
@@ -453,45 +453,45 @@ void Config::setNoDecorX11(bool val)
 void Config::saveWndSize()
 {
     // saving size
-    settings->beginGroup("Display");
-    settings->setValue(KEY_WND_WIDTH, getRestoredWndSize().width());
-    settings->setValue(KEY_WND_HEIGHT, getRestoredWndSize().height());
-    settings->endGroup();
+    _settings->beginGroup("Display");
+    _settings->setValue(KEY_WND_WIDTH, getRestoredWndSize().width());
+    _settings->setValue(KEY_WND_HEIGHT, getRestoredWndSize().height());
+    _settings->endGroup();
 }
 
 // load all settings  from conf file
 void Config::loadSettings()
 {
-    settings->beginGroup("Base");
-    setSaveDir(settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
-    setSaveFileName(settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
-    setSaveFormat(settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
-    setDefDelay(settings->value(KEY_DELAY, DEF_DELAY).toInt());
-    setAutoCopyFilenameOnSaving(settings->value(KEY_FILENAME_TO_CLB, DEF_FILENAME_TO_CLB).toInt());
-    setDateTimeInFilename(settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
-    setDateTimeTpl(settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
-    setAutoSave(settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
-    setAutoSaveFirst(settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
+    _settings->beginGroup("Base");
+    setSaveDir(_settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
+    setSaveFileName(_settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
+    setSaveFormat(_settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
+    setDefDelay(_settings->value(KEY_DELAY, DEF_DELAY).toInt());
+    setAutoCopyFilenameOnSaving(_settings->value(KEY_FILENAME_TO_CLB, DEF_FILENAME_TO_CLB).toInt());
+    setDateTimeInFilename(_settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
+    setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
+    setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
+    setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
 #ifdef Q_WS_X11
-    setNoDecorX11(settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
+    setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
-    setImageQuality(settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
-    settings->endGroup();
+    setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
+    _settings->endGroup();
 
-    settings->beginGroup("Display");
-    setTrayMessages(settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
-    setSavedSizeOnExit(settings->value(KEY_SAVEWND, DEF_SAVED_SIZE).toBool());
-    setTimeTrayMess(settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
-    setZoomAroundMouse(settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
-    setRestoredWndSize(settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
-    setShowTrayIcon(settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
-    settings->endGroup();
+    _settings->beginGroup("Display");
+    setTrayMessages(_settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
+    setSavedSizeOnExit(_settings->value(KEY_SAVEWND, DEF_SAVED_SIZE).toBool());
+    setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
+    setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
+    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
+    _settings->endGroup();
 
-    settings->beginGroup("System");
-    setCloseInTray(settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
-    setAllowMultipleInstance(settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
-	setEnableExtView(settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
-    settings->endGroup();
+    _settings->beginGroup("System");
+    setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
+    setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
+	setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
+    _settings->endGroup();
 
     setDelay(getDefDelay());
 
@@ -500,36 +500,36 @@ void Config::loadSettings()
 
 void Config::saveSettings()
 {
-    settings->beginGroup("Base");
-    settings->setValue(KEY_SAVEDIR, getSaveDir());
-    settings->setValue(KEY_SAVENAME, getSaveFileName());
-    settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
-    settings->setValue(KEY_DELAY, getDefDelay());
-    settings->setValue(KEY_FILENAME_TO_CLB, getAutoCopyFilenameOnSaving());
-    settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
-    settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
-    settings->setValue(KEY_AUTOSAVE, getAutoSave());
-    settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
-    settings->setValue(KEY_IMG_QUALITY, getImageQuality());
+    _settings->beginGroup("Base");
+    _settings->setValue(KEY_SAVEDIR, getSaveDir());
+    _settings->setValue(KEY_SAVENAME, getSaveFileName());
+    _settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
+    _settings->setValue(KEY_DELAY, getDefDelay());
+    _settings->setValue(KEY_FILENAME_TO_CLB, getAutoCopyFilenameOnSaving());
+    _settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
+    _settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
+    _settings->setValue(KEY_AUTOSAVE, getAutoSave());
+    _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
+    _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
 #ifdef Q_WS_X11
-    settings->setValue(KEY_NODECOR, getNoDecorX11());
+    _settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
-    settings->endGroup();
+    _settings->endGroup();
 
-    settings->beginGroup("Display");
-    settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
-    settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
-    settings->setValue(KEY_SAVEWND, getSavedSizeOnExit());
-    settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
-    settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
-    settings->endGroup();
+    _settings->beginGroup("Display");
+    _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
+    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
+    _settings->setValue(KEY_SAVEWND, getSavedSizeOnExit());
+    _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
+    _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
+    _settings->endGroup();
     saveWndSize();
 
-    settings->beginGroup("System");
-    settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
-    settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
-	settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
-    settings->endGroup();
+    _settings->beginGroup("System");
+    _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
+    _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
+	_settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
+    _settings->endGroup();
 
     _shortcuts->saveSettings();
     
@@ -588,7 +588,7 @@ QString Config::getDirNameDefault()
 // get id of default save format
 int Config::getDefaultFormatID()
 {
-    return imageFormats.indexOf(getSaveFormat());
+    return _imageFormats.indexOf(getSaveFormat());
 }
 
 QString Config::getSysLang()

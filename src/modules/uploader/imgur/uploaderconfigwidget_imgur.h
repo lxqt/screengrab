@@ -42,7 +42,7 @@ protected:
     void changeEvent(QEvent *e);
     
 private:
-    Ui::UploaderConfigWidget_ImgUr *ui;
+    Ui::UploaderConfigWidget_ImgUr *_ui;
 };
 
 #endif // UPLOADERCONFIGWIDGET_IMGUR_H

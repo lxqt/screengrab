@@ -26,13 +26,13 @@
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QWidget(parent)
 {
-    conf = mainconf;
+    _conf = mainconf;
 	sharedInit();
 
     move(0, 0);
     drawBackGround();
 
-    processSelection = false;    
+    _processSelection = false;    
     
     show();
     
@@ -43,14 +43,14 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
 RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
 	: QWidget(parent)
 {
-    conf = mainconf;
+    _conf = mainconf;
 	sharedInit();
-	selectRect = lastRect;
+	_selectRect = lastRect;
 	
     move(0, 0);
     drawBackGround();
 	
-    processSelection = false;
+    _processSelection = false;
 
     show();
 
@@ -60,8 +60,8 @@ RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* par
 
 RegionSelect::~RegionSelect()
 {
-    conf = NULL;
-    delete conf;
+    _conf = NULL;
+    delete _conf;
 }
 
 void RegionSelect::sharedInit()
@@ -70,11 +70,11 @@ void RegionSelect::sharedInit()
     setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
 
-    sizeDesktop = QApplication::desktop()->size();
-    resize(sizeDesktop);
+    _sizeDesktop = QApplication::desktop()->size();
+    resize(_sizeDesktop);
 
-    desktopPixmapBkg = QPixmap::grabWindow(QApplication::desktop()->winId());
-    desktopPixmapClr = desktopPixmapBkg;
+    _desktopPixmapBkg = QPixmap::grabWindow(QApplication::desktop()->winId());
+    _desktopPixmapClr = _desktopPixmapBkg;
 }
 
 
@@ -83,7 +83,7 @@ void RegionSelect::paintEvent(QPaintEvent *event)
     Q_UNUSED(event)
     QPainter painter(this);
 
-    painter.drawPixmap(QPoint(0, 0), desktopPixmapBkg);
+    painter.drawPixmap(QPoint(0, 0), _desktopPixmapBkg);
 
     drawRectSelection(painter);
 }
@@ -95,15 +95,15 @@ void RegionSelect::mousePressEvent(QMouseEvent* event)
         return;
     }
     
-    selStartPoint = event->pos();
-    processSelection = true;
+    _selStartPoint = event->pos();
+    _processSelection = true;
 }
 
 
 void RegionSelect::mouseReleaseEvent(QMouseEvent* event)
 {
-    selEndPoint = event->pos();
-    processSelection = false;
+    _selEndPoint = event->pos();
+    _processSelection = false;
 }
 
 void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
@@ -119,10 +119,10 @@ void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
 
 void RegionSelect::mouseMoveEvent(QMouseEvent *event)
 {    
-    if (processSelection == true)
+    if (_processSelection == true)
     {
-        selEndPoint = event->pos();
-        selectRect = QRect(selStartPoint, selEndPoint).normalized();  
+        _selEndPoint = event->pos();
+        _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();  
         update();
     }
 }
@@ -150,7 +150,7 @@ void RegionSelect::keyPressEvent(QKeyEvent* event)
 void RegionSelect::drawBackGround()
 {
     // create painter on  pixelmap of desktop
-    QPainter painter(&desktopPixmapBkg);
+    QPainter painter(&_desktopPixmapBkg);
 
     // set painter brush on 85% transparency
     painter.setBrush(QBrush(QColor(0, 0, 0, 85), Qt::SolidPattern));
@@ -181,34 +181,34 @@ void RegionSelect::drawBackGround()
 
     // set bkg to pallette widget
     QPalette newPalette = palette();
-    newPalette.setBrush(QPalette::Window, QBrush(desktopPixmapBkg));
+    newPalette.setBrush(QPalette::Window, QBrush(_desktopPixmapBkg));
     setPalette(newPalette);
 }
 
 void RegionSelect::drawRectSelection(QPainter &painter)
 {
-    painter.drawPixmap(selectRect, desktopPixmapClr, selectRect);
+    painter.drawPixmap(_selectRect, _desktopPixmapClr, _selectRect);
     painter.setPen(QPen(QBrush(QColor(0, 0, 0, 255)), 2));
-    painter.drawRect(selectRect);
+    painter.drawRect(_selectRect);
 
-    QString txtSize = QApplication::tr("%1 x %2 pixels ").arg(selectRect.width()).arg(selectRect.height());
-    painter.drawText(selectRect, Qt::AlignBottom | Qt::AlignRight, txtSize);
+    QString txtSize = QApplication::tr("%1 x %2 pixels ").arg(_selectRect.width()).arg(_selectRect.height());
+    painter.drawText(_selectRect, Qt::AlignBottom | Qt::AlignRight, txtSize);
 
-    if (!selEndPoint.isNull() && conf->getZoomAroundMouse() == true)
+    if (!_selEndPoint.isNull() && _conf->getZoomAroundMouse() == true)
     {
         const quint8 zoomSide = 200;
 
         // create magnifer coords
-        QPoint zoomStart = selEndPoint;
+        QPoint zoomStart = _selEndPoint;
         zoomStart -= QPoint(zoomSide/5, zoomSide/5); // 40, 40
 
-        QPoint zoomEnd = selEndPoint;
+        QPoint zoomEnd = _selEndPoint;
         zoomEnd += QPoint(zoomSide/5, zoomSide/5);
 
         // creating rect area for magnifer
         QRect zoomRect = QRect(zoomStart, zoomEnd);
 
-        QPixmap zoomPixmap = desktopPixmapClr.copy(zoomRect).scaled(QSize(zoomSide, zoomSide), Qt::KeepAspectRatio);
+        QPixmap zoomPixmap = _desktopPixmapClr.copy(zoomRect).scaled(QSize(zoomSide, zoomSide), Qt::KeepAspectRatio);
 
         QPainter zoomPainer(&zoomPixmap); // create painter from pixmap maignifer
         zoomPainer.setPen(QPen(QBrush(QColor(255, 0, 0, 180)), 2));
@@ -216,9 +216,9 @@ void RegionSelect::drawRectSelection(QPainter &painter)
         zoomPainer.drawText(zoomPixmap.rect().center() - QPoint(4, -4), "+");
 
         // position for drawing preview
-        QPoint zoomCenter = selectRect.bottomRight();
+        QPoint zoomCenter = _selectRect.bottomRight();
 
-        if (zoomCenter.x() + zoomSide > desktopPixmapClr.rect().width() || zoomCenter.y() + zoomSide > desktopPixmapClr.rect().height())
+        if (zoomCenter.x() + zoomSide > _desktopPixmapClr.rect().width() || zoomCenter.y() + zoomSide > _desktopPixmapClr.rect().height())
         {
             zoomCenter -= QPoint(zoomSide, zoomSide);
         }
@@ -229,11 +229,11 @@ void RegionSelect::drawRectSelection(QPainter &painter)
 QPixmap RegionSelect::getSelection()
 {
     QPixmap sel;
-    sel = desktopPixmapClr.copy(selectRect);
+    sel = _desktopPixmapClr.copy(_selectRect);
     return sel;
 }
 
 QPoint RegionSelect::getSelectionStartPos()
 {
-	return selectRect.topLeft();
+	return _selectRect.topLeft();
 }

@@ -27,9 +27,9 @@
 
 UploaderConfigWidget_ImgUr::UploaderConfigWidget_ImgUr(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::UploaderConfigWidget_ImgUr)
+    _ui(new Ui::UploaderConfigWidget_ImgUr)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 	
 	// load settings
 	UploaderConfig config;
@@ -42,7 +42,7 @@ UploaderConfigWidget_ImgUr::UploaderConfigWidget_ImgUr(QWidget *parent) :
 
 UploaderConfigWidget_ImgUr::~UploaderConfigWidget_ImgUr()
 {
-    delete ui;
+    delete _ui;
 }
 
 void UploaderConfigWidget_ImgUr::saveSettings()
@@ -58,7 +58,7 @@ void UploaderConfigWidget_ImgUr::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;

@@ -30,30 +30,30 @@
 
 UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::UploaderConfigWidget)
+    _ui(new Ui::UploaderConfigWidget)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 	
-	ui->settings->setCurrentWidget(ui->commonSettings);
+	_ui->settings->setCurrentWidget(_ui->commonSettings);
 	
 	QStringList hosts = UploaderConfig::labelsList();
-	ui->cbxHosts->addItems(hosts);
-	ui->cbxDefaultHost->addItems(hosts);
+	_ui->cbxHosts->addItems(hosts);
+	_ui->cbxDefaultHost->addItems(hosts);
 	
 	loadSettings();
 	
-	imgur = new UploaderConfigWidget_ImgUr(this);
-	imgshack = new UploaderConfigWidget_ImgShack(this);
+	_imgur = new UploaderConfigWidget_ImgUr(this);
+	_imgshack = new UploaderConfigWidget_ImgShack(this);
 	
-	ui->stackedHosts->addWidget(imgur);
-	ui->stackedHosts->addWidget(imgshack);
+	_ui->stackedHosts->addWidget(_imgur);
+	_ui->stackedHosts->addWidget(_imgshack);
 	
-	connect(ui->cbxHosts, SIGNAL(currentIndexChanged(int)), ui->stackedHosts, SLOT(setCurrentIndex(int)));
+	connect(_ui->cbxHosts, SIGNAL(currentIndexChanged(int)), _ui->stackedHosts, SLOT(setCurrentIndex(int)));
 }
 
 UploaderConfigWidget::~UploaderConfigWidget()
 {
-    delete ui;
+    delete _ui;
 }
 
 void UploaderConfigWidget::loadSettings()
@@ -69,7 +69,7 @@ void UploaderConfigWidget::loadSettings()
 	QString defaultHost = loadValues[KEY_DEFAULT_HOST].toString();
 	if (defaultHost.isEmpty() == true)
 	{
-		ui->cbxDefaultHost->setCurrentIndex(0);
+		_ui->cbxDefaultHost->setCurrentIndex(0);
 	}
 	else
 	{
@@ -80,25 +80,25 @@ void UploaderConfigWidget::loadSettings()
 			index++;
 		}
 
-		ui->cbxDefaultHost->setCurrentIndex(index);
+		_ui->cbxDefaultHost->setCurrentIndex(index);
 	}
 	
-	ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
+	_ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
 }
 
 void UploaderConfigWidget::saveSettings()
 {
 	UploaderConfig config;
 	QVariantMap savingValues;
-	savingValues.insert(KEY_AUTO_COPY_RESULT_LIMK, ui->checkAutoCopyMainLink->isChecked());
+	savingValues.insert(KEY_AUTO_COPY_RESULT_LIMK, _ui->checkAutoCopyMainLink->isChecked());
 	
-	QString defaultHost = config.labelsList().at(ui->cbxDefaultHost->currentIndex());
+	QString defaultHost = config.labelsList().at(_ui->cbxDefaultHost->currentIndex());
 	savingValues.insert(KEY_DEFAULT_HOST, defaultHost);
 	
 	config.saveSettings("common", savingValues);
 	
-	QMetaObject::invokeMethod(imgur, "saveSettings");
-	QMetaObject::invokeMethod(imgshack, "saveSettings");
+	QMetaObject::invokeMethod(_imgur, "saveSettings");
+	QMetaObject::invokeMethod(_imgshack, "saveSettings");
 
 }
 
@@ -107,7 +107,7 @@ void UploaderConfigWidget::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;

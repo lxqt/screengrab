@@ -102,7 +102,7 @@ public:
 
     static QString getConfigFile();
     static QString getConfigDir();
-    
+
     /**
      * Load configuration data from conf file
      */
@@ -136,7 +136,7 @@ public:
 
     quint8 getDelay();
     void setDelay(quint8 sec);
-    
+
     quint8 getAutoCopyFilenameOnSaving();
     void setAutoCopyFilenameOnSaving(quint8 val);
 
@@ -170,7 +170,7 @@ public:
     // auto save screenshot
     bool getAutoSave();
     void setAutoSave(bool val);
-    
+
     // umage qualuty
     quint8 getImageQuality();
     void setImageQuality(quint8 qualuty);
@@ -210,12 +210,12 @@ public:
     int getScrNum() const;
     void increaseScrNum();
     void resetScrNum();
-    
+
     void updateLastSaveDate();
     QDateTime getLastSaveDate() const;
-    
-	bool getEnableExtView();
-	void setEnableExtView(bool val);
+
+    bool getEnableExtView();
+    void setEnableExtView(bool val);
 
     static QString getSysLang();
 
@@ -245,16 +245,16 @@ private:
      */
     void setValue(const QString& key, QVariant val);
 
-    QSettings *settings;
-    QHash<QString, QVariant> confData;
+    QSettings *_settings;
+    QHash<QString, QVariant> _confData;
 
 //     CmdLine *cmd;
     ShortcutManager *_shortcuts;
 
-    QVector<QString> imageFormats;
-    
-    int scrNum; // screen num in session
-    QDateTime dateLastSaving;
+    QVector<QString> _imageFormats;
+
+    int _scrNum; // screen num in session
+    QDateTime _dateLastSaving;
 };
 
 #endif // CONFIG_H

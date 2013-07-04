@@ -50,13 +50,13 @@ private Q_SLOTS:
 	void slotCopyLink();
     
 private:
-    Ui::DialogUploader *ui;
+    Ui::DialogUploader *_ui;
     
-    Uploader* uploader;
+    Uploader* _uploader;
 	QWidget* _uploaderWidget;
     
     // storage id curren selected img sho
-    qint8 selectedHost;
+    qint8 _selectedHost;
 	
 	QStringList _resultLinks;
 };

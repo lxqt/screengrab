@@ -44,7 +44,7 @@ protected:
     void changeEvent(QEvent *e);
 
 private:
-    Ui::configwidget *ui;
+    Ui::configwidget *_ui;
     void loadSettings();
     QString getFormat();
     bool checkUsedShortcuts();    

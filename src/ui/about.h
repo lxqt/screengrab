@@ -41,8 +41,8 @@ protected:
     void changeEvent(QEvent *e);
 
 private:
-    Ui::aboutWidget *ui;
-    QTabBar *tabs;
+    Ui::aboutWidget *_ui;
+    QTabBar *_tabs;
 
 private slots:
     void on_txtArea_anchorClicked(QUrl );

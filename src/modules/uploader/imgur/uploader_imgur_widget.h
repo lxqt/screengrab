@@ -43,7 +43,7 @@ protected:
     void changeEvent(QEvent *e);
     
 private:
-    Ui::Uploader_ImgUr_Widget *ui;
+    Ui::Uploader_ImgUr_Widget *_ui;
 };
 
 #endif // UPLOADER_IMGUR_WIDGET_H

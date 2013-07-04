@@ -26,12 +26,12 @@
 
 AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),
-    ui(new Ui::aboutWidget)
+    _ui(new Ui::aboutWidget)
 {
     setWindowFlags(Qt::Dialog |  Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
 
-    ui->setupUi(this);
-    ui->labAppName->setText(ui->labAppName->text() + QString(" <b>") + qApp->applicationVersion() + QString("</b>"));
+    _ui->setupUi(this);
+    _ui->labAppName->setText(_ui->labAppName->text() + QString(" <b>") + qApp->applicationVersion() + QString("</b>"));
 
     QString versionInfo;
     versionInfo = tr("built on ");
@@ -39,15 +39,15 @@ AboutDialog::AboutDialog(QWidget *parent):
     versionInfo.append(" ");
     versionInfo.append(__TIME__);
 
-    ui->labQtVer->setText(tr("using Qt ") + qVersion());
+    _ui->labQtVer->setText(tr("using Qt ") + qVersion());
 
-    ui->labVersion->setText(versionInfo);
+    _ui->labVersion->setText(versionInfo);
 
     QTabBar *tabs = new QTabBar;
 
 
-    ui->frame->layout()->addWidget(tabs);
-    ui->frame->layout()->addWidget(ui->txtArea);
+    _ui->frame->layout()->addWidget(tabs);
+    _ui->frame->layout()->addWidget(_ui->txtArea);
 
     tabs->setFixedHeight(24);
     tabs->insertTab(0, tr("About"));
@@ -55,12 +55,12 @@ AboutDialog::AboutDialog(QWidget *parent):
     tabs->insertTab(2, tr("Help us"));
     connect(tabs, SIGNAL(currentChanged(int)), this, SLOT(changeTab(int)));
 
-    ui->txtArea->setHtml(tabAbout());
+    _ui->txtArea->setHtml(tabAbout());
 }
 
 AboutDialog::~AboutDialog()
 {
-    delete ui;
+    delete _ui;
 }
 
 void AboutDialog::changeTab(int tabIndex)
@@ -69,16 +69,16 @@ void AboutDialog::changeTab(int tabIndex)
     switch(tabIndex)
     {
     case 0:
-        ui->txtArea->setHtml(tabAbout());
+        _ui->txtArea->setHtml(tabAbout());
         break;
     case 1:
-        ui->txtArea->setHtml(tabThanks());
+        _ui->txtArea->setHtml(tabThanks());
         break;
     case 2:
-        ui->txtArea->setHtml(tabHelpUs());
+        _ui->txtArea->setHtml(tabHelpUs());
         break;
     default:
-        ui->txtArea->setHtml(tabAbout());
+        _ui->txtArea->setHtml(tabAbout());
     }
 }
 
@@ -87,7 +87,7 @@ void AboutDialog::changeEvent(QEvent *e)
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;

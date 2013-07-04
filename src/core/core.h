@@ -118,16 +118,16 @@ private:
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
     // vars
-    QPixmap *pixelMap; // pixel map
-    RegionSelect *selector; // region grabber widget
+    QPixmap *_pixelMap; // pixel map
+    RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea; // store las
 
     CmdLine *_cmd;
     ModuleManager _modules;
     QString _tempFilename;
 
-    bool hided;
-    bool firstScreen;
+    bool _hided;
+    bool _firstScreen;
 
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);

@@ -34,7 +34,7 @@ Uploader::Uploader(QObject *parent) :
     qDebug() << "creating base uploader";
     _strBoundary = "uploadbound";
     _net = new QNetworkAccessManager(this);
-	serverReply = 0;
+	_serverReply = 0;
 	initUploadedStrList();
 	
 	UploaderConfig config;
@@ -85,9 +85,9 @@ void Uploader::getUserSettings(const QVariantMap& settings)
 void Uploader::startUploading()
 {
 	connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
-	serverReply = _net->post(_request, imageData);	
+	_serverReply = _net->post(_request, imageData);	
 
-	connect(serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64))); 
+	connect(_serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64))); 
 }
 
 QMap< QByteArray, ResultString_t > Uploader::parsedLinks()

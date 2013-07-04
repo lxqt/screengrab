@@ -56,9 +56,9 @@ Core::Core() :
     conf = Config::instance();
     conf->loadSettings();
 
-    pixelMap = new QPixmap;
-    selector = 0;
-    firstScreen = true;	
+    _pixelMap = new QPixmap;
+    _selector = 0;
+    _firstScreen = true;	
 	
 	// register screenshot types command line params
 	_cmd->registerParam("fullscreen", "Sset fullscreen mode", CmdLineParam::ScreenType);
@@ -97,7 +97,7 @@ Core* Core::instance()
 Core::~Core()
 {
 	delete _cmd;
-    delete pixelMap;
+    delete _pixelMap;
     conf->killInstance();
 }
 
@@ -126,9 +126,9 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
-    firstScreen = first;
+    _firstScreen = first;
     // Update date last crenshot, if it is  a first screen
-    if (firstScreen == true)
+    if (_firstScreen == true)
     {
         conf->updateLastSaveDate();
     }
@@ -138,9 +138,9 @@ void Core::screenShot(bool first)
     {
     case 0:
     {
-        *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         checkAutoSave(first);
-        Q_EMIT newScreenShot(pixelMap);
+        Q_EMIT newScreenShot(_pixelMap);
         break;
     }
     case 1:
@@ -152,23 +152,23 @@ void Core::screenShot(bool first)
         getActiveWind_X11();
 #endif
         checkAutoSave(first);
-        Q_EMIT newScreenShot(pixelMap);
+        Q_EMIT newScreenShot(_pixelMap);
         break;
     }
     case 2:
     {
-        selector = new RegionSelect(conf);
-        connect(selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        _selector = new RegionSelect(conf);
+        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
         break;
     }
     case 3:
     {
-        selector = new RegionSelect(conf, _lastSelectedArea);
-        connect(selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        _selector = new RegionSelect(conf, _lastSelectedArea);
+        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
         break;
     }
     default:
-        *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         break;
     }
 }
@@ -209,14 +209,14 @@ void Core::getActiveWind_X11()
 
     if(!wnd)
     {
-        *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         exit(1);
     }
 
     // no dectortions option is select
     if (conf->getNoDecorX11() == true)
     {
-        *pixelMap = QPixmap::grabWindow(*wnd);
+        *_pixelMap = QPixmap::grabWindow(*wnd);
         return;
     }
 
@@ -259,7 +259,7 @@ void Core::getActiveWind_X11()
     rx = attr.x;
     ry = attr.y;
 
-    *pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(), rx, ry, rw, rh);
+    *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(), rx, ry, rw, rh);
 
     XFree(wnd);
 }
@@ -379,8 +379,8 @@ void Core::updatePixmap()
 {
 	if (QFile::exists(_tempFilename) == true)
 	{
-		pixelMap->load(_tempFilename, "png");
-		Q_EMIT newScreenShot(pixelMap);	
+		_pixelMap->load(_tempFilename, "png");
+		Q_EMIT newScreenShot(_pixelMap);	
 	}
 }
 
@@ -419,7 +419,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (fileName.isEmpty() == false)
         {   ;
-            return pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            return _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
         }
         else
         {
@@ -433,11 +433,11 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (format == "jpg")
         {
-            saved = pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            saved = _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
         }
         else
         {
-            saved = pixelMap->save(fileName,format.toAscii(), -1);
+            saved = _pixelMap->save(fileName,format.toAscii(), -1);
         }
 
         if (saved == true)
@@ -492,7 +492,7 @@ QString Core::copyFileNameToCliipboard(QString file)
 
 void Core::copyScreen()
 {
-    QApplication::clipboard()->setPixmap(*pixelMap, QClipboard::Clipboard);
+    QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
     Q_EMIT sendStateNotifyMessage(message);
 }
@@ -573,7 +573,7 @@ QString Core::getVersionPrintable()
 
 QPixmap* Core::getPixmap()
 {
-    return pixelMap;
+    return _pixelMap;
 }
 
 QByteArray Core::getScreen()
@@ -581,7 +581,7 @@ QByteArray Core::getScreen()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    pixelMap->save(&buffer, conf->getSaveFormat().toAscii());
+    _pixelMap->save(&buffer, conf->getSaveFormat().toAscii());
 
     qDebug() << "GET SCREEN SIZE " << bytes;
     return bytes;
@@ -591,17 +591,17 @@ void Core::regionGrabbed(bool grabbed)
 {
     if (grabbed == true)
     {
-        *pixelMap = selector->getSelection();
+        *_pixelMap = _selector->getSelection();
 
-        int x = selector->getSelectionStartPos().x();
-        int y = selector->getSelectionStartPos().y();
-        int w = pixelMap->rect().width();
-        int h = pixelMap->rect().height();
+        int x = _selector->getSelectionStartPos().x();
+        int y = _selector->getSelectionStartPos().y();
+        int w = _pixelMap->rect().width();
+        int h = _pixelMap->rect().height();
         _lastSelectedArea.setRect(x, y, w, h);
 
         checkAutoSave();
     }
 
-    Q_EMIT newScreenShot(pixelMap);
-    selector->deleteLater();
+    Q_EMIT newScreenShot(_pixelMap);
+    _selector->deleteLater();
 }

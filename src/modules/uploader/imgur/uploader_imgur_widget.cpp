@@ -23,14 +23,14 @@
 
 Uploader_ImgUr_Widget::Uploader_ImgUr_Widget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Uploader_ImgUr_Widget)
+    _ui(new Ui::Uploader_ImgUr_Widget)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 }
 
 Uploader_ImgUr_Widget::~Uploader_ImgUr_Widget()
 {
-    delete ui;
+    delete _ui;
 }
 
 void Uploader_ImgUr_Widget::changeEvent(QEvent *e)
@@ -38,7 +38,7 @@ void Uploader_ImgUr_Widget::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;

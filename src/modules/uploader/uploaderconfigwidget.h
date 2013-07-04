@@ -46,11 +46,11 @@ protected:
     void changeEvent(QEvent *e);
     
 private:
-    Ui::UploaderConfigWidget *ui;
+    Ui::UploaderConfigWidget *_ui;
 	
 	// services widgets
-	UploaderConfigWidget_ImgUr *imgur;
-	UploaderConfigWidget_ImgShack *imgshack;
+	UploaderConfigWidget_ImgUr *_imgur;
+	UploaderConfigWidget_ImgShack *_imgshack;
 };
 
 #endif // UPLOADERCONFIGWIDGET_H

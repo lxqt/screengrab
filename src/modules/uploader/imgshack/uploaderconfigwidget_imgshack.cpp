@@ -27,9 +27,9 @@
 
 UploaderConfigWidget_ImgShack::UploaderConfigWidget_ImgShack(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::UploaderConfigWidget_ImgShack)
+    _ui(new Ui::UploaderConfigWidget_ImgShack)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 	
 	// load settings
 	UploaderConfig config;
@@ -40,13 +40,13 @@ UploaderConfigWidget_ImgShack::UploaderConfigWidget_ImgShack(QWidget *parent) :
 	
 	loadedValues = config.loadSettings("imageshack.us", loadedValues);
 	
-	ui->editUsername->setText(loadedValues[KEY_IMGSHK_USER].toString());
-	ui->editPass->setText(loadedValues[KEY_IMGSHK_PASS].toString());
+	_ui->editUsername->setText(loadedValues[KEY_IMGSHK_USER].toString());
+	_ui->editPass->setText(loadedValues[KEY_IMGSHK_PASS].toString());
 }
 
 UploaderConfigWidget_ImgShack::~UploaderConfigWidget_ImgShack()
 {
-    delete ui;
+    delete _ui;
 }
 
 void UploaderConfigWidget_ImgShack::saveSettings()
@@ -55,8 +55,8 @@ void UploaderConfigWidget_ImgShack::saveSettings()
 	
 	QVariantMap savingValues;
 	
-	savingValues.insert(KEY_IMGSHK_USER, ui->editUsername->text());
-	savingValues.insert(KEY_IMGSHK_PASS, ui->editPass->text());
+	savingValues.insert(KEY_IMGSHK_USER, _ui->editUsername->text());
+	savingValues.insert(KEY_IMGSHK_PASS, _ui->editPass->text());
 	
 	config.saveSettings("imageshack.us", savingValues);
 }
@@ -67,7 +67,7 @@ void UploaderConfigWidget_ImgShack::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;

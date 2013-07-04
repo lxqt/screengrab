@@ -63,30 +63,30 @@ protected:
 	bool eventFilter(QObject *obj, QEvent *event);
 //
 private:
-    Ui::MainWindow *m_ui;
-    Core *core;
+    Ui::MainWindow *_ui;
+    Core *_core;
 
-    QSystemTrayIcon *trayIcon;
-    QAction *mQuit;
-    QAction *mAbout;
-    QAction *mNew;
-    QAction *mSave;
-    QAction *mCopy;
+    QSystemTrayIcon *_trayIcon;
+    QAction *actQuit;
+    QAction *actAbout;
+    QAction *actNew;
+    QAction *actSave;
+    QAction *actCopy;
     QAction *mOptions;
-    QAction *mHelp;
-    QAction *mHideShow;
+    QAction *actHelp;
+    QAction *actHideShow;
     QMenu *menuTray;
-	QShortcut *hideWnd;
+	QShortcut *_hideWnd;
 
-    bool trayed;
+    bool _trayed;
 
 #ifdef SG_GLOBAL_SHORTCUTS
-    QxtGlobalShortcut *fullScreen;
-    QxtGlobalShortcut *activeWindow;
-    QxtGlobalShortcut *areaSelection;
+    QxtGlobalShortcut *_fullScreen;
+    QxtGlobalShortcut *_activeWindow;
+    QxtGlobalShortcut *_areaSelection;
 
-    QVector<QxtGlobalShortcut*> globalShortcuts;
-    QSignalMapper *globalShortcutSignals;
+    QVector<QxtGlobalShortcut*> _globalShortcuts;
+    QSignalMapper *_globalShortcutSignals;
 #endif
     
 	void displatScreenToolTip();

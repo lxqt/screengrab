@@ -55,22 +55,22 @@ Q_SIGNALS:
     void processDone(bool grabbed);
 
 private:
-    QRect selectRect;
-    QSize sizeDesktop;
+    QRect _selectRect;
+    QSize _sizeDesktop;
 
-    QPoint selStartPoint;
-    QPoint selEndPoint;
+    QPoint _selStartPoint;
+    QPoint _selEndPoint;
 
-    bool processSelection;
+    bool _processSelection;
 
-    QPixmap desktopPixmapBkg;
-    QPixmap desktopPixmapClr;
+    QPixmap _desktopPixmapBkg;
+    QPixmap _desktopPixmapClr;
 
 	void sharedInit();
     void drawBackGround();
     void drawRectSelection(QPainter &painter);
 
-    Config *conf;
+    Config *_conf;
 
 };
 

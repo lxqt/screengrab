@@ -38,7 +38,6 @@ public:
     
 protected:
     virtual QUrl apiUrl();
-//     virtual QByteArray createData();
     void createData(bool inBase64 = false);
 
 protected Q_SLOTS:

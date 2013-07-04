@@ -82,7 +82,7 @@ protected:
 	QVariantMap _userSettings;
     QNetworkAccessManager *_net;
     QNetworkRequest _request;
-    QNetworkReply *serverReply;	
+    QNetworkReply *_serverReply;	
 
 private:
 	void initUploadedStrList();

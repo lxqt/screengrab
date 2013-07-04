@@ -34,64 +34,64 @@
 
 DialogUploader::DialogUploader(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DialogUploader)
+    _ui(new Ui::DialogUploader)
 {
-    ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(0);
-    uploader = 0;
+    _ui->setupUi(this);
+    _ui->stackedWidget->setCurrentIndex(0);
+    _uploader = 0;
 	_uploaderWidget = 0;
 	slotSeletHost(0);
 	
-    ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
+    _ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
 	
 	UploaderConfig config;
 	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
 	
 	if (defaultHost.isEmpty() == true)
 	{
-		selectedHost = 0;
+		_selectedHost = 0;
 	}
 	else
 	{
-		selectedHost = config.labelsList().indexOf(defaultHost);
+		_selectedHost = config.labelsList().indexOf(defaultHost);
 	}
 
     // load ishot preview
     QSize imgSize = Core::instance()->getPixmap()->size();
     QString pixmapSize = tr("Size: ") + QString::number(imgSize.width()) + "x" + QString::number(imgSize.height()) + tr(" pixel");
-    ui->labImgSize->setText(pixmapSize);
+    _ui->labImgSize->setText(pixmapSize);
 
-    ui->labImage->setFixedWidth(256);
-    ui->labImage->setFixedHeight(192);
-    ui->labImage->setPixmap(Core::instance()->getPixmap()->scaled(ui->labImage->size(),
+    _ui->labImage->setFixedWidth(256);
+    _ui->labImage->setFixedHeight(192);
+    _ui->labImage->setPixmap(Core::instance()->getPixmap()->scaled(_ui->labImage->size(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
     // progressbar
-    ui->progressBar->setVisible(false);
-    ui->progressBar->setFormat(tr("Uploaded ") + "%p%" + " (" + "%v" + " of " + "%m bytes");
+    _ui->progressBar->setVisible(false);
+    _ui->progressBar->setFormat(tr("Uploaded ") + "%p%" + " (" + "%v" + " of " + "%m bytes");
 
     // upload staus labelsList
-    ui->labUploadStatus->setText(tr("Ready to upload"));
+    _ui->labUploadStatus->setText(tr("Ready to upload"));
 
-    connect(ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
-    connect(ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(slotUploadStart()));
-    connect(ui->cbxUploaderList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotSeletHost(int)));
+    connect(_ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
+    connect(_ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(slotUploadStart()));
+    connect(_ui->cbxUploaderList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotSeletHost(int)));
 	
-	ui->cbxUploaderList->setCurrentIndex(selectedHost);
+	_ui->cbxUploaderList->setCurrentIndex(_selectedHost);
 }
 
 DialogUploader::~DialogUploader()
 {
     qDebug() << "delete dialog upload";
 
-    if (uploader != 0)
+    if (_uploader != 0)
     {
-        delete uploader;
+        delete _uploader;
     }
 	
 	delete _uploaderWidget;
 	
-    delete ui;
+    delete _ui;
 }
 
 void DialogUploader::changeEvent(QEvent *e)
@@ -99,7 +99,7 @@ void DialogUploader::changeEvent(QEvent *e)
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+        _ui->retranslateUi(this);
         break;
     default:
         break;
@@ -109,46 +109,46 @@ void DialogUploader::changeEvent(QEvent *e)
 
 void DialogUploader::slotUploadStart()
 {
-    ui->progressBar->setVisible(true);
-    ui->butUpload->setEnabled(false);
-    ui->labUploadStatus->setText(tr("Upload preocessing... Please wait"));
+    _ui->progressBar->setVisible(true);
+    _ui->butUpload->setEnabled(false);
+    _ui->labUploadStatus->setText(tr("Upload preocessing... Please wait"));
 
-    switch(selectedHost)
+    switch(_selectedHost)
     {
     case 0:
-        uploader = new Uploader_ImgUr;		
+        _uploader = new Uploader_ImgUr;		
         break;
     case 1:
-        uploader = new Uploader_ImgShack;
+        _uploader = new Uploader_ImgShack;
         break;
     default:
-        uploader = new Uploader_ImgShack;
+        _uploader = new Uploader_ImgShack;
     }
 
     QVariantMap userSettings;
 	QMetaObject::invokeMethod(_uploaderWidget, "settingsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariantMap, userSettings));	
-    uploader->getUserSettings(userSettings);;
+    _uploader->getUserSettings(userSettings);;
     
     // start uploading process
-    connect(uploader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(slotUploadProgress(qint64,qint64)));
-    uploader->startUploading();
-    connect(uploader, SIGNAL(uploadDone())	, this, SLOT(slotUploadDone()));
-    connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(slotUploadFail(QByteArray)));
+    connect(_uploader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(slotUploadProgress(qint64,qint64)));
+    _uploader->startUploading();
+    connect(_uploader, SIGNAL(uploadDone())	, this, SLOT(slotUploadDone()));
+    connect(_uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(slotUploadFail(QByteArray)));
 //     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
-    connect(ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
-	connect(ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
+    connect(_ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
+	connect(_ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 }
 
 void DialogUploader::slotSeletHost(int type)
 {
-    selectedHost = type;
+    _selectedHost = type;
 	
 	if (_uploaderWidget)
 	{		
 		delete _uploaderWidget;		
 	}
 	
-	switch(selectedHost)
+	switch(_selectedHost)
 	{
 		case 0:
 		{
@@ -164,47 +164,47 @@ void DialogUploader::slotSeletHost(int type)
 			_uploaderWidget = new Uploader_ImgUr_Widget();
 	}
 	
-	ui->stackedWidget->addWidget(_uploaderWidget);
-	ui->stackedWidget->setCurrentWidget(_uploaderWidget);
+	_ui->stackedWidget->addWidget(_uploaderWidget);
+	_ui->stackedWidget->setCurrentWidget(_uploaderWidget);
 }
 
 void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 {
-    ui->progressBar->setMaximum(bytesTotal);
-    ui->progressBar->setValue(bytesSent);
+    _ui->progressBar->setMaximum(bytesTotal);
+    _ui->progressBar->setValue(bytesSent);
 
     if (bytesSent == bytesTotal)
     {
-        ui->progressBar->setFormat(tr("Receiving a response from the server"));
+        _ui->progressBar->setFormat(tr("Receiving a response from the server"));
     }
 }
 
 void DialogUploader::slotUploadDone()
 {
-	QList<ResultString_t> links = uploader->parsedLinksToGui();
-	ui->editDirectLink->setText(links.first().first);
+	QList<ResultString_t> links = _uploader->parsedLinksToGui();
+	_ui->editDirectLink->setText(links.first().first);
 	
 	for (int i =1; i < links.count(); ++i)
 	{
-		ui->cbxExtCode->addItem(links.at(i).second);
+		_ui->cbxExtCode->addItem(links.at(i).second);
 		_resultLinks << links.at(i).first;
 	}
     
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->labUploadStatus->setText(tr("Upload completed"));
-    ui->progressBar->setVisible(false);
-    ui->cbxUploaderList->setEnabled(false);
+    _ui->stackedWidget->setCurrentIndex(0);
+    _ui->labUploadStatus->setText(tr("Upload completed"));
+    _ui->progressBar->setVisible(false);
+    _ui->cbxUploaderList->setEnabled(false);
 
 	UploaderConfig config;
 	if (config.autoCopyResultLink() == true)
 	{
-		QApplication::clipboard()->setText(ui->editDirectLink->text());
+		QApplication::clipboard()->setText(_ui->editDirectLink->text());
 	}
 	
-	connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
-	ui->cbxExtCode->setCurrentIndex(0);
-	ui->editExtCode->setText(_resultLinks.at(0));
-	ui->butClose->setText(tr("Close"));
+	connect(_ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
+	_ui->cbxExtCode->setCurrentIndex(0);
+	_ui->editExtCode->setText(_resultLinks.at(0));
+	_ui->butClose->setText(tr("Close"));
 }
 
 void DialogUploader::slotUploadFail(const QByteArray& error)
@@ -216,15 +216,15 @@ void DialogUploader::slotUploadFail(const QByteArray& error)
     msg.setIcon(QMessageBox::Critical);
     msg.exec();
 
-    ui->progressBar->setVisible(false);
-    ui->labUploadStatus->setText(tr("Ready to upload"));
-    ui->butUpload->setEnabled(true);
-	ui->butClose->setText(tr("Close"));
+    _ui->progressBar->setVisible(false);
+    _ui->labUploadStatus->setText(tr("Ready to upload"));
+    _ui->butUpload->setEnabled(true);
+	_ui->butClose->setText(tr("Close"));
 }
 
 void DialogUploader::slotChangeExtCode(int code)
 {
-	ui->editExtCode->setText(_resultLinks.at(code));
+	_ui->editExtCode->setText(_resultLinks.at(code));
 }
 
 void DialogUploader::slotCopyLink()
@@ -234,12 +234,12 @@ void DialogUploader::slotCopyLink()
 	
 	if (objName == "butCopyLink")
 	{
-		copyText = ui->editDirectLink->text();
+		copyText = _ui->editDirectLink->text();
 	}
 	
 	if (objName == "butCopyExtCode")
 	{
-		copyText = ui->editExtCode->text();
+		copyText = _ui->editExtCode->text();
 	}
 	
 	qApp->clipboard()->setText(copyText);
