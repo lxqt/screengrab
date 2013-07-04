@@ -1,14 +1,14 @@
 ScreenGrab
 ==========
 
-version 0.9.96 (1.0-rc)
+version 1.0
 
 ScreenGrab - program for fast creating screenshots, and  simple publishing their on the internet  image hostings. It working on Linux and Windows operating systems. The program uses Qt and is independent of any desktop environment.
 
 Build requirements
 ------------------
 
- * Qt >= 4.6
+ * Qt4 >= 4.6 (Qt 5.x now non-tested and unsupported)
  * CMake >= 2.6 (only for build)
  * GCC > 4.4 (MSVS now is not supported )
  * [optional] Qxt Library > 0.6 (if you want build with using your system Qxt version - see "Build options" section in this file)
@@ -57,5 +57,5 @@ Jabber: doomer@jabber.linux.it
 Web homepage: http://screengrab.doomer.org/
 
 
-Copyright (c) 2009-2012, Artem 'DOOMer' Galichkin
+Copyright (c) 2009-2013, Artem 'DOOMer' Galichkin
 

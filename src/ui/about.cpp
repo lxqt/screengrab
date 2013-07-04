@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2012 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -124,7 +124,7 @@ QString AboutDialog::tabAbout()
     str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a>";
     str += "<br><br>";
 
-    str += tr("Copyright &copy; 2009-2012, Artem 'DOOMer' Galichkin");
+    str += tr("Copyright &copy; 2009-2013, Artem 'DOOMer' Galichkin");
     return str;
 }
 
@@ -148,7 +148,7 @@ QString AboutDialog::tabHelpUs()
     str += "<br><br>";
 	str += tr("Bug tracker");
 	str += "<br>";
-    str += "<a href=https://github.com/DOOMer/ScreenGrab/issues>https://github.com/DOOMer/ScreenGrab/issues/</a>";
+    str += "<a href=https://github.com/DOOMer/screengrab/issues>https://github.com/DOOMer/screengrab/issues/</a>";
 
     return str;
 }
