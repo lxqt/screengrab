@@ -11,5 +11,4 @@ Homepage: http://screengrab.doomer.org/
 Package: screengrab
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-#Depends:libqt4-network (>= 4.5.0), libqtcore4 (>= 4.5.0), libqtgui4 (>= 4.5.0)
 Description: ScreenGrab is a crossplatform tool for geting screenshots working in Linux and Windows. The program uses Qt and is independent of any desktop environment. 
