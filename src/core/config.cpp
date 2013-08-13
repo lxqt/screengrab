@@ -23,6 +23,7 @@
 
 #include <QtGui/QApplication>
 #include <QtCore/QDir>
+#include <QtCore/QFile>
 #include <QtCore/QLocale>
 #include <QtCore/QVector>
 #include <QtGui/QDesktopServices>
@@ -71,7 +72,14 @@ Config::Config()
     // check existing config file
     if (!QFile::exists(getConfigFile()))
     {
-        // creating conf fole from set defaults
+        // creating conf file from set defaults
+		QFile cf(getConfigFile());
+		if (cf.open(QIODevice::WriteOnly))
+		{
+			cf.close();
+			qDebug() << "creating";
+		}
+		
         setDefaultSettings();
         saveSettings();
     }
@@ -135,9 +143,8 @@ QString Config::getConfigFile()
 #endif
 
 #ifdef Q_WS_WIN
-    configFile = Config::getConfigDir() + +"screengrab.ini";
-#endif
-    
+    configFile = Config::getConfigDir() +"screengrab.ini";
+#endif	
     return configFile;
 }
 
@@ -163,13 +170,19 @@ QString Config::getConfigDir()
         configDir.append(QDir::separator());
     #else
         configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-    #endif    
+    #endif
 #endif
     
     // if win32
 #ifdef Q_WS_WIN
     configDir.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "ScreenGrab" + QDir::toNativeSeparators(QDir::separator()));
 #endif
+	
+	if (QFile::exists(configDir) == false)
+	{
+		QDir confDir(configDir);
+		confDir.mkpath(confDir.path());
+	}
     return configDir;
 }
 
