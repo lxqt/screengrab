@@ -177,7 +177,7 @@ void ConfigDialog::loadSettings()
     _ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
 #endif
 #ifdef Q_WS_WIN
-    ui->checkNoDecorX11->setVisible(false);
+    _ui->checkNoDecorX11->setVisible(false);
 #endif
     _ui->checkShowTray->setChecked(conf->getShowTrayIcon());
 //     on_checkShowTray_toggled(conf->getShowTrayIcon());
@@ -348,10 +348,10 @@ QString *directory = new QString;
 #endif
 #ifdef Q_WS_WIN
     *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-             ui->editDir->text(), QFileDialog::ShowDirsOnly)+ "/";
+             _ui->editDir->text(), QFileDialog::ShowDirsOnly)+ "/";
     if (directory->toUtf8() != "/")
     {
-        ui->editDir->setText( QDir::toNativeSeparators(*directory));
+        _ui->editDir->setText( QDir::toNativeSeparators(*directory));
     }
 #endif
     delete directory;

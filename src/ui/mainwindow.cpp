@@ -602,7 +602,7 @@ void MainWindow::restoreWindow()
 
 #ifdef Q_WS_WIN
     // small hack for blocking segfault on shortcuted selection area screen on win32
-    if (core->conf->getShowTrayIcon() == true && trayed == true && core->conf->getTypeScreen() == 2 )
+    if (_core->conf->getShowTrayIcon() == true && _trayed == true && _core->conf->getTypeScreen() == 2 )
     {
         hide();
     }
@@ -735,7 +735,7 @@ void MainWindow::globalShortcutActivate(int type)
     typeScreenShotChange(type);
 #ifdef Q_WS_WIN
     // small hack for blocking segfault on shortcuted selection area screen on win32
-    if (core->conf->getShowTrayIcon() == true && trayed == true && type == 2 )
+    if (_core->conf->getShowTrayIcon() == true && _trayed == true && type == 2 )
     {
         showMaximized();
     }

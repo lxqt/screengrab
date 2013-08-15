@@ -315,7 +315,7 @@ void Core::getActiveWind_Win32()
     ReleaseDC(findWindow, hdcMem);
     DeleteDC(hdcMem);
 
-    *pixelMap = QPixmap::fromWinHBITMAP(hbmCapture);
+    *_pixelMap = QPixmap::fromWinHBITMAP(hbmCapture);
 
     DeleteObject(hbmCapture);
 }
