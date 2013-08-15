@@ -80,7 +80,6 @@ MainWindow::MainWindow(QWidget* parent) :
 //     connect buttons to slots
     connect(_ui->butOpt, SIGNAL(clicked()), this, SLOT(showOptions()));
     connect(_ui->butSave, SIGNAL(clicked()), this, SLOT(saveScreen()));
-    connect(_ui->butInfo, SIGNAL(clicked()), this, SLOT(showAbout()));
     connect(_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
@@ -93,7 +92,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	{
 		menuAdvanced->addActions(modulesActions);
 	}
-// 	
+
 	QList<QMenu*> modulesMenus = _core->modules()->generateModulesMenus();
 	if (modulesMenus.count() > 0)
 	{
@@ -115,8 +114,13 @@ MainWindow::MainWindow(QWidget* parent) :
 		_ui->butAdvanced->deleteLater();
 	}
 	// end creation advanced menu
-
-    connect(_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
+	
+	QMenu *menuInfo = new QMenu(this);
+	menuInfo->addAction(actHelp);
+	menuInfo->addAction(actAbout);
+	_ui->butHelp->setMenu(menuInfo);
+	
+//     connect(_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
 

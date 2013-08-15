@@ -338,31 +338,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="butInfo">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>112</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>Information about ScreenGrab</string>
-          </property>
-          <property name="text">
-           <string>About</string>
-          </property>
-          <property name="shortcut">
-           <string>Ctrl+I</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="butQuit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -407,7 +382,6 @@
   <tabstop>butCopy</tabstop>
   <tabstop>butOpt</tabstop>
   <tabstop>butHelp</tabstop>
-  <tabstop>butInfo</tabstop>
   <tabstop>butQuit</tabstop>
  </tabstops>
  <resources/>
