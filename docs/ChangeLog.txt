@@ -1,3 +1,6 @@
+1.1-dev
+ * Option "Always save the window size" replaced by autosave window size on exit app.
+
 1.0
  * Fixed dual monitor support
  * added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT

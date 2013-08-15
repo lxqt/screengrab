@@ -43,7 +43,6 @@ const QString KEY_AUTOSAVE = "autoSave";
 const QString KEY_AUTOSAVE_FIRST = "autoSaveFirst";
 const QString KEY_SHOW_TRAY = "showTrayIcon";
 
-const QString KEY_SAVEWND = "zoomAroundMouse";
 const QString KEY_WND_WIDTH = "windowWidth";
 const QString KEY_WND_HEIGHT = "windowHeight";
 const QString KEY_ZOOMBOX = "zoomAroundMouse";
@@ -338,16 +337,6 @@ void Config::setTypeScreen(quint8 type)
     setValue(KEY_TYPE_SCREEN, type);
 }
 
-bool Config::getSavedSizeOnExit()
-{
-    return value(KEY_SAVEWND).toBool();
-}
-
-void Config::setSavedSizeOnExit(bool val)
-{
-    setValue(KEY_SAVEWND, val);
-}
-
 quint8 Config::getTimeTrayMess()
 {
     return value(KEY_TIME_NOTIFY).toInt();
@@ -366,16 +355,6 @@ QSize Config::getRestoredWndSize()
 
 void Config::setRestoredWndSize(int w, int h)
 {
-    if (w <= DEF_WND_WIDTH)
-    {
-        w = DEF_WND_WIDTH;
-    }
-
-    if (h <= DEF_WND_HEIGHT)
-    {
-        h = DEF_WND_HEIGHT;
-    }
-
     setValue(KEY_WND_WIDTH, w);
     setValue(KEY_WND_HEIGHT, h);
 }
@@ -493,10 +472,10 @@ void Config::loadSettings()
 
     _settings->beginGroup("Display");
     setTrayMessages(_settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
-    setSavedSizeOnExit(_settings->value(KEY_SAVEWND, DEF_SAVED_SIZE).toBool());
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
-    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    // TODO - make set windows size without hardcode values
+	setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
     setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
@@ -531,8 +510,7 @@ void Config::saveSettings()
 
     _settings->beginGroup("Display");
     _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
-    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
-    _settings->setValue(KEY_SAVEWND, getSavedSizeOnExit());
+    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());    
     _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
     _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
     _settings->endGroup();
@@ -567,7 +545,8 @@ void Config::setDefaultSettings()
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
-    setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
+	// TODO - make set windows size without hardcode values
+    // setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOW_TRAY);
 	setEnableExtView(DEF_ENABLE_EXT_VIEWER);
 
@@ -578,7 +557,6 @@ void Config::setDefaultSettings()
 #endif
 
     setDelay(DEF_DELAY);
-    setSavedSizeOnExit(DEF_SAVED_SIZE);
 
 	quint8 countModules = Core::instance()->modules()->count();	
 	for (int i = 0; i < countModules; ++i) 

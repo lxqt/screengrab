@@ -459,11 +459,9 @@ void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
 
 void MainWindow::quit()
 {
-    if (_core->conf->getSavedSizeOnExit() == true)
-    {
-    _core->conf->setRestoredWndSize(width(), height());
+	_core->conf->setRestoredWndSize(width(), height());
     _core->conf->saveWndSize();
-    }
+
     _core->coreQuit();
 }
 

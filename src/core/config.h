@@ -40,8 +40,8 @@ const quint8 DEF_FILENAME_TO_CLB = 0;
 const quint8 DEF_IMG_QUALITY = 80;
 const bool DEF_CLOSE_IN_TRAY = false;
 const bool DEF_ALLOW_COPIES = true;
-const bool DEF_SAVED_SIZE = false;
 const bool DEF_ZOOM_AROUND_MOUSE = false;
+// TODO - make set windows size without hardcode values
 const int DEF_WND_WIDTH = 480;
 const int DEF_WND_HEIGHT = 281;
 const int DEF_TIME_TRAY_MESS = 5;
@@ -155,10 +155,6 @@ public:
     // type of screen
     int getTypeScreen();
     void setTypeScreen(quint8 type);
-
-    // saved size on exit
-    bool getSavedSizeOnExit();
-    void setSavedSizeOnExit(bool val);
 
     // tume of tray messages
     quint8 getTimeTrayMess();

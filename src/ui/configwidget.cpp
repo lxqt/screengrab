@@ -163,7 +163,6 @@ void ConfigDialog::loadSettings()
     // display tab
     _ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
     changeTrayMsgType(_ui->cbxTrayMsg->currentIndex());
-    _ui->checkSaveSize->setChecked(conf->getSavedSizeOnExit());
     _ui->timeTrayMess->setValue(conf->getTimeTrayMess());
     _ui->checkAutoSave->setChecked(conf->getAutoSave());;
     _ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());;
@@ -272,7 +271,6 @@ void ConfigDialog::saveSettings()
     conf->setCloseInTray(_ui->checkInTray->isChecked());
     conf->setZoomAroundMouse(_ui->checkZommMouseArea->isChecked());
     conf->setAllowMultipleInstance(_ui->checkAllowCopies->isChecked());
-    conf->setSavedSizeOnExit(_ui->checkSaveSize->isChecked());
     conf->setTimeTrayMess(_ui->timeTrayMess->value());
     conf->setShowTrayIcon(_ui->checkShowTray->isChecked());
     conf->setImageQuality(_ui->slideImgQuality->value());
