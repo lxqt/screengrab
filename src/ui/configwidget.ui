@@ -105,7 +105,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -319,7 +319,7 @@
             <string>Inserting current date time into saved filename</string>
            </property>
            <property name="text">
-            <string>Insert DateTime in filename</string>
+            <string>Insert current date and time in file name</string>
            </property>
           </widget>
          </item>
@@ -392,7 +392,7 @@
            <item>
             <widget class="QLabel" name="labCopyFileName">
              <property name="text">
-              <string>Filenames to clipboard on saving</string>
+              <string>Copy file name to the clipboard when saving</string>
              </property>
             </widget>
            </item>
@@ -406,17 +406,17 @@
              </property>
              <item>
               <property name="text">
-               <string>No copy</string>
+               <string>Do not copy</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Only filename</string>
+               <string>Copy file name only</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Full path to file</string>
+               <string>Copy full file path</string>
               </property>
              </item>
             </widget>
@@ -429,14 +429,14 @@
             <string>Allow run multiplies copy of Screen Grab</string>
            </property>
            <property name="text">
-            <string>Allow multiple copies</string>
+            <string>Allow multiple instances of ScreenGrab</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QCheckBox" name="cbxEnableExtView">
            <property name="toolTip">
-            <string>Open screenshot in external viewer by double click on screen area</string>
+            <string>Open in external viewer on double click</string>
            </property>
            <property name="text">
             <string>Enable external viewer</string>
