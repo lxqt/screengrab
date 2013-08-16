@@ -103,6 +103,7 @@ QMenu* ModuleUploader::initModuleMenu()
 QAction* ModuleUploader::initModuleAction()
 {
 	QAction *act = new QAction(QObject::tr("Upload"), 0);
+	act->setObjectName("actUpload");
 	connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
 	return act;
 }

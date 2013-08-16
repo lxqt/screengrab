@@ -85,12 +85,24 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
 	
 	// Create advanced menu
-	QMenu *menuAdvanced = new QMenu(this);
+	QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
+	int  insIndex = _ui->layotButtons->indexOf(_ui->butCopy) + 1;
 	
-	QList<QAction*> modulesActions = _core->modules()->generateModulesActions();	
 	if (modulesActions.count() > 0)
 	{
-		menuAdvanced->addActions(modulesActions);
+		for (int i = 0; i < modulesActions.count(); ++i)
+		{
+			if (modulesActions.at(i) != 0)
+			{
+				QString objName = "but" + modulesActions.at(i)->objectName().remove(0, 3);
+				QString text = modulesActions.at(i)->text();
+				QPushButton* btn = createButton(objName, text);
+				btn->addAction(modulesActions.at(i));
+				connect(btn, SIGNAL(clicked(bool)), modulesActions.at(i), SIGNAL(triggered(bool)));
+				_ui->layotButtons->insertWidget(insIndex, btn);
+				insIndex++;
+			}			
+		}
 	}
 
 	QList<QMenu*> modulesMenus = _core->modules()->generateModulesMenus();
@@ -100,18 +112,14 @@ MainWindow::MainWindow(QWidget* parent) :
 		{			
 			if (modulesMenus.at(i) != 0)
 			{
-				menuAdvanced->addMenu(modulesMenus.at(i));
+				QString objName = "but" + modulesMenus.at(i)->objectName().remove(0, 3);
+				QString text = modulesMenus.at(i)->title();
+				QPushButton* btn = createButton(objName, text);
+				btn->setMenu(modulesMenus.at(i));
+				_ui->layotButtons->insertWidget(insIndex, btn);
+				insIndex++;
 			}			
 		}
-	}
-
-	if (menuAdvanced->actions().count() != 0)
-	{
-		_ui->butAdvanced->setMenu(menuAdvanced);
-	}
-	else
-	{
-		_ui->butAdvanced->deleteLater();
 	}
 	// end creation advanced menu
 	
@@ -369,6 +377,13 @@ void MainWindow::displatScreenToolTip()
 	_ui->scrLabel->setToolTip(toolTip);
 }
 
+QPushButton* MainWindow::createButton(const QString& objName, const QString& text)
+{
+	QPushButton* btn = new QPushButton(this);
+	btn->setObjectName(objName);
+	btn->setText(text);
+	return btn;
+}
 
 // crete tray
 void MainWindow::createTray()

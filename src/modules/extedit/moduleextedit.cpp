@@ -64,6 +64,7 @@ QMenu* ModuleExtEdit::initModuleMenu()
 	
 	QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
 	menu->addActions(list);
+	menu->setObjectName("menuExtedit");
 	return menu;
 }
 

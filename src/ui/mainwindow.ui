@@ -256,25 +256,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="butAdvanced">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>112</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Advanced</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
