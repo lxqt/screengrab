@@ -54,6 +54,10 @@ DialogUploader::DialogUploader(QWidget *parent) :
 	else
 	{
 		_selectedHost = config.labelsList().indexOf(defaultHost);
+		if (_selectedHost == -1)
+		{
+			_selectedHost = 0;
+		}
 	}
 
     // load ishot preview

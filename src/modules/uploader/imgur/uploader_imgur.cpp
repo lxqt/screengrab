@@ -24,12 +24,12 @@
 
 Uploader_ImgUr::Uploader_ImgUr(QObject* parent): Uploader(parent)
 {
-    qDebug() << " create img Ur uploader";	
+    qDebug() << " create Imgur uploader";
 }
 
 Uploader_ImgUr::~Uploader_ImgUr()
 {
-    qDebug() << " kill img Ur uploader";
+    qDebug() << " kill Imgur uploader";
 }
 
 /*!

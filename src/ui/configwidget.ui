@@ -86,7 +86,7 @@
        </item>
        <item>
         <property name="text">
-         <string>Tray</string>
+         <string>System tray</string>
         </property>
        </item>
        <item>
@@ -105,7 +105,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -489,7 +489,7 @@
            <item>
             <widget class="QCheckBox" name="checkShowTray">
              <property name="text">
-              <string>Use tray</string>
+              <string>Show ScreenGrab in the system tray</string>
              </property>
             </widget>
            </item>
@@ -577,7 +577,7 @@
               <string>Minimize in tray on click close button</string>
              </property>
              <property name="text">
-              <string>Close in tray</string>
+              <string>Minimize to tray when closing</string>
              </property>
             </widget>
            </item>

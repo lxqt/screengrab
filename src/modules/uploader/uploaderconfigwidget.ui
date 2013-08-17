@@ -27,7 +27,7 @@
        <item>
         <widget class="QCheckBox" name="checkAutoCopyMainLink">
          <property name="text">
-          <string>Auto copy result link to clipboard</string>
+          <string>Always copy the link to the clipboard</string>
          </property>
         </widget>
        </item>
@@ -36,7 +36,7 @@
          <item>
           <widget class="QLabel" name="labDefaultHost">
            <property name="text">
-            <string>Default upload to:</string>
+            <string>Default image host</string>
            </property>
           </widget>
          </item>

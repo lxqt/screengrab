@@ -34,7 +34,7 @@ const QString DEF_IMGSHK_PASS = "";
 const QString DEF_DEFAULT_HOST = "ImgUr";
 
 const QString  groupName = "imageshack.us";
-QStringList UploaderConfig::_labelsList = QStringList() << "ImgUr" << "ImageShack";
+QStringList UploaderConfig::_labelsList = QStringList() << "Imgur" << "ImageShack";
 
 UploaderConfig::UploaderConfig()
 {

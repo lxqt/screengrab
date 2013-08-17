@@ -45,7 +45,7 @@ ModuleUploader::ModuleUploader(QObject *parent) :
 
 QString ModuleUploader::moduleName()
 {
-	return tr("Uploader");
+	return tr("Uploading");
 }
 
 void ModuleUploader::init()
