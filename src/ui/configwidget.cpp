@@ -430,11 +430,11 @@ void ConfigDialog::editDateTmeTpl(QString str)
 
 void ConfigDialog::toggleCheckShowTray(bool checked)
 {
-    _ui->labTrayMessages->setVisible(checked);
-    _ui->cbxTrayMsg->setVisible(checked);
-    _ui->timeTrayMess->setVisible(checked);
-    _ui->labTimeTrayMess->setVisible(checked);
-    _ui->checkInTray->setVisible(checked);
+    _ui->labTrayMessages->setEnabled(checked);
+    _ui->cbxTrayMsg->setEnabled(checked);
+    _ui->timeTrayMess->setEnabled(checked);
+    _ui->labTimeTrayMess->setEnabled(checked);
+    _ui->checkInTray->setEnabled(checked);
 }
 
 void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
