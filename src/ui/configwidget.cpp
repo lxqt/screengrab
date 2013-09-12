@@ -42,12 +42,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     _ui->setupUi(this);
     conf = Config::instance();
 
-//     loadSettings();
-//     changeDefDelay(conf->getDefDelay());
-//     setVisibleDateTplEdit(conf->getDateTimeInFilename());
-// 
-//     setVisibleAutoSaveFirst(conf->getAutoSave());
-
     connect(_ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
     connect(_ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
     connect(_ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
