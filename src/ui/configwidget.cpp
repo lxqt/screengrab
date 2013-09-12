@@ -72,6 +72,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     setVisibleAutoSaveFirst(conf->getAutoSave());
     
     _ui->listWidget->setCurrentRow(0);
+	_ui->tabMain->setCurrentIndex(0);
     
     editDateTmeTpl(conf->getDateTimeTpl());
 
