@@ -213,6 +213,45 @@
               </layout>
              </item>
              <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <property name="leftMargin">
+                <number>4</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="labCopyFileName">
+                 <property name="text">
+                  <string>Copy file name to the clipboard when saving</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="cbxCopyFileName">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Do not copy</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Copy file name only</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Copy full file path</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
               <spacer name="verticalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -414,45 +453,6 @@
              <property name="text">
               <string>Save first screenshot</string>
              </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_11">
-           <property name="leftMargin">
-            <number>4</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="labCopyFileName">
-             <property name="text">
-              <string>Copy file name to the clipboard when saving</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="cbxCopyFileName">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <item>
-              <property name="text">
-               <string>Do not copy</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Copy file name only</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Copy full file path</string>
-              </property>
-             </item>
             </widget>
            </item>
           </layout>
