@@ -25,13 +25,6 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QCheckBox" name="checkAutoCopyMainLink">
-         <property name="text">
-          <string>Always copy the link to the clipboard</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLabel" name="labDefaultHost">
@@ -44,6 +37,13 @@
           <widget class="QComboBox" name="cbxDefaultHost"/>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkAutoCopyMainLink">
+         <property name="text">
+          <string>Always copy the link to the clipboard</string>
+         </property>
+        </widget>
        </item>
        <item>
         <spacer name="verticalSpacer">
