@@ -76,8 +76,8 @@ void Uploader_MediaCrush::createData(bool inBase64)
     {
 		imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/" + _formatString));        
     }
-    QByteArray a = "form-data; name=\"file\"; filename='"+ _uploadFilename.toAscii() +"'";
-    imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(a));
+    QByteArray disposition = "form-data; name=\"file\"; filename='"+ _uploadFilename.toAscii() +"'";
+    imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(disposition));
 	imagePart.setBody(imageData);
 	
 	_multipartData->append(imagePart);
