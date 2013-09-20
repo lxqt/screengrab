@@ -6,11 +6,11 @@ project( screengrab )
 message(STATUS "System: " ${CMAKE_HOST_SYSTEM_NAME} " " ${CMAKE_HOST_SYSTEM_VERSION})
 message(STATUS "Processor: " ${CMAKE_HOST_SYSTEM_PROCESSOR})
 
-find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
+find_package( Qt4 4.8.0 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
 include( "${QT_USE_FILE}" )
 
 # add version define
-set(SCREENGRAB_VERSION "1.0.80")
+set(SCREENGRAB_VERSION "1.0.83")
 set(SCREENGRAB_VERSION_DEV "1.1-dev")
 # set(DEV_BUILD True)
 
