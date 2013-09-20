@@ -27,6 +27,7 @@
 #include <QtCore/QPair>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QHttpMultiPart>
 #include <QtCore/QUrl>
 
 typedef QPair<QByteArray, QString> ResultString_t;
@@ -75,6 +76,7 @@ protected:
     
     // vars
     QByteArray imageData;
+	QHttpMultiPart *_multipartData;
     QString _uploadFilename;
     QString _formatString;
     QByteArray _strBoundary;

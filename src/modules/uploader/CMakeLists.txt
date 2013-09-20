@@ -18,6 +18,8 @@ set (uploader_SRC
 	imgur/uploaderconfigwidget_imgur.cpp 
 	imgshack/uploader_imgshack_widget.cpp 
 	imgshack/uploaderconfigwidget_imgshack.cpp 
+	mediacrush/uploader_mediacrush.cpp 
+	mediacrush/uploader_mediacrush_widget.cpp 
 )
 
 set (uploader_HDR
@@ -31,6 +33,8 @@ set (uploader_HDR
 	imgur/uploaderconfigwidget_imgur.h 
 	imgshack/uploader_imgshack_widget.h
 	imgshack/uploaderconfigwidget_imgshack.h 
+	mediacrush/uploader_mediacrush.h 
+	mediacrush/uploader_mediacrush_widget.h
 )
 
 set(uploader_UI 
@@ -40,6 +44,7 @@ set(uploader_UI
 	imgur/uploaderconfigwidget_imgur.ui 
 	imgshack/uploader_imgshack_widget.ui 
 	imgshack/uploaderconfigwidget_imgshack.ui
+	mediacrush/uploader_mediacrush_widget.ui 
 )
 
 qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})

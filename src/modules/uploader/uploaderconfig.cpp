@@ -34,7 +34,7 @@ const QString DEF_IMGSHK_PASS = "";
 const QString DEF_DEFAULT_HOST = "ImgUr";
 
 const QString  groupName = "imageshack.us";
-QStringList UploaderConfig::_labelsList = QStringList() << "Imgur" << "ImageShack";
+QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgur" << "ImageShack";
 
 UploaderConfig::UploaderConfig()
 {
@@ -48,7 +48,7 @@ UploaderConfig::UploaderConfig()
 #endif
     _settings = new QSettings(configFile, QSettings::IniFormat);        
 		
-	_groupsList << "imgur.com" << "imageshack.us";
+	_groupsList << "mediacru.sh" << "imgur.com" << "imageshack.us";
 }
 
 UploaderConfig::~UploaderConfig()

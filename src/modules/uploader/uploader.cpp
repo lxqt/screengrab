@@ -29,10 +29,11 @@
 #include <QDebug>
 
 Uploader::Uploader(QObject *parent) :
-    QObject(parent)
+    QObject(parent), _multipartData(0)
 {
     qDebug() << "creating base uploader";
-    _strBoundary = "uploadbound";
+	qsrand(126);
+    _strBoundary = "uploadbound" + QByteArray::number(qrand());
     _net = new QNetworkAccessManager(this);
 	_serverReply = 0;
 	initUploadedStrList();
@@ -85,7 +86,18 @@ void Uploader::getUserSettings(const QVariantMap& settings)
 void Uploader::startUploading()
 {
 	connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
-	_serverReply = _net->post(_request, imageData);	
+	
+	if (!_multipartData && !imageData.isEmpty())
+	{
+		_serverReply = _net->post(_request, imageData);	
+	}
+	if (_multipartData && imageData.isEmpty())
+	{
+		_serverReply = _net->post(_request, _multipartData);
+// 		_multipartData->setParent(_serverReply);
+	}
+	
+// 	_serverReply = _net->post(_request, imageData);	
 
 	connect(_serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64))); 
 }

@@ -1,0 +1,114 @@
+/***************************************************************************
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   doomer3d@gmail.com                                                    *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
+#include "uploader_mediacrush.h"
+
+#include <QStringList>
+#include <QtNetwork/QHttpMultiPart>
+#include <QtNetwork/QHttpPart>
+
+#include <QDebug>
+
+Uploader_MediaCrush::Uploader_MediaCrush(QObject* parent): Uploader(parent)
+{
+	_host = "mediacru.sh";
+    qDebug() << " create MediaCrush uploader";
+}
+
+Uploader_MediaCrush::~Uploader_MediaCrush()
+{
+    qDebug() << " kill MediaCrush uploader";
+}
+
+/*!
+ * 	Start upload process
+ */
+void Uploader_MediaCrush::startUploading()
+{	
+    createData();
+	createRequest(imageData, apiUrl());
+
+   _request.setRawHeader("Host", _host);
+    Uploader::startUploading();
+}
+
+/*!
+ * 	Return url for upload image
+ */
+QUrl Uploader_MediaCrush::apiUrl()
+{
+    return QUrl("https://mediacru.sh/api/upload/file");
+}
+
+/*!
+ * 	Prepare image datafor uploading
+ */
+void Uploader_MediaCrush::createData(bool inBase64)
+{
+// 	inBase64 = true;
+    Uploader::createData(inBase64);
+
+	_multipartData = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+	
+	QHttpPart imagePart;
+    if (_formatString == "jpg")
+    {
+        imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/jpeg"));
+    }
+    else
+    {
+		imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/" + _formatString));        
+    }
+    QByteArray a = "form-data; name=\"file\"; filename='"+ _uploadFilename.toAscii() +"'";
+    imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(a));
+	imagePart.setBody(imageData);
+	
+	_multipartData->append(imagePart);
+	
+	imageData.clear();
+}
+
+/*!
+ * 	Process server reply data
+ */
+void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
+{
+	if (reply->error() == QNetworkReply::NoError)
+	{
+		QByteArray response = reply->readAll();		
+
+		if (response.split(':').count() >= 2)
+		{
+			response = response.split(':').at(1);
+			response = response.mid(2, 12);
+		}
+		
+		_uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response;
+		
+		Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
+		Q_EMIT uploadDone();
+	}
+	else
+	{		
+		Q_EMIT uploadFail(reply->errorString().toAscii());
+	}
+	
+	reply->deleteLater();
+}

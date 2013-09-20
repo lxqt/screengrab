@@ -26,6 +26,8 @@
 #include "imgshack/uploader_imgshack_widget.h"
 #include "imgur/uploader_imgur.h"
 #include "imgur/uploader_imgur_widget.h"
+#include "mediacrush/uploader_mediacrush.h"
+#include "mediacrush/uploader_mediacrush_widget.h"
 #include <core/core.h>
 
 #include <QtGui/QMessageBox>
@@ -119,10 +121,13 @@ void DialogUploader::slotUploadStart()
 
     switch(_selectedHost)
     {
-    case 0:
-        _uploader = new Uploader_ImgUr;		
+	case 0:
+        _uploader = new Uploader_MediaCrush;
         break;
     case 1:
+        _uploader = new Uploader_ImgUr;
+        break;
+    case 2:
         _uploader = new Uploader_ImgShack;
         break;
     default:
@@ -156,10 +161,15 @@ void DialogUploader::slotSeletHost(int type)
 	{
 		case 0:
 		{
-			_uploaderWidget = new Uploader_ImgUr_Widget();
+			_uploaderWidget = new Uploader_MediaCrush_Widget();			
 			break;
 		}
 		case 1:
+		{
+			_uploaderWidget = new Uploader_ImgUr_Widget();
+			break;
+		}
+		case 2:
 		{
 			_uploaderWidget = new Uploader_ImgShack_Widget();
 			break;
