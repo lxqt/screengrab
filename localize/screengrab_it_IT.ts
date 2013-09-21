@@ -1012,7 +1012,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="366"/>
-        <source>Automaticaly saving screenshots in grabbing process</source>
+        <source>Automatically saving screenshots in grabbing process</source>
         <translation>Salva la schermata automaticamente durante la cattura</translation>
     </message>
     <message>

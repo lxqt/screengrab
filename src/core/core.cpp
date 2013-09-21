@@ -61,7 +61,7 @@ Core::Core() :
     _firstScreen = true;	
 	
 	// register screenshot types command line params
-	_cmd->registerParam("fullscreen", "Sset fullscreen mode", CmdLineParam::ScreenType);
+	_cmd->registerParam("fullscreen", "Set fullscreen mode", CmdLineParam::ScreenType);
 	_cmd->registerParam("active", "Set active window mode", CmdLineParam::ScreenType);
 	_cmd->registerParam("region", "Set region select mode", CmdLineParam::ScreenType);
 	

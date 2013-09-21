@@ -438,7 +438,7 @@
          <item>
           <widget class="QCheckBox" name="checkAutoSave">
            <property name="toolTip">
-            <string>Automaticaly saving screenshots in grabbing process</string>
+            <string>Automatically saving screenshots in grabbing process</string>
            </property>
            <property name="text">
             <string>Autosave screenshot</string>

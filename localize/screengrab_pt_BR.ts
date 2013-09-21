@@ -1012,7 +1012,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="366"/>
-        <source>Automaticaly saving screenshots in grabbing process</source>
+        <source>Automatically saving screenshots in grabbing process</source>
         <translation>Salvar automaticamente capturas de telas no processo de obtenção</translation>
     </message>
     <message>
