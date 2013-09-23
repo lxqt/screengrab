@@ -271,8 +271,8 @@ void DialogUploader::slotOpenDirectLink()
 void DialogUploader::slotOpenDeleteLink()
 {
 	QMessageBox msg(this);
-	msg.setText("Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings..");
-	msg.setInformativeText("Are you sure you want to continue?");
+	msg.setText(tr("Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings."));
+	msg.setInformativeText(tr("Are you sure you want to continue?"));
 	msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msg.setDefaultButton(QMessageBox::No);
 	int result = msg.exec();

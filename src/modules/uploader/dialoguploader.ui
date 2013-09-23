@@ -88,8 +88,14 @@
            </item>
            <item>
             <widget class="QPushButton" name="butOpenDirectLink">
+             <property name="minimumSize">
+              <size>
+               <width>112</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="toolTip">
-              <string>OPen this link in the default web-browser</string>
+              <string>Open this link in the default web-browser</string>
              </property>
              <property name="text">
               <string>Open</string>
@@ -103,6 +109,9 @@
                <width>112</width>
                <height>0</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>Copy this link to the clipboard</string>
              </property>
              <property name="text">
               <string>Copy</string>
@@ -142,6 +151,9 @@
                <height>0</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Copy this link to the clipboard</string>
+             </property>
              <property name="text">
               <string>Copy</string>
              </property>
@@ -167,8 +179,14 @@
            </item>
            <item>
             <widget class="QPushButton" name="butDeleteLink">
+             <property name="minimumSize">
+              <size>
+               <width>112</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="toolTip">
-              <string>OPen this link in the default web-browser</string>
+              <string>Open this link in the default web-browser</string>
              </property>
              <property name="text">
               <string>Open</string>
