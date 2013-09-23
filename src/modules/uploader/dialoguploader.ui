@@ -69,7 +69,7 @@
         <number>0</number>
        </property>
        <widget class="QWidget" name="resultPage">
-        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <widget class="QLabel" name="labDirectLink">
            <property name="text">
@@ -147,11 +147,22 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="editDeleteLink">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLineEdit" name="editDeleteLink">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="butDeleteLink">
+             <property name="text">
+              <string>Open link</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <spacer name="verticalSpacer_2">
@@ -171,6 +182,7 @@
         <zorder>verticalSpacer_2</zorder>
         <zorder>labDeleteLink</zorder>
         <zorder>editDeleteLink</zorder>
+        <zorder>butDeleteLink</zorder>
        </widget>
       </widget>
      </item>

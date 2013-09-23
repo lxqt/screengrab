@@ -30,6 +30,7 @@
 #include "mediacrush/uploader_mediacrush_widget.h"
 #include <core/core.h>
 
+#include <QtCore/QProcess>
 #include <QtGui/QMessageBox>
 
 #include <QDebug>
@@ -146,6 +147,7 @@ void DialogUploader::slotUploadStart()
 //     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
     connect(_ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 	connect(_ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
+	connect(_ui->butDeleteLink, SIGNAL(clicked(bool)), this, SLOT(slotOpenDeleteLink()));
 }
 
 void DialogUploader::slotSeletHost(int type)
@@ -260,3 +262,22 @@ void DialogUploader::slotCopyLink()
 	qApp->clipboard()->setText(copyText);
 }
 
+void DialogUploader::slotOpenDeleteLink()
+{
+	QMessageBox msg(this);
+	msg.setText("Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings..");
+	msg.setInformativeText("Are you sure you want to continue?");
+	msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	msg.setDefaultButton(QMessageBox::No);
+	int result = msg.exec();
+	
+	if (result == QMessageBox::Yes)
+	{
+		QString exec = "xdg-open";
+		QStringList args = QStringList() << _ui->editDeleteLink->text();
+		
+		QProcess *execProcess = new QProcess();
+		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
+		execProcess->start(exec, args);
+	}
+}

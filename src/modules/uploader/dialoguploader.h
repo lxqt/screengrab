@@ -26,39 +26,40 @@
 #include <QtGui/QDialog>
 
 namespace Ui {
-	class DialogUploader;
+class DialogUploader;
 }
 
 class DialogUploader : public QDialog
 {
     Q_OBJECT
-    
+
 public:
     explicit DialogUploader(QWidget *parent = 0);
     ~DialogUploader();
-    
+
 protected:
     void changeEvent(QEvent *e);
-    
+
 private Q_SLOTS:
     void slotUploadStart();
     void slotSeletHost(int type);
-	void slotUploadProgress(qint64 bytesSent, qint64 bytesTotal);
-	void slotUploadDone();
-	void slotUploadFail(const QByteArray &error);
-	void slotChangeExtCode(int code);
-	void slotCopyLink();
-    
+    void slotUploadProgress(qint64 bytesSent, qint64 bytesTotal);
+    void slotUploadDone();
+    void slotUploadFail(const QByteArray &error);
+    void slotChangeExtCode(int code);
+    void slotCopyLink();
+    void slotOpenDeleteLink();
+
 private:
     Ui::DialogUploader *_ui;
-    
+
     Uploader* _uploader;
-	QWidget* _uploaderWidget;
-    
+    QWidget* _uploaderWidget;
+
     // storage id curren selected img sho
     qint8 _selectedHost;
-	
-	QStringList _resultLinks;
+
+    QStringList _resultLinks;
 };
 
 #endif // DIALOGUPLOADER_H
