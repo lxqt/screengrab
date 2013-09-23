@@ -147,6 +147,7 @@ void DialogUploader::slotUploadStart()
 //     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
     connect(_ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 	connect(_ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
+	connect(_ui->butOpenDirectLink, SIGNAL(clicked(bool)), this, SLOT(slotOpenDirectLink()));
 	connect(_ui->butDeleteLink, SIGNAL(clicked(bool)), this, SLOT(slotOpenDeleteLink()));
 }
 
@@ -262,6 +263,11 @@ void DialogUploader::slotCopyLink()
 	qApp->clipboard()->setText(copyText);
 }
 
+void DialogUploader::slotOpenDirectLink()
+{
+	_openLink(_ui->editDirectLink->text());
+}
+
 void DialogUploader::slotOpenDeleteLink()
 {
 	QMessageBox msg(this);
@@ -272,12 +278,16 @@ void DialogUploader::slotOpenDeleteLink()
 	int result = msg.exec();
 	
 	if (result == QMessageBox::Yes)
-	{
-		QString exec = "xdg-open";
-		QStringList args = QStringList() << _ui->editDeleteLink->text();
-		
-		QProcess *execProcess = new QProcess();
-		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
-		execProcess->start(exec, args);
+	{		
+		_openLink(_ui->editDeleteLink->text());
 	}
+}
+
+void DialogUploader::_openLink(const QString& link)
+{
+	QString exec = "xdg-open";
+	QStringList args = QStringList() << link;
+	QProcess *execProcess = new QProcess();
+	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
+	execProcess->start(exec, args);	
 }

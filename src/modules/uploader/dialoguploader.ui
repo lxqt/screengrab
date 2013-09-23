@@ -87,6 +87,16 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="butOpenDirectLink">
+             <property name="toolTip">
+              <string>OPen this link in the default web-browser</string>
+             </property>
+             <property name="text">
+              <string>Open</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="butCopyLink">
              <property name="minimumSize">
               <size>
@@ -157,8 +167,11 @@
            </item>
            <item>
             <widget class="QPushButton" name="butDeleteLink">
+             <property name="toolTip">
+              <string>OPen this link in the default web-browser</string>
+             </property>
              <property name="text">
-              <string>Open link</string>
+              <string>Open</string>
              </property>
             </widget>
            </item>
@@ -181,8 +194,6 @@
         <zorder>labDirectLink</zorder>
         <zorder>verticalSpacer_2</zorder>
         <zorder>labDeleteLink</zorder>
-        <zorder>editDeleteLink</zorder>
-        <zorder>butDeleteLink</zorder>
        </widget>
       </widget>
      </item>
