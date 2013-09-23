@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>841</width>
-    <height>314</height>
+    <height>340</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -140,6 +140,20 @@
           </layout>
          </item>
          <item>
+          <widget class="QLabel" name="labDeleteLink">
+           <property name="text">
+            <string>Link to delete image:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="editDeleteLink">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -155,6 +169,8 @@
         </layout>
         <zorder>labDirectLink</zorder>
         <zorder>verticalSpacer_2</zorder>
+        <zorder>labDeleteLink</zorder>
+        <zorder>editDeleteLink</zorder>
        </widget>
       </widget>
      </item>

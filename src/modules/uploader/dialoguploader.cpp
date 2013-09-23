@@ -197,8 +197,9 @@ void DialogUploader::slotUploadDone()
 {
 	QList<ResultString_t> links = _uploader->parsedLinksToGui();
 	_ui->editDirectLink->setText(links.first().first);
+	_ui->editDeleteLink->setText(links.last().first);
 	
-	for (int i =1; i < links.count(); ++i)
+	for (int i =1; i < links.count()-1; ++i)
 	{
 		_ui->cbxExtCode->addItem(links.at(i).second);
 		_resultLinks << links.at(i).first;
