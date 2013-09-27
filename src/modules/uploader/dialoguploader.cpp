@@ -30,6 +30,7 @@
 #include "mediacrush/uploader_mediacrush_widget.h"
 #include <core/core.h>
 
+#include <QtCore/QProcess>
 #include <QtGui/QMessageBox>
 
 #include <QDebug>
@@ -146,6 +147,8 @@ void DialogUploader::slotUploadStart()
 //     connect(ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
     connect(_ui->butCopyLink, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
 	connect(_ui->butCopyExtCode, SIGNAL(clicked(bool)), this, SLOT(slotCopyLink()));
+	connect(_ui->butOpenDirectLink, SIGNAL(clicked(bool)), this, SLOT(slotOpenDirectLink()));
+	connect(_ui->butDeleteLink, SIGNAL(clicked(bool)), this, SLOT(slotOpenDeleteLink()));
 }
 
 void DialogUploader::slotSeletHost(int type)
@@ -197,8 +200,9 @@ void DialogUploader::slotUploadDone()
 {
 	QList<ResultString_t> links = _uploader->parsedLinksToGui();
 	_ui->editDirectLink->setText(links.first().first);
+	_ui->editDeleteLink->setText(links.last().first);
 	
-	for (int i =1; i < links.count(); ++i)
+	for (int i =1; i < links.count()-1; ++i)
 	{
 		_ui->cbxExtCode->addItem(links.at(i).second);
 		_resultLinks << links.at(i).first;
@@ -259,3 +263,31 @@ void DialogUploader::slotCopyLink()
 	qApp->clipboard()->setText(copyText);
 }
 
+void DialogUploader::slotOpenDirectLink()
+{
+	_openLink(_ui->editDirectLink->text());
+}
+
+void DialogUploader::slotOpenDeleteLink()
+{
+	QMessageBox msg(this);
+	msg.setText(tr("Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings."));
+	msg.setInformativeText(tr("Are you sure you want to continue?"));
+	msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	msg.setDefaultButton(QMessageBox::No);
+	int result = msg.exec();
+	
+	if (result == QMessageBox::Yes)
+	{		
+		_openLink(_ui->editDeleteLink->text());
+	}
+}
+
+void DialogUploader::_openLink(const QString& link)
+{
+	QString exec = "xdg-open";
+	QStringList args = QStringList() << link;
+	QProcess *execProcess = new QProcess();
+	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
+	execProcess->start(exec, args);	
+}

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>841</width>
-    <height>314</height>
+    <height>340</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,7 +69,7 @@
         <number>0</number>
        </property>
        <widget class="QWidget" name="resultPage">
-        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <widget class="QLabel" name="labDirectLink">
            <property name="text">
@@ -87,12 +87,31 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="butOpenDirectLink">
+             <property name="minimumSize">
+              <size>
+               <width>112</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Open this link in the default web-browser</string>
+             </property>
+             <property name="text">
+              <string>Open</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="butCopyLink">
              <property name="minimumSize">
               <size>
                <width>112</width>
                <height>0</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>Copy this link to the clipboard</string>
              </property>
              <property name="text">
               <string>Copy</string>
@@ -132,8 +151,45 @@
                <height>0</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Copy this link to the clipboard</string>
+             </property>
              <property name="text">
               <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="labDeleteLink">
+           <property name="text">
+            <string>Link to delete image:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLineEdit" name="editDeleteLink">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="butDeleteLink">
+             <property name="minimumSize">
+              <size>
+               <width>112</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Open this link in the default web-browser</string>
+             </property>
+             <property name="text">
+              <string>Open</string>
              </property>
             </widget>
            </item>
@@ -155,6 +211,7 @@
         </layout>
         <zorder>labDirectLink</zorder>
         <zorder>verticalSpacer_2</zorder>
+        <zorder>labDeleteLink</zorder>
        </widget>
       </widget>
      </item>

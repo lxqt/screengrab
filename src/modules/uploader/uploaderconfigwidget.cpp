@@ -42,9 +42,11 @@ UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
 	
 	loadSettings();
 	
+	_crush = new UploaderConfigWidget_MediaCrush(this);
 	_imgur = new UploaderConfigWidget_ImgUr(this);
 	_imgshack = new UploaderConfigWidget_ImgShack(this);
 	
+	_ui->stackedHosts->addWidget(_crush);
 	_ui->stackedHosts->addWidget(_imgur);
 	_ui->stackedHosts->addWidget(_imgshack);
 	

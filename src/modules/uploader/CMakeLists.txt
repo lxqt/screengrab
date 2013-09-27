@@ -20,6 +20,7 @@ set (uploader_SRC
 	imgshack/uploaderconfigwidget_imgshack.cpp 
 	mediacrush/uploader_mediacrush.cpp 
 	mediacrush/uploader_mediacrush_widget.cpp 
+	mediacrush/uploaderconfigwidget_mediacrush.cpp  
 )
 
 set (uploader_HDR
@@ -35,6 +36,7 @@ set (uploader_HDR
 	imgshack/uploaderconfigwidget_imgshack.h 
 	mediacrush/uploader_mediacrush.h 
 	mediacrush/uploader_mediacrush_widget.h
+	mediacrush/uploaderconfigwidget_mediacrush.h 
 )
 
 set(uploader_UI 
@@ -45,6 +47,7 @@ set(uploader_UI
 	imgshack/uploader_imgshack_widget.ui 
 	imgshack/uploaderconfigwidget_imgshack.ui
 	mediacrush/uploader_mediacrush_widget.ui 
+	mediacrush/uploaderconfigwidget_mediacrush.ui 
 )
 
 qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})

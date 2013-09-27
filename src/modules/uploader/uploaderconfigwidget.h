@@ -25,6 +25,7 @@
 
 #include "imgur/uploaderconfigwidget_imgur.h"
 #include "imgshack/uploaderconfigwidget_imgshack.h"
+#include "mediacrush/uploaderconfigwidget_mediacrush.h"
 
 namespace Ui {
 class UploaderConfigWidget;
@@ -49,6 +50,7 @@ private:
     Ui::UploaderConfigWidget *_ui;
 	
 	// services widgets
+	UploaderConfigWidget_MediaCrush *_crush;
 	UploaderConfigWidget_ImgUr *_imgur;
 	UploaderConfigWidget_ImgShack *_imgshack;
 };
