@@ -1011,7 +1011,7 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="366"/>
-        <source>Automaticaly saving screenshots in grabbing process</source>
+        <source>Automatically saving screenshots in grabbing process</source>
         <translation>Salvar captura automaticamente en el proceso de grabacion</translation>
     </message>
     <message>

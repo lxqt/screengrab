@@ -38,7 +38,7 @@
  * added command line parametrs for grab modes (fullscren, active window, selection area)
  * added BMP support
  * added pt_BR translation
- * added automaticaly hiding main window on grab process
+ * added automatically hiding main window on grab process
  * {linux] fixed grab active window screenshot without decorations
  * [linux] added option "no window decoration"
  * added shortcuts for main window buttons
