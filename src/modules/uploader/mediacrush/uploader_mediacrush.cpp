@@ -30,6 +30,7 @@ Uploader_MediaCrush::Uploader_MediaCrush(QObject* parent): Uploader(parent)
 {
 	_host = "mediacru.sh";
     qDebug() << " create MediaCrush uploader";
+	UpdateUploadedStrList();
 }
 
 Uploader_MediaCrush::~Uploader_MediaCrush()
@@ -112,4 +113,21 @@ void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
 	}
 	
 	reply->deleteLater();
+}
+
+void Uploader_MediaCrush::UpdateUploadedStrList()
+{
+	qDebug() << "Meida crus links init";
+	QStringList nonUsed = QStringList() << UL_BB_CODE << UL_BB_CODE_THUMB << UL_HTML_CODE << UL_HTML_CODE_THUMB;
+	
+	for (int i =0; i < nonUsed.count(); ++i)
+	{
+		_uploadedStrings.remove(nonUsed.at(i).toAscii());
+	}
+	/*
+	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
+	_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
+	
+	strPair = qMakePair(QByteArray(), tr("URl to delete image"));
+	_uploadedStrings.insert(UL_DELETE_URL ,strPair);*/
 }

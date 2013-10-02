@@ -44,6 +44,7 @@ protected Q_SLOTS:
 	
 private:
 	QByteArray _host;
+	void UpdateUploadedStrList();
 };
 
 #endif // UPLOADER_MEDIACRUSH_H

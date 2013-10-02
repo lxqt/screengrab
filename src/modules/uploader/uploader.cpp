@@ -112,7 +112,7 @@ QList<ResultString_t> Uploader::parsedLinksToGui()
 	QList<ResultString_t> list;
 	ResultString_t delete_url;
 	ResultString_t direct_link;
-	
+
 	for (int i =  0; i < _uploadedStrings.count(); ++i)
 	{
 		QByteArray key = _uploadedStrings.keys().at(i);
@@ -131,7 +131,7 @@ QList<ResultString_t> Uploader::parsedLinksToGui()
 			list.append(val);	
 		}		
 	}
-	
+
 	list.prepend(direct_link);
 	
 	if (delete_url.first.isEmpty() == false)

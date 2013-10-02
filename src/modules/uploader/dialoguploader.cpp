@@ -198,16 +198,17 @@ void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 
 void DialogUploader::slotUploadDone()
 {
+qDebug() << "start dialog uploader done";
 	QList<ResultString_t> links = _uploader->parsedLinksToGui();
 	_ui->editDirectLink->setText(links.first().first);
 	_ui->editDeleteLink->setText(links.last().first);
-	
+
 	for (int i =1; i < links.count()-1; ++i)
 	{
 		_ui->cbxExtCode->addItem(links.at(i).second);
 		_resultLinks << links.at(i).first;
 	}
-    
+  
     _ui->stackedWidget->setCurrentIndex(0);
     _ui->labUploadStatus->setText(tr("Upload completed"));
     _ui->progressBar->setVisible(false);
@@ -218,10 +219,21 @@ void DialogUploader::slotUploadDone()
 	{
 		QApplication::clipboard()->setText(_ui->editDirectLink->text());
 	}
-	
-	connect(_ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
-	_ui->cbxExtCode->setCurrentIndex(0);
-	_ui->editExtCode->setText(_resultLinks.at(0));
+
+	if (_resultLinks.count() > 0)
+	{
+		connect(_ui->cbxExtCode, SIGNAL(currentIndexChanged(int)), this, SLOT(slotChangeExtCode(int)));
+		_ui->cbxExtCode->setCurrentIndex(0);
+		_ui->editExtCode->setText(_resultLinks.at(0));
+	}
+	else
+	{
+		_ui->editExtCode->setVisible(false);
+		_ui->cbxExtCode->setVisible(false);
+		_ui->butCopyExtCode->setVisible(false);
+		_ui->labExtCode_2->setVisible(false);
+	}
+
 	_ui->butClose->setText(tr("Close"));
 }
 

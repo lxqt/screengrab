@@ -37,6 +37,7 @@ endif(SCREENGRAB_VERSION_DEV)
 add_definitions( -DVERSION="${VERSION}")
 message(STATUS "Version				: " ${VERSION})
 #${CMAKE_SYSTEM_NAME} [${CMAKE_HOST_SYSTEM_PROCESSOR}]" )
+message(STATUS "Architecture				: " ${CMAKE_C_LIBRARY_ARCHITECTURE}) 
 
 message(STATUS "Use qmake: " ${QT_QMAKE_EXECUTABLE})
 # ------ build type ------------------------
