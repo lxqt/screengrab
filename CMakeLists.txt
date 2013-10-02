@@ -68,16 +68,24 @@ add_definitions( -DPREFIX="${CMAKE_INSTALL_PREFIX}")
 
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
-string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
+if(UNIX AND NOT APPLE)
+	# Check Debian or Ubuntu?
+	if (EXISTS "/etc/debian_version")
+		set (LIBDIR "lib/${CMAKE_LIBRARY_ARCHITECTURE}")	
+	# Other distro
+	else (EXISTS "/etc/debian_version")
+		string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
+		if (IS64BITS)
+			SET (LIBDIR "lib64")
+		else (IS64BITS )
+			SET (LIBDIR "lib")
+		endif (IS64BITS )	
+	endif (EXISTS "/etc/debian_version")
 
-IF (IS64BITS)
-    SET (LIBDIR "lib64")
-ELSE (IS64BITS )
-    SET (LIBDIR "lib")
-ENDIF (IS64BITS )
-set(SG_LIBDIR "${LIBDIR}/screengrab")
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
-message(STATUS "Library path: "${CMAKE_INSTALL_RPATH})
+	set(SG_LIBDIR "${LIBDIR}/screengrab")
+	set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
+	message(STATUS "Library path: "${CMAKE_INSTALL_RPATH})
+endif(UNIX AND NOT APPLE)
 
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
