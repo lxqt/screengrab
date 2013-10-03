@@ -137,7 +137,7 @@ QString AboutDialog::tabHelpUs()
 	str += tr("What you can do?");
 	
 	str += "<ul>";
-	str += "<li>" + tr("Translate ScreeGrab to other languages") + "</li>";
+	str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
 	str += "<li>" + tr("Make suggestions for next releases") + "</li>";
 	str += "<li>" + tr("Report bugs and issues") + "</li>";
 	str += "</ul>";
