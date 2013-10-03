@@ -228,7 +228,7 @@ void ConfigDialog::saveSettings()
     if (screenshotDir.exists() == false)
     {
         QMessageBox msg;
-        msg.setText(tr("Directory %1 does not exists. Do you eant to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
+        msg.setText(tr("Directory %1 does not exist. Do you want to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
         msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
         msg.setIcon(QMessageBox::Question);
         msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
@@ -353,7 +353,7 @@ QString *directory = new QString;
 void ConfigDialog::restoreDefaults()
 {
     QMessageBox msg;
-    msg.setText(tr("Do you want reset settings to defaults?"));
+    msg.setText(tr("Do you want to reset the settings to the defaults?"));
     msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
     msg.setIcon(QMessageBox::Question);
     msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
@@ -481,7 +481,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
         }
         else
         {
-                showErrorMessage(tr("This keys is used in your system! Please select other keys"));
+                showErrorMessage(tr("This key is already used in your system! Please select another."));
         }
 #else
     changeShortcut(seq);
@@ -489,7 +489,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
-        showErrorMessage(tr("This keys is used in ScreenGrab! Please select other keys"));
+        showErrorMessage(tr("This key is already used in ScreenGrab! Please select another."));
     }
 }
 
