@@ -118,7 +118,7 @@ void DialogUploader::slotUploadStart()
 {
     _ui->progressBar->setVisible(true);
     _ui->butUpload->setEnabled(false);
-    _ui->labUploadStatus->setText(tr("Upload preocessing... Please wait"));
+    _ui->labUploadStatus->setText(tr("Upload processing... Please wait"));
 
     switch(_selectedHost)
     {
@@ -283,7 +283,7 @@ void DialogUploader::slotOpenDirectLink()
 void DialogUploader::slotOpenDeleteLink()
 {
 	QMessageBox msg(this);
-	msg.setText(tr("Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings."));
+	msg.setText(tr("Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings."));
 	msg.setInformativeText(tr("Are you sure you want to continue?"));
 	msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msg.setDefaultButton(QMessageBox::No);
