@@ -3,20 +3,20 @@ ScreenGrab
 
 version 1.1-dev
 
-ScreenGrab - program for fast creating screenshots, and  simple publishing their on the internet  image hostings. It working on Linux and Windows operating systems. The program uses Qt and is independent of any desktop environment.
+ScreenGrab - A program for fast creating screenshots, and easily publishing them on internet image hosting services. It works on Linux and Windows operating systems. ScreenGrab uses the Qt framework and thus, it is independent from any desktop environment.
 
 Build requirements
 ------------------
 
- * Qt4 == 4.8 (Qt 5.x support soon)
- * CMake >= 2.6 (only for build)
- * GCC > 4.4 (MSVS now is not supported )
- * [optional] Qxt Library > 0.6 (if you want build with using your system Qxt version - see "Build options" section in this file)
+ * Qt4 == 4.8 (Qt 5.x support will follow soon)
+ * CMake >= 2.6 (only for building ScreenGrab from sources)
+ * GCC > 4.4 (MSVS is currently not supported )
+ * [optional] Qxt Library > 0.6 (if you want to build ScreenGrab using your system Qxt version - see the "Build options" section in this file)
 
 Build
 -----
 
-Build ScreenGrab, using these commands:
+To build ScreenGrab from sources, use these commands:
 
 	mkdir build
 	cd build
@@ -27,19 +27,19 @@ Build ScreenGrab, using these commands:
 Build options
 -------------
 
-You can use some or all of these params for customize your build.
+You can use some or all of these parameters to customise your build.
 
- * **-DCMAKE_INSTALL_PREFIX** - Install prefix for Linux distro. By default is "/usr".
- * **-DSG_XDG_CONFIG_SUPPORT** - Place config files into XDGC_ONFIG_HOME directory (usualy - ~/.config/${app_name) ). By default - in ON. In previous versions config files was storaged in ~/.screengrab (this behavior is when its option is OFF)
- * **-DSG_EXT_UPLOADS** - Enableupload screnshots to image hostings. By default is ON.
- * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main cations to create screenshots. By default is ON.
- * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. By default if OFF.
- * **-DSG_DOCDIR** - Name for directory of user's documentation. By default is  "screengrab".
- * **-DQKSW_SHARED** - Enable shared linking with qkeysequencewidget library (in src/common/qksysekwesewidget). By default is OFF.
+ * **-DCMAKE_INSTALL_PREFIX** - Install prefix for Linux distro. Default setting: "/usr".
+ * **-DSG_XDG_CONFIG_SUPPORT** - Place config files into XDGC_CONFIG_HOME directory (usually - ~/.config/${app_name) ). Default setting: ON. In previous versions the config files were stored in ~/.screengrab (Set this parameter to "OFF" to store the config files here).
+ * **-DSG_EXT_UPLOADS** - Enable uploading screenshots to image hosting services. Default setting: ON.
+ * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main actions to create screenshots. Default setting: ON.
+ * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. Default setting: OFF.
+ * **-DSG_DOCDIR** - Name for the directory of user's documentation. Default setting:  "screengrab".
+ * **-DQKSW_SHARED** - Enable shared linking with qkeysequencewidget library (in src/common/qksysekwesewidget). Default setting: OFF.
  
 **Build notes:**
 
- * For Debian based Linux distro (Debian Squeezy, Ubuntu 12.04, etc) - if you want to build Screengrab wuth using system version of Qxt Library,  please use this command to run CMake:
+ * For Debian based Linux distro (Debian Squeezy, Ubuntu 12.04, etc) - if you want to build ScreenGrab using the system version of the Qxt Library,  please use this command to run CMake:
  
 	cmake -DSG_USE_SYSTEM_QXT=ON -DQXT_QXTCORE_INCLUDE_DIR=/usr/include/qxt/QxtCore -DQXT_QXTGUI_INCLUDE_DIR=/usr/include/qxt -DCMAKE_INSTALL_PREFIX=/usr ../
 
