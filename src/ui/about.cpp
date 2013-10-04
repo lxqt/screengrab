@@ -108,9 +108,9 @@ QString AboutDialog::tabAbout()
 {
     QString str;
     str += "<b>ScreenGrab</b> ";
-    str += tr("is crossplatform application for fast creation screenshots of your desktop.");
+    str += tr("is a crossplatform application for fast creating screenshots of your desktop.");
     str += "<br><br>";
-    str += tr("It's a light and powerfull application and had been written using Qt, so you can to use in Windows and Linux.");
+    str += tr("It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.");
     str += "<br><br>";
 
     str += tr("E-Mail")+" - ";
@@ -131,13 +131,13 @@ QString AboutDialog::tabAbout()
 QString AboutDialog::tabHelpUs()
 {
     QString str;
-	str += tr("You can join us and help us if you want, is an invitation if you like this application.");
+	str += tr("You can join us and help us if you want. This is an invitation if you like this application.");
 	str += "<br><br>";
 	
 	str += tr("What you can do?");
 	
 	str += "<ul>";
-	str += "<li>" + tr("Translate to other language") + "</li>";
+	str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
 	str += "<li>" + tr("Make suggestions for next releases") + "</li>";
 	str += "<li>" + tr("Report bugs and issues") + "</li>";
 	str += "</ul>";

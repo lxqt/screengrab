@@ -462,7 +462,7 @@
          <item>
           <widget class="QCheckBox" name="checkAllowCopies">
            <property name="toolTip">
-            <string>Allow run multiplies copy of Screen Grab</string>
+            <string>Allow run multiplies copy of ScreenGrab</string>
            </property>
            <property name="text">
             <string>Allow multiple instances of ScreenGrab</string>
@@ -586,7 +586,7 @@
            <item>
             <widget class="QCheckBox" name="checkInTray">
              <property name="toolTip">
-              <string>Minimize in tray on click close button</string>
+              <string>Minimize to tray on click close button</string>
              </property>
              <property name="text">
               <string>Minimize to tray when closing</string>
@@ -652,7 +652,7 @@
            </item>
            <item>
             <property name="text">
-             <string>Local shortcutss</string>
+             <string>Local shortcuts</string>
             </property>
             <item>
              <property name="text">

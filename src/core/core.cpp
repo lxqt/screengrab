@@ -480,7 +480,7 @@ QString Core::copyFileNameToCliipboard(QString file)
     case Config::nameToClipboardPath:
     {
         QApplication::clipboard()->setText(file);
-        retString = QChar(QChar::LineSeparator) + tr("Path to saved file is copyed to the clipboard");
+        retString = QChar(QChar::LineSeparator) + tr("Path to saved file is copied to the clipboard");
         break;
     }
     default:
