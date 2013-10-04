@@ -24,11 +24,6 @@
         <translation>Подяки</translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="111"/>
-        <source>is crossplatform application for fast creation screenshots of your desktop.</source>
-        <translation>кросплатформна програма для швидкого створення скріншотів.</translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="123"/>
         <source>Licensed under the </source>
         <translation>За ліцензією </translation>
@@ -45,11 +40,6 @@
         <translation>Допомога проекту</translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="113"/>
-        <source>It&apos;s a light and powerfull application and had been written using Qt, so you can to use in Windows and Linux.</source>
-        <translation>Цей додаток створено з використанням фреймворка Qt і працює під Linux та Windows.</translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="119"/>
         <source>Web site</source>
         <translation>Сайт</translation>
@@ -60,19 +50,29 @@
         <translation type="unfinished">Авторські права &amp;copy; 2009-2012, Артем &apos;DOOMer&apos; Галічкін {2009-2013,?}</translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="134"/>
-        <source>You can join us and help us if you want, is an invitation if you like this application.</source>
-        <translation>Якщо вам подобається ScreenGrab, ви можете надати допомогу проекту.</translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="137"/>
         <source>What you can do?</source>
         <translation>Чим можна допомогти?</translation>
     </message>
     <message>
+        <location filename="../src/ui/about.cpp" line="111"/>
+        <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/about.cpp" line="113"/>
+        <source>It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/about.cpp" line="134"/>
+        <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/about.cpp" line="140"/>
-        <source>Translate to other language</source>
-        <translation>Переклад на інші мови</translation>
+        <source>Translate ScreenGrab to other languages</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="141"/>
@@ -238,11 +238,6 @@
         <translation>Ім&apos;я збереженого файлу скопійовано в буфер обміну </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="483"/>
-        <source>Path to saved file is copyed to the clipboard</source>
-        <translation>Шлях до збереженого файлу скопійовано в буфер обміну</translation>
-    </message>
-    <message>
         <location filename="../src/core/core.cpp" line="496"/>
         <source>Copied</source>
         <translation>Скопійовано</translation>
@@ -251,6 +246,11 @@
         <location filename="../src/core/core.cpp" line="445"/>
         <source>Saved to </source>
         <translation>Збережено до</translation>
+    </message>
+    <message>
+        <location filename="../src/core/core.cpp" line="483"/>
+        <source>Path to saved file is copied to the clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="496"/>
@@ -348,8 +348,13 @@
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="121"/>
-        <source>Upload preocessing... Please wait</source>
-        <translation>Завантажується... Зачекайте</translation>
+        <source>Upload processing... Please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="286"/>
+        <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="195"/>
@@ -370,11 +375,6 @@
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Error</source>
         <translation>Помилка</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="286"/>
-        <source>Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="287"/>
@@ -868,6 +868,11 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Якість картинки (1--меньшийрозмір файла, 100--найкраща якість)</translation>
     </message>
     <message>
+        <location filename="../src/ui/configwidget.ui" line="465"/>
+        <source>Allow run multiplies copy of ScreenGrab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/configwidget.ui" line="478"/>
         <source>Enable external viewer</source>
         <translation>Дозволити зовнішній переглядач</translation>
@@ -875,6 +880,11 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="504"/>
         <source>Show ScreenGrab in the system tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="589"/>
+        <source>Minimize to tray on click close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -906,6 +916,11 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/ui/configwidget.ui" line="649"/>
         <source>Area select</source>
         <translation>Вибрану ділянку</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="655"/>
+        <source>Local shortcuts</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="659"/>
@@ -1124,11 +1139,6 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Клавіші</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="655"/>
-        <source>Local shortcutss</source>
-        <translation>Локальні</translation>
-    </message>
-    <message>
         <location filename="../src/ui/configwidget.ui" line="695"/>
         <source>Selected shortcut:</source>
         <translation>Вибрана комбінація:</translation>
@@ -1147,16 +1157,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/ui/configwidget.ui" line="359"/>
         <source>Zoom area around mouse in selection mode</source>
         <translation>Масштаб області курсора в режимі вибору</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/configwidget.ui" line="589"/>
-        <source>Minimize in tray on click close button</source>
-        <translation>Ховатись в трей при закритті</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/configwidget.ui" line="465"/>
-        <source>Allow run multiplies copy of Screen Grab</source>
-        <translation>Дозволити запуск кількох копій програми</translation>
     </message>
 </context>
 </TS>

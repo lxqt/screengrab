@@ -24,11 +24,6 @@
         <translation type="unfinished">Dank an</translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="111"/>
-        <source>is crossplatform application for fast creation screenshots of your desktop.</source>
-        <translation type="unfinished">ist eine platformunabhaengige Anwendung um Bildschirmfotos aufzunehmen.</translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="123"/>
         <source>Licensed under the </source>
         <translation type="unfinished"></translation>
@@ -45,11 +40,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="113"/>
-        <source>It&apos;s a light and powerfull application and had been written using Qt, so you can to use in Windows and Linux.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="119"/>
         <source>Web site</source>
         <translation type="unfinished"></translation>
@@ -60,18 +50,28 @@
         <translation type="unfinished">Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin {2009-2012,?} {2009-2013,?}</translation>
     </message>
     <message>
-        <location filename="../src/ui/about.cpp" line="134"/>
-        <source>You can join us and help us if you want, is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/ui/about.cpp" line="137"/>
         <source>What you can do?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/ui/about.cpp" line="111"/>
+        <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/about.cpp" line="113"/>
+        <source>It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/about.cpp" line="134"/>
+        <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/about.cpp" line="140"/>
-        <source>Translate to other language</source>
+        <source>Translate ScreenGrab to other languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -238,11 +238,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="483"/>
-        <source>Path to saved file is copyed to the clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/core/core.cpp" line="496"/>
         <source>Copied</source>
         <translation type="unfinished"></translation>
@@ -250,6 +245,11 @@
     <message>
         <location filename="../src/core/core.cpp" line="445"/>
         <source>Saved to </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/core.cpp" line="483"/>
+        <source>Path to saved file is copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -348,7 +348,12 @@
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="121"/>
-        <source>Upload preocessing... Please wait</source>
+        <source>Upload processing... Please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="286"/>
+        <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -369,11 +374,6 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="286"/>
-        <source>Open this link in your default web-browser, Its may direct delete your uploaded image, without any warnings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -867,6 +867,11 @@ any key or using the right or middle mouse buttons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/ui/configwidget.ui" line="465"/>
+        <source>Allow run multiplies copy of ScreenGrab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/configwidget.ui" line="478"/>
         <source>Enable external viewer</source>
         <translation type="unfinished"></translation>
@@ -874,6 +879,11 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="504"/>
         <source>Show ScreenGrab in the system tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="589"/>
+        <source>Minimize to tray on click close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -904,6 +914,11 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="649"/>
         <source>Area select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="655"/>
+        <source>Local shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1133,11 +1148,6 @@ any key or using the right or middle mouse buttons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="655"/>
-        <source>Local shortcutss</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/ui/configwidget.ui" line="695"/>
         <source>Selected shortcut:</source>
         <translation type="unfinished"></translation>
@@ -1146,16 +1156,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/ui/configwidget.ui" line="359"/>
         <source>Zoom area around mouse in selection mode</source>
         <translation>Bereich um Mauszeiger beim Auswaehlen vergroessern</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/configwidget.ui" line="589"/>
-        <source>Minimize in tray on click close button</source>
-        <translation>Beim Beenden in Symbolleiste minimieren</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/configwidget.ui" line="465"/>
-        <source>Allow run multiplies copy of Screen Grab</source>
-        <translation>Mehrere Instanzen von ScreenGrab erlauben</translation>
     </message>
 </context>
 </TS>
