@@ -12,21 +12,21 @@
  * Fixed non-minimize main window on "Exit" shortcut, when using "Minimize to tray" option
  * Fixed bug with cutting button text on main window
  * Fixed regression with not capturing a screenshot when a second instance of ScreenGrab is running
- * fixed bug with not create path to autosave screenshots (when it is typed in manually in configuration dialog)
+ * fixed bug with not creating the path to autosave screenshots (when it is typed in manually in configuration dialog)
  * added build option SG_GLOBALSHORTCUTS for turning on/off build with global shortcuts support
  * autoincrement filenames when saving screenshots in manual mode (in one running session)
- * added the ability to customize shortcuts to close ScreenGrab
+ * added the ability to customise shortcuts to close ScreenGrab
  * added ability to run ScreenGrab minimized to tray (or taskbar, if tray is disabled) with "--minimized" command line option
  * Added ability to automatically upload the screenshot via the command line "--upload" parameter
 
 0.9.1
  * fixed non-switching combo-box "Type of Screeen" when grabbing screenshot from signal by another instance
- * fixed incorect grab active window screens in GNOME (when disabled "Allow multiple copies" option and run another instance of application)
+ * fixed incorect grab active window screens in GNOME (when disabled "Allow multiple copies" option and run another instance)
 
 0.9
  * added global shortcuts
  * added option to enable|disable system tray
- * added switch to the already running instance of an application when you start a second instance (non-operating mode to allow multiple copies)
+ * added switch to the already running instance of an application when you start a second instance (non-operating mode to allow multiple instances)
  * added autosave first screenshot which has been taken on application start (enabled | disabled optional)
  * redesign of the configuration dialog UI
 
@@ -39,8 +39,8 @@
  * added BMP support
  * added pt_BR translation
  * added automatically hiding main window on grab process
- * [linux] fixed grab active window screenshot without decorations
- * [linux] added option "no window decoration"
+ * [Linux] fixed grab active window screenshot without decorations
+ * [Linux] added option "no window decoration"
  * added shortcuts for main window buttons
 
 0.6.2 [Linux only]
@@ -51,25 +51,25 @@
 
 0.6
  * default value of hiding main window changed to true.
- * added input template for inserting date-time in the saved filename
+ * added input template for inserting date-time into the saved filename
  * added zoom around mouse cursor in area selection mode
  * small modifications of the configuration dialog
  * added html help info (English & Russian)
 
 0.5
  * added inserting date|time in saving filename [optional]
- * added auto saving screens in grabbing process [option]
+ * added auto saving screenshots in grabbing process [option]
  * added option to change the time of displaying tray messages [1 - 10 sec]
  * added help info
- * added tool tips fo ui elements
+ * added tool tips for the UI elements
  * small fixes config file syntax
 
 v0.4
  * added grabbing selection screen area
- * added ability to copy files into the clipboard
+ * added ability to copy image files into the clipboard
  * added saving the size of the main window on exit [default is turned off]
- * decreased in 2 times the memory occupied by ScreenGrab at startup
- * [win32] fixed bug with storing the screengrab.ini
+ * halve the memory size occupied by ScreenGrab at startup
+ * [win32] fixed bug with storing the screengrab.ini file
  * change structure of some source code
  * change buttons tab order of the main window
  * new application icon
@@ -85,8 +85,8 @@ v0.3
  * added option to select between minimizing to tray and closing ScreenGrab (by close window button)
 
 v0.2
- * added JPEG support.
- * added options dialog.
+ * added JPEG support
+ * added options dialog
  * added option to select a default directory for saving the files
  * added option to select a default filename
  * added option to select a default image format
