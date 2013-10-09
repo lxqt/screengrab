@@ -5,7 +5,7 @@
  * Fixed dual monitor support
  * added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
  * added ability to upload to some image hosting services (imgur.com and imgshack.us)
- * added build option for compiling without the upload feature (SG_EXT_UPLOADS bulld option)
+ * added build option for compiling without the upload feature (SG_EXT_UPLOADS build option)
  * added "Previous selection" mode (save the last selected area and restore it in the next get area screenshot)
  * added ability to edit a screenshot in an external editor
  * added option for preview screenshot in default image viewer by double click on screenshot area
