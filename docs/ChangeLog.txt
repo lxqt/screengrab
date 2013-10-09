@@ -1,45 +1,45 @@
 1.1-dev
- * Option "Always save the window size" replaced by autosave window size on exit app.
+ * Option "Always save the window size" replaced by "autosave window size on exit ScreenGrab"
 
 1.0
  * Fixed dual monitor support
  * added XDG_CONFIG_HOME support, by a build option SG_XDG_CONFIG_SUPPORT
- * added ability to upload to some image hosts (imgur.com and imgshack.us)
- * added build option for compile without upload feature (SG_EXT_UPLOADS bulld option)
- * added "Previous selection" mode (save last selected area and restoring it in next get area screenshot)
- * added ability to edit screenshot in external editor
+ * added ability to upload to some image hosting services (imgur.com and imgshack.us)
+ * added build option for compiling without the upload feature (SG_EXT_UPLOADS bulld option)
+ * added "Previous selection" mode (save the last selected area and restore it in the next get area screenshot)
+ * added ability to edit a screenshot in an external editor
  * added option for preview screenshot in default image viewer by double click on screenshot area
- * Fixed non-minimize main window on "Exit" shortcut, when use "Minimize to tray" option
- * Fixed bug with cut button text on mainwindow
- * Fixed regression with not capture screenshot when second instance running
- * fixed bug with not create path to autosave screenshots (when it is typed manually  in configuration dialog)
- * added build option SG_GLOBALSHORTCUTS for turn on/off build with global shortcuts support
+ * Fixed non-minimize main window on "Exit" shortcut, when using "Minimize to tray" option
+ * Fixed bug with cutting button text on main window
+ * Fixed regression with not capturing a screenshot when a second instance of ScreenGrab is running
+ * fixed bug with not create path to autosave screenshots (when it is typed in manually in configuration dialog)
+ * added build option SG_GLOBALSHORTCUTS for turning on/off build with global shortcuts support
  * autoincrement filenames when saving screenshots in manual mode (in one running session)
- * added the ability to customize shortcut to close the application
- * added ability to run in minimized to tray (or taskar, if tray is disabled) with "--minimized" comand line option
- * Added ability to automatically upload the screenshot via the command line "--upload" param
+ * added the ability to customize shortcuts to close ScreenGrab
+ * added ability to run ScreenGrab minimized to tray (or taskbar, if tray is disabled) with "--minimized" command line option
+ * Added ability to automatically upload the screenshot via the command line "--upload" parameter
 
 0.9.1
- * fixed non-switching combo-box "Type of Screeen" when grab screenshot from signal by another instance application.
+ * fixed non-switching combo-box "Type of Screeen" when grabbing screenshot from signal by another instance
  * fixed incorect grab active window screens in GNOME (when disabled "Allow multiple copies" option and run another instance of application)
 
 0.9
- * added global shortcus
- * added option for enable|disable system tray
- * added switch to the already running instance of an application when you start a second copy (non-operating mode to allow multiple copies)
- * added autosave first screenshot which been take in start application (enabled | disabled optional)
- * redesign config dialog ui
+ * added global shortcuts
+ * added option to enable|disable system tray
+ * added switch to the already running instance of an application when you start a second instance (non-operating mode to allow multiple copies)
+ * added autosave first screenshot which has been taken on application start (enabled | disabled optional)
+ * redesign of the configuration dialog UI
 
 0.8.1
- * [Linux] fixed incorrect select default saving format in KDE 4.4.x save file dialog
+ * [Linux] fixed incorrect selection of the default saving format in the KDE 4.4.x save file dialog
  * added de_DE translation
 
 0.8
- * added command line parametrs for grab modes (fullscren, active window, selection area)
+ * added command line parameters for grab modes (fullscreen, active window, selection area)
  * added BMP support
  * added pt_BR translation
  * added automatically hiding main window on grab process
- * {linux] fixed grab active window screenshot without decorations
+ * [linux] fixed grab active window screenshot without decorations
  * [linux] added option "no window decoration"
  * added shortcuts for main window buttons
 
@@ -47,31 +47,31 @@
  * fixed non-translated tray menu (closed issue #7)
 
 0.6.1 [Linux only]
- * fixed incorretc detect system language in some Linux distro
+ * fixed incorrect detection of the system language in some Linux distributions
 
 0.6
- * default value of hiding main wnd changed to true.
- * added input template for insering date-time in saved filename
+ * default value of hiding main window changed to true.
+ * added input template for inserting date-time in the saved filename
  * added zoom around mouse cursor in area selection mode
- * small modified configuraion dialog
- * added html help info (eng & rus)
+ * small modifications of the configuration dialog
+ * added html help info (English & Russian)
 
 0.5
- * added instering date|time in saving filename [optional]
+ * added inserting date|time in saving filename [optional]
  * added auto saving screens in grabbing process [option]
- * added change time of display tray messages [1 - 10 src]
+ * added option to change the time of displaying tray messages [1 - 10 sec]
  * added help info
  * added tool tips fo ui elements
  * small fixes config file syntax
 
 v0.4
  * added grabbing selection screen area
- * added copying into clipboard
- * added saving size of main window on exit [default is turned off]
- * decreased in 2 times the volume occupied by the memory at startup
- * [win32] fixed bug with place screengrab.ini
+ * added ability to copy files into the clipboard
+ * added saving the size of the main window on exit [default is turned off]
+ * decreased in 2 times the memory occupied by ScreenGrab at startup
+ * [win32] fixed bug with storing the screengrab.ini
  * change structure of some source code
- * change buttons tab order of main window
+ * change buttons tab order of the main window
  * new application icon
  * some fixes
 
@@ -79,25 +79,27 @@ v0.3.1
  * fixed bug with non-displayed main window icon
 
 v0.3
- * main window now based on ui-file (remaked UI)
+ * main window is now based on ui-file (remaked UI)
  * added grabbing active window
- * added option for allowing multiple copies of app
- * added option for select between minimizing in tray  and closing (by close window button)
+ * added option to allow running multiple instances of ScreenGrab
+ * added option to select between minimizing to tray and closing ScreenGrab (by close window button)
 
 v0.2
- * added JPEG support
+ * added JPEG support.
  * added options dialog.
- * added settings for default saving dir, filename and image format.
- * added saving options into INI-file.
- * added i18n support and Russian localiaztion.
- * some fixes and changes in code.
- * Windows version now avalible as installer
+ * added option to select a default directory for saving the files
+ * added option to select a default filename
+ * added option to select a default image format
+ * added saving options into an INI-file
+ * added i18n support and Russian localisation
+ * some fixes and changes in the code
+ * Windows version is now available as installer
 
 v0.1
- * first public version.
- * added system tray icon and menu.
- * added hiding in systray.
- * added blocking second instance application.
+ * first public version
+ * added system tray icon and menu
+ * added option to hide ScreenGrab in systray
+ * added option to block running a second instance of ScreenGrab
 
 v0.0.3
- - first worked build.
+ - first working build
