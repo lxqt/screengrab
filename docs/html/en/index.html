@@ -38,10 +38,9 @@ Microsoft Windows and GNU/Linux.
                     <li>Get active window screenshots</li>
 		    <li>Get secreenshots of desktop selection area</li>
 		    <li>Copy screenshot to clipboard</li>
-                    <li>Saving your image files in formats PNG
-or JPEG or BMP</li>
+                    <li>Saving your image files in formats PNG, JPEG or BMP</li>
                     <li>Ability to view and edit screenshots in an external editor</li>
-                    <li>Ability to upload screenshots on several image hostings (currently support imgur.com and imageshack.us, in the future, the list will be expanded)</li>
+                    <li>Ability to upload screenshots on several image hosting services (currently ScreenGrab supports imgur.com and imageshack.us, in the future, the list will be expanded)</li>
                     <li>Ability to set delay in getting screenshots
 (from 1 to 90 seconds)</li>
                     <li>Hiding the main window (with recovery)
@@ -93,10 +92,10 @@ kotekstnoe a button or menu in the notification area of the desktop.
             </p>
             <ul>
 				<li><b>Upload</b> - upload screenshots on several image hosting services, currently ScreenGrab supports <a href='imgur.com/' target='_blank'>imgur.com</a> and <a href='http://imageshack.us/' target='_blank'>imageshack.us</a>, in the future, the list will be expanded.</li>
-				<li><b>Edit in ...</b> - the ability to open (and edit) of the screenshots in one of your programs for working with images.
+				<li><b>Edit in ...</b> - the ability to open (and edit) screenshots in an image editor.
 				<br />
 				<br />
-				<u>NOTE:</u> In version for Microsoft Windows now MS Paint only supported.
+				<u>NOTE:</u> In the current version for Microsoft Windows only MS Paint is supported.
 				</li>
             </ul>
             <p>
@@ -121,7 +120,7 @@ or active window]. </li>
             </p>
         <ul>
 
-                    <li><b>Insert DateTime in filename</b> -- insetring date and time in saving filename
+                    <li><b>Insert DateTime in filename</b> -- inserting date and time in saving filename
 <br />
 <br />These expressions may be used for the date part of the format string::
 <br />
@@ -164,8 +163,8 @@ or active window]. </li>
 				</li>
                     <li><b>Autosave screen</b> -- automatically saving
 screenshot in grab process</li>
-		    <li><b>Save first screenshot</b> -- enabled | disabled automatically saving first screenshot, which get on run application</li>
-		<li><b>Filenames to clipboard on saving</b> - send to the clipboard name of the saved file. You can select these params:</li>
+		    <li><b>Save first screenshot</b> -- enabled | disabled automatically saving first screenshot, which is captured on program start</li>
+		<li><b>Filenames to clipboard on saving</b> - send to the clipboard name of the saved file. You can select these parameters:</li>
 			<ul>
 				<li><b>No copy</b> - the name of saved file will not be transferred to the clipboard.</li>
 				<li><b>Only filename</b> - send to the clipboard only the file name.</li>
@@ -187,10 +186,10 @@ at the exit (and restore at next run)</li>
                 <b><u>System tray settings:</u></b>
             </p>
         <ul>
-		<li><b>Use tray</b> -- use the notification area (system tray) )of the operating system (desktop environment) for displaying messages and application management.</li>
-                    <li><b>Tray messages</b> -- mode of displays tray messages 9on grab|save events. Can be "none"
+		<li><b>Use tray</b> -- use the notification area (system tray) of the operating system (desktop environment) for displaying messages and application management.</li>
+                    <li><b>Tray messages</b> -- mode of displays tray messages on grab|save events. Can be "none"
 or "if hiden" or "always"</li>
-                    <li><b>Time of display tray messages</b> -- time within which notices are displayed </li>
+                    <li><b>Time of display tray messages</b> -- time within a specific notifications is displayed </li>
                     <li><b>Close in tray</b> -- minimize main window in tray
 by click on close window button.</li>
 
@@ -199,13 +198,13 @@ by click on close window button.</li>
 	    <u><b>shortcuts settings:</u></b>
 	</p>
 	<p>
-	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick access to application functions. There are two kinds of key combinations used in screenGrab - local and global.
+	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick access to application functions. There are two kinds of key combinations used in ScreenGrab - local and global.
 	</p>
 	<p>
-	    Local duplicative actions performed by pressing the button in the main window. They work only when the ScreenGrab main window is active.
+	    Local duplicative actions performed by pressing the button in the main window. They will only work when the ScreenGrab main window is active.
 	</p>
 	<p>
-	    Global shortcuts can use the get a new screenshot when working with another application in your operating system.
+	    Global shortcuts can be used the get a new screenshot when working with another application in your operating system.
 	</p>
 			<p>
                 <u><b>Command line parameters:</u></b>
@@ -214,10 +213,10 @@ by click on close window button.</li>
 			  <li><b>--fullscreen</b> -- set fullscreen mode [default].</li>
 			  <li><b>--active</b> -- set active window mode.</li>
 			  <li><b>--region</b> -- set screen region select mode.</li>
-			  <li><b>--minimized</b> -- run in minimized to the tray (or taskar, if tray is disabled).</li>
-			  <li><b>--upload</b> -- automatically uploading screenshot on selected image hosting. And display after  it direct link to image.</li>
-			  <li><b>--version</b> -- display version information {linux only].</li>
-			  <li><b>--help</b> -- display command line parameters information {linux only].</li>
+			  <li><b>--minimized</b> -- run minimized to the tray (or taskbar, if tray is disabled).</li>
+			  <li><b>--upload</b> -- automatically upload a screenshot to the selected image hosting service and display the direct link to the image after completion.</li>
+			  <li><b>--version</b> -- display version information [Linux only].</li>
+			  <li><b>--help</b> -- display command line parameters information [Linux only].</li>
 			</ul>
 
 <a name='license'></a>
