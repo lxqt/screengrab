@@ -1,5 +1,8 @@
 1.1-dev
+ * added ability to upload to MediaCreush (http://mediacru.sh)
  * Option "Always save the window size" replaced by "autosave window size on exit ScreenGrab"
+ * Reworked main window ui (the order of the buttons)
+ * Reworked the configuration dialog (some UI elements moved between sections, and increment count of the sections)
 
 1.0
  * Fixed dual monitor support
