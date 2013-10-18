@@ -4,7 +4,7 @@
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>ScreenGrab -- программа для быстрого создания скриншотов</title>
+<title>ScreenGrab -- Fast creation of screenshots</title>
 <link href="../default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,31 +25,29 @@
     <div id="left">
         <h2>ScreenGrab - fast creation of screenshots</h2>
         <p>
-This is a crossplatform application designed to quickly get screenshots
-ScreenGrab created using the Qt Framework, thanks which the program can work in the
-Microsoft Windows and GNU/Linux.
+ScreenGrab is a crossplatform application designed to quickly get screenshots.
+ScreenGrab is based on the Qt Framework, which allows the program to be used in
+Microsoft Windows and GNU/Linux environments.
                 </p>
         <p>
                     Main features:
                 </p>
         <ul>
-                    <li>Working in Windows & Linux</li>
+                    <li>Works in Windows & Linux</li>
                     <li>Get desktop screenshots</li>
                     <li>Get active window screenshots</li>
-		    <li>Get secreenshots of desktop selection area</li>
-		    <li>Copy screenshot to clipboard</li>
-                    <li>Saving your image files in formats PNG, JPEG or BMP</li>
+		    <li>Get screenshots of selected desktop areas</li>
+		    <li>Copy screenshots into the clipboard</li>
+                    <li>Save your image files in PNG, JPEG or BMP format</li>
                     <li>Ability to view and edit screenshots in an external editor</li>
                     <li>Ability to upload screenshots on several image hosting services (currently ScreenGrab supports  mediacru.sh, imgur.com and imageshack.us, in the future, the list will be expanded)</li>
-                    <li>Ability to set delay in getting screenshots
+                    <li>Ability to set delay before getting screenshots
 (from 1 to 90 seconds)</li>
-                    <li>Hiding the main window (with recovery)
-ScreenGrab at the time of the screenshot</li>
-
-                    <li>Ability to minimize application to system tray, and
-control via context menu</li>
+                    <li>Hide the main window (with recovery) at the time of the screenshot</li>
+                    <li>Ability to minimize ScreenGrab to the system tray, and
+control it via a context menu</li>
 	    <li>Getting screenshots using global shortcuts</li>
-	    <li>Auto-save screenshot when received</li>
+	    <li>Auto-save screenshot when captured</li>
 	    <li>Ability to insert the current date and time in filename and save</li>
         </ul>
 
@@ -57,51 +55,52 @@ control via context menu</li>
 
             <h2>Usage  <a href='#main'>To start page</a></h2>
             <p>
-                It is a very simple.
+                It is very simple.
             </p>
             <p>
-                On first run application get current state of your desktop.
-					  Preview screen displays into main window.
+                On the first run ScreenGrab captures the current state of your desktop.
+					  The preview screen is displayed in the main window.
 
-All management of the program can be carried out through the buttons or the context menu in the notification area of the desktop.
+All management of the program can be carried out through the buttons in the main window or in the context menu of SreenGrab, which can be accessed by a right-mouse-click on the ScreenGrab icon in the notification area of the desktop.
             </p>
             <p>
-                Buttons on main window:
+                Buttons in main window:
             </p>
         <ul>
-                    <li><b>New Screen</b> [Ctrl+N] -- take new screenshot</li>
-                    <li><b>Save Screen</b> [Ctrl+S] -- write captured screenshot
+                    <li><b>New Screen</b> [Ctrl+N] -- take a new screenshot</li>
+                    <li><b>Save Screen</b> [Ctrl+S] -- write a captured screenshot
   on hard disk (in PNG or JPEG format).</li>
-<li><b>Copy Screen</b> [Ctrl+C] -- copy screen to clipboard.</li>
+<li><b>Copy Screen</b> [Ctrl+C] -- copy screen to the clipboard.</li>
 <!-- 				<li><b>Upload</b> - upload screenshots on several image hosting services, currently ScreenGrab supports <a href='http://mediacru.sh/' target='_blank'>mediacru.sh</a>, <a href='imgur.com/' target='_blank'>http://imgur.com</a> and <a href='http://imageshack.us/' target='_blank'>imageshack.us</a>, in the future, the list will be expanded.</li> -->
 				<li><b>Edit in ...</b> - the ability to open (and edit) screenshots in an image editor.
 				<br />
 				<br />
 				<u>NOTE:</u> In the current version for Microsoft Windows only MS Paint is supported.
+				<br />
+				<br />
 				</li>
-                    <li><b>Optionsи</b> [Ctrl+O] -- show program options window.</li>
-		    <li><b>Help</b> [Ctrl+H] -- display help information and display information about ScreenGrab,
-	  developer and license.</li>
+                    <li><b>Options</b> [Ctrl+O] -- show program options window.</li>
+		    <li><b>Help</b> [Ctrl+H] -- access help and information about ScreenGrab, developer and license.</li>
                     <li><b>Quit</b> [Ctrl+Q] -- Exit program</li>
         </ul>
             <p>
-                This buttons is a duplicate into systemtray menu.
+                These buttons can be accessed via right-click on the ScreenGrab icon in the systemtray menu as well.
             </p>
             <p>
                 Additional controls, located in main window.
             </p>
         <ul>
-						<li><b>Delay</b> -- delay in seconds before grab screen.</li>
-                    <li><b>Type</b> -- type of grabbing [full sacreen
+						<li><b>Delay</b> -- delay in seconds before grabbing the screen.</li>
+                    <li><b>Type</b> -- type of grabbing [full screen
 or active window]. </li>
         </ul>
             <p>
                 <b><u>Main settings:</u></b>
             </p>
         <ul>
-                    <li><b>Default directory</b> -- default directory for save screenshots</li>
+                    <li><b>Default directory</b> -- default directory to save screenshots</li>
                     <li><b>Default filename</b> -- name of saved file by default.</li>
-                    <li><b>Format</b> -- default saving image format (you can select other format  in saving)</li>
+                    <li><b>Format</b> -- default saving image format (you can select other format in saving)</li>
 <li><b>No window decoration</b> -- grab screenshot of active window without window decorations (only for linux version).</li>
 	</ul>
             <p>
@@ -111,7 +110,7 @@ or active window]. </li>
 
                     <li><b>Insert DateTime in filename</b> -- inserting date and time in saving filename
 <br />
-<br />These expressions may be used for the date part of the format string::
+<br />These expressions may be used for the date part of the format string:
 <br />
 <table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
 <thead><tr valign="top" class="qt-style"><th>Parameter</th><th>Output</th></tr></thead>
@@ -153,44 +152,44 @@ or active window]. </li>
                     <li><b>Autosave screen</b> -- automatically saving
 screenshot in grab process</li>
 		    <li><b>Save first screenshot</b> -- enabled | disabled automatically saving first screenshot, which is captured on program start</li>
-		<li><b>Filenames to clipboard on saving</b> - send to the clipboard name of the saved file. You can select these parameters:</li>
+		<li><b>Filenames to clipboard on saving</b> - send the name of the saved file to the clipboard . You can select these parameters:</li>
 			<ul>
 				<li><b>No copy</b> - the name of saved file will not be transferred to the clipboard.</li>
-				<li><b>Only filename</b> - send to the clipboard only the file name.</li>
-				<li><b>Full path to file</b> - send to the clipboard full path to the file.</li>
+				<li><b>Only filename</b> - send only the file name to the clipboard.</li>
+				<li><b>Full path to file</b> - send the full path to the file to the clipboard.</li>
 			</ul>
 			
 		    <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>	
-		    <li><b>Enable external viewer</b> -- enable or disable ability for preview screenshot in default image viewer (by double click on screenshot area in main window).</li>
+		    <li><b>Enable external viewer</b> -- enable or disable ability for preview screenshot in default image viewer (by double click on screenshot area in the main window).</li>
 	</ul>
             <p>
                 <b><u>Display settings:</u></b>
             </p>
         <ul>
-	    <li><b>Save window size on exit</b> -- saving current size of main window
-at the exit (and restore at next run)</li>
-	    <li><b>Zoom area around mouse in selection mode</b> -- the ability to display the magnified area around the mouse pointer when receiving a screenshot selected area.</li>
+	    <li><b>Save window size on exit</b> -- saving the current size of main window
+when exiting ScreenGrab (and restore it at next run)</li>
+	    <li><b>Zoom area around mouse in selection mode</b> -- the ability to display the magnified area around the mouse pointer when receiving a screenshot of a selected area.</li>
 	</ul>
             <p>
                 <b><u>System tray settings:</u></b>
             </p>
         <ul>
 		<li><b>Use tray</b> -- use the notification area (system tray) of the operating system (desktop environment) for displaying messages and application management.</li>
-                    <li><b>Tray messages</b> -- mode of displays tray messages on grab|save events. Can be "none"
-or "if hiden" or "always"</li>
-                    <li><b>Time of display tray messages</b> -- time within a specific notifications is displayed </li>
-                    <li><b>Close in tray</b> -- minimize main window in tray
-by click on close window button.</li>
+                    <li><b>Tray messages</b> -- mode of displaying tray messages on grab|save events. Can be "none"
+or "if hidden" or "always"</li>
+                    <li><b>Time tof display tray messages</b> -- time within a specific notification is displayed </li>
+                    <li><b>Close in tray</b> -- minimize main window in to the systemtray
+by click on the close window button.</li>
 
         </ul>
 	<p>
 	    <u><b>shortcuts settings:</u></b>
 	</p>
 	<p>
-	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick access to application functions. There are two kinds of key combinations used in ScreenGrab - local and global.
+	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick accessing application functions. There are two kinds of key combinations used in ScreenGrab - local and global.
 	</p>
 	<p>
-	    Local duplicative actions performed by pressing the button in the main window. They will only work when the ScreenGrab main window is active.
+	    Local duplicate actions performed by pressing the button in the main window. They will only work when the ScreenGrab main window is active.
 	</p>
 	<p>
 	    Global shortcuts can be used the get a new screenshot when working with another application in your operating system.
@@ -252,9 +251,9 @@ And all those who use ScreenGrab :)
                 <strong>Version 1.1:</strong>
             </p>            
 			<ul>
-				<li>Added ability to upload to MediaCreush (http://mediacru.sh).</li>
+				<li>Added ability to upload to MediaCrush (http://mediacru.sh).</li>
 				<li>Option "Always save the window size" replaced by "autosave window size on exit ScreenGrab".</li>
-				<li>Reworked main window ui (the order of the buttons).</li>
+				<li>Reworked main window UI (the order of the buttons).</li>
 				<li>Reworked the configuration dialog (some UI elements moved between sections, and increment count of the sections).</li>
 			</ul>
             <p>
