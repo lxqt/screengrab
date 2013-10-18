@@ -51,7 +51,7 @@ private Q_SLOTS:
 private:
 	void createAppList();
 #ifdef Q_WS_X11
-	ExtApp_t readDesktopFile(QString filename);
+	ExtApp_t readDesktopFile(QString filename, QByteArray path);
 #endif
 	
 	ExtAppsList_t _appList;

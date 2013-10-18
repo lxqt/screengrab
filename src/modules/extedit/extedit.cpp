@@ -105,39 +105,57 @@ void ExtEdit::createAppList()
 {	
 #ifdef Q_WS_X11
 	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
-	QFile file(globalMimeTypesList);
+	QByteArray localMimeTypesPath = qgetenv("XDG_DATA_HOME");
 	
-	if (file.open(QIODevice::ReadOnly) == true)
+	if (localMimeTypesPath.isEmpty() == true)
 	{
-		QString inLine;
-		QString mimetype;
-		QStringList desktopFiles;
-		
-		QTextStream in(&file);
-		while(in.atEnd() == false)
+		localMimeTypesPath = qgetenv("HOME") + "/.local/share";
+	}
+	localMimeTypesPath += "/applications/";
+	QByteArray localMimeTypesList = localMimeTypesPath + "mimeinfo.cache";
+	
+	QVector<QByteArray> pathList;
+	pathList << _globalAppListPath_c << localMimeTypesPath;
+	
+	QVector<QByteArray> fileList;
+	fileList << globalMimeTypesList << localMimeTypesList;
+	
+	QFile file;
+	
+	for (int f = 0; f < fileList.count(); ++f)
+	{		
+		file.setFileName(fileList.value(f));
+		if (file.open(QIODevice::ReadOnly) == true)
 		{
-			inLine = in.readLine();
-			if (inLine.split("=").count() > 1)
+			QString inLine;
+			QString mimetype;
+			QStringList desktopFiles;
+			
+			QTextStream in(&file);
+			while(in.atEnd() == false)
 			{
-				mimetype = inLine.split("=").at(0);
-				
-				if (mimetype == "image/png")
+				inLine = in.readLine();
+				if (inLine.split("=").count() > 1)
 				{
-					desktopFiles = inLine.split("=").at(1).split(";");
-					
-					if (desktopFiles.count() != 0)
+					mimetype = inLine.split("=").at(0);
+					if (mimetype == "image/png")
 					{
-						for (int i = 0; i < desktopFiles.count(); ++i)
+						desktopFiles = inLine.split("=").at(1).split(";");
+						if (desktopFiles.count() != 0)
 						{
-							if (desktopFiles.at(i).isEmpty() == false)
+							for (int i = 0; i < desktopFiles.count(); ++i)
 							{
-								_appList.append(readDesktopFile(desktopFiles.at(i)));
+								if (desktopFiles.at(i).isEmpty() == false)
+								{
+									_appList.append(readDesktopFile(desktopFiles.at(i), pathList.at(f)));
+								}
 							}
 						}
 					}
 				}
 			}
 		}
+		file.close();
 	}
 #endif
 #ifdef Q_WS_WIN
@@ -156,7 +174,7 @@ void ExtEdit::createAppList()
 /*
  *  This method call only in Linux
  */
-ExtApp_t ExtEdit::readDesktopFile(QString filename)
+ExtApp_t ExtEdit::readDesktopFile(QString filename, QByteArray path)
 {	
 	ExtApp_t entry;
 
@@ -164,7 +182,8 @@ ExtApp_t ExtEdit::readDesktopFile(QString filename)
 	{
 		filename = "kde4/" + filename.remove("kde4-");
 	}
-	filename = _globalAppListPath_c + filename;
+// 	filename = _globalAppListPath_c + filename;
+	filename = path + filename;
 
 	QFile file(filename);
 	if (file.open(QIODevice::ReadOnly) == true)
