@@ -517,16 +517,12 @@
         <translation>Esci da ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.ui" line="339"/>
-        <source>Exit</source>
-        <translation>Esci</translation>
-    </message>
-    <message>
         <location filename="../src/ui/mainwindow.ui" line="342"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
+        <location filename="../src/ui/mainwindow.ui" line="339"/>
         <location filename="../src/ui/mainwindow.cpp" line="394"/>
         <source>Quit</source>
         <translation>Esci</translation>

@@ -517,16 +517,12 @@
         <translation>Sair do ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.ui" line="339"/>
-        <source>Exit</source>
-        <translation>Sair</translation>
-    </message>
-    <message>
         <location filename="../src/ui/mainwindow.ui" line="342"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
+        <location filename="../src/ui/mainwindow.ui" line="339"/>
         <location filename="../src/ui/mainwindow.cpp" line="394"/>
         <source>Quit</source>
         <translation>Sair</translation>

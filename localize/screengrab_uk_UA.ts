@@ -395,6 +395,7 @@
         <translation>Подвійний клік відкриє скріншот у зовнішньому переглядачі</translation>
     </message>
     <message>
+        <location filename="../src/ui/mainwindow.ui" line="339"/>
         <location filename="../src/ui/mainwindow.cpp" line="394"/>
         <source>Quit</source>
         <translation>Вихід</translation>
@@ -589,11 +590,6 @@
         <location filename="../src/ui/mainwindow.ui" line="336"/>
         <source>Exit from ScreenGrab</source>
         <translation>Вийти з програми</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/mainwindow.ui" line="339"/>
-        <source>Exit</source>
-        <translation>Вихід</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="342"/>
