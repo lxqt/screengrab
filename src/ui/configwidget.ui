@@ -100,7 +100,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -681,7 +681,7 @@
             </item>
             <item>
              <property name="text">
-              <string>Exit</string>
+              <string>Quit</string>
              </property>
             </item>
            </item>
