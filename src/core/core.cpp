@@ -126,6 +126,7 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
+	sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
     // Update date last crenshot, if it is  a first screen
     if (_firstScreen == true)
