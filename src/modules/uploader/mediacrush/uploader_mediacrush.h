@@ -29,7 +29,7 @@ class Uploader_MediaCrush : public Uploader
 {
 	Q_OBJECT
 public:
-    explicit Uploader_MediaCrush(QObject* parent = 0);
+    explicit Uploader_MediaCrush(const QString& format, QObject* parent = 0);
     virtual ~Uploader_MediaCrush();
     
     virtual void startUploading();
@@ -43,7 +43,10 @@ protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);
 	
 private:
+	void setCurrentFormat(const QString& format);
+	
 	QByteArray _host;
+	QByteArray _currentFormat;
 	void UpdateUploadedStrList();
 };
 

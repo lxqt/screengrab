@@ -123,7 +123,7 @@ void DialogUploader::slotUploadStart()
     switch(_selectedHost)
     {
 	case 0:
-        _uploader = new Uploader_MediaCrush;
+        _uploader = new Uploader_MediaCrush(Core::instance()->conf->getSaveFormat());
         break;
     case 1:
         _uploader = new Uploader_ImgUr;

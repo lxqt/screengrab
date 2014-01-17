@@ -26,11 +26,12 @@
 
 #include <QDebug>
 
-Uploader_MediaCrush::Uploader_MediaCrush(QObject* parent): Uploader(parent)
+Uploader_MediaCrush::Uploader_MediaCrush(const QString& format, QObject* parent): Uploader(parent)
 {
 	_host = "mediacru.sh";
     qDebug() << " create MediaCrush uploader";
 	UpdateUploadedStrList();
+	setCurrentFormat(format);
 }
 
 Uploader_MediaCrush::~Uploader_MediaCrush()
@@ -48,6 +49,14 @@ void Uploader_MediaCrush::startUploading()
 
    _request.setRawHeader("Host", _host);
     Uploader::startUploading();
+}
+
+/*!
+ * Set type of uploading image, for generate right direct link on it.
+ */
+void Uploader_MediaCrush::setCurrentFormat(const QString& format)
+{
+	_currentFormat = format.toAscii();
 }
 
 /*!
@@ -101,7 +110,7 @@ void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
 			response = response.mid(2, 12);
 		}
 		
-		_uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response;
+		_uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response + "." + _currentFormat;
 		_uploadedStrings[UL_DELETE_URL].first = "https://" + _host + "/" + response + "/delete";
 		
 		Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
