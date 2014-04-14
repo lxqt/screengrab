@@ -39,8 +39,8 @@ const QString UPLOAD_CMD_PARAM = "upload";
 ModuleUploader::ModuleUploader(QObject *parent) :
 	QObject(parent), _ignoreCmdParam(false)
 {
-    Core *core = Core::instance();
-	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "Automatically upload screenshot to default image hosting", CmdLineParam::Util);	
+	Core *core = Core::instance();
+	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "upload the screenshot to the default image host", CmdLineParam::Util);
 }
 
 QString ModuleUploader::moduleName()
@@ -56,12 +56,12 @@ void ModuleUploader::init()
 		// TODO - add implement shadow supload screenshot to selected host
 		UploaderConfig config;
 		QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
-		
+
 		Uploader *uploader = 0;
 		switch(config.labelsList().indexOf(selectedtHost))
 		{
 		case 0:
-			uploader = new Uploader_ImgUr;		
+			uploader = new Uploader_ImgUr;
 			break;
 		case 1:
 			uploader = new Uploader_ImgShack;
@@ -69,17 +69,17 @@ void ModuleUploader::init()
 		default:
 			uploader = new Uploader_ImgShack;
 		}
-		
+
 		connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
 		connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
 		uploader->startUploading();
-		
+
 		_ignoreCmdParam = true;
 	}
 	else
 	{
 		DialogUploader *ui = new DialogUploader();
-		ui->exec();	
+		ui->exec();
 	}
 }
 
@@ -90,7 +90,7 @@ QWidget* ModuleUploader::initConfigWidget()
 }
 
 void ModuleUploader::defaultSettings()
-{	
+{
 	UploaderConfig config;
 	config.defaultSettings();
 }

@@ -48,8 +48,7 @@ using namespace netwm;
 
 Core* Core::corePtr = 0;
 
-Core::Core() :
-	_cmd(new CmdLine)
+Core::Core() : _cmd(new CmdLine)
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
 
@@ -58,20 +57,20 @@ Core::Core() :
 
     _pixelMap = new QPixmap;
     _selector = 0;
-    _firstScreen = true;	
-	
-	// register screenshot types command line params
-	_cmd->registerParam("fullscreen", "Set fullscreen mode", CmdLineParam::ScreenType);
-	_cmd->registerParam("active", "Set active window mode", CmdLineParam::ScreenType);
-	_cmd->registerParam("region", "Set region select mode", CmdLineParam::ScreenType);
-	
-	// set utility command line params
-	_cmd->registerParam("minimized", "Run minimised", CmdLineParam::Util);
-	
-	// set pints only command line params	
-	_cmd->registerParam("help", "Display this screen", CmdLineParam::Printable);
-	_cmd->registerParam("version", "Display version info", CmdLineParam::Printable);
-	
+    _firstScreen = true;
+
+    // register screenshot types command line options
+    _cmd->registerParam("fullscreen", "take a fullscreen screenshot", CmdLineParam::ScreenType);
+    _cmd->registerParam("active", "take a screenshot of the active window", CmdLineParam::ScreenType);
+    _cmd->registerParam("region", "take a screenshot of a region", CmdLineParam::ScreenType);
+
+    // register utility command line options
+    _cmd->registerParam("minimized", "start minimized", CmdLineParam::Util);
+
+    // register "print only" command line params
+    _cmd->registerParam("help", "display this help and exit", CmdLineParam::Printable);
+    _cmd->registerParam("version", "output version information and exit", CmdLineParam::Printable);
+
     sleep(250);
 }
 
@@ -381,7 +380,7 @@ void Core::updatePixmap()
 	if (QFile::exists(_tempFilename) == true)
 	{
 		_pixelMap->load(_tempFilename, "png");
-		Q_EMIT newScreenShot(_pixelMap);	
+		Q_EMIT newScreenShot(_pixelMap);
 	}
 }
 
@@ -505,7 +504,7 @@ void Core::openInExtViewer()
 		QString format = "png";
 		QString tempFileName = getTempFilename(format);
 		writeScreen(tempFileName, format, true);
-		
+
 		QString exec;
 #ifdef Q_WS_X11
 		exec = "xdg-open";
@@ -516,7 +515,7 @@ void Core::openInExtViewer()
 #endif
 		QStringList args;
 		args << tempFileName;
-		
+
 		QProcess *execProcess = new QProcess(this);
 		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
 		execProcess->start(exec, args);
@@ -528,7 +527,7 @@ void Core::parseCmdLine()
 	if (QApplication::argc() > 1)
 	{
 		_cmd->parse();
-		
+
 		int  screenType = _cmd->selectedScreenType();
 		if (screenType != -1)
 		{
@@ -540,7 +539,7 @@ void Core::parseCmdLine()
 
 void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
 {
-	sender()->deleteLater();	
+	sender()->deleteLater();
 	killTempFile();
 }
 
