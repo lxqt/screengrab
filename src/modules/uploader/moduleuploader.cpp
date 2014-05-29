@@ -39,7 +39,7 @@ ModuleUploader::ModuleUploader(QObject *parent) :
 	QObject(parent), _ignoreCmdParam(false)
 {
     Core *core = Core::instance();
-	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "Automatically upload screenshot to default image hosting", CmdLineParam::Util);
+	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "upload the screenshot to the default image host", CmdLineParam::Util);
 }
 
 QString ModuleUploader::moduleName()
