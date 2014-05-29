@@ -22,8 +22,6 @@
 #include "ui_dialoguploader.h"
 
 #include "uploaderconfig.h"
-#include "imgshack/uploader_imgshack.h"
-#include "imgshack/uploader_imgshack_widget.h"
 #include "imgur/uploader_imgur.h"
 #include "imgur/uploader_imgur_widget.h"
 #include "mediacrush/uploader_mediacrush.h"
@@ -44,12 +42,12 @@ DialogUploader::DialogUploader(QWidget *parent) :
     _uploader = 0;
 	_uploaderWidget = 0;
 	slotSeletHost(0);
-	
+
     _ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
-	
+
 	UploaderConfig config;
 	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
-	
+
 	if (defaultHost.isEmpty() == true)
 	{
 		_selectedHost = 0;
@@ -83,7 +81,7 @@ DialogUploader::DialogUploader(QWidget *parent) :
     connect(_ui->butClose, SIGNAL(clicked(bool)), this, SLOT(close()));
     connect(_ui->butUpload, SIGNAL(clicked(bool)), this, SLOT(slotUploadStart()));
     connect(_ui->cbxUploaderList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotSeletHost(int)));
-	
+
 	_ui->cbxUploaderList->setCurrentIndex(_selectedHost);
 }
 
@@ -95,9 +93,9 @@ DialogUploader::~DialogUploader()
     {
         delete _uploader;
     }
-	
+
 	delete _uploaderWidget;
-	
+
     delete _ui;
 }
 
@@ -128,17 +126,14 @@ void DialogUploader::slotUploadStart()
     case 1:
         _uploader = new Uploader_ImgUr;
         break;
-    case 2:
-        _uploader = new Uploader_ImgShack;
-        break;
     default:
-        _uploader = new Uploader_ImgShack;
+        _uploader = new Uploader_ImgUr;
     }
 
     QVariantMap userSettings;
-	QMetaObject::invokeMethod(_uploaderWidget, "settingsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariantMap, userSettings));	
+	QMetaObject::invokeMethod(_uploaderWidget, "settingsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariantMap, userSettings));
     _uploader->getUserSettings(userSettings);;
-    
+
     // start uploading process
     connect(_uploader, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(slotUploadProgress(qint64,qint64)));
     _uploader->startUploading();
@@ -154,17 +149,17 @@ void DialogUploader::slotUploadStart()
 void DialogUploader::slotSeletHost(int type)
 {
     _selectedHost = type;
-	
+
 	if (_uploaderWidget)
-	{		
-		delete _uploaderWidget;		
+	{
+		delete _uploaderWidget;
 	}
-	
+
 	switch(_selectedHost)
 	{
 		case 0:
 		{
-			_uploaderWidget = new Uploader_MediaCrush_Widget();			
+			_uploaderWidget = new Uploader_MediaCrush_Widget();
 			break;
 		}
 		case 1:
@@ -172,15 +167,10 @@ void DialogUploader::slotSeletHost(int type)
 			_uploaderWidget = new Uploader_ImgUr_Widget();
 			break;
 		}
-		case 2:
-		{
-			_uploaderWidget = new Uploader_ImgShack_Widget();
-			break;
-		}
 		default:
-			_uploaderWidget = new Uploader_ImgUr_Widget();
+			_uploaderWidget = new Uploader_MediaCrush_Widget();
 	}
-	
+
 	_ui->stackedWidget->addWidget(_uploaderWidget);
 	_ui->stackedWidget->setCurrentWidget(_uploaderWidget);
 }
@@ -208,7 +198,7 @@ qDebug() << "start dialog uploader done";
 		_ui->cbxExtCode->addItem(links.at(i).second);
 		_resultLinks << links.at(i).first;
 	}
-  
+
     _ui->stackedWidget->setCurrentIndex(0);
     _ui->labUploadStatus->setText(tr("Upload completed"));
     _ui->progressBar->setVisible(false);
@@ -261,17 +251,17 @@ void DialogUploader::slotCopyLink()
 {
 	QString objName = sender()->objectName();
 	QString copyText;
-	
+
 	if (objName == "butCopyLink")
 	{
 		copyText = _ui->editDirectLink->text();
 	}
-	
+
 	if (objName == "butCopyExtCode")
 	{
 		copyText = _ui->editExtCode->text();
 	}
-	
+
 	qApp->clipboard()->setText(copyText);
 }
 
@@ -288,9 +278,9 @@ void DialogUploader::slotOpenDeleteLink()
 	msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msg.setDefaultButton(QMessageBox::No);
 	int result = msg.exec();
-	
+
 	if (result == QMessageBox::Yes)
-	{		
+	{
 		_openLink(_ui->editDeleteLink->text());
 	}
 }
@@ -301,5 +291,5 @@ void DialogUploader::_openLink(const QString& link)
 	QStringList args = QStringList() << link;
 	QProcess *execProcess = new QProcess();
 	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
-	execProcess->start(exec, args);	
+	execProcess->start(exec, args);
 }

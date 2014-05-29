@@ -33,23 +33,21 @@ UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
     _ui(new Ui::UploaderConfigWidget)
 {
     _ui->setupUi(this);
-	
+
 	_ui->settings->setCurrentWidget(_ui->commonSettings);
-	
+
 	QStringList hosts = UploaderConfig::labelsList();
 	_ui->cbxHosts->addItems(hosts);
 	_ui->cbxDefaultHost->addItems(hosts);
-	
+
 	loadSettings();
-	
+
 	_crush = new UploaderConfigWidget_MediaCrush(this);
 	_imgur = new UploaderConfigWidget_ImgUr(this);
-	_imgshack = new UploaderConfigWidget_ImgShack(this);
-	
+
 	_ui->stackedHosts->addWidget(_crush);
 	_ui->stackedHosts->addWidget(_imgur);
-	_ui->stackedHosts->addWidget(_imgshack);
-	
+
 	connect(_ui->cbxHosts, SIGNAL(currentIndexChanged(int)), _ui->stackedHosts, SLOT(setCurrentIndex(int)));
 }
 
@@ -61,13 +59,13 @@ UploaderConfigWidget::~UploaderConfigWidget()
 void UploaderConfigWidget::loadSettings()
 {
 	qDebug() << "load uploder common settings";
-	
+
 	UploaderConfig config;
 	QVariantMap loadValues;
 	loadValues.insert("autoCopyDirectLink", QVariant(false));
 	loadValues.insert(KEY_DEFAULT_HOST, "");
 	loadValues = config.loadSettings("common", loadValues);
-		
+
 	QString defaultHost = loadValues[KEY_DEFAULT_HOST].toString();
 	if (defaultHost.isEmpty() == true)
 	{
@@ -76,7 +74,7 @@ void UploaderConfigWidget::loadSettings()
 	else
 	{
 		qint8 index = config.labelsList().indexOf(defaultHost);
-		
+
 		if (index == -1)
 		{
 			index++;
@@ -84,7 +82,7 @@ void UploaderConfigWidget::loadSettings()
 
 		_ui->cbxDefaultHost->setCurrentIndex(index);
 	}
-	
+
 	_ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
 }
 
@@ -93,14 +91,13 @@ void UploaderConfigWidget::saveSettings()
 	UploaderConfig config;
 	QVariantMap savingValues;
 	savingValues.insert(KEY_AUTO_COPY_RESULT_LIMK, _ui->checkAutoCopyMainLink->isChecked());
-	
+
 	QString defaultHost = config.labelsList().at(_ui->cbxDefaultHost->currentIndex());
 	savingValues.insert(KEY_DEFAULT_HOST, defaultHost);
-	
+
 	config.saveSettings("common", savingValues);
-	
+
 	QMetaObject::invokeMethod(_imgur, "saveSettings");
-	QMetaObject::invokeMethod(_imgshack, "saveSettings");
 
 }
 

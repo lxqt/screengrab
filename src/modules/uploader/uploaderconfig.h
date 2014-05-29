@@ -30,29 +30,25 @@
 const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";
 const QString KEY_DEFAULT_HOST = "defaultHost";
 
-//  Uploader config file imageshack.us keys
-const QString KEY_IMGSHK_USER = "username";
-const QString KEY_IMGSHK_PASS = "password";
-
 class UploaderConfig
 {
 
 public:
     UploaderConfig();
     ~UploaderConfig();
-    
+
 	static QStringList labelsList();
-	
+
 	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
 	QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
 	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
 	void defaultSettings();
 	bool checkExistsConfigFile() const;
 	bool autoCopyResultLink();
-    
+
 private:
     QSettings *_settings;
-	
+
 	QStringList _groupsList;
 	static QStringList _labelsList;
 };
