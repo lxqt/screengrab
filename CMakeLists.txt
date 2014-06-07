@@ -89,10 +89,10 @@ endif(UNIX AND NOT APPLE)
 
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
-OPTION (SG_XDG_CONFIG_SUPPORT "Place config files into XDGC_ONFIG_HOME" ON)
-OPTION (SG_EXT_UPLOADS "Enable upload screnshots to image hostings" ON)
+OPTION (SG_XDG_CONFIG_SUPPORT "Put config files into XDGC_ONFIG_HOME" ON)
+OPTION (SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 OPTION (SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
-OPTION (SG_USE_SYSTEM_QXT "Use system version Qxt Library for global shortcuts" OFF)
+OPTION (SG_USE_SYSTEM_QXT "Use system version of Qxt Library for global shortcuts" OFF)
 
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -127,16 +127,16 @@ endif(SG_EXT_EDIT)
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
-message(STATUS "Upload to image hosings support: " ${SG_EXT_UPLOADS})
-message(STATUS "Editing shots in external editor support: " ${SG_EXT_EDIT})
+message(STATUS "Upload to MediaCrush and imgur support: " ${SG_EXT_UPLOADS})
+message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 
 # ------ doc dir name ---------------------------------
 if(UNIX AND NOT APPLE)
     if (NOT SG_DOCDIR)
-         set(SG_DOCDIR "screengrab" CACHE STRING "Documantation directory name")        
+         set(SG_DOCDIR "screengrab" CACHE STRING "Documentation directory name")        
     endif (NOT SG_DOCDIR)
-    set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documantation directory name")
+    set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documentation directory name")
     message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
     add_definitions( -DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
 endif(UNIX AND NOT APPLE)
@@ -307,7 +307,7 @@ if(WIN32)
     endif(NOT MSVC)
 endif(WIN32)
 
-#-------  make src packae and installing ----------
+#-------  make src package and installing ----------
 
 if(UNIX AND NOT APPLE)
     # make src.tar.gz
