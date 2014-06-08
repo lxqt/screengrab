@@ -33,14 +33,14 @@ Microsoft Windows and GNU/Linux environments.
                     Main features:
                 </p>
         <ul>
-                    <li>Works in Windows & Linux</li>
+                    <li>Supports Windows & Linux</li>
                     <li>Get desktop screenshots</li>
                     <li>Get active window screenshots</li>
 		    <li>Get screenshots of selected desktop areas</li>
 		    <li>Copy screenshots into the clipboard</li>
                     <li>Save your image files in PNG, JPEG or BMP format</li>
                     <li>Ability to view and edit screenshots in an external editor</li>
-                    <li>Ability to upload screenshots on several image hosting services (supports mediacru.sh and imgur.com)</li>
+                    <li>Ability to upload screenshots to MediaCrush and imgur</li>
                     <li>Ability to set delay before getting screenshots
 (from 1 to 90 seconds)</li>
                     <li>Hide the main window (with recovery) at the time of the screenshot</li>
@@ -48,7 +48,7 @@ Microsoft Windows and GNU/Linux environments.
 control it via a context menu</li>
 	    <li>Getting screenshots using global shortcuts</li>
 	    <li>Auto-save screenshot when captured</li>
-	    <li>Ability to insert the current date and time in filename and save</li>
+	    <li>Ability to insert the current date and time in the filename when saving it</li>
         </ul>
 
 <a name='usage'></a>
@@ -61,27 +61,27 @@ control it via a context menu</li>
                 On the first run ScreenGrab captures the current state of your desktop.
 					  The preview screen is displayed in the main window.
 
-All management of the program can be carried out through the buttons in the main window or in the context menu of SreenGrab, which can be accessed by a right-mouse-click on the ScreenGrab icon in the notification area of the desktop.
+All management of the program can be carried out through the buttons in the main window or in the context menu of ScreenGrab, which can be accessed by a right-mouse-click on the ScreenGrab icon in the notification area of the desktop.
             </p>
             <p>
                 Buttons in main window:
             </p>
         <ul>
-                    <li><b>New Screen</b> [Ctrl+N] -- take a new screenshot</li>
-                    <li><b>Save Screen</b> [Ctrl+S] -- write a captured screenshot
-  on hard disk (in PNG or JPEG format).</li>
-<li><b>Copy Screen</b> [Ctrl+C] -- copy screen to the clipboard.</li>
+                    <li><b>New Screen</b> [Ctrl+N] -- Take a new screenshot</li>
+                    <li><b>Save Screen</b> [Ctrl+S] -- Write a captured screenshot
+  on your hard disk (in PNG or JPEG format).</li>
+<li><b>Copy Screen</b> [Ctrl+C] -- Copy a screenshot to the clipboard.</li>
 <!-- 				<li><b>Upload</b> - upload screenshots on several image hosting services, currently ScreenGrab supports <a href='http://mediacru.sh/' target='_blank'>mediacru.sh</a>, <a href='imgur.com/' target='_blank'>http://imgur.com</a> and <a href='http://imageshack.us/' target='_blank'>imageshack.us</a>, in the future, the list will be expanded.</li> -->
-				<li><b>Edit in ...</b> - the ability to open (and edit) screenshots in an image editor.
+				<li><b>Edit in ...</b> -- Open and edit screenshots in an image editor.
 				<br />
 				<br />
 				<u>NOTE:</u> In the current version for Microsoft Windows only MS Paint is supported.
 				<br />
 				<br />
 				</li>
-                    <li><b>Options</b> [Ctrl+O] -- show program options window.</li>
-		    <li><b>Help</b> [Ctrl+H] -- access help and information about ScreenGrab, developer and license.</li>
-                    <li><b>Quit</b> [Ctrl+Q] -- Exit program</li>
+                    <li><b>Options</b> [Ctrl+O] -- Show program options window.</li>
+		    <li><b>Help</b> [Ctrl+H] -- Access help and information about ScreenGrab, its developer and license.</li>
+                    <li><b>Quit</b> [Ctrl+Q] -- Exit ScreenGrab</li>
         </ul>
             <p>
                 These buttons can be accessed via right-click on the ScreenGrab icon in the systemtray menu as well.
@@ -90,121 +90,121 @@ All management of the program can be carried out through the buttons in the main
                 Additional controls, located in main window.
             </p>
         <ul>
-						<li><b>Delay</b> -- delay in seconds before grabbing the screen.</li>
-                    <li><b>Type</b> -- type of grabbing [full screen
+						<li><b>Delay</b> -- Delay in seconds before grabbing the screen.</li>
+                    <li><b>Type</b> -- Type of grabbing [full screen
 or active window]. </li>
         </ul>
             <p>
                 <b><u>Main settings:</u></b>
             </p>
         <ul>
-                    <li><b>Default directory</b> -- default directory to save screenshots</li>
-                    <li><b>Default filename</b> -- name of saved file by default.</li>
-                    <li><b>Format</b> -- default saving image format (you can select other format in saving)</li>
-<li><b>No window decoration</b> -- grab screenshot of active window without window decorations (only for linux version).</li>
+                    <li><b>Default directory</b> -- Default directory to save screenshots</li>
+                    <li><b>Default filename</b> -- Default name of the saved file</li>
+                    <li><b>Format</b> -- Default saving image format (you can select other formats)</li>
+<li><b>No window decoration</b> -- Grab a screenshot of the active window without window decorations (only for linux version).</li>
 	</ul>
             <p>
                 <b><u>Advanced settings:</u></b>
             </p>
         <ul>
 
-                    <li><b>Insert DateTime in filename</b> -- inserting date and time in saving filename
+                    <li><b>Insert DateTime in filename</b> -- Insert date and time in the filename to be saved
 <br />
 <br />These expressions may be used for the date part of the format string:
 <br />
 <table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
 <thead><tr valign="top" class="qt-style"><th>Parameter</th><th>Output</th></tr></thead>
-<tr valign="top" class="odd"><td>d</td><td>the day as number without a leading zero (1 to 31)</td></tr>
+<tr valign="top" class="odd"><td>d</td><td>Day as number without a leading zero (1 to 31)</td></tr>
 
-<tr valign="top" class="even"><td>dd</td><td>the day as number with a leading zero (01 to 31)</td></tr>
-<tr valign="top" class="odd"><td>ddd</td><td>the abbreviated localized day name (e.g. 'Mon' to 'Sun'). </td></tr>
-<tr valign="top" class="even"><td>dddd</td><td>the long localized day name (e.g. 'Monday' to 'Sunday').</td></tr>
-<tr valign="top" class="odd"><td>M</td><td>the month as number without a leading zero (1-12)</td></tr>
-<tr valign="top" class="even"><td>MM</td><td>the month as number with a leading zero (01-12)</td></tr>
+<tr valign="top" class="even"><td>dd</td><td>Day as number with a leading zero (01 to 31)</td></tr>
+<tr valign="top" class="odd"><td>ddd</td><td>Abbreviated localized day name (e.g. 'Mon' to 'Sun'). </td></tr>
+<tr valign="top" class="even"><td>dddd</td><td>Long localized day name (e.g. 'Monday' to 'Sunday').</td></tr>
+<tr valign="top" class="odd"><td>M</td><td>Month as number without a leading zero (1-12)</td></tr>
+<tr valign="top" class="even"><td>MM</td><td>Month as number with a leading zero (01-12)</td></tr>
 
-<tr valign="top" class="odd"><td>MMM</td><td>the abbreviated localized month name (e.g. 'Jan' to 'Dec'). </td></tr>
-<tr valign="top" class="even"><td>MMMM</td><td>the long localized month name (e.g. 'January' to 'December'). </td></tr>
-<tr valign="top" class="odd"><td>yy</td><td>the year as two digit number (00-99)</td></tr>
-<tr valign="top" class="even"><td>yyyy</td><td>the year as four digit number</td></tr>
+<tr valign="top" class="odd"><td>MMM</td><td>Abbreviated localized month name (e.g. 'Jan' to 'Dec'). </td></tr>
+<tr valign="top" class="even"><td>MMMM</td><td>Long localized month name (e.g. 'January' to 'December'). </td></tr>
+<tr valign="top" class="odd"><td>yy</td><td>Year as two digit number (00-99)</td></tr>
+<tr valign="top" class="even"><td>yyyy</td><td>Year as four digit number</td></tr>
 </table>
 <br />
 <br />These expressions may be used for the time part of the format string:
-<br /><br />
+<br />
 <table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
 <thead><tr valign="top" class="qt-style"><th>Parameter</th><th>Output</th></tr></thead>
-<tr valign="top" class="odd"><td>h</td><td>the hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display)</td></tr>
-<tr valign="top" class="even"><td>hh</td><td>the hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display)</td></tr>
-<tr valign="top" class="odd"><td>H</td><td>the hour without a leading zero (0 to 23, even with AM/PM display)</td></tr>
+<tr valign="top" class="odd"><td>h</td><td>Hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display)</td></tr>
+<tr valign="top" class="even"><td>hh</td><td>Hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display)</td></tr>
+<tr valign="top" class="odd"><td>H</td><td>Hour without a leading zero (0 to 23, even with AM/PM display)</td></tr>
 
-<tr valign="top" class="even"><td>HH</td><td>the hour with a leading zero (00 to 23, even with AM/PM display)</td></tr>
-<tr valign="top" class="odd"><td>m</td><td>the minute without a leading zero (0 to 59)</td></tr>
-<tr valign="top" class="even"><td>mm</td><td>the minute with a leading zero (00 to 59)</td></tr>
-<tr valign="top" class="odd"><td>s</td><td>the second without a leading zero (0 to 59)</td></tr>
-<tr valign="top" class="even"><td>ss</td><td>the second with a leading zero (00 to 59)</td></tr>
-<tr valign="top" class="odd"><td>z</td><td>the milliseconds without leading zeroes (0 to 999)</td></tr>
+<tr valign="top" class="even"><td>HH</td><td>Hour with a leading zero (00 to 23, even with AM/PM display)</td></tr>
+<tr valign="top" class="odd"><td>m</td><td>Minute without a leading zero (0 to 59)</td></tr>
+<tr valign="top" class="even"><td>mm</td><td>Minute with a leading zero (00 to 59)</td></tr>
+<tr valign="top" class="odd"><td>s</td><td>Second without a leading zero (0 to 59)</td></tr>
+<tr valign="top" class="even"><td>ss</td><td>Second with a leading zero (00 to 59)</td></tr>
+<tr valign="top" class="odd"><td>z</td><td>Milliseconds without leading zeroes (0 to 999)</td></tr>
 
-<tr valign="top" class="even"><td>zzz</td><td>the milliseconds with leading zeroes (000 to 999)</td></tr>
-<tr valign="top" class="odd"><td>AP or A</td><td>interpret as an AM/PM time. <i>AP</i> must be either "AM" or "PM".</td></tr>
+<tr valign="top" class="even"><td>zzz</td><td>Milliseconds with leading zeroes (000 to 999)</td></tr>
+<tr valign="top" class="odd"><td>AP or A</td><td>Interpret as an AM/PM time. <i>AP</i> must be either "AM" or "PM".</td></tr>
 <tr valign="top" class="even"><td>ap or a</td><td>Interpret as an AM/PM time. <i>ap</i> must be either "am" or "pm".</td></tr>
 </table>
 <br />
 				</li>
-                    <li><b>Autosave screen</b> -- automatically saving
-screenshot in grab process</li>
-		    <li><b>Save first screenshot</b> -- enabled | disabled automatically saving first screenshot, which is captured on program start</li>
-		<li><b>Filenames to clipboard on saving</b> - send the name of the saved file to the clipboard . You can select these parameters:</li>
+                    <li><b>Autosave screen</b> -- Automatically save
+the screenshot in the grab process</li>
+		    <li><b>Save first screenshot</b> -- enabled | disabled automatically saves the first screenshot, which is captured on program start</li>
+		<li><b>Filenames to clipboard on saving</b> -- Send the name of the saved file to the clipboard . You can select these parameters:</li>
 			<ul>
-				<li><b>No copy</b> - the name of saved file will not be transferred to the clipboard.</li>
-				<li><b>Only filename</b> - send only the file name to the clipboard.</li>
-				<li><b>Full path to file</b> - send the full path to the file to the clipboard.</li>
+				<li><b>No copy</b> - The name of saved file will not be transferred to the clipboard.</li>
+				<li><b>Only filename</b> - Send only the file name to the clipboard.</li>
+				<li><b>Full path to file</b> - Send the full path to the file to the clipboard.</li>
 			</ul>
 
-		    <li><b>Allow multiple copies</b> -- allow run multiple copies of ScreenGrab.</li>
-		    <li><b>Enable external viewer</b> -- enable or disable ability for preview screenshot in default image viewer (by double click on screenshot area in the main window).</li>
+		    <li><b>Allow multiple copies</b> -- Allow run multiple copies of ScreenGrab.</li>
+		    <li><b>Enable external viewer</b> -- Enable or disable the preview of the screenshot in the default image viewer (by double click on screenshot area in the main window).</li>
 	</ul>
             <p>
                 <b><u>Display settings:</u></b>
             </p>
         <ul>
-	    <li><b>Save window size on exit</b> -- saving the current size of main window
+	    <li><b>Save window size on exit</b> -- Save the current size of main window
 when exiting ScreenGrab (and restore it at next run)</li>
-	    <li><b>Zoom area around mouse in selection mode</b> -- the ability to display the magnified area around the mouse pointer when receiving a screenshot of a selected area.</li>
+	    <li><b>Zoom area around mouse in selection mode</b> -- Display the magnified area around the mouse pointer when receiving a screenshot of a selected area.</li>
 	</ul>
             <p>
                 <b><u>System tray settings:</u></b>
             </p>
         <ul>
-		<li><b>Use tray</b> -- use the notification area (system tray) of the operating system (desktop environment) for displaying messages and application management.</li>
-                    <li><b>Tray messages</b> -- mode of displaying tray messages on grab|save events. Can be "none"
+		<li><b>Use tray</b> -- Use the notification area (system tray) of the operating system (desktop environment) for displaying messages and application management.</li>
+                    <li><b>Tray messages</b> -- Mode of displaying tray messages on grab|save events. Can be "none"
 or "if hidden" or "always"</li>
-                    <li><b>Time to display tray messages</b> -- time within a specific notification is displayed </li>
-                    <li><b>Close in tray</b> -- minimize main window in to the systemtray
+                    <li><b>Time to display tray messages</b> -- Time within a specific notification is displayed </li>
+                    <li><b>Close in tray</b> -- Minimize the main window into the systemtray
 by click on the close window button.</li>
 
         </ul>
 	<p>
-	    <u><b>shortcuts settings:</u></b>
+	    <u><b>Shortcut Settings:</u></b>
 	</p>
 	<p>
-	    On the tab "Shortcuts" in the options window you can set keyboard shortcuts for quick accessing application functions. There are two kinds of key combinations used in ScreenGrab - local and global.
+	    On the tab "Shortcuts" in the options window you can set the keyboard shortcuts, which allows you to access the application functions easily. There are two kinds of key combinations used in ScreenGrab - local and global.
 	</p>
 	<p>
 	    Local duplicate actions performed by pressing the button in the main window. They will only work when the ScreenGrab main window is active.
 	</p>
 	<p>
-	    Global shortcuts can be used the get a new screenshot when working with another application in your operating system.
+	    Global shortcuts can be used the get a new screenshot when you have opened other application windows.
 	</p>
 			<p>
                 <u><b>Command line parameters:</u></b>
             </p>
 			<ul>
-			  <li><b>--fullscreen</b> -- set fullscreen mode [default].</li>
-			  <li><b>--active</b> -- set active window mode.</li>
-			  <li><b>--region</b> -- set screen region select mode.</li>
-			  <li><b>--minimized</b> -- run minimized to the tray (or taskbar, if tray is disabled).</li>
-			  <li><b>--upload</b> -- automatically upload a screenshot to the selected image hosting service and display the direct link to the image after completion.</li>
-			  <li><b>--version</b> -- display version information [Linux only].</li>
-			  <li><b>--help</b> -- display command line parameters information [Linux only].</li>
+			  <li><b>--fullscreen</b> -- Set the fullscreen mode [default].</li>
+			  <li><b>--active</b> -- Set the active window mode.</li>
+			  <li><b>--region</b> -- Set the screen region select mode.</li>
+			  <li><b>--minimized</b> -- Open ScreenGrab minimized in the tray (or taskbar, if tray is disabled).</li>
+			  <li><b>--upload</b> -- Automatically upload a screenshot to the selected image hosting service and display the direct link to the image after completion.</li>
+			  <li><b>--version</b> -- Display version information [Linux only].</li>
+			  <li><b>--help</b> -- Display command line parameters information [Linux only].</li>
 			</ul>
 
 <a name='license'></a>
