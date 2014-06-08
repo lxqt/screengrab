@@ -90,7 +90,7 @@ endif(UNIX AND NOT APPLE)
 # ------ options ---------------------------------
 OPTION (SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
 OPTION (SG_XDG_CONFIG_SUPPORT "Put config files into XDGC_ONFIG_HOME" ON)
-OPTION (SG_EXT_UPLOADS "Enable upload screenshots to image hosting services" ON)
+OPTION (SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 OPTION (SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 OPTION (SG_USE_SYSTEM_QXT "Use system version of Qxt Library for global shortcuts" OFF)
 
@@ -127,7 +127,7 @@ endif(SG_EXT_EDIT)
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
-message(STATUS "Upload to image hosting services support: " ${SG_EXT_UPLOADS})
+message(STATUS "Upload to MediaCrush and imgur support: " ${SG_EXT_UPLOADS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 
