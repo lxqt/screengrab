@@ -21,7 +21,7 @@
 #ifndef UPLOADERCONFIGWIDGET_H
 #define UPLOADERCONFIGWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "imgur/uploaderconfigwidget_imgur.h"
 #include "mediacrush/uploaderconfigwidget_mediacrush.h"

@@ -22,7 +22,7 @@
 #include "ui_aboutwidget.h"
 
 #include "src/core/core.h"
-#include <QtGui/QDesktopServices>
+#include <QDesktopServices>
 
 AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),

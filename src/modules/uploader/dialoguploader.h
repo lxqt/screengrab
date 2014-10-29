@@ -23,7 +23,7 @@
 
 #include "uploader.h"
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
 class DialogUploader;

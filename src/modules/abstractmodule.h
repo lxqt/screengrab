@@ -21,10 +21,10 @@
 #ifndef ABSTRACTMODULE_H
 #define ABSTRACTMODULE_H
 
-#include <QtCore/QList>
-#include <QtGui/QWidget>
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
+#include <QList>
+#include <QWidget>
+#include <QAction>
+#include <QMenu>
 
 class AbstractModule
 {

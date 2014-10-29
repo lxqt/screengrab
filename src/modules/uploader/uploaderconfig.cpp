@@ -21,7 +21,7 @@
 #include "uploaderconfig.h"
 #include "core/config.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 
 #include <QDebug>
 
@@ -35,7 +35,7 @@ QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgu
 UploaderConfig::UploaderConfig()
 {
     QString configFile = Config::getConfigDir();
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     configFile += "uploader.conf";
 #endif
 

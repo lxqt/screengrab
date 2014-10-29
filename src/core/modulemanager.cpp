@@ -90,7 +90,7 @@ QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
 	{
 		for (int i = 0; i < modules.count(); ++i)
 		{
-			QByteArray currentKey = modules.at(i).toAscii();
+			QByteArray currentKey = modules.at(i).toLatin1();
 			QMenu *menu = _modules->value(currentKey)->initModuleMenu();
 			list.append(menu);
 		}
@@ -115,7 +115,7 @@ QList<QAction*> ModuleManager::generateModulesActions(QStringList modules)
 	{
 		for (int i = 0; i < modules.count(); ++i)
 		{
-			QByteArray currentKey = modules.at(i).toAscii();
+			QByteArray currentKey = modules.at(i).toLatin1();
 			QAction *action = _modules->value(currentKey)->initModuleAction();
 			list.append(action);
 		}

@@ -21,10 +21,11 @@
 #ifndef MODULEEXTEDIT_H
 #define MODULEEXTEDIT_H
 
+#warning remove "src/" later
 #include "src/modules/abstractmodule.h"
 
 #include "extedit.h"
-#include <QtGui/QAction>
+#include <QAction>
 
 class ModuleExtEdit: public AbstractModule
 {

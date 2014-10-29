@@ -98,7 +98,7 @@ void Uploader_ImgUr::replyFinished(QNetworkReply* reply)
 	}
 	else
 	{
-		Q_EMIT uploadFail(reply->errorString().toAscii());
+		Q_EMIT uploadFail(reply->errorString().toLatin1());
 	}
 	
 	reply->deleteLater();

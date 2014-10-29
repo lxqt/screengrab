@@ -22,9 +22,9 @@
 #include "core/core.h"
 #include "uploaderconfig.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QUuid>
-#include <QtCore/QRegExp>
+#include <QDir>
+#include <QUuid>
+#include <QRegExp>
 
 #include <QDebug>
 

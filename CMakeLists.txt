@@ -1,10 +1,14 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 # set project's name
 project(screengrab)
 
-find_package(Qt4 4.8.0 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
-include("${QT_USE_FILE}")
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5X11Extras REQUIRED)
+find_package(Qt5Network REQUIRED)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
 
 # add version define
 set(SCREENGRAB_VERSION "1.0.83")
@@ -71,15 +75,14 @@ if(UNIX AND NOT APPLE)
 
     set(SG_LIBDIR "${LIBDIR}/screengrab")
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
-    message(STATUS "Library path: "${CMAKE_INSTALL_RPATH})
+    message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
 endif()
 
 # options
-option(SG_GLOBALSHORTCUTS "Enable global shortcuts" ON)
+option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(SG_XDG_CONFIG_SUPPORT "Put config files into XDGC_ONFIG_HOME" ON)
 option(SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
-option(SG_USE_SYSTEM_QXT "Use system version of Qxt Library for global shortcuts" OFF)
 
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -92,11 +95,6 @@ if(SG_GLOBALSHORTCUTS)
         # find qxt
         find_package(Qxt REQUIRED COMPONENTS QxtCore, QxtGui)
         include_directories(${QXT_QXTCORE_INCLUDE_DIR} ${QXT_QXTGUI_INCLUDE_DIR})
-    else()
-        include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/include/")
-        add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/qxt/")
-        # build QxtGui
-        add_definitions(-DBUILD_QXT_GUI)
     endif()
 endif(SG_GLOBALSHORTCUTS)
 
@@ -200,14 +198,8 @@ set(SCREENGRAB_QRC
     screengrab.qrc
 )
 
-
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
-
-qt4_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
-qt4_wrap_cpp(SCREENGRAB_MOC_CPP ${SCREENGRAB_MOC})
-qt4_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
-
+qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
+qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 # find lrelease binary
 if(NOT QT_LRELEASE_EXECUTABLE)
@@ -223,22 +215,22 @@ if(EXISTS "${QT_BINARY_DIR}/lrelease-qt4")
     set(QT_LRELEASE_EXECUTABLE "${QT_BINARY_DIR}/lrelease-qt4")
 endif()
 
-if(QT_LRELEASE_EXECUTABLE)
-    message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
-    message(STATUS "Generating localize ...")
-    execute_process(COMMAND find "${CMAKE_CURRENT_SOURCE_DIR}/localize" -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
-else()
-    message(FATAL_ERROR "Could NOT find lrelease executable")
-endif()
+# if(QT_LRELEASE_EXECUTABLE)
+#     message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
+#     message(STATUS "Generating localize ...")
+#     execute_process(COMMAND find "${CMAKE_CURRENT_SOURCE_DIR}/localize" -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
+# else()
+#     message(FATAL_ERROR "Could NOT find lrelease executable")
+# endif()
 
 if(WIN32 AND NOT MSVC)
     add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o
     COMMAND ${CMAKE_RC_COMPILER} -I${CMAKE_CURRENT_SOURCE_DIR} -i${CMAKE_CURRENT_SOURCE_DIR}/screengrab.rc -o "${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o")
     set(SCREENGRAB_SRC ${SCREENGRAB_SRC} "${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o")
-endif(WIN32)
+endif(WIN32 AND NOT MSVC)
 
 
-add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_MOC_CPP} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
+add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
 if(SG_GLOBALSHORTCUTS)
     if(SG_USE_SYSTEM_QXT)
@@ -261,7 +253,7 @@ if(WIN32)
 endif()
 
 if(UNIX)
-    target_link_libraries(screengrab qkeysequencewidget singleapp X11 ${QT_LIBRARIES})
+    target_link_libraries(screengrab qkeysequencewidget singleapp X11 Qt5::Widgets)
 endif()
 
 if(WIN32 AND NOT MSVC)

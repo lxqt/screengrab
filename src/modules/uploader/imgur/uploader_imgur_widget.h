@@ -21,8 +21,8 @@
 #ifndef UPLOADER_IMGUR_WIDGET_H
 #define UPLOADER_IMGUR_WIDGET_H
 
-#include <QtGui/QWidget>
-#include <QtCore/QVariant>
+#include <QWidget>
+#include <QVariant>
 
 namespace Ui {
 class Uploader_ImgUr_Widget;

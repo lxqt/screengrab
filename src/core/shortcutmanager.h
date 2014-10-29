@@ -21,10 +21,10 @@
 #ifndef SHORTCUTMANAGER_H
 #define SHORTCUTMANAGER_H
 
-#include <QtCore/QSettings>
-#include <QtCore/QVector>
-#include <QtCore/QStringList>
-#include <QtGui/QKeySequence>
+#include <QSettings>
+#include <QVector>
+#include <QStringList>
+#include <QKeySequence>
 
 struct Shortcut {
     QString key;

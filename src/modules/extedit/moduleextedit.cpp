@@ -20,7 +20,7 @@
 
 #include "moduleextedit.h"
 
-#include <QtCore/QObject>
+#include <QObject>
 
 ModuleExtEdit::ModuleExtEdit()
 {

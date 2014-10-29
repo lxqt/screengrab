@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "cmdline.h"
 
-#include <QtGui/QApplication>
+#include <QApplication>
 
 #include <iostream>
 
@@ -67,9 +67,9 @@ bool CmdLine::checkParam(const QString& param)
 void CmdLine::parse()
 {
 	QString param;
-    for (int i= 1; i != QApplication::argc(); ++i)
+    for (int i = 1; i != QApplication::arguments().size(); ++i)
     {
-		param = QApplication::argv()[i];
+		param = QApplication::arguments()[i];
 
 		if (param.startsWith("--") != true)
 		{

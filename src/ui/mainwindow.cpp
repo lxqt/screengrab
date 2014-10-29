@@ -23,25 +23,25 @@
 
 #include "src/core/shortcutmanager.h"
 
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <QtGui/QDesktopWidget>
-#include <QtCore/QHash>
-#include <QtCore/QHashIterator>
-#include <QtCore/QRegExp>
-#include <QtCore/QTimer>
+#include <QDir>
+#include <QFileDialog>
+#include <QDesktopWidget>
+#include <QHash>
+#include <QHashIterator>
+#include <QRegExp>
+#include <QTimer>
 
 #ifdef Q_WS_WIN
 #include <windows.h>
 #endif
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
 
 #include <X11/Xlib.h>
-#include <QtGui/QX11Info>
+#include <QX11Info>
 #endif
 
 MainWindow::MainWindow(QWidget* parent) :
@@ -239,7 +239,7 @@ void MainWindow::showHelp()
     // open help file
     QString localeHelpFile;
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
@@ -559,7 +559,7 @@ void MainWindow::showWindow(const QString& str)
         showNormal();
     }
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     netwm::init(); // initialize NETWM
     netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
     
@@ -674,7 +674,7 @@ void MainWindow::saveScreen()
     fileFilters.chop(2);
 
 	QString fileName;
-#ifdef Q_WS_X11		
+#ifdef Q_OS_LINUX		
     if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")    
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);

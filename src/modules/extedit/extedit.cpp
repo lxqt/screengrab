@@ -19,14 +19,14 @@
  ***************************************************************************/
 
 #include "extedit.h"
-#include "src/core/core.h"
+#include "core/core.h"
 
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
-#include <QtCore/QStringList>
+#include <QFile>
+#include <QTextStream>
+#include <QStringList>
 #include <QDebug>
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 #endif
 
@@ -103,7 +103,7 @@ void ExtEdit::editedFileChanged(const QString& path)
 
 void ExtEdit::createAppList()
 {	
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
 	QByteArray localMimeTypesPath = qgetenv("XDG_DATA_HOME");
 	
@@ -170,7 +170,7 @@ void ExtEdit::createAppList()
 #endif
 }
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 /*
  *  This method call only in Linux
  */
@@ -201,7 +201,7 @@ ExtApp_t ExtEdit::readDesktopFile(QString filename, QByteArray path)
 				}
 				if (inLine.split("=").at(0) == "Exec")
 				{
-					entry.exec = inLine.split("=").at(1).toAscii();
+					entry.exec = inLine.split("=").at(1).toLatin1();
 				}
 			}
 		}

@@ -56,7 +56,7 @@ void Uploader_MediaCrush::startUploading()
  */
 void Uploader_MediaCrush::setCurrentFormat(const QString& format)
 {
-	_currentFormat = format.toAscii();
+	_currentFormat = format.toLatin1();
 }
 
 /*!
@@ -86,7 +86,7 @@ void Uploader_MediaCrush::createData(bool inBase64)
     {
 		imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/" + _formatString));        
     }
-    QByteArray disposition = "form-data; name=\"file\"; filename='"+ _uploadFilename.toAscii() +"'";
+    QByteArray disposition = "form-data; name=\"file\"; filename='"+ _uploadFilename.toLatin1() +"'";
     imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(disposition));
 	imagePart.setBody(imageData);
 	
@@ -118,7 +118,7 @@ void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
 	}
 	else
 	{		
-		Q_EMIT uploadFail(reply->errorString().toAscii());
+		Q_EMIT uploadFail(reply->errorString().toLatin1());
 	}
 	
 	reply->deleteLater();
@@ -131,7 +131,7 @@ void Uploader_MediaCrush::UpdateUploadedStrList()
 	
 	for (int i =0; i < nonUsed.count(); ++i)
 	{
-		_uploadedStrings.remove(nonUsed.at(i).toAscii());
+		_uploadedStrings.remove(nonUsed.at(i).toLatin1());
 	}
 	/*
 	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));

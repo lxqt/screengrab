@@ -28,9 +28,9 @@
 #include "src/core/cmdline.h"
 
 #include <QApplication>
-#include <QtCore/QWaitCondition>
-#include <QtCore/QMutex>
-#include <QtGui/QClipboard>
+#include <QWaitCondition>
+#include <QMutex>
+#include <QClipboard>
 #include <QDebug>
 
 const QString UPLOAD_CMD_PARAM = "upload";
@@ -54,7 +54,7 @@ void ModuleUploader::init()
 	{
 		// TODO - add implement shadow supload screenshot to selected host
 		UploaderConfig config;
-		QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
+		QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toLatin1()).toString();
 
 		Uploader *uploader = 0;
 		switch(config.labelsList().indexOf(selectedtHost))

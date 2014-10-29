@@ -23,7 +23,7 @@
 
 #include <uploader.h>
 
-#include <QtCore/QUrl>
+#include <QUrl>
 
 namespace UploadImgUr {
 	enum Error {

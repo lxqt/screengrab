@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
     QTranslator localize;
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     QString localizeFile = PREFIX;
     localizeFile.append("/share/screengrab/localize/screengrab_"+Config::getSysLang()+".qm");
     localize.load(localizeFile);

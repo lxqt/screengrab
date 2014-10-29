@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,16 +18,16 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QtCore/QMutex>
-#include <QtCore/QWaitCondition>
-#include <QtGui/QApplication>
-#include <QtGui/QDesktopWidget>
+#include <QMutex>
+#include <QWaitCondition>
+#include <QApplication>
+#include <QDesktopWidget>
 
-#include <QtCore/QChar>
-#include <QtCore/QBuffer>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
-#include <QtCore/QUuid>
+#include <QChar>
+#include <QBuffer>
+#include <QFile>
+#include <QDir>
+#include <QUuid>
 
 #include <QDebug>
 
@@ -37,7 +37,7 @@
 #include <windows.h>
 #endif
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
@@ -148,7 +148,7 @@ void Core::screenShot(bool first)
 #ifdef Q_WS_WIN
         getActiveWind_Win32();
 #endif
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
         getActiveWind_X11();
 #endif
         checkAutoSave(first);
@@ -201,7 +201,7 @@ void Core::checkAutoSave(bool first)
     }
 }
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 void Core::getActiveWind_X11()
 {
     netwm::init();
@@ -419,7 +419,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (fileName.isEmpty() == false)
         {   ;
-            return _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            return _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
         }
         else
         {
@@ -433,11 +433,11 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (format == "jpg")
         {
-            saved = _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            saved = _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
         }
         else
         {
-            saved = _pixelMap->save(fileName,format.toAscii(), -1);
+            saved = _pixelMap->save(fileName,format.toLatin1(), -1);
         }
 
         if (saved == true)
@@ -506,7 +506,7 @@ void Core::openInExtViewer()
 		writeScreen(tempFileName, format, true);
 
 		QString exec;
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 		exec = "xdg-open";
 #endif
 #ifdef Q_WS_WIN
@@ -524,7 +524,7 @@ void Core::openInExtViewer()
 
 void Core::parseCmdLine()
 {
-	if (QApplication::argc() > 1)
+	if (QApplication::arguments().size() > 1)
 	{
 		_cmd->parse();
 
@@ -581,7 +581,7 @@ QByteArray Core::getScreen()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    _pixelMap->save(&buffer, conf->getSaveFormat().toAscii());
+    _pixelMap->save(&buffer, conf->getSaveFormat().toLatin1());
 
     qDebug() << "GET SCREEN SIZE " << bytes;
     return bytes;

@@ -21,10 +21,10 @@
 #ifndef EXTEDIT_H
 #define EXTEDIT_H
 
-#include <QtCore/QObject>
-#include <QtCore/QProcess>
-#include <QtCore/QFileSystemWatcher>
-#include <QtGui/QAction>
+#include <QObject>
+#include <QProcess>
+#include <QFileSystemWatcher>
+#include <QAction>
 
 struct ExtApp_t {
 	QString exec;
@@ -50,7 +50,7 @@ private Q_SLOTS:
 	
 private:
 	void createAppList();
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 	ExtApp_t readDesktopFile(QString filename, QByteArray path);
 #endif
 	

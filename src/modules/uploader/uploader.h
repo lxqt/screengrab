@@ -21,14 +21,14 @@
 #ifndef UPLOADER_H
 #define UPLOADER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QByteArray>
-#include <QtCore/QMap>
-#include <QtCore/QPair>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
-#include <QtNetwork/QHttpMultiPart>
-#include <QtCore/QUrl>
+#include <QObject>
+#include <QByteArray>
+#include <QMap>
+#include <QPair>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QHttpMultiPart>
+#include <QUrl>
 
 typedef QPair<QByteArray, QString> ResultString_t;
 

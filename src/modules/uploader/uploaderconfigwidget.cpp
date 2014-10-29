@@ -23,7 +23,7 @@
 
 #include "uploaderconfig.h"
 
-#include <QtCore/QVariantMap>
+#include <QVariantMap>
 
 #include <QDebug>
 

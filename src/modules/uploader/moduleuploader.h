@@ -23,8 +23,8 @@
 
 #include "src/modules/abstractmodule.h"
 
-#include <QtCore/QObject>
-#include <QtGui/QWidget>
+#include <QObject>
+#include <QWidget>
 
 class ModuleUploader: public QObject, public AbstractModule
 {

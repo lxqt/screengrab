@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,17 +30,17 @@
 
 #include "modulemanager.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
-#include <QtGui/QPixmap>
-#include <QtGui/QClipboard>
-#include <QtCore/QTime>
-#include <QtCore/QByteArray>
-#include <QtCore/QRect>
-#include <QtCore/QProcess>
+#include <QObject>
+#include <QTimer>
+#include <QPixmap>
+#include <QClipboard>
+#include <QTime>
+#include <QByteArray>
+#include <QRect>
+#include <QProcess>
 
-#ifdef Q_WS_X11
-#include <QtGui/QX11Info>
+#ifdef Q_OS_LINUX
+#include <QX11Info>
 #endif
 
 #include <QDebug>
@@ -111,7 +111,7 @@ private:
 #ifdef Q_WS_WIN
     void getActiveWind_Win32();
 #endif
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     void getActiveWind_X11();
 #endif
 

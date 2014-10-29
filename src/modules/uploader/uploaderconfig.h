@@ -21,10 +21,10 @@
 #ifndef UPLOADERCONFIG_H
 #define UPLOADERCONFIG_H
 
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
-#include <QtCore/QMap>
+#include <QSettings>
+#include <QStringList>
+#include <QVariant>
+#include <QMap>
 
 //  Uploader config file common keys
 const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";

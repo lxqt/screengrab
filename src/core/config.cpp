@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,12 +21,12 @@
 #include "src/core/config.h"
 #include "core.h"
 
-#include <QtGui/QApplication>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QLocale>
-#include <QtCore/QVector>
-#include <QtGui/QDesktopServices>
+#include <QApplication>
+#include <QDir>
+#include <QFile>
+#include <QLocale>
+#include <QVector>
+#include <QDesktopServices>
 
 #include <QDebug>
 
@@ -55,7 +55,7 @@ const QString KEY_TYPE_SCREEN = "typeScreenDefault";
 
 const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 const QString KEY_NODECOR = "noDecorations";
 #endif
 
@@ -130,7 +130,7 @@ QString Config::getConfigFile()
 {
     QString configFile;
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     configFile = Config::getConfigDir() + "screengrab.conf";
     
     // moving old stile storange setting to XDG_CONFIG_HOME storage
@@ -150,7 +150,7 @@ QString Config::getConfigFile()
 QString Config::getConfigDir()
 {
     QString configDir;
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     #ifdef SG_XDG_CONFIG_SUPPORT
         // old style config path    
         QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
@@ -430,7 +430,7 @@ void Config::setShowTrayIcon(bool val)
     setValue(KEY_SHOW_TRAY, val);
 }
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 bool Config::getNoDecorX11()
 {
     return value(KEY_NODECOR).toBool();
@@ -464,7 +464,7 @@ void Config::loadSettings()
     setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
     setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
@@ -503,7 +503,7 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     _settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
     _settings->endGroup();
@@ -552,7 +552,7 @@ void Config::setDefaultSettings()
 
     _shortcuts->setDefaultSettings();
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     setNoDecorX11(DEF_X11_NODECOR);
 #endif
 
@@ -568,7 +568,7 @@ void Config::setDefaultSettings()
 // get defaukt directory path
 QString Config::getDirNameDefault()
 {
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     return QDir::homePath()+QDir::separator();    ;
 #endif
 #ifdef Q_WS_WIN
@@ -584,7 +584,7 @@ int Config::getDefaultFormatID()
 
 QString Config::getSysLang()
 {
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     QByteArray lang = qgetenv("LC_ALL");
 
     if (lang.isEmpty())

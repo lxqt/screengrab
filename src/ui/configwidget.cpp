@@ -18,21 +18,21 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 
 #include "src/ui/configwidget.h"
 #include "ui_configwidget.h"
+#include <src/core/core.h>
 
 #ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
-#include <src/core/core.h>
 #endif
 
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <QtGui/QMessageBox>
-#include <QtGui/QTreeWidgetItem>
-#include <QtGui/QTreeWidgetItemIterator>
+#include <QDir>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTreeWidgetItem>
+#include <QTreeWidgetItemIterator>
 // #include <X11/Xlib.h>
 
 ConfigDialog::ConfigDialog(QWidget *parent) :
@@ -77,7 +77,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     editDateTmeTpl(conf->getDateTimeTpl());
 
     _ui->treeKeys->expandAll();
-    _ui->treeKeys->header()->setResizeMode(QHeaderView::Stretch);
+    _ui->treeKeys->header()->setSectionResizeMode(QHeaderView::Stretch);
 
     // adding shortcut values in treewidge
     int action = 0;
@@ -167,7 +167,7 @@ void ConfigDialog::loadSettings()
     _ui->checkInTray->setChecked(conf->getCloseInTray());
     _ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     _ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
 #endif
 #ifdef Q_WS_WIN
@@ -270,7 +270,7 @@ void ConfigDialog::saveSettings()
     conf->setShowTrayIcon(_ui->checkShowTray->isChecked());
     conf->setImageQuality(_ui->slideImgQuality->value());
 	conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     conf->setNoDecorX11(_ui->checkNoDecorX11->isChecked());
 #endif
     // save shortcuts in shortcutmanager
@@ -329,7 +329,7 @@ QString ConfigDialog::getFormat()
 void ConfigDialog::selectDir()
 {
 QString *directory = new QString;
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 {
     *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
              _ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();

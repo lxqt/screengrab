@@ -28,8 +28,8 @@
 #include "mediacrush/uploader_mediacrush_widget.h"
 #include <core/core.h>
 
-#include <QtCore/QProcess>
-#include <QtGui/QMessageBox>
+#include <QProcess>
+#include <QMessageBox>
 
 #include <QDebug>
 
@@ -46,7 +46,7 @@ DialogUploader::DialogUploader(QWidget *parent) :
     _ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
 
 	UploaderConfig config;
-	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
+	QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toLatin1()).toString();
 
 	if (defaultHost.isEmpty() == true)
 	{

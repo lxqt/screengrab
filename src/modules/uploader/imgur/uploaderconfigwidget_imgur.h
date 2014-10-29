@@ -21,7 +21,7 @@
 #ifndef UPLOADERCONFIGWIDGET_IMGUR_H
 #define UPLOADERCONFIGWIDGET_IMGUR_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 namespace Ui {
 class UploaderConfigWidget_ImgUr;

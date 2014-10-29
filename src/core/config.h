@@ -23,12 +23,12 @@
 
 #include "shortcutmanager.h"
 
-#include <QtCore/QSettings>
-#include <QtCore/QString>
-#include <QtCore/QSize>
-#include <QtCore/QHash>
-#include <QtCore/QVariant>
-#include <QtCore/QDateTime>
+#include <QSettings>
+#include <QString>
+#include <QSize>
+#include <QHash>
+#include <QVariant>
+#include <QDateTime>
 
 //  default values const
 const QString DEF_SAVE_NAME = "screen";
@@ -196,7 +196,7 @@ public:
     bool getShowTrayIcon();
     void setShowTrayIcon(bool val);
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     // no decoration wnd on X11
     bool getNoDecorX11();
     void setNoDecorX11(bool val);

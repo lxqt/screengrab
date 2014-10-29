@@ -21,7 +21,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 
 #include "src/core/core.h"
 #include "src/ui/about.h"
@@ -31,13 +31,13 @@
 #include <QxtGui/QxtGlobalShortcut>
 #endif
 
-#include <QtGui/QMenu>
-#include <QtGui/QSystemTrayIcon>
-#include <QtGui/QDesktopServices>
-#include <QtGui/QCloseEvent>
-#include <QtGui/QShortcut>
-#include <QtCore/QUrl>
-#include <QtCore/QSignalMapper>
+#include <QMenu>
+#include <QSystemTrayIcon>
+#include <QDesktopServices>
+#include <QCloseEvent>
+#include <QShortcut>
+#include <QUrl>
+#include <QSignalMapper>
 
 namespace Ui {
     class MainWindow;

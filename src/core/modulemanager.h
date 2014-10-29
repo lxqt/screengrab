@@ -23,12 +23,12 @@
 
 #include "src/modules/abstractmodule.h"
 
-#include <QtCore/QByteArray>
-#include <QtCore/QHash>
-#include <QtCore/QMap>
-#include <QtGui/QMenu>
+#include <QByteArray>
+#include <QHash>
+#include <QMap>
+#include <QMenu>
 
-#include <QtGui/QAction>
+#include <QAction>
 
 const QByteArray MOD_UPLOADER = "uploader";
 const QByteArray MOD_EXT_EDIT = "extedit";

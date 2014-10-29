@@ -1,10 +1,6 @@
-#cmake_minimum_required(VERSION 2.6)
+#cmake_minimum_required(VERSION 2.8.11)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${SG_INCLUDE})
-
-message(STATUS "SG_CORE_INCLUDE-2: " ${SG_INCLUDE})
 
 set (uploader_SRC
 	moduleuploader.cpp
@@ -42,16 +38,14 @@ set(uploader_UI
 	mediacrush/uploaderconfigwidget_mediacrush.ui
 )
 
-qt4_wrap_cpp(uploader_SRC_MOC ${uploader_HDR})
-
-qt4_wrap_ui(uploader_UI_H ${uploader_UI} )
+qt5_wrap_ui(uploader_UI_H ${uploader_UI})
 
 if (Q_WS_WIN)
-add_library(uploader STATIC ${uploader_SRC} ${uploader_SRC_MOC}  ${uploader_QRC} ${uploader_UI_H})
+    add_library(uploader STATIC ${uploader_SRC} ${uploader_UI_H} ${uploader_QRC})
 else (Q_WS_WIN)
-add_library(uploader SHARED ${uploader_SRC} ${uploader_SRC_MOC}  ${uploader_QRC} ${uploader_UI_H})
-set_property (TARGET uploader PROPERTY SOVERSION 1.0.0)
-INSTALL (TARGETS uploader DESTINATION ${SG_LIBDIR})
+    add_library(uploader SHARED ${uploader_SRC} ${uploader_UI_H} ${uploader_QRC})
+    set_property (TARGET uploader PROPERTY SOVERSION 1.0.0)
+    INSTALL (TARGETS uploader DESTINATION ${SG_LIBDIR})
 endif (Q_WS_WIN)
 
-target_link_libraries(uploader ${QT_LIBRARIES})
+target_link_libraries(uploader Qt5::Widgets Qt5::Network Qt5::X11Extras)

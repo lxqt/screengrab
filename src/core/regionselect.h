@@ -23,14 +23,14 @@
 
 #include "config.h"
 
-//#include <QtGui/QDialog>
-#include <QtGui/QWidget>
+//#include <QDialog>
+#include <QWidget>
 
-#include <QtGui/QMouseEvent>
-#include <QtGui/QPainter>
-#include <QtGui/QPixmap>
-#include <QtCore/QSize>
-#include <QtCore/QPoint>
+#include <QMouseEvent>
+#include <QPainter>
+#include <QPixmap>
+#include <QSize>
+#include <QPoint>
 
 // class RegionSelect : public QDialog
 class RegionSelect : public QWidget

@@ -23,11 +23,11 @@
 
 #include "src/core/config.h"
 
-#include <QtGui/QDialog>
-#include <QtCore/QTextCodec>
-#include <QtCore/QDateTime>
-#include <QtCore/QModelIndex>
-#include <QtGui/QTreeWidgetItem>
+#include <QDialog>
+#include <QTextCodec>
+#include <QDateTime>
+#include <QModelIndex>
+#include <QTreeWidgetItem>
 
 namespace Ui {
     class configwidget;
