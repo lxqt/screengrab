@@ -7,6 +7,9 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5X11Extras REQUIRED)
 find_package(Qt5Network REQUIRED)
 
+# for translations
+find_package(Qt5LinguistTools)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
@@ -165,22 +168,14 @@ set(SCREENGRAB_QRC
 qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
-# find lrelease binary
-# if(NOT QT_LRELEASE_EXECUTABLE)
-#     find_program(QT_LRELEASE_EXECUTABLE
-#         NAMES lrelease
-#         PATHS ${QT_BINARY_DIR}
-#         NO_DEFAULT_PATH
-#     )
-# endif()
-#
-# if(QT_LRELEASE_EXECUTABLE)
-#     message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
-#     message(STATUS "Generating localize ...")
-#     execute_process(COMMAND find "${CMAKE_CURRENT_SOURCE_DIR}/localize" -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
-# else()
-#     message(FATAL_ERROR "Could NOT find lrelease executable")
-# endif()
+if(Qt5LinguistTools_FOUND)
+    message(STATUS "Generating localize ...")
+    file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/localize/*.ts)
+    qt5_add_translation(SCREENGRAB_QMS ${SCREENGRAB_TS})
+    add_custom_target(translations ALL DEPENDS ${SCREENGRAB_QMS})
+else()
+    message(FATAL_ERROR "Could NOT find Qt5LinguistTools")
+endif()
 
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
@@ -235,4 +230,4 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share
 # install pixmap
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
 # install translations
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION share/screengrab/localize FILES_MATCHING PATTERN "*.qm")
+install(DIRECTORY ${SCREENGRAB_QMS} DESTINATION share/screengrab/localize)
