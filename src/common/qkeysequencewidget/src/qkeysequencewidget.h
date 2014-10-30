@@ -34,14 +34,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QWidget>
 #include <QIcon>
 
-#ifdef Q_OS_LINUX
 #if defined IS_SHARED
 #define QKSW_EXPORT Q_DECL_EXPORT
 #else
 #define QKSW_EXPORT Q_DECL_IMPORT
-#endif
-#else
-#define QKSW_EXPORT
 #endif
 
 class QKeySequenceWidgetPrivate;

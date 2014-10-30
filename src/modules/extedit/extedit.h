@@ -40,20 +40,18 @@ public:
     explicit ExtEdit(QObject *parent = 0);
     QStringList listAppNames();
     void addAppAction(QAction* act);
-	
+
 public Q_SLOTS:
     void runExternalEditor();
-	
+
 private Q_SLOTS:
 	void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
 	void editedFileChanged(const QString & path);
-	
+
 private:
 	void createAppList();
-#ifdef Q_OS_LINUX
 	ExtApp_t readDesktopFile(QString filename, QByteArray path);
-#endif
-	
+
 	ExtAppsList_t _appList;
 	QList<QAction*> _actionList;
 	QString _editFilename;

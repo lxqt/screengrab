@@ -21,7 +21,7 @@
 #ifndef MODULEMANAGER_H
 #define MODULEMANAGER_H
 
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
 #include <QByteArray>
 #include <QHash>

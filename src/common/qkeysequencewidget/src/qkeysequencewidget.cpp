@@ -576,12 +576,3 @@ void QShortcutButton::keyReleaseEvent(QKeyEvent *keyEvent)
         d->updateDisplayShortcut();
     }
 }
-
-// #ifndef IS_SHARED
-// #ifdef IS_CMAKE
-// #include "moc_qkeysequencewidget.cxx"
-// #include "qrc_qkeysequencewidget.cxx"
-// #else
-// #include "moc_qkeysequencewidget.cpp"
-// #endif
-// #endif

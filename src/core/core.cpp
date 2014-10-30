@@ -32,19 +32,11 @@
 #include <QDebug>
 
 #include "src/core/core.h"
-
-#ifdef Q_WS_WIN
-#include <windows.h>
-#endif
-
-#ifdef Q_OS_LINUX
-
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
 
 #include <X11/Xlib.h>
 #include <QX11Info>
-#endif
 
 Core* Core::corePtr = 0;
 
@@ -145,12 +137,7 @@ void Core::screenShot(bool first)
     }
     case 1:
     {
-#ifdef Q_WS_WIN
-        getActiveWind_Win32();
-#endif
-#ifdef Q_OS_LINUX
         getActiveWind_X11();
-#endif
         checkAutoSave(first);
         Q_EMIT newScreenShot(_pixelMap);
         break;
@@ -201,7 +188,6 @@ void Core::checkAutoSave(bool first)
     }
 }
 
-#ifdef Q_OS_LINUX
 void Core::getActiveWind_X11()
 {
     netwm::init();
@@ -263,63 +249,6 @@ void Core::getActiveWind_X11()
 
     XFree(wnd);
 }
-#endif
-
-#ifdef Q_WS_WIN
-void Core::getActiveWind_Win32()
-{
-    HWND findWindow = GetForegroundWindow();
-
-    if (findWindow == NULL)
-    {
-        return;
-    }
-
-    if (findWindow == GetDesktopWindow())
-    {
-        return;
-    }
-
-    ShowWindow(findWindow, SW_SHOW);
-    SetForegroundWindow(findWindow);
-
-    HDC hdcScreen = GetDC(NULL);
-
-    RECT rcWindow;
-    GetWindowRect(findWindow, &rcWindow);
-
-    if (IsZoomed(findWindow))
-    {
-        if (QSysInfo::WindowsVersion >= QSysInfo::WV_VISTA)
-        {
-            rcWindow.right -= 8;
-            rcWindow.left += 8;
-            rcWindow.top += 8;
-            rcWindow.bottom -= 8;
-        }
-        else
-        {
-            rcWindow.right += 4;
-            rcWindow.left -= 4;
-            rcWindow.top += 4;
-            rcWindow.bottom -= 4;
-        }
-    }
-
-    HDC hdcMem = CreateCompatibleDC(hdcScreen);
-    HBITMAP hbmCapture = CreateCompatibleBitmap(hdcScreen, rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top);
-    SelectObject(hdcMem, hbmCapture);
-
-    BitBlt(hdcMem, 0, 0, rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top, hdcScreen, rcWindow.left, rcWindow.top, SRCCOPY);
-
-    ReleaseDC(findWindow, hdcMem);
-    DeleteDC(hdcMem);
-
-    *_pixelMap = QPixmap::fromWinHBITMAP(hbmCapture);
-
-    DeleteObject(hbmCapture);
-}
-#endif
 
 QString Core::getSaveFilePath(QString format)
 {
@@ -506,13 +435,7 @@ void Core::openInExtViewer()
 		writeScreen(tempFileName, format, true);
 
 		QString exec;
-#ifdef Q_OS_LINUX
 		exec = "xdg-open";
-#endif
-#ifdef Q_WS_WIN
-		// WARNING this in dirty hack - hardcoded mspaint append
-		exec = "mspaint";
-#endif
 		QStringList args;
 		args << tempFileName;
 

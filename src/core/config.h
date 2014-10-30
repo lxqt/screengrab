@@ -196,11 +196,9 @@ public:
     bool getShowTrayIcon();
     void setShowTrayIcon(bool val);
 
-#ifdef Q_OS_LINUX
     // no decoration wnd on X11
     bool getNoDecorX11();
     void setNoDecorX11(bool val);
-#endif
 
     QString getScrNumStr();
     int getScrNum() const;

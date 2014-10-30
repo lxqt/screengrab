@@ -26,9 +26,7 @@
 #include <QStringList>
 #include <QDebug>
 
-#ifdef Q_OS_LINUX
-	const QByteArray _globalAppListPath_c = "/usr/share/applications/";
-#endif
+const QByteArray _globalAppListPath_c = "/usr/share/applications/";
 
 ExtEdit::ExtEdit(QObject *parent) :
     QObject(parent), _watcherEditedFile(new QFileSystemWatcher(this))
@@ -41,12 +39,12 @@ ExtEdit::ExtEdit(QObject *parent) :
 QStringList ExtEdit::listAppNames()
 {
 	QStringList list;
-	
+
 	for (int i =0; i < _appList.count(); ++i)
 	{
 		list << _appList.at(i).name;
 	}
-	
+
 	return list;
 }
 
@@ -61,7 +59,7 @@ void ExtEdit::runExternalEditor()
 	qDebug() << "recevier " << sender()->objectName();
 	QAction* selectedAction = qobject_cast<QAction*>(sender());
 	int selectedIndex = _actionList.indexOf(selectedAction);
-	
+
 	ExtApp_t selectedApp = _appList.at(selectedIndex);
 	QString exec = selectedApp.exec.split(" ").first();
 
@@ -71,7 +69,7 @@ void ExtEdit::runExternalEditor()
     core->writeScreen(_editFilename, format , true);
 	QStringList args;
 	args << _editFilename;
-	
+
 	QProcess *execProcess = new QProcess(this);
 	connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closedExternalEditor(int,QProcess::ExitStatus)));
 	execProcess->start(exec, args);
@@ -81,16 +79,16 @@ void ExtEdit::runExternalEditor()
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	Core *core = Core::instance();
-	
+
 	if (_fileIsCnaged == true)
 	{
 		core->updatePixmap();
 	}
-	
+
 	_fileIsCnaged = false;
 	_watcherEditedFile->removePath(_editFilename);
-	
-	sender()->deleteLater();	
+
+	sender()->deleteLater();
 	core->killTempFile();
 	_editFilename.clear();
 }
@@ -102,35 +100,34 @@ void ExtEdit::editedFileChanged(const QString& path)
 
 
 void ExtEdit::createAppList()
-{	
-#ifdef Q_OS_LINUX
+{
 	QByteArray globalMimeTypesList = _globalAppListPath_c + "mimeinfo.cache";
 	QByteArray localMimeTypesPath = qgetenv("XDG_DATA_HOME");
-	
+
 	if (localMimeTypesPath.isEmpty() == true)
 	{
 		localMimeTypesPath = qgetenv("HOME") + "/.local/share";
 	}
 	localMimeTypesPath += "/applications/";
 	QByteArray localMimeTypesList = localMimeTypesPath + "mimeinfo.cache";
-	
+
 	QVector<QByteArray> pathList;
 	pathList << _globalAppListPath_c << localMimeTypesPath;
-	
+
 	QVector<QByteArray> fileList;
 	fileList << globalMimeTypesList << localMimeTypesList;
-	
+
 	QFile file;
-	
+
 	for (int f = 0; f < fileList.count(); ++f)
-	{		
+	{
 		file.setFileName(fileList.value(f));
 		if (file.open(QIODevice::ReadOnly) == true)
 		{
 			QString inLine;
 			QString mimetype;
 			QStringList desktopFiles;
-			
+
 			QTextStream in(&file);
 			while(in.atEnd() == false)
 			{
@@ -157,25 +154,10 @@ void ExtEdit::createAppList()
 		}
 		file.close();
 	}
-#endif
-#ifdef Q_WS_WIN
-	// TODO make read windows registry for get apps for image editing
-	
-	// WARNING this in dirty hack - hardcoded mspaint app
-	ExtApp_t app;
-	app.exec = "mspaint";
-	app.name = "Paint";
-	
-	_appList.append(app);
-#endif
 }
 
-#ifdef Q_OS_LINUX
-/*
- *  This method call only in Linux
- */
 ExtApp_t ExtEdit::readDesktopFile(QString filename, QByteArray path)
-{	
+{
 	ExtApp_t entry;
 
 	if (filename.startsWith("kde4-") == true)
@@ -206,7 +188,6 @@ ExtApp_t ExtEdit::readDesktopFile(QString filename, QByteArray path)
 			}
 		}
 	}
-		
+
 	return entry;
 }
-#endif

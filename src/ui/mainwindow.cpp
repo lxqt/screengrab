@@ -31,18 +31,11 @@
 #include <QRegExp>
 #include <QTimer>
 
-#ifdef Q_WS_WIN
-#include <windows.h>
-#endif
-
-#ifdef Q_OS_LINUX
-
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
 
 #include <X11/Xlib.h>
 #include <QX11Info>
-#endif
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
@@ -54,7 +47,7 @@ MainWindow::MainWindow(QWidget* parent) :
 #ifdef SG_GLOBAL_SHORTCUTS
     // signal mapper
     _globalShortcutSignals = new QSignalMapper(this);
-    
+
     //     global shirtcuts
     _fullScreen = new QxtGlobalShortcut(this);
     _activeWindow = new QxtGlobalShortcut(this);
@@ -66,14 +59,14 @@ MainWindow::MainWindow(QWidget* parent) :
             connect(_globalShortcuts[i], SIGNAL(activated()), _globalShortcutSignals, SLOT(map()) );
             _globalShortcutSignals->setMapping(_globalShortcuts[i], i);
         }
-    
+
     connect(_globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 #endif
-    
+
     _trayIcon = NULL;
 	_hideWnd = NULL;
     updateUI();
-    
+
     delayBoxChange(_core->conf->getDelay());
     _ui->cbxTypeScr->setCurrentIndex(_core->conf->getTypeScreen());
 
@@ -83,11 +76,11 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
-	
+
 	// Create advanced menu
 	QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
 	int  insIndex = _ui->layotButtons->indexOf(_ui->butCopy) + 1;
-	
+
 	if (modulesActions.count() > 0)
 	{
 		for (int i = 0; i < modulesActions.count(); ++i)
@@ -101,7 +94,7 @@ MainWindow::MainWindow(QWidget* parent) :
 				connect(btn, SIGNAL(clicked(bool)), modulesActions.at(i), SIGNAL(triggered(bool)));
 				_ui->layotButtons->insertWidget(insIndex, btn);
 				insIndex++;
-			}			
+			}
 		}
 	}
 
@@ -109,7 +102,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	if (modulesMenus.count() > 0)
 	{
 		for (int i = 0; i < modulesMenus.count(); ++i)
-		{			
+		{
 			if (modulesMenus.at(i) != 0)
 			{
 				QString objName = "but" + modulesMenus.at(i)->objectName().remove(0, 3);
@@ -118,16 +111,16 @@ MainWindow::MainWindow(QWidget* parent) :
 				btn->setMenu(modulesMenus.at(i));
 				_ui->layotButtons->insertWidget(insIndex, btn);
 				insIndex++;
-			}			
+			}
 		}
 	}
 	// end creation advanced menu
-	
+
 	QMenu *menuInfo = new QMenu(this);
 	menuInfo->addAction(actHelp);
 	menuInfo->addAction(actAbout);
 	_ui->butHelp->setMenu(menuInfo);
-	
+
 //     connect(_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
@@ -145,7 +138,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
     displayPixmap();
 
-	_ui->scrLabel->installEventFilter(this);	
+	_ui->scrLabel->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -197,7 +190,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
-{		
+{
 	if (obj == _ui->scrLabel && event->type() == QEvent::ToolTip)
 	{
 		displatScreenToolTip();
@@ -207,8 +200,8 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 	{
 		_core->openInExtViewer();
 	}
-	
-	
+
+
     return QObject::eventFilter(obj, event);
 }
 
@@ -239,38 +232,20 @@ void MainWindow::showHelp()
     // open help file
     QString localeHelpFile;
 
-#ifdef Q_OS_LINUX
     localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
     if (QFile::exists(localeHelpFile) != true)
     {
         localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section("_", 0, 0)  + "%1index.html";
-    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-
-    if (QFile::exists(localeHelpFile) != true)
-    {
-        localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
         localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-    }
-    }
-#endif
-#ifdef Q_WS_WIN
-    localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang()+QString("%1index.html");
-    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
-    if (QFile::exists(localeHelpFile) != true)
-    {
-    localeHelpFile = QApplication::applicationDirPath()+QString("%1docs%1html%1")+Config::getSysLang().section("_", 0, 0)+QString("%1index.html");
-    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-
-    if (QFile::exists(localeHelpFile) != true)
-    {
-        localeHelpFile = QApplication::applicationDirPath()+"%1docs%1html%1en%1index.html";
-        localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+        if (QFile::exists(localeHelpFile) != true)
+        {
+            localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
+            localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
+        }
     }
-    }
-#endif
 
     // open find localize or eng help help
     QDesktopServices::openUrl(QUrl::fromLocalFile(localeHelpFile));
@@ -281,10 +256,10 @@ void MainWindow::showOptions()
 {
     ConfigDialog *options;
     options = new ConfigDialog();
-#ifdef SG_GLOBAL_SHORTCUTS    
+#ifdef SG_GLOBAL_SHORTCUTS
     globalShortcutBlock(true);
 #endif
-    
+
     if (isMinimized() == true)
     {
         showNormal();
@@ -305,7 +280,7 @@ void MainWindow::showOptions()
             updateUI();
         }
     }
-#ifdef SG_GLOBAL_SHORTCUTS        
+#ifdef SG_GLOBAL_SHORTCUTS
     globalShortcutBlock(false);
 #endif
     delete options;
@@ -387,9 +362,9 @@ QPushButton* MainWindow::createButton(const QString& objName, const QString& tex
 
 // crete tray
 void MainWindow::createTray()
-{    
+{
     _trayed = false;
-    
+
     // create actions menu
     actQuit = new QAction(tr("Quit"), this);
     actSave = new QAction(tr("Save"), this);
@@ -430,12 +405,12 @@ void MainWindow::createTray()
     QIcon icon(":/res/img/logo.png");
 
     _trayIcon = new QSystemTrayIcon(this);
-    
+
     _trayIcon->setContextMenu(menuTray);
     _trayIcon->setIcon(icon);
     _trayIcon->show();
     connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
-             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );    
+             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
 }
 
 void MainWindow::killTray()
@@ -493,7 +468,7 @@ void MainWindow::updateUI()
 
     // update shortcuts
     createShortcuts();
-    
+
     // create tray object
     if (_core->conf->getShowTrayIcon() == true && _trayIcon == NULL)
     {
@@ -543,14 +518,14 @@ void MainWindow::showWindow(const QString& str)
     // get char of type screen (last) form reviewd string
     QString typeNum = str[str.size() - 1];
     int type = typeNum.toInt();
-    
+
     // change type scrren in config & on main window
     _ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
-    
+
     _core->sleep(250); // it hack for non capture  interface of apss
     _core->screenShot();
-    
+
     Q_UNUSED(str)
     if (isHidden() == true && _core->conf->getShowTrayIcon() == true)
     {
@@ -559,23 +534,14 @@ void MainWindow::showWindow(const QString& str)
         showNormal();
     }
 
-#ifdef Q_OS_LINUX
     netwm::init(); // initialize NETWM
     netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
-    
+
     // small gnome hack
     if (qgetenv("DESKTOP_SESSION") == "gnome")
     {
         showNormal();
     }
-    
-#endif
-#ifdef Q_WS_WIN
-    // TODO -- make normal activate window with Wim32API
-    ShowWindow(this->winId(), SW_RESTORE);
-    SetForegroundWindow(this->winId());
-    this->activateWindow();
-#endif
 }
 
 // show tray messages
@@ -588,7 +554,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
             case 0: break; // is never sjow
             case 1: // is hidden main wnd
             {
-        if (isHidden() == true && _trayed == true)
+                if (isHidden() == true && _trayed == true)
                 {
                     _trayIcon->showMessage(titleMsg, bodyMsg,
                     QSystemTrayIcon::MessageIcon(), _core->conf->getTimeTrayMess()*1000 ); //5000
@@ -616,14 +582,6 @@ void MainWindow::displayPixmap()
 void MainWindow::restoreWindow()
 {
     displayPixmap();
-
-#ifdef Q_WS_WIN
-    // small hack for blocking segfault on shortcuted selection area screen on win32
-    if (_core->conf->getShowTrayIcon() == true && _trayed == true && _core->conf->getTypeScreen() == 2 )
-    {
-        hide();
-    }
-#endif
 
     if (isVisible() == false && _trayed == false)
     {
@@ -674,19 +632,14 @@ void MainWindow::saveScreen()
     fileFilters.chop(2);
 
 	QString fileName;
-#ifdef Q_OS_LINUX		
-    if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")    
+    if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
     }
     else
     {
         fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected, QFileDialog::DontUseNativeDialog);
-    }    
-#endif
-#ifdef Q_WS_WIN
-    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
-#endif
+    }
 
     QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
@@ -700,7 +653,7 @@ void MainWindow::saveScreen()
         return ;
     }
 
-    _core->writeScreen(fileName, format);	
+    _core->writeScreen(fileName, format);
 }
 
 
@@ -726,14 +679,14 @@ void MainWindow::createShortcuts()
 		}
 		_ui->butQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
     }
-	
 
-#ifdef SG_GLOBAL_SHORTCUTS     
+
+#ifdef SG_GLOBAL_SHORTCUTS
     for (int i = 0; i < _globalShortcuts.count(); ++i )
     {
         _globalShortcuts[i]->setShortcut(QKeySequence(_core->conf->shortcuts()->getShortcut(i)));
     }
-#endif    
+#endif
 }
 
 #ifdef SG_GLOBAL_SHORTCUTS
@@ -750,13 +703,6 @@ void MainWindow::globalShortcutActivate(int type)
 {
     _ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
-#ifdef Q_WS_WIN
-    // small hack for blocking segfault on shortcuted selection area screen on win32
-    if (_core->conf->getShowTrayIcon() == true && _trayed == true && type == 2 )
-    {
-        showMaximized();
-    }
-#endif
 
     if (_trayed == false)
     {

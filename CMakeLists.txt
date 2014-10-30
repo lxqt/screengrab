@@ -45,38 +45,25 @@ endif()
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
     add_definitions(-DNDEBUG)
     add_definitions(-DQT_NO_DEBUG_OUTPUT)
-    if(WIN32)
-    if(NOT MSVC)
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
-    endif(NOT MSVC)
-endif(WIN32)
 endif()
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
 
 add_definitions(-DPREFIX="${CMAKE_INSTALL_PREFIX}")
-
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
-if(UNIX AND NOT APPLE)
-    # Check Debian or Ubuntu?
-    if (EXISTS "/etc/debian_version")
-        set (LIBDIR "lib/${CMAKE_LIBRARY_ARCHITECTURE}")
-    # Other distro
-    else()
-        string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
-        if(IS64BITS)
-            set(LIBDIR "lib64")
-        else()
-            set(LIBDIR "lib")
-        endif()
-    endif()
-
-    set(SG_LIBDIR "${LIBDIR}/screengrab")
-    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
-    message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
+# find libs dir
+string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
+if(IS64BITS)
+    set(LIBDIR "lib64")
+else()
+    set(LIBDIR "lib")
 endif()
+
+set(SG_LIBDIR "${LIBDIR}/screengrab")
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
+message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
 
 # options
 option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
@@ -86,7 +73,6 @@ option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-
 
 if(SG_GLOBALSHORTCUTS)
     add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
@@ -117,26 +103,21 @@ message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT}
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 
 # docs
-if(UNIX AND NOT APPLE)
-    if(NOT SG_DOCDIR)
-         set(SG_DOCDIR "screengrab" CACHE STRING "Documentation directory name")
-    endif()
-    set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documentation directory name")
-    message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
-    add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
+if(NOT SG_DOCDIR)
+    set(SG_DOCDIR "screengrab" CACHE STRING "Documentation directory name")
 endif()
+set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documentation directory name")
+message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
+add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
 
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 # qtsingleapplication
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 
+include_directories("${SG_INCLUDE}")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
-
-#openarenainclude_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
 
 if(SG_EXT_UPLOADS)
@@ -160,26 +141,9 @@ set(SCREENGRAB_SRC
     src/ui/configwidget.cpp
     src/ui/about.cpp
     src/ui/mainwindow.cpp
+    src/common/netwm/netwm.cpp
 )
 
-if(UNIX AND NOT APPLE)
-    set(SCREENGRAB_SRC ${SCREENGRAB_SRC} src/common/netwm/netwm.cpp)
-endif()
-
-if(WIN32)
-    set(WIN_RC screengrab.rc)
-endif()
-
-# set headers to moc
-set(SCREENGRAB_MOC
-    src/core/core.h
-    src/core/regionselect.h
-    src/ui/configwidget.h
-    src/ui/about.h
-    src/ui/mainwindow.h
-)
-
-# set headers to moc
 set(SCREENGRAB_UI
     src/ui/configwidget.ui
     src/ui/aboutwidget.ui
@@ -202,19 +166,14 @@ qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 # find lrelease binary
-if(NOT QT_LRELEASE_EXECUTABLE)
-    find_program(QT_LRELEASE_EXECUTABLE
-        NAMES lrelease
-        PATHS ${QT_BINARY_DIR}
-        NO_DEFAULT_PATH
-    )
-endif()
-
-# debian hack
-if(EXISTS "${QT_BINARY_DIR}/lrelease-qt4")
-    set(QT_LRELEASE_EXECUTABLE "${QT_BINARY_DIR}/lrelease-qt4")
-endif()
-
+# if(NOT QT_LRELEASE_EXECUTABLE)
+#     find_program(QT_LRELEASE_EXECUTABLE
+#         NAMES lrelease
+#         PATHS ${QT_BINARY_DIR}
+#         NO_DEFAULT_PATH
+#     )
+# endif()
+#
 # if(QT_LRELEASE_EXECUTABLE)
 #     message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
 #     message(STATUS "Generating localize ...")
@@ -222,13 +181,6 @@ endif()
 # else()
 #     message(FATAL_ERROR "Could NOT find lrelease executable")
 # endif()
-
-if(WIN32 AND NOT MSVC)
-    add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o
-    COMMAND ${CMAKE_RC_COMPILER} -I${CMAKE_CURRENT_SOURCE_DIR} -i${CMAKE_CURRENT_SOURCE_DIR}/screengrab.rc -o "${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o")
-    set(SCREENGRAB_SRC ${SCREENGRAB_SRC} "${CMAKE_CURRENT_BINARY_DIR}/screengrabrc.o")
-endif(WIN32 AND NOT MSVC)
-
 
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
@@ -248,71 +200,39 @@ if(SG_EXT_EDIT)
     target_link_libraries(screengrab extedit)
 endif()
 
-if(WIN32)
-    target_link_libraries(screengrab qkeysequencewidget singleapp ${QT_LIBRARIES})
-endif()
+target_link_libraries(screengrab qkeysequencewidget singleapp X11 Qt5::Widgets)
 
-if(UNIX)
-    target_link_libraries(screengrab qkeysequencewidget singleapp X11 Qt5::Widgets)
-endif()
 
-if(WIN32 AND NOT MSVC)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mwindows ")
-endif()
+# make src.tar.gz
+add_custom_target(dist @echo create source package)
+set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
+add_custom_command(COMMAND cp
+    ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}"
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+    TARGET dist
+)
 
-if(UNIX AND NOT APPLE)
-    # make src.tar.gz
-    add_custom_target(dist @echo create source package)
-    set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
-    add_custom_command(COMMAND cp
-        ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}"
-        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-        TARGET dist
-    )
+ADD_CUSTOM_COMMAND(COMMAND tar
+    ARGS cvfz "${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz" --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"
+    WORKING_DIRECTORY "/tmp"
+    TARGET dist
+)
 
-    ADD_CUSTOM_COMMAND(COMMAND tar
-        ARGS cvfz "${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz" --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"
-        WORKING_DIRECTORY "/tmp"
-        TARGET dist
-    )
+add_custom_command(COMMAND rm
+    ARGS -rf "/tmp/${SCREENGRAB_DIST}"
+    WORKING_DIRECTORY "/tmp"
+    TARGET dist
+)
 
-    add_custom_command(COMMAND rm
-        ARGS -rf "/tmp/${SCREENGRAB_DIST}"
-        WORKING_DIRECTORY "/tmp"
-        TARGET dist
-    )
-
-    # installing
-    install(TARGETS screengrab RUNTIME DESTINATION bin)
-
-    # install txt docs
-    install(FILES ${DOCS} DESTINATION ${DOCPATH})
-    # install html docs
-    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${DOCPATH}/html")
-
-    # install desktop files
-    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
-
-    # install pixmap
-    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
-
-    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION share/screengrab/localize FILES_MATCHING PATTERN "*.qm")
-endif()
-
-if(WIN32)
-    set(WIN32_BINARY_RUNTIME "${CMAKE_FIND_ROOT_PATH}/bin/zlib1.dll")
-
-    set(WIN32_BINARY_QT_LIBS
-        "${QT_BINARY_DIR}/QtCore4.dll"
-        "${QT_BINARY_DIR}/QtGui4.dll"
-        "${QT_BINARY_DIR}/QtNetwork4.dll"
-    )
-
-    install(TARGETS screengrab RUNTIME DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro")
-    install(FILES ${WIN32_BINARY_RUNTIME} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro")
-    install(FILES ${WIN32_BINARY_QT_LIBS} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro")
-    install(FILES ${QT_JPEG_LIBRARY} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/bin/imageformats")
-    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro/localize" FILES_MATCHING PATTERN "*.qm")
-    install(FILES ${DOCS} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro/docs")
-    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/distro/docs/html")
-endif()
+# installing
+install(TARGETS screengrab RUNTIME DESTINATION bin)
+# install txt docs
+install(FILES ${DOCS} DESTINATION ${DOCPATH})
+# install html docs
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${DOCPATH}/html")
+# install desktop files
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
+# install pixmap
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
+# install translations
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/localize/" DESTINATION share/screengrab/localize FILES_MATCHING PATTERN "*.qm")

@@ -21,8 +21,7 @@
 #ifndef MODULEEXTEDIT_H
 #define MODULEEXTEDIT_H
 
-#warning remove "src/" later
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
 #include "extedit.h"
 #include <QAction>

@@ -34,16 +34,8 @@ QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgu
 
 UploaderConfig::UploaderConfig()
 {
-    QString configFile = Config::getConfigDir();
-#ifdef Q_OS_LINUX
-    configFile += "uploader.conf";
-#endif
-
-#ifdef Q_WS_WIN
-    configFile += "uploader.ini";
-#endif
+    QString configFile = Config::getConfigDir() + "uploader.conf";
     _settings = new QSettings(configFile, QSettings::IniFormat);
-
     _groupsList << "mediacru.sh" << "imgur.com";
 }
 

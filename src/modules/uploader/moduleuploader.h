@@ -21,7 +21,7 @@
 #ifndef MODULEUPLOADER_H
 #define MODULEUPLOADER_H
 
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
 #include <QObject>
 #include <QWidget>

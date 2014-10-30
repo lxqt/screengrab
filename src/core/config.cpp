@@ -55,9 +55,7 @@ const QString KEY_TYPE_SCREEN = "typeScreenDefault";
 
 const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
 
-#ifdef Q_OS_LINUX
 const QString KEY_NODECOR = "noDecorations";
-#endif
 
 Config* Config::ptrInstance = 0;
 
@@ -78,16 +76,13 @@ Config::Config()
 			cf.close();
 			qDebug() << "creating";
 		}
-		
+
         setDefaultSettings();
         saveSettings();
     }
 
     _imageFormats << "png" << "jpg" << "bmp";
-
-#if QT_VERSION >= 0x040500
     _settings->setIniCodec("UTF-8");
-#endif
     _scrNum = 0;
 }
 
@@ -130,32 +125,26 @@ QString Config::getConfigFile()
 {
     QString configFile;
 
-#ifdef Q_OS_LINUX
     configFile = Config::getConfigDir() + "screengrab.conf";
-    
+
     // moving old stile storange setting to XDG_CONFIG_HOME storage
     QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "screengrab.conf";
     if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
     {
         QFile::rename(oldConfigFile, configFile);
     }
-#endif
 
-#ifdef Q_WS_WIN
-    configFile = Config::getConfigDir() +"screengrab.ini";
-#endif	
     return configFile;
 }
 
 QString Config::getConfigDir()
 {
     QString configDir;
-#ifdef Q_OS_LINUX
     #ifdef SG_XDG_CONFIG_SUPPORT
-        // old style config path    
+        // old style config path
         QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
         configDir = qgetenv("XDG_CONFIG_HOME");
-        
+
         // Ubuntu hack -- if XDG_CONFIG_HOME is missing
         if (configDir.isEmpty() == true)
         {
@@ -163,20 +152,14 @@ QString Config::getConfigDir()
             configDir += QDir::separator();
             configDir += ".config";
         }
-        
+
         configDir.append(QDir::separator());
         configDir.append("screengrab");
         configDir.append(QDir::separator());
     #else
         configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
     #endif
-#endif
-    
-    // if win32
-#ifdef Q_WS_WIN
-    configDir.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "ScreenGrab" + QDir::toNativeSeparators(QDir::separator()));
-#endif
-	
+
 	if (QFile::exists(configDir) == false)
 	{
 		QDir confDir(configDir);
@@ -191,12 +174,12 @@ QString Config::getConfigDir()
 QString Config::getScrNumStr()
 {
     QString str = QString::number(_scrNum);
-    
+
     if (_scrNum < 10)
     {
         str.prepend("0");
     }
-    
+
     return str;
 }
 
@@ -430,7 +413,6 @@ void Config::setShowTrayIcon(bool val)
     setValue(KEY_SHOW_TRAY, val);
 }
 
-#ifdef Q_OS_LINUX
 bool Config::getNoDecorX11()
 {
     return value(KEY_NODECOR).toBool();
@@ -440,7 +422,6 @@ void Config::setNoDecorX11(bool val)
 {
     setValue(KEY_NODECOR, val);
 }
-#endif
 
 void Config::saveWndSize()
 {
@@ -464,9 +445,7 @@ void Config::loadSettings()
     setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
     setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
-#ifdef Q_OS_LINUX
     setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
-#endif
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
     _settings->endGroup();
 
@@ -503,14 +482,12 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
-#ifdef Q_OS_LINUX
     _settings->setValue(KEY_NODECOR, getNoDecorX11());
-#endif
     _settings->endGroup();
 
     _settings->beginGroup("Display");
     _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
-    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());    
+    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
     _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
     _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
     _settings->endGroup();
@@ -523,7 +500,7 @@ void Config::saveSettings()
     _settings->endGroup();
 
     _shortcuts->saveSettings();
-    
+
     resetScrNum();
 }
 
@@ -552,14 +529,11 @@ void Config::setDefaultSettings()
 
     _shortcuts->setDefaultSettings();
 
-#ifdef Q_OS_LINUX
     setNoDecorX11(DEF_X11_NODECOR);
-#endif
-
     setDelay(DEF_DELAY);
 
-	quint8 countModules = Core::instance()->modules()->count();	
-	for (int i = 0; i < countModules; ++i) 
+	quint8 countModules = Core::instance()->modules()->count();
+	for (int i = 0; i < countModules; ++i)
 	{
 		Core::instance()->modules()->getModule(i)->defaultSettings();
 	}
@@ -568,12 +542,7 @@ void Config::setDefaultSettings()
 // get defaukt directory path
 QString Config::getDirNameDefault()
 {
-#ifdef Q_OS_LINUX
-    return QDir::homePath()+QDir::separator();    ;
-#endif
-#ifdef Q_WS_WIN
-    return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + QDir::separator() ;
-#endif
+    return QDir::homePath()+QDir::separator();
 }
 
 // get id of default save format
@@ -584,7 +553,6 @@ int Config::getDefaultFormatID()
 
 QString Config::getSysLang()
 {
-#ifdef Q_OS_LINUX
     QByteArray lang = qgetenv("LC_ALL");
 
     if (lang.isEmpty())
@@ -603,10 +571,6 @@ QString Config::getSysLang()
     {
         return  QLocale::system().name();
     }
-#endif
-#ifdef Q_WS_WIN
-    return  QLocale::system().name();
-#endif
 }
 
 

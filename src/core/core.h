@@ -38,10 +38,7 @@
 #include <QByteArray>
 #include <QRect>
 #include <QProcess>
-
-#ifdef Q_OS_LINUX
 #include <QX11Info>
-#endif
 
 #include <QDebug>
 
@@ -107,13 +104,7 @@ private:
 
     void checkAutoSave(bool first = false);
 
-    // functions
-#ifdef Q_WS_WIN
-    void getActiveWind_Win32();
-#endif
-#ifdef Q_OS_LINUX
     void getActiveWind_X11();
-#endif
 
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);

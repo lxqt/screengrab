@@ -68,12 +68,12 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     loadSettings();
     changeDefDelay(conf->getDefDelay());
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
-    
+
     setVisibleAutoSaveFirst(conf->getAutoSave());
-    
+
     _ui->listWidget->setCurrentRow(0);
 	_ui->tabMain->setCurrentIndex(0);
-    
+
     editDateTmeTpl(conf->getDateTimeTpl());
 
     _ui->treeKeys->expandAll();
@@ -86,15 +86,15 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     {
         if ((*iter)->parent() != NULL)
         {
-            (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));        
-            
+            (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
+
 #ifndef SG_GLOBAL_SHORTCUTS
             if (conf->shortcuts()->getShortcutType(action) == Config::globalShortcut)
             {
                 (*iter)->setHidden(true);
             }
 #endif
-            ++action;        
+            ++action;
         }
         else
         {
@@ -115,18 +115,18 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 
 	// Load config widgets for modules
 	quint8 countModules = Core::instance()->modules()->count();
-	
+
 	for (int i = 0; i < countModules; ++i)
 	{
 		AbstractModule* currentModule = Core::instance()->modules()->getModule(i);
-		
+
 		if (currentModule->initConfigWidget() != 0)
 		{
 			_ui->listWidget->addItem(currentModule->moduleName());
 			QWidget *currentModWidget = currentModule->initConfigWidget();
-			_ui->stackedWidget->addWidget(currentModWidget);	
+			_ui->stackedWidget->addWidget(currentModWidget);
 			_moduleWidgetNames << currentModWidget->objectName();
-		}				
+		}
 	}
 }
 
@@ -167,12 +167,7 @@ void ConfigDialog::loadSettings()
     _ui->checkInTray->setChecked(conf->getCloseInTray());
     _ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
 
-#ifdef Q_OS_LINUX
     _ui->checkNoDecorX11->setChecked(conf->getNoDecorX11());
-#endif
-#ifdef Q_WS_WIN
-    _ui->checkNoDecorX11->setVisible(false);
-#endif
     _ui->checkShowTray->setChecked(conf->getShowTrayIcon());
 //     on_checkShowTray_toggled(conf->getShowTrayIcon());
     toggleCheckShowTray(conf->getShowTrayIcon());
@@ -232,17 +227,17 @@ void ConfigDialog::saveSettings()
         msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
         msg.setIcon(QMessageBox::Question);
         msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-        
+
         int res = msg.exec();
-        
+
         if (res == QMessageBox::No)
         {
             return ;
         }
         else
-        {            
+        {
             screenshotDir.mkpath(screenshotDir.path());
-            
+
             if (screenshotDir.path().endsWith(QDir::separator()) == false)
             {
                 QString updatedPath = screenshotDir.path() + QDir::separator();
@@ -270,9 +265,8 @@ void ConfigDialog::saveSettings()
     conf->setShowTrayIcon(_ui->checkShowTray->isChecked());
     conf->setImageQuality(_ui->slideImgQuality->value());
 	conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
-#ifdef Q_OS_LINUX
     conf->setNoDecorX11(_ui->checkNoDecorX11->isChecked());
-#endif
+
     // save shortcuts in shortcutmanager
     int action = 0;
     QTreeWidgetItemIterator iter(_ui->treeKeys);
@@ -299,8 +293,8 @@ void ConfigDialog::saveSettings()
     // update values of front-end settings
     conf->saveSettings();
     conf->setDelay(conf->getDefDelay());
-	
-	// call save method on modeule's configwidgets'	
+
+	// call save method on modeule's configwidgets'
 	for (int i = 0; i < _moduleWidgetNames.count(); ++i)
 	{
 		QString name = _moduleWidgetNames.at(i);
@@ -310,7 +304,7 @@ void ConfigDialog::saveSettings()
 			QMetaObject::invokeMethod(currentWidget, "saveSettings");
 		}
 	}
-	
+
     // accep changes
     accept();
 }
@@ -328,25 +322,15 @@ QString ConfigDialog::getFormat()
 
 void ConfigDialog::selectDir()
 {
-QString *directory = new QString;
-#ifdef Q_OS_LINUX
-{
-    *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-             _ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();
-    if (directory->toUtf8() != QDir::separator())
+    QString *directory = new QString;
     {
-        _ui->editDir->setText( *directory);
+        *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
+                _ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();
+        if (directory->toUtf8() != QDir::separator())
+        {
+            _ui->editDir->setText( *directory);
+        }
     }
-}
-#endif
-#ifdef Q_WS_WIN
-    *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-             _ui->editDir->text(), QFileDialog::ShowDirsOnly)+ "/";
-    if (directory->toUtf8() != "/")
-    {
-        _ui->editDir->setText( QDir::toNativeSeparators(*directory));
-    }
-#endif
     delete directory;
 }
 
@@ -357,9 +341,9 @@ void ConfigDialog::restoreDefaults()
     msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
     msg.setIcon(QMessageBox::Question);
     msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    
+
     int res = msg.exec();
-    
+
     if (res == QMessageBox::Yes)
     {
         conf->setDefaultSettings();
@@ -485,7 +469,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
         }
 #else
     changeShortcut(seq);
-#endif        
+#endif
     }
     else if (checkUsedShortcuts() == true && seq.toString() != "")
     {
