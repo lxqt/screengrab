@@ -92,7 +92,7 @@ Core::~Core()
     conf->killInstance();
 }
 
-void Core::sleep(quint8 msec)
+void Core::sleep(int msec)
 {
     QMutex mutex;
     mutex.lock();

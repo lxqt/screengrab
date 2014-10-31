@@ -70,7 +70,7 @@ public:
     static Core* instance();
     ~Core();
 
-    void sleep(quint8 msec = 350);
+    void sleep(int msec = 350);
     static QString getVersionPrintable();
 
     QPixmap* getPixmap();
