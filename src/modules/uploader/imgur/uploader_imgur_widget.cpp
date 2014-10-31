@@ -44,10 +44,3 @@ void Uploader_ImgUr_Widget::changeEvent(QEvent *e)
         break;
     }
 }
-
-QVariantMap Uploader_ImgUr_Widget::settingsMap() const
-{
-	QVariantMap map;
-	
-	return map;
-}

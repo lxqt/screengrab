@@ -131,7 +131,6 @@ void DialogUploader::slotUploadStart()
     }
 
     QVariantMap userSettings;
-	QMetaObject::invokeMethod(_uploaderWidget, "settingsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariantMap, userSettings));
     _uploader->getUserSettings(userSettings);;
 
     // start uploading process
