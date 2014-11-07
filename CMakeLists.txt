@@ -170,7 +170,7 @@ qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 if(Qt5LinguistTools_FOUND)
     message(STATUS "Generating localize ...")
-    file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/localize/*.ts)
+    file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/translations/*.ts)
     qt5_add_translation(SCREENGRAB_QMS ${SCREENGRAB_TS})
     add_custom_target(translations ALL DEPENDS ${SCREENGRAB_QMS})
 else()

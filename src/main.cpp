@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QTranslator localize;
 
     QString localizeFile = PREFIX;
-    localizeFile.append("/share/screengrab/localize/screengrab_"+Config::getSysLang()+".qm");
+    localizeFile.append("/share/screengrab/translations/screengrab_"+Config::getSysLang()+".qm");
     localize.load(localizeFile);
 
     scr.installTranslator(&localize);
