@@ -27,7 +27,7 @@
 #include "src/ui/about.h"
 #include "src/ui/configwidget.h"
 
-#ifdef SG_GLOBAL_SHORTCUTS 
+#ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
 #endif
 
@@ -50,17 +50,17 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void show();
-	bool isTrayed() const;
+    bool isTrayed() const;
 
 public Q_SLOTS:
     void showWindow(const QString& str);
-	void windowHideShow();
+    void windowHideShow();
 //
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
-    void resizeEvent(QResizeEvent *event); // event resuze window    
-	bool eventFilter(QObject *obj, QEvent *event);
+    void resizeEvent(QResizeEvent *event); // event resuze window
+    bool eventFilter(QObject *obj, QEvent *event);
 //
 private:
     Ui::MainWindow *_ui;
@@ -76,7 +76,7 @@ private:
     QAction *actHelp;
     QAction *actHideShow;
     QMenu *menuTray;
-	QShortcut *_hideWnd;
+    QShortcut *_hideWnd;
 
     bool _trayed;
 
@@ -88,15 +88,15 @@ private:
     QVector<QxtGlobalShortcut*> _globalShortcuts;
     QSignalMapper *_globalShortcutSignals;
 #endif
-    
-	void displatScreenToolTip();
+
+    void displatScreenToolTip();
     QPushButton* createButton(const QString& objName, const QString& text);
-	void createTray();
+    void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
     void createShortcuts();
 
- private Q_SLOTS:
+private Q_SLOTS:
     void displayPixmap();
     void restoreWindow();
     void newScreen();
@@ -111,8 +111,8 @@ private:
     void quit();
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
-    
-#ifdef SG_GLOBAL_SHORTCUTS 
+
+#ifdef SG_GLOBAL_SHORTCUTS
     void globalShortcutActivate(int type);
     void globalShortcutBlock(bool state);
 #endif

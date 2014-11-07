@@ -27,8 +27,8 @@
 #include <QAction>
 
 struct ExtApp_t {
-	QString exec;
-	QString name;
+    QString exec;
+    QString name;
 };
 
 typedef QList<ExtApp_t> ExtAppsList_t;
@@ -45,18 +45,18 @@ public Q_SLOTS:
     void runExternalEditor();
 
 private Q_SLOTS:
-	void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
-	void editedFileChanged(const QString & path);
+    void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
+    void editedFileChanged(const QString & path);
 
 private:
-	void createAppList();
-	ExtApp_t readDesktopFile(QString filename, QByteArray path);
+    void createAppList();
+    ExtApp_t readDesktopFile(QString filename, QByteArray path);
 
-	ExtAppsList_t _appList;
-	QList<QAction*> _actionList;
-	QString _editFilename;
-	bool _fileIsCnaged;
-	QFileSystemWatcher *_watcherEditedFile;
+    ExtAppsList_t _appList;
+    QList<QAction*> _actionList;
+    QString _editFilename;
+    bool _fileIsCnaged;
+    QFileSystemWatcher *_watcherEditedFile;
 };
 
 #endif // EXTEDIT_H

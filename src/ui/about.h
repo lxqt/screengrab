@@ -25,7 +25,6 @@
 #include <QTabBar>
 #include <QUrl>
 
-// #include "src/core/screengrab.h"
 
 namespace Ui {
     class aboutWidget;

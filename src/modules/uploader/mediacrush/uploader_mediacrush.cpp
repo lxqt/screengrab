@@ -28,10 +28,10 @@
 
 Uploader_MediaCrush::Uploader_MediaCrush(const QString& format, QObject* parent): Uploader(parent)
 {
-	_host = "mediacru.sh";
+    _host = "mediacru.sh";
     qDebug() << " create MediaCrush uploader";
-	UpdateUploadedStrList();
-	setCurrentFormat(format);
+    UpdateUploadedStrList();
+    setCurrentFormat(format);
 }
 
 Uploader_MediaCrush::~Uploader_MediaCrush()
@@ -40,12 +40,12 @@ Uploader_MediaCrush::~Uploader_MediaCrush()
 }
 
 /*!
- * 	Start upload process
+ * Start upload process
  */
 void Uploader_MediaCrush::startUploading()
-{	
+{
     createData();
-	createRequest(imageData, apiUrl());
+    createRequest(imageData, apiUrl());
 
    _request.setRawHeader("Host", _host);
     Uploader::startUploading();
@@ -56,11 +56,11 @@ void Uploader_MediaCrush::startUploading()
  */
 void Uploader_MediaCrush::setCurrentFormat(const QString& format)
 {
-	_currentFormat = format.toLatin1();
+    _currentFormat = format.toLatin1();
 }
 
 /*!
- * 	Return url for upload image
+ * Return url for upload image
  */
 QUrl Uploader_MediaCrush::apiUrl()
 {
@@ -68,75 +68,67 @@ QUrl Uploader_MediaCrush::apiUrl()
 }
 
 /*!
- * 	Prepare image datafor uploading
+ * Prepare image data for uploading
  */
 void Uploader_MediaCrush::createData(bool inBase64)
 {
-// 	inBase64 = true;
     Uploader::createData(inBase64);
 
-	_multipartData = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-	
-	QHttpPart imagePart;
+    _multipartData = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+
+    QHttpPart imagePart;
     if (_formatString == "jpg")
     {
         imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/jpeg"));
     }
     else
     {
-		imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/" + _formatString));        
+        imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/" + _formatString));
     }
     QByteArray disposition = "form-data; name=\"file\"; filename='"+ _uploadFilename.toLatin1() +"'";
     imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(disposition));
-	imagePart.setBody(imageData);
-	
-	_multipartData->append(imagePart);
-	
-	imageData.clear();
+    imagePart.setBody(imageData);
+
+    _multipartData->append(imagePart);
+
+    imageData.clear();
 }
 
 /*!
- * 	Process server reply data
+ * Process server reply data
  */
 void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
 {
-	if (reply->error() == QNetworkReply::NoError)
-	{
-		QByteArray response = reply->readAll();		
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        QByteArray response = reply->readAll();
 
-		if (response.split(':').count() >= 2)
-		{
-			response = response.split(':').at(1);
-			response = response.mid(2, 12);
-		}
-		
-		_uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response + "." + _currentFormat;
-		_uploadedStrings[UL_DELETE_URL].first = "https://" + _host + "/" + response + "/delete";
-		
-		Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
-		Q_EMIT uploadDone();
-	}
-	else
-	{		
-		Q_EMIT uploadFail(reply->errorString().toLatin1());
-	}
-	
-	reply->deleteLater();
+        if (response.split(':').count() >= 2)
+        {
+            response = response.split(':').at(1);
+            response = response.mid(2, 12);
+        }
+
+        _uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response + "." + _currentFormat;
+        _uploadedStrings[UL_DELETE_URL].first = "https://" + _host + "/" + response + "/delete";
+
+        Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
+        Q_EMIT uploadDone();
+    }
+    else
+    {
+        Q_EMIT uploadFail(reply->errorString().toLatin1());
+    }
+
+    reply->deleteLater();
 }
 
 void Uploader_MediaCrush::UpdateUploadedStrList()
 {
-	qDebug() << "Meida crus links init";
-	QStringList nonUsed = QStringList() << UL_BB_CODE << UL_BB_CODE_THUMB << UL_HTML_CODE << UL_HTML_CODE_THUMB;
-	
-	for (int i =0; i < nonUsed.count(); ++i)
-	{
-		_uploadedStrings.remove(nonUsed.at(i).toLatin1());
-	}
-	/*
-	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
-	_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
-	
-	strPair = qMakePair(QByteArray(), tr("URl to delete image"));
-	_uploadedStrings.insert(UL_DELETE_URL ,strPair);*/
+    QStringList nonUsed = QStringList() << UL_BB_CODE << UL_BB_CODE_THUMB << UL_HTML_CODE << UL_HTML_CODE_THUMB;
+
+    for (int i =0; i < nonUsed.count(); ++i)
+    {
+        _uploadedStrings.remove(nonUsed.at(i).toLatin1());
+    }
 }

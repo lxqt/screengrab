@@ -29,13 +29,13 @@
 struct Shortcut {
     QString key;
     int type;
-    int action;    
+    int action;
     Shortcut() {};
     Shortcut(QString k, int t, int a)
     {
-	key = k;
-	type = t;
-	action = a;
+    key = k;
+    type = t;
+    action = a;
     }
 };
 
@@ -48,16 +48,16 @@ class ShortcutManager
 public:
     ShortcutManager(QSettings *settings);
     ~ShortcutManager();
-    
+
     void loadSettings();
     void saveSettings();
     void setDefaultSettings();
-    
+
     void setShortcut(QString key, int action, int type);
     QKeySequence getShortcut(int action);
     int getShortcutType(int action);
-    QStringList getShortcutsList(int type);        
-    
+    QStringList getShortcutsList(int type);
+
 private:
     ShortcutList _listShortcuts;
     QSettings *_shortcutSettings;

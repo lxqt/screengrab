@@ -131,17 +131,17 @@ QStringList ShortcutManager::getShortcutsList(int type)
     QStringList retList;
     for (int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
     {
-	if (_listShortcuts[i].type == type)
-	{
-	    if (_listShortcuts[i].key.isNull() != true)
-	    {
-		retList << _listShortcuts[i].key;
-	    }
-	    else
-	    {
-		retList << QString("");
-	    }
-	}
+        if (_listShortcuts[i].type == type)
+        {
+            if (_listShortcuts[i].key.isNull() != true)
+            {
+                retList << _listShortcuts[i].key;
+            }
+            else
+            {
+                retList << QString("");
+            }
+        }
     }
     return retList;
 }

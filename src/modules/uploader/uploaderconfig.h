@@ -37,20 +37,20 @@ public:
     UploaderConfig();
     ~UploaderConfig();
 
-	static QStringList labelsList();
+    static QStringList labelsList();
 
-	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
-	QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
-	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
-	void defaultSettings();
-	bool checkExistsConfigFile() const;
-	bool autoCopyResultLink();
+    QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
+    QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
+    void saveSettings(const QByteArray& group, QVariantMap& mapValues);
+    void defaultSettings();
+    bool checkExistsConfigFile() const;
+    bool autoCopyResultLink();
 
 private:
     QSettings *_settings;
 
-	QStringList _groupsList;
-	static QStringList _labelsList;
+    QStringList _groupsList;
+    static QStringList _labelsList;
 };
 
 #endif // UPLOADERCONFIG_H

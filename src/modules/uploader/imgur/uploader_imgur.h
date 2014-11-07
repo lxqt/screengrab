@@ -26,32 +26,31 @@
 #include <QUrl>
 
 namespace UploadImgUr {
-	enum Error {
-		ErrorFile,
-		ErrorNetwork,
-		ErrorCredits,
-		ErrorUpload,
-		ErrorCancel,
-	};
+    enum Error {
+        ErrorFile,
+        ErrorNetwork,
+        ErrorCredits,
+        ErrorUpload,
+        ErrorCancel,
+    };
 };
 
 class Uploader_ImgUr : public Uploader
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     explicit Uploader_ImgUr(QObject* parent = 0);
     virtual ~Uploader_ImgUr();
-    
+
     virtual void startUploading();
-    
+
 protected:
-// 	using Uploader::createData(bool inBase64 = false);
     virtual QUrl apiUrl();
     virtual void createData(bool inBase64 = false);
-	
+
 protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);
 };
 
 #endif // UPLOADER_IMGUR_H
- 
+

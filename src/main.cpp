@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
     scr.installTranslator(&localize);
 
     Core *ScreenGrab = Core::instance();
-	ScreenGrab->modules()->initModules();
-	ScreenGrab->parseCmdLine();
+    ScreenGrab->modules()->initModules();
+    ScreenGrab->parseCmdLine();
 
     MainWindow mainWnd;
 
@@ -51,32 +51,32 @@ int main(int argc, char *argv[])
     {
         ScreenGrab->screenShot(true);
 
-		if ( ScreenGrab->cmdLine()->checkParam("minimized"))
-		{
-			if (mainWnd.isTrayed() == true)
-			{
-				mainWnd.windowHideShow();
-			}
-			else
-			{
-				mainWnd.showMinimized();
-			}
-		}
-		else
-		{
-			mainWnd.show();
-		}
+        if ( ScreenGrab->cmdLine()->checkParam("minimized"))
+        {
+            if (mainWnd.isTrayed() == true)
+            {
+                mainWnd.windowHideShow();
+            }
+            else
+            {
+                mainWnd.showMinimized();
+            }
+        }
+        else
+        {
+            mainWnd.show();
+        }
     }
 
 #ifdef SG_EXT_UPLOADS
 // FIXME for v1.1 (move call uploader form main() function to app core)
     if (ScreenGrab->cmdLine()->checkParam("upload"))
     {
-		mainWnd.hide();
+        mainWnd.hide();
 
-		ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
-		QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
-		uploader->init();
+        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
+        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
+        uploader->init();
     }
 #endif
 
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 
     if (ScreenGrab->cmdLine()->checkParam("help"))
     {
-		ScreenGrab->cmdLine()->printHelp();
+        ScreenGrab->cmdLine()->printHelp();
         return 0;
     }
 

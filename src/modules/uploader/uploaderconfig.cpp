@@ -46,80 +46,79 @@ UploaderConfig::~UploaderConfig()
 
 QStringList UploaderConfig::labelsList()
 {
-	return _labelsList;
+    return _labelsList;
 }
 
 QVariantMap UploaderConfig::loadSettings(const QByteArray& group, QVariantMap& mapValues)
 {
-	QVariantMap map;
+    QVariantMap map;
 
-	_settings->beginGroup(group);
+    _settings->beginGroup(group);
 
-	QVariant defValue, iterValue;
-	QVariantMap::iterator iter = mapValues.begin();
-	while(iter != mapValues.end())
-	{
-		defValue =  iter.value();
-		iterValue = _settings->value(iter.key(), defValue);
-		map.insert(iter.key(), iterValue);
-		++iter;
-	}
+    QVariant defValue, iterValue;
+    QVariantMap::iterator iter = mapValues.begin();
+    while(iter != mapValues.end())
+    {
+        defValue =  iter.value();
+        iterValue = _settings->value(iter.key(), defValue);
+        map.insert(iter.key(), iterValue);
+        ++iter;
+    }
 
-	_settings->endGroup();
+    _settings->endGroup();
 
-	return map;
+    return map;
 }
 
 QVariant UploaderConfig::loadSingleParam(const QByteArray& group, const QByteArray& param)
 {
-	QVariant var;
+    QVariant var;
 
-	_settings->beginGroup(group);
-	var = _settings->value(param);
-	_settings->endGroup();
+    _settings->beginGroup(group);
+    var = _settings->value(param);
+    _settings->endGroup();
 
-	return var;
+    return var;
 }
 
 
 void UploaderConfig::saveSettings(const QByteArray& group, QVariantMap& mapValues)
 {
-	_settings->beginGroup(group);
+    _settings->beginGroup(group);
 
-	QVariantMap::iterator iter = mapValues.begin();
-	while(iter != mapValues.end())
-	{
-		_settings->setValue(iter.key(), iter.value());
-		++iter;
-	}
+    QVariantMap::iterator iter = mapValues.begin();
+    while(iter != mapValues.end())
+    {
+        _settings->setValue(iter.key(), iter.value());
+        ++iter;
+    }
 
-	_settings->endGroup();
+    _settings->endGroup();
 }
 
 void UploaderConfig::defaultSettings()
 {
-	_settings->beginGroup("common");
-	_settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
-	_settings->setValue(KEY_DEFAULT_HOST, DEF_DEFAULT_HOST);
-	_settings->endGroup();
+    _settings->beginGroup("common");
+    _settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
+    _settings->setValue(KEY_DEFAULT_HOST, DEF_DEFAULT_HOST);
+    _settings->endGroup();
 
-	// imgur.com settings
-	_settings->beginGroup(_groupsList[0]);
-
-	_settings->endGroup();
+    // imgur.com settings
+    _settings->beginGroup(_groupsList[0]);
+    _settings->endGroup();
 }
 
 bool UploaderConfig::autoCopyResultLink()
 {
-	_settings->beginGroup("common");
-	bool ret = _settings->value(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK).toBool();
-	_settings->endGroup();
+    _settings->beginGroup("common");
+    bool ret = _settings->value(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK).toBool();
+    _settings->endGroup();
 
-	return ret;
+    return ret;
 }
 
 
 bool UploaderConfig::checkExistsConfigFile() const
 {
-	return QFile::exists(_settings->fileName());
+    return QFile::exists(_settings->fileName());
 }

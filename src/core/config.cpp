@@ -70,12 +70,12 @@ Config::Config()
     if (!QFile::exists(getConfigFile()))
     {
         // creating conf file from set defaults
-		QFile cf(getConfigFile());
-		if (cf.open(QIODevice::WriteOnly))
-		{
-			cf.close();
-			qDebug() << "creating";
-		}
+        QFile cf(getConfigFile());
+        if (cf.open(QIODevice::WriteOnly))
+        {
+            cf.close();
+            qDebug() << "creating";
+        }
 
         setDefaultSettings();
         saveSettings();
@@ -160,11 +160,11 @@ QString Config::getConfigDir()
         configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
     #endif
 
-	if (QFile::exists(configDir) == false)
-	{
-		QDir confDir(configDir);
-		confDir.mkpath(confDir.path());
-	}
+    if (QFile::exists(configDir) == false)
+    {
+        QDir confDir(configDir);
+        confDir.mkpath(confDir.path());
+    }
     return configDir;
 }
 
@@ -210,12 +210,12 @@ QDateTime Config::getLastSaveDate() const
 
 bool Config::getEnableExtView()
 {
-	return value(KEY_ENABLE_EXT_VIEWER).toBool();
+    return value(KEY_ENABLE_EXT_VIEWER).toBool();
 }
 
 void Config::setEnableExtView(bool val)
 {
-	setValue(KEY_ENABLE_EXT_VIEWER, val);
+    setValue(KEY_ENABLE_EXT_VIEWER, val);
 }
 
 
@@ -454,14 +454,14 @@ void Config::loadSettings()
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
     // TODO - make set windows size without hardcode values
-	setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
     setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
     _settings->beginGroup("System");
     setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
     setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
-	setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
+    setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
     _settings->endGroup();
 
     setDelay(getDefDelay());
@@ -496,7 +496,7 @@ void Config::saveSettings()
     _settings->beginGroup("System");
     _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
-	_settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
+    _settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
     _settings->endGroup();
 
     _shortcuts->saveSettings();
@@ -522,21 +522,21 @@ void Config::setDefaultSettings()
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
-	// TODO - make set windows size without hardcode values
+    // TODO - make set windows size without hardcode values
     // setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOW_TRAY);
-	setEnableExtView(DEF_ENABLE_EXT_VIEWER);
+    setEnableExtView(DEF_ENABLE_EXT_VIEWER);
 
     _shortcuts->setDefaultSettings();
 
     setNoDecorX11(DEF_X11_NODECOR);
     setDelay(DEF_DELAY);
 
-	quint8 countModules = Core::instance()->modules()->count();
-	for (int i = 0; i < countModules; ++i)
-	{
-		Core::instance()->modules()->getModule(i)->defaultSettings();
-	}
+    quint8 countModules = Core::instance()->modules()->count();
+    for (int i = 0; i < countModules; ++i)
+    {
+        Core::instance()->modules()->getModule(i)->defaultSettings();
+    }
 }
 
 // get defaukt directory path
@@ -573,11 +573,6 @@ QString Config::getSysLang()
     }
 }
 
-
-// CmdLine* Config::cmdLine()
-// {
-//     return cmd;
-// }
 
 ShortcutManager* Config::shortcuts()
 {

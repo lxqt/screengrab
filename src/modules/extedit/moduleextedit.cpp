@@ -24,53 +24,52 @@
 
 ModuleExtEdit::ModuleExtEdit()
 {
-	_extEdit = new ExtEdit();
+    _extEdit = new ExtEdit();
 }
 
 ModuleExtEdit::~ModuleExtEdit()
 {
-	if (_extEdit)
-	{
-		delete _extEdit;
-	}
+    if (_extEdit)
+    {
+        delete _extEdit;
+    }
 }
 
 QString ModuleExtEdit::moduleName()
 {
-	return QObject::tr("External edit");
+    return QObject::tr("External edit");
 }
 
 
 void ModuleExtEdit::init()
 {
-	
+
 }
 
 
 QMenu* ModuleExtEdit::initModuleMenu()
 {
-	QList<QAction*> list;
-	
-	QStringList appList = _extEdit->listAppNames();
-	
-	for (int i = 0; i < appList.count(); ++i)
-	{
-		QAction* action = new QAction(0);
-		action->setText(appList.at(i));
-		QObject::connect(action, SIGNAL(triggered(bool)), _extEdit, SLOT(runExternalEditor()));
-		list.append(action);
-		_extEdit->addAppAction(action);
-	}
-	
-	QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
-	menu->addActions(list);
-	menu->setObjectName("menuExtedit");
-	return menu;
+    QList<QAction*> list;
+    QStringList appList = _extEdit->listAppNames();
+
+    for (int i = 0; i < appList.count(); ++i)
+    {
+        QAction* action = new QAction(0);
+        action->setText(appList.at(i));
+        QObject::connect(action, SIGNAL(triggered(bool)), _extEdit, SLOT(runExternalEditor()));
+        list.append(action);
+        _extEdit->addAppAction(action);
+    }
+
+    QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
+    menu->addActions(list);
+    menu->setObjectName("menuExtedit");
+    return menu;
 }
 
 QWidget* ModuleExtEdit::initConfigWidget()
 {
-	return 0;
+    return 0;
 }
 
 void ModuleExtEdit::defaultSettings()
@@ -81,5 +80,5 @@ void ModuleExtEdit::defaultSettings()
 
 QAction* ModuleExtEdit::initModuleAction()
 {
-	return 0;
+    return 0;
 }

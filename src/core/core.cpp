@@ -87,7 +87,7 @@ Core* Core::instance()
 
 Core::~Core()
 {
-	delete _cmd;
+    delete _cmd;
     delete _pixelMap;
     conf->killInstance();
 }
@@ -117,7 +117,7 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
-	sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
+    sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
     // Update date last crenshot, if it is  a first screen
     if (_firstScreen == true)
@@ -164,8 +164,7 @@ void Core::checkAutoSave(bool first)
 {
     if (conf->getAutoSave() == true)
     {
-        // small hack for display tray message on first screenshot (on starting
-        // ScreenGrab in KDE, fluxbox and something wm)
+        // hack
         if (first == true)
         {
             if (conf->getAutoSaveFirst() == true)
@@ -199,7 +198,7 @@ void Core::getActiveWind_X11()
         exit(1);
     }
 
-    // no dectortions option is select
+    // no decorations option is selected
     if (conf->getNoDecorX11() == true)
     {
         *_pixelMap = QPixmap::grabWindow(*wnd);
@@ -210,7 +209,6 @@ void Core::getActiveWind_X11()
     int status;
     int stat;
 
-//    if (status != 0) {
     Window rt, *children, parent;
 
     // Find window manager frame
@@ -306,11 +304,11 @@ QString Core::getDateTimeFileName()
 
 void Core::updatePixmap()
 {
-	if (QFile::exists(_tempFilename) == true)
-	{
-		_pixelMap->load(_tempFilename, "png");
-		Q_EMIT newScreenShot(_pixelMap);
-	}
+    if (QFile::exists(_tempFilename) == true)
+    {
+        _pixelMap->load(_tempFilename, "png");
+        Q_EMIT newScreenShot(_pixelMap);
+    }
 }
 
 
@@ -326,24 +324,24 @@ QString Core::getTempFilename(const QString& format)
 
 void Core::killTempFile()
 {
-	if (QFile::exists(_tempFilename) == true)
-	{
-		QFile::remove(_tempFilename);
-		_tempFilename.clear();
-	}
+    if (QFile::exists(_tempFilename) == true)
+    {
+        QFile::remove(_tempFilename);
+        _tempFilename.clear();
+    }
 }
 
 
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
-    // adding extension  format
+    // adding extension format
     if (!fileName.contains("."+format) )
     {
         fileName.append("."+format);
     }
 
-    // saving temp fole (for uploder module)
+    // saving temp file (for uploader module)
     if (tmpScreen == true)
     {
         if (fileName.isEmpty() == false)
@@ -375,7 +373,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
             qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
             conf->updateLastSaveDate();
-            Q_EMIT 	sendStateNotifyMessage(message);
+            Q_EMIT     sendStateNotifyMessage(message);
         }
         else
         {
@@ -395,10 +393,6 @@ QString Core::copyFileNameToCliipboard(QString file)
     QString retString = "";
     switch (conf->getAutoCopyFilenameOnSaving())
     {
-//         case Config::nameToClipboardOff:
-//         {
-//             break;
-//         }
     case Config::nameToClipboardFile:
     {
         file = file.section('/', -1);
@@ -428,42 +422,42 @@ void Core::copyScreen()
 
 void Core::openInExtViewer()
 {
-	if (conf->getEnableExtView() == 1)
-	{
-		QString format = "png";
-		QString tempFileName = getTempFilename(format);
-		writeScreen(tempFileName, format, true);
+    if (conf->getEnableExtView() == 1)
+    {
+        QString format = "png";
+        QString tempFileName = getTempFilename(format);
+        writeScreen(tempFileName, format, true);
 
-		QString exec;
-		exec = "xdg-open";
-		QStringList args;
-		args << tempFileName;
+        QString exec;
+        exec = "xdg-open";
+        QStringList args;
+        args << tempFileName;
 
-		QProcess *execProcess = new QProcess(this);
-		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
-		execProcess->start(exec, args);
-	}
+        QProcess *execProcess = new QProcess(this);
+        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+        execProcess->start(exec, args);
+    }
 }
 
 void Core::parseCmdLine()
 {
-	if (QApplication::arguments().size() > 1)
-	{
-		_cmd->parse();
+    if (QApplication::arguments().size() > 1)
+    {
+        _cmd->parse();
 
-		int  screenType = _cmd->selectedScreenType();
-		if (screenType != -1)
-		{
-			conf->setTypeScreen(screenType);
-		}
-	}
+        int  screenType = _cmd->selectedScreenType();
+        if (screenType != -1)
+        {
+            conf->setTypeScreen(screenType);
+        }
+    }
 }
 
 
 void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
 {
-	sender()->deleteLater();
-	killTempFile();
+    sender()->deleteLater();
+    killTempFile();
 }
 
 
@@ -474,7 +468,7 @@ ModuleManager* Core::modules()
 
 CmdLine* Core::cmdLine()
 {
-	return _cmd;
+    return _cmd;
 }
 
 
@@ -506,7 +500,6 @@ QByteArray Core::getScreen()
     buffer.open(QIODevice::WriteOnly);
     _pixelMap->save(&buffer, conf->getSaveFormat().toLatin1());
 
-    qDebug() << "GET SCREEN SIZE " << bytes;
     return bytes;
 }
 

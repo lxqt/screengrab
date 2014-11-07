@@ -28,11 +28,11 @@
 
 namespace CmdLineParam
 {
-	enum CmdLineParam {
-		ScreenType = 0,
-		Util = 1,
-		Printable = 2,
-	};
+    enum CmdLineParam {
+        ScreenType = 0,
+        Util = 1,
+        Printable = 2,
+    };
 }
 
 class CmdLine
@@ -40,22 +40,22 @@ class CmdLine
 public:
     CmdLine();
     ~CmdLine();
-	
-	void printHelp();
+
+    void printHelp();
     static void print(const QString& string);
 
-	void registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType);
-	bool checkParam(const QString& param);
-	void parse();
-	qint8 selectedScreenType();
-	
+    void registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType);
+    bool checkParam(const QString& param);
+    void parse();
+    qint8 selectedScreenType();
+
 private:
-	QStringList _screenTypeParams;
-	QStringList _utilityParams;
-	QStringList _onlyPrintParams;
-	QMap<QString, QString> _regstredParams;
-	QStringList _usedParams;
-	QStringList _invalidParams;
+    QStringList _screenTypeParams;
+    QStringList _utilityParams;
+    QStringList _onlyPrintParams;
+    QMap<QString, QString> _regstredParams;
+    QStringList _usedParams;
+    QStringList _invalidParams;
 };
 
 #endif // CMDLINE_H

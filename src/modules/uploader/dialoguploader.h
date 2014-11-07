@@ -48,7 +48,7 @@ private Q_SLOTS:
     void slotUploadFail(const QByteArray &error);
     void slotChangeExtCode(int code);
     void slotCopyLink();
-	void slotOpenDirectLink();
+    void slotOpenDirectLink();
     void slotOpenDeleteLink();
 
 private:
@@ -61,7 +61,7 @@ private:
     qint8 _selectedHost;
 
     QStringList _resultLinks;
-	void _openLink(const QString& link);
+    void _openLink(const QString& link);
 };
 
 #endif // DIALOGUPLOADER_H

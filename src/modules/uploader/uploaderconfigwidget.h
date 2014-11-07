@@ -39,8 +39,8 @@ public:
     ~UploaderConfigWidget();
 
 public Q_SLOTS:
-	void loadSettings();
-	void saveSettings();
+    void loadSettings();
+    void saveSettings();
 
 protected:
     void changeEvent(QEvent *e);
@@ -48,9 +48,9 @@ protected:
 private:
     Ui::UploaderConfigWidget *_ui;
 
-	// services widgets
-	UploaderConfigWidget_MediaCrush *_crush;
-	UploaderConfigWidget_ImgUr *_imgur;
+    // services widgets
+    UploaderConfigWidget_MediaCrush *_crush;
+    UploaderConfigWidget_ImgUr *_imgur;
 };
 
 #endif // UPLOADERCONFIGWIDGET_H

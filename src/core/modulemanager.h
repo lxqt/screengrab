@@ -39,15 +39,15 @@ class ModuleManager
 {
 public:
     ModuleManager();
-	void initModules();
-	AbstractModule* getModule(const QByteArray& name);
-	AbstractModule* getModule(const quint8 numid);
-	QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
-	QList<QAction*> generateModulesActions(QStringList modules = QStringList());
-	quint8 count();
-	
+    void initModules();
+    AbstractModule* getModule(const QByteArray& name);
+    AbstractModule* getModule(const quint8 numid);
+    QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
+    QList<QAction*> generateModulesActions(QStringList modules = QStringList());
+    quint8 count();
+
 private:
-	ModuleList_t *_modules;
+    ModuleList_t *_modules;
 };
 
 #endif // MODULEMANAGER_H

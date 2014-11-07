@@ -56,7 +56,7 @@ const bool DEF_ENABLE_EXT_VIEWER = 1;
 class Config
 {
 public:
-    //type of shortcut
+    // type of shortcut
     enum Type {
         globalShortcut = 0,
         localShortcut = 1
@@ -64,8 +64,7 @@ public:
 
     Q_DECLARE_FLAGS(ShortcutType, Type)
 
-    //defination of shortcut
-
+    // definition of shortcut
     enum Actions {
         shortcutFullScreen = 0,
         shortcutActiveWnd = 1,
@@ -213,7 +212,6 @@ public:
 
     static QString getSysLang();
 
-//     CmdLine* cmdLine();
     ShortcutManager* shortcuts();
 
 private:
@@ -242,7 +240,6 @@ private:
     QSettings *_settings;
     QHash<QString, QVariant> _confData;
 
-//     CmdLine *cmd;
     ShortcutManager *_shortcuts;
 
     QVector<QString> _imageFormats;

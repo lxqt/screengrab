@@ -2,9 +2,9 @@
 
 include_directories(${SG_INCLUDE})
 
-set (extedit_SRC 
-	moduleextedit.cpp
-	extedit.cpp
+set (extedit_SRC
+    moduleextedit.cpp
+    extedit.cpp
 )
 
 set (extedit_HDR

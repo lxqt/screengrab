@@ -82,7 +82,7 @@ public:
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
     void openInExtViewer();
-	void parseCmdLine();
+    void parseCmdLine();
 
     ModuleManager* modules();
     CmdLine* cmdLine();
@@ -108,10 +108,9 @@ private:
 
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
-    // vars
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
-    QRect _lastSelectedArea; // store las
+    QRect _lastSelectedArea;
 
     CmdLine *_cmd;
     ModuleManager _modules;
