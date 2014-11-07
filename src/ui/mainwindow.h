@@ -90,7 +90,6 @@ private:
 #endif
 
     void displatScreenToolTip();
-    QPushButton* createButton(const QString& objName, const QString& text);
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );

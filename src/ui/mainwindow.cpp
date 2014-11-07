@@ -30,6 +30,7 @@
 #include <QHashIterator>
 #include <QRegExp>
 #include <QTimer>
+#include <QPushButton>
 
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
@@ -70,30 +71,23 @@ MainWindow::MainWindow(QWidget* parent) :
     delayBoxChange(_core->conf->getDelay());
     _ui->cbxTypeScr->setCurrentIndex(_core->conf->getTypeScreen());
 
-    connect(_ui->butOpt, SIGNAL(clicked()), this, SLOT(showOptions()));
-    connect(_ui->butSave, SIGNAL(clicked()), this, SLOT(saveScreen()));
-    connect(_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
-    connect(_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
-    connect(_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
+    connect(_ui->actionOptions, SIGNAL(triggered(bool)), this, SLOT(showOptions()));
+    connect(_ui->actionSave, SIGNAL(triggered(bool)), this, SLOT(saveScreen()));
+    connect(_ui->actionQuit, SIGNAL(triggered(bool)), this, SLOT(quit()));
+    connect(_ui->actionNew, SIGNAL(triggered(bool)), this, SLOT(newScreen()) );
+    connect(_ui->actionNew, SIGNAL(triggered(bool)), this, SLOT(copyScreen()));
 
     // Create advanced menu
     QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
-    int  insIndex = _ui->layotButtons->indexOf(_ui->butCopy) + 1;
+    QAction *beforeAction = _ui->actionOptions;
 
     if (modulesActions.count() > 0)
     {
         for (int i = 0; i < modulesActions.count(); ++i)
         {
-            if (modulesActions.at(i) != 0)
-            {
-                QString objName = "but" + modulesActions.at(i)->objectName().remove(0, 3);
-                QString text = modulesActions.at(i)->text();
-                QPushButton* btn = createButton(objName, text);
-                btn->addAction(modulesActions.at(i));
-                connect(btn, SIGNAL(clicked(bool)), modulesActions.at(i), SIGNAL(triggered(bool)));
-                _ui->layotButtons->insertWidget(insIndex, btn);
-                insIndex++;
-            }
+            QAction *action = modulesActions.at(i);
+            if (action)
+                _ui->toolBar->insertAction(beforeAction, action);
         }
     }
 
@@ -102,23 +96,25 @@ MainWindow::MainWindow(QWidget* parent) :
     {
         for (int i = 0; i < modulesMenus.count(); ++i)
         {
-            if (modulesMenus.at(i) != 0)
+            QMenu *menu = modulesMenus.at(i);
+            if (menu != 0)
             {
-                QString objName = "but" + modulesMenus.at(i)->objectName().remove(0, 3);
-                QString text = modulesMenus.at(i)->title();
-                QPushButton* btn = createButton(objName, text);
+                QPushButton* btn = new QPushButton(menu->title(), this);
+                btn->setToolTip(menu->title());
+                btn->setFlat(true);
                 btn->setMenu(modulesMenus.at(i));
-                _ui->layotButtons->insertWidget(insIndex, btn);
-                insIndex++;
+                _ui->toolBar->insertWidget(beforeAction, btn);
             }
         }
     }
     // end creation advanced menu
 
+    _ui->toolBar->insertSeparator(beforeAction);
+
     QMenu *menuInfo = new QMenu(this);
     menuInfo->addAction(actHelp);
     menuInfo->addAction(actAbout);
-    _ui->butHelp->setMenu(menuInfo);
+    _ui->actionHelp->setMenu(menuInfo);
 
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
@@ -345,14 +341,6 @@ void MainWindow::displatScreenToolTip()
     }
 
     _ui->scrLabel->setToolTip(toolTip);
-}
-
-QPushButton* MainWindow::createButton(const QString& objName, const QString& text)
-{
-    QPushButton* btn = new QPushButton(this);
-    btn->setObjectName(objName);
-    btn->setText(text);
-    return btn;
 }
 
 void MainWindow::createTray()
@@ -633,15 +621,15 @@ void MainWindow::saveScreen()
 
 void MainWindow::createShortcuts()
 {
-    _ui->butNew->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutNew));
-    _ui->butSave->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutSave));
-    _ui->butCopy->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
-    _ui->butOpt->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
-    _ui->butHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
+    _ui->actionNew->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutNew));
+    _ui->actionSave->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutSave));
+    _ui->actionCopy->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
+    _ui->actionOptions->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
+    _ui->actionHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
 
     if (_core->conf->getCloseInTray() == true && _core->conf->getShowTrayIcon() == true)
     {
-        _ui->butQuit->setShortcut(QKeySequence());
+        _ui->actionQuit->setShortcut(QKeySequence());
         _hideWnd = new QShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose), this);
         connect(_hideWnd, SIGNAL(activated()), this, SLOT(close()));
     }
@@ -651,7 +639,7 @@ void MainWindow::createShortcuts()
         {
             delete _hideWnd;
         }
-        _ui->butQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+        _ui->actionQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
     }
 
 
