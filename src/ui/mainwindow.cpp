@@ -530,12 +530,6 @@ void MainWindow::showWindow(const QString& str)
 
     netwm::init();
     netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
-
-    // small gnome hack
-    if (qgetenv("DESKTOP_SESSION") == "gnome")
-    {
-        showNormal();
-    }
 }
 
 // show tray messages
@@ -613,27 +607,13 @@ void MainWindow::saveScreen()
 
     while(iter != formatsAvalible.constEnd())
     {
-        if (QString(qgetenv("DESKTOP_SESSION")).contains("kde") && iter.key() == format )
-        {
-            fileFilters.prepend(iter.value() + " (*." + iter.key() + ");;");
-        }
-        else
-        {
-            fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
-        }
+        fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
         ++iter;
     }
     fileFilters.chop(2);
 
     QString fileName;
-    if (qgetenv("DESKTOP_SESSION").contains("kde") || qgetenv("DESKTOP_SESSION") == "gnome")
-    {
-        fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
-    }
-    else
-    {
-        fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected, QFileDialog::DontUseNativeDialog);
-    }
+    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
 
     QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
