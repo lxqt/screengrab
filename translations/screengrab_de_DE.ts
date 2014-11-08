@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de_DE">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -302,12 +302,12 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
         <source>Extended preformed html or bb codes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweiterte vorgeformte HTML- oder BB-Codes:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Link, um das Bild zu löschen:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="301"/>
@@ -354,7 +354,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="286"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen Sie diesen Link in Ihrem Standard-Web-Browser, so kann Ihr hochgeladenes Bild ohne jede Warnung gelöscht werden.</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="195"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/ui/mainwindow.ui" line="251"/>
         <source>Copy Screen</source>
-        <translation type="unfinished">Foto kopieren</translation>
+        <translation>Bildschirmfoto kopieren</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="254"/>
@@ -611,7 +611,8 @@
         <location filename="../src/core/regionselect.cpp" line="162"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markieren Sie mit der Maus einen rechteckigen Ausschnitt oder beenden Sie den Vorgang,
+indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="194"/>
@@ -624,7 +625,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="40"/>
         <source>External edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Externer Editor</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="65"/>
@@ -657,17 +658,17 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="241"/>
         <source>HTML code with thumb image</source>
-        <translation type="unfinished"></translation>
+        <translation>HTML-Code mit Miniaturansicht</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="244"/>
         <source>BB code with thumb image</source>
-        <translation type="unfinished"></translation>
+        <translation>BB-Code mit Miniaturansicht</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="247"/>
         <source>URl to delete image</source>
-        <translation type="unfinished"></translation>
+        <translation>URI für das Löschen des Bildes</translation>
     </message>
 </context>
 <context>
@@ -708,7 +709,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
         <source>Now is nothing yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Konfiguration vorhanden</translation>
     </message>
 </context>
 <context>
@@ -726,7 +727,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="43"/>
         <source>Now is nothing yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Konfiguration vorhanden</translation>
     </message>
 </context>
 <context>
@@ -784,12 +785,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="394"/>
         <source>Inserting current date time into saved filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelles Datum und Uhrzeit in den Dateinamen einfügen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="397"/>
         <source>Insert current date and time in file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelles Datum und Uhrzeit in den Dateinamen einfügen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="444"/>
@@ -814,7 +815,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="465"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehrere Instanzen von ScreenGrab zulassen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="478"/>
@@ -834,7 +835,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="592"/>
         <source>Minimize to tray when closing</source>
-        <translation type="unfinished">Beim Beenden in den Systemtray minimieren</translation>
+        <translation>Beim Beenden in den Systemtray minimieren</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="622"/>
@@ -844,12 +845,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="632"/>
         <source>Global shortcuts</source>
-        <translation type="unfinished">Globale Tastenkombinationen</translation>
+        <translation>Globale Tastenkombinationen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="639"/>
         <source>Fill screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmfoto ausfüllen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="644"/>
@@ -864,22 +865,22 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/ui/configwidget.ui" line="655"/>
         <source>Local shortcuts</source>
-        <translation type="unfinished">Lokale Tastenkombinationen</translation>
+        <translation>Lokale Tastenkombinationen</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="659"/>
         <source>New screen</source>
-        <translation type="unfinished">Neues Foto</translation>
+        <translation>Neues Bildschirmfoto</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="664"/>
         <source>Save screen</source>
-        <translation type="unfinished">Foto speichern</translation>
+        <translation>Bildschirmfoto speichern</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="669"/>
         <source>Copy screen</source>
-        <translation type="unfinished">Foto kopieren</translation>
+        <translation>Bildschirmfoto kopieren</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="679"/>
