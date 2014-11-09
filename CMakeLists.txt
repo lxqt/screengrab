@@ -56,12 +56,18 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual 
 add_definitions(-DPREFIX="${CMAKE_INSTALL_PREFIX}")
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
-# find libs dir
-string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
-if(IS64BITS)
-    set(LIBDIR "lib64")
+if(DEFINED LIB_SUFFIX)
+    set(LIB_SUFFIX ${LIB_SUFFIX} CACHE STRING "Library Installation Suffix")
+    message(STATUS "Library Install Suffix: " ${LIB_SUFFIX})
+    set(LIBDIR "lib/${LIB_SUFFIX}" CACHE STRING "Library Installation Dir")
 else()
-    set(LIBDIR "lib")
+    # find libs dir
+    string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
+    if(IS64BITS)
+        set(LIBDIR "lib64")
+    else()
+        set(LIBDIR "lib")
+    endif()
 endif()
 
 set(SG_LIBDIR "${LIBDIR}/screengrab")
@@ -151,13 +157,6 @@ set(SCREENGRAB_UI
     src/ui/configwidget.ui
     src/ui/aboutwidget.ui
     src/ui/mainwindow.ui
-)
-
-# documentation files
-set(DOCS
-    "${CMAKE_CURRENT_SOURCE_DIR}/docs/ChangeLog.txt"
-    "${CMAKE_CURRENT_SOURCE_DIR}/docs/LICENSE.txt"
-    "${CMAKE_CURRENT_SOURCE_DIR}/README.md"
 )
 
 # Qt resource file
