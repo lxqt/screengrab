@@ -1,4 +1,4 @@
-1.1-dev
+1.1
  * added ability to upload to MediaCreush (http://mediacru.sh)
  * Option "Always save the window size" replaced by "autosave window size on exit ScreenGrab"
  * Reworked main window ui (the order of the buttons)
