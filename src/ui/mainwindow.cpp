@@ -69,11 +69,27 @@ MainWindow::MainWindow(QWidget* parent) :
     
     connect(_globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 #endif
-    
+
     _trayIcon = NULL;
 	_hideWnd = NULL;
-    updateUI();
     
+    actAbout = NULL;
+    actHelp = NULL;
+
+    if (!actHelp) 
+    {
+        actHelp = new QAction(tr("Help"), this);
+        connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );    
+    }
+    
+    if (!actAbout) 
+    {
+        actAbout = new QAction(tr("About"), this);
+        connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
+    }    
+
+    updateUI();
+
     delayBoxChange(_core->conf->getDelay());
     _ui->cbxTypeScr->setCurrentIndex(_core->conf->getTypeScreen());
 
@@ -83,7 +99,7 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(_ui->butQuit, SIGNAL(clicked()), this, SLOT(quit()));
     connect(_ui->butNew, SIGNAL(clicked()), this, SLOT(newScreen()) );
     connect(_ui->butCopy, SIGNAL(clicked()), this, SLOT(copyScreen()));
-	
+
 	// Create advanced menu
 	QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
 	int  insIndex = _ui->layotButtons->indexOf(_ui->butCopy) + 1;
@@ -127,8 +143,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	menuInfo->addAction(actHelp);
 	menuInfo->addAction(actAbout);
 	_ui->butHelp->setMenu(menuInfo);
-	
-//     connect(_ui->butHelp, SIGNAL(clicked()), this, SLOT(showHelp()));
+
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
 
@@ -389,16 +404,14 @@ QPushButton* MainWindow::createButton(const QString& objName, const QString& tex
 void MainWindow::createTray()
 {    
     _trayed = false;
-    
+
     // create actions menu
     actQuit = new QAction(tr("Quit"), this);
     actSave = new QAction(tr("Save"), this);
     actNew = new QAction(tr("New"), this);
     actCopy = new QAction(tr("Copy"), this);
-    actHideShow = new QAction(tr("Hide"), this);
-    actAbout = new QAction(tr("About"), this);
+    actHideShow = new QAction(tr("Hide"), this);    
     mOptions = new QAction(tr("Options"), this);
-    actHelp = new QAction(tr("Help"), this);
 
     // connect to slots
     connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
@@ -407,8 +420,7 @@ void MainWindow::createTray()
     connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
-    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
-    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
+
     connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
@@ -490,10 +502,10 @@ void MainWindow::updateUI()
 {
     // update delay spinbox
     _ui->delayBox->setValue(_core->conf->getDelay());
-
+    
     // update shortcuts
     createShortcuts();
-    
+
     // create tray object
     if (_core->conf->getShowTrayIcon() == true && _trayIcon == NULL)
     {
