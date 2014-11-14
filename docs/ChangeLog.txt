@@ -1,3 +1,7 @@
+1.1.1
+ * Fixed wrong 'imgur' uploading result string for bb-code with preview
+ * Fixed segfault when exist configuration file contains "showTrayIcon=false"
+
 1.1
  * added ability to upload to MediaCreush (http://mediacru.sh)
  * Option "Always save the window size" replaced by "autosave window size on exit ScreenGrab"
