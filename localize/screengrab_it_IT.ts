@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT">
+<TS version="2.1" language="it_IT">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -121,7 +121,7 @@
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="168"/>
-        <source>Burjans L GarcÃ­a D</source>
+        <source>Burjans L García D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -486,7 +486,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="289"/>
-        <location filename="../src/ui/mainwindow.cpp" line="400"/>
+        <location filename="../src/ui/mainwindow.cpp" line="414"/>
         <source>Options</source>
         <translation>Impostazioni</translation>
     </message>
@@ -502,7 +502,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="314"/>
-        <location filename="../src/ui/mainwindow.cpp" line="401"/>
+        <location filename="../src/ui/mainwindow.cpp" line="81"/>
         <source>Help</source>
         <translation>Guida</translation>
     </message>
@@ -523,76 +523,76 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="339"/>
-        <location filename="../src/ui/mainwindow.cpp" line="394"/>
+        <location filename="../src/ui/mainwindow.cpp" line="409"/>
         <source>Quit</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="395"/>
+        <location filename="../src/ui/mainwindow.cpp" line="410"/>
         <source>Save</source>
         <translation>Salva</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="396"/>
+        <location filename="../src/ui/mainwindow.cpp" line="411"/>
         <source>New</source>
         <translation>Nuovo</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="397"/>
+        <location filename="../src/ui/mainwindow.cpp" line="412"/>
         <source>Copy</source>
         <translation>Copia</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="398"/>
-        <location filename="../src/ui/mainwindow.cpp" line="527"/>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
+        <location filename="../src/ui/mainwindow.cpp" line="413"/>
+        <location filename="../src/ui/mainwindow.cpp" line="539"/>
+        <location filename="../src/ui/mainwindow.cpp" line="569"/>
         <source>Hide</source>
         <translation>Nascondi</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="399"/>
+        <location filename="../src/ui/mainwindow.cpp" line="87"/>
         <source>About</source>
         <translation>Informazioni su</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="370"/>
+        <location filename="../src/ui/mainwindow.cpp" line="385"/>
         <source>Screenshot </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="374"/>
+        <location filename="../src/ui/mainwindow.cpp" line="389"/>
         <source>Double click for open screenshot in external default image viewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="463"/>
+        <location filename="../src/ui/mainwindow.cpp" line="475"/>
         <source>None</source>
         <translation>Nessuno</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="534"/>
+        <location filename="../src/ui/mainwindow.cpp" line="546"/>
         <source>Show</source>
         <translation>Mostra</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="647"/>
+        <location filename="../src/ui/mainwindow.cpp" line="659"/>
         <source>PNG Files</source>
         <translation>File PNG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="648"/>
+        <location filename="../src/ui/mainwindow.cpp" line="660"/>
         <source>JPEG Files</source>
         <translation>File JPEG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="649"/>
+        <location filename="../src/ui/mainwindow.cpp" line="661"/>
         <source>BMP Files</source>
         <translation>File BMP</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="680"/>
-        <location filename="../src/ui/mainwindow.cpp" line="684"/>
-        <location filename="../src/ui/mainwindow.cpp" line="688"/>
+        <location filename="../src/ui/mainwindow.cpp" line="692"/>
+        <location filename="../src/ui/mainwindow.cpp" line="696"/>
+        <location filename="../src/ui/mainwindow.cpp" line="700"/>
         <source>Save As...</source>
         <translation>Salva con nome...</translation>
     </message>
@@ -939,11 +939,6 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
         <translation>Guida</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="684"/>
-        <source>Exit</source>
-        <translation type="unfinished">Esci</translation>
-    </message>
-    <message>
         <location filename="../src/ui/configwidget.ui" line="702"/>
         <source>Not defined</source>
         <translation>Non definito</translation>
@@ -1143,6 +1138,11 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
         <location filename="../src/ui/configwidget.ui" line="627"/>
         <source>Shortcut</source>
         <translation>Scorciatoia</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="684"/>
+        <source>Quit</source>
+        <translation type="unfinished">Esci</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="695"/>

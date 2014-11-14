@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -121,8 +121,8 @@
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="168"/>
-        <source>Burjans L GarcÃ­a D</source>
-        <translation></translation>
+        <source>Burjans L García D</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="170"/>
@@ -385,83 +385,83 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="370"/>
+        <location filename="../src/ui/mainwindow.cpp" line="385"/>
         <source>Screenshot </source>
         <translation>Скріншот </translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="374"/>
+        <location filename="../src/ui/mainwindow.cpp" line="389"/>
         <source>Double click for open screenshot in external default image viewer</source>
         <translation>Подвійний клік відкриє скріншот у зовнішньому переглядачі</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="339"/>
-        <location filename="../src/ui/mainwindow.cpp" line="394"/>
+        <location filename="../src/ui/mainwindow.cpp" line="409"/>
         <source>Quit</source>
         <translation>Вихід</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="395"/>
+        <location filename="../src/ui/mainwindow.cpp" line="410"/>
         <source>Save</source>
         <translation>Зберегти</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="396"/>
+        <location filename="../src/ui/mainwindow.cpp" line="411"/>
         <source>New</source>
         <translation>Новий</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="397"/>
+        <location filename="../src/ui/mainwindow.cpp" line="412"/>
         <source>Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="398"/>
-        <location filename="../src/ui/mainwindow.cpp" line="527"/>
-        <location filename="../src/ui/mainwindow.cpp" line="557"/>
+        <location filename="../src/ui/mainwindow.cpp" line="413"/>
+        <location filename="../src/ui/mainwindow.cpp" line="539"/>
+        <location filename="../src/ui/mainwindow.cpp" line="569"/>
         <source>Hide</source>
         <translation>Сховати вікно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="399"/>
+        <location filename="../src/ui/mainwindow.cpp" line="87"/>
         <source>About</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="647"/>
+        <location filename="../src/ui/mainwindow.cpp" line="659"/>
         <source>PNG Files</source>
         <translation>файли PNG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="648"/>
+        <location filename="../src/ui/mainwindow.cpp" line="660"/>
         <source>JPEG Files</source>
         <translation>файли JPEG</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="649"/>
+        <location filename="../src/ui/mainwindow.cpp" line="661"/>
         <source>BMP Files</source>
         <translation>файли BMP</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="289"/>
-        <location filename="../src/ui/mainwindow.cpp" line="400"/>
+        <location filename="../src/ui/mainwindow.cpp" line="414"/>
         <source>Options</source>
         <translation>Налаштування</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="463"/>
+        <location filename="../src/ui/mainwindow.cpp" line="475"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="534"/>
+        <location filename="../src/ui/mainwindow.cpp" line="546"/>
         <source>Show</source>
         <translation>Показати вікно</translation>
     </message>
     <message>
-        <location filename="../src/ui/mainwindow.cpp" line="680"/>
-        <location filename="../src/ui/mainwindow.cpp" line="684"/>
-        <location filename="../src/ui/mainwindow.cpp" line="688"/>
+        <location filename="../src/ui/mainwindow.cpp" line="692"/>
+        <location filename="../src/ui/mainwindow.cpp" line="696"/>
+        <location filename="../src/ui/mainwindow.cpp" line="700"/>
         <source>Save As...</source>
         <translation>Зберегти як...</translation>
     </message>
@@ -577,7 +577,7 @@
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="314"/>
-        <location filename="../src/ui/mainwindow.cpp" line="401"/>
+        <location filename="../src/ui/mainwindow.cpp" line="81"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
@@ -939,11 +939,6 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="684"/>
-        <source>Exit</source>
-        <translation>Вихід</translation>
-    </message>
-    <message>
         <location filename="../src/ui/configwidget.ui" line="702"/>
         <source>Not defined</source>
         <translation>Не вибрана</translation>
@@ -1133,6 +1128,11 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/ui/configwidget.ui" line="627"/>
         <source>Shortcut</source>
         <translation>Клавіші</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="684"/>
+        <source>Quit</source>
+        <translation type="unfinished">Вихід</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="695"/>
