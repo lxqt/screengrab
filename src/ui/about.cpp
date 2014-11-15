@@ -22,7 +22,7 @@
 #include "ui_aboutwidget.h"
 
 #include "src/core/core.h"
-#include <QtGui/QDesktopServices>
+#include <QDesktopServices>
 
 AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),
@@ -131,23 +131,23 @@ QString AboutDialog::tabAbout()
 QString AboutDialog::tabHelpUs()
 {
     QString str;
-	str += tr("You can join us and help us if you want. This is an invitation if you like this application.");
-	str += "<br><br>";
-	
-	str += tr("What you can do?");
-	
-	str += "<ul>";
-	str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
-	str += "<li>" + tr("Make suggestions for next releases") + "</li>";
-	str += "<li>" + tr("Report bugs and issues") + "</li>";
-	str += "</ul>";
-	
+    str += tr("You can join us and help us if you want. This is an invitation if you like this application.");
+    str += "<br><br>";
+
+    str += tr("What you can do?");
+
+    str += "<ul>";
+    str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
+    str += "<li>" + tr("Make suggestions for next releases") + "</li>";
+    str += "<li>" + tr("Report bugs and issues") + "</li>";
+    str += "</ul>";
+
     str += tr("E-Mail");
-	str += "<br>";
+    str += "<br>";
     str += "<a href=mailto:doomer3d@gmail.com>mailto:doomer3d@gmail.com</a>";
     str += "<br><br>";
-	str += tr("Bug tracker");
-	str += "<br>";
+    str += tr("Bug tracker");
+    str += "<br>";
     str += "<a href=https://github.com/DOOMer/screengrab/issues>https://github.com/DOOMer/screengrab/issues/</a>";
 
     return str;

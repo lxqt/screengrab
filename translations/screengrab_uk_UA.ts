@@ -611,7 +611,7 @@
         <location filename="../src/core/regionselect.cpp" line="162"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation>Використовуйте ліву клавішу мишки для виділення частини екрану. 
+        <translation>Використовуйте ліву клавішу мишки для виділення частини екрану.
 Клавіатурні клавіші і права кнопка мишки відміняють режим виділення області.</translation>
     </message>
     <message>
@@ -700,24 +700,6 @@ any key or using the right or middle mouse buttons.</source>
     </message>
 </context>
 <context>
-    <name>UploaderConfigWidget_ImgShack</name>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="20"/>
-        <source>Account settings for imageshack.us</source>
-        <translation>Акаунт на imageshack.us</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="32"/>
-        <source>Username: </source>
-        <translation>Користувач:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="46"/>
-        <source>Password: </source>
-        <translation>Пароль:</translation>
-    </message>
-</context>
-<context>
     <name>UploaderConfigWidget_ImgUr</name>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
@@ -746,39 +728,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="43"/>
         <source>Now is nothing yet</source>
         <translation type="unfinished">Ще нічого немає</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_ImgShack_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="20"/>
-        <source>Upload to imageshack.us</source>
-        <translation>Завантаження на imageshack.us</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="54"/>
-        <source>Resize image: </source>
-        <translation>Змінити розмір:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="65"/>
-        <source>No resize</source>
-        <translation>Не змінювати</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="186"/>
-        <source>Anonymous upload</source>
-        <translation>Анонімне завантаження</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.cpp" line="32"/>
-        <source>Warning!</source>
-        <translation>Попередження!</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.cpp" line="33"/>
-        <source>Resize makes on servers imageshack.us</source>
-        <translation>Зміна розміру виконується на серверах imageshack.us</translation>
     </message>
 </context>
 <context>

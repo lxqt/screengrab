@@ -30,14 +30,13 @@ UploaderConfigWidget_ImgUr::UploaderConfigWidget_ImgUr(QWidget *parent) :
     _ui(new Ui::UploaderConfigWidget_ImgUr)
 {
     _ui->setupUi(this);
-	
-	// load settings
-	UploaderConfig config;
-	
-	QVariantMap loadedValues;
-	// TODO add imgur settings load
-	
-	
+
+    // load settings
+    UploaderConfig config;
+
+    QVariantMap loadedValues;
+    // TODO add imgur settings load
+
 }
 
 UploaderConfigWidget_ImgUr::~UploaderConfigWidget_ImgUr()
@@ -47,9 +46,9 @@ UploaderConfigWidget_ImgUr::~UploaderConfigWidget_ImgUr()
 
 void UploaderConfigWidget_ImgUr::saveSettings()
 {
-	UploaderConfig config;
-	
-	QVariantMap savingValues;
+    UploaderConfig config;
+
+    QVariantMap savingValues;
 }
 
 

@@ -21,7 +21,7 @@
 #ifndef UPLOADERCONFIGWIDGET_IMGUR_H
 #define UPLOADERCONFIGWIDGET_IMGUR_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 namespace Ui {
 class UploaderConfigWidget_ImgUr;
@@ -30,17 +30,17 @@ class UploaderConfigWidget_ImgUr;
 class UploaderConfigWidget_ImgUr : public QWidget
 {
     Q_OBJECT
-    
+
 public:
     explicit UploaderConfigWidget_ImgUr(QWidget *parent = 0);
     ~UploaderConfigWidget_ImgUr();
-	
+
 public Q_SLOTS:
-	void saveSettings();
-    
+    void saveSettings();
+
 protected:
     void changeEvent(QEvent *e);
-    
+
 private:
     Ui::UploaderConfigWidget_ImgUr *_ui;
 };

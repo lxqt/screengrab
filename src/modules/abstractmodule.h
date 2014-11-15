@@ -21,24 +21,24 @@
 #ifndef ABSTRACTMODULE_H
 #define ABSTRACTMODULE_H
 
-#include <QtCore/QList>
-#include <QtGui/QWidget>
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
+#include <QList>
+#include <QWidget>
+#include <QAction>
+#include <QMenu>
 
 class AbstractModule
 {
 public:
-	AbstractModule() {};
-	virtual ~AbstractModule() {};
-	
-	// intrface
-	virtual void init() = 0;
-	virtual QString moduleName() = 0;
-	virtual QWidget* initConfigWidget() = 0;
-	virtual void defaultSettings() = 0;
-	virtual QMenu* initModuleMenu() = 0;
-	virtual QAction* initModuleAction() = 0;
+    AbstractModule() {};
+    virtual ~AbstractModule() {};
+
+    // interface
+    virtual void init() = 0;
+    virtual QString moduleName() = 0;
+    virtual QWidget* initConfigWidget() = 0;
+    virtual void defaultSettings() = 0;
+    virtual QMenu* initModuleMenu() = 0;
+    virtual QAction* initModuleAction() = 0;
 };
 
 

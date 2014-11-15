@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,65 +33,53 @@ int main(int argc, char *argv[])
     SingleApp scr(argc, argv, VERSION);
     scr.setApplicationVersion(VERSION);
 
-#ifdef Q_WS_WIN
-    QStringList libPath;
-    libPath << scr.applicationDirPath();
-    scr.setLibraryPaths(libPath );
-#endif
-
     QTranslator localize;
 
-#ifdef Q_WS_X11
     QString localizeFile = PREFIX;
-    localizeFile.append("/share/screengrab/localize/screengrab_"+Config::getSysLang()+".qm");
+    localizeFile.append("/share/screengrab/translations/screengrab_"+Config::getSysLang()+".qm");
     localize.load(localizeFile);
-
-#endif
-#ifdef Q_WS_WIN // QLocale::system().name()
-    localize.load(scr.applicationDirPath()+"/localize/screengrab_"+Config::getSysLang()+".qm");
-#endif
 
     scr.installTranslator(&localize);
 
     Core *ScreenGrab = Core::instance();
-	ScreenGrab->modules()->initModules();
-	ScreenGrab->parseCmdLine();
-	
+    ScreenGrab->modules()->initModules();
+    ScreenGrab->parseCmdLine();
+
     MainWindow mainWnd;
 
     if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
     {
         ScreenGrab->screenShot(true);
-		
-		if ( ScreenGrab->cmdLine()->checkParam("minimized"))
-		{
-			if (mainWnd.isTrayed() == true)
-			{
-				mainWnd.windowHideShow();
-			}
-			else
-			{
-				mainWnd.showMinimized();
-			}
-		}
-		else
-		{		
-			mainWnd.show();
-		}
+
+        if ( ScreenGrab->cmdLine()->checkParam("minimized"))
+        {
+            if (mainWnd.isTrayed() == true)
+            {
+                mainWnd.windowHideShow();
+            }
+            else
+            {
+                mainWnd.showMinimized();
+            }
+        }
+        else
+        {
+            mainWnd.show();
+        }
     }
 
 #ifdef SG_EXT_UPLOADS
 // FIXME for v1.1 (move call uploader form main() function to app core)
     if (ScreenGrab->cmdLine()->checkParam("upload"))
     {
-		mainWnd.hide();
+        mainWnd.hide();
 
-		ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
-		QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
-		uploader->init();
+        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
+        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
+        uploader->init();
     }
 #endif
-    
+
     QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
 
     if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
@@ -103,7 +91,7 @@ int main(int argc, char *argv[])
 
     if (ScreenGrab->cmdLine()->checkParam("help"))
     {
-		ScreenGrab->cmdLine()->printHelp();
+        ScreenGrab->cmdLine()->printHelp();
         return 0;
     }
 
@@ -113,6 +101,6 @@ int main(int argc, char *argv[])
         CmdLine::print(version);
         return 0;
     }
-    
-    return scr.exec();	
+
+    return scr.exec();
 }

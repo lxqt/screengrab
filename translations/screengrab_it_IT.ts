@@ -700,24 +700,6 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     </message>
 </context>
 <context>
-    <name>UploaderConfigWidget_ImgShack</name>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="20"/>
-        <source>Account settings for imageshack.us</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="32"/>
-        <source>Username: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploaderconfigwidget_imgshack.ui" line="46"/>
-        <source>Password: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>UploaderConfigWidget_ImgUr</name>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
@@ -745,39 +727,6 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="43"/>
         <source>Now is nothing yet</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_ImgShack_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="20"/>
-        <source>Upload to imageshack.us</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="54"/>
-        <source>Resize image: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="65"/>
-        <source>No resize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.ui" line="186"/>
-        <source>Anonymous upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.cpp" line="32"/>
-        <source>Warning!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgshack/uploader_imgshack_widget.cpp" line="33"/>
-        <source>Resize makes on servers imageshack.us</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

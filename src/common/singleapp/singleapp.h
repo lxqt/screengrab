@@ -21,9 +21,9 @@
 #ifndef SINGLEAPP_H
 #define SINGLEAPP_H
 
-#include <QtGui/QApplication>
-#include <QtCore/QSharedMemory>
-#include <QtNetwork/QLocalServer>
+#include <QApplication>
+#include <QSharedMemory>
+#include <QLocalServer>
 
 class SingleApp : public QApplication
 {

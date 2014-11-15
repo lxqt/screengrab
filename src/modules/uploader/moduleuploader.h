@@ -21,34 +21,34 @@
 #ifndef MODULEUPLOADER_H
 #define MODULEUPLOADER_H
 
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
-#include <QtCore/QObject>
-#include <QtGui/QWidget>
+#include <QObject>
+#include <QWidget>
 
 class ModuleUploader: public QObject, public AbstractModule
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     ModuleUploader(QObject *parent = 0);
-	QString moduleName();
-	QWidget* initConfigWidget();
-	void defaultSettings();
-	QMenu* initModuleMenu();	
-	QAction* initModuleAction();
-	
+    QString moduleName();
+    QWidget* initConfigWidget();
+    void defaultSettings();
+    QMenu* initModuleMenu();
+    QAction* initModuleAction();
+
 public Q_SLOTS:
-	void init(); 
-	
-private Q_SLOTS:	
-	void shadowUploadDone(const QString &directLink);
-	void shadowUploadFail(const QByteArray &error);
-	
+    void init();
+
+private Q_SLOTS:
+    void shadowUploadDone(const QString &directLink);
+    void shadowUploadFail(const QByteArray &error);
+
 Q_SIGNALS:
-	void uploadCompleteWithQuit();
-	
+    void uploadCompleteWithQuit();
+
 private:
-	bool _ignoreCmdParam;
+    bool _ignoreCmdParam;
 };
 
 #endif // MODULEUPLOADER_H

@@ -21,25 +21,25 @@
 #ifndef MODULEEXTEDIT_H
 #define MODULEEXTEDIT_H
 
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
 #include "extedit.h"
-#include <QtGui/QAction>
+#include <QAction>
 
 class ModuleExtEdit: public AbstractModule
 {
 public:
     ModuleExtEdit();
-	virtual ~ModuleExtEdit();
-	QString moduleName();
-	void init();
-	QMenu* initModuleMenu();
-	QWidget* initConfigWidget();
-	void defaultSettings();
-	QAction* initModuleAction();
-	
+    virtual ~ModuleExtEdit();
+    QString moduleName();
+    void init();
+    QMenu* initModuleMenu();
+    QWidget* initConfigWidget();
+    void defaultSettings();
+    QAction* initModuleAction();
+
 private:
-	ExtEdit *_extEdit;
+    ExtEdit *_extEdit;
 };
 
 #endif // MODULEEXTEDIT_H

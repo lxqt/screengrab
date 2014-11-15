@@ -21,10 +21,9 @@
 #ifndef UPLOADERCONFIGWIDGET_H
 #define UPLOADERCONFIGWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "imgur/uploaderconfigwidget_imgur.h"
-#include "imgshack/uploaderconfigwidget_imgshack.h"
 #include "mediacrush/uploaderconfigwidget_mediacrush.h"
 
 namespace Ui {
@@ -34,25 +33,24 @@ class UploaderConfigWidget;
 class UploaderConfigWidget : public QWidget
 {
     Q_OBJECT
-    
+
 public:
     explicit UploaderConfigWidget(QWidget *parent = 0);
     ~UploaderConfigWidget();
-	
+
 public Q_SLOTS:
-	void loadSettings();
-	void saveSettings();
-	    
+    void loadSettings();
+    void saveSettings();
+
 protected:
     void changeEvent(QEvent *e);
-    
+
 private:
     Ui::UploaderConfigWidget *_ui;
-	
-	// services widgets
-	UploaderConfigWidget_MediaCrush *_crush;
-	UploaderConfigWidget_ImgUr *_imgur;
-	UploaderConfigWidget_ImgShack *_imgshack;
+
+    // services widgets
+    UploaderConfigWidget_MediaCrush *_crush;
+    UploaderConfigWidget_ImgUr *_imgur;
 };
 
 #endif // UPLOADERCONFIGWIDGET_H
