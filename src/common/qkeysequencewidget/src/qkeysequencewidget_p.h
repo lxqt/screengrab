@@ -29,13 +29,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef QKEYSEQUENCEWIDGET_P_H
 #define QKEYSEQUENCEWIDGET_P_H
 
-#include <QtGui/QKeySequence>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QToolButton>
-#include <QtGui/QPushButton>
-#include <QtCore/QTimer>
-#include <QtCore/QDebug>
-#include <QtGui/QIcon>
+#include <QKeySequence>
+#include <QHBoxLayout>
+#include <QToolButton>
+#include <QPushButton>
+#include <QTimer>
+#include <QDebug>
+#include <QIcon>
 
 #include "qkeysequencewidget.h"
 

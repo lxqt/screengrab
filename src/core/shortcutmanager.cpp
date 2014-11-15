@@ -24,7 +24,7 @@
 const QString DEF_SHORTCUT_NEW = "Ctrl+N";
 const QString DEF_SHORTCUT_SAVE = "Ctrl+S";
 const QString DEF_SHORTCUT_COPY = "Ctrl+C";
-const QString DEF_SHORTCUT_OPT = "Ctrl+O";
+const QString DEF_SHORTCUT_OPT = "Ctrl+P";
 const QString DEF_SHORTCUT_HELP = "F1";
 const QString DEF_SHORTCUT_CLOSE = "Esc";
 const QString DEF_SHORTCUT_FULL = "";
@@ -131,17 +131,17 @@ QStringList ShortcutManager::getShortcutsList(int type)
     QStringList retList;
     for (int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
     {
-	if (_listShortcuts[i].type == type)
-	{
-	    if (_listShortcuts[i].key.isNull() != true)
-	    {
-		retList << _listShortcuts[i].key;
-	    }
-	    else
-	    {
-		retList << QString("");
-	    }
-	}
+        if (_listShortcuts[i].type == type)
+        {
+            if (_listShortcuts[i].key.isNull() != true)
+            {
+                retList << _listShortcuts[i].key;
+            }
+            else
+            {
+                retList << QString("");
+            }
+        }
     }
     return retList;
 }

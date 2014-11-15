@@ -21,14 +21,14 @@
 #ifndef EXTEDIT_H
 #define EXTEDIT_H
 
-#include <QtCore/QObject>
-#include <QtCore/QProcess>
-#include <QtCore/QFileSystemWatcher>
-#include <QtGui/QAction>
+#include <QObject>
+#include <QProcess>
+#include <QFileSystemWatcher>
+#include <QAction>
 
 struct ExtApp_t {
-	QString exec;
-	QString name;
+    QString exec;
+    QString name;
 };
 
 typedef QList<ExtApp_t> ExtAppsList_t;
@@ -40,25 +40,23 @@ public:
     explicit ExtEdit(QObject *parent = 0);
     QStringList listAppNames();
     void addAppAction(QAction* act);
-	
+
 public Q_SLOTS:
     void runExternalEditor();
-	
+
 private Q_SLOTS:
-	void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
-	void editedFileChanged(const QString & path);
-	
+    void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
+    void editedFileChanged(const QString & path);
+
 private:
-	void createAppList();
-#ifdef Q_WS_X11
-	ExtApp_t readDesktopFile(QString filename, QByteArray path);
-#endif
-	
-	ExtAppsList_t _appList;
-	QList<QAction*> _actionList;
-	QString _editFilename;
-	bool _fileIsCnaged;
-	QFileSystemWatcher *_watcherEditedFile;
+    void createAppList();
+    ExtApp_t readDesktopFile(QString filename, QByteArray path);
+
+    ExtAppsList_t _appList;
+    QList<QAction*> _actionList;
+    QString _editFilename;
+    bool _fileIsCnaged;
+    QFileSystemWatcher *_watcherEditedFile;
 };
 
 #endif // EXTEDIT_H

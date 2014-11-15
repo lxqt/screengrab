@@ -31,17 +31,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "qkeysequencewidget_p.h"
 
-#include <QtGui/QWidget>
-#include <QtGui/QIcon>
+#include <QWidget>
+#include <QIcon>
 
-#ifdef Q_WS_X11
 #if defined IS_SHARED
 #define QKSW_EXPORT Q_DECL_EXPORT
 #else
 #define QKSW_EXPORT Q_DECL_IMPORT
-#endif
-#else
-#define QKSW_EXPORT
 #endif
 
 class QKeySequenceWidgetPrivate;

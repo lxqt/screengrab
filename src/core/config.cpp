@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,12 +21,12 @@
 #include "src/core/config.h"
 #include "core.h"
 
-#include <QtGui/QApplication>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QLocale>
-#include <QtCore/QVector>
-#include <QtGui/QDesktopServices>
+#include <QApplication>
+#include <QDir>
+#include <QFile>
+#include <QLocale>
+#include <QVector>
+#include <QDesktopServices>
 
 #include <QDebug>
 
@@ -55,9 +55,7 @@ const QString KEY_TYPE_SCREEN = "typeScreenDefault";
 
 const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
 
-#ifdef Q_WS_X11
 const QString KEY_NODECOR = "noDecorations";
-#endif
 
 Config* Config::ptrInstance = 0;
 
@@ -72,22 +70,19 @@ Config::Config()
     if (!QFile::exists(getConfigFile()))
     {
         // creating conf file from set defaults
-		QFile cf(getConfigFile());
-		if (cf.open(QIODevice::WriteOnly))
-		{
-			cf.close();
-			qDebug() << "creating";
-		}
-		
+        QFile cf(getConfigFile());
+        if (cf.open(QIODevice::WriteOnly))
+        {
+            cf.close();
+            qDebug() << "creating";
+        }
+
         setDefaultSettings();
         saveSettings();
     }
 
     _imageFormats << "png" << "jpg" << "bmp";
-
-#if QT_VERSION >= 0x040500
     _settings->setIniCodec("UTF-8");
-#endif
     _scrNum = 0;
 }
 
@@ -130,32 +125,26 @@ QString Config::getConfigFile()
 {
     QString configFile;
 
-#ifdef Q_WS_X11
     configFile = Config::getConfigDir() + "screengrab.conf";
-    
+
     // moving old stile storange setting to XDG_CONFIG_HOME storage
     QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "screengrab.conf";
     if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
     {
         QFile::rename(oldConfigFile, configFile);
     }
-#endif
 
-#ifdef Q_WS_WIN
-    configFile = Config::getConfigDir() +"screengrab.ini";
-#endif	
     return configFile;
 }
 
 QString Config::getConfigDir()
 {
     QString configDir;
-#ifdef Q_WS_X11
     #ifdef SG_XDG_CONFIG_SUPPORT
-        // old style config path    
+        // old style config path
         QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
         configDir = qgetenv("XDG_CONFIG_HOME");
-        
+
         // Ubuntu hack -- if XDG_CONFIG_HOME is missing
         if (configDir.isEmpty() == true)
         {
@@ -163,25 +152,19 @@ QString Config::getConfigDir()
             configDir += QDir::separator();
             configDir += ".config";
         }
-        
+
         configDir.append(QDir::separator());
         configDir.append("screengrab");
         configDir.append(QDir::separator());
     #else
         configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
     #endif
-#endif
-    
-    // if win32
-#ifdef Q_WS_WIN
-    configDir.append(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "ScreenGrab" + QDir::toNativeSeparators(QDir::separator()));
-#endif
-	
-	if (QFile::exists(configDir) == false)
-	{
-		QDir confDir(configDir);
-		confDir.mkpath(confDir.path());
-	}
+
+    if (QFile::exists(configDir) == false)
+    {
+        QDir confDir(configDir);
+        confDir.mkpath(confDir.path());
+    }
     return configDir;
 }
 
@@ -191,12 +174,12 @@ QString Config::getConfigDir()
 QString Config::getScrNumStr()
 {
     QString str = QString::number(_scrNum);
-    
+
     if (_scrNum < 10)
     {
         str.prepend("0");
     }
-    
+
     return str;
 }
 
@@ -227,12 +210,12 @@ QDateTime Config::getLastSaveDate() const
 
 bool Config::getEnableExtView()
 {
-	return value(KEY_ENABLE_EXT_VIEWER).toBool();
+    return value(KEY_ENABLE_EXT_VIEWER).toBool();
 }
 
 void Config::setEnableExtView(bool val)
 {
-	setValue(KEY_ENABLE_EXT_VIEWER, val);
+    setValue(KEY_ENABLE_EXT_VIEWER, val);
 }
 
 
@@ -430,7 +413,6 @@ void Config::setShowTrayIcon(bool val)
     setValue(KEY_SHOW_TRAY, val);
 }
 
-#ifdef Q_WS_X11
 bool Config::getNoDecorX11()
 {
     return value(KEY_NODECOR).toBool();
@@ -440,7 +422,6 @@ void Config::setNoDecorX11(bool val)
 {
     setValue(KEY_NODECOR, val);
 }
-#endif
 
 void Config::saveWndSize()
 {
@@ -464,9 +445,7 @@ void Config::loadSettings()
     setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
     setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
-#ifdef Q_WS_X11
     setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
-#endif
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
     _settings->endGroup();
 
@@ -475,14 +454,14 @@ void Config::loadSettings()
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
     // TODO - make set windows size without hardcode values
-	setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
     setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
     _settings->beginGroup("System");
     setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
     setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
-	setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
+    setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
     _settings->endGroup();
 
     setDelay(getDefDelay());
@@ -503,14 +482,12 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
-#ifdef Q_WS_X11
     _settings->setValue(KEY_NODECOR, getNoDecorX11());
-#endif
     _settings->endGroup();
 
     _settings->beginGroup("Display");
     _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
-    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());    
+    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
     _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
     _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
     _settings->endGroup();
@@ -519,11 +496,11 @@ void Config::saveSettings()
     _settings->beginGroup("System");
     _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
-	_settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
+    _settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
     _settings->endGroup();
 
     _shortcuts->saveSettings();
-    
+
     resetScrNum();
 }
 
@@ -545,35 +522,27 @@ void Config::setDefaultSettings()
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
-	// TODO - make set windows size without hardcode values
+    // TODO - make set windows size without hardcode values
     // setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOW_TRAY);
-	setEnableExtView(DEF_ENABLE_EXT_VIEWER);
+    setEnableExtView(DEF_ENABLE_EXT_VIEWER);
 
     _shortcuts->setDefaultSettings();
 
-#ifdef Q_WS_X11
     setNoDecorX11(DEF_X11_NODECOR);
-#endif
-
     setDelay(DEF_DELAY);
 
-	quint8 countModules = Core::instance()->modules()->count();	
-	for (int i = 0; i < countModules; ++i) 
-	{
-		Core::instance()->modules()->getModule(i)->defaultSettings();
-	}
+    quint8 countModules = Core::instance()->modules()->count();
+    for (int i = 0; i < countModules; ++i)
+    {
+        Core::instance()->modules()->getModule(i)->defaultSettings();
+    }
 }
 
 // get defaukt directory path
 QString Config::getDirNameDefault()
 {
-#ifdef Q_WS_X11
-    return QDir::homePath()+QDir::separator();    ;
-#endif
-#ifdef Q_WS_WIN
-    return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + QDir::separator() ;
-#endif
+    return QDir::homePath()+QDir::separator();
 }
 
 // get id of default save format
@@ -584,7 +553,6 @@ int Config::getDefaultFormatID()
 
 QString Config::getSysLang()
 {
-#ifdef Q_WS_X11
     QByteArray lang = qgetenv("LC_ALL");
 
     if (lang.isEmpty())
@@ -603,17 +571,8 @@ QString Config::getSysLang()
     {
         return  QLocale::system().name();
     }
-#endif
-#ifdef Q_WS_WIN
-    return  QLocale::system().name();
-#endif
 }
 
-
-// CmdLine* Config::cmdLine()
-// {
-//     return cmd;
-// }
 
 ShortcutManager* Config::shortcuts()
 {

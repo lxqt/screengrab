@@ -18,10 +18,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QtCore/QTimer>
-#include <QtCore/QByteArray>
+#include <QTimer>
+#include <QByteArray>
 
-#include <QtNetwork/QLocalSocket>
+#include <QLocalSocket>
 #include "singleapp.h"
 
 /*!

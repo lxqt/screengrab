@@ -22,104 +22,100 @@
 #include "dialoguploader.h"
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
-#include "imgshack/uploader_imgshack.h"
 #include "imgur/uploader_imgur.h"
 
-#include "src/core/core.h"
-#include "src/core/cmdline.h"
+#include "core/core.h"
+#include "core/cmdline.h"
 
 #include <QApplication>
-#include <QtCore/QWaitCondition>
-#include <QtCore/QMutex>
-#include <QtGui/QClipboard>
+#include <QWaitCondition>
+#include <QMutex>
+#include <QClipboard>
 #include <QDebug>
 
 const QString UPLOAD_CMD_PARAM = "upload";
 
 ModuleUploader::ModuleUploader(QObject *parent) :
-	QObject(parent), _ignoreCmdParam(false)
+    QObject(parent), _ignoreCmdParam(false)
 {
-	Core *core = Core::instance();
-	core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "upload the screenshot to the default image host", CmdLineParam::Util);
+    Core *core = Core::instance();
+    core->cmdLine()->registerParam(UPLOAD_CMD_PARAM, "upload the screenshot to the default image host", CmdLineParam::Util);
 }
 
 QString ModuleUploader::moduleName()
 {
-	return tr("Uploading");
+    return tr("Uploading");
 }
 
 void ModuleUploader::init()
 {
-	Core *core = Core::instance();
-	if (core->cmdLine()->checkParam(UPLOAD_CMD_PARAM) == true  && _ignoreCmdParam == false)
-	{
-		// TODO - add implement shadow supload screenshot to selected host
-		UploaderConfig config;
-		QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toAscii()).toString();
+    Core *core = Core::instance();
+    if (core->cmdLine()->checkParam(UPLOAD_CMD_PARAM) == true  && _ignoreCmdParam == false)
+    {
+        // TODO - add implement shadow supload screenshot to selected host
+        UploaderConfig config;
+        QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toLatin1()).toString();
 
-		Uploader *uploader = 0;
-		switch(config.labelsList().indexOf(selectedtHost))
-		{
-		case 0:
-			uploader = new Uploader_ImgUr;
-			break;
-		case 1:
-			uploader = new Uploader_ImgShack;
-			break;
-		default:
-			uploader = new Uploader_ImgShack;
-		}
+        Uploader *uploader = 0;
+        switch(config.labelsList().indexOf(selectedtHost))
+        {
+        case 0:
+            uploader = new Uploader_ImgUr;
+            break;
+        default:
+            uploader = new Uploader_ImgUr;
+        }
 
-		connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
-		connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
-		uploader->startUploading();
+        connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
+        connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
+        uploader->startUploading();
 
-		_ignoreCmdParam = true;
-	}
-	else
-	{
-		DialogUploader *ui = new DialogUploader();
-		ui->exec();
-	}
+        _ignoreCmdParam = true;
+    }
+    else
+    {
+        DialogUploader *ui = new DialogUploader();
+        ui->exec();
+    }
 }
 
 QWidget* ModuleUploader::initConfigWidget()
 {
-	QWidget* configWidget =  new UploaderConfigWidget;
-	return configWidget;
+    QWidget* configWidget =  new UploaderConfigWidget;
+    return configWidget;
 }
 
 void ModuleUploader::defaultSettings()
 {
-	UploaderConfig config;
-	config.defaultSettings();
+    UploaderConfig config;
+    config.defaultSettings();
 }
 
 QMenu* ModuleUploader::initModuleMenu()
 {
-	return 0;
+    return 0;
 }
 
 QAction* ModuleUploader::initModuleAction()
 {
-	QAction *act = new QAction(QObject::tr("Upload"), 0);
-	act->setObjectName("actUpload");
-	connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
-	return act;
+    QAction *act = new QAction(QObject::tr("Upload"), 0);
+    act->setObjectName("actUpload");
+    connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
+    return act;
 }
 
 
 void ModuleUploader::shadowUploadDone(const QString& directLink)
 {
-	sender()->deleteLater();
-	QString str = "Upload done, direct link to image: " + directLink;
-	CmdLine::print(str);
-	Q_EMIT uploadCompleteWithQuit();
+    sender()->deleteLater();
+    QString str = "Upload done, direct link to image: " + directLink;
+    CmdLine::print(str);
+    Q_EMIT uploadCompleteWithQuit();
 }
 
 void ModuleUploader::shadowUploadFail(const QByteArray& error)
 {
-	sender()->deleteLater();
-	QString str = "Upload failed: " + error;
-	CmdLine::print(str);
+    sender()->deleteLater();
+    QString str = "Upload failed: " + error;
+    CmdLine::print(str);
 }

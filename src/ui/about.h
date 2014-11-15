@@ -21,11 +21,10 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QTabBar>
-#include <QtCore/QUrl>
+#include <QDialog>
+#include <QTabBar>
+#include <QUrl>
 
-// #include "src/core/screengrab.h"
 
 namespace Ui {
     class aboutWidget;

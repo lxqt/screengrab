@@ -33,19 +33,19 @@ Uploader_ImgUr::~Uploader_ImgUr()
 }
 
 /*!
- * 	Start upload process
+ * Start upload process
  */
 void Uploader_ImgUr::startUploading()
-{	
+{
     createData();
-	createRequest(imageData, apiUrl());
-	_request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-	
+    createRequest(imageData, apiUrl());
+    _request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+
     Uploader::startUploading();
 }
 
 /*!
- * 	Return url for upload image
+ *     Return url for upload image
  */
 QUrl Uploader_ImgUr::apiUrl()
 {
@@ -53,53 +53,53 @@ QUrl Uploader_ImgUr::apiUrl()
 }
 
 /*!
- * 	Prepare image datafor uploading
+ * Prepare image data for uploading
  */
 void Uploader_ImgUr::createData(bool inBase64)
 {
-	inBase64 = true;
+    inBase64 = true;
     Uploader::createData(inBase64);
-	
-	// create data for upload 
+
+    // create data for upload
     QByteArray uploadData;
-	
-	uploadData.append(QString("key=").toUtf8());
-	uploadData.append(QUrl::toPercentEncoding("6920a141451d125b3e1357ce0e432409"));
-	uploadData.append(QString("&image=").toUtf8());
-	uploadData.append(QUrl::toPercentEncoding(this->imageData));
-	
-	this->imageData = uploadData;	
+
+    uploadData.append(QString("key=").toUtf8());
+    uploadData.append(QUrl::toPercentEncoding("6920a141451d125b3e1357ce0e432409"));
+    uploadData.append(QString("&image=").toUtf8());
+    uploadData.append(QUrl::toPercentEncoding(this->imageData));
+
+    this->imageData = uploadData;
 }
 
 /*!
- * 	Process server reply data
+ * Process server reply data
  */
 void Uploader_ImgUr::replyFinished(QNetworkReply* reply)
 {
-	if (reply->error() == QNetworkReply::NoError)
-	{
-		QByteArray replyXmalText = reply->readAll();
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        QByteArray replyXmalText = reply->readAll();
 
-        //  creating list of element names
-		QVector<QByteArray> listXmlNodes;
+        // creating list of element names
+        QVector<QByteArray> listXmlNodes;
         listXmlNodes << "original" << "imgur_page" << "large_thumbnail" << "small_square" << "delete_page";
-        
-		QMap<QByteArray, QByteArray> replyXmlMap = parseResultStrings(listXmlNodes, replyXmalText);
 
-		_uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["original"];
-		_uploadedStrings[UL_HTML_CODE].first = "<img src=\"" + replyXmlMap["original"] + "\" />";
-		_uploadedStrings[UL_BB_CODE].first = "[img]" + replyXmlMap["original"] +"[/img]";
-		_uploadedStrings[UL_HTML_CODE_THUMB].first = "<a href=\"" + replyXmlMap["original"] + "\"><img src=\"" + replyXmlMap["small_square"] + "\" /></a>";
-		_uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["original"] +"[/img][/url]";
-		_uploadedStrings[UL_DELETE_URL].first = replyXmlMap["delete_page"];
-		qDebug() << "done" << _uploadedStrings[UL_DIRECT_LINK].first;
-		Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
-		Q_EMIT uploadDone();
-	}
-	else
-	{
-		Q_EMIT uploadFail(reply->errorString().toAscii());
-	}
-	
-	reply->deleteLater();
+        QMap<QByteArray, QByteArray> replyXmlMap = parseResultStrings(listXmlNodes, replyXmalText);
+
+        _uploadedStrings[UL_DIRECT_LINK].first = replyXmlMap["original"];
+        _uploadedStrings[UL_HTML_CODE].first = "<img src=\"" + replyXmlMap["original"] + "\" />";
+        _uploadedStrings[UL_BB_CODE].first = "[img]" + replyXmlMap["original"] +"[/img]";
+        _uploadedStrings[UL_HTML_CODE_THUMB].first = "<a href=\"" + replyXmlMap["original"] + "\"><img src=\"" + replyXmlMap["small_square"] + "\" /></a>";
+        _uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["original"] +"[/img][/url]";
+        _uploadedStrings[UL_DELETE_URL].first = replyXmlMap["delete_page"];
+        qDebug() << "done" << _uploadedStrings[UL_DIRECT_LINK].first;
+        Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
+        Q_EMIT uploadDone();
+    }
+    else
+    {
+        Q_EMIT uploadFail(reply->errorString().toLatin1());
+    }
+
+    reply->deleteLater();
 }

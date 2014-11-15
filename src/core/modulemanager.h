@@ -21,14 +21,14 @@
 #ifndef MODULEMANAGER_H
 #define MODULEMANAGER_H
 
-#include "src/modules/abstractmodule.h"
+#include "modules/abstractmodule.h"
 
-#include <QtCore/QByteArray>
-#include <QtCore/QHash>
-#include <QtCore/QMap>
-#include <QtGui/QMenu>
+#include <QByteArray>
+#include <QHash>
+#include <QMap>
+#include <QMenu>
 
-#include <QtGui/QAction>
+#include <QAction>
 
 const QByteArray MOD_UPLOADER = "uploader";
 const QByteArray MOD_EXT_EDIT = "extedit";
@@ -39,15 +39,15 @@ class ModuleManager
 {
 public:
     ModuleManager();
-	void initModules();
-	AbstractModule* getModule(const QByteArray& name);
-	AbstractModule* getModule(const quint8 numid);
-	QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
-	QList<QAction*> generateModulesActions(QStringList modules = QStringList());
-	quint8 count();
-	
+    void initModules();
+    AbstractModule* getModule(const QByteArray& name);
+    AbstractModule* getModule(const quint8 numid);
+    QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
+    QList<QAction*> generateModulesActions(QStringList modules = QStringList());
+    quint8 count();
+
 private:
-	ModuleList_t *_modules;
+    ModuleList_t *_modules;
 };
 
 #endif // MODULEMANAGER_H

@@ -26,9 +26,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *******************************************************************************/
 
-#include <QtCore/QEvent>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QIcon>
+#include <QEvent>
+#include <QKeyEvent>
+#include <QIcon>
 
 #include "qkeysequencewidget_p.h"
 #include "qkeysequencewidget.h"
@@ -576,12 +576,3 @@ void QShortcutButton::keyReleaseEvent(QKeyEvent *keyEvent)
         d->updateDisplayShortcut();
     }
 }
-
-#ifndef IS_SHARED
-#ifdef IS_CMAKE
-#include "moc_qkeysequencewidget.cxx"
-#include "qrc_qkeysequencewidget.cxx"
-#else
-#include "moc_qkeysequencewidget.cpp"
-#endif
-#endif

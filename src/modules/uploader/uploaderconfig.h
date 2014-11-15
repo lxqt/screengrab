@@ -21,18 +21,14 @@
 #ifndef UPLOADERCONFIG_H
 #define UPLOADERCONFIG_H
 
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
-#include <QtCore/QMap>
+#include <QSettings>
+#include <QStringList>
+#include <QVariant>
+#include <QMap>
 
 //  Uploader config file common keys
 const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";
 const QString KEY_DEFAULT_HOST = "defaultHost";
-
-//  Uploader config file imageshack.us keys
-const QString KEY_IMGSHK_USER = "username";
-const QString KEY_IMGSHK_PASS = "password";
 
 class UploaderConfig
 {
@@ -40,21 +36,21 @@ class UploaderConfig
 public:
     UploaderConfig();
     ~UploaderConfig();
-    
-	static QStringList labelsList();
-	
-	QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
-	QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
-	void saveSettings(const QByteArray& group, QVariantMap& mapValues);
-	void defaultSettings();
-	bool checkExistsConfigFile() const;
-	bool autoCopyResultLink();
-    
+
+    static QStringList labelsList();
+
+    QVariantMap loadSettings(const QByteArray& group, QVariantMap& mapValues);
+    QVariant loadSingleParam(const QByteArray& group, const QByteArray& param);
+    void saveSettings(const QByteArray& group, QVariantMap& mapValues);
+    void defaultSettings();
+    bool checkExistsConfigFile() const;
+    bool autoCopyResultLink();
+
 private:
     QSettings *_settings;
-	
-	QStringList _groupsList;
-	static QStringList _labelsList;
+
+    QStringList _groupsList;
+    static QStringList _labelsList;
 };
 
 #endif // UPLOADERCONFIG_H

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,33 +18,25 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QtCore/QMutex>
-#include <QtCore/QWaitCondition>
-#include <QtGui/QApplication>
-#include <QtGui/QDesktopWidget>
+#include <QMutex>
+#include <QWaitCondition>
+#include <QApplication>
+#include <QDesktopWidget>
 
-#include <QtCore/QChar>
-#include <QtCore/QBuffer>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
-#include <QtCore/QUuid>
+#include <QChar>
+#include <QBuffer>
+#include <QFile>
+#include <QDir>
+#include <QUuid>
 
 #include <QDebug>
 
 #include "src/core/core.h"
-
-#ifdef Q_WS_WIN
-#include <windows.h>
-#endif
-
-#ifdef Q_WS_X11
-
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
 
 #include <X11/Xlib.h>
 #include <QX11Info>
-#endif
 
 Core* Core::corePtr = 0;
 
@@ -95,12 +87,12 @@ Core* Core::instance()
 
 Core::~Core()
 {
-	delete _cmd;
+    delete _cmd;
     delete _pixelMap;
     conf->killInstance();
 }
 
-void Core::sleep(quint8 msec)
+void Core::sleep(int msec)
 {
     QMutex mutex;
     mutex.lock();
@@ -125,7 +117,7 @@ void Core::coreQuit()
 // get screenshot
 void Core::screenShot(bool first)
 {
-	sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
+    sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
     // Update date last crenshot, if it is  a first screen
     if (_firstScreen == true)
@@ -145,12 +137,7 @@ void Core::screenShot(bool first)
     }
     case 1:
     {
-#ifdef Q_WS_WIN
-        getActiveWind_Win32();
-#endif
-#ifdef Q_WS_X11
         getActiveWind_X11();
-#endif
         checkAutoSave(first);
         Q_EMIT newScreenShot(_pixelMap);
         break;
@@ -177,8 +164,7 @@ void Core::checkAutoSave(bool first)
 {
     if (conf->getAutoSave() == true)
     {
-        // small hack for display tray message on first screenshot (on starting
-        // ScreenGrab in KDE, fluxbox and something wm)
+        // hack
         if (first == true)
         {
             if (conf->getAutoSaveFirst() == true)
@@ -201,7 +187,6 @@ void Core::checkAutoSave(bool first)
     }
 }
 
-#ifdef Q_WS_X11
 void Core::getActiveWind_X11()
 {
     netwm::init();
@@ -213,7 +198,7 @@ void Core::getActiveWind_X11()
         exit(1);
     }
 
-    // no dectortions option is select
+    // no decorations option is selected
     if (conf->getNoDecorX11() == true)
     {
         *_pixelMap = QPixmap::grabWindow(*wnd);
@@ -224,7 +209,6 @@ void Core::getActiveWind_X11()
     int status;
     int stat;
 
-//    if (status != 0) {
     Window rt, *children, parent;
 
     // Find window manager frame
@@ -263,63 +247,6 @@ void Core::getActiveWind_X11()
 
     XFree(wnd);
 }
-#endif
-
-#ifdef Q_WS_WIN
-void Core::getActiveWind_Win32()
-{
-    HWND findWindow = GetForegroundWindow();
-
-    if (findWindow == NULL)
-    {
-        return;
-    }
-
-    if (findWindow == GetDesktopWindow())
-    {
-        return;
-    }
-
-    ShowWindow(findWindow, SW_SHOW);
-    SetForegroundWindow(findWindow);
-
-    HDC hdcScreen = GetDC(NULL);
-
-    RECT rcWindow;
-    GetWindowRect(findWindow, &rcWindow);
-
-    if (IsZoomed(findWindow))
-    {
-        if (QSysInfo::WindowsVersion >= QSysInfo::WV_VISTA)
-        {
-            rcWindow.right -= 8;
-            rcWindow.left += 8;
-            rcWindow.top += 8;
-            rcWindow.bottom -= 8;
-        }
-        else
-        {
-            rcWindow.right += 4;
-            rcWindow.left -= 4;
-            rcWindow.top += 4;
-            rcWindow.bottom -= 4;
-        }
-    }
-
-    HDC hdcMem = CreateCompatibleDC(hdcScreen);
-    HBITMAP hbmCapture = CreateCompatibleBitmap(hdcScreen, rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top);
-    SelectObject(hdcMem, hbmCapture);
-
-    BitBlt(hdcMem, 0, 0, rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top, hdcScreen, rcWindow.left, rcWindow.top, SRCCOPY);
-
-    ReleaseDC(findWindow, hdcMem);
-    DeleteDC(hdcMem);
-
-    *_pixelMap = QPixmap::fromWinHBITMAP(hbmCapture);
-
-    DeleteObject(hbmCapture);
-}
-#endif
 
 QString Core::getSaveFilePath(QString format)
 {
@@ -377,11 +304,11 @@ QString Core::getDateTimeFileName()
 
 void Core::updatePixmap()
 {
-	if (QFile::exists(_tempFilename) == true)
-	{
-		_pixelMap->load(_tempFilename, "png");
-		Q_EMIT newScreenShot(_pixelMap);
-	}
+    if (QFile::exists(_tempFilename) == true)
+    {
+        _pixelMap->load(_tempFilename, "png");
+        Q_EMIT newScreenShot(_pixelMap);
+    }
 }
 
 
@@ -397,29 +324,29 @@ QString Core::getTempFilename(const QString& format)
 
 void Core::killTempFile()
 {
-	if (QFile::exists(_tempFilename) == true)
-	{
-		QFile::remove(_tempFilename);
-		_tempFilename.clear();
-	}
+    if (QFile::exists(_tempFilename) == true)
+    {
+        QFile::remove(_tempFilename);
+        _tempFilename.clear();
+    }
 }
 
 
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
-    // adding extension  format
+    // adding extension format
     if (!fileName.contains("."+format) )
     {
         fileName.append("."+format);
     }
 
-    // saving temp fole (for uploder module)
+    // saving temp file (for uploader module)
     if (tmpScreen == true)
     {
         if (fileName.isEmpty() == false)
         {   ;
-            return _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            return _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
         }
         else
         {
@@ -433,11 +360,11 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     {
         if (format == "jpg")
         {
-            saved = _pixelMap->save(fileName,format.toAscii(), conf->getImageQuality());
+            saved = _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
         }
         else
         {
-            saved = _pixelMap->save(fileName,format.toAscii(), -1);
+            saved = _pixelMap->save(fileName,format.toLatin1(), -1);
         }
 
         if (saved == true)
@@ -446,7 +373,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
             qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
             conf->updateLastSaveDate();
-            Q_EMIT 	sendStateNotifyMessage(message);
+            Q_EMIT     sendStateNotifyMessage(message);
         }
         else
         {
@@ -466,10 +393,6 @@ QString Core::copyFileNameToCliipboard(QString file)
     QString retString = "";
     switch (conf->getAutoCopyFilenameOnSaving())
     {
-//         case Config::nameToClipboardOff:
-//         {
-//             break;
-//         }
     case Config::nameToClipboardFile:
     {
         file = file.section('/', -1);
@@ -499,48 +422,42 @@ void Core::copyScreen()
 
 void Core::openInExtViewer()
 {
-	if (conf->getEnableExtView() == 1)
-	{
-		QString format = "png";
-		QString tempFileName = getTempFilename(format);
-		writeScreen(tempFileName, format, true);
+    if (conf->getEnableExtView() == 1)
+    {
+        QString format = "png";
+        QString tempFileName = getTempFilename(format);
+        writeScreen(tempFileName, format, true);
 
-		QString exec;
-#ifdef Q_WS_X11
-		exec = "xdg-open";
-#endif
-#ifdef Q_WS_WIN
-		// WARNING this in dirty hack - hardcoded mspaint append
-		exec = "mspaint";
-#endif
-		QStringList args;
-		args << tempFileName;
+        QString exec;
+        exec = "xdg-open";
+        QStringList args;
+        args << tempFileName;
 
-		QProcess *execProcess = new QProcess(this);
-		connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
-		execProcess->start(exec, args);
-	}
+        QProcess *execProcess = new QProcess(this);
+        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+        execProcess->start(exec, args);
+    }
 }
 
 void Core::parseCmdLine()
 {
-	if (QApplication::argc() > 1)
-	{
-		_cmd->parse();
+    if (QApplication::arguments().size() > 1)
+    {
+        _cmd->parse();
 
-		int  screenType = _cmd->selectedScreenType();
-		if (screenType != -1)
-		{
-			conf->setTypeScreen(screenType);
-		}
-	}
+        int  screenType = _cmd->selectedScreenType();
+        if (screenType != -1)
+        {
+            conf->setTypeScreen(screenType);
+        }
+    }
 }
 
 
 void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
 {
-	sender()->deleteLater();
-	killTempFile();
+    sender()->deleteLater();
+    killTempFile();
 }
 
 
@@ -551,7 +468,7 @@ ModuleManager* Core::modules()
 
 CmdLine* Core::cmdLine()
 {
-	return _cmd;
+    return _cmd;
 }
 
 
@@ -581,9 +498,8 @@ QByteArray Core::getScreen()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    _pixelMap->save(&buffer, conf->getSaveFormat().toAscii());
+    _pixelMap->save(&buffer, conf->getSaveFormat().toLatin1());
 
-    qDebug() << "GET SCREEN SIZE " << bytes;
     return bytes;
 }
 

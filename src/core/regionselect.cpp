@@ -20,42 +20,42 @@
 
 #include "src/core/regionselect.h"
 
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QApplication>
+#include <QDesktopWidget>
+#include <QApplication>
 
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QWidget(parent)
 {
     _conf = mainconf;
-	sharedInit();
+    sharedInit();
 
     move(0, 0);
     drawBackGround();
 
-    _processSelection = false;    
-    
-    show();
-    
-    grabKeyboard();
-    grabMouse();    
-}
-
-RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
-	: QWidget(parent)
-{
-    _conf = mainconf;
-	sharedInit();
-	_selectRect = lastRect;
-	
-    move(0, 0);
-    drawBackGround();
-	
     _processSelection = false;
 
     show();
 
     grabKeyboard();
-    grabMouse();   
+    grabMouse();
+}
+
+RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
+    : QWidget(parent)
+{
+    _conf = mainconf;
+    sharedInit();
+    _selectRect = lastRect;
+
+    move(0, 0);
+    drawBackGround();
+
+    _processSelection = false;
+
+    show();
+
+    grabKeyboard();
+    grabMouse();
 }
 
 RegionSelect::~RegionSelect()
@@ -94,7 +94,7 @@ void RegionSelect::mousePressEvent(QMouseEvent* event)
     {
         return;
     }
-    
+
     _selStartPoint = event->pos();
     _processSelection = true;
 }
@@ -112,17 +112,17 @@ void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
     {
         return;
     }
-    
+
     Q_EMIT processDone(true);
 }
 
 
 void RegionSelect::mouseMoveEvent(QMouseEvent *event)
-{    
+{
     if (_processSelection == true)
     {
         _selEndPoint = event->pos();
-        _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();  
+        _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();
         update();
     }
 }
@@ -161,7 +161,7 @@ void RegionSelect::drawBackGround()
     QRect txtRect = QApplication::desktop()->screenGeometry(QApplication::desktop()->primaryScreen());
     QString txtTip = QApplication::tr("Use your mouse to draw a rectangle to screenshot or exit pressing\nany key or using the right or middle mouse buttons.");
 
-    txtRect.setHeight(qRound(txtRect.height() / 10)); // rounded val of text rect height
+    txtRect.setHeight(qRound((float) (txtRect.height() / 10))); // rounded val of text rect height
 
     painter.setPen(QPen(Qt::red)); // ste message rect border color
     painter.setBrush(QBrush(QColor(255, 255, 255, 180), Qt::SolidPattern));
@@ -175,7 +175,7 @@ void RegionSelect::drawBackGround()
 
     painter.drawRect(txtBgRect);
 
-      // Draw the text
+    // Draw the text
     painter.setPen(QPen(Qt::black)); // black color pen
     painter.drawText(txtBgRect, Qt::AlignCenter, txtTip);
 
@@ -235,5 +235,5 @@ QPixmap RegionSelect::getSelection()
 
 QPoint RegionSelect::getSelectionStartPos()
 {
-	return _selectRect.topLeft();
+    return _selectRect.topLeft();
 }

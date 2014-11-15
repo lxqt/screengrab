@@ -23,16 +23,15 @@
 
 #include "src/core/config.h"
 
-#include <QtGui/QDialog>
-#include <QtCore/QTextCodec>
-#include <QtCore/QDateTime>
-#include <QtCore/QModelIndex>
-#include <QtGui/QTreeWidgetItem>
+#include <QDialog>
+#include <QTextCodec>
+#include <QDateTime>
+#include <QModelIndex>
+#include <QTreeWidgetItem>
 
 namespace Ui {
     class configwidget;
 }
-// , public Config
 class ConfigDialog : public QDialog{
     Q_OBJECT
 public:
@@ -47,11 +46,11 @@ private:
     Ui::configwidget *_ui;
     void loadSettings();
     QString getFormat();
-    bool checkUsedShortcuts();    
+    bool checkUsedShortcuts();
     void showErrorMessage(QString text);
-	
-	QStringList _moduleWidgetNames;
-	
+
+    QStringList _moduleWidgetNames;
+
 #ifdef SG_GLOBAL_SHORTCUTS
     bool avalibelGlobalShortcuts(const QKeySequence& seq);
 #endif

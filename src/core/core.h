@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,18 +30,15 @@
 
 #include "modulemanager.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
-#include <QtGui/QPixmap>
-#include <QtGui/QClipboard>
-#include <QtCore/QTime>
-#include <QtCore/QByteArray>
-#include <QtCore/QRect>
-#include <QtCore/QProcess>
-
-#ifdef Q_WS_X11
-#include <QtGui/QX11Info>
-#endif
+#include <QObject>
+#include <QTimer>
+#include <QPixmap>
+#include <QClipboard>
+#include <QTime>
+#include <QByteArray>
+#include <QRect>
+#include <QProcess>
+#include <QX11Info>
 
 #include <QDebug>
 
@@ -73,7 +70,7 @@ public:
     static Core* instance();
     ~Core();
 
-    void sleep(quint8 msec = 350);
+    void sleep(int msec = 350);
     static QString getVersionPrintable();
 
     QPixmap* getPixmap();
@@ -85,7 +82,7 @@ public:
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
     void openInExtViewer();
-	void parseCmdLine();
+    void parseCmdLine();
 
     ModuleManager* modules();
     CmdLine* cmdLine();
@@ -107,20 +104,13 @@ private:
 
     void checkAutoSave(bool first = false);
 
-    // functions
-#ifdef Q_WS_WIN
-    void getActiveWind_Win32();
-#endif
-#ifdef Q_WS_X11
     void getActiveWind_X11();
-#endif
 
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
-    // vars
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
-    QRect _lastSelectedArea; // store las
+    QRect _lastSelectedArea;
 
     CmdLine *_cmd;
     ModuleManager _modules;

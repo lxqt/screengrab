@@ -23,32 +23,31 @@
 
 #include <uploader.h>
 
-#include <QtCore/QUrl>
+#include <QUrl>
 
 class Uploader_MediaCrush : public Uploader
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     explicit Uploader_MediaCrush(const QString& format, QObject* parent = 0);
     virtual ~Uploader_MediaCrush();
-    
+
     virtual void startUploading();
-    
+
 protected:
-// 	using Uploader::createData(bool inBase64 = false);
     virtual QUrl apiUrl();
     virtual void createData(bool inBase64 = false);
-	
+
 protected Q_SLOTS:
     virtual void replyFinished(QNetworkReply* reply);
-	
+
 private:
-	void setCurrentFormat(const QString& format);
-	
-	QByteArray _host;
-	QByteArray _currentFormat;
-	void UpdateUploadedStrList();
+    void setCurrentFormat(const QString& format);
+
+    QByteArray _host;
+    QByteArray _currentFormat;
+    void UpdateUploadedStrList();
 };
 
 #endif // UPLOADER_MEDIACRUSH_H
- 
+

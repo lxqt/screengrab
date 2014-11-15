@@ -210,7 +210,6 @@
          </item>
         </layout>
         <zorder>labDirectLink</zorder>
-        <zorder>verticalSpacer_2</zorder>
         <zorder>labDeleteLink</zorder>
        </widget>
       </widget>

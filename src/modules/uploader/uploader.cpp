@@ -22,9 +22,9 @@
 #include "core/core.h"
 #include "uploaderconfig.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QUuid>
-#include <QtCore/QRegExp>
+#include <QDir>
+#include <QUuid>
+#include <QRegExp>
 
 #include <QDebug>
 
@@ -32,17 +32,17 @@ Uploader::Uploader(QObject *parent) :
     QObject(parent), _multipartData(0)
 {
     qDebug() << "creating base uploader";
-	qsrand(126);
+    qsrand(126);
     _strBoundary = "uploadbound" + QByteArray::number(qrand());
     _net = new QNetworkAccessManager(this);
-	_serverReply = 0;
-	initUploadedStrList();
-	
-	UploaderConfig config;
-	if (config.checkExistsConfigFile() == false)
-	{
-		config.defaultSettings();		
-	}
+    _serverReply = 0;
+    initUploadedStrList();
+
+    UploaderConfig config;
+    if (config.checkExistsConfigFile() == false)
+    {
+        config.defaultSettings();
+    }
 }
 
 Uploader::~Uploader()
@@ -52,18 +52,18 @@ Uploader::~Uploader()
 
 /*!
  * Create boundary string
- * \param cleared -detect for strt boyndary lin in httpRequest
+ * \param cleared -detect for str boundary line in httpRequest
  */
 QByteArray Uploader::boundary(bool cleared)
 {
     QByteArray retBoundary = _strBoundary;
-    
+
     if (cleared == false)
     {
         retBoundary.append("\r\n");
         retBoundary.prepend("--");
     }
-    
+
     return retBoundary;
 }
 
@@ -71,80 +71,77 @@ void Uploader::replyProgress(qint64 bytesSent, qint64 bytesTotal)
 {
     Q_EMIT uploadProgress(bytesSent, bytesTotal);
 }
-    
+
 /*!
- *  Get suser selected params from uploader widget (not from config file)
+ *  Get user selected params from uploader widget (not from config file)
  */
 void Uploader::getUserSettings(const QVariantMap& settings)
 {
-	_userSettings = settings;	
+    _userSettings = settings;
 }
-    
+
 /*!
- *  Start uploadingin base class 
+ *  Start uploading base class
  */
 void Uploader::startUploading()
 {
-	connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
-	
-	if (!_multipartData && !imageData.isEmpty())
-	{
-		_serverReply = _net->post(_request, imageData);	
-	}
-	if (_multipartData && imageData.isEmpty())
-	{
-		_serverReply = _net->post(_request, _multipartData);
-// 		_multipartData->setParent(_serverReply);
-	}
-	
-// 	_serverReply = _net->post(_request, imageData);	
+    connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
 
-	connect(_serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64))); 
+    if (!_multipartData && !imageData.isEmpty())
+    {
+        _serverReply = _net->post(_request, imageData);
+    }
+    if (_multipartData && imageData.isEmpty())
+    {
+        _serverReply = _net->post(_request, _multipartData);
+    }
+
+    connect(_serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64)));
 }
 
 QMap< QByteArray, ResultString_t > Uploader::parsedLinks()
 {
-	return _uploadedStrings;
+    return _uploadedStrings;
 }
 
 QList<ResultString_t> Uploader::parsedLinksToGui()
 {
-	QList<ResultString_t> list;
-	ResultString_t delete_url;
-	ResultString_t direct_link;
+    QList<ResultString_t> list;
+    ResultString_t delete_url;
+    ResultString_t direct_link;
 
-	for (int i =  0; i < _uploadedStrings.count(); ++i)
-	{
-		QByteArray key = _uploadedStrings.keys().at(i);
+    for (int i =  0; i < _uploadedStrings.count(); ++i)
+    {
+        QByteArray key = _uploadedStrings.keys().at(i);
 
-		if (key == "delete_url")
-		{
-			delete_url = _uploadedStrings[key];
-		}
-		else if(key == "direct_link")
-		{
-			direct_link = _uploadedStrings[key];
-		}
-		else
-		{
-			ResultString_t val = _uploadedStrings[key];		
-			list.append(val);	
-		}		
-	}
+        if (key == "delete_url")
+        {
+            delete_url = _uploadedStrings[key];
+        }
+        else if(key == "direct_link")
+        {
+            direct_link = _uploadedStrings[key];
+        }
+        else
+        {
+            ResultString_t val = _uploadedStrings[key];
+            list.append(val);
+        }
+    }
 
-	list.prepend(direct_link);
-	
-	if (delete_url.first.isEmpty() == false)
-	{
-		list.append(delete_url);
-	}
+    list.prepend(direct_link);
 
-	return list;
+    if (delete_url.first.isEmpty() == false)
+    {
+        list.append(delete_url);
+    }
+
+    return list;
 }
 
 
 /*!
- * 	Return url for upload image
+ * Return url for uploaded image
  */
 QUrl Uploader::apiUrl()
 {
@@ -152,24 +149,24 @@ QUrl Uploader::apiUrl()
 }
 
 /*!
- * 	Prepare image datafor uploading
+ * Prepare image data for uploading
  */
 void Uploader::createData(bool inBase64)
 {
     Core *core = Core::instance();
     _formatString = core->conf->getSaveFormat();
-	_uploadFilename = core->getTempFilename(_formatString);
+    _uploadFilename = core->getTempFilename(_formatString);
     core->writeScreen(_uploadFilename, _formatString , true);
-    
-	if (inBase64 == false)
-	{
-		imageData = core->getScreen();
-	}
-	else
-	{
-		imageData = core->getScreen().toBase64();
-	}
-	core->killTempFile();
+
+    if (inBase64 == false)
+    {
+        imageData = core->getScreen();
+    }
+    else
+    {
+        imageData = core->getScreen().toBase64();
+    }
+    core->killTempFile();
 }
 
 /*!
@@ -178,8 +175,8 @@ void Uploader::createData(bool inBase64)
  */
 void Uploader::createRequest(const QByteArray& requestData, const QUrl url)
 {
-	Q_UNUSED(requestData);
-	_request.setUrl(url);
+    Q_UNUSED(requestData);
+    _request.setUrl(url);
 }
 
 /*!
@@ -189,61 +186,60 @@ void Uploader::createRequest(const QByteArray& requestData, const QUrl url)
  */
 QMap<QByteArray, QByteArray> Uploader::parseResultStrings(const QVector< QByteArray >& keytags, const QByteArray& result)
 {
-	QMap<QByteArray, QByteArray> replyMap;
-	
-	QRegExp re;      
-	QRegExp re2;
-	
-	int inStart = 0;
+    QMap<QByteArray, QByteArray> replyMap;
+
+    QRegExp re;
+    QRegExp re2;
+
+    int inStart = 0;
     int outStart = 0;
-	int len = 0;
-	
-        // parsing xml 
+    int len = 0;
+
+    // parsing xml
     for (int i = 0; i < keytags.count(); ++i)
-	{
+    {
         // set patterns  for full lenght item
         re.setPattern("<"+keytags[i]+">"); // open tag
         re2.setPattern("</"+keytags[i]+">"); //close tag
-            
+
         // get start pos and lenght ite in xml
         inStart = re.indexIn(result); // ops open tag start
         outStart = re2.indexIn(result); // pos close tag start
         len = outStart - inStart + re2.matchedLength(); // length of full string
-            
-            // extract item and replase spec html sumbols
+
+        // extract item and replace spec html symbols
         QByteArray extractedText = result.mid(inStart, len);
         extractedText = extractedText.replace("&quot;","'");
         extractedText = extractedText.replace("&lt;","<");
         extractedText = extractedText.replace("&gt;",">");
         extractedText = extractedText.replace("<"+keytags[i]+">","");
         extractedText = extractedText.replace("</"+keytags[i]+">","");
-            
-			// to map
-		replyMap.insert(keytags[i], extractedText);
-			
-// 		keytags[i] = extractedText;
-	}
-	
-	return replyMap;
+
+        // to map
+        replyMap.insert(keytags[i], extractedText);
+
+    }
+
+    return replyMap;
 }
 
 void Uploader::initUploadedStrList()
 {
-	ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
-	_uploadedStrings.insert(UL_DIRECT_LINK, strPair);
-	
-	strPair = qMakePair(QByteArray(), tr("HTML code"));
-	_uploadedStrings.insert(UL_HTML_CODE ,strPair);
-	
-	strPair = qMakePair(QByteArray(), tr("BB code"));
-	_uploadedStrings.insert(UL_BB_CODE, strPair);
-	
-	strPair = qMakePair(QByteArray(), tr("HTML code with thumb image"));
-	_uploadedStrings.insert(UL_HTML_CODE_THUMB ,strPair);
-	
-	strPair = qMakePair(QByteArray("bb_code_thumb"), tr("BB code with thumb image"));
-	_uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
-	
-	strPair = qMakePair(QByteArray(), tr("URl to delete image"));
-	_uploadedStrings.insert(UL_DELETE_URL ,strPair);
+    ResultString_t strPair = qMakePair(QByteArray(), tr("Direct link"));
+    _uploadedStrings.insert(UL_DIRECT_LINK, strPair);
+
+    strPair = qMakePair(QByteArray(), tr("HTML code"));
+    _uploadedStrings.insert(UL_HTML_CODE ,strPair);
+
+    strPair = qMakePair(QByteArray(), tr("BB code"));
+    _uploadedStrings.insert(UL_BB_CODE, strPair);
+
+    strPair = qMakePair(QByteArray(), tr("HTML code with thumb image"));
+    _uploadedStrings.insert(UL_HTML_CODE_THUMB ,strPair);
+
+    strPair = qMakePair(QByteArray("bb_code_thumb"), tr("BB code with thumb image"));
+    _uploadedStrings.insert(UL_BB_CODE_THUMB, strPair);
+
+    strPair = qMakePair(QByteArray(), tr("URl to delete image"));
+    _uploadedStrings.insert(UL_DELETE_URL ,strPair);
 }
