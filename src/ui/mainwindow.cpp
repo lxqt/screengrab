@@ -66,6 +66,22 @@ MainWindow::MainWindow(QWidget* parent) :
 
     _trayIcon = NULL;
     _hideWnd = NULL;
+    
+    actAbout = NULL;
+    actHelp = NULL;
+    
+    if (!actHelp)
+    {
+        actHelp = new QAction(tr("Help"), this);
+        connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
+    }
+
+    if (!actAbout)
+    {
+        actAbout = new QAction(tr("About"), this);
+        connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
+    } 
+    
     updateUI();
 
     delayBoxChange(_core->conf->getDelay());
@@ -352,10 +368,8 @@ void MainWindow::createTray()
     actSave = new QAction(tr("Save"), this);
     actNew = new QAction(tr("New"), this);
     actCopy = new QAction(tr("Copy"), this);
-    actHideShow = new QAction(tr("Hide"), this);
-    actAbout = new QAction(tr("About"), this);
+    actHideShow = new QAction(tr("Hide"), this);    
     mOptions = new QAction(tr("Options"), this);
-    actHelp = new QAction(tr("Help"), this);
 
     // connect to slots
     connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
@@ -363,9 +377,7 @@ void MainWindow::createTray()
     connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
     connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
-    connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
-    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
-    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
+    connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );    
     connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
