@@ -19,9 +19,9 @@
  ***************************************************************************/
 #include <QTranslator>
 
-#include "src/common/singleapp/singleapp.h"
-#include "src/core/core.h"
-#include "src/ui/mainwindow.h"
+#include "common/singleapp/singleapp.h"
+#include "core/core.h"
+#include "ui/mainwindow.h"
 
 #ifdef SG_EXT_UPLOADS
 // FIXME for v1.1 (move call uploader form main() function to app core)

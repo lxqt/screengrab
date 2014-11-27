@@ -15,4 +15,4 @@ add_library(extedit SHARED ${extedit_SRC})
 set_property (TARGET extedit PROPERTY SOVERSION 1.0.0)
 INSTALL (TARGETS extedit DESTINATION ${SG_LIBDIR})
 
-target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras)
+target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras ${QTXDG_LIBRARIES})
