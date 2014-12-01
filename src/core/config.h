@@ -51,6 +51,8 @@ const bool DEF_AUTO_SAVE_FIRST = false;
 const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
 const bool DEF_SHOW_TRAY = true;
 const bool DEF_ENABLE_EXT_VIEWER = 1;
+const bool DEF_SAVE_LAST_SCREEN_TYPE = true;
+const quint8 DEF_LAST_SCREEN_TYPE = 0;
 
 // class worker with conf data
 class Config
@@ -155,6 +157,14 @@ public:
     // type of screen
     int getTypeScreen();
     void setTypeScreen(quint8 type);
+
+    // typer of the last screenshot
+    int getLastTypeScreen();
+    void setLastTypeScreen(quint8 type);
+
+    // save type of last screenshot
+    bool getSaveLastTypeScreen();
+    void setSaveLastTypeScreen(bool save);
 
     // tume of tray messages
     quint8 getTimeTrayMess();

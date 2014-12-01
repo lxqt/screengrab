@@ -24,7 +24,7 @@
 #include "src/ui/mainwindow.h"
 
 #ifdef SG_EXT_UPLOADS
-// FIXME for v1.1 (move call uploader form main() function to app core)
+// FIXME for v2.0 (move call uploader form main() function to app core)
 #include "src/modules/uploader/moduleuploader.h"
 #endif
 
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     }
 
 #ifdef SG_EXT_UPLOADS
-// FIXME for v1.1 (move call uploader form main() function to app core)
+// FIXME for v2.0 (move call uploader form main() function to app core)
     if (ScreenGrab->cmdLine()->checkParam("upload"))
     {
 		mainWnd.hide();

@@ -171,6 +171,11 @@ void Core::screenShot(bool first)
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         break;
     }
+
+    if (conf->getSaveLastTypeScreen() == true) {
+        conf->setLastTypeScreen(conf->getTypeScreen());
+        conf->saveSettings();
+    }
 }
 
 void Core::checkAutoSave(bool first)

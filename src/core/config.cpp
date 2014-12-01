@@ -52,6 +52,8 @@ const QString KEY_ALLOW_COPIES = "AllowCopies";
 
 const QString KEY_CLOSE_INTRAY = "closeInTray";
 const QString KEY_TYPE_SCREEN = "typeScreenDefault";
+const QString KEY_LAST_SCREEN_TYPE = "lastScreenType";
+const QString KEY_SAVE_LAST_SCREEN_TYPE = "saveLastScreenType";
 
 const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
 
@@ -337,6 +339,26 @@ void Config::setTypeScreen(quint8 type)
     setValue(KEY_TYPE_SCREEN, type);
 }
 
+int Config::getLastTypeScreen()
+{
+    return value(KEY_LAST_SCREEN_TYPE).toInt();
+}
+
+void Config::setLastTypeScreen(quint8 type)
+{
+    setValue(KEY_LAST_SCREEN_TYPE, type);
+}
+
+bool Config::getSaveLastTypeScreen()
+{
+    return value(KEY_SAVE_LAST_SCREEN_TYPE).toBool();
+}
+
+void Config::setSaveLastTypeScreen(bool save)
+{
+    setValue(KEY_SAVE_LAST_SCREEN_TYPE, save);
+}
+
 quint8 Config::getTimeTrayMess()
 {
     return value(KEY_TIME_NOTIFY).toInt();
@@ -468,6 +490,14 @@ void Config::loadSettings()
     setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
 #endif
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
+
+    setSaveLastTypeScreen(_settings->value(KEY_SAVE_LAST_SCREEN_TYPE, DEF_SAVE_LAST_SCREEN_TYPE).toBool());
+
+    if (getSaveLastTypeScreen()) {
+        setLastTypeScreen(_settings->value(KEY_LAST_SCREEN_TYPE, DEF_LAST_SCREEN_TYPE).toInt());
+        setTypeScreen(getLastTypeScreen());
+    }
+
     _settings->endGroup();
 
     _settings->beginGroup("Display");
@@ -503,6 +533,11 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
+    _settings->setValue(KEY_SAVE_LAST_SCREEN_TYPE, getSaveLastTypeScreen());
+
+    if (getSaveLastTypeScreen() == true) {
+        _settings->setValue(KEY_LAST_SCREEN_TYPE, getTypeScreen());
+    }
 #ifdef Q_WS_X11
     _settings->setValue(KEY_NODECOR, getNoDecorX11());
 #endif
