@@ -31,6 +31,7 @@
 #include <QRegExp>
 #include <QTimer>
 #include <QPushButton>
+#include <QMenu>
 
 #include "src/common/netwm/netwm.h"
 using namespace netwm;
@@ -66,10 +67,10 @@ MainWindow::MainWindow(QWidget* parent) :
 
     _trayIcon = NULL;
     _hideWnd = NULL;
-    
+
     actAbout = NULL;
     actHelp = NULL;
-    
+
     if (!actHelp)
     {
         actHelp = new QAction(tr("Help"), this);
@@ -80,8 +81,8 @@ MainWindow::MainWindow(QWidget* parent) :
     {
         actAbout = new QAction(tr("About"), this);
         connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
-    } 
-    
+    }
+
     updateUI();
 
     delayBoxChange(_core->conf->getDelay());
@@ -135,14 +136,14 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
 
-    connect(_core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()) );
+    connect(_core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()));
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
 
     resize(_core->conf->getRestoredWndSize().width(), _core->conf->getRestoredWndSize().height());
 
-    move(QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber()).width() / 2 - width() / 2,
-         QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber()).height() / 2 - height() / 2);
+    QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());
+    move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
 
     displayPixmap();
 
@@ -200,15 +201,10 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 {
     if (obj == _ui->scrLabel && event->type() == QEvent::ToolTip)
-    {
         displatScreenToolTip();
-    }
 
-    if (obj == _ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
-    {
+    else if (obj == _ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
         _core->openInExtViewer();
-    }
-
 
     return QObject::eventFilter(obj, event);
 }
@@ -368,7 +364,7 @@ void MainWindow::createTray()
     actSave = new QAction(tr("Save"), this);
     actNew = new QAction(tr("New"), this);
     actCopy = new QAction(tr("Copy"), this);
-    actHideShow = new QAction(tr("Hide"), this);    
+    actHideShow = new QAction(tr("Hide"), this);
     mOptions = new QAction(tr("Options"), this);
 
     // connect to slots
@@ -377,7 +373,7 @@ void MainWindow::createTray()
     connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
     connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
-    connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );    
+    connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
