@@ -18,10 +18,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "src/ui/mainwindow.h"
+#include "ui/mainwindow.h"
 #include "ui_mainwindow.h"
-
-#include "src/core/shortcutmanager.h"
+#include "core/shortcutmanager.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -33,18 +32,12 @@
 #include <QPushButton>
 #include <QMenu>
 
-#include "src/common/netwm/netwm.h"
-using namespace netwm;
-
-#include <X11/Xlib.h>
-#include <QX11Info>
-
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     _ui(new Ui::MainWindow), _core(Core::instance())
 {
     _ui->setupUi(this);
-    _trayed =false;
+    _trayed = false;
 
 #ifdef SG_GLOBAL_SHORTCUTS
     // signal mapper
@@ -155,7 +148,6 @@ MainWindow::~MainWindow()
     delete _ui;
 }
 
-
 void MainWindow::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
@@ -176,9 +168,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
         e->ignore();
     }
     else
-    {
         quit();
-    }
 }
 
 // resize main window
@@ -192,10 +182,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
     // if not scrlabel pixmap
     if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
-    {
         displayPixmap();
-    }
-
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
@@ -212,24 +199,15 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 void MainWindow::show()
 {
     if (_trayIcon != NULL)
-    {
         _trayIcon->setVisible(true);
-    }
+
     QMainWindow::show();
 }
 
 bool MainWindow::isTrayed() const
 {
-    if (_trayIcon != NULL)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return _trayIcon != NULL;
 }
-
 
 void MainWindow::showHelp()
 {
@@ -258,32 +236,24 @@ void MainWindow::showHelp()
 
 void MainWindow::showOptions()
 {
-    ConfigDialog *options;
-    options = new ConfigDialog();
+    ConfigDialog *options = new ConfigDialog();
 #ifdef SG_GLOBAL_SHORTCUTS
     globalShortcutBlock(true);
 #endif
 
-    if (isMinimized() == true)
+    if (isMinimized())
     {
         showNormal();
-        int result = options->exec();
-
-        if (result == QDialog::Accepted)
-        {
+        if (options->exec() == QDialog::Accepted)
             updateUI();
-        }
         hide();
     }
     else
     {
-        int result = options->exec();
-
-        if (result == QDialog::Accepted)
-        {
+        if (options->exec() == QDialog::Accepted)
             updateUI();
-        }
     }
+
 #ifdef SG_GLOBAL_SHORTCUTS
     globalShortcutBlock(false);
 #endif
@@ -292,19 +262,16 @@ void MainWindow::showOptions()
 
 void MainWindow::showAbout()
 {
-    AboutDialog *about;
-    about = new AboutDialog(this);
+    AboutDialog *about = new AboutDialog(this);
 
-    if (isMinimized() == true)
+    if (isMinimized())
     {
         showNormal();
         about->exec();
         hide();
     }
     else
-    {
         about->exec();
-    }
 
     delete about;
 }
@@ -318,22 +285,18 @@ void MainWindow::newScreen()
     setHidden(true);
 
     // if show tray
-    if (_core->conf->getShowTrayIcon() == true)
+    if (_core->conf->getShowTrayIcon())
     {
         //  unblock tray signals
         _trayIcon->blockSignals(true);
         _trayIcon->setContextMenu(NULL); // enable context menu
     }
 
+    // if select 0s delay & hide window -- make 0.2s delay for hiding window
     if (_core->conf->getDelay() == 0)
-    {
-        // if select 0s delay & hide window -- make 0.2s delay for hiding window
         QTimer::singleShot(200, _core, SLOT(screenShot()));
-    }
     else
-    {
-        QTimer::singleShot(1000*_core->conf->getDelay(), _core, SLOT(screenShot()));
-    }
+        QTimer::singleShot(1000 * _core->conf->getDelay(), _core, SLOT(screenShot()));
 }
 
 void MainWindow::copyScreen()
@@ -374,7 +337,8 @@ void MainWindow::createTray()
     connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
     connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
-    connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
+    connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)),
+            this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
     // create tray menu
     menuTray = new QMenu(this);
@@ -399,8 +363,8 @@ void MainWindow::createTray()
     _trayIcon->setContextMenu(menuTray);
     _trayIcon->setIcon(icon);
     _trayIcon->show();
-    connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)) ,
-             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)) );
+    connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)));
 }
 
 void MainWindow::killTray()
@@ -424,9 +388,7 @@ void MainWindow::killTray()
 void MainWindow::delayBoxChange(int delay)
 {
     if (delay == 0)
-    {
         _ui->delayBox->setSpecialValueText(tr("None"));
-    }
     _core->conf->setDelay(delay);
 }
 
@@ -434,7 +396,6 @@ void MainWindow::typeScreenShotChange(int type)
 {
     _core->conf->setTypeScreen(type);
 }
-
 
 void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
 {
@@ -445,10 +406,8 @@ void MainWindow::quit()
 {
     _core->conf->setRestoredWndSize(width(), height());
     _core->conf->saveWndSize();
-
     _core->coreQuit();
 }
-
 
 // updating UI from configdata
 void MainWindow::updateUI()
@@ -460,16 +419,12 @@ void MainWindow::updateUI()
     createShortcuts();
 
     // create tray object
-    if (_core->conf->getShowTrayIcon() == true && _trayIcon == NULL)
-    {
+    if (_core->conf->getShowTrayIcon() && !_trayIcon)
         createTray();
-    }
 
     // kill tray object, if created
-    if (_core->conf->getShowTrayIcon() == false && _trayIcon != NULL)
-    {
+    if (!_core->conf->getShowTrayIcon() && _trayIcon)
         killTray();
-    }
 }
 
 // mouse clicks on tray icom
@@ -487,14 +442,14 @@ void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
 // hide or show main window
 void MainWindow::windowHideShow()
 {
-    if (isHidden() == true)
+    if (isHidden())
     {
         actHideShow->setText(tr("Hide"));
         _trayed = false;
         showNormal();
         activateWindow();
     }
-    else if (isHidden() == false)
+    else if (!isHidden())
     {
         actHideShow->setText(tr("Show"));
         showMinimized();
@@ -516,16 +471,12 @@ void MainWindow::showWindow(const QString& str)
     _core->sleep(250); // hack for WMs with compositing fade-out effects
     _core->screenShot();
 
-    Q_UNUSED(str)
     if (isHidden() == true && _core->conf->getShowTrayIcon() == true)
     {
         actHideShow->setText(tr("Hide"));
         _trayed = false;
         showNormal();
     }
-
-    netwm::init();
-    netwm::climsg(this->winId(), NET_ACTIVE_WINDOW, 2, QX11Info::appUserTime());
 }
 
 // show tray messages
@@ -538,7 +489,7 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
             case 0: break; // never shown
             case 1: // main window hidden
             {
-                if (isHidden() == true && _trayed == true)
+                if (isHidden() && _trayed)
                 {
                     _trayIcon->showMessage(titleMsg, bodyMsg,
                     QSystemTrayIcon::MessageIcon(), _core->conf->getTimeTrayMess()*1000 ); //5000
@@ -556,7 +507,6 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
     }
 }
 
-
 void MainWindow::displayPixmap()
 {
     _ui->scrLabel->setPixmap(_core->getPixmap()->scaled(_ui->scrLabel->size(),
@@ -567,19 +517,16 @@ void MainWindow::restoreWindow()
 {
     displayPixmap();
 
-    if (isVisible() == false && _trayed == false)
-    {
+    if (!isVisible() && !_trayed)
         showNormal();
-    }
 
     // if show tray
-    if (_core->conf->getShowTrayIcon() == true)
+    if (_core->conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
         _trayIcon->setContextMenu(menuTray); // enable context menu
     }
 }
-
 
 void MainWindow::saveScreen()
 {
@@ -600,8 +547,7 @@ void MainWindow::saveScreen()
     filterSelected = formatsAvalible[format];
 
     QHash<QString, QString>::const_iterator iter = formatsAvalible.constBegin();
-
-    while(iter != formatsAvalible.constEnd())
+    while (iter != formatsAvalible.constEnd())
     {
         fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
         ++iter;
@@ -618,14 +564,11 @@ void MainWindow::saveScreen()
     format = formatsAvalible.key(filterSelected);
 
     // if user canceled saving
-    if (fileName.isEmpty() == true)
-    {
-        return ;
-    }
+    if (fileName.isEmpty())
+        return;
 
     _core->writeScreen(fileName, format);
 }
-
 
 void MainWindow::createShortcuts()
 {
@@ -635,7 +578,7 @@ void MainWindow::createShortcuts()
     _ui->actionOptions->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
     _ui->actionHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
 
-    if (_core->conf->getCloseInTray() == true && _core->conf->getShowTrayIcon() == true)
+    if (_core->conf->getCloseInTray() && _core->conf->getShowTrayIcon())
     {
         _ui->actionQuit->setShortcut(QKeySequence());
         _hideWnd = new QShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose), this);
@@ -643,29 +586,22 @@ void MainWindow::createShortcuts()
     }
     else
     {
-        if (_hideWnd != NULL)
-        {
+        if (_hideWnd)
             delete _hideWnd;
-        }
         _ui->actionQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
     }
 
-
 #ifdef SG_GLOBAL_SHORTCUTS
-    for (int i = 0; i < _globalShortcuts.count(); ++i )
-    {
+    for (int i = 0; i < _globalShortcuts.count(); ++i)
         _globalShortcuts[i]->setShortcut(QKeySequence(_core->conf->shortcuts()->getShortcut(i)));
-    }
 #endif
 }
 
 #ifdef SG_GLOBAL_SHORTCUTS
 void MainWindow::globalShortcutBlock(bool state)
 {
-    for (int i = 0; i < _globalShortcuts.count(); ++i )
-    {
+    for (int i = 0; i < _globalShortcuts.count(); ++i)
         _globalShortcuts[i]->setDisabled(state);
-    }
 }
 
 
@@ -674,11 +610,8 @@ void MainWindow::globalShortcutActivate(int type)
     _ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
 
-    if (_trayed == false)
-    {
+    if (!_trayed)
         hide();
-    }
     QTimer::singleShot(200, _core, SLOT(screenShot()));
-
 }
 #endif

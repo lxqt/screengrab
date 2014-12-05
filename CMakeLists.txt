@@ -6,6 +6,7 @@ project(screengrab)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5X11Extras REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(KF5WindowSystem REQUIRED)
 
 # for translations
 find_package(Qt5LinguistTools)
@@ -152,7 +153,6 @@ set(SCREENGRAB_SRC
     src/ui/configwidget.cpp
     src/ui/about.cpp
     src/ui/mainwindow.cpp
-    src/common/netwm/netwm.cpp
 )
 
 set(SCREENGRAB_UI
@@ -196,7 +196,7 @@ if(SG_EXT_EDIT)
     target_link_libraries(screengrab extedit)
 endif()
 
-target_link_libraries(screengrab qkeysequencewidget singleapp X11 Qt5::Widgets)
+target_link_libraries(screengrab qkeysequencewidget singleapp Qt5::Widgets KF5::WindowSystem)
 
 
 # make src.tar.gz

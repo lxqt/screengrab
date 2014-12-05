@@ -195,9 +195,9 @@ public:
     bool getShowTrayIcon();
     void setShowTrayIcon(bool val);
 
-    // no decoration wnd on X11
-    bool getNoDecorX11();
-    void setNoDecorX11(bool val);
+    // no decoration of window
+    bool getNoDecoration();
+    void setNoDecoration(bool val);
 
     QString getScrNumStr();
     int getScrNum() const;

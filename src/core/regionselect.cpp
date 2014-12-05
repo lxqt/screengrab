@@ -77,7 +77,6 @@ void RegionSelect::sharedInit()
     _desktopPixmapClr = _desktopPixmapBkg;
 }
 
-
 void RegionSelect::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
@@ -91,14 +90,11 @@ void RegionSelect::paintEvent(QPaintEvent *event)
 void RegionSelect::mousePressEvent(QMouseEvent* event)
 {
     if (event->button() != Qt::LeftButton)
-    {
         return;
-    }
 
     _selStartPoint = event->pos();
     _processSelection = true;
 }
-
 
 void RegionSelect::mouseReleaseEvent(QMouseEvent* event)
 {
@@ -109,17 +105,14 @@ void RegionSelect::mouseReleaseEvent(QMouseEvent* event)
 void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
 {
     if (event->button() != Qt::LeftButton)
-    {
         return;
-    }
 
     Q_EMIT processDone(true);
 }
 
-
 void RegionSelect::mouseMoveEvent(QMouseEvent *event)
 {
-    if (_processSelection == true)
+    if (_processSelection)
     {
         _selEndPoint = event->pos();
         _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();
@@ -129,23 +122,15 @@ void RegionSelect::mouseMoveEvent(QMouseEvent *event)
 
 void RegionSelect::keyPressEvent(QKeyEvent* event)
 {
+    // canceled select screen area
     if (event->key() == Qt::Key_Escape)
-    {
-        // canceled select screen area
         Q_EMIT processDone(false);
-    }
+    // canceled select screen area
     else if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
-    {
-        // accept selection screenarea
         Q_EMIT processDone(true);
-    }
     else
-    {
         event->ignore();
-    }
-
 }
-
 
 void RegionSelect::drawBackGround()
 {
@@ -194,7 +179,7 @@ void RegionSelect::drawRectSelection(QPainter &painter)
     QString txtSize = QApplication::tr("%1 x %2 pixels ").arg(_selectRect.width()).arg(_selectRect.height());
     painter.drawText(_selectRect, Qt::AlignBottom | Qt::AlignRight, txtSize);
 
-    if (!_selEndPoint.isNull() && _conf->getZoomAroundMouse() == true)
+    if (!_selEndPoint.isNull() && _conf->getZoomAroundMouse())
     {
         const quint8 zoomSide = 200;
 
@@ -218,10 +203,9 @@ void RegionSelect::drawRectSelection(QPainter &painter)
         // position for drawing preview
         QPoint zoomCenter = _selectRect.bottomRight();
 
-        if (zoomCenter.x() + zoomSide > _desktopPixmapClr.rect().width() || zoomCenter.y() + zoomSide > _desktopPixmapClr.rect().height())
-        {
+        if (zoomCenter.x() + zoomSide > _desktopPixmapClr.rect().width()
+            || zoomCenter.y() + zoomSide > _desktopPixmapClr.rect().height())
             zoomCenter -= QPoint(zoomSide, zoomSide);
-        }
         painter.drawPixmap(zoomCenter, zoomPixmap);
     }
 }

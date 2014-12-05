@@ -25,7 +25,7 @@
 
 #ifdef SG_EXT_UPLOADS
 // FIXME for v1.1 (move call uploader form main() function to app core)
-#include "src/modules/uploader/moduleuploader.h"
+#include "modules/uploader/moduleuploader.h"
 #endif
 
 int main(int argc, char *argv[])
@@ -47,25 +47,19 @@ int main(int argc, char *argv[])
 
     MainWindow mainWnd;
 
-    if (scr.isRunning() == false || (scr.isRunning() == true && ScreenGrab->conf->getAllowMultipleInstance() == true))
+    if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
     {
         ScreenGrab->screenShot(true);
 
-        if ( ScreenGrab->cmdLine()->checkParam("minimized"))
+        if (ScreenGrab->cmdLine()->checkParam("minimized"))
         {
-            if (mainWnd.isTrayed() == true)
-            {
+            if (mainWnd.isTrayed())
                 mainWnd.windowHideShow();
-            }
             else
-            {
                 mainWnd.showMinimized();
-            }
         }
         else
-        {
             mainWnd.show();
-        }
     }
 
 #ifdef SG_EXT_UPLOADS

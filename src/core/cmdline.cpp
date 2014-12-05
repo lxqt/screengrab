@@ -25,12 +25,10 @@
 
 CmdLine::CmdLine()
 {
-
 }
 
 CmdLine::~CmdLine()
 {
-
 }
 
 void CmdLine::registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType)
@@ -71,22 +69,16 @@ void CmdLine::parse()
     {
         param = QApplication::arguments()[i];
 
-        if (param.startsWith("--") != true)
-        {
+        if (!param.startsWith("--"))
             _invalidParams << param;
-        }
         else
         {
             param = param.remove(0, 2);
 
-            if (_regstredParams.contains(param) == true)
-            {
+            if (_regstredParams.contains(param))
                 _usedParams << param;
-            }
             else
-            {
                 _invalidParams << param;
-            }
         }
     }
 
@@ -104,12 +96,8 @@ void CmdLine::parse()
 qint8 CmdLine::selectedScreenType()
 {
     for (int i = 0; i < _screenTypeParams.count(); ++i)
-    {
         if (_usedParams.contains(_screenTypeParams.at(i)))
-        {
             return i;
-        }
-    }
     return -1;
 }
 

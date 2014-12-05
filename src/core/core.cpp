@@ -31,12 +31,8 @@
 
 #include <QDebug>
 
-#include "src/core/core.h"
-#include "src/common/netwm/netwm.h"
-using namespace netwm;
-
-#include <X11/Xlib.h>
-#include <QX11Info>
+#include "core/core.h"
+#include <KF5/KWindowSystem/KWindowSystem>
 
 Core* Core::corePtr = 0;
 
@@ -68,7 +64,6 @@ Core::Core() : _cmd(new CmdLine)
 
 Core::Core(const Core& ): QObject()
 {
-
 }
 
 Core& Core::operator=(const Core &)
@@ -79,9 +74,7 @@ Core& Core::operator=(const Core &)
 Core* Core::instance()
 {
     if (!corePtr)
-    {
         corePtr = new Core;
-    }
     return corePtr;
 }
 
@@ -101,7 +94,6 @@ void Core::sleep(int msec)
     mutex.unlock();
 }
 
-
 void Core::coreQuit()
 {
     if (corePtr)
@@ -119,11 +111,10 @@ void Core::screenShot(bool first)
 {
     sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
+
     // Update date last crenshot, if it is  a first screen
     if (_firstScreen == true)
-    {
         conf->updateLastSaveDate();
-    }
 
     // grb pixmap of desktop
     switch(conf->getTypeScreen())
@@ -137,7 +128,7 @@ void Core::screenShot(bool first)
     }
     case 1:
     {
-        getActiveWind_X11();
+        getActiveWindow();
         checkAutoSave(first);
         Q_EMIT newScreenShot(_pixelMap);
         break;
@@ -162,90 +153,55 @@ void Core::screenShot(bool first)
 
 void Core::checkAutoSave(bool first)
 {
-    if (conf->getAutoSave() == true)
+    if (conf->getAutoSave())
     {
         // hack
-        if (first == true)
+        if (first)
         {
-            if (conf->getAutoSaveFirst() == true)
-            {
+            if (conf->getAutoSaveFirst())
                 QTimer::singleShot(600, this, SLOT(autoSave()));
-            }
         }
         else
-        {
             autoSave();
-        }
     }
     else
     {
-        if (first == false)
+        if (!first)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            Q_EMIT  sendStateNotifyMessage(message);
+            Q_EMIT sendStateNotifyMessage(message);
         }
     }
 }
 
-void Core::getActiveWind_X11()
+void Core::getActiveWindow()
 {
-    netwm::init();
-    Window *wnd = reinterpret_cast<ulong *>(netwm::property(QX11Info::appRootWindow(), NET_ACTIVE_WINDOW, XA_WINDOW));
+    WId wnd = KWindowSystem::activeWindow();
 
-    if(!wnd)
+    if (!wnd)
     {
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         exit(1);
     }
 
     // no decorations option is selected
-    if (conf->getNoDecorX11() == true)
+    if (conf->getNoDecoration())
     {
-        *_pixelMap = QPixmap::grabWindow(*wnd);
+        *_pixelMap = QPixmap::grabWindow(wnd);
         return;
     }
 
-    unsigned int d;
-    int status;
-    int stat;
+    KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
 
-    Window rt, *children, parent;
+    if (info.mappingState() != NET::Visible)
+        CmdLine::print("Window not visible");
 
-    // Find window manager frame
-    while (true)
-    {
-        status = XQueryTree(QX11Info::display(), *wnd, &rt, &parent, &children, &d);
-        if (status && (children != None))
-        {
-            XFree((char *) children);
-        }
-
-        if (!status || (parent == None) || (parent == rt))
-        {
-            break;
-        }
-
-        *wnd = parent;
-    }
-
-    XWindowAttributes attr; // window attributes
-    stat = XGetWindowAttributes(QX11Info::display(), *wnd, &attr);
-
-    if ((stat == False) || (attr.map_state != IsViewable))
-    {
-        CmdLine::print("Not window attributes.");
-    }
-
-    // get wnd size
-    int rx = 0, ry = 0, rw = 0, rh = 0;
-    rw = attr.width;
-    rh = attr.height;
-    rx = attr.x;
-    ry = attr.y;
-
-    *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(), rx, ry, rw, rh);
-
-    XFree(wnd);
+    QRect geometry = info.frameGeometry();
+    *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(),
+                                     geometry.x(),
+                                     geometry.y(),
+                                     geometry.width(),
+                                     geometry.height());
 }
 
 QString Core::getSaveFilePath(QString format)
@@ -254,22 +210,16 @@ QString Core::getSaveFilePath(QString format)
 
     do
     {
-        if (conf->getDateTimeInFilename() == true)
-        {
-            initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
-        }
+        if (conf->getDateTimeInFilename())
+            initPath = conf->getSaveDir() + conf->getSaveFileName() + "-" + getDateTimeFileName() + "." + format;
         else
         {
             if (conf->getScrNum() != 0)
-            {
-                initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr() +"."+format;
-            }
+                initPath = conf->getSaveDir() + conf->getSaveFileName() + conf->getScrNumStr() + "." + format;
             else
-            {
-                initPath = conf->getSaveDir() + conf->getSaveFileName()+"."+format;
-            }
+                initPath = conf->getSaveDir() + conf->getSaveFileName() + "." + format;
         }
-    } while(checkExsistFile(initPath) == true);
+    } while (checkExsistFile(initPath));
 
     return initPath;
 }
@@ -278,10 +228,8 @@ bool Core::checkExsistFile(QString path)
 {
     bool exist = QFile::exists(path);
 
-    if (exist == true)
-    {
+    if (exist)
         conf->increaseScrNum();
-    }
 
     return exist;
 }
@@ -291,26 +239,21 @@ QString Core::getDateTimeFileName()
     QString currentDateTime = QDateTime::currentDateTime().toString(conf->getDateTimeTpl());
 
     if (currentDateTime == conf->getLastSaveDate().toString(conf->getDateTimeTpl()) && conf->getScrNum() != 0)
-    {
         currentDateTime += "-" + conf->getScrNumStr();
-    }
     else
-    {
         conf->resetScrNum();
-    }
 
     return currentDateTime;
 }
 
 void Core::updatePixmap()
 {
-    if (QFile::exists(_tempFilename) == true)
+    if (QFile::exists(_tempFilename))
     {
         _pixelMap->load(_tempFilename, "png");
         Q_EMIT newScreenShot(_pixelMap);
     }
 }
-
 
 QString Core::getTempFilename(const QString& format)
 {
@@ -318,7 +261,6 @@ QString Core::getTempFilename(const QString& format)
     int size = _tempFilename.size() - 2;
     _tempFilename = _tempFilename.mid(1, size).left(8);
     _tempFilename = QDir::tempPath() + QDir::separator() + "screenshot-" + _tempFilename + "." + format;
-
     return _tempFilename;
 }
 
@@ -331,59 +273,44 @@ void Core::killTempFile()
     }
 }
 
-
 // save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
     // adding extension format
-    if (!fileName.contains("."+format) )
-    {
-        fileName.append("."+format);
-    }
+    if (!fileName.contains("." + format))
+        fileName.append("." + format);
 
     // saving temp file (for uploader module)
-    if (tmpScreen == true)
+    if (tmpScreen)
     {
-        if (fileName.isEmpty() == false)
-        {   ;
-            return _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
-        }
+        if (!fileName.isEmpty())
+            return _pixelMap->save(fileName, format.toLatin1(), conf->getImageQuality());
         else
-        {
             return false;
-        }
     }
 
     // writing file
     bool saved;
-    if (fileName.isEmpty() == false)
+    if (!fileName.isEmpty())
     {
         if (format == "jpg")
-        {
             saved = _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
-        }
         else
-        {
             saved = _pixelMap->save(fileName,format.toLatin1(), -1);
-        }
 
-        if (saved == true)
+        if (saved)
         {
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
             qDebug() << "save as " << fileName;
             message.message = message.message + copyFileNameToCliipboard(fileName);
             conf->updateLastSaveDate();
-            Q_EMIT     sendStateNotifyMessage(message);
+            Q_EMIT sendStateNotifyMessage(message);
         }
         else
-        {
             qDebug() << "Error saving file " << fileName;
-        }
     }
     else
-    {
         saved = false;
-    }
 
     return saved;
 }
@@ -412,7 +339,6 @@ QString Core::copyFileNameToCliipboard(QString file)
     return retString;
 }
 
-
 void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
@@ -434,7 +360,8 @@ void Core::openInExtViewer()
         args << tempFileName;
 
         QProcess *execProcess = new QProcess(this);
-        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
+                this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
         execProcess->start(exec, args);
     }
 }
@@ -447,19 +374,15 @@ void Core::parseCmdLine()
 
         int  screenType = _cmd->selectedScreenType();
         if (screenType != -1)
-        {
             conf->setTypeScreen(screenType);
-        }
     }
 }
-
 
 void Core::closeExtViewer(int, QProcess::ExitStatus)
 {
     sender()->deleteLater();
     killTempFile();
 }
-
 
 ModuleManager* Core::modules()
 {
@@ -471,13 +394,10 @@ CmdLine* Core::cmdLine()
     return _cmd;
 }
 
-
 void Core::autoSave()
 {
-
     QString format = conf->getSaveFormat();
     QString fileName = getSaveFilePath(format);
-
     writeScreen(fileName, format);
 }
 
@@ -499,13 +419,12 @@ QByteArray Core::getScreen()
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
     _pixelMap->save(&buffer, conf->getSaveFormat().toLatin1());
-
     return bytes;
 }
 
 void Core::regionGrabbed(bool grabbed)
 {
-    if (grabbed == true)
+    if (grabbed)
     {
         *_pixelMap = _selector->getSelection();
 

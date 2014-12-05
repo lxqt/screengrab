@@ -46,10 +46,8 @@ ShortcutManager::ShortcutManager(QSettings *settings) :
 {
     _shortcutSettings = settings;
 
-    for(int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
-    {
+    for (int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
         _listShortcuts << Shortcut();
-    }
 }
 
 ShortcutManager::~ShortcutManager()
@@ -61,18 +59,27 @@ ShortcutManager::~ShortcutManager()
 void ShortcutManager::loadSettings()
 {
     _shortcutSettings->beginGroup("LocalShortcuts");
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_NEW, DEF_SHORTCUT_NEW).toString(),Config::shortcutNew, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_SAVE, DEF_SHORTCUT_SAVE).toString(),Config::shortcutSave, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_COPY, DEF_SHORTCUT_COPY).toString(),Config::shortcutCopy, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_OPT, DEF_SHORTCUT_OPT).toString(),Config::shortcutOptions, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_HELP, DEF_SHORTCUT_HELP).toString(),Config::shortcutHelp, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_CLOSE, DEF_SHORTCUT_CLOSE).toString(),Config::shortcutClose, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_NEW, DEF_SHORTCUT_NEW).toString(),
+                Config::shortcutNew, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_SAVE, DEF_SHORTCUT_SAVE).toString(),
+                Config::shortcutSave, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_COPY, DEF_SHORTCUT_COPY).toString(),
+                Config::shortcutCopy, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_OPT, DEF_SHORTCUT_OPT).toString(),
+                Config::shortcutOptions, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_HELP, DEF_SHORTCUT_HELP).toString(),
+                Config::shortcutHelp, Config::localShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_CLOSE, DEF_SHORTCUT_CLOSE).toString(),
+                Config::shortcutClose, Config::localShortcut);
     _shortcutSettings->endGroup();
 
     _shortcutSettings->beginGroup("GlobalShortcuts");
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_FULL, DEF_SHORTCUT_FULL).toString(),Config::shortcutFullScreen, Config::globalShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_ACTW, DEF_SHORTCUT_ACTW).toString(),Config::shortcutActiveWnd, Config::globalShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_AREA, DEF_SHORTCUT_AREA).toString(),Config::shortcutAreaSelect, Config::globalShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_FULL, DEF_SHORTCUT_FULL).toString(),
+                Config::shortcutFullScreen, Config::globalShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_ACTW, DEF_SHORTCUT_ACTW).toString(),
+                Config::shortcutActiveWnd, Config::globalShortcut);
+    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_AREA, DEF_SHORTCUT_AREA).toString(),
+                Config::shortcutAreaSelect, Config::globalShortcut);
     _shortcutSettings->endGroup();
 }
 
@@ -125,7 +132,6 @@ int ShortcutManager::getShortcutType(int action)
     return _listShortcuts[action].type;
 }
 
-
 QStringList ShortcutManager::getShortcutsList(int type)
 {
     QStringList retList;
@@ -133,14 +139,10 @@ QStringList ShortcutManager::getShortcutsList(int type)
     {
         if (_listShortcuts[i].type == type)
         {
-            if (_listShortcuts[i].key.isNull() != true)
-            {
+            if (!_listShortcuts[i].key.isNull())
                 retList << _listShortcuts[i].key;
-            }
             else
-            {
                 retList << QString("");
-            }
         }
     }
     return retList;

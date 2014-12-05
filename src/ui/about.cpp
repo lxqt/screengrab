@@ -45,7 +45,6 @@ AboutDialog::AboutDialog(QWidget *parent):
 
     QTabBar *tabs = new QTabBar;
 
-
     _ui->frame->layout()->addWidget(tabs);
     _ui->frame->layout()->addWidget(_ui->txtArea);
 

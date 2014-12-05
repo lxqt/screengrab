@@ -45,11 +45,13 @@
 struct StateNotifyMessage {
     QString header;
     QString message;
+
     StateNotifyMessage()
     {
         header = "";
         message = "";
     };
+
     StateNotifyMessage(QString h, QString m)
     {
         header = h;
@@ -104,7 +106,7 @@ private:
 
     void checkAutoSave(bool first = false);
 
-    void getActiveWind_X11();
+    void getActiveWindow();
 
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
