@@ -67,14 +67,14 @@ private:
     Core *_core;
 
     QSystemTrayIcon *_trayIcon;
-    QAction *actQuit;
-    QAction *actAbout;
+    QAction *actHideShow;
     QAction *actNew;
     QAction *actSave;
     QAction *actCopy;
-    QAction *mOptions;
+    QAction *actOptions;
+    QAction *actAbout;
     QAction *actHelp;
-    QAction *actHideShow;
+    QAction *actQuit;
     QMenu *menuTray;
     QShortcut *_hideWnd;
 

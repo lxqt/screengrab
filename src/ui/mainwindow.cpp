@@ -29,7 +29,7 @@
 #include <QHashIterator>
 #include <QRegExp>
 #include <QTimer>
-#include <QPushButton>
+#include <QToolButton>
 #include <QMenu>
 
 MainWindow::MainWindow(QWidget* parent) :
@@ -61,35 +61,36 @@ MainWindow::MainWindow(QWidget* parent) :
     _trayIcon = NULL;
     _hideWnd = NULL;
 
-    actAbout = NULL;
-    actHelp = NULL;
+    // create actions menu
+    actNew = new QAction(QIcon::fromTheme("document-new"), tr("New"), this);
+    actSave = new QAction(QIcon::fromTheme("document-save"), tr("Save"), this);
+    actCopy = new QAction(QIcon::fromTheme("edit-copy"), tr("Copy"), this);
+    actOptions = new QAction(QIcon::fromTheme("configure"), tr("Options"), this);
+    actHelp = new QAction(QIcon::fromTheme("system-help"), tr("Help"), this);
+    actAbout = new QAction(QIcon::fromTheme("system-about"), tr("About"), this);
+    actQuit = new QAction(QIcon::fromTheme("application-exit"), tr("Quit"), this);
 
-    if (!actHelp)
-    {
-        actHelp = new QAction(tr("Help"), this);
-        connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()) );
-    }
-
-    if (!actAbout)
-    {
-        actAbout = new QAction(tr("About"), this);
-        connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()) );
-    }
+    // connect actions to slots
+    connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
+    connect(actSave, SIGNAL(triggered()), this, SLOT(saveScreen()));
+    connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
+    connect(actOptions, SIGNAL(triggered()), this, SLOT(showOptions()));
+    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()));
+    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
+    connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
 
     updateUI();
 
     delayBoxChange(_core->conf->getDelay());
     _ui->cbxTypeScr->setCurrentIndex(_core->conf->getTypeScreen());
 
-    connect(_ui->actionOptions, SIGNAL(triggered(bool)), this, SLOT(showOptions()));
-    connect(_ui->actionSave, SIGNAL(triggered(bool)), this, SLOT(saveScreen()));
-    connect(_ui->actionQuit, SIGNAL(triggered(bool)), this, SLOT(quit()));
-    connect(_ui->actionNew, SIGNAL(triggered(bool)), this, SLOT(newScreen()) );
-    connect(_ui->actionNew, SIGNAL(triggered(bool)), this, SLOT(copyScreen()));
+    _ui->toolBar->addAction(actNew);
+    _ui->toolBar->addAction(actSave);
+    _ui->toolBar->addAction(actCopy);
+    _ui->toolBar->addSeparator();
 
     // Create advanced menu
     QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
-    QAction *beforeAction = _ui->actionOptions;
 
     if (modulesActions.count() > 0)
     {
@@ -97,7 +98,7 @@ MainWindow::MainWindow(QWidget* parent) :
         {
             QAction *action = modulesActions.at(i);
             if (action)
-                _ui->toolBar->insertAction(beforeAction, action);
+                _ui->toolBar->addAction(action);
         }
     }
 
@@ -109,22 +110,31 @@ MainWindow::MainWindow(QWidget* parent) :
             QMenu *menu = modulesMenus.at(i);
             if (menu != 0)
             {
-                QPushButton* btn = new QPushButton(menu->title(), this);
+                QToolButton* btn = new QToolButton(this);
+                btn->setText(menu->title());
+                btn->setPopupMode(QToolButton::InstantPopup);
                 btn->setToolTip(menu->title());
-                btn->setFlat(true);
                 btn->setMenu(modulesMenus.at(i));
-                _ui->toolBar->insertWidget(beforeAction, btn);
+                _ui->toolBar->addWidget(btn);
             }
         }
     }
     // end creation advanced menu
 
-    _ui->toolBar->insertSeparator(beforeAction);
+    _ui->toolBar->addSeparator();
+    _ui->toolBar->addAction(actOptions);
 
     QMenu *menuInfo = new QMenu(this);
     menuInfo->addAction(actHelp);
     menuInfo->addAction(actAbout);
-    _ui->actionHelp->setMenu(menuInfo);
+    QToolButton *help = new QToolButton(this);
+    help->setText(tr("Help"));
+    help->setPopupMode(QToolButton::InstantPopup);
+    help->setIcon(QIcon::fromTheme("system-help"));
+    help->setMenu(menuInfo);
+
+    _ui->toolBar->addWidget(help);
+    _ui->toolBar->addAction(actQuit);
 
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
@@ -217,12 +227,12 @@ void MainWindow::showHelp()
     localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
-    if (QFile::exists(localeHelpFile) != true)
+    if (!QFile::exists(localeHelpFile))
     {
         localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section("_", 0, 0)  + "%1index.html";
         localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
-        if (QFile::exists(localeHelpFile) != true)
+        if (!QFile::exists(localeHelpFile))
         {
             localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
             localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
@@ -321,22 +331,8 @@ void MainWindow::displatScreenToolTip()
 void MainWindow::createTray()
 {
     _trayed = false;
-
-    // create actions menu
-    actQuit = new QAction(tr("Quit"), this);
-    actSave = new QAction(tr("Save"), this);
-    actNew = new QAction(tr("New"), this);
-    actCopy = new QAction(tr("Copy"), this);
     actHideShow = new QAction(tr("Hide"), this);
-    mOptions = new QAction(tr("Options"), this);
-
-    // connect to slots
-    connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
-    connect(actSave, SIGNAL(triggered()), this, SLOT(saveScreen()) );
-    connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
-    connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
-    connect(mOptions, SIGNAL(triggered()), this, SLOT(showOptions()) );
     connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)),
             this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
 
@@ -348,7 +344,7 @@ void MainWindow::createTray()
     menuTray->addAction(actSave);
     menuTray->addAction(actCopy);
     menuTray->addSeparator();
-    menuTray->addAction(mOptions);
+    menuTray->addAction(actOptions);
     menuTray->addSeparator();
     menuTray->addAction(actHelp);
     menuTray->addAction(actAbout);
@@ -374,15 +370,7 @@ void MainWindow::killTray()
     _trayed = false;
     delete _trayIcon;
     _trayIcon = NULL;
-
-    delete actHelp;
-    delete mOptions;
-    delete actAbout;
     delete actHideShow;
-    delete actCopy;
-    delete actNew;
-    delete actSave;
-    delete actQuit;
 }
 
 void MainWindow::delayBoxChange(int delay)
@@ -572,15 +560,15 @@ void MainWindow::saveScreen()
 
 void MainWindow::createShortcuts()
 {
-    _ui->actionNew->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutNew));
-    _ui->actionSave->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutSave));
-    _ui->actionCopy->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
-    _ui->actionOptions->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
-    _ui->actionHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
+    actNew->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutNew));
+    actSave->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutSave));
+    actCopy->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
+    actOptions->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
+    actHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
 
     if (_core->conf->getCloseInTray() && _core->conf->getShowTrayIcon())
     {
-        _ui->actionQuit->setShortcut(QKeySequence());
+        actQuit->setShortcut(QKeySequence());
         _hideWnd = new QShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose), this);
         connect(_hideWnd, SIGNAL(activated()), this, SLOT(close()));
     }
@@ -588,7 +576,7 @@ void MainWindow::createShortcuts()
     {
         if (_hideWnd)
             delete _hideWnd;
-        _ui->actionQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
+        actQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
     }
 
 #ifdef SG_GLOBAL_SHORTCUTS
