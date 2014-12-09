@@ -174,7 +174,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>76</width>
+           <width>40</width>
            <height>13</height>
           </size>
          </property>
@@ -195,13 +195,15 @@
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="separator"/>
   </widget>
  </widget>
  <resources/>
