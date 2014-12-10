@@ -231,4 +231,4 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share
 # install pixmap
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
 # install translations
-install(DIRECTORY ${SCREENGRAB_QMS} DESTINATION share/screengrab/localize)
+install(DIRECTORY ${SCREENGRAB_QMS} DESTINATION share/screengrab/translations)
