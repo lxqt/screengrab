@@ -17,7 +17,6 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <QTranslator>
 
 #include "common/singleapp/singleapp.h"
 #include "core/core.h"
@@ -32,14 +31,6 @@ int main(int argc, char *argv[])
 {
     SingleApp scr(argc, argv, VERSION);
     scr.setApplicationVersion(VERSION);
-
-    QTranslator localize;
-
-    QString localizeFile = PREFIX;
-    localizeFile.append("/share/screengrab/translations/screengrab_"+Config::getSysLang()+".qm");
-    localize.load(localizeFile);
-
-    scr.installTranslator(&localize);
 
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();

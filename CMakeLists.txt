@@ -54,7 +54,6 @@ message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
 
-add_definitions(-DPREFIX="${CMAKE_INSTALL_PREFIX}")
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
 if(DEFINED LIB_SUFFIX)
@@ -80,6 +79,7 @@ option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(SG_XDG_CONFIG_SUPPORT "Put config files into XDGC_ONFIG_HOME" ON)
 option(SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -113,6 +113,7 @@ message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
 message(STATUS "Upload to MediaCrush and imgur support: " ${SG_EXT_UPLOADS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
+message(STATUS "Update source translation translations/*.ts files: " ${UPDATE_TRANSLATIONS})
 
 # docs
 if(NOT SG_DOCDIR)
@@ -169,12 +170,44 @@ set(SCREENGRAB_QRC
 qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
-message(STATUS "Generating localize ...")
-file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/translations/*.ts)
-qt5_add_translation(SCREENGRAB_QMS ${SCREENGRAB_TS})
-add_custom_target(translations ALL DEPENDS ${SCREENGRAB_QMS})
 
-add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
+message(STATUS "Generating localize ...")
+# Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
+#   bring any dependency on lxqt.
+include(LXQtTranslateTs)
+include(LXQtTranslateDesktop)
+include(Qt5TranslationLoader)
+
+set(SCREENGRAB_DESKTOP_FILES_IN
+    screengrab.desktop.in
+)
+
+lxqt_translate_ts(SCREENGRAB_QMS
+    USE_QT5 TRUE
+    UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
+    SOURCES
+        ${SCREENGRAB_SRC}
+        ${SCREENGRAB_UI}
+    INSTALL_DIR "share/${PROJECT_NAME}/translations"
+)
+
+lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
+    SOURCES ${SCREENGRAB_DESKTOP_FILES_IN}
+)
+
+qt5_translation_loader(SCREENGRAB_QM_LOADER
+    "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/translations"
+    ${PROJECT_NAME}
+)
+
+add_executable(screengrab
+    ${SCREENGRAB_SRC}
+    ${SCREENGRAB_UI_H}
+    ${QRC_SOURCES}
+    ${SCREENGRAB_QMS}
+    ${SCREENGRAB_DESKTOP_FILES}
+    ${SCREENGRAB_QM_LOADER}
+)
 
 if(SG_GLOBALSHORTCUTS)
     if(SG_USE_SYSTEM_QXT)
@@ -223,8 +256,6 @@ install(FILES ${DOCS} DESTINATION ${DOCPATH})
 # install html docs
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${DOCPATH}/html")
 # install desktop files
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/screengrab.desktop" DESTINATION share/applications)
+install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION share/applications)
 # install pixmap
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
-# install translations
-install(FILES ${SCREENGRAB_QMS} DESTINATION share/screengrab/translations)
