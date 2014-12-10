@@ -54,7 +54,8 @@ QMenu* ModuleExtEdit::initModuleMenu()
     foreach (XdgAction *appAction, actionsList)
     {
         menu->addAction(appAction);
-        QObject::connect(appAction, SIGNAL(triggered(bool)), _extEdit, SLOT(runExternalEditor()));
+        appAction->disconnect(SIGNAL(triggered()));
+        QObject::connect(appAction, SIGNAL(triggered()), _extEdit, SLOT(runExternalEditor()));
     }
 
     menu->setObjectName("menuExtedit");

@@ -47,14 +47,13 @@ void ExtEdit::runExternalEditor()
         format = "png";
 
     _editFilename = core->getTempFilename(format);
-    core->writeScreen(_editFilename, format , true);
-    QStringList args;
-    args << _editFilename;
+    core->writeScreen(_editFilename, format, true);
 
     QProcess *execProcess = new QProcess(this);
     connect(execProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(closedExternalEditor(int, QProcess::ExitStatus)));
-    execProcess->start(action->desktopFile().expandExecString(args).first(), args);
+     execProcess->start(action->desktopFile().expandExecString().first(),
+                        QStringList() << _editFilename);
     _watcherEditedFile->addPath(_editFilename);
 }
 
