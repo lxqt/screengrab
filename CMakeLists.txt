@@ -9,7 +9,7 @@ find_package(Qt5Network REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
 
 # for translations
-find_package(Qt5LinguistTools)
+find_package(Qt5LinguistTools REQUIRED)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -169,14 +169,10 @@ set(SCREENGRAB_QRC
 qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
-if(Qt5LinguistTools_FOUND)
-    message(STATUS "Generating localize ...")
-    file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/translations/*.ts)
-    qt5_add_translation(SCREENGRAB_QMS ${SCREENGRAB_TS})
-    add_custom_target(translations ALL DEPENDS ${SCREENGRAB_QMS})
-else()
-    message(FATAL_ERROR "Could NOT find Qt5LinguistTools")
-endif()
+message(STATUS "Generating localize ...")
+file(GLOB SCREENGRAB_TS ${CMAKE_CURRENT_SOURCE_DIR}/translations/*.ts)
+qt5_add_translation(SCREENGRAB_QMS ${SCREENGRAB_TS})
+add_custom_target(translations ALL DEPENDS ${SCREENGRAB_QMS})
 
 add_executable( screengrab ${SCREENGRAB_SRC} ${SCREENGRAB_UI_H} ${QRC_SOURCES} )
 
