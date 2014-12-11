@@ -25,7 +25,6 @@
 #include "imgur/uploader_imgur.h"
 
 #include "core/core.h"
-//#include "core/cmdline.h"
 
 #include <QApplication>
 #include <QWaitCondition>
