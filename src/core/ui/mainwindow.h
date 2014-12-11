@@ -23,9 +23,9 @@
 
 #include <QMainWindow>
 
-#include "src/core/core.h"
-#include "src/ui/about.h"
-#include "src/ui/configwidget.h"
+#include "../core.h"
+#include "about.h"
+#include "configwidget.h"
 
 #ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>

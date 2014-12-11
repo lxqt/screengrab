@@ -18,9 +18,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "ui/mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "core/shortcutmanager.h"
+#include "../shortcutmanager.h"
 
 #include <QDir>
 #include <QFileDialog>

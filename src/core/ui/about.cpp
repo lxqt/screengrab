@@ -21,7 +21,7 @@
 #include "about.h"
 #include "ui_aboutwidget.h"
 
-#include "src/core/core.h"
+#include "../core.h"
 #include <QDesktopServices>
 
 AboutDialog::AboutDialog(QWidget *parent):

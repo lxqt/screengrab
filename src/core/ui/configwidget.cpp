@@ -20,9 +20,9 @@
 
 #include <QKeyEvent>
 
-#include "ui/configwidget.h"
+#include "configwidget.h"
 #include "ui_configwidget.h"
-#include "core/core.h"
+#include "../core.h"
 
 #ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>

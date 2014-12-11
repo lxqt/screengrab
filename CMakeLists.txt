@@ -126,7 +126,7 @@ add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 # qtsingleapplication
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
+#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 
 include_directories("${SG_INCLUDE}")
@@ -144,22 +144,27 @@ if (SG_EXT_EDIT)
 endif()
 
 set(SCREENGRAB_SRC
-    src/main.cpp
+    src/core/main.cpp
+    src/core/singleapp.cpp
     src/core/core.cpp
     src/core/config.cpp
     src/core/regionselect.cpp
     src/core/cmdline.cpp
     src/core/shortcutmanager.cpp
     src/core/modulemanager.cpp
-    src/ui/configwidget.cpp
-    src/ui/about.cpp
-    src/ui/mainwindow.cpp
+    src/core/ui/configwidget.cpp
+    src/core/ui/about.cpp
+    src/core/ui/mainwindow.cpp
+)
+
+set(SCREENGRAB_HDR
+    src/core/singleapp.h
 )
 
 set(SCREENGRAB_UI
-    src/ui/configwidget.ui
-    src/ui/aboutwidget.ui
-    src/ui/mainwindow.ui
+    src/core/ui/configwidget.ui
+    src/core/ui/aboutwidget.ui
+    src/core/ui/mainwindow.ui
 )
 
 # Qt resource file
@@ -168,6 +173,7 @@ set(SCREENGRAB_QRC
 )
 
 qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
+#qt5_wrap_cpp(singleapp_SRC_MOC ${SCREENGRAB_HDR})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 
@@ -220,7 +226,7 @@ if(SG_EXT_EDIT)
     target_link_libraries(screengrab extedit)
 endif()
 
-target_link_libraries(screengrab qkeysequencewidget singleapp Qt5::Widgets KF5::WindowSystem)
+target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem)
 
 
 # make src.tar.gz
