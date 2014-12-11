@@ -22,13 +22,15 @@
 #include "core.h"
 
 #include <QApplication>
+#include <QStandardPaths>
 #include <QDir>
 #include <QFile>
 #include <QLocale>
 #include <QVector>
-#include <QDesktopServices>
-
 #include <QDebug>
+
+#define CONFIG_FILE_DIR "screengrab"
+#define CONFIG_FILE_NAME "screengrab.conf"
 
 const QString KEY_SAVEDIR = "defDir";
 const QString KEY_SAVENAME = "defFilename";
@@ -62,7 +64,7 @@ Config* Config::ptrInstance = 0;
 // constructor
 Config::Config()
 {
-    _settings = new QSettings(getConfigFile(), QSettings::IniFormat );
+    _settings = new QSettings(getConfigFile(), QSettings::IniFormat);
 
     _shortcuts = new ShortcutManager(_settings);
 
@@ -121,47 +123,21 @@ void Config::killInstance()
 
 QString Config::getConfigFile()
 {
-    QString configFile = Config::getConfigDir() + "screengrab.conf";
-
-    // moving old stile storange setting to XDG_CONFIG_HOME storage
-    QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "screengrab.conf";
-    if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
-        QFile::rename(oldConfigFile, configFile);
-
-    return configFile;
+    return getConfigDir() + QDir::separator() + CONFIG_FILE_NAME;
 }
 
 QString Config::getConfigDir()
 {
-    QString configDir;
-    #ifdef SG_XDG_CONFIG_SUPPORT
-        // old style config path
-        QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-        configDir = qgetenv("XDG_CONFIG_HOME");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
+    dir += QDir::separator();
+    dir += CONFIG_FILE_DIR;
 
-        // Ubuntu hack -- if XDG_CONFIG_HOME is missing
-        if (configDir.isEmpty())
-        {
-            configDir = QDir::homePath();
-            configDir += QDir::separator();
-            configDir += ".config";
-        }
+    QDir qdir(dir);
+    if (!qdir.exists())
+        qdir.mkpath(dir);
 
-        configDir.append(QDir::separator());
-        configDir.append("screengrab");
-        configDir.append(QDir::separator());
-    #else
-        configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-    #endif
-
-    if (QFile::exists(configDir) == false)
-    {
-        QDir confDir(configDir);
-        confDir.mkpath(confDir.path());
-    }
-    return configDir;
+    return dir;
 }
-
 
 // public methods
 
@@ -209,7 +185,6 @@ void Config::setEnableExtView(bool val)
 {
     setValue(KEY_ENABLE_EXT_VIEWER, val);
 }
-
 
 QString Config::getSaveDir()
 {

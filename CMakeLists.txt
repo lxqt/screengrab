@@ -76,7 +76,6 @@ message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
 
 # options
 option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
-option(SG_XDG_CONFIG_SUPPORT "Put config files into XDGC_ONFIG_HOME" ON)
 option(SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -100,10 +99,6 @@ if(SG_GLOBALSHORTCUTS)
     endif()
 endif(SG_GLOBALSHORTCUTS)
 
-if(SG_XDG_CONFIG_SUPPORT)
-    add_definitions( -DSG_XDG_CONFIG_SUPPORT="1")
-endif()
-
 if(SG_EXT_UPLOADS)
     add_definitions( -DSG_EXT_UPLOADS="1")
 endif()
@@ -115,7 +110,6 @@ if(SG_EXT_EDIT)
 endif()
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
-message(STATUS "XDG_CONFIG_HOME support: " ${SG_XDG_CONFIG_SUPPORT})
 message(STATUS "Upload to MediaCrush and imgur support: " ${SG_EXT_UPLOADS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})

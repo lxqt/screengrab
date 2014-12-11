@@ -99,7 +99,16 @@ public:
     static void killInstance();
     ~Config();
 
+    /**
+     * @brief Gets the configuration file for screengrab. It's
+     * inside the folder returned by getConfigDir().
+     */
     static QString getConfigFile();
+
+    /**
+     * @brief Gets the directory where to save the configuration files.
+     * Does not end with '/'.
+     */
     static QString getConfigDir();
 
     /**
