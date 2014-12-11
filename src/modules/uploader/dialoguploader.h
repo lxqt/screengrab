@@ -61,7 +61,6 @@ private:
     qint8 _selectedHost;
 
     QStringList _resultLinks;
-    void _openLink(const QString& link);
 };
 
 #endif // DIALOGUPLOADER_H

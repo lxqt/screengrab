@@ -28,8 +28,8 @@
 #include "mediacrush/uploader_mediacrush_widget.h"
 #include <core/core.h>
 
-#include <QProcess>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 #include <QDebug>
 
@@ -48,17 +48,13 @@ DialogUploader::DialogUploader(QWidget *parent) :
     UploaderConfig config;
     QString defaultHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
-    if (defaultHost.isEmpty() == true)
-    {
+    if (defaultHost.isEmpty())
         _selectedHost = 0;
-    }
     else
     {
         _selectedHost = config.labelsList().indexOf(defaultHost);
         if (_selectedHost == -1)
-        {
             _selectedHost = 0;
-        }
     }
 
     // load ishot preview
@@ -89,13 +85,9 @@ DialogUploader::~DialogUploader()
 {
     qDebug() << "delete dialog upload";
 
-    if (_uploader != 0)
-    {
+    if (_uploader)
         delete _uploader;
-    }
-
     delete _uploaderWidget;
-
     delete _ui;
 }
 
@@ -149,22 +141,16 @@ void DialogUploader::slotSeletHost(int type)
     _selectedHost = type;
 
     if (_uploaderWidget)
-    {
         delete _uploaderWidget;
-    }
 
     switch(_selectedHost)
     {
         case 0:
-        {
             _uploaderWidget = new Uploader_MediaCrush_Widget();
             break;
-        }
         case 1:
-        {
             _uploaderWidget = new Uploader_ImgUr_Widget();
             break;
-        }
         default:
             _uploaderWidget = new Uploader_MediaCrush_Widget();
     }
@@ -179,9 +165,7 @@ void DialogUploader::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
     _ui->progressBar->setValue(bytesSent);
 
     if (bytesSent == bytesTotal)
-    {
         _ui->progressBar->setFormat(tr("Receiving a response from the server"));
-    }
 }
 
 void DialogUploader::slotUploadDone()
@@ -203,10 +187,8 @@ qDebug() << "start dialog uploader done";
     _ui->cbxUploaderList->setEnabled(false);
 
     UploaderConfig config;
-    if (config.autoCopyResultLink() == true)
-    {
+    if (config.autoCopyResultLink())
         QApplication::clipboard()->setText(_ui->editDirectLink->text());
-    }
 
     if (_resultLinks.count() > 0)
     {
@@ -251,21 +233,17 @@ void DialogUploader::slotCopyLink()
     QString copyText;
 
     if (objName == "butCopyLink")
-    {
         copyText = _ui->editDirectLink->text();
-    }
 
     if (objName == "butCopyExtCode")
-    {
         copyText = _ui->editExtCode->text();
-    }
 
     qApp->clipboard()->setText(copyText);
 }
 
 void DialogUploader::slotOpenDirectLink()
 {
-    _openLink(_ui->editDirectLink->text());
+    QDesktopServices::openUrl(QUrl(_ui->editDirectLink->text()));
 }
 
 void DialogUploader::slotOpenDeleteLink()
@@ -278,16 +256,5 @@ void DialogUploader::slotOpenDeleteLink()
     int result = msg.exec();
 
     if (result == QMessageBox::Yes)
-    {
-        _openLink(_ui->editDeleteLink->text());
-    }
-}
-
-void DialogUploader::_openLink(const QString& link)
-{
-    QString exec = "xdg-open";
-    QStringList args = QStringList() << link;
-    QProcess *execProcess = new QProcess();
-    connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), execProcess, SLOT(deleteLater()));
-    execProcess->start(exec, args);
+        QDesktopServices::openUrl(QUrl(_ui->editDeleteLink->text()));
 }
