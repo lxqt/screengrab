@@ -27,8 +27,8 @@
 #include <QMap>
 
 //  Uploader config file common keys
-const QString KEY_AUTO_COPY_RESULT_LIMK = "autoCopyDirectLink";
-const QString KEY_DEFAULT_HOST = "defaultHost";
+#define KEY_AUTO_COPY_RESULT_LIMK   "autoCopyDirectLink"
+#define KEY_DEFAULT_HOST            "defaultHost"
 
 class UploaderConfig
 {

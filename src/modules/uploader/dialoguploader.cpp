@@ -46,7 +46,7 @@ DialogUploader::DialogUploader(QWidget *parent) :
     _ui->cbxUploaderList->addItems(UploaderConfig::labelsList());
 
     UploaderConfig config;
-    QString defaultHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toLatin1()).toString();
+    QString defaultHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
     if (defaultHost.isEmpty() == true)
     {

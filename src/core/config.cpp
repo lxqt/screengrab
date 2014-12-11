@@ -32,32 +32,30 @@
 #define CONFIG_FILE_DIR "screengrab"
 #define CONFIG_FILE_NAME "screengrab.conf"
 
-const QString KEY_SAVEDIR = "defDir";
-const QString KEY_SAVENAME = "defFilename";
-const QString KEY_SAVEFORMAT = "defImgFormat";
-const QString KEY_DELAY_DEF = "defDelay";
-const QString KEY_DELAY = "delay";
-const QString KEY_IMG_QUALITY = "imageQuality";
-const QString KEY_FILENAMEDATE = "insDateTimeInFilename";
-const QString KEY_DATETIME_TPL = "templateDateTime";
-const QString KEY_FILENAME_TO_CLB = "CopyFilenameToClipboard";
-const QString KEY_AUTOSAVE = "autoSave";
-const QString KEY_AUTOSAVE_FIRST = "autoSaveFirst";
-const QString KEY_SHOW_TRAY = "showTrayIcon";
+#define KEY_SAVEDIR             "defDir"
+#define KEY_SAVENAME            "defFilename"
+#define KEY_SAVEFORMAT          "defImgFormat"
+#define KEY_DELAY_DEF           "defDelay"
+#define KEY_DELAY               "delay"
+#define KEY_IMG_QUALITY         "imageQuality"
+#define KEY_FILENAMEDATE        "insDateTimeInFilename"
+#define KEY_DATETIME_TPL        "templateDateTime"
+#define KEY_FILENAME_TO_CLB     "CopyFilenameToClipboard"
+#define KEY_AUTOSAVE            "autoSave"
+#define KEY_AUTOSAVE_FIRST      "autoSaveFirst"
 
-const QString KEY_WND_WIDTH = "windowWidth";
-const QString KEY_WND_HEIGHT = "windowHeight";
-const QString KEY_ZOOMBOX = "zoomAroundMouse";
-const QString KEY_TRAYMESSAGES = "trayMessages";
-const QString KEY_TIME_NOTIFY = "timeTrayMessages";
-const QString KEY_ALLOW_COPIES = "AllowCopies";
+#define KEY_SHOW_TRAY           "showTrayIcon"
+#define KEY_CLOSE_INTRAY        "closeInTray"
+#define KEY_TRAYMESSAGES        "trayMessages"
 
-const QString KEY_CLOSE_INTRAY = "closeInTray";
-const QString KEY_TYPE_SCREEN = "typeScreenDefault";
-
-const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
-
-const QString KEY_NODECOR = "noDecorations";
+#define KEY_WND_WIDTH           "windowWidth"
+#define KEY_WND_HEIGHT          "windowHeight"
+#define KEY_ZOOMBOX             "zoomAroundMouse"
+#define KEY_TIME_NOTIFY         "timeTrayMessages"
+#define KEY_ALLOW_COPIES        "AllowCopies"
+#define KEY_TYPE_SCREEN         "typeScreenDefault"
+#define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
+#define KEY_NODECOR             "noDecorations"
 
 Config* Config::ptrInstance = 0;
 

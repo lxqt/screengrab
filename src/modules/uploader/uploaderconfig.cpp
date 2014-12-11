@@ -27,9 +27,8 @@
 #include <QDir>
 
 // common defaults
-const bool DEF_AUTO_COPY_RESULT_LIMK = false;
-
-const QString DEF_DEFAULT_HOST = "MediaCrush";
+#define DEF_AUTO_COPY_RESULT_LIMK   false
+#define DEF_DEFAULT_HOST            "MediaCrush"
 
 QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgur";
 

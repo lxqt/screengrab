@@ -58,7 +58,7 @@ void ModuleUploader::init()
     {
         // TODO - add implement shadow supload screenshot to selected host
         UploaderConfig config;
-        QString selectedtHost = config.loadSingleParam(QByteArray("common"), KEY_DEFAULT_HOST.toLatin1()).toString();
+        QString selectedtHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
         Uploader *uploader = 0;
         switch(config.labelsList().indexOf(selectedtHost))
