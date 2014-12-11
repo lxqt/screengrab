@@ -36,7 +36,7 @@
 
 Core* Core::corePtr = 0;
 
-Core::Core() : _cmd(new CmdLine)
+Core::Core()
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
 
@@ -47,17 +47,32 @@ Core::Core() : _cmd(new CmdLine)
     _selector = 0;
     _firstScreen = true;
 
-    // register screenshot types command line options
-    _cmd->registerParam("fullscreen", "take a fullscreen screenshot", CmdLineParam::ScreenType);
-    _cmd->registerParam("active", "take a screenshot of the active window", CmdLineParam::ScreenType);
-    _cmd->registerParam("region", "take a screenshot of a region", CmdLineParam::ScreenType);
+    _cmdLine.setApplicationDescription("ScreenGrab " + tr("is a crossplatform application for fast creating screenshots of your desktop."));
+    _cmdLine.addHelpOption();
+    _cmdLine.addVersionOption();
 
-    // register utility command line options
-    _cmd->registerParam("minimized", "start minimized", CmdLineParam::Util);
+    QString optFullScreenDescr = tr("Take a fullscreen screenshot");
+    QCommandLineOption optFullScreen(
+                QStringList() << "f" << "fullscreen", optFullScreenDescr);
+    _cmdLine.addOption(optFullScreen);
+    _screenTypeOpts.append(optFullScreen);
 
-    // register "print only" command line params
-    _cmd->registerParam("help", "display this help and exit", CmdLineParam::Printable);
-    _cmd->registerParam("version", "output version information and exit", CmdLineParam::Printable);
+    QString optActiveWndDescr = tr("Take a screenshot of the active window");
+    QCommandLineOption optActiveWnd(
+                QStringList() << "a" << "active", optActiveWndDescr);
+    _cmdLine.addOption(optActiveWnd);
+    _screenTypeOpts.append(optActiveWnd);
+
+    QString optSelectedRectDescr = tr("Take a screenshot of the active window");
+    QCommandLineOption optSelectedRect(
+                QStringList() << "r" << "region", optSelectedRectDescr);
+    _cmdLine.addOption(optSelectedRect);
+    _screenTypeOpts.append(optSelectedRect);
+
+    QString optRunMinimizedDescr = tr("Run the application with a hidden main window");
+    QCommandLineOption optRunMinimized(
+                QStringList() << "m" << "minimized", optRunMinimizedDescr);
+    _cmdLine.addOption(optRunMinimized);
 
     sleep(250);
 }
@@ -80,7 +95,7 @@ Core* Core::instance()
 
 Core::~Core()
 {
-    delete _cmd;
+//    delete _cmd;
     delete _pixelMap;
     conf->killInstance();
 }
@@ -194,7 +209,7 @@ void Core::getActiveWindow()
     KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
 
     if (info.mappingState() != NET::Visible)
-        CmdLine::print("Window not visible");
+        qWarning() << "Window not visible";
 
     QRect geometry = info.frameGeometry();
     *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(),
@@ -301,13 +316,13 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
         if (saved)
         {
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
-            qDebug() << "save as " << fileName;
+
             message.message = message.message + copyFileNameToCliipboard(fileName);
             conf->updateLastSaveDate();
             Q_EMIT sendStateNotifyMessage(message);
         }
         else
-            qDebug() << "Error saving file " << fileName;
+            qWarning() << "Error saving file " << fileName;
     }
     else
         saved = false;
@@ -366,18 +381,6 @@ void Core::openInExtViewer()
     }
 }
 
-void Core::parseCmdLine()
-{
-    if (QApplication::arguments().size() > 1)
-    {
-        _cmd->parse();
-
-        int  screenType = _cmd->selectedScreenType();
-        if (screenType != -1)
-            conf->setTypeScreen(screenType);
-    }
-}
-
 void Core::closeExtViewer(int, QProcess::ExitStatus)
 {
     sender()->deleteLater();
@@ -389,9 +392,48 @@ ModuleManager* Core::modules()
     return &_modules;
 }
 
-CmdLine* Core::cmdLine()
+void Core::addCmdLineOption(const QCommandLineOption& option)
 {
-    return _cmd;
+    _cmdLine.addOption(option);
+}
+
+bool Core::checkCmdLineOption(const QCommandLineOption& option)
+{
+    return _cmdLine.isSet(option);
+}
+
+bool Core::checkCmdLineOptions(const QStringList &options)
+{
+    for (int i = 0; i < options.count(); ++i) {
+        if (_cmdLine.isSet(options.at(i))) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void Core::processCmdLineOpts(const QStringList& arguments)
+{
+    _cmdLine.process(arguments);
+
+    // Check commandline parameters and set screenshot type
+    for (int i=0; i < _screenTypeOpts.count(); ++i) {
+        if (_cmdLine.isSet(_screenTypeOpts.at(i))) {
+            conf->setTypeScreen(i);
+        }
+    }
+}
+
+bool Core::runAsMinimized()
+{
+    bool isMinnimize = false;
+
+    if (_cmdLine.isSet("minimized") || _cmdLine.isSet("m")) {
+        isMinnimize = true;
+    }
+
+    return isMinnimize;
 }
 
 void Core::autoSave()

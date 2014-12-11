@@ -41,7 +41,6 @@ void ModuleManager::initModules()
     ModuleUploader *uploader = new ModuleUploader();
     _modules->insert(MOD_UPLOADER , uploader);
 #endif
-
 #ifdef SG_EXT_EDIT
     ModuleExtEdit *extedit = new ModuleExtEdit();
     _modules->insert(MOD_EXT_EDIT.data(), extedit);

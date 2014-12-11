@@ -23,26 +23,26 @@
 #include "ui/mainwindow.h"
 
 #ifdef SG_EXT_UPLOADS
-// FIXME for v1.1 (move call uploader form main() function to app core)
+// TODO for future (move call uploader from main() function to app core)
 #include "modules/uploader/moduleuploader.h"
 #endif
+
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     SingleApp scr(argc, argv, VERSION);
     scr.setApplicationVersion(VERSION);
-
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
-    ScreenGrab->parseCmdLine();
-
+    ScreenGrab->processCmdLineOpts(scr.arguments());
     MainWindow mainWnd;
 
     if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
     {
         ScreenGrab->screenShot(true);
 
-        if (ScreenGrab->cmdLine()->checkParam("minimized"))
+        if (ScreenGrab->runAsMinimized())
         {
             if (mainWnd.isTrayed())
                 mainWnd.windowHideShow();
@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
     }
 
 #ifdef SG_EXT_UPLOADS
-// FIXME for v1.1 (move call uploader form main() function to app core)
-    if (ScreenGrab->cmdLine()->checkParam("upload"))
+// TODO for future (move call uploader from main() function to app core process cmdline opts)
+    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
     {
         mainWnd.hide();
 
@@ -71,19 +71,6 @@ int main(int argc, char *argv[])
     {
         QString type = QString::number(ScreenGrab->conf->getTypeScreen());
         scr.sendMessage("screengrab --type=" + type);
-        return 0;
-    }
-
-    if (ScreenGrab->cmdLine()->checkParam("help"))
-    {
-        ScreenGrab->cmdLine()->printHelp();
-        return 0;
-    }
-
-    if (ScreenGrab->cmdLine()->checkParam("version"))
-    {
-        QString version = Core::getVersionPrintable();
-        CmdLine::print(version);
         return 0;
     }
 

@@ -24,6 +24,7 @@
 #include "modules/abstractmodule.h"
 
 #include <QObject>
+#include <QCommandLineOption>
 #include <QWidget>
 
 class ModuleUploader: public QObject, public AbstractModule
@@ -49,6 +50,7 @@ Q_SIGNALS:
 
 private:
     bool _ignoreCmdParam;
+    QCommandLineOption _optUpload;
 };
 
 #endif // MODULEUPLOADER_H

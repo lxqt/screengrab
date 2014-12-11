@@ -25,7 +25,6 @@
 #endif
 
 #include "config.h"
-#include "cmdline.h"
 #include "regionselect.h"
 
 #include "modulemanager.h"
@@ -39,6 +38,8 @@
 #include <QRect>
 #include <QProcess>
 #include <QX11Info>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include <QDebug>
 
@@ -84,10 +85,14 @@ public:
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
     void openInExtViewer();
-    void parseCmdLine();
 
     ModuleManager* modules();
-    CmdLine* cmdLine();
+    void addCmdLineOption(const QCommandLineOption& option);
+    bool checkCmdLineOption(const QCommandLineOption& option);
+    bool checkCmdLineOptions(const QStringList& options);
+    void processCmdLineOpts(const QStringList& arguments);
+
+    bool runAsMinimized();
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
@@ -114,12 +119,14 @@ private:
     RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea;
 
-    CmdLine *_cmd;
+    QCommandLineParser _cmdLine;
     ModuleManager _modules;
     QString _tempFilename;
 
     bool _hided;
     bool _firstScreen;
+
+    QList<QCommandLineOption> _screenTypeOpts;
 
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
