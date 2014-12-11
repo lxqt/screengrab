@@ -27,7 +27,30 @@ set(uploader_UI
 
 qt5_wrap_ui(uploader_UI_H ${uploader_UI})
 
-add_library(uploader SHARED ${uploader_SRC} ${uploader_UI_H})
+lxqt_translate_ts(uploader_QMS
+    USE_QT5 TRUE
+    UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
+    TEMPLATE "uploader"
+    TRANSLATION_DIR "${CMAKE_SOURCE_DIR}/translations"
+    SOURCES
+        ${uploader_SRC}
+        ${uploader_UI}
+    INSTALL_DIR "share/${PROJECT_NAME}/translations"
+)
+
+qt5_translation_loader(uploader_QM_LOADER
+    "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/translations"
+    "uploader"
+)
+
+add_library(uploader
+    SHARED
+        ${uploader_SRC}
+        ${uploader_UI}
+        ${uploader_QMS}
+        ${uploader_QM_LOADER}
+)
+
 set_property (TARGET uploader PROPERTY SOVERSION 1.0.0)
 INSTALL (TARGETS uploader DESTINATION ${SG_LIBDIR})
 

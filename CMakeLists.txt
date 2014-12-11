@@ -84,6 +84,12 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 # The following line will add additional finders to CMake without the need to be placed in the CMake install path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+# Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
+#   bring any dependency on lxqt.
+include(LXQtTranslateTs)
+include(LXQtTranslateDesktop)
+include(Qt5TranslationLoader)
+
 if(SG_GLOBALSHORTCUTS)
     add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
 
@@ -172,11 +178,6 @@ qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 
 message(STATUS "Generating localize ...")
-# Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
-#   bring any dependency on lxqt.
-include(LXQtTranslateTs)
-include(LXQtTranslateDesktop)
-include(Qt5TranslationLoader)
 
 set(SCREENGRAB_DESKTOP_FILES_IN
     screengrab.desktop.in
