@@ -8,7 +8,7 @@ ScreenGrab - A program for fast creating screenshots, and easily publishing them
 Build requirements
 ------------------
 
- * Qt5 >= 5.1 (Qt 4.x support only 1.x branch)
+ * Qt5 >= 5.2 (Qt 4.x support only 1.x branch)
  * CMake >= 2.8.11 (only for building ScreenGrab from sources)
  * GCC > 4.5
  * [optional] Qxt Library > 0.6 (if you want to build ScreenGrab using your system Qxt version - see the "Build options" section in this file)

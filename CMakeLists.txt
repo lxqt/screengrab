@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 2.8.11)
 # set project's name
 project(screengrab)
 
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5X11Extras REQUIRED)
-find_package(Qt5Network REQUIRED)
+find_package(Qt5Widgets 5.2.0 REQUIRED)
+find_package(Qt5X11Extras 5.2.0 REQUIRED)
+find_package(Qt5Network 5.2.0 REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
 
 # for translations
@@ -15,7 +15,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
 # add version define
-set(SCREENGRAB_VERSION "1.90")
+set(SCREENGRAB_VERSION "1.91")
 set(SCREENGRAB_VERSION_DEV "2.0-dev")
 # set(DEV_BUILD True)
 
