@@ -172,7 +172,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    if (_core->conf->getCloseInTray() == true && _core->conf->getShowTrayIcon() == true)
+    if (_core->conf->getCloseInTray() && _core->conf->getShowTrayIcon())
     {
         windowHideShow();
         e->ignore();
@@ -208,7 +208,7 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 
 void MainWindow::show()
 {
-    if (_trayIcon != NULL)
+    if (_trayIcon)
         _trayIcon->setVisible(true);
 
     QMainWindow::show();
@@ -319,7 +319,7 @@ void MainWindow::displatScreenToolTip()
     quint16 w = _core->getPixmap()->size().width();
     quint16 h = _core->getPixmap()->size().height();
     QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
-    if (_core->conf->getEnableExtView() == 1)
+    if (_core->conf->getEnableExtView())
     {
         toolTip += "\n\n";
         toolTip += tr("Double click for open screenshot in external default image viewer");
@@ -437,7 +437,7 @@ void MainWindow::windowHideShow()
         showNormal();
         activateWindow();
     }
-    else if (!isHidden())
+    else
     {
         actHideShow->setText(tr("Show"));
         showMinimized();
@@ -459,7 +459,7 @@ void MainWindow::showWindow(const QString& str)
     _core->sleep(250); // hack for WMs with compositing fade-out effects
     _core->screenShot();
 
-    if (isHidden() == true && _core->conf->getShowTrayIcon() == true)
+    if (isHidden() && _core->conf->getShowTrayIcon())
     {
         actHideShow->setText(tr("Hide"));
         _trayed = false;
@@ -470,7 +470,7 @@ void MainWindow::showWindow(const QString& str)
 // show tray messages
 void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 {
-    if (_core->conf->getShowTrayIcon() == true)
+    if (_core->conf->getShowTrayIcon())
     {
         switch(_core->conf->getTrayMessages())
         {

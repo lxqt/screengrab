@@ -51,27 +51,19 @@ Core::Core()
     _cmdLine.addHelpOption();
     _cmdLine.addVersionOption();
 
-    QString optFullScreenDescr = tr("Take a fullscreen screenshot");
-    QCommandLineOption optFullScreen(
-                QStringList() << "f" << "fullscreen", optFullScreenDescr);
+    QCommandLineOption optFullScreen(QStringList() << "f" << "fullscreen", tr("Take a fullscreen screenshot"));
     _cmdLine.addOption(optFullScreen);
     _screenTypeOpts.append(optFullScreen);
 
-    QString optActiveWndDescr = tr("Take a screenshot of the active window");
-    QCommandLineOption optActiveWnd(
-                QStringList() << "a" << "active", optActiveWndDescr);
+    QCommandLineOption optActiveWnd(QStringList() << "a" << "active", tr("Take a screenshot of the active window"));
     _cmdLine.addOption(optActiveWnd);
     _screenTypeOpts.append(optActiveWnd);
 
-    QString optSelectedRectDescr = tr("Take a screenshot of the active window");
-    QCommandLineOption optSelectedRect(
-                QStringList() << "r" << "region", optSelectedRectDescr);
+    QCommandLineOption optSelectedRect(QStringList() << "r" << "region", tr("Take a screenshot of a selection of the screen"));
     _cmdLine.addOption(optSelectedRect);
     _screenTypeOpts.append(optSelectedRect);
 
-    QString optRunMinimizedDescr = tr("Run the application with a hidden main window");
-    QCommandLineOption optRunMinimized(
-                QStringList() << "m" << "minimized", optRunMinimizedDescr);
+    QCommandLineOption optRunMinimized(QStringList() << "m" << "minimized", tr("Run the application with a hidden main window"));
     _cmdLine.addOption(optRunMinimized);
 
     sleep(250);
@@ -127,7 +119,7 @@ void Core::screenShot(bool first)
     _firstScreen = first;
 
     // Update date last crenshot, if it is  a first screen
-    if (_firstScreen == true)
+    if (_firstScreen)
         conf->updateLastSaveDate();
 
     // grb pixmap of desktop
@@ -280,7 +272,7 @@ QString Core::getTempFilename(const QString& format)
 
 void Core::killTempFile()
 {
-    if (QFile::exists(_tempFilename) == true)
+    if (QFile::exists(_tempFilename))
     {
         QFile::remove(_tempFilename);
         _tempFilename.clear();
@@ -304,7 +296,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     }
 
     // writing file
-    bool saved;
+    bool saved = false;
     if (!fileName.isEmpty())
     {
         if (format == "jpg")
@@ -323,8 +315,6 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
         else
             qWarning() << "Error saving file " << fileName;
     }
-    else
-        saved = false;
 
     return saved;
 }
@@ -362,9 +352,12 @@ void Core::copyScreen()
 
 void Core::openInExtViewer()
 {
-    if (conf->getEnableExtView() == 1)
+    if (conf->getEnableExtView())
     {
-        QString format = "png";
+        QString format = conf->getSaveFormat();
+        if (format.isEmpty())
+            format = "png";
+
         QString tempFileName = getTempFilename(format);
         writeScreen(tempFileName, format, true);
 
@@ -374,8 +367,8 @@ void Core::openInExtViewer()
         args << tempFileName;
 
         QProcess *execProcess = new QProcess(this);
-        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-                this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+        connect(execProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+                this, SLOT(closeExtViewer(int, QProcess::ExitStatus)));
         execProcess->start(exec, args);
     }
 }
@@ -403,12 +396,9 @@ bool Core::checkCmdLineOption(const QCommandLineOption& option)
 
 bool Core::checkCmdLineOptions(const QStringList &options)
 {
-    for (int i = 0; i < options.count(); ++i) {
-        if (_cmdLine.isSet(options.at(i))) {
+    for (int i = 0; i < options.count(); ++i)
+        if (_cmdLine.isSet(options.at(i)))
             return true;
-        }
-    }
-
     return false;
 }
 
@@ -417,22 +407,14 @@ void Core::processCmdLineOpts(const QStringList& arguments)
     _cmdLine.process(arguments);
 
     // Check commandline parameters and set screenshot type
-    for (int i=0; i < _screenTypeOpts.count(); ++i) {
-        if (_cmdLine.isSet(_screenTypeOpts.at(i))) {
+    for (int i=0; i < _screenTypeOpts.count(); ++i)
+        if (_cmdLine.isSet(_screenTypeOpts.at(i)))
             conf->setTypeScreen(i);
-        }
-    }
 }
 
 bool Core::runAsMinimized()
 {
-    bool isMinnimize = false;
-
-    if (_cmdLine.isSet("minimized") || _cmdLine.isSet("m")) {
-        isMinnimize = true;
-    }
-
-    return isMinnimize;
+    return (_cmdLine.isSet("minimized") || _cmdLine.isSet("m"));
 }
 
 void Core::autoSave()
