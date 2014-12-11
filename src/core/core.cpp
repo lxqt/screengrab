@@ -95,7 +95,6 @@ Core* Core::instance()
 
 Core::~Core()
 {
-//    delete _cmd;
     delete _pixelMap;
     conf->killInstance();
 }
