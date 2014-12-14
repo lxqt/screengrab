@@ -163,54 +163,54 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="334"/>
-        <location filename="../src/ui/configwidget.cpp" line="343"/>
+        <location filename="../src/ui/configwidget.cpp" line="336"/>
+        <location filename="../src/ui/configwidget.cpp" line="345"/>
         <source>Select directory</source>
         <translation>Выбор каталога</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="232"/>
-        <location filename="../src/ui/configwidget.cpp" line="357"/>
+        <location filename="../src/ui/configwidget.cpp" line="233"/>
+        <location filename="../src/ui/configwidget.cpp" line="359"/>
         <source>Warning</source>
         <translation>Предупрждение</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="231"/>
+        <location filename="../src/ui/configwidget.cpp" line="232"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Каталог %1 не существуетt. Вы хотите создать его?</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="356"/>
+        <location filename="../src/ui/configwidget.cpp" line="358"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Вы хотите сбросить настройки в исходные значения?</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="375"/>
+        <location filename="../src/ui/configwidget.cpp" line="377"/>
         <source>None</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="423"/>
+        <location filename="../src/ui/configwidget.cpp" line="425"/>
         <source>Example: </source>
         <translation>Пример: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="484"/>
+        <location filename="../src/ui/configwidget.cpp" line="486"/>
         <source>This key is already used in your system! Please select another.</source>
         <translation>Эта клавиша используется в вашей системе. Пожалуйста, выберетие другую.</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="492"/>
+        <location filename="../src/ui/configwidget.cpp" line="494"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Эта клавиша используется в creenGrab. Пожалуйста, выберетие другую.</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="512"/>
+        <location filename="../src/ui/configwidget.cpp" line="514"/>
         <source>This key is not supported on your system!</source>
         <translation>Эта комбинация не поддерживается вашей системой!</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="549"/>
+        <location filename="../src/ui/configwidget.cpp" line="551"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -218,42 +218,42 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="198"/>
+        <location filename="../src/core/core.cpp" line="203"/>
         <source>New screen</source>
         <translation>Новый скриншот</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="198"/>
+        <location filename="../src/core/core.cpp" line="203"/>
         <source>New screen is getted!</source>
         <translation>Получен новый скриншот</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved</source>
         <translation>Сохранено</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="477"/>
+        <location filename="../src/core/core.cpp" line="482"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Имя сохранённого файла скопировано в буфер обмена.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="496"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Copied</source>
         <translation>Скопировано</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved to </source>
         <translation>Слхранено в </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="483"/>
+        <location filename="../src/core/core.cpp" line="488"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>опировать в буфер путь к сохраняемому файлу</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="496"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Скриншот скопирован в буфер обмена</translation>
     </message>
@@ -819,7 +819,7 @@ any key or using the right or middle mouse buttons.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/ui/configwidget.ui" line="26"/>
-        <location filename="../src/ui/configwidget.ui" line="674"/>
+        <location filename="../src/ui/configwidget.ui" line="681"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
@@ -834,22 +834,22 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Задержка перед получением скриншота</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="394"/>
+        <location filename="../src/ui/configwidget.ui" line="401"/>
         <source>Inserting current date time into saved filename</source>
         <translation>Вставка даты и времени в имя сохраняемого файла</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="397"/>
+        <location filename="../src/ui/configwidget.ui" line="404"/>
         <source>Insert current date and time in file name</source>
         <translation>Вставлять текущие дату и время в имя файла</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="444"/>
+        <location filename="../src/ui/configwidget.ui" line="451"/>
         <source>Autosave screenshot</source>
         <translation>Австосохранение скриншота</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="456"/>
+        <location filename="../src/ui/configwidget.ui" line="463"/>
         <source>Save first screenshot</source>
         <translation>Сохранять первый сриншот</translation>
     </message>
@@ -864,112 +864,112 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Качество изображения (1--меньший размер файла, 100--лучшее качество)</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="465"/>
+        <location filename="../src/ui/configwidget.ui" line="472"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
         <translation>Разрешить запуск нескольких копий ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="478"/>
+        <location filename="../src/ui/configwidget.ui" line="485"/>
         <source>Enable external viewer</source>
         <translation>Включить внешний вьювер</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="504"/>
+        <location filename="../src/ui/configwidget.ui" line="511"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>тображать ScreenGrab  системном трее</translation>
+        <translation>Отображать ScreenGrab  системном трее</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="589"/>
+        <location filename="../src/ui/configwidget.ui" line="596"/>
         <source>Minimize to tray on click close button</source>
         <translation>Сворачивать в трей при клике на кнопку &quot;Закрыть&quot;</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="592"/>
+        <location filename="../src/ui/configwidget.ui" line="599"/>
         <source>Minimize to tray when closing</source>
         <translation>Сворачивать в трей при закрытии</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="622"/>
+        <location filename="../src/ui/configwidget.ui" line="629"/>
         <source>Action</source>
         <translation>Действие</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="632"/>
+        <location filename="../src/ui/configwidget.ui" line="639"/>
         <source>Global shortcuts</source>
         <translation>Глобальные</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="639"/>
+        <location filename="../src/ui/configwidget.ui" line="646"/>
         <source>Fill screen</source>
         <translation>Весь экран</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="644"/>
+        <location filename="../src/ui/configwidget.ui" line="651"/>
         <source>Active window</source>
         <translation>Активное окно</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="649"/>
+        <location filename="../src/ui/configwidget.ui" line="656"/>
         <source>Area select</source>
         <translation>Выбранная область</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="655"/>
+        <location filename="../src/ui/configwidget.ui" line="662"/>
         <source>Local shortcuts</source>
         <translation>Внутренние комбинации клавиш</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="659"/>
+        <location filename="../src/ui/configwidget.ui" line="666"/>
         <source>New screen</source>
         <translation>Новый скриншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="664"/>
+        <location filename="../src/ui/configwidget.ui" line="671"/>
         <source>Save screen</source>
         <translation>Сохранить скриншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="669"/>
+        <location filename="../src/ui/configwidget.ui" line="676"/>
         <source>Copy screen</source>
         <translation>Копировать скриншот</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="679"/>
+        <location filename="../src/ui/configwidget.ui" line="686"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="702"/>
+        <location filename="../src/ui/configwidget.ui" line="709"/>
         <source>Not defined</source>
         <translation>Не определена</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="741"/>
+        <location filename="../src/ui/configwidget.ui" line="748"/>
         <source>Restore default settings</source>
         <translation>Восстановить исходные настройки</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="744"/>
+        <location filename="../src/ui/configwidget.ui" line="751"/>
         <source>Defaults</source>
         <translation>По умолчанию</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="770"/>
+        <location filename="../src/ui/configwidget.ui" line="777"/>
         <source>Save settings</source>
         <translation>Сохранить настройки</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="773"/>
+        <location filename="../src/ui/configwidget.ui" line="780"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="786"/>
+        <location filename="../src/ui/configwidget.ui" line="793"/>
         <source>Discard changes</source>
         <translation>Закрыть без изменений</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="789"/>
+        <location filename="../src/ui/configwidget.ui" line="796"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -1055,7 +1055,7 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="287"/>
-        <location filename="../src/ui/configwidget.ui" line="571"/>
+        <location filename="../src/ui/configwidget.ui" line="578"/>
         <source> sec</source>
         <translation> сек</translation>
     </message>
@@ -1070,42 +1070,47 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Расширенные</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="406"/>
+        <location filename="../src/ui/configwidget.ui" line="366"/>
+        <source>Remember type of the last screenshot</source>
+        <translation>Запоминать тип последнего скриншота</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="413"/>
         <source>Template: </source>
         <translation>Шаблон: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="431"/>
+        <location filename="../src/ui/configwidget.ui" line="438"/>
         <source>Example: </source>
         <translation>Пример: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="441"/>
+        <location filename="../src/ui/configwidget.ui" line="448"/>
         <source>Automatically saving screenshots in grabbing process</source>
         <translation>Автоматическое сохранение скриншотов при их получении</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="513"/>
+        <location filename="../src/ui/configwidget.ui" line="520"/>
         <source>Tray messages:</source>
         <translation>Всплывающие уведомления</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="526"/>
+        <location filename="../src/ui/configwidget.ui" line="533"/>
         <source>Tray messages display mode</source>
         <translation>Режим отображения всплывающих уведомлений</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="530"/>
+        <location filename="../src/ui/configwidget.ui" line="537"/>
         <source>Never</source>
         <translation>Никогда</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="535"/>
+        <location filename="../src/ui/configwidget.ui" line="542"/>
         <source>Tray mode</source>
         <translation>Если свёрнуто</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="540"/>
+        <location filename="../src/ui/configwidget.ui" line="547"/>
         <source>Always</source>
         <translation>Всегда</translation>
     </message>
@@ -1115,37 +1120,37 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Комбинации клавиш</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="468"/>
+        <location filename="../src/ui/configwidget.ui" line="475"/>
         <source>Allow multiple instances of ScreenGrab</source>
         <translation>Разрешить несколько копий ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="475"/>
+        <location filename="../src/ui/configwidget.ui" line="482"/>
         <source>Open in external viewer on double click</source>
-        <translation type="unfinished">Открывать во внешнем вьювере при двойном клике</translation>
+        <translation>Открывать во внешнем вьювере при двойном клике</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="627"/>
+        <location filename="../src/ui/configwidget.ui" line="634"/>
         <source>Shortcut</source>
         <translation>Клавиши</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="684"/>
+        <location filename="../src/ui/configwidget.ui" line="691"/>
         <source>Quit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="695"/>
+        <location filename="../src/ui/configwidget.ui" line="702"/>
         <source>Selected shortcut:</source>
         <translation>Выбранная комбинация</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="552"/>
+        <location filename="../src/ui/configwidget.ui" line="559"/>
         <source>Time of display tray messages</source>
         <translation>Время отображения всплывающих уведомлений</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="568"/>
+        <location filename="../src/ui/configwidget.ui" line="575"/>
         <source>Time to display tray messages</source>
         <translation>Время отображения всплывающих уведомлений</translation>
     </message>

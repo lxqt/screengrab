@@ -570,6 +570,7 @@ void Config::setDefaultSettings()
     setSaveFormat(DEF_SAVE_FORMAT);
     setDefDelay(DEF_DELAY);
     setImageQuality(DEF_IMG_QUALITY);
+    setSaveLastTypeScreen(DEF_SAVE_LAST_SCREEN_TYPE);
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
     setAutoCopyFilenameOnSaving(DEF_FILENAME_TO_CLB);

@@ -163,54 +163,54 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="334"/>
-        <location filename="../src/ui/configwidget.cpp" line="343"/>
+        <location filename="../src/ui/configwidget.cpp" line="336"/>
+        <location filename="../src/ui/configwidget.cpp" line="345"/>
         <source>Select directory</source>
         <translation>Selecciona el directorio</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="232"/>
-        <location filename="../src/ui/configwidget.cpp" line="357"/>
+        <location filename="../src/ui/configwidget.cpp" line="233"/>
+        <location filename="../src/ui/configwidget.cpp" line="359"/>
         <source>Warning</source>
         <translation>Cuidado</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="231"/>
+        <location filename="../src/ui/configwidget.cpp" line="232"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="356"/>
+        <location filename="../src/ui/configwidget.cpp" line="358"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="375"/>
+        <location filename="../src/ui/configwidget.cpp" line="377"/>
         <source>None</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="423"/>
+        <location filename="../src/ui/configwidget.cpp" line="425"/>
         <source>Example: </source>
         <translation>Ejemplo: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="484"/>
+        <location filename="../src/ui/configwidget.cpp" line="486"/>
         <source>This key is already used in your system! Please select another.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="492"/>
+        <location filename="../src/ui/configwidget.cpp" line="494"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="512"/>
+        <location filename="../src/ui/configwidget.cpp" line="514"/>
         <source>This key is not supported on your system!</source>
         <translation>Esta tecla nos es admitida en su sistema!</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.cpp" line="549"/>
+        <location filename="../src/ui/configwidget.cpp" line="551"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -218,42 +218,42 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="198"/>
+        <location filename="../src/core/core.cpp" line="203"/>
         <source>New screen</source>
         <translation>Nueva captura</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="198"/>
+        <location filename="../src/core/core.cpp" line="203"/>
         <source>New screen is getted!</source>
         <translation>Nueva captura obtenida</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved</source>
         <translation>Guardado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="477"/>
+        <location filename="../src/core/core.cpp" line="482"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="496"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Copied</source>
         <translation>Copiado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="483"/>
+        <location filename="../src/core/core.cpp" line="488"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="496"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Captura copiada al portapapeles</translation>
     </message>
@@ -818,7 +818,7 @@ any key or using the right or middle mouse buttons.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/ui/configwidget.ui" line="26"/>
-        <location filename="../src/ui/configwidget.ui" line="674"/>
+        <location filename="../src/ui/configwidget.ui" line="681"/>
         <source>Options</source>
         <translation>Opciones</translation>
     </message>
@@ -833,22 +833,22 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Tiempo predeterminando antes de grabar la captura</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="394"/>
+        <location filename="../src/ui/configwidget.ui" line="401"/>
         <source>Inserting current date time into saved filename</source>
         <translation>Agregando fecha y tiempo actual al nombre de archivo</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="397"/>
+        <location filename="../src/ui/configwidget.ui" line="404"/>
         <source>Insert current date and time in file name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="444"/>
+        <location filename="../src/ui/configwidget.ui" line="451"/>
         <source>Autosave screenshot</source>
         <translation>Autosalvar captura</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="456"/>
+        <location filename="../src/ui/configwidget.ui" line="463"/>
         <source>Save first screenshot</source>
         <translation>Salvar primera captura</translation>
     </message>
@@ -863,112 +863,112 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Calidad de imagen (1 - archivo pequeño, 100 - alta calidad)</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="465"/>
+        <location filename="../src/ui/configwidget.ui" line="472"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="478"/>
+        <location filename="../src/ui/configwidget.ui" line="485"/>
         <source>Enable external viewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="504"/>
+        <location filename="../src/ui/configwidget.ui" line="511"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="589"/>
+        <location filename="../src/ui/configwidget.ui" line="596"/>
         <source>Minimize to tray on click close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="592"/>
+        <location filename="../src/ui/configwidget.ui" line="599"/>
         <source>Minimize to tray when closing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="622"/>
+        <location filename="../src/ui/configwidget.ui" line="629"/>
         <source>Action</source>
         <translation>Acción</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="632"/>
+        <location filename="../src/ui/configwidget.ui" line="639"/>
         <source>Global shortcuts</source>
         <translation>Atajos globales</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="639"/>
+        <location filename="../src/ui/configwidget.ui" line="646"/>
         <source>Fill screen</source>
         <translation>Pantalla completa</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="644"/>
+        <location filename="../src/ui/configwidget.ui" line="651"/>
         <source>Active window</source>
         <translation>Ventana activa</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="649"/>
+        <location filename="../src/ui/configwidget.ui" line="656"/>
         <source>Area select</source>
         <translation>Seleccione area</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="655"/>
+        <location filename="../src/ui/configwidget.ui" line="662"/>
         <source>Local shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="659"/>
+        <location filename="../src/ui/configwidget.ui" line="666"/>
         <source>New screen</source>
         <translation>Nueva captura</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="664"/>
+        <location filename="../src/ui/configwidget.ui" line="671"/>
         <source>Save screen</source>
         <translation>Guardar captura</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="669"/>
+        <location filename="../src/ui/configwidget.ui" line="676"/>
         <source>Copy screen</source>
         <translation>Copiar captura</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="679"/>
+        <location filename="../src/ui/configwidget.ui" line="686"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="702"/>
+        <location filename="../src/ui/configwidget.ui" line="709"/>
         <source>Not defined</source>
         <translation>No definido</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="741"/>
+        <location filename="../src/ui/configwidget.ui" line="748"/>
         <source>Restore default settings</source>
         <translation>Restaurar configuración por defecto</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="744"/>
+        <location filename="../src/ui/configwidget.ui" line="751"/>
         <source>Defaults</source>
         <translation>Predeterminado</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="770"/>
+        <location filename="../src/ui/configwidget.ui" line="777"/>
         <source>Save settings</source>
         <translation>Guardar configuración</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="773"/>
+        <location filename="../src/ui/configwidget.ui" line="780"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="786"/>
+        <location filename="../src/ui/configwidget.ui" line="793"/>
         <source>Discard changes</source>
         <translation>Descartar cambios</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="789"/>
+        <location filename="../src/ui/configwidget.ui" line="796"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -1054,7 +1054,7 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="287"/>
-        <location filename="../src/ui/configwidget.ui" line="571"/>
+        <location filename="../src/ui/configwidget.ui" line="578"/>
         <source> sec</source>
         <translation> seg</translation>
     </message>
@@ -1069,42 +1069,47 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="406"/>
+        <location filename="../src/ui/configwidget.ui" line="366"/>
+        <source>Remember type of the last screenshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/configwidget.ui" line="413"/>
         <source>Template: </source>
         <translation>Plantilla: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="431"/>
+        <location filename="../src/ui/configwidget.ui" line="438"/>
         <source>Example: </source>
         <translation>Ejemplo: </translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="441"/>
+        <location filename="../src/ui/configwidget.ui" line="448"/>
         <source>Automatically saving screenshots in grabbing process</source>
         <translation>Salvar captura automaticamente en el proceso de grabacion</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="513"/>
+        <location filename="../src/ui/configwidget.ui" line="520"/>
         <source>Tray messages:</source>
         <translation>Notificar mensajes</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="526"/>
+        <location filename="../src/ui/configwidget.ui" line="533"/>
         <source>Tray messages display mode</source>
         <translation>Mostrar notificación de mensajes</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="530"/>
+        <location filename="../src/ui/configwidget.ui" line="537"/>
         <source>Never</source>
         <translation>Nunca</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="535"/>
+        <location filename="../src/ui/configwidget.ui" line="542"/>
         <source>Tray mode</source>
         <translation>Notificar</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="540"/>
+        <location filename="../src/ui/configwidget.ui" line="547"/>
         <source>Always</source>
         <translation>Siempre</translation>
     </message>
@@ -1114,37 +1119,37 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Atajos de teclado</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="468"/>
+        <location filename="../src/ui/configwidget.ui" line="475"/>
         <source>Allow multiple instances of ScreenGrab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="475"/>
+        <location filename="../src/ui/configwidget.ui" line="482"/>
         <source>Open in external viewer on double click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="627"/>
+        <location filename="../src/ui/configwidget.ui" line="634"/>
         <source>Shortcut</source>
         <translation>Atajos</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="684"/>
+        <location filename="../src/ui/configwidget.ui" line="691"/>
         <source>Quit</source>
         <translation type="unfinished">Salir</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="695"/>
+        <location filename="../src/ui/configwidget.ui" line="702"/>
         <source>Selected shortcut:</source>
         <translation>Atajo seleccionado:</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="552"/>
+        <location filename="../src/ui/configwidget.ui" line="559"/>
         <source>Time of display tray messages</source>
         <translation>Tiempo que muestra la notificación</translation>
     </message>
     <message>
-        <location filename="../src/ui/configwidget.ui" line="568"/>
+        <location filename="../src/ui/configwidget.ui" line="575"/>
         <source>Time to display tray messages</source>
         <translation>Tiempo que muestra la notificación</translation>
     </message>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
-    <height>303</height>
+    <width>747</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -100,7 +100,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -357,6 +357,13 @@
               <widget class="QCheckBox" name="checkZommMouseArea">
                <property name="text">
                 <string>Zoom area around mouse in selection mode</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="cbxSaveLatTypeScreen">
+               <property name="text">
+                <string>Remember type of the last screenshot</string>
                </property>
               </widget>
              </item>
