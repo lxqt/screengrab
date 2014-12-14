@@ -1,3 +1,6 @@
+1.2
+ * Added ability for autosaving type of the last created screenshot
+
 1.1.1
  * Fixed wrong 'imgur' uploading result string for bb-code with preview
  * Fixed segfault when exist configuration file contains "showTrayIcon=false"
