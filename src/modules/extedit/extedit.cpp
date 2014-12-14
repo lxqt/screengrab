@@ -80,6 +80,8 @@ void ExtEdit::runExternalEditor()
 
 void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus)
 {
+    Q_UNUSED(exitCode)
+    Q_UNUSED(exitStatus)
 	Core *core = Core::instance();
 	
 	if (_fileIsCnaged == true)
@@ -97,6 +99,7 @@ void ExtEdit::closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus
 
 void ExtEdit::editedFileChanged(const QString& path)
 {
+    Q_UNUSED(path) // FIXME - check calls
 	_fileIsCnaged = true;
 }
 

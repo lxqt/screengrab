@@ -544,6 +544,8 @@ void Core::parseCmdLine()
 
 void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
 {
+    Q_UNUSED(exitCode)
+    Q_UNUSED(exitStatus)
 	sender()->deleteLater();
 	killTempFile();
 }
