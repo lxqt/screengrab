@@ -125,8 +125,6 @@ add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
 
 set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
-# qtsingleapplication
-#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp/")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
 
 include_directories("${SG_INCLUDE}")
@@ -173,7 +171,6 @@ set(SCREENGRAB_QRC
 )
 
 qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
-#qt5_wrap_cpp(singleapp_SRC_MOC ${SCREENGRAB_HDR})
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 
