@@ -148,8 +148,6 @@ MainWindow::MainWindow(QWidget* parent) :
     QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());
     move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
 
-    displayPixmap();
-
     _ui->scrLabel->installEventFilter(this);
 }
 
