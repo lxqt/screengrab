@@ -29,6 +29,8 @@
 
 #include "modulemanager.h"
 
+#include "ui/mainwindow.h"
+
 #include <QObject>
 #include <QTimer>
 #include <QPixmap>

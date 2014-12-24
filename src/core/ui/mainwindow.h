@@ -23,7 +23,6 @@
 
 #include <QMainWindow>
 
-#include "../core.h"
 #include "about.h"
 #include "configwidget.h"
 
@@ -47,7 +46,7 @@ class MainWindow : public QMainWindow //, public screengrab
 {
     Q_OBJECT
 public:
-    MainWindow(QWidget *parent = 0);
+    MainWindow( QWidget *parent = 0);
     ~MainWindow();
     void show();
     bool isTrayed() const;
@@ -64,7 +63,6 @@ protected:
 //
 private:
     Ui::MainWindow *_ui;
-    Core *_core;
 
     QSystemTrayIcon *_trayIcon;
     QAction *actHideShow;
@@ -106,7 +104,7 @@ private Q_SLOTS:
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
-    void receivedStateNotifyMessage(StateNotifyMessage state);
+//    void receivedStateNotifyMessage(StateNotifyMessage state); // TO REWORK
     void quit();
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);

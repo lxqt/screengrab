@@ -36,43 +36,43 @@ int main(int argc, char *argv[])
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
     ScreenGrab->processCmdLineOpts(scr.arguments());
-    MainWindow mainWnd;
+//    MainWindow mainWnd;
 
-    if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
-    {
-        ScreenGrab->screenShot(true);
+//    if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
+//    {
+//        ScreenGrab->screenShot(true);
 
-        if (ScreenGrab->runAsMinimized())
-        {
-            if (mainWnd.isTrayed())
-                mainWnd.windowHideShow();
-            else
-                mainWnd.showMinimized();
-        }
-        else
-            mainWnd.show();
-    }
+//        if (ScreenGrab->runAsMinimized())
+//        {
+//            if (mainWnd.isTrayed())
+//                mainWnd.windowHideShow();
+//            else
+//                mainWnd.showMinimized();
+//        }
+//        else
+//            mainWnd.show();
+//    }
 
-#ifdef SG_EXT_UPLOADS
-// TODO for future (move call uploader from main() function to app core process cmdline opts)
-    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
-    {
-        mainWnd.hide();
+//#ifdef SG_EXT_UPLOADS
+//// TODO for future (move call uploader from main() function to app core process cmdline opts)
+//    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
+//    {
+//        mainWnd.hide();
 
-        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
-        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
-        uploader->init();
-    }
-#endif
+//        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
+//        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
+//        uploader->init();
+//    }
+//#endif
 
-    QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
+//    QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
 
-    if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
-    {
-        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
-        scr.sendMessage("screengrab --type=" + type);
-        return 0;
-    }
+//    if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
+//    {
+//        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
+//        scr.sendMessage("screengrab --type=" + type);
+//        return 0;
+//    }
 
     return scr.exec();
 }
