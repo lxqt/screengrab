@@ -1,5 +1,6 @@
 1.2
  * Added ability for autosaving type of the last created screenshot
+ * Some small fixes
 
 1.1.1
  * Fixed wrong 'imgur' uploading result string for bb-code with preview

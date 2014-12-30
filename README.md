@@ -1,16 +1,16 @@
 ScreenGrab
 ==========
 
-version 1.1-dev
+version 1.2
 
 ScreenGrab - A program for fast creating screenshots, and easily publishing them on internet image hosting services. It works on Linux and Windows operating systems. ScreenGrab uses the Qt framework and thus, it is independent from any desktop environment.
 
 Build requirements
 ------------------
 
- * Qt4 >= 5.1 (Qt 4.x support only 1.x branch)
+ * Qt4 == 4.8 (Qt 5.x support will follow soon)
  * CMake >= 2.6 (only for building ScreenGrab from sources)
- * GCC > 4.5
+ * GCC > 4.4 (MSVS is currently not supported )
  * [optional] Qxt Library > 0.6 (if you want to build ScreenGrab using your system Qxt version - see the "Build options" section in this file)
 
 Build

@@ -47,7 +47,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="127"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Артём &apos;DOOMer&apos; Галичкин {2009-2012,?} {2009-2013,?}</translation>
+        <translation>Copyright &amp;copy; 2009-2013, Артём &apos;DOOMer&apos; Галичкин</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="137"/>
