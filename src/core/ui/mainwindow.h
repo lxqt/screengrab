@@ -51,6 +51,10 @@ public:
     void show();
     bool isTrayed() const;
 
+    // NEW CODE
+    void setConfig(Config *config);
+    void createActions();    
+
 public Q_SLOTS:
     void showWindow(const QString& str);
     void windowHideShow();
@@ -60,7 +64,7 @@ protected:
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window
     bool eventFilter(QObject *obj, QEvent *event);
-//
+
 private:
     Ui::MainWindow *_ui;
 
@@ -77,6 +81,9 @@ private:
     QShortcut *_hideWnd;
 
     bool _trayed;
+
+    // NEW CODE
+    Config *_conf;
 
 #ifdef SG_GLOBAL_SHORTCUTS
     QxtGlobalShortcut *_fullScreen;

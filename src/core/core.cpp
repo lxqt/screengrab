@@ -67,6 +67,9 @@ Core::Core()
     _cmdLine.addOption(optRunMinimized);
 
     sleep(250);
+
+    _wnd = NULL;
+    qDebug() << "Init app";
 }
 
 Core::Core(const Core& ): QObject()
@@ -91,6 +94,16 @@ Core::~Core()
     conf->killInstance();
 }
 
+void Core::initWindow()
+{
+    qDebug() << "Initialize window";
+    _wnd = new MainWindow;
+    _wnd->setConfig(conf);
+    _wnd->createActions();
+
+    _wnd->show();
+}
+
 void Core::sleep(int msec)
 {
     QMutex mutex;
@@ -102,6 +115,11 @@ void Core::sleep(int msec)
 
 void Core::coreQuit()
 {
+    qDebug() << "Destroy app";
+    if (_wnd) {
+        delete _wnd;
+    }
+
     if (corePtr)
     {
         delete corePtr;
@@ -109,6 +127,15 @@ void Core::coreQuit()
     }
 
     qApp->quit();
+}
+
+void Core::setScreen()
+{
+    qDebug() << "Get screenshot";
+    _wnd->hide();
+
+    // new code experimental
+    screenShot();
 }
 
 
@@ -155,6 +182,10 @@ void Core::screenShot(bool first)
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         break;
     }
+
+    // new code
+    qDebug() << "Get screenshot finished";
+    _wnd->showNormal();
 }
 
 void Core::checkAutoSave(bool first)

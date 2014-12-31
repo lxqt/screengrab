@@ -35,7 +35,7 @@
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
-    _ui(new Ui::MainWindow)
+    _ui(new Ui::MainWindow), _conf(NULL)
 {
     _ui->setupUi(this);
     _trayed = false;
@@ -75,12 +75,14 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
     connect(actSave, SIGNAL(triggered()), this, SLOT(saveScreen()));
     connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
-    connect(actOptions, SIGNAL(triggered()), this, SLOT(showOptions()));
-    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()));
-    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
-    connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
+//    connect(actOptions, SIGNAL(triggered()), this, SLOT(showOptions()));
+//    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()));
+//    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
+//    connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
 
-    updateUI();
+    // New syntax connect signal slots
+
+    //updateUI();
 
 //    delayBoxChange(_core->conf->getDelay()); // TO REWORK
 //    _ui->cbxTypeScr->setCurrentIndex(conf->getTypeScreen());
@@ -210,6 +212,19 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
     return QObject::eventFilter(obj, event);
 }
 
+void MainWindow::createActions()
+{
+    qDebug() << "Create actions";
+    Core *c = Core::instance();
+
+    connect(actQuit, &QAction::triggered, c, &Core::coreQuit);
+    connect(actNew, &QAction::triggered, c, &Core::setScreen);
+
+    connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
+    connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
+    connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
+}
+
 void MainWindow::show()
 {
     if (_trayIcon)
@@ -222,6 +237,14 @@ bool MainWindow::isTrayed() const
 {
     return _trayIcon != NULL;
 }
+
+void MainWindow::setConfig(Config *config)
+{
+    qDebug() << "Setup config";
+    _conf = config;
+    updateUI();
+}
+
 
 void MainWindow::showHelp()
 {
@@ -401,6 +424,7 @@ void MainWindow::typeScreenShotChange(int type)
 
 void MainWindow::quit()
 {
+
 //    >conf->setRestoredWndSize(width(), height());
 //    >conf->saveWndSize();
 //    >coreQuit();
@@ -409,19 +433,20 @@ void MainWindow::quit()
 // updating UI from configdata
 void MainWindow::updateUI()
 {
-    // update delay spinbox
-//    _ui->delayBox->setValue(_->conf->getDelay());
+    qDebug() << "Update ui";
+    _ui->cbxTypeScr->setCurrentIndex(_conf->getTypeScreen());
+    _ui->delayBox->setValue(_conf->getDelay());
 
     // update shortcuts
     createShortcuts();
 
     // create tray object
-//    if (_core->conf->getShowTrayIcon() && !_trayIcon)
-//        createTray();
+    if (_conf->getShowTrayIcon() && !_trayIcon)
+        createTray();
 
-//    // kill tray object, if created
-//    if (!_core->conf->getShowTrayIcon() && _trayIcon)
-//        killTray();
+    // kill tray object, if tray was disabled in the configuration dialog
+    if (!_conf->getShowTrayIcon() && _trayIcon)
+        killTray();
 }
 
 // mouse clicks on tray icom

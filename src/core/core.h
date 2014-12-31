@@ -68,12 +68,18 @@ class Core : public QObject
 
 public Q_SLOTS:
     void coreQuit();
+    void setScreen();
+
     void screenShot(bool first = false);
     void autoSave();
 
 public:
     static Core* instance();
     ~Core();
+
+    // NEW CODE
+    void initWindow();
+    //END NEW CODE
 
     void sleep(int msec = 350);
     static QString getVersionPrintable();
@@ -124,6 +130,7 @@ private:
     QCommandLineParser _cmdLine;
     ModuleManager _modules;
     QString _tempFilename;
+    MainWindow *_wnd;
 
     bool _hided;
     bool _firstScreen;

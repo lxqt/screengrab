@@ -36,6 +36,9 @@ int main(int argc, char *argv[])
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
     ScreenGrab->processCmdLineOpts(scr.arguments());
+    ScreenGrab->initWindow();
+
+
 //    MainWindow mainWnd;
 
 //    if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
