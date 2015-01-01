@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     _ui(new Ui::MainWindow), _conf(NULL)
 {
+    setAttribute(Qt::WA_DeleteOnClose, true);
+
     _ui->setupUi(this);
     _trayed = false;
 
@@ -157,6 +159,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
 MainWindow::~MainWindow()
 {
+    qDebug() << "delete ui";
     delete _ui;
 }
 

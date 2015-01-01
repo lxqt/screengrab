@@ -117,7 +117,7 @@ void Core::coreQuit()
 {
     qDebug() << "Destroy app";
     if (_wnd) {
-        delete _wnd;
+        _wnd->close();
     }
 
     if (corePtr)
