@@ -227,10 +227,25 @@ void MainWindow::createActions()
 
 void MainWindow::show()
 {
-    if (_trayIcon)
-        _trayIcon->setVisible(true);
+    displayPixmap();
 
-    QMainWindow::show();
+    if (!isVisible() && !_trayed)
+        showNormal();
+
+    // if show tray
+    if (_conf->getShowTrayIcon())
+    {
+        _trayIcon->blockSignals(false);
+        _trayIcon->setContextMenu(menuTray); // enable context menu
+    }
+
+
+//    if (_trayIcon)
+//        _trayIcon->setVisible(true);
+
+//    QMainWindow::show();
+
+
 }
 
 bool MainWindow::isTrayed() const
@@ -407,13 +422,13 @@ void MainWindow::delayBoxChange(int delay)
 {
     if (delay == 0)
         _ui->delayBox->setSpecialValueText(tr("None"));
-//    ->conf->setDelay(delay);
+    _conf->setDelay(delay);
 }
 
 void MainWindow::typeScreenShotChange(int type)
 {
-    /// TODO - подключать наоборот из ядра
-//    _core->conf->setTypeScreen(type);
+    qDebug() << "Change screenhot type";
+    _conf->setTypeScreen(type);
 }
 
 /* TO REWORK */
@@ -539,6 +554,7 @@ void MainWindow::displayPixmap()
 //                Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
+/// DEPRECATED
 void MainWindow::restoreWindow()
 {
     displayPixmap();
@@ -547,11 +563,11 @@ void MainWindow::restoreWindow()
         showNormal();
 
     // if show tray
-//    if (_conf->getShowTrayIcon())
-//    {
-//        _trayIcon->blockSignals(false);
-//        _trayIcon->setContextMenu(menuTray); // enable context menu
-//    }
+    if (_conf->getShowTrayIcon())
+    {
+        _trayIcon->blockSignals(false);
+        _trayIcon->setContextMenu(menuTray); // enable context menu
+    }
 }
 
 void MainWindow::saveScreen()
