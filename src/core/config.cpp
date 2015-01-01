@@ -88,8 +88,10 @@ Config::Config()
 
 Config::~Config()
 {
+    qDebug() << "delete config";
     delete _shortcuts;
     delete _settings;
+    qDebug() << "delete config 2";
 }
 
 Config* Config::instance()

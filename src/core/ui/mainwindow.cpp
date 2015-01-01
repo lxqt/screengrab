@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     _ui(new Ui::MainWindow), _conf(NULL)
 {
-    setAttribute(Qt::WA_DeleteOnClose, true);
+//    setAttribute(Qt::WA_DeleteOnClose, true);
 
     _ui->setupUi(this);
     _trayed = false;
@@ -177,15 +177,15 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-
-// TODO - refactor
-//    if (_core->conf->getCloseInTray() && _core->conf->getShowTrayIcon())
-//    {
-//        windowHideShow();
-//        e->ignore();
-//    }
-//    else
-//        quit();
+qDebug() << "close event";
+    if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
+    {
+        windowHideShow();
+        e->ignore();
+    }
+    else
+        qDebug() << "send action close";
+        actQuit->activate(QAction::Trigger);
 }
 
 // resize main window
