@@ -573,9 +573,10 @@ void MainWindow::saveScreen()
     formatsAvalible["bmp"] = tr("BMP Files");
 
     QString format = "png";
-//    _>conf->getSaveFormat();
-    QString filePath = "";
-//    _getSaveFilePath(format);
+    _conf->getSaveFormat();
+
+    Core* c = Core::instance();
+    QString filePath = c->getSaveFilePath(format);
 
     // create file filters
     QString fileFilters;
@@ -592,7 +593,7 @@ void MainWindow::saveScreen()
     fileFilters.chop(2);
 
     QString fileName;
-    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected);
+    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected, QFileDialog::DontUseNativeDialog);
 
     QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
@@ -604,8 +605,7 @@ void MainWindow::saveScreen()
     if (fileName.isEmpty())
         return;
 
-    // TODO - передавать в ядро через сигнал
-    //_core->writeScreen(fileName, format);
+    c->writeScreen(fileName, format);
 }
 
 void MainWindow::createShortcuts()
