@@ -301,7 +301,7 @@ void MainWindow::showOptions()
         showNormal();
         if (options->exec() == QDialog::Accepted)
             updateUI();
-        hide();
+        hideToShot();
     }
     else
     {
@@ -323,7 +323,7 @@ void MainWindow::showAbout()
     {
         showNormal();
         about->exec();
-        hide();
+        hideToShot();
     }
     else
         about->exec();
@@ -331,31 +331,6 @@ void MainWindow::showAbout()
     delete about;
 }
 
-
-/*
- * clicked on new screen
- */
-void MainWindow::newScreen()
-{
-    setHidden(true);
-
-// MOVE TO reimplement hide()
-    // if show tray
-//    if (->conf->getShowTrayIcon())
-//    {
-//        //  unblock tray signals
-//        _trayIcon->blockSignals(true);
-//        _trayIcon->setContextMenu(NULL); // enable context menu
-//    }
-
-
-/// MOVED TO CORE newScreen
-    // if select 0s delay & hide window -- make 0.2s delay for hiding window
-//    if (_core->conf->getDelay() == 0)
-//        QTimer::singleShot(200, _core, SLOT(screenShot()));
-//    else
-//        QTimer::singleShot(1000 * _core->conf->getDelay(), _core, SLOT(screenShot()));
-}
 
 void MainWindow::copyScreen()
 {
@@ -495,9 +470,22 @@ void MainWindow::windowHideShow()
     {
         actHideShow->setText(tr("Show"));
         showMinimized();
-        hide();
+        hideToShot();
         _trayed = true;
     }
+}
+
+void MainWindow::hideToShot()
+{
+    qDebug() << "Hide main window to shot";
+    if (_conf->getShowTrayIcon())
+    {
+        //  unblock tray signals
+        _trayIcon->blockSignals(true);
+        _trayIcon->setContextMenu(NULL); // enable context menu
+    }
+
+    hide();
 }
 
 void MainWindow::showWindow(const QString& str)

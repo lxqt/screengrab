@@ -132,7 +132,7 @@ void Core::coreQuit()
 void Core::setScreen()
 {
     qDebug() << "Get screenshot";
-    _wnd->hide();
+    _wnd->hideToShot();
 
     // new code experimental
     if (conf->getDelay() == 0)

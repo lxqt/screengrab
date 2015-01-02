@@ -58,7 +58,8 @@ public:
 public Q_SLOTS:
     void showWindow(const QString& str);
     void windowHideShow();
-//
+    void hideToShot();
+
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
@@ -102,8 +103,7 @@ private:
 
 private Q_SLOTS:
     void displayPixmap();
-    void restoreWindow();
-    void newScreen();
+    void restoreWindow();    
     void copyScreen();
     void saveScreen();
     void showHelp();
