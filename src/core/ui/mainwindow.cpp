@@ -547,8 +547,8 @@ void MainWindow::displayPixmap()
 //                Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
-/// DEPRECATED
-void MainWindow::restoreWindow()
+
+void MainWindow::restoreFromShot()
 {
     displayPixmap();
 

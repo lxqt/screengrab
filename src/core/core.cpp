@@ -188,7 +188,7 @@ void Core::screenShot(bool first)
 
     // new code
     qDebug() << "Get screenshot finished";
-    _wnd->showNormal();
+    _wnd->restoreFromShot();
 }
 
 void Core::checkAutoSave(bool first)
