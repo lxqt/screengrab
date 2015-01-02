@@ -135,7 +135,11 @@ void Core::setScreen()
     _wnd->hide();
 
     // new code experimental
-    screenShot();
+    if (conf->getDelay() == 0)
+        QTimer::singleShot(200, this, SLOT(screenShot()));
+    else
+        QTimer::singleShot(1000 * conf->getDelay(), this, SLOT(screenShot()));
+
 }
 
 
@@ -149,7 +153,6 @@ void Core::screenShot(bool first)
     if (_firstScreen)
         conf->updateLastSaveDate();
 
-    // grb pixmap of desktop
     switch(conf->getTypeScreen())
     {
     case 0:

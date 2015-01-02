@@ -339,7 +339,7 @@ void MainWindow::newScreen()
 {
     setHidden(true);
 
-// MOVE TO CORE
+// MOVE TO reimplement hide()
     // if show tray
 //    if (->conf->getShowTrayIcon())
 //    {
@@ -348,6 +348,8 @@ void MainWindow::newScreen()
 //        _trayIcon->setContextMenu(NULL); // enable context menu
 //    }
 
+
+/// MOVED TO CORE newScreen
     // if select 0s delay & hide window -- make 0.2s delay for hiding window
 //    if (_core->conf->getDelay() == 0)
 //        QTimer::singleShot(200, _core, SLOT(screenShot()));
