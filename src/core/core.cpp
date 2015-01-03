@@ -97,9 +97,12 @@ Core::~Core()
 void Core::initWindow()
 {
     qDebug() << "Initialize window";
+
     _wnd = new MainWindow;
     _wnd->setConfig(conf);
     _wnd->createActions();
+
+    screenShot(true); // first screenshot
 
     _wnd->show();
 }
