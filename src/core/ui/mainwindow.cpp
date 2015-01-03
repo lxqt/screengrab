@@ -250,13 +250,10 @@ void MainWindow::show()
         _trayIcon->setContextMenu(menuTray); // enable context menu
     }
 
+    if (_trayIcon)
+        _trayIcon->setVisible(true);
 
-//    if (_trayIcon)
-//        _trayIcon->setVisible(true);
-
-//    QMainWindow::show();
-
-
+    QMainWindow::show();
 }
 
 bool MainWindow::isTrayed() const
