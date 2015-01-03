@@ -228,9 +228,17 @@ void MainWindow::createActions()
     connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
 }
 
+void MainWindow::updatePixmap(QPixmap *pMap)
+{
+    qDebug() << "Update pixmap";
+    _ui->scrLabel->setPixmap(pMap->scaled(_ui->scrLabel->size(),
+                Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+
 void MainWindow::show()
 {
-    displayPixmap();
+    qDebug() << "Show main window";
+    // displayPixmap();
 
     if (!isVisible() && !_trayed)
         showNormal();
@@ -533,17 +541,10 @@ void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
 //    }
 }
 
-void MainWindow::displayPixmap()
-{
-    qDebug() << "Dusplay pixmap";
-//    _ui->scrLabel->setPixmap(_core->getPixmap()->scaled(_ui->scrLabel->size(),
-//                Qt::KeepAspectRatio, Qt::SmoothTransformation));
-}
-
 
 void MainWindow::restoreFromShot()
 {
-    displayPixmap();
+    //displayPixmap();
 
     if (!isVisible() && !_trayed)
         showNormal();

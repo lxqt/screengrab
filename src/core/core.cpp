@@ -191,6 +191,7 @@ void Core::screenShot(bool first)
 
     // new code
     qDebug() << "Get screenshot finished";
+    _wnd->updatePixmap(_pixelMap);
     _wnd->restoreFromShot();
 }
 
