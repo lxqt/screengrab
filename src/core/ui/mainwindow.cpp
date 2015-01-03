@@ -417,13 +417,6 @@ void MainWindow::typeScreenShotChange(int type)
 //    trayShowMessage(state.header, state.message);
 //}
 
-void MainWindow::quit()
-{
-
-//    >conf->setRestoredWndSize(width(), height());
-//    >conf->saveWndSize();
-//    >coreQuit();
-}
 
 // updating UI from configdata
 void MainWindow::updateUI()

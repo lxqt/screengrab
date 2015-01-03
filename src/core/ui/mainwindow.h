@@ -112,7 +112,6 @@ private Q_SLOTS:
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
 //    void receivedStateNotifyMessage(StateNotifyMessage state); // TO REWORK
-    void quit();
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
 
