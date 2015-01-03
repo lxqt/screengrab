@@ -148,7 +148,7 @@ MainWindow::MainWindow(QWidget* parent) :
 //    connect(_core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()));
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
-
+// MOVE TO CORE init window
 //    resize(_core->conf->getRestoredWndSize().width(), _core->conf->getRestoredWndSize().height());
 
     QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());

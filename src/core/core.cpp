@@ -104,6 +104,8 @@ void Core::initWindow()
 
     screenShot(true); // first screenshot
 
+    _wnd->resize(conf->getRestoredWndSize());
+
     _wnd->show();
 }
 
