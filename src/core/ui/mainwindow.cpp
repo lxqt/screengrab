@@ -193,13 +193,14 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
     // get size dcreen pixel map
-//    QSize scaleSize = _core->getPixmap()->size(); // get orig size pixmap
+    qDebug() << "Resize window";
+    QSize scaleSize = Core::instance()->getPixmap()->size(); // get orig size pixmap
 
-//    scaleSize.scale(_ui->scrLabel->size(), Qt::KeepAspectRatio);
+    scaleSize.scale(_ui->scrLabel->size(), Qt::KeepAspectRatio);
 
-//    // if not scrlabel pixmap
-//    if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
-//        displayPixmap();
+    // if not scrlabel pixmap
+    if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
+        updatePixmap(Core::instance()->getPixmap());
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
