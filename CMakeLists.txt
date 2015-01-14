@@ -166,7 +166,7 @@ lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
 )
 
 qt5_translation_loader(SCREENGRAB_QM_LOADER
-    "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
+    "${CMAKE_INSTALL_FULL_DATADIR}/${PROJECT_NAME}/translations"
     ${PROJECT_NAME}
 )
 
