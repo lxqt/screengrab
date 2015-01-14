@@ -12,7 +12,13 @@ find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# long live cmake + qt :)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+
+include(GNUInstallDirs)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # add version define
 set(SCREENGRAB_VERSION "1.91")
@@ -46,31 +52,12 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-if(${CMAKE_BUILD_TYPE} MATCHES "Release")
-    add_definitions(-DNDEBUG)
-    add_definitions(-DQT_NO_DEBUG_OUTPUT)
-endif()
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
+message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
 
-message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
-
-if(DEFINED LIB_SUFFIX)
-    set(LIB_SUFFIX ${LIB_SUFFIX} CACHE STRING "Library Installation Suffix")
-    message(STATUS "Library Install Suffix: " ${LIB_SUFFIX})
-    set(LIBDIR "lib/${LIB_SUFFIX}" CACHE STRING "Library Installation Dir")
-else()
-    # find libs dir
-    string (COMPARE EQUAL "${CMAKE_SIZEOF_VOID_P}" "8" IS64BITS)
-    if(IS64BITS)
-        set(LIBDIR "lib64")
-    else()
-        set(LIBDIR "lib")
-    endif()
-endif()
-
-set(SG_LIBDIR "${LIBDIR}/screengrab")
+set(SG_LIBDIR "${CMAKE_INSTALL_LIBDIR}/screengrab")
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
 message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
 
@@ -79,9 +66,6 @@ option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-
-# The following line will add additional finders to CMake without the need to be placed in the CMake install path
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
 #   bring any dependency on lxqt.
@@ -116,29 +100,22 @@ message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 message(STATUS "Update source translation translations/*.ts files: " ${UPDATE_TRANSLATIONS})
 
 # docs
-if(NOT SG_DOCDIR)
-    set(SG_DOCDIR "screengrab" CACHE STRING "Documentation directory name")
-endif()
-set(DOCPATH "share/doc/${SG_DOCDIR}" CACHE STRING "Documentation directory name")
-message(STATUS "Documentation directory: " ${CMAKE_INSTALL_PREFIX}/${DOCPATH})
-add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_PREFIX}/${DOCPATH}")
+# CMAKE_INSTALL_FULL_DOCDIR = CMAKE_INSTALL_PREFIX/CMAKE_INSTALL_DATADIR/doc/PROJECT_NAME
+message(STATUS "Documentation directory: " ${CMAKE_INSTALL_FULL_DOCDIR})
+add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_FULL_DOCDIR}")
 
-set(SG_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
-
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/")
-
-include_directories("${SG_INCLUDE}")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/singleapp")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
 
 if(SG_EXT_UPLOADS)
-    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
-    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader/")
+    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader")
+    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader")
 endif()
 
 if (SG_EXT_EDIT)
-    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit/")
-    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit/")
+    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit")
+    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit")
 endif()
 
 set(SCREENGRAB_SRC
@@ -166,13 +143,8 @@ set(SCREENGRAB_UI
 )
 
 # Qt resource file
-set(SCREENGRAB_QRC
-    screengrab.qrc
-)
-
-qt5_wrap_ui(SCREENGRAB_UI_H ${SCREENGRAB_UI})
+set(SCREENGRAB_QRC screengrab.qrc)
 qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
-
 
 message(STATUS "Generating localize ...")
 
@@ -186,7 +158,7 @@ lxqt_translate_ts(SCREENGRAB_QMS
     SOURCES
         ${SCREENGRAB_SRC}
         ${SCREENGRAB_UI}
-    INSTALL_DIR "share/${PROJECT_NAME}/translations"
+    INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
 )
 
 lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
@@ -194,10 +166,11 @@ lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
 )
 
 qt5_translation_loader(SCREENGRAB_QM_LOADER
-    "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/translations"
+    "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
     ${PROJECT_NAME}
 )
 
+# generating executable
 add_executable(screengrab
     ${SCREENGRAB_SRC}
     ${SCREENGRAB_UI_H}
@@ -249,11 +222,9 @@ add_custom_command(COMMAND rm
 
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)
-# install txt docs
-install(FILES ${DOCS} DESTINATION ${DOCPATH})
 # install html docs
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html/" DESTINATION "${DOCPATH}/html")
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html" DESTINATION "${CMAKE_INSTALL_FULL_DOCDIR}")
 # install desktop files
-install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION share/applications)
+install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 # install pixmap
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION share/pixmaps)
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION ${CMAKE_INSTALL_DATADIR}/pixmaps)

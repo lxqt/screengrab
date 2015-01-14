@@ -1,6 +1,4 @@
-#cmake_minimum_required(VERSION 2.8.11)
-
-include_directories(${SG_INCLUDE})
+cmake_minimum_required(VERSION 2.8.11)
 
 set (extedit_SRC
     moduleextedit.cpp
@@ -19,11 +17,11 @@ lxqt_translate_ts(extedit_QMS
     SOURCES
         ${extedit_SRC}
         ${extedit_HDR}
-    INSTALL_DIR "share/${PROJECT_NAME}/translations"
+    INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
 )
 
 qt5_translation_loader(extedit_QM_LOADER
-    "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/translations"
+    "${CMAKE_INSTALL_FULL_DATADIR}/${PROJECT_NAME}/translations"
     "extedit"
 )
 
@@ -34,6 +32,6 @@ add_library(extedit
         ${extedit_QM_LOADER}
 )
 set_property (TARGET extedit PROPERTY SOVERSION 1.0.0)
-INSTALL (TARGETS extedit DESTINATION ${SG_LIBDIR})
+install(TARGETS extedit DESTINATION ${SG_LIBDIR})
 
 target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras ${QTXDG_LIBRARIES})
