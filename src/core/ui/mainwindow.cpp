@@ -148,8 +148,6 @@ MainWindow::MainWindow(QWidget* parent) :
 //    connect(_core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()));
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
-// MOVE TO CORE init window
-//    resize(_core->conf->getRestoredWndSize().width(), _core->conf->getRestoredWndSize().height());
 
     QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());
     move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
@@ -206,7 +204,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 {
     if (obj == _ui->scrLabel && event->type() == QEvent::ToolTip)
-        //displatScreenToolTip();
+        displatScreenToolTip();
         qDebug() << "Move to core";
 
     else if (obj == _ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
@@ -345,16 +343,17 @@ void MainWindow::copyScreen()
 
 void MainWindow::displatScreenToolTip()
 {
-//    quint16 w = _core->getPixmap()->size().width();
-//    quint16 h = _core->getPixmap()->size().height();
-//    QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
-//    if (_core->conf->getEnableExtView())
-//    {
-//        toolTip += "\n\n";
-//        toolTip += tr("Double click for open screenshot in external default image viewer");
-//    }
+    QSize pSize = Core::instance()->getPixmap()->size();
+    quint16 w = pSize.width();
+    quint16 h = pSize.height();
+    QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
+    if (_conf->getEnableExtView())
+    {
+        toolTip += "\n\n";
+        toolTip += tr("Double click for open screenshot in external default image viewer");
+    }
 
-//    _ui->scrLabel->setToolTip(toolTip);
+    _ui->scrLabel->setToolTip(toolTip);
 }
 
 void MainWindow::createTray()
