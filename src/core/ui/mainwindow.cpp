@@ -205,11 +205,9 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 {
     if (obj == _ui->scrLabel && event->type() == QEvent::ToolTip)
         displatScreenToolTip();
-        qDebug() << "Move to core";
 
     else if (obj == _ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
-//        _core->openInExtViewer();
-        qDebug() << "Move to core";
+        Core::instance()->openInExtViewer();
 
     return QObject::eventFilter(obj, event);
 }
