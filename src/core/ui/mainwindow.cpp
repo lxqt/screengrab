@@ -599,26 +599,24 @@ void MainWindow::saveScreen()
 
 void MainWindow::createShortcuts()
 {
+    actNew->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutNew));
+    actSave->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutSave));
+    actCopy->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutCopy));
+    actOptions->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutOptions));
+    actHelp->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutHelp));
 
-    // TODO - подключать наоборот из ядра
-//    actNew->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutNew));
-//    actSave->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutSave));
-//    actCopy->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutCopy));
-//    actOptions->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutOptions));
-//    actHelp->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutHelp));
-
-//    if (_core->conf->getCloseInTray() && _core->conf->getShowTrayIcon())
-//    {
-//        actQuit->setShortcut(QKeySequence());
-//        _hideWnd = new QShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose), this);
-//        connect(_hideWnd, SIGNAL(activated()), this, SLOT(close()));
-//    }
-//    else
-//    {
-//        if (_hideWnd)
-//            delete _hideWnd;
-//        actQuit->setShortcut(_core->conf->shortcuts()->getShortcut(Config::shortcutClose));
-//    }
+    if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
+    {
+        actQuit->setShortcut(QKeySequence());
+        _hideWnd = new QShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose), this);
+        connect(_hideWnd, SIGNAL(activated()), this, SLOT(close()));
+    }
+    else
+    {
+        if (_hideWnd)
+            delete _hideWnd;
+        actQuit->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose));
+    }
 
 #ifdef SG_GLOBAL_SHORTCUTS
     for (int i = 0; i < _globalShortcuts.count(); ++i)
