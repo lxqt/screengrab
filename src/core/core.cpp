@@ -100,7 +100,6 @@ void Core::initWindow()
 
     _wnd = new MainWindow;
     _wnd->setConfig(conf);
-    _wnd->createActions();
 
     screenShot(true); // first screenshot
 

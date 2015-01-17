@@ -53,7 +53,6 @@ public:
 
     // NEW CODE
     void setConfig(Config *config);
-    void createActions();
     void updatePixmap(QPixmap *pMap);
 
 public Q_SLOTS:
@@ -104,7 +103,6 @@ private:
     void createShortcuts();
 
 private Q_SLOTS:
-    void copyScreen();
     void saveScreen();
     void showHelp();
     void showOptions();

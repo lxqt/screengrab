@@ -74,13 +74,15 @@ MainWindow::MainWindow(QWidget* parent) :
     actQuit = new QAction(QIcon::fromTheme("application-exit"), tr("Quit"), this);
 
     // connect actions to slots
-    connect(actNew, SIGNAL(triggered()), this, SLOT(newScreen()));
-    connect(actSave, SIGNAL(triggered()), this, SLOT(saveScreen()));
-    connect(actCopy, SIGNAL(triggered()), this, SLOT(copyScreen()));
-//    connect(actOptions, SIGNAL(triggered()), this, SLOT(showOptions()));
-//    connect(actHelp, SIGNAL(triggered()), this, SLOT(showHelp()));
-//    connect(actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
-//    connect(actQuit, SIGNAL(triggered()), this, SLOT(quit()));
+    Core *c = Core::instance();
+
+    connect(actQuit, &QAction::triggered, c, &Core::coreQuit);
+    connect(actNew, &QAction::triggered, c, &Core::setScreen);
+    connect(actSave, &QAction::triggered, this, &MainWindow::saveScreen);
+    connect(actNew, &QAction::triggered, c, &Core::copyScreen);
+    connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
+    connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
+    connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
 
     // New syntax connect signal slots
 
@@ -144,8 +146,6 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
     connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
 
-    // TODO move to core
-//    connect(_core, SIGNAL(newScreenShot(QPixmap*)), this, SLOT(restoreWindow()));
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
 
@@ -191,7 +191,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
     // get size dcreen pixel map
-    qDebug() << "Resize window";
     QSize scaleSize = Core::instance()->getPixmap()->size(); // get orig size pixmap
 
     scaleSize.scale(_ui->scrLabel->size(), Qt::KeepAspectRatio);
@@ -212,18 +211,6 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
     return QObject::eventFilter(obj, event);
 }
 
-void MainWindow::createActions()
-{
-    qDebug() << "Create actions";
-    Core *c = Core::instance();
-
-    connect(actQuit, &QAction::triggered, c, &Core::coreQuit);
-    connect(actNew, &QAction::triggered, c, &Core::setScreen);
-
-    connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
-    connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
-    connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
-}
 
 void MainWindow::updatePixmap(QPixmap *pMap)
 {
@@ -331,12 +318,6 @@ void MainWindow::showAbout()
         about->exec();
 
     delete about;
-}
-
-
-void MainWindow::copyScreen()
-{
-//    _core->copyScreen();
 }
 
 void MainWindow::displatScreenToolTip()
