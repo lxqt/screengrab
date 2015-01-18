@@ -37,8 +37,6 @@ MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     _ui(new Ui::MainWindow), _conf(NULL), _trayMenu(NULL)
 {
-//    setAttribute(Qt::WA_DeleteOnClose, true);
-
     _ui->setupUi(this);
     _trayed = false;
 
@@ -83,13 +81,6 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
     connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
     connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
-
-    // New syntax connect signal slots
-
-    //updateUI();
-
-//    delayBoxChange(_core->conf->getDelay()); // TO REWORK
-//    _ui->cbxTypeScr->setCurrentIndex(conf->getTypeScreen());
 
     _ui->toolBar->addAction(actNew);
     _ui->toolBar->addAction(actSave);
@@ -276,7 +267,6 @@ void MainWindow::showTrayMessage(const QString& header, const QString& message)
 
 void MainWindow::setConfig(Config *config)
 {
-    qDebug() << "Setup config";
     _conf = config;
     updateUI();
 }
@@ -489,17 +479,6 @@ void MainWindow::showWindow(const QString& str)
     // change type scrren in config & on main window
     _ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
-
-//    _core->sleep(250); // hack for WMs with compositing fade-out effects
-//    _core->screenShot();
-
-    // TODO  - make with conf
-//    if (isHidden() && _>conf->getShowTrayIcon())
-//    {
-//        actHideShow->setText(tr("Hide"));
-//        _trayed = false;
-//        showNormal();
-//    }
 }
 
 void MainWindow::restoreFromShot()
