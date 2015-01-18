@@ -35,7 +35,7 @@
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
-    _ui(new Ui::MainWindow), _conf(NULL)
+    _ui(new Ui::MainWindow), _conf(NULL), _trayMenu(NULL)
 {
 //    setAttribute(Qt::WA_DeleteOnClose, true);
 
@@ -231,7 +231,7 @@ void MainWindow::show()
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
-        _trayIcon->setContextMenu(menuTray); // enable context menu
+        _trayIcon->setContextMenu(_trayMenu); // enable context menu
     }
 
     if (_trayIcon)
@@ -341,31 +341,27 @@ void MainWindow::createTray()
     actHideShow = new QAction(tr("Hide"), this);
     connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
 
-    // Подключать наоборот из ядра в окно
-//    connect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)),
-//            this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
-
     // create tray menu
-    menuTray = new QMenu(this);
-    menuTray->addAction(actHideShow);
-    menuTray->addSeparator();
-    menuTray->addAction(actNew); // TODO - add icons (icon, action)
-    menuTray->addAction(actSave);
-    menuTray->addAction(actCopy);
-    menuTray->addSeparator();
-    menuTray->addAction(actOptions);
-    menuTray->addSeparator();
-    menuTray->addAction(actHelp);
-    menuTray->addAction(actAbout);
-    menuTray->addSeparator();
-    menuTray->addAction(actQuit);
+    _trayMenu = new QMenu(this);
+    _trayMenu->addAction(actHideShow);
+    _trayMenu->addSeparator();
+    _trayMenu->addAction(actNew); // TODO - add icons (icon, action)
+    _trayMenu->addAction(actSave);
+    _trayMenu->addAction(actCopy);
+    _trayMenu->addSeparator();
+    _trayMenu->addAction(actOptions);
+    _trayMenu->addSeparator();
+    _trayMenu->addAction(actHelp);
+    _trayMenu->addAction(actAbout);
+    _trayMenu->addSeparator();
+    _trayMenu->addAction(actQuit);
 
     // icon menu
     QIcon icon(":/res/img/logo.png");
 
     _trayIcon = new QSystemTrayIcon(this);
 
-    _trayIcon->setContextMenu(menuTray);
+    _trayIcon->setContextMenu(_trayMenu);
     _trayIcon->setIcon(icon);
     _trayIcon->show();
     connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
@@ -374,12 +370,11 @@ void MainWindow::createTray()
 
 void MainWindow::killTray()
 {
-//    disconnect(_core, SIGNAL(sendStateNotifyMessage(StateNotifyMessage)), this, SLOT(receivedStateNotifyMessage(StateNotifyMessage)));
-
     _trayed = false;
+    _trayMenu->clear();
+
     delete _trayIcon;
     _trayIcon = NULL;
-    delete actHideShow;
 }
 
 void MainWindow::delayBoxChange(int delay)
@@ -405,12 +400,10 @@ void MainWindow::typeScreenShotChange(int type)
 // updating UI from configdata
 void MainWindow::updateUI()
 {
-    qDebug() << "Update ui";
     _ui->cbxTypeScr->setCurrentIndex(_conf->getTypeScreen());
     _ui->delayBox->setValue(_conf->getDelay());
 
-    // update shortcuts
-    createShortcuts();
+    updateShortcuts();
 
     // create tray object
     if (_conf->getShowTrayIcon() && !_trayIcon)
@@ -529,7 +522,7 @@ void MainWindow::restoreFromShot()
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
-        _trayIcon->setContextMenu(menuTray); // enable context menu
+        _trayIcon->setContextMenu(_trayMenu); // enable context menu
     }
 }
 
@@ -578,26 +571,14 @@ void MainWindow::saveScreen()
     c->writeScreen(fileName, format);
 }
 
-void MainWindow::createShortcuts()
+void MainWindow::updateShortcuts()
 {
     actNew->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutNew));
     actSave->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutSave));
     actCopy->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutCopy));
     actOptions->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutOptions));
     actHelp->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutHelp));
-
-    if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
-    {
-        actQuit->setShortcut(QKeySequence());
-        _hideWnd = new QShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose), this);
-        connect(_hideWnd, SIGNAL(activated()), this, SLOT(close()));
-    }
-    else
-    {
-        if (_hideWnd)
-            delete _hideWnd;
-        actQuit->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose));
-    }
+    actQuit->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose));
 
 #ifdef SG_GLOBAL_SHORTCUTS
     for (int i = 0; i < _globalShortcuts.count(); ++i)

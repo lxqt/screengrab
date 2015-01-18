@@ -79,7 +79,7 @@ private:
     QAction *actAbout;
     QAction *actHelp;
     QAction *actQuit;
-    QMenu *menuTray;
+    QMenu *_trayMenu;
     QShortcut *_hideWnd;
 
     bool _trayed;
@@ -100,7 +100,7 @@ private:
     void createTray();
     void killTray();
     void trayShowMessage(QString titleMsg, QString bodyMsg );
-    void createShortcuts();
+    void updateShortcuts();
 
 private Q_SLOTS:
     void saveScreen();
