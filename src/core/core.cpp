@@ -120,6 +120,11 @@ void Core::sleep(int msec)
 void Core::coreQuit()
 {
     qDebug() << "Destroy app";
+
+    conf->setRestoredWndSize(_wnd->width(), _wnd->height());
+    conf->saveWndSize();
+
+
     if (_wnd) {
         _wnd->close();
     }
