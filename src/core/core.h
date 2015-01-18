@@ -108,7 +108,6 @@ public:
 
 Q_SIGNALS:
     void newScreenShot(QPixmap *pixmap);
-    void sendStateNotifyMessage(StateNotifyMessage state);
 
 private:
     Core();

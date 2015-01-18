@@ -245,6 +245,35 @@ bool MainWindow::isTrayed() const
     return _trayIcon != NULL;
 }
 
+void MainWindow::showTrayMessage(const QString& header, const QString& message)
+{
+    qDebug() << "Show tray message";
+    if (_conf->getShowTrayIcon())
+    {
+        switch(_conf->getTrayMessages())
+        {
+            case 0: break; // never shown
+            case 1: // main window hidden
+            {
+                if (isHidden() && _trayed)
+                {
+                    _trayIcon->showMessage(header, message,
+                    QSystemTrayIcon::MessageIcon(), _conf->getTimeTrayMess()*1000 ); //5000
+                }
+                break;
+            }
+            case 2: // always show
+            {
+                _trayIcon->showMessage(header, message,
+                QSystemTrayIcon::MessageIcon(), _conf->getTimeTrayMess()*1000 );
+                break;
+            }
+            default: break;
+        }
+    }
+}
+
+
 void MainWindow::setConfig(Config *config)
 {
     qDebug() << "Setup config";
@@ -390,13 +419,6 @@ void MainWindow::typeScreenShotChange(int type)
     _conf->setTypeScreen(type);
 }
 
-/* TO REWORK */
-//void MainWindow::receivedStateNotifyMessage(StateNotifyMessage state)
-//{
-//    trayShowMessage(state.header, state.message);
-//}
-
-
 // updating UI from configdata
 void MainWindow::updateUI()
 {
@@ -479,37 +501,6 @@ void MainWindow::showWindow(const QString& str)
 //        showNormal();
 //    }
 }
-
-// show tray messages
-void MainWindow::trayShowMessage(QString titleMsg, QString bodyMsg )
-{
-    qDebug() << "Show tray message";
-    // TODO - make unv tray
-//    if (_core->conf->getShowTrayIcon())
-//    {
-//        switch(_core->conf->getTrayMessages())
-//        {
-//            case 0: break; // never shown
-//            case 1: // main window hidden
-//            {
-//                if (isHidden() && _trayed)
-//                {
-//                    _trayIcon->showMessage(titleMsg, bodyMsg,
-//                    QSystemTrayIcon::MessageIcon(), _core->conf->getTimeTrayMess()*1000 ); //5000
-//                }
-//                break;
-//            }
-//            case 2: // always show
-//            {
-//                _trayIcon->showMessage(titleMsg, bodyMsg,
-//                QSystemTrayIcon::MessageIcon(), _core->conf->getTimeTrayMess()*1000 );
-//                break;
-//            }
-//            default: break;
-//        }
-//    }
-}
-
 
 void MainWindow::restoreFromShot()
 {

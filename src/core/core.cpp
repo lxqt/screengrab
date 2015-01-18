@@ -214,8 +214,7 @@ void Core::checkAutoSave(bool first)
         if (!first)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            // TODO call showNotufy
-            Q_EMIT sendStateNotifyMessage(message);
+            _wnd->showTrayMessage(message.header, message.message);
         }
     }
 }
@@ -350,8 +349,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 
             message.message = message.message + copyFileNameToCliipboard(fileName);
             conf->updateLastSaveDate();
-            // TODO call showNotufy
-            Q_EMIT sendStateNotifyMessage(message);
+            _wnd->showTrayMessage(message.header, message.message);
         }
         else
             qWarning() << "Error saving file " << fileName;
@@ -388,8 +386,7 @@ void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
-    // TODO call showNotufy
-    Q_EMIT sendStateNotifyMessage(message);
+    _wnd->showTrayMessage(message.header, message.message);
 }
 
 void Core::openInExtViewer()

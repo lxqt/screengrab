@@ -50,8 +50,7 @@ public:
     ~MainWindow();
     void show();
     bool isTrayed() const;
-
-    // NEW CODE
+    void showTrayMessage(const QString& header, const QString& message);
     void setConfig(Config *config);
     void updatePixmap(QPixmap *pMap);
 
@@ -99,7 +98,6 @@ private:
     void displatScreenToolTip();
     void createTray();
     void killTray();
-    void trayShowMessage(QString titleMsg, QString bodyMsg );
     void updateShortcuts();
 
 private Q_SLOTS:
@@ -109,7 +107,6 @@ private Q_SLOTS:
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
-//    void receivedStateNotifyMessage(StateNotifyMessage state); // TO REWORK
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
 
