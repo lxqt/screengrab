@@ -78,13 +78,10 @@ private:
     QAction *actAbout;
     QAction *actHelp;
     QAction *actQuit;
+    Config *_conf;
     QMenu *_trayMenu;
     QShortcut *_hideWnd;
-
     bool _trayed;
-
-    // NEW CODE
-    Config *_conf;
 
 #ifdef SG_GLOBAL_SHORTCUTS
     QxtGlobalShortcut *_fullScreen;

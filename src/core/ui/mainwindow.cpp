@@ -33,8 +33,7 @@
 #include <QToolButton>
 #include <QMenu>
 
-MainWindow::MainWindow(QWidget* parent) :
-    QMainWindow(parent),
+MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui(new Ui::MainWindow), _conf(NULL), _trayMenu(NULL)
 {
     _ui->setupUi(this);
