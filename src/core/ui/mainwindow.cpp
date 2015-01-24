@@ -86,38 +86,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->toolBar->addAction(actCopy);
     _ui->toolBar->addSeparator();
 
-    // Create advanced menu
-//    QList<QAction*> modulesActions = _core->modules()->generateModulesActions();
-
-//    if (modulesActions.count() > 0)
-//    {
-//        for (int i = 0; i < modulesActions.count(); ++i)
-//        {
-//            QAction *action = modulesActions.at(i);
-//            if (action)
-//                _ui->toolBar->addAction(action);
-//        }
-//    }
-
-//    QList<QMenu*> modulesMenus = _core->modules()->generateModulesMenus();
-//    if (modulesMenus.count() > 0)
-//    {
-//        for (int i = 0; i < modulesMenus.count(); ++i)
-//        {
-//            QMenu *menu = modulesMenus.at(i);
-//            if (menu != 0)
-//            {
-//                QToolButton* btn = new QToolButton(this);
-//                btn->setText(menu->title());
-//                btn->setPopupMode(QToolButton::InstantPopup);
-//                btn->setToolTip(menu->title());
-//                btn->setMenu(modulesMenus.at(i));
-//                _ui->toolBar->addWidget(btn);
-//            }
-//        }
-//    }
-    // end creation advanced menu
-
     _ui->toolBar->addSeparator();
     _ui->toolBar->addAction(actOptions);
 
@@ -206,7 +174,40 @@ void MainWindow::updatePixmap(QPixmap *pMap)
 {
     qDebug() << "Update pixmap";
     _ui->scrLabel->setPixmap(pMap->scaled(_ui->scrLabel->size(),
-                Qt::KeepAspectRatio, Qt::SmoothTransformation));
+                                          Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+
+void MainWindow::updateModulesActions(QList<QAction *> list)
+{
+    if (list.count() > 0)
+    {
+        for (int i = 0; i < list.count(); ++i)
+        {
+            QAction *action = list.at(i);
+            if (action)
+                _ui->toolBar->insertAction(actQuit, action);
+        }
+    }
+}
+
+void MainWindow::updateModulesenus(QList<QMenu *> list)
+{
+    if (list.count() > 0)
+    {
+        for (int i = 0; i < list.count(); ++i)
+        {
+            QMenu *menu = list.at(i);
+            if (menu != 0)
+            {
+                QToolButton* btn = new QToolButton(this);
+                btn->setText(menu->title());
+                btn->setPopupMode(QToolButton::InstantPopup);
+                btn->setToolTip(menu->title());
+                btn->setMenu(list.at(i));
+                _ui->toolBar->insertWidget(actQuit, btn);
+            }
+        }
+    }
 }
 
 void MainWindow::show()

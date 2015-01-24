@@ -100,6 +100,8 @@ void Core::initWindow()
 
     _wnd = new MainWindow;
     _wnd->setConfig(conf);
+    _wnd->updateModulesActions(_modules.generateModulesActions());
+    _wnd->updateModulesenus(_modules.generateModulesMenus());
 
     screenShot(true); // first screenshot
 
