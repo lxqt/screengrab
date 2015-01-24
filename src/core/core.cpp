@@ -303,7 +303,9 @@ void Core::updatePixmap()
     if (QFile::exists(_tempFilename))
     {
         _pixelMap->load(_tempFilename, "png");
-        Q_EMIT newScreenShot(_pixelMap);
+        _wnd->updatePixmap(_pixelMap);
+
+//        Q_EMIT newScreenShot(_pixelMap);
     }
 }
 
