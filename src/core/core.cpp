@@ -170,14 +170,16 @@ void Core::screenShot(bool first)
     {
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         checkAutoSave(first);
-        Q_EMIT newScreenShot(_pixelMap);
+//        Q_EMIT newScreenShot(_pixelMap);
+        _wnd->updatePixmap(_pixelMap);
         break;
     }
     case 1:
     {
         getActiveWindow();
         checkAutoSave(first);
-        Q_EMIT newScreenShot(_pixelMap);
+//        Q_EMIT newScreenShot(_pixelMap);
+        _wnd->updatePixmap(_pixelMap);
         break;
     }
     case 2:
@@ -304,8 +306,6 @@ void Core::updatePixmap()
     {
         _pixelMap->load(_tempFilename, "png");
         _wnd->updatePixmap(_pixelMap);
-
-//        Q_EMIT newScreenShot(_pixelMap);
     }
 }
 
@@ -508,6 +508,6 @@ void Core::regionGrabbed(bool grabbed)
         checkAutoSave();
     }
 
-    Q_EMIT newScreenShot(_pixelMap);
+    _wnd->updatePixmap(_pixelMap);
     _selector->deleteLater();
 }

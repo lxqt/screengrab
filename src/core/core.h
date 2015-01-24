@@ -106,9 +106,6 @@ public:
     QString getDateTimeFileName();
     Config *conf;
 
-Q_SIGNALS:
-    void newScreenShot(QPixmap *pixmap);
-
 private:
     Core();
     Core(const Core &);
