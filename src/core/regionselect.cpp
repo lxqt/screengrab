@@ -22,6 +22,7 @@
 
 #include <QDesktopWidget>
 #include <QApplication>
+#include <QScreen>
 
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QWidget(parent)
@@ -73,7 +74,14 @@ void RegionSelect::sharedInit()
     _sizeDesktop = QApplication::desktop()->size();
     resize(_sizeDesktop);
 
-    _desktopPixmapBkg = QPixmap::grabWindow(QApplication::desktop()->winId());
+    const QList<QScreen *> screens = qApp->screens();
+    const QDesktopWidget *desktop = QApplication::desktop();
+    const int screenNum = desktop->screenNumber(QCursor::pos());
+
+    if (screenNum < screens.count()) {
+        _desktopPixmapBkg = screens[screenNum]->grabWindow(desktop->winId());
+    }
+
     _desktopPixmapClr = _desktopPixmapBkg;
 }
 

@@ -22,7 +22,7 @@
 #include <QWaitCondition>
 #include <QApplication>
 #include <QDesktopWidget>
-
+#include <QScreen>
 #include <QChar>
 #include <QBuffer>
 #include <QFile>
@@ -168,9 +168,12 @@ void Core::screenShot(bool first)
     {
     case 0:
     {
-        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        const QList<QScreen *> screens = qApp->screens();
+        const QDesktopWidget *desktop = QApplication::desktop();
+        const int screenNum = desktop->screenNumber(QCursor::pos());
+        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+
         checkAutoSave(first);
-//        Q_EMIT newScreenShot(_pixelMap);
         _wnd->updatePixmap(_pixelMap);
         break;
     }
@@ -178,7 +181,6 @@ void Core::screenShot(bool first)
     {
         getActiveWindow();
         checkAutoSave(first);
-//        Q_EMIT newScreenShot(_pixelMap);
         _wnd->updatePixmap(_pixelMap);
         break;
     }
@@ -230,18 +232,22 @@ void Core::checkAutoSave(bool first)
 
 void Core::getActiveWindow()
 {
+    const QList<QScreen *> screens = qApp->screens();
+    const QDesktopWidget *desktop = QApplication::desktop();
+    const int screenNum = desktop->screenNumber(QCursor::pos());
+
     WId wnd = KWindowSystem::activeWindow();
 
     if (!wnd)
     {
-        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
         exit(1);
     }
 
     // no decorations option is selected
     if (conf->getNoDecoration())
     {
-        *_pixelMap = QPixmap::grabWindow(wnd);
+        *_pixelMap = screens[screenNum]->grabWindow(wnd);
         return;
     }
 
@@ -251,7 +257,7 @@ void Core::getActiveWindow()
         qWarning() << "Window not visible";
 
     QRect geometry = info.frameGeometry();
-    *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(),
+    *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),
                                      geometry.x(),
                                      geometry.y(),
                                      geometry.width(),
