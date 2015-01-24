@@ -185,7 +185,7 @@ void MainWindow::updateModulesActions(QList<QAction *> list)
         {
             QAction *action = list.at(i);
             if (action)
-                _ui->toolBar->insertAction(actQuit, action);
+                _ui->toolBar->insertAction(actCopy, action);
         }
     }
 }
@@ -204,7 +204,7 @@ void MainWindow::updateModulesenus(QList<QMenu *> list)
                 btn->setPopupMode(QToolButton::InstantPopup);
                 btn->setToolTip(menu->title());
                 btn->setMenu(list.at(i));
-                _ui->toolBar->insertWidget(actQuit, btn);
+                _ui->toolBar->insertWidget(actCopy, btn);
             }
         }
     }
