@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(actQuit, &QAction::triggered, c, &Core::coreQuit);
     connect(actNew, &QAction::triggered, c, &Core::setScreen);
     connect(actSave, &QAction::triggered, this, &MainWindow::saveScreen);
-    connect(actNew, &QAction::triggered, c, &Core::copyScreen);
+    connect(actCopy, &QAction::triggered, c, &Core::copyScreen);
     connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
     connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
     connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
