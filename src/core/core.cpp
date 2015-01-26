@@ -107,7 +107,14 @@ void Core::initWindow()
 
     _wnd->resize(conf->getRestoredWndSize());
 
-    _wnd->show();
+    if (runAsMinimized())
+    {
+        if (_wnd->isTrayed())
+            _wnd->windowHideShow();
+        else
+            _wnd->showMinimized();
+    } else
+        _wnd->show();
 }
 
 void Core::sleep(int msec)

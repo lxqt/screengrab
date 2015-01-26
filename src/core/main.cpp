@@ -38,24 +38,6 @@ int main(int argc, char *argv[])
     ScreenGrab->processCmdLineOpts(scr.arguments());
     ScreenGrab->initWindow();
 
-
-//    MainWindow mainWnd;
-
-//    if (!scr.isRunning() || (scr.isRunning() && ScreenGrab->conf->getAllowMultipleInstance()))
-//    {
-//        ScreenGrab->screenShot(true);
-
-//        if (ScreenGrab->runAsMinimized())
-//        {
-//            if (mainWnd.isTrayed())
-//                mainWnd.windowHideShow();
-//            else
-//                mainWnd.showMinimized();
-//        }
-//        else
-//            mainWnd.show();
-//    }
-
 //#ifdef SG_EXT_UPLOADS
 //// TODO for future (move call uploader from main() function to app core process cmdline opts)
 //    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))

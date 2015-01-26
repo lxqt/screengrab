@@ -452,7 +452,7 @@ void MainWindow::windowHideShow()
     {
         actHideShow->setText(tr("Show"));
         showMinimized();
-        hideToShot();
+        hide();
         _trayed = true;
     }
 }
