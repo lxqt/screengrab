@@ -471,7 +471,7 @@ void MainWindow::hideToShot()
 
 void MainWindow::showWindow(const QString& str)
 {
-    // get char of type screen (last) form reviewd string
+    // get char of type screen (last) form received string
     QString typeNum = str[str.size() - 1];
     int type = typeNum.toInt();
 

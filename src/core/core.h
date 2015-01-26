@@ -77,9 +77,8 @@ public:
     static Core* instance();
     ~Core();
 
-    // NEW CODE
-    void initWindow();
-    //END NEW CODE
+    void initWindow(const QString& ipcMessage = QString());
+
 
     void sleep(int msec = 350);
     static QString getVersionPrintable();

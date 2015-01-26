@@ -94,27 +94,31 @@ Core::~Core()
     conf->killInstance();
 }
 
-void Core::initWindow()
+void Core::initWindow(const QString& ipcMessage)
 {
     qDebug() << "Initialize window";
+    if (!_wnd) {
+        _wnd = new MainWindow;
+        _wnd->setConfig(conf);
+        _wnd->updateModulesActions(_modules.generateModulesActions());
+        _wnd->updateModulesenus(_modules.generateModulesMenus());
 
-    _wnd = new MainWindow;
-    _wnd->setConfig(conf);
-    _wnd->updateModulesActions(_modules.generateModulesActions());
-    _wnd->updateModulesenus(_modules.generateModulesMenus());
+        screenShot(true); // first screenshot
 
-    screenShot(true); // first screenshot
+        _wnd->resize(conf->getRestoredWndSize());
 
-    _wnd->resize(conf->getRestoredWndSize());
-
-    if (runAsMinimized())
-    {
-        if (_wnd->isTrayed())
-            _wnd->windowHideShow();
-        else
-            _wnd->showMinimized();
-    } else
-        _wnd->show();
+        if (runAsMinimized())
+        {
+            if (_wnd->isTrayed())
+                _wnd->windowHideShow();
+            else
+                _wnd->showMinimized();
+        } else
+            _wnd->show();
+    } else {
+        _wnd->showWindow(ipcMessage);
+        screenShot();
+    }
 }
 
 void Core::sleep(int msec)

@@ -50,14 +50,14 @@ int main(int argc, char *argv[])
 //    }
 //#endif
 
-//    QObject::connect(&scr, SIGNAL(messageReceived(const QString&)), &mainWnd, SLOT(showWindow(const QString&) ) );
+    QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
-//    if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
-//    {
-//        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
-//        scr.sendMessage("screengrab --type=" + type);
-//        return 0;
-//    }
+    if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
+    {
+        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
+        scr.sendMessage("screengrab --type=" + type);
+        return 0;
+    }
 
     return scr.exec();
 }
