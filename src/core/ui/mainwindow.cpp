@@ -84,11 +84,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->toolBar->addAction(actNew);
     _ui->toolBar->addAction(actSave);
     _ui->toolBar->addAction(actCopy);
-    _ui->toolBar->addSeparator();
-
-    _ui->toolBar->addSeparator();
     _ui->toolBar->addAction(actOptions);
-
+    _ui->toolBar->addSeparator();
     QMenu *menuInfo = new QMenu(this);
     menuInfo->addAction(actHelp);
     menuInfo->addAction(actAbout);
@@ -179,13 +176,14 @@ void MainWindow::updatePixmap(QPixmap *pMap)
 
 void MainWindow::updateModulesActions(QList<QAction *> list)
 {
+    _ui->toolBar->insertSeparator(actOptions);
     if (list.count() > 0)
     {
         for (int i = 0; i < list.count(); ++i)
         {
             QAction *action = list.at(i);
             if (action)
-                _ui->toolBar->insertAction(actCopy, action);
+                _ui->toolBar->insertAction(actOptions, action);
         }
     }
 }
@@ -204,9 +202,10 @@ void MainWindow::updateModulesenus(QList<QMenu *> list)
                 btn->setPopupMode(QToolButton::InstantPopup);
                 btn->setToolTip(menu->title());
                 btn->setMenu(list.at(i));
-                _ui->toolBar->insertWidget(actCopy, btn);
+                _ui->toolBar->insertWidget(actOptions, btn);
             }
         }
+        _ui->toolBar->insertSeparator(actOptions);
     }
 }
 
