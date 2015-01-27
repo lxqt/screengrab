@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 
     QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
-    if (!ScreenGrab->conf->getAllowMultipleInstance() && scr.isRunning())
+    if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
     {
-        QString type = QString::number(ScreenGrab->conf->getTypeScreen());
+        QString type = QString::number(ScreenGrab->config()->getTypeScreen());
         scr.sendMessage("screengrab --type=" + type);
         return 0;
     }

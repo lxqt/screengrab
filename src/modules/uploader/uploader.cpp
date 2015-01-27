@@ -153,7 +153,7 @@ QUrl Uploader::apiUrl()
 void Uploader::createData(bool inBase64)
 {
     Core *core = Core::instance();
-    _formatString = core->conf->getSaveFormat();
+    _formatString = core->config()->getSaveFormat();
     _uploadFilename = core->getTempFilename(_formatString);
     core->writeScreen(_uploadFilename, _formatString , true);
 

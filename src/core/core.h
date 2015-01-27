@@ -103,7 +103,7 @@ public:
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
-    Config *conf;
+    Config* config();
 
 private:
     Core();
@@ -125,6 +125,7 @@ private:
     QCommandLineParser _cmdLine;
     ModuleManager _modules;
     QString _tempFilename;
+    Config *_conf;
     MainWindow *_wnd;
 
     bool _hided;

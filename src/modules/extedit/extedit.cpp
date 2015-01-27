@@ -42,7 +42,7 @@ void ExtEdit::runExternalEditor()
     XdgAction *action = static_cast<XdgAction*>(sender());
 
     Core *core = Core::instance();
-    QString format = core->conf->getSaveFormat();
+    QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
         format = "png";
 
@@ -80,7 +80,7 @@ void ExtEdit::editedFileChanged(const QString&)
 void ExtEdit::createAppList()
 {
     Core *core = Core::instance();
-    QString format = core->conf->getSaveFormat();
+    QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
         format = "png";
 

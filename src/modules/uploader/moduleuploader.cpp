@@ -64,7 +64,7 @@ void ModuleUploader::init()
         switch(config.labelsList().indexOf(selectedtHost))
         {
         case 0:
-            uploader = new Uploader_MediaCrush(core->conf->getSaveFormat());
+            uploader = new Uploader_MediaCrush(core->config()->getSaveFormat());
             break;
         case 1:
             uploader = new Uploader_ImgUr;
