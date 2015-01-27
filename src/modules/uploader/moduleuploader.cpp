@@ -23,6 +23,7 @@
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
 #include "imgur/uploader_imgur.h"
+#include "mediacrush/uploader_mediacrush.h"
 
 #include "core/core.h"
 
@@ -56,7 +57,6 @@ void ModuleUploader::init()
 
     if (core->checkCmdLineOption(_optUpload) == true  && _ignoreCmdParam == false)
     {
-        // TODO - add implement shadow supload screenshot to selected host
         UploaderConfig config;
         QString selectedtHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
@@ -64,6 +64,9 @@ void ModuleUploader::init()
         switch(config.labelsList().indexOf(selectedtHost))
         {
         case 0:
+            uploader = new Uploader_MediaCrush(core->conf->getSaveFormat());
+            break;
+        case 1:
             uploader = new Uploader_ImgUr;
             break;
         default:
@@ -123,4 +126,6 @@ void ModuleUploader::shadowUploadFail(const QByteArray& error)
     sender()->deleteLater();
     QString str = "Upload failed: " + error;
     qWarning() << str;
+
+    Q_EMIT uploadCompleteWithQuit();
 }
