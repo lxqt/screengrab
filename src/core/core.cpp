@@ -34,6 +34,10 @@
 #include "core/core.h"
 #include <KF5/KWindowSystem/KWindowSystem>
 
+#ifdef SG_EXT_UPLOADS
+#include "modules/uploader/moduleuploader.h"
+#endif
+
 Core* Core::corePtr = 0;
 
 Core::Core()
@@ -97,6 +101,7 @@ Core::~Core()
 void Core::initWindow(const QString& ipcMessage)
 {
     qDebug() << "Initialize window";
+
     if (!_wnd) {
         _wnd = new MainWindow;
         _wnd->setConfig(conf);
@@ -107,14 +112,18 @@ void Core::initWindow(const QString& ipcMessage)
 
         _wnd->resize(conf->getRestoredWndSize());
 
-        if (runAsMinimized())
-        {
-            if (_wnd->isTrayed())
-                _wnd->windowHideShow();
-            else
-                _wnd->showMinimized();
-        } else
-            _wnd->show();
+//        processCmdLineOpts(QApplication::arguments());
+
+        if (_wnd) {
+            if (runAsMinimized())
+            {
+                if (_wnd->isTrayed())
+                    _wnd->windowHideShow();
+                else
+                    _wnd->showMinimized();
+            } else
+                _wnd->show();
+        }
     } else {
         _wnd->showWindow(ipcMessage);
         screenShot();
@@ -475,6 +484,35 @@ void Core::processCmdLineOpts(const QStringList& arguments)
     for (int i=0; i < _screenTypeOpts.count(); ++i)
         if (_cmdLine.isSet(_screenTypeOpts.at(i)))
             conf->setTypeScreen(i);
+
+#ifdef SG_EXT_UPLOADS
+    /// FIXMA - In module interface need add the mthod for geting module cmdLine options
+    const QString UPLOAD_CMD_PARAM = "upload";
+    const QString UPLOAD_CMD_PARAM_SHORT = "u";
+    QCommandLineOption u(QStringList() << UPLOAD_CMD_PARAM_SHORT << UPLOAD_CMD_PARAM);
+
+    if (_cmdLine.isSet(u)) {
+        qDebug() << "IS upload";
+
+        qDebug() << "is shoted";
+        ModuleUploader *uploader = static_cast<ModuleUploader*>(_modules.getModule(MOD_UPLOADER));
+        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
+        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
+        uploader->init();
+    } else
+        initWindow();
+
+    //// TODO for future (move call uploader from main() function to app core process cmdline opts)
+    //    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
+    //    {
+    //        mainWnd.hide();
+
+    //        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
+    //        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
+    //        uploader->init();
+    //    }
+#endif
+
 }
 
 bool Core::runAsMinimized()

@@ -22,11 +22,6 @@
 #include "core/core.h"
 #include "ui/mainwindow.h"
 
-#ifdef SG_EXT_UPLOADS
-// TODO for future (move call uploader from main() function to app core)
-#include "modules/uploader/moduleuploader.h"
-#endif
-
 #include <QDebug>
 
 int main(int argc, char *argv[])
@@ -36,19 +31,6 @@ int main(int argc, char *argv[])
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
     ScreenGrab->processCmdLineOpts(scr.arguments());
-    ScreenGrab->initWindow();
-
-//#ifdef SG_EXT_UPLOADS
-//// TODO for future (move call uploader from main() function to app core process cmdline opts)
-//    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
-//    {
-//        mainWnd.hide();
-
-//        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
-//        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
-//        uploader->init();
-//    }
-//#endif
 
     QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
