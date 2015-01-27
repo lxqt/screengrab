@@ -31,7 +31,6 @@
 Uploader::Uploader(QObject *parent) :
     QObject(parent), _multipartData(0)
 {
-    qDebug() << "creating base uploader";
     qsrand(126);
     _strBoundary = "uploadbound" + QByteArray::number(qrand());
     _net = new QNetworkAccessManager(this);
@@ -47,7 +46,7 @@ Uploader::Uploader(QObject *parent) :
 
 Uploader::~Uploader()
 {
-    qDebug() << " base uploader killed";
+
 }
 
 /*!

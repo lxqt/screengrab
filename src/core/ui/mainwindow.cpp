@@ -112,7 +112,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
 MainWindow::~MainWindow()
 {
-    qDebug() << "delete ui";
     delete _ui;
 }
 
@@ -130,14 +129,12 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-qDebug() << "close event";
     if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
     {
         windowHideShow();
         e->ignore();
     }
     else
-        qDebug() << "send action close";
         actQuit->activate(QAction::Trigger);
 }
 
@@ -169,7 +166,6 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 
 void MainWindow::updatePixmap(QPixmap *pMap)
 {
-    qDebug() << "Update pixmap";
     _ui->scrLabel->setPixmap(pMap->scaled(_ui->scrLabel->size(),
                                           Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
@@ -211,13 +207,9 @@ void MainWindow::updateModulesenus(QList<QMenu *> list)
 
 void MainWindow::show()
 {
-    qDebug() << "Show main window";
-    // displayPixmap();
-
     if (!isVisible() && !_trayed)
         showNormal();
 
-    // if show tray
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
@@ -237,7 +229,6 @@ bool MainWindow::isTrayed() const
 
 void MainWindow::showTrayMessage(const QString& header, const QString& message)
 {
-    qDebug() << "Show tray message";
     if (_conf->getShowTrayIcon())
     {
         switch(_conf->getTrayMessages())
@@ -273,7 +264,6 @@ void MainWindow::setConfig(Config *config)
 
 void MainWindow::showHelp()
 {
-    // open help file
     QString localeHelpFile;
 
     localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
@@ -404,7 +394,6 @@ void MainWindow::delayBoxChange(int delay)
 
 void MainWindow::typeScreenShotChange(int type)
 {
-    qDebug() << "Change screenhot type";
     _conf->setTypeScreen(type);
 }
 
@@ -437,7 +426,6 @@ void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-// hide or show main window
 void MainWindow::windowHideShow()
 {
     if (isHidden())
@@ -458,10 +446,8 @@ void MainWindow::windowHideShow()
 
 void MainWindow::hideToShot()
 {
-    qDebug() << "Hide main window to shot";
     if (_conf->getShowTrayIcon())
     {
-        //  unblock tray signals
         _trayIcon->blockSignals(true);
         _trayIcon->setContextMenu(NULL); // enable context menu
     }
@@ -482,8 +468,6 @@ void MainWindow::showWindow(const QString& str)
 
 void MainWindow::restoreFromShot()
 {
-    //displayPixmap();
-
     if (!isVisible() && !_trayed)
         showNormal();
 

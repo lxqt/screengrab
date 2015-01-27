@@ -73,7 +73,6 @@ Core::Core()
     sleep(250);
 
     _wnd = NULL;
-    qDebug() << "Init app";
 }
 
 Core::Core(const Core& ): QObject()
@@ -100,8 +99,6 @@ Core::~Core()
 
 void Core::initWindow(const QString& ipcMessage)
 {
-    qDebug() << "Initialize window";
-
     if (!_wnd) {
         _wnd = new MainWindow;
         _wnd->setConfig(conf);
@@ -111,8 +108,6 @@ void Core::initWindow(const QString& ipcMessage)
         screenShot(true); // first screenshot
 
         _wnd->resize(conf->getRestoredWndSize());
-
-//        processCmdLineOpts(QApplication::arguments());
 
         if (_wnd) {
             if (runAsMinimized())
@@ -141,11 +136,8 @@ void Core::sleep(int msec)
 
 void Core::coreQuit()
 {
-    qDebug() << "Destroy app";
-
     conf->setRestoredWndSize(_wnd->width(), _wnd->height());
     conf->saveWndSize();
-
 
     if (_wnd) {
         _wnd->close();
@@ -162,7 +154,6 @@ void Core::coreQuit()
 
 void Core::setScreen()
 {
-    qDebug() << "Get screenshot";
     _wnd->hideToShot();
 
     // new code experimental
@@ -221,8 +212,6 @@ void Core::screenShot(bool first)
         break;
     }
 
-    // new code
-    qDebug() << "Get screenshot finished";
     _wnd->updatePixmap(_pixelMap);
     _wnd->restoreFromShot();
 }
@@ -353,7 +342,6 @@ void Core::killTempFile()
     }
 }
 
-// save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
     // adding extension format
@@ -492,25 +480,12 @@ void Core::processCmdLineOpts(const QStringList& arguments)
     QCommandLineOption u(QStringList() << UPLOAD_CMD_PARAM_SHORT << UPLOAD_CMD_PARAM);
 
     if (_cmdLine.isSet(u)) {
-        qDebug() << "IS upload";
-
-        qDebug() << "is shoted";
         ModuleUploader *uploader = static_cast<ModuleUploader*>(_modules.getModule(MOD_UPLOADER));
         QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
         QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
         uploader->init();
     } else
         initWindow();
-
-    //// TODO for future (move call uploader from main() function to app core process cmdline opts)
-    //    if (ScreenGrab->checkCmdLineOptions(QStringList() << "upload" << "u" ))
-    //    {
-    //        mainWnd.hide();
-
-    //        ModuleUploader *uploader = static_cast<ModuleUploader*>(ScreenGrab->modules()->getModule(MOD_UPLOADER));
-    //        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), &scr, SLOT(quit()));
-    //        uploader->init();
-    //    }
 #endif
 
 }
