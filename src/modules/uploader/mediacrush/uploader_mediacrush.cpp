@@ -112,7 +112,7 @@ void Uploader_MediaCrush::replyFinished(QNetworkReply* reply)
         _uploadedStrings[UL_DIRECT_LINK].first = "https://" + _host + "/" + response + "." + _currentFormat;
         _uploadedStrings[UL_DELETE_URL].first = "https://" + _host + "/" + response + "/delete";
 
-        Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
+        Q_EMIT uploadDoneStr(_uploadedStrings[UL_DIRECT_LINK].first);
         Q_EMIT uploadDone();
     }
     else

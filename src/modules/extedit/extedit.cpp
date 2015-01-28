@@ -29,7 +29,7 @@ ExtEdit::ExtEdit(QObject *parent) :
 {
     createAppList();
     _fileIsChanged = false;
-    connect(_watcherEditedFile, SIGNAL(fileChanged(QString)), this, SLOT(editedFileChanged(QString)));
+    connect(_watcherEditedFile, &QFileSystemWatcher::fileChanged, this, &ExtEdit::editedFileChanged);
 }
 
 QList<XdgAction*> ExtEdit::getActions()
@@ -50,8 +50,9 @@ void ExtEdit::runExternalEditor()
     core->writeScreen(_editFilename, format, true);
 
     QProcess *execProcess = new QProcess(this);
-    connect(execProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(closedExternalEditor(int, QProcess::ExitStatus)));
+    void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
+    connect(execProcess, signal, this, &ExtEdit::closedExternalEditor);
+
      execProcess->start(action->desktopFile().expandExecString().first(),
                         QStringList() << _editFilename);
     _watcherEditedFile->addPath(_editFilename);

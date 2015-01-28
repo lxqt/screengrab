@@ -73,8 +73,9 @@ void ModuleUploader::init()
             uploader = new Uploader_ImgUr;
         }
 
-        connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
-        connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
+        connect(uploader, &Uploader::uploadDoneStr, this, &ModuleUploader::shadowUploadDone);
+        connect(uploader, &Uploader::uploadFail, this, &ModuleUploader::shadowUploadFail);
+
         uploader->startUploading();
 
         _ignoreCmdParam = true;
@@ -107,7 +108,7 @@ QAction* ModuleUploader::initModuleAction()
 {
     QAction *act = new QAction(QObject::tr("Upload"), 0);
     act->setObjectName("actUpload");
-    connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
+    connect(act, &QAction::triggered, this, &ModuleUploader::init);
     return act;
 }
 
