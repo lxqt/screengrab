@@ -98,8 +98,10 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->toolBar->addWidget(help);
     _ui->toolBar->addAction(actQuit);
 
-    connect(_ui->delayBox, SIGNAL(valueChanged(int)), this, SLOT(delayBoxChange(int)));
-    connect(_ui->cbxTypeScr, SIGNAL(activated(int)), this, SLOT(typeScreenShotChange(int)));
+    void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
+    connect(_ui->delayBox, delayChange, this, &MainWindow::delayBoxChange);
+    void (QComboBox::*typeScr)(int) = &QComboBox::currentIndexChanged;
+    connect(_ui->cbxTypeScr, typeScr, this, &MainWindow::typeScreenShotChange);
 
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
@@ -347,7 +349,7 @@ void MainWindow::createTray()
 {
     _trayed = false;
     actHideShow = new QAction(tr("Hide"), this);
-    connect(actHideShow, SIGNAL(triggered()), this, SLOT(windowHideShow()));
+    connect(actHideShow, &QAction::triggered, this, &MainWindow::windowHideShow);
 
     // create tray menu
     _trayMenu = new QMenu(this);
@@ -372,8 +374,7 @@ void MainWindow::createTray()
     _trayIcon->setContextMenu(_trayMenu);
     _trayIcon->setIcon(icon);
     _trayIcon->show();
-    connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-             this, SLOT(trayClick(QSystemTrayIcon::ActivationReason)));
+    connect(_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayClick);
 }
 
 void MainWindow::killTray()

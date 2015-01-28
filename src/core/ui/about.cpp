@@ -52,7 +52,8 @@ AboutDialog::AboutDialog(QWidget *parent):
     tabs->insertTab(0, tr("About"));
     tabs->insertTab(1, tr("Thanks"));
     tabs->insertTab(2, tr("Help us"));
-    connect(tabs, SIGNAL(currentChanged(int)), this, SLOT(changeTab(int)));
+
+    connect(tabs, &QTabBar::currentChanged, this, &AboutDialog::changeTab);
 
     _ui->txtArea->setHtml(tabAbout());
 }

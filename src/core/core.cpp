@@ -198,13 +198,13 @@ void Core::screenShot(bool first)
     case 2:
     {
         _selector = new RegionSelect(_conf);
-        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        connect(_selector, &RegionSelect::processDone, this, &Core::regionGrabbed);
         break;
     }
     case 3:
     {
         _selector = new RegionSelect(_conf, _lastSelectedArea);
-        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        connect(_selector, &RegionSelect::processDone, this, &Core::regionGrabbed);
         break;
     }
     default:
@@ -434,8 +434,9 @@ void Core::openInExtViewer()
         args << tempFileName;
 
         QProcess *execProcess = new QProcess(this);
-        connect(execProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-                this, SLOT(closeExtViewer(int, QProcess::ExitStatus)));
+
+        void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
+        connect(execProcess, signal, this, &Core::closeExtViewer);
         execProcess->start(exec, args);
     }
 }
@@ -486,8 +487,7 @@ void Core::processCmdLineOpts(const QStringList& arguments)
 
     if (_cmdLine.isSet(u)) {
         ModuleUploader *uploader = static_cast<ModuleUploader*>(_modules.getModule(MOD_UPLOADER));
-        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
-        QObject::connect(uploader, SIGNAL(uploadCompleteWithQuit()), qApp, SLOT(quit()));
+        connect(uploader, &ModuleUploader::uploadCompleteWithQuit, qApp, &QApplication::quit);
         uploader->init();
     } else
         initWindow();

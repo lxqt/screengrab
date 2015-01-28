@@ -41,29 +41,38 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     _ui->setupUi(this);
     conf = Config::instance();
 
-    connect(_ui->butSaveOpt, SIGNAL(clicked()), this, SLOT(saveSettings()));
-    connect(_ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(selectDir()));
-    connect(_ui->butRestoreOpt, SIGNAL(clicked()), this, SLOT(restoreDefaults()) );
-    connect(_ui->checkIncDate, SIGNAL(toggled(bool)), this, SLOT(setVisibleDateTplEdit(bool)));
-    connect(_ui->keyWidget, SIGNAL(keySequenceAccepted(QKeySequence)), this, SLOT(acceptShortcut(QKeySequence)));
-    connect(_ui->keyWidget, SIGNAL(keyNotSupported()), this, SLOT(keyNotSupported()));
-    connect(_ui->checkAutoSave, SIGNAL(clicked(bool)), this, SLOT(setVisibleAutoSaveFirst(bool)));
-    connect(_ui->butCancel, SIGNAL(clicked(bool)), this, SLOT(reject()));
-    connect(_ui->treeKeys, SIGNAL(expanded(QModelIndex)), _ui->treeKeys, SLOT(clearSelection()));
-    connect(_ui->treeKeys, SIGNAL(collapsed(QModelIndex)), this, SLOT(collapsTreeKeys(QModelIndex)));
-    connect(_ui->checkShowTray, SIGNAL(toggled(bool)), this, SLOT(toggleCheckShowTray(bool)));
-    connect(_ui->editDateTmeTpl, SIGNAL(textEdited(QString)), this, SLOT(editDateTmeTpl(QString)));
-    connect(_ui->defDelay, SIGNAL(valueChanged(int)), this, SLOT(changeDefDelay(int)));
-    connect(_ui->timeTrayMess, SIGNAL(valueChanged(int)), this, SLOT(changeTimeTrayMess(int)));
-    connect(_ui->cbxTrayMsg, SIGNAL(currentIndexChanged(int)), this, SLOT(changeTrayMsgType(int)));
-    connect(_ui->treeKeys, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
-    connect(_ui->treeKeys, SIGNAL(activated(QModelIndex)), this, SLOT(doubleclickTreeKeys(QModelIndex)));
-    connect(_ui->treeKeys->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-            this, SLOT(currentItemChanged(const QModelIndex,const QModelIndex)));
-    connect(_ui->keyWidget, SIGNAL(keySequenceCleared()), this, SLOT(clearShrtcut()));
-    connect(_ui->listWidget, SIGNAL(currentRowChanged(int)), _ui->stackedWidget, SLOT(setCurrentIndex(int)));
-    connect(_ui->slideImgQuality, SIGNAL(valueChanged(int)), this, SLOT(changeImgQualituSlider(int)));
-    connect(_ui->cbxFormat, SIGNAL(currentIndexChanged(int)), this, SLOT(changeFormatType(int)));
+    connect(_ui->butSaveOpt, &QPushButton::clicked, this, &ConfigDialog::saveSettings);
+    connect(_ui->buttonBrowse, &QPushButton::clicked, this, &ConfigDialog::selectDir);
+    connect(_ui->butRestoreOpt, &QPushButton::clicked, this, &ConfigDialog::restoreDefaults);
+    connect(_ui->checkIncDate, &QCheckBox::toggled, this, &ConfigDialog::setVisibleDateTplEdit);
+    connect(_ui->keyWidget, &QKeySequenceWidget::keySequenceAccepted, this, &ConfigDialog::acceptShortcut);
+    connect(_ui->keyWidget, &QKeySequenceWidget::keyNotSupported, this, &ConfigDialog::keyNotSupported);
+    connect(_ui->checkAutoSave, &QCheckBox::toggled, this, &ConfigDialog::setVisibleAutoSaveFirst);
+    connect(_ui->butCancel, &QPushButton::clicked, this, &ConfigDialog::reject);
+    connect(_ui->treeKeys, &QTreeWidget::expanded, _ui->treeKeys, &QTreeWidget::clearSelection);
+    connect(_ui->treeKeys, &QTreeWidget::collapsed, this, &ConfigDialog::collapsTreeKeys);
+    connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
+    connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
+
+    void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
+    connect(_ui->defDelay, delayChange, this, &ConfigDialog::changeDefDelay);
+
+    void (QSpinBox::*timeToTray)(int) = &QSpinBox::valueChanged;
+    connect(_ui->timeTrayMess, timeToTray, this, &ConfigDialog::changeTimeTrayMess);
+
+    void (QComboBox::*trayMessType)(int) = &QComboBox::currentIndexChanged;
+    connect(_ui->cbxTrayMsg, trayMessType, this, &ConfigDialog::changeTrayMsgType);
+
+    connect(_ui->treeKeys, &QTreeWidget::doubleClicked, this, &ConfigDialog::doubleclickTreeKeys);
+    connect(_ui->treeKeys, &QTreeWidget::activated, this, &ConfigDialog::doubleclickTreeKeys);
+    connect(_ui->treeKeys->selectionModel(), &QItemSelectionModel::currentChanged,
+            this, &ConfigDialog::currentItemChanged);
+    connect(_ui->keyWidget, &QKeySequenceWidget::keySequenceCleared, this, &ConfigDialog::clearShrtcut);
+    connect(_ui->listWidget, &QListWidget::currentRowChanged, _ui->stackedWidget, &QStackedWidget::setCurrentIndex);
+    connect(_ui->slideImgQuality, &QSlider::valueChanged, this, &ConfigDialog::changeImgQualituSlider);
+
+    void (QComboBox::*formatChabge)(int) = &QComboBox::currentIndexChanged;
+    connect(_ui->cbxFormat, formatChabge, this, &ConfigDialog::changeFormatType);
 
     loadSettings();
     changeDefDelay(conf->getDefDelay());
@@ -165,7 +174,6 @@ void ConfigDialog::loadSettings()
 
     _ui->checkNoDecorX11->setChecked(conf->getNoDecoration());
     _ui->checkShowTray->setChecked(conf->getShowTrayIcon());
-//     on_checkShowTray_toggled(conf->getShowTrayIcon());
     toggleCheckShowTray(conf->getShowTrayIcon());
 
     _ui->slideImgQuality->setValue(conf->getImageQuality());
