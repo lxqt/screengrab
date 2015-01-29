@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/ui/about.cpp" line="37"/>
         <source>built on </source>
-        <translation>compilato in </translation>
+        <translation>compilato il </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="42"/>
         <source>using Qt </source>
-        <translation>usando QT</translation>
+        <translation>usando le librerie QT</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="52"/>
@@ -26,63 +26,64 @@
     <message>
         <location filename="../src/ui/about.cpp" line="122"/>
         <source>Licensed under the </source>
-        <translation>Rilasciato sotto licensa </translation>
+        <translation>Rilasciato sotto licenza </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="115"/>
         <location filename="../src/ui/about.cpp" line="144"/>
         <source>E-Mail</source>
-        <translation></translation>
+        <translation>email</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="54"/>
         <source>Help us</source>
-        <translation type="unfinished"></translation>
+        <translation>Contribuisci</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="118"/>
         <source>Web site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sito web</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="126"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished">Copyright &amp;copy; 2009-2010, Artem &apos;DOOMer&apos; Galichkin {2009-2012,?} {2009-2013,?}</translation>
+        <translatorcomment>copyright updated to 2015, ok?</translatorcomment>
+        <translation>Copyright &amp;copy; 2009-2015, Artem &apos;DOOMer&apos; Galichkin </translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="136"/>
         <source>What you can do?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cosa puoi fare?</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="110"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>è una applicazione per catturare velocemente schermate per tutte le piattaforme.</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="112"/>
         <source>It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.</source>
-        <translation type="unfinished"></translation>
+        <translation>E&apos; una applicazione leggera e e potente ed è stato scritta usando il Qt-framework, così puoi usarla in Windows e Linux</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="133"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se ti piace questa applicazione puoi aiutarci!</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="139"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Puoi tradurre ScreenGrab in altre lingue</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="140"/>
         <source>Make suggestions for next releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fai proposte per le prossime versioni</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="141"/>
         <source>Report bugs and issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Segnala problemi e bug</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="148"/>
@@ -117,7 +118,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="166"/>
         <source> Spanish translation</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="167"/>
@@ -127,22 +128,22 @@
     <message>
         <location filename="../src/ui/about.cpp" line="169"/>
         <source> Italian translation</source>
-        <translation type="unfinished"></translation>
+        <translation>Traduziona italiana</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="173"/>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>Test:</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="175"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Supporto per due monitor e altro in Linux</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="176"/>
         <source>Dual monitor support in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Supporto dual monitor in Linux</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="177"/>
@@ -152,7 +153,7 @@
     <message>
         <location filename="../src/ui/about.cpp" line="178"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> win32-build vecchio[Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/ui/about.cpp" line="179"/>
@@ -176,12 +177,12 @@
     <message>
         <location filename="../src/ui/configwidget.cpp" line="222"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>La cartella %1 non esiste. Vuoi crearla?</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="329"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi ripristinare la configurazione iniziale?</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="347"/>
@@ -196,12 +197,12 @@
     <message>
         <location filename="../src/ui/configwidget.cpp" line="449"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa scorciatoia è già in uso. Seleziona un altra per favore.</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="455"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa scorciatoia è già usata in ScreenGrab. Seleziona un altra.</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.cpp" line="473"/>
@@ -234,7 +235,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="327"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Il nome del file salvato è stato copiato negli appunti</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="345"/>
@@ -249,7 +250,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="333"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Il percorso del file salvato è stato copiato negli appunti</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="345"/>
@@ -296,7 +297,7 @@
     <message>
         <location filename="../src/ui/mainwindow.ui" line="112"/>
         <source>Full screen</source>
-        <translation>Tutto schermo</translation>
+        <translation>Schermo intero</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="117"/>
@@ -311,12 +312,12 @@
     <message>
         <location filename="../src/ui/mainwindow.ui" line="127"/>
         <source>Previous selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezione precedente</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.ui" line="196"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti</translation>
     </message>
     <message>
         <source>Getting new screenshot</source>
@@ -415,12 +416,12 @@
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="321"/>
         <source>Screenshot </source>
-        <translation type="unfinished"></translation>
+        <translation>Schermata</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="325"/>
         <source>Double click for open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Doppio clic per aprire la cattura in un editor esterno</translation>
     </message>
     <message>
         <location filename="../src/ui/mainwindow.cpp" line="379"/>
@@ -507,7 +508,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="421"/>
         <source>Insert current date and time in file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci data e ora nel nome del file</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="468"/>
@@ -522,37 +523,37 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="337"/>
         <source>Image quality</source>
-        <translation type="unfinished"></translation>
+        <translation>Qualità imagine</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="346"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qualità immagine (1 -bassa, 100 massima qualità)</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="489"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Permetti istanze multiple di ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="502"/>
         <source>Enable external viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita visualizzatore esterno</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="537"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra ScreenGrab nel vassoio di sistema</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="622"/>
         <source>Minimize to tray on click close button</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizza nel vassoio di sistema cliccando il pulsante chiudi</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="625"/>
         <source>Minimize to tray when closing</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizza nel vassoio alla chiusura</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="664"/>
@@ -582,7 +583,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="697"/>
         <source>Local shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Scorciatoie locali</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="701"/>
@@ -651,12 +652,12 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="90"/>
         <source>System tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Vassoio</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="129"/>
         <source>Saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvataggio</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="143"/>
@@ -696,27 +697,27 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="233"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia nome del file negli appunti quando salvi</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="247"/>
         <source>Do not copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Non copiare</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="252"/>
         <source>Copy file name only</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia solo il nome del file</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="257"/>
         <source>Copy full file path</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia il percorso completo</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="281"/>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="289"/>
@@ -797,12 +798,12 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="492"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Permetti istanze multiple di ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="499"/>
         <source>Open in external viewer on double click</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri la cattura in un visualizzatore esterno con doppio clic</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="669"/>
@@ -812,7 +813,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/ui/configwidget.ui" line="726"/>
         <source>Quit</source>
-        <translation type="unfinished">Esci</translation>
+        <translation>Esci</translation>
     </message>
     <message>
         <location filename="../src/ui/configwidget.ui" line="737"/>
