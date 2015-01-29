@@ -20,8 +20,8 @@ include(GNUInstallDirs)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # add version define
-set(SCREENGRAB_VERSION "1.91")
-set(SCREENGRAB_VERSION_DEV "2.0-dev")
+set(SCREENGRAB_VERSION "1.95")
+set(SCREENGRAB_VERSION_DEV "2.0-beta1")
 # set(DEV_BUILD True)
 
 if(SCREENGRAB_VERSION_DEV)
@@ -206,7 +206,7 @@ add_custom_command(COMMAND cp
     TARGET dist
 )
 
-ADD_CUSTOM_COMMAND(COMMAND tar
+add_custom_command(COMMAND tar
     ARGS cvfz "${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz" --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"
     WORKING_DIRECTORY "/tmp"
     TARGET dist
