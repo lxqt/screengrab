@@ -23,6 +23,7 @@
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
 #include "imgur/uploader_imgur.h"
+#include "mediacrush/uploader_mediacrush.h"
 
 #include "core/core.h"
 
@@ -56,7 +57,6 @@ void ModuleUploader::init()
 
     if (core->checkCmdLineOption(_optUpload) == true  && _ignoreCmdParam == false)
     {
-        // TODO - add implement shadow supload screenshot to selected host
         UploaderConfig config;
         QString selectedtHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
@@ -64,14 +64,18 @@ void ModuleUploader::init()
         switch(config.labelsList().indexOf(selectedtHost))
         {
         case 0:
+            uploader = new Uploader_MediaCrush(core->config()->getSaveFormat());
+            break;
+        case 1:
             uploader = new Uploader_ImgUr;
             break;
         default:
             uploader = new Uploader_ImgUr;
         }
 
-        connect(uploader, SIGNAL(uploadDone(QString)), this, SLOT(shadowUploadDone(QString)));
-        connect(uploader, SIGNAL(uploadFail(QByteArray)), this, SLOT(shadowUploadFail(QByteArray)));
+        connect(uploader, &Uploader::uploadDoneStr, this, &ModuleUploader::shadowUploadDone);
+        connect(uploader, &Uploader::uploadFail, this, &ModuleUploader::shadowUploadFail);
+
         uploader->startUploading();
 
         _ignoreCmdParam = true;
@@ -104,7 +108,7 @@ QAction* ModuleUploader::initModuleAction()
 {
     QAction *act = new QAction(QObject::tr("Upload"), 0);
     act->setObjectName("actUpload");
-    connect(act, SIGNAL(triggered(bool)), this, SLOT(init()));
+    connect(act, &QAction::triggered, this, &ModuleUploader::init);
     return act;
 }
 
@@ -123,4 +127,6 @@ void ModuleUploader::shadowUploadFail(const QByteArray& error)
     sender()->deleteLater();
     QString str = "Upload failed: " + error;
     qWarning() << str;
+
+    Q_EMIT uploadCompleteWithQuit();
 }

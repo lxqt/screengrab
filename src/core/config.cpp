@@ -74,7 +74,6 @@ Config::Config()
         if (cf.open(QIODevice::WriteOnly))
         {
             cf.close();
-            qDebug() << "creating";
         }
 
         setDefaultSettings();

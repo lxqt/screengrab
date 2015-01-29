@@ -29,7 +29,7 @@ ExtEdit::ExtEdit(QObject *parent) :
 {
     createAppList();
     _fileIsChanged = false;
-    connect(_watcherEditedFile, SIGNAL(fileChanged(QString)), this, SLOT(editedFileChanged(QString)));
+    connect(_watcherEditedFile, &QFileSystemWatcher::fileChanged, this, &ExtEdit::editedFileChanged);
 }
 
 QList<XdgAction*> ExtEdit::getActions()
@@ -42,7 +42,7 @@ void ExtEdit::runExternalEditor()
     XdgAction *action = static_cast<XdgAction*>(sender());
 
     Core *core = Core::instance();
-    QString format = core->conf->getSaveFormat();
+    QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
         format = "png";
 
@@ -50,8 +50,9 @@ void ExtEdit::runExternalEditor()
     core->writeScreen(_editFilename, format, true);
 
     QProcess *execProcess = new QProcess(this);
-    connect(execProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(closedExternalEditor(int, QProcess::ExitStatus)));
+    void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
+    connect(execProcess, signal, this, &ExtEdit::closedExternalEditor);
+
      execProcess->start(action->desktopFile().expandExecString().first(),
                         QStringList() << _editFilename);
     _watcherEditedFile->addPath(_editFilename);
@@ -80,7 +81,7 @@ void ExtEdit::editedFileChanged(const QString&)
 void ExtEdit::createAppList()
 {
     Core *core = Core::instance();
-    QString format = core->conf->getSaveFormat();
+    QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
         format = "png";
 

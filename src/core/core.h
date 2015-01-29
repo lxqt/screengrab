@@ -29,6 +29,8 @@
 
 #include "modulemanager.h"
 
+#include "ui/mainwindow.h"
+
 #include <QObject>
 #include <QTimer>
 #include <QPixmap>
@@ -66,12 +68,17 @@ class Core : public QObject
 
 public Q_SLOTS:
     void coreQuit();
+    void setScreen();
+
     void screenShot(bool first = false);
     void autoSave();
 
 public:
     static Core* instance();
     ~Core();
+
+    void initWindow(const QString& ipcMessage = QString());
+
 
     void sleep(int msec = 350);
     static QString getVersionPrintable();
@@ -96,11 +103,7 @@ public:
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
-    Config *conf;
-
-Q_SIGNALS:
-    void newScreenShot(QPixmap *pixmap);
-    void sendStateNotifyMessage(StateNotifyMessage state);
+    Config* config();
 
 private:
     Core();
@@ -122,6 +125,8 @@ private:
     QCommandLineParser _cmdLine;
     ModuleManager _modules;
     QString _tempFilename;
+    Config *_conf;
+    MainWindow *_wnd;
 
     bool _hided;
     bool _firstScreen;

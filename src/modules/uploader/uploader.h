@@ -55,7 +55,7 @@ public:
 Q_SIGNALS:
     void uploadStart();
     void uploadFail(const QByteArray &error);
-    void uploadDone(const QString &directLink);
+    void uploadDoneStr(const QString &directLink);
     void uploadDone();
     void uploadProgress(qint64 bytesSent, qint64 bytesTotal);
 

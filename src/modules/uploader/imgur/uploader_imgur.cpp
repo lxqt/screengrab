@@ -93,7 +93,7 @@ void Uploader_ImgUr::replyFinished(QNetworkReply* reply)
         _uploadedStrings[UL_BB_CODE_THUMB].first = "[url=" + replyXmlMap["original"] + "][img]"+ replyXmlMap["small_square"] +"[/img][/url]";
         _uploadedStrings[UL_DELETE_URL].first = replyXmlMap["delete_page"];
         qDebug() << "done" << _uploadedStrings[UL_DIRECT_LINK].first;
-        Q_EMIT uploadDone(_uploadedStrings[UL_DIRECT_LINK].first);
+        Q_EMIT uploadDoneStr(_uploadedStrings[UL_DIRECT_LINK].first);
         Q_EMIT uploadDone();
     }
     else

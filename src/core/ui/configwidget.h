@@ -21,7 +21,7 @@
 #ifndef CONFIGWIDGET_H
 #define CONFIGWIDGET_H
 
-#include "src/core/config.h"
+#include "../config.h"
 
 #include <QDialog>
 #include <QTextCodec>

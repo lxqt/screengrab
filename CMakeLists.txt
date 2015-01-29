@@ -124,7 +124,6 @@ set(SCREENGRAB_SRC
     src/core/core.cpp
     src/core/config.cpp
     src/core/regionselect.cpp
-    src/core/cmdline.cpp
     src/core/shortcutmanager.cpp
     src/core/modulemanager.cpp
     src/core/ui/configwidget.cpp
