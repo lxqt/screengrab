@@ -21,7 +21,7 @@
 #include "about.h"
 #include "ui_aboutwidget.h"
 
-#include "src/core/core.h"
+#include "../core.h"
 #include <QDesktopServices>
 
 AboutDialog::AboutDialog(QWidget *parent):
@@ -45,7 +45,6 @@ AboutDialog::AboutDialog(QWidget *parent):
 
     QTabBar *tabs = new QTabBar;
 
-
     _ui->frame->layout()->addWidget(tabs);
     _ui->frame->layout()->addWidget(_ui->txtArea);
 
@@ -53,7 +52,8 @@ AboutDialog::AboutDialog(QWidget *parent):
     tabs->insertTab(0, tr("About"));
     tabs->insertTab(1, tr("Thanks"));
     tabs->insertTab(2, tr("Help us"));
-    connect(tabs, SIGNAL(currentChanged(int)), this, SLOT(changeTab(int)));
+
+    connect(tabs, &QTabBar::currentChanged, this, &AboutDialog::changeTab);
 
     _ui->txtArea->setHtml(tabAbout());
 }

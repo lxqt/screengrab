@@ -48,7 +48,8 @@ UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
     _ui->stackedHosts->addWidget(_crush);
     _ui->stackedHosts->addWidget(_imgur);
 
-    connect(_ui->cbxHosts, SIGNAL(currentIndexChanged(int)), _ui->stackedHosts, SLOT(setCurrentIndex(int)));
+    void (QComboBox::*hostChanged)(int) = &QComboBox::currentIndexChanged;
+    connect(_ui->cbxHosts, hostChanged, _ui->stackedHosts, &QStackedWidget::setCurrentIndex);
 }
 
 UploaderConfigWidget::~UploaderConfigWidget()

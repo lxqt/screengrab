@@ -25,10 +25,11 @@
 #endif
 
 #include "config.h"
-#include "cmdline.h"
 #include "regionselect.h"
 
 #include "modulemanager.h"
+
+#include "ui/mainwindow.h"
 
 #include <QObject>
 #include <QTimer>
@@ -39,17 +40,21 @@
 #include <QRect>
 #include <QProcess>
 #include <QX11Info>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include <QDebug>
 
 struct StateNotifyMessage {
     QString header;
     QString message;
+
     StateNotifyMessage()
     {
         header = "";
         message = "";
     };
+
     StateNotifyMessage(QString h, QString m)
     {
         header = h;
@@ -63,12 +68,17 @@ class Core : public QObject
 
 public Q_SLOTS:
     void coreQuit();
+    void setScreen();
+
     void screenShot(bool first = false);
     void autoSave();
 
 public:
     static Core* instance();
     ~Core();
+
+    void initWindow(const QString& ipcMessage = QString());
+
 
     void sleep(int msec = 350);
     static QString getVersionPrintable();
@@ -82,18 +92,18 @@ public:
     bool writeScreen(QString& fileName, QString& format, bool tmpScreen = false);
     void copyScreen();
     void openInExtViewer();
-    void parseCmdLine();
 
     ModuleManager* modules();
-    CmdLine* cmdLine();
+    void addCmdLineOption(const QCommandLineOption& option);
+    bool checkCmdLineOption(const QCommandLineOption& option);
+    bool checkCmdLineOptions(const QStringList& options);
+    void processCmdLineOpts(const QStringList& arguments);
+
+    bool runAsMinimized();
 
     QString getSaveFilePath(QString format);
     QString getDateTimeFileName();
-    Config *conf;
-
-Q_SIGNALS:
-    void newScreenShot(QPixmap *pixmap);
-    void sendStateNotifyMessage(StateNotifyMessage state);
+    Config* config();
 
 private:
     Core();
@@ -104,7 +114,7 @@ private:
 
     void checkAutoSave(bool first = false);
 
-    void getActiveWind_X11();
+    void getActiveWindow();
 
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
@@ -112,12 +122,16 @@ private:
     RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea;
 
-    CmdLine *_cmd;
+    QCommandLineParser _cmdLine;
     ModuleManager _modules;
     QString _tempFilename;
+    Config *_conf;
+    MainWindow *_wnd;
 
     bool _hided;
     bool _firstScreen;
+
+    QList<QCommandLineOption> _screenTypeOpts;
 
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);

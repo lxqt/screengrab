@@ -23,9 +23,8 @@
 
 #include <QMainWindow>
 
-#include "src/core/core.h"
-#include "src/ui/about.h"
-#include "src/ui/configwidget.h"
+#include "about.h"
+#include "configwidget.h"
 
 #ifdef SG_GLOBAL_SHORTCUTS
 #include <QxtGui/QxtGlobalShortcut>
@@ -47,37 +46,43 @@ class MainWindow : public QMainWindow //, public screengrab
 {
     Q_OBJECT
 public:
-    MainWindow(QWidget *parent = 0);
+    MainWindow( QWidget *parent = 0);
     ~MainWindow();
     void show();
     bool isTrayed() const;
+    void showTrayMessage(const QString& header, const QString& message);
+    void setConfig(Config *config);
+    void updatePixmap(QPixmap *pMap);
+    void updateModulesActions(QList<QAction*> list);
+    void updateModulesenus(QList<QMenu*> list);
 
 public Q_SLOTS:
     void showWindow(const QString& str);
     void windowHideShow();
-//
+    void hideToShot();
+    void restoreFromShot();
+
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
     void resizeEvent(QResizeEvent *event); // event resuze window
     bool eventFilter(QObject *obj, QEvent *event);
-//
+
 private:
     Ui::MainWindow *_ui;
-    Core *_core;
 
     QSystemTrayIcon *_trayIcon;
-    QAction *actQuit;
-    QAction *actAbout;
+    QAction *actHideShow;
     QAction *actNew;
     QAction *actSave;
     QAction *actCopy;
-    QAction *mOptions;
+    QAction *actOptions;
+    QAction *actAbout;
     QAction *actHelp;
-    QAction *actHideShow;
-    QMenu *menuTray;
+    QAction *actQuit;
+    Config *_conf;
+    QMenu *_trayMenu;
     QShortcut *_hideWnd;
-
     bool _trayed;
 
 #ifdef SG_GLOBAL_SHORTCUTS
@@ -92,22 +97,15 @@ private:
     void displatScreenToolTip();
     void createTray();
     void killTray();
-    void trayShowMessage(QString titleMsg, QString bodyMsg );
-    void createShortcuts();
+    void updateShortcuts();
 
 private Q_SLOTS:
-    void displayPixmap();
-    void restoreWindow();
-    void newScreen();
-    void copyScreen();
     void saveScreen();
     void showHelp();
     void showOptions();
     void showAbout();
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
-    void receivedStateNotifyMessage(StateNotifyMessage state);
-    void quit();
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
 

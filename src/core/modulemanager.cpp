@@ -41,24 +41,17 @@ void ModuleManager::initModules()
     ModuleUploader *uploader = new ModuleUploader();
     _modules->insert(MOD_UPLOADER , uploader);
 #endif
-
 #ifdef SG_EXT_EDIT
     ModuleExtEdit *extedit = new ModuleExtEdit();
     _modules->insert(MOD_EXT_EDIT.data(), extedit);
 #endif
 }
 
-
 AbstractModule* ModuleManager::getModule(const QByteArray& name)
 {
     if (_modules->contains(name))
-    {
         return _modules->value(name);
-    }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
 AbstractModule* ModuleManager::getModule(const quint8 numid)
@@ -68,16 +61,13 @@ AbstractModule* ModuleManager::getModule(const quint8 numid)
         QByteArray key = _modules->keys().at(numid);
         return _modules->value(key);
     }
-    else
-    {
-        return 0;
-    }
-}
 
+    return 0;
+}
 
 QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
 {
-    QList< QMenu* > list;
+    QList<QMenu*> list;
     if (modules.isEmpty() == true)
     {
         for (int i =0; i < _modules->keys().count(); ++i)
@@ -101,9 +91,9 @@ QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
 
 QList<QAction*> ModuleManager::generateModulesActions(QStringList modules)
 {
-    QList< QAction* > list;
+    QList<QAction*> list;
 
-    if (modules.isEmpty() == true)
+    if (modules.isEmpty())
     {
         for (int i =0; i < _modules->keys().count(); ++i)
         {

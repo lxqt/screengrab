@@ -22,7 +22,7 @@
 #include <QWaitCondition>
 #include <QApplication>
 #include <QDesktopWidget>
-
+#include <QScreen>
 #include <QChar>
 #include <QBuffer>
 #include <QFile>
@@ -31,44 +31,52 @@
 
 #include <QDebug>
 
-#include "src/core/core.h"
-#include "src/common/netwm/netwm.h"
-using namespace netwm;
+#include "core/core.h"
+#include <KF5/KWindowSystem/KWindowSystem>
 
-#include <X11/Xlib.h>
-#include <QX11Info>
+#ifdef SG_EXT_UPLOADS
+#include "modules/uploader/moduleuploader.h"
+#endif
 
 Core* Core::corePtr = 0;
 
-Core::Core() : _cmd(new CmdLine)
+Core::Core()
 {
     qRegisterMetaType<StateNotifyMessage>("StateNotifyMessage");
 
-    conf = Config::instance();
-    conf->loadSettings();
+    _conf = Config::instance();
+    _conf->loadSettings();
 
     _pixelMap = new QPixmap;
     _selector = 0;
     _firstScreen = true;
 
-    // register screenshot types command line options
-    _cmd->registerParam("fullscreen", "take a fullscreen screenshot", CmdLineParam::ScreenType);
-    _cmd->registerParam("active", "take a screenshot of the active window", CmdLineParam::ScreenType);
-    _cmd->registerParam("region", "take a screenshot of a region", CmdLineParam::ScreenType);
+    _cmdLine.setApplicationDescription("ScreenGrab " + tr("is a crossplatform application for fast creating screenshots of your desktop."));
+    _cmdLine.addHelpOption();
+    _cmdLine.addVersionOption();
 
-    // register utility command line options
-    _cmd->registerParam("minimized", "start minimized", CmdLineParam::Util);
+    QCommandLineOption optFullScreen(QStringList() << "f" << "fullscreen", tr("Take a fullscreen screenshot"));
+    _cmdLine.addOption(optFullScreen);
+    _screenTypeOpts.append(optFullScreen);
 
-    // register "print only" command line params
-    _cmd->registerParam("help", "display this help and exit", CmdLineParam::Printable);
-    _cmd->registerParam("version", "output version information and exit", CmdLineParam::Printable);
+    QCommandLineOption optActiveWnd(QStringList() << "a" << "active", tr("Take a screenshot of the active window"));
+    _cmdLine.addOption(optActiveWnd);
+    _screenTypeOpts.append(optActiveWnd);
+
+    QCommandLineOption optSelectedRect(QStringList() << "r" << "region", tr("Take a screenshot of a selection of the screen"));
+    _cmdLine.addOption(optSelectedRect);
+    _screenTypeOpts.append(optSelectedRect);
+
+    QCommandLineOption optRunMinimized(QStringList() << "m" << "minimized", tr("Run the application with a hidden main window"));
+    _cmdLine.addOption(optRunMinimized);
 
     sleep(250);
+
+    _wnd = NULL;
 }
 
 Core::Core(const Core& ): QObject()
 {
-
 }
 
 Core& Core::operator=(const Core &)
@@ -79,17 +87,42 @@ Core& Core::operator=(const Core &)
 Core* Core::instance()
 {
     if (!corePtr)
-    {
         corePtr = new Core;
-    }
     return corePtr;
 }
 
 Core::~Core()
 {
-    delete _cmd;
     delete _pixelMap;
-    conf->killInstance();
+    _conf->killInstance();
+}
+
+void Core::initWindow(const QString& ipcMessage)
+{
+    if (!_wnd) {
+        _wnd = new MainWindow;
+        _wnd->setConfig(_conf);
+        _wnd->updateModulesActions(_modules.generateModulesActions());
+        _wnd->updateModulesenus(_modules.generateModulesMenus());
+
+        screenShot(true); // first screenshot
+
+        _wnd->resize(_conf->getRestoredWndSize());
+
+        if (_wnd) {
+            if (runAsMinimized())
+            {
+                if (_wnd->isTrayed())
+                    _wnd->windowHideShow();
+                else
+                    _wnd->showMinimized();
+            } else
+                _wnd->show();
+        }
+    } else {
+        _wnd->showWindow(ipcMessage);
+        screenShot();
+    }
 }
 
 void Core::sleep(int msec)
@@ -101,9 +134,15 @@ void Core::sleep(int msec)
     mutex.unlock();
 }
 
-
 void Core::coreQuit()
 {
+    _conf->setRestoredWndSize(_wnd->width(), _wnd->height());
+    _conf->saveWndSize();
+
+    if (_wnd) {
+        _wnd->close();
+    }
+
     if (corePtr)
     {
         delete corePtr;
@@ -113,139 +152,125 @@ void Core::coreQuit()
     qApp->quit();
 }
 
+void Core::setScreen()
+{
+    _wnd->hideToShot();
+
+    // new code experimental
+    if (_conf->getDelay() == 0)
+        QTimer::singleShot(200, this, SLOT(screenShot()));
+    else
+        QTimer::singleShot(1000 * _conf->getDelay(), this, SLOT(screenShot()));
+
+}
+
 
 // get screenshot
 void Core::screenShot(bool first)
 {
     sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
-    // Update date last crenshot, if it is  a first screen
-    if (_firstScreen == true)
-    {
-        conf->updateLastSaveDate();
-    }
 
-    // grb pixmap of desktop
-    switch(conf->getTypeScreen())
+    // Update date last crenshot, if it is  a first screen
+    if (_firstScreen)
+        _conf->updateLastSaveDate();
+
+    switch(_conf->getTypeScreen())
     {
     case 0:
     {
-        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        const QList<QScreen *> screens = qApp->screens();
+        const QDesktopWidget *desktop = QApplication::desktop();
+        const int screenNum = desktop->screenNumber(QCursor::pos());
+        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+
         checkAutoSave(first);
-        Q_EMIT newScreenShot(_pixelMap);
+        _wnd->updatePixmap(_pixelMap);
         break;
     }
     case 1:
     {
-        getActiveWind_X11();
+        getActiveWindow();
         checkAutoSave(first);
-        Q_EMIT newScreenShot(_pixelMap);
+        _wnd->updatePixmap(_pixelMap);
         break;
     }
     case 2:
     {
-        _selector = new RegionSelect(conf);
-        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        _selector = new RegionSelect(_conf);
+        connect(_selector, &RegionSelect::processDone, this, &Core::regionGrabbed);
         break;
     }
     case 3:
     {
-        _selector = new RegionSelect(conf, _lastSelectedArea);
-        connect(_selector, SIGNAL(processDone(bool)), this, SLOT(regionGrabbed(bool)));
+        _selector = new RegionSelect(_conf, _lastSelectedArea);
+        connect(_selector, &RegionSelect::processDone, this, &Core::regionGrabbed);
         break;
     }
     default:
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         break;
     }
+
+    _wnd->updatePixmap(_pixelMap);
+    _wnd->restoreFromShot();
 }
 
 void Core::checkAutoSave(bool first)
 {
-    if (conf->getAutoSave() == true)
+    if (_conf->getAutoSave())
     {
         // hack
-        if (first == true)
+        if (first)
         {
-            if (conf->getAutoSaveFirst() == true)
-            {
+            if (_conf->getAutoSaveFirst())
                 QTimer::singleShot(600, this, SLOT(autoSave()));
-            }
         }
         else
-        {
             autoSave();
-        }
     }
     else
     {
-        if (first == false)
+        if (!first)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            Q_EMIT  sendStateNotifyMessage(message);
+            _wnd->showTrayMessage(message.header, message.message);
         }
     }
 }
 
-void Core::getActiveWind_X11()
+void Core::getActiveWindow()
 {
-    netwm::init();
-    Window *wnd = reinterpret_cast<ulong *>(netwm::property(QX11Info::appRootWindow(), NET_ACTIVE_WINDOW, XA_WINDOW));
+    const QList<QScreen *> screens = qApp->screens();
+    const QDesktopWidget *desktop = QApplication::desktop();
+    const int screenNum = desktop->screenNumber(QCursor::pos());
 
-    if(!wnd)
+    WId wnd = KWindowSystem::activeWindow();
+
+    if (!wnd)
     {
-        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
         exit(1);
     }
 
     // no decorations option is selected
-    if (conf->getNoDecorX11() == true)
+    if (_conf->getNoDecoration())
     {
-        *_pixelMap = QPixmap::grabWindow(*wnd);
+        *_pixelMap = screens[screenNum]->grabWindow(wnd);
         return;
     }
 
-    unsigned int d;
-    int status;
-    int stat;
+    KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
 
-    Window rt, *children, parent;
+    if (info.mappingState() != NET::Visible)
+        qWarning() << "Window not visible";
 
-    // Find window manager frame
-    while (true)
-    {
-        status = XQueryTree(QX11Info::display(), *wnd, &rt, &parent, &children, &d);
-        if (status && (children != None))
-        {
-            XFree((char *) children);
-        }
-
-        if (!status || (parent == None) || (parent == rt))
-        {
-            break;
-        }
-
-        *wnd = parent;
-    }
-
-    XWindowAttributes attr; // window attributes
-    stat = XGetWindowAttributes(QX11Info::display(), *wnd, &attr);
-
-    if ((stat == False) || (attr.map_state != IsViewable))
-    {
-        CmdLine::print("Not window attributes.");
-    }
-
-    // get wnd size
-    int rx = 0, ry = 0, rw = 0, rh = 0;
-    rw = attr.width;
-    rh = attr.height;
-    rx = attr.x;
-    ry = attr.y;
-
-    *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId(), rx, ry, rw, rh);
-
-    XFree(wnd);
+    QRect geometry = info.frameGeometry();
+    *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),
+                                     geometry.x(),
+                                     geometry.y(),
+                                     geometry.width(),
+                                     geometry.height());
 }
 
 QString Core::getSaveFilePath(QString format)
@@ -254,22 +279,16 @@ QString Core::getSaveFilePath(QString format)
 
     do
     {
-        if (conf->getDateTimeInFilename() == true)
-        {
-            initPath = conf->getSaveDir()+conf->getSaveFileName() +"-"+getDateTimeFileName() +"."+format;
-        }
+        if (_conf->getDateTimeInFilename())
+            initPath = _conf->getSaveDir() + _conf->getSaveFileName() + "-" + getDateTimeFileName() + "." + format;
         else
         {
-            if (conf->getScrNum() != 0)
-            {
-                initPath = conf->getSaveDir()+conf->getSaveFileName() + conf->getScrNumStr() +"."+format;
-            }
+            if (_conf->getScrNum() != 0)
+                initPath = _conf->getSaveDir() + _conf->getSaveFileName() + _conf->getScrNumStr() + "." + format;
             else
-            {
-                initPath = conf->getSaveDir() + conf->getSaveFileName()+"."+format;
-            }
+                initPath = _conf->getSaveDir() + _conf->getSaveFileName() + "." + format;
         }
-    } while(checkExsistFile(initPath) == true);
+    } while (checkExsistFile(initPath));
 
     return initPath;
 }
@@ -278,39 +297,37 @@ bool Core::checkExsistFile(QString path)
 {
     bool exist = QFile::exists(path);
 
-    if (exist == true)
-    {
-        conf->increaseScrNum();
-    }
+    if (exist)
+        _conf->increaseScrNum();
 
     return exist;
 }
 
 QString Core::getDateTimeFileName()
 {
-    QString currentDateTime = QDateTime::currentDateTime().toString(conf->getDateTimeTpl());
+    QString currentDateTime = QDateTime::currentDateTime().toString(_conf->getDateTimeTpl());
 
-    if (currentDateTime == conf->getLastSaveDate().toString(conf->getDateTimeTpl()) && conf->getScrNum() != 0)
-    {
-        currentDateTime += "-" + conf->getScrNumStr();
-    }
+    if (currentDateTime == _conf->getLastSaveDate().toString(_conf->getDateTimeTpl()) && _conf->getScrNum() != 0)
+        currentDateTime += "-" + _conf->getScrNumStr();
     else
-    {
-        conf->resetScrNum();
-    }
+        _conf->resetScrNum();
 
     return currentDateTime;
 }
 
-void Core::updatePixmap()
+Config *Core::config()
 {
-    if (QFile::exists(_tempFilename) == true)
-    {
-        _pixelMap->load(_tempFilename, "png");
-        Q_EMIT newScreenShot(_pixelMap);
-    }
+    return _conf;
 }
 
+void Core::updatePixmap()
+{
+    if (QFile::exists(_tempFilename))
+    {
+        _pixelMap->load(_tempFilename, "png");
+        _wnd->updatePixmap(_pixelMap);
+    }
+}
 
 QString Core::getTempFilename(const QString& format)
 {
@@ -318,71 +335,52 @@ QString Core::getTempFilename(const QString& format)
     int size = _tempFilename.size() - 2;
     _tempFilename = _tempFilename.mid(1, size).left(8);
     _tempFilename = QDir::tempPath() + QDir::separator() + "screenshot-" + _tempFilename + "." + format;
-
     return _tempFilename;
 }
 
 void Core::killTempFile()
 {
-    if (QFile::exists(_tempFilename) == true)
+    if (QFile::exists(_tempFilename))
     {
         QFile::remove(_tempFilename);
         _tempFilename.clear();
     }
 }
 
-
-// save screen
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
     // adding extension format
-    if (!fileName.contains("."+format) )
-    {
-        fileName.append("."+format);
-    }
+    if (!fileName.contains("." + format))
+        fileName.append("." + format);
 
     // saving temp file (for uploader module)
-    if (tmpScreen == true)
+    if (tmpScreen)
     {
-        if (fileName.isEmpty() == false)
-        {   ;
-            return _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
-        }
+        if (!fileName.isEmpty())
+            return _pixelMap->save(fileName, format.toLatin1(), _conf->getImageQuality());
         else
-        {
             return false;
-        }
     }
 
     // writing file
-    bool saved;
-    if (fileName.isEmpty() == false)
+    bool saved = false;
+    if (!fileName.isEmpty())
     {
         if (format == "jpg")
-        {
-            saved = _pixelMap->save(fileName,format.toLatin1(), conf->getImageQuality());
-        }
+            saved = _pixelMap->save(fileName,format.toLatin1(), _conf->getImageQuality());
         else
-        {
             saved = _pixelMap->save(fileName,format.toLatin1(), -1);
-        }
 
-        if (saved == true)
+        if (saved)
         {
             StateNotifyMessage message(tr("Saved"), tr("Saved to ") + fileName);
-            qDebug() << "save as " << fileName;
+
             message.message = message.message + copyFileNameToCliipboard(fileName);
-            conf->updateLastSaveDate();
-            Q_EMIT     sendStateNotifyMessage(message);
+            _conf->updateLastSaveDate();
+            _wnd->showTrayMessage(message.header, message.message);
         }
         else
-        {
-            qDebug() << "Error saving file " << fileName;
-        }
-    }
-    else
-    {
-        saved = false;
+            qWarning() << "Error saving file " << fileName;
     }
 
     return saved;
@@ -391,7 +389,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 QString Core::copyFileNameToCliipboard(QString file)
 {
     QString retString = "";
-    switch (conf->getAutoCopyFilenameOnSaving())
+    switch (_conf->getAutoCopyFilenameOnSaving())
     {
     case Config::nameToClipboardFile:
     {
@@ -412,19 +410,21 @@ QString Core::copyFileNameToCliipboard(QString file)
     return retString;
 }
 
-
 void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
-    Q_EMIT sendStateNotifyMessage(message);
+    _wnd->showTrayMessage(message.header, message.message);
 }
 
 void Core::openInExtViewer()
 {
-    if (conf->getEnableExtView() == 1)
+    if (_conf->getEnableExtView())
     {
-        QString format = "png";
+        QString format = _conf->getSaveFormat();
+        if (format.isEmpty())
+            format = "png";
+
         QString tempFileName = getTempFilename(format);
         writeScreen(tempFileName, format, true);
 
@@ -434,50 +434,76 @@ void Core::openInExtViewer()
         args << tempFileName;
 
         QProcess *execProcess = new QProcess(this);
-        connect(execProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(closeExtViewer(int,QProcess::ExitStatus)));
+
+        void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
+        connect(execProcess, signal, this, &Core::closeExtViewer);
         execProcess->start(exec, args);
     }
 }
 
-void Core::parseCmdLine()
-{
-    if (QApplication::arguments().size() > 1)
-    {
-        _cmd->parse();
-
-        int  screenType = _cmd->selectedScreenType();
-        if (screenType != -1)
-        {
-            conf->setTypeScreen(screenType);
-        }
-    }
-}
-
-
-void Core::closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus)
+void Core::closeExtViewer(int, QProcess::ExitStatus)
 {
     sender()->deleteLater();
     killTempFile();
 }
-
 
 ModuleManager* Core::modules()
 {
     return &_modules;
 }
 
-CmdLine* Core::cmdLine()
+void Core::addCmdLineOption(const QCommandLineOption& option)
 {
-    return _cmd;
+    _cmdLine.addOption(option);
 }
 
+bool Core::checkCmdLineOption(const QCommandLineOption& option)
+{
+    return _cmdLine.isSet(option);
+}
+
+bool Core::checkCmdLineOptions(const QStringList &options)
+{
+    for (int i = 0; i < options.count(); ++i)
+        if (_cmdLine.isSet(options.at(i)))
+            return true;
+    return false;
+}
+
+void Core::processCmdLineOpts(const QStringList& arguments)
+{
+    _cmdLine.process(arguments);
+
+    // Check commandline parameters and set screenshot type
+    for (int i=0; i < _screenTypeOpts.count(); ++i)
+        if (_cmdLine.isSet(_screenTypeOpts.at(i)))
+            _conf->setTypeScreen(i);
+
+#ifdef SG_EXT_UPLOADS
+    /// FIXMA - In module interface need add the mthod for geting module cmdLine options
+    const QString UPLOAD_CMD_PARAM = "upload";
+    const QString UPLOAD_CMD_PARAM_SHORT = "u";
+    QCommandLineOption u(QStringList() << UPLOAD_CMD_PARAM_SHORT << UPLOAD_CMD_PARAM);
+
+    if (_cmdLine.isSet(u)) {
+        ModuleUploader *uploader = static_cast<ModuleUploader*>(_modules.getModule(MOD_UPLOADER));
+        connect(uploader, &ModuleUploader::uploadCompleteWithQuit, qApp, &QApplication::quit);
+        uploader->init();
+    } else
+        initWindow();
+#endif
+
+}
+
+bool Core::runAsMinimized()
+{
+    return (_cmdLine.isSet("minimized") || _cmdLine.isSet("m"));
+}
 
 void Core::autoSave()
 {
-
-    QString format = conf->getSaveFormat();
+    QString format = _conf->getSaveFormat();
     QString fileName = getSaveFilePath(format);
-
     writeScreen(fileName, format);
 }
 
@@ -498,14 +524,13 @@ QByteArray Core::getScreen()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    _pixelMap->save(&buffer, conf->getSaveFormat().toLatin1());
-
+    _pixelMap->save(&buffer, _conf->getSaveFormat().toLatin1());
     return bytes;
 }
 
 void Core::regionGrabbed(bool grabbed)
 {
-    if (grabbed == true)
+    if (grabbed)
     {
         *_pixelMap = _selector->getSelection();
 
@@ -518,6 +543,6 @@ void Core::regionGrabbed(bool grabbed)
         checkAutoSave();
     }
 
-    Q_EMIT newScreenShot(_pixelMap);
+    _wnd->updatePixmap(_pixelMap);
     _selector->deleteLater();
 }

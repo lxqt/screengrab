@@ -25,21 +25,15 @@
 #include <QProcess>
 #include <QFileSystemWatcher>
 #include <QAction>
-
-struct ExtApp_t {
-    QString exec;
-    QString name;
-};
-
-typedef QList<ExtApp_t> ExtAppsList_t;
+#include <qt5xdg/XdgDesktopFile>
+#include <qt5xdg/XdgAction>
 
 class ExtEdit : public QObject
 {
     Q_OBJECT
 public:
     explicit ExtEdit(QObject *parent = 0);
-    QStringList listAppNames();
-    void addAppAction(QAction* act);
+    QList<XdgAction*> getActions();
 
 public Q_SLOTS:
     void runExternalEditor();
@@ -50,12 +44,11 @@ private Q_SLOTS:
 
 private:
     void createAppList();
-    ExtApp_t readDesktopFile(QString filename, QByteArray path);
 
-    ExtAppsList_t _appList;
-    QList<QAction*> _actionList;
+    QList<XdgDesktopFile*> _appList;
+    QList<XdgAction*> _actionList;
     QString _editFilename;
-    bool _fileIsCnaged;
+    bool _fileIsChanged;
     QFileSystemWatcher *_watcherEditedFile;
 };
 

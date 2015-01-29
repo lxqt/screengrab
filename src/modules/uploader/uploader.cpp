@@ -31,7 +31,6 @@
 Uploader::Uploader(QObject *parent) :
     QObject(parent), _multipartData(0)
 {
-    qDebug() << "creating base uploader";
     qsrand(126);
     _strBoundary = "uploadbound" + QByteArray::number(qrand());
     _net = new QNetworkAccessManager(this);
@@ -47,7 +46,7 @@ Uploader::Uploader(QObject *parent) :
 
 Uploader::~Uploader()
 {
-    qDebug() << " base uploader killed";
+
 }
 
 /*!
@@ -85,7 +84,7 @@ void Uploader::getUserSettings(const QVariantMap& settings)
  */
 void Uploader::startUploading()
 {
-    connect(_net, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
+    connect(_net, &QNetworkAccessManager::finished, this, &Uploader::replyFinished);
 
     if (!_multipartData && !imageData.isEmpty())
     {
@@ -96,7 +95,7 @@ void Uploader::startUploading()
         _serverReply = _net->post(_request, _multipartData);
     }
 
-    connect(_serverReply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT(replyProgress(qint64,qint64)));
+    connect(_serverReply, &QNetworkReply::uploadProgress, this, &Uploader::replyProgress);
 }
 
 QMap< QByteArray, ResultString_t > Uploader::parsedLinks()
@@ -154,7 +153,7 @@ QUrl Uploader::apiUrl()
 void Uploader::createData(bool inBase64)
 {
     Core *core = Core::instance();
-    _formatString = core->conf->getSaveFormat();
+    _formatString = core->config()->getSaveFormat();
     _uploadFilename = core->getTempFilename(_formatString);
     core->writeScreen(_uploadFilename, _formatString , true);
 

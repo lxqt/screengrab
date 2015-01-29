@@ -46,23 +46,18 @@ void ModuleExtEdit::init()
 
 }
 
-
 QMenu* ModuleExtEdit::initModuleMenu()
 {
-    QList<QAction*> list;
-    QStringList appList = _extEdit->listAppNames();
+    QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
+    QList<XdgAction*> actionsList = _extEdit->getActions();
 
-    for (int i = 0; i < appList.count(); ++i)
+    foreach (XdgAction *appAction, actionsList)
     {
-        QAction* action = new QAction(0);
-        action->setText(appList.at(i));
-        QObject::connect(action, SIGNAL(triggered(bool)), _extEdit, SLOT(runExternalEditor()));
-        list.append(action);
-        _extEdit->addAppAction(action);
+        menu->addAction(appAction);
+        appAction->disconnect(SIGNAL(triggered()));
+        QObject::connect(appAction, SIGNAL(triggered()), _extEdit, SLOT(runExternalEditor()));
     }
 
-    QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
-    menu->addActions(list);
     menu->setObjectName("menuExtedit");
     return menu;
 }

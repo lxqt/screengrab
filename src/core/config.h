@@ -99,7 +99,16 @@ public:
     static void killInstance();
     ~Config();
 
+    /**
+     * @brief Gets the configuration file for screengrab. It's
+     * inside the folder returned by getConfigDir().
+     */
     static QString getConfigFile();
+
+    /**
+     * @brief Gets the directory where to save the configuration files.
+     * Does not end with '/'.
+     */
     static QString getConfigDir();
 
     /**
@@ -195,9 +204,9 @@ public:
     bool getShowTrayIcon();
     void setShowTrayIcon(bool val);
 
-    // no decoration wnd on X11
-    bool getNoDecorX11();
-    void setNoDecorX11(bool val);
+    // no decoration of window
+    bool getNoDecoration();
+    void setNoDecoration(bool val);
 
     QString getScrNumStr();
     int getScrNum() const;

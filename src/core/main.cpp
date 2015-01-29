@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                        *
+ *   Copyright (C) 2009 - 2013 by Artem 'DOOMer' Galichkin                 *
  *   doomer3d@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,44 +18,28 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef CMDLINE_H
-#define CMDLINE_H
+#include "singleapp.h"
+#include "core/core.h"
+#include "ui/mainwindow.h"
 
-#include <stdio.h>
+#include <QDebug>
 
-#include <QMap>
-#include <QStringList>
-
-namespace CmdLineParam
+int main(int argc, char *argv[])
 {
-    enum CmdLineParam {
-        ScreenType = 0,
-        Util = 1,
-        Printable = 2,
-    };
+    SingleApp scr(argc, argv, VERSION);
+    scr.setApplicationVersion(VERSION);
+    Core *ScreenGrab = Core::instance();
+    ScreenGrab->modules()->initModules();
+    ScreenGrab->processCmdLineOpts(scr.arguments());
+
+    QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
+
+    if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
+    {
+        QString type = QString::number(ScreenGrab->config()->getTypeScreen());
+        scr.sendMessage("screengrab --type=" + type);
+        return 0;
+    }
+
+    return scr.exec();
 }
-
-class CmdLine
-{
-public:
-    CmdLine();
-    ~CmdLine();
-
-    void printHelp();
-    static void print(const QString& string);
-
-    void registerParam(const QString& param, const QString& description, CmdLineParam::CmdLineParam paramType);
-    bool checkParam(const QString& param);
-    void parse();
-    qint8 selectedScreenType();
-
-private:
-    QStringList _screenTypeParams;
-    QStringList _utilityParams;
-    QStringList _onlyPrintParams;
-    QMap<QString, QString> _regstredParams;
-    QStringList _usedParams;
-    QStringList _invalidParams;
-};
-
-#endif // CMDLINE_H

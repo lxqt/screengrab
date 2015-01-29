@@ -22,47 +22,47 @@
 #include "core.h"
 
 #include <QApplication>
+#include <QStandardPaths>
 #include <QDir>
 #include <QFile>
 #include <QLocale>
 #include <QVector>
-#include <QDesktopServices>
-
 #include <QDebug>
 
-const QString KEY_SAVEDIR = "defDir";
-const QString KEY_SAVENAME = "defFilename";
-const QString KEY_SAVEFORMAT = "defImgFormat";
-const QString KEY_DELAY_DEF = "defDelay";
-const QString KEY_DELAY = "delay";
-const QString KEY_IMG_QUALITY = "imageQuality";
-const QString KEY_FILENAMEDATE = "insDateTimeInFilename";
-const QString KEY_DATETIME_TPL = "templateDateTime";
-const QString KEY_FILENAME_TO_CLB = "CopyFilenameToClipboard";
-const QString KEY_AUTOSAVE = "autoSave";
-const QString KEY_AUTOSAVE_FIRST = "autoSaveFirst";
-const QString KEY_SHOW_TRAY = "showTrayIcon";
+#define CONFIG_FILE_DIR "screengrab"
+#define CONFIG_FILE_NAME "screengrab.conf"
 
-const QString KEY_WND_WIDTH = "windowWidth";
-const QString KEY_WND_HEIGHT = "windowHeight";
-const QString KEY_ZOOMBOX = "zoomAroundMouse";
-const QString KEY_TRAYMESSAGES = "trayMessages";
-const QString KEY_TIME_NOTIFY = "timeTrayMessages";
-const QString KEY_ALLOW_COPIES = "AllowCopies";
+#define KEY_SAVEDIR             "defDir"
+#define KEY_SAVENAME            "defFilename"
+#define KEY_SAVEFORMAT          "defImgFormat"
+#define KEY_DELAY_DEF           "defDelay"
+#define KEY_DELAY               "delay"
+#define KEY_IMG_QUALITY         "imageQuality"
+#define KEY_FILENAMEDATE        "insDateTimeInFilename"
+#define KEY_DATETIME_TPL        "templateDateTime"
+#define KEY_FILENAME_TO_CLB     "CopyFilenameToClipboard"
+#define KEY_AUTOSAVE            "autoSave"
+#define KEY_AUTOSAVE_FIRST      "autoSaveFirst"
 
-const QString KEY_CLOSE_INTRAY = "closeInTray";
-const QString KEY_TYPE_SCREEN = "typeScreenDefault";
+#define KEY_SHOW_TRAY           "showTrayIcon"
+#define KEY_CLOSE_INTRAY        "closeInTray"
+#define KEY_TRAYMESSAGES        "trayMessages"
 
-const QString KEY_ENABLE_EXT_VIEWER = "enbaleExternalView";
-
-const QString KEY_NODECOR = "noDecorations";
+#define KEY_WND_WIDTH           "windowWidth"
+#define KEY_WND_HEIGHT          "windowHeight"
+#define KEY_ZOOMBOX             "zoomAroundMouse"
+#define KEY_TIME_NOTIFY         "timeTrayMessages"
+#define KEY_ALLOW_COPIES        "AllowCopies"
+#define KEY_TYPE_SCREEN         "typeScreenDefault"
+#define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
+#define KEY_NODECOR             "noDecorations"
 
 Config* Config::ptrInstance = 0;
 
 // constructor
 Config::Config()
 {
-    _settings = new QSettings(getConfigFile(), QSettings::IniFormat );
+    _settings = new QSettings(getConfigFile(), QSettings::IniFormat);
 
     _shortcuts = new ShortcutManager(_settings);
 
@@ -74,7 +74,6 @@ Config::Config()
         if (cf.open(QIODevice::WriteOnly))
         {
             cf.close();
-            qDebug() << "creating";
         }
 
         setDefaultSettings();
@@ -95,9 +94,7 @@ Config::~Config()
 Config* Config::instance()
 {
     if (!ptrInstance)
-    {
         ptrInstance = new Config;
-    }
 
     return ptrInstance;
 }
@@ -123,51 +120,21 @@ void Config::killInstance()
 
 QString Config::getConfigFile()
 {
-    QString configFile;
-
-    configFile = Config::getConfigDir() + "screengrab.conf";
-
-    // moving old stile storange setting to XDG_CONFIG_HOME storage
-    QString oldConfigFile = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator() + "screengrab.conf";
-    if (QFile::exists(oldConfigFile) == true && QFile::exists(configFile) == false)
-    {
-        QFile::rename(oldConfigFile, configFile);
-    }
-
-    return configFile;
+    return getConfigDir() + QDir::separator() + CONFIG_FILE_NAME;
 }
 
 QString Config::getConfigDir()
 {
-    QString configDir;
-    #ifdef SG_XDG_CONFIG_SUPPORT
-        // old style config path
-        QString oldConfigDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-        configDir = qgetenv("XDG_CONFIG_HOME");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
+    dir += QDir::separator();
+    dir += CONFIG_FILE_DIR;
 
-        // Ubuntu hack -- if XDG_CONFIG_HOME is missing
-        if (configDir.isEmpty() == true)
-        {
-            configDir = QDir::homePath();
-            configDir += QDir::separator();
-            configDir += ".config";
-        }
+    QDir qdir(dir);
+    if (!qdir.exists())
+        qdir.mkpath(dir);
 
-        configDir.append(QDir::separator());
-        configDir.append("screengrab");
-        configDir.append(QDir::separator());
-    #else
-        configDir = QDir::homePath()+ QDir::separator()+".screengrab"+ QDir::separator();
-    #endif
-
-    if (QFile::exists(configDir) == false)
-    {
-        QDir confDir(configDir);
-        confDir.mkpath(confDir.path());
-    }
-    return configDir;
+    return dir;
 }
-
 
 // public methods
 
@@ -176,9 +143,7 @@ QString Config::getScrNumStr()
     QString str = QString::number(_scrNum);
 
     if (_scrNum < 10)
-    {
         str.prepend("0");
-    }
 
     return str;
 }
@@ -217,7 +182,6 @@ void Config::setEnableExtView(bool val)
 {
     setValue(KEY_ENABLE_EXT_VIEWER, val);
 }
-
 
 QString Config::getSaveDir()
 {
@@ -382,7 +346,6 @@ void Config::setAutoSaveFirst(bool val)
     setValue(KEY_AUTOSAVE_FIRST, val);
 }
 
-
 QString Config::getDateTimeTpl()
 {
     return value(KEY_DATETIME_TPL).toString();
@@ -413,12 +376,12 @@ void Config::setShowTrayIcon(bool val)
     setValue(KEY_SHOW_TRAY, val);
 }
 
-bool Config::getNoDecorX11()
+bool Config::getNoDecoration()
 {
     return value(KEY_NODECOR).toBool();
 }
 
-void Config::setNoDecorX11(bool val)
+void Config::setNoDecoration(bool val)
 {
     setValue(KEY_NODECOR, val);
 }
@@ -445,7 +408,7 @@ void Config::loadSettings()
     setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
     setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
     setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
-    setNoDecorX11(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
+    setNoDecoration(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
     _settings->endGroup();
 
@@ -454,7 +417,8 @@ void Config::loadSettings()
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
     // TODO - make set windows size without hardcode values
-    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(), _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
+    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(),
+                       _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
     setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
@@ -482,7 +446,7 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
-    _settings->setValue(KEY_NODECOR, getNoDecorX11());
+    _settings->setValue(KEY_NODECOR, getNoDecoration());
     _settings->endGroup();
 
     _settings->beginGroup("Display");
@@ -529,14 +493,12 @@ void Config::setDefaultSettings()
 
     _shortcuts->setDefaultSettings();
 
-    setNoDecorX11(DEF_X11_NODECOR);
+    setNoDecoration(DEF_X11_NODECOR);
     setDelay(DEF_DELAY);
 
     quint8 countModules = Core::instance()->modules()->count();
     for (int i = 0; i < countModules; ++i)
-    {
         Core::instance()->modules()->getModule(i)->defaultSettings();
-    }
 }
 
 // get defaukt directory path
@@ -556,23 +518,16 @@ QString Config::getSysLang()
     QByteArray lang = qgetenv("LC_ALL");
 
     if (lang.isEmpty())
-    {
         lang = qgetenv("LC_MESSAGES");
-    }
-    if (lang.isEmpty())
-    {
-        lang = qgetenv("LANG");
-    }
-    if (!lang.isEmpty())
-    {
-        return QLocale (lang).name();
-    }
-    else
-    {
-        return  QLocale::system().name();
-    }
-}
 
+    if (lang.isEmpty())
+        lang = qgetenv("LANG");
+
+    if (!lang.isEmpty())
+        return QLocale (lang).name();
+    else
+        return  QLocale::system().name();
+}
 
 ShortcutManager* Config::shortcuts()
 {

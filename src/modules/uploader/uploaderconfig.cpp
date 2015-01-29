@@ -24,17 +24,17 @@
 #include <QFile>
 
 #include <QDebug>
+#include <QDir>
 
 // common defaults
-const bool DEF_AUTO_COPY_RESULT_LIMK = false;
-
-const QString DEF_DEFAULT_HOST = "MediaCrush";
+#define DEF_AUTO_COPY_RESULT_LIMK   false
+#define DEF_DEFAULT_HOST            "MediaCrush"
 
 QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgur";
 
 UploaderConfig::UploaderConfig()
 {
-    QString configFile = Config::getConfigDir() + "uploader.conf";
+    QString configFile = Config::getConfigDir() + QDir::separator() + "uploader.conf";
     _settings = new QSettings(configFile, QSettings::IniFormat);
     _groupsList << "mediacru.sh" << "imgur.com";
 }
