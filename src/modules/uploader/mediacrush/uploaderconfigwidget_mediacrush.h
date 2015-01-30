@@ -15,6 +15,9 @@ public:
     explicit UploaderConfigWidget_MediaCrush(QWidget *parent = 0);
     ~UploaderConfigWidget_MediaCrush();
 
+public Q_SLOTS:
+    void saveSettings();
+
 private:
     Ui::UploaderConfigWidget_MediaCrush *ui;
 };

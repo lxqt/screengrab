@@ -24,6 +24,8 @@
 #include <QtNetwork/QHttpMultiPart>
 #include <QtNetwork/QHttpPart>
 
+#include "uploaderconfig.h"
+
 #include <QDebug>
 
 Uploader_MediaCrush::Uploader_MediaCrush(const QString& format, QObject* parent): Uploader(parent)
@@ -64,7 +66,10 @@ void Uploader_MediaCrush::setCurrentFormat(const QString& format)
  */
 QUrl Uploader_MediaCrush::apiUrl()
 {
-    return QUrl("https://mediacru.sh/api/upload/file");
+    UploaderConfig config;
+    // QUrl("https://mediacru.sh/api/upload/file")
+
+    return config.loadSingleParam("mediacru.sh", KEY_MCSH_URL).toUrl();
 }
 
 /*!

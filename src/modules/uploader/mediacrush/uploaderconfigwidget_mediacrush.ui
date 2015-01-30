@@ -29,21 +29,41 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>87</height>
+       <height>10</height>
       </size>
      </property>
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="labDescription">
+    <widget class="QLabel" name="labDesclabUrlription">
      <property name="text">
-      <string>Now is nothing yet</string>
+      <string>URL forupload</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="editUrl"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="labDescription">
+     <property name="text">
+      <string>Central server MediaCrush is down, but you can set up self-hosted instance. And add  here url to it.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labUrlExample">
+     <property name="text">
+      <string notr="true">e.g. &quot;https://mediacru.sh/api/upload/file&quot;</string>
      </property>
     </widget>
    </item>
