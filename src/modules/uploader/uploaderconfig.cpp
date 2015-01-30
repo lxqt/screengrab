@@ -28,7 +28,7 @@
 
 // common defaults
 #define DEF_AUTO_COPY_RESULT_LIMK   false
-#define DEF_DEFAULT_HOST            "MediaCrush"
+#define DEF_DEFAULT_HOST            "Imgur"
 
 QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgur";
 
