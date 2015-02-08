@@ -84,7 +84,7 @@ public:
     static QString getVersionPrintable();
 
     QPixmap* getPixmap();
-    QByteArray getScreen();
+    QByteArray getScreenData();
 
     void updatePixmap();
     QString getTempFilename(const QString& format);

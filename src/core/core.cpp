@@ -519,7 +519,7 @@ QPixmap* Core::getPixmap()
     return _pixelMap;
 }
 
-QByteArray Core::getScreen()
+QByteArray Core::getScreenData()
 {
     QByteArray bytes;
     QBuffer buffer(&bytes);

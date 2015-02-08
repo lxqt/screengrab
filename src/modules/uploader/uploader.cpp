@@ -159,11 +159,11 @@ void Uploader::createData(bool inBase64)
 
     if (inBase64 == false)
     {
-        imageData = core->getScreen();
+        imageData = core->getScreenData();
     }
     else
     {
-        imageData = core->getScreen().toBase64();
+        imageData = core->getScreenData().toBase64();
     }
     core->killTempFile();
 }
