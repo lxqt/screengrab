@@ -7,6 +7,7 @@ find_package(Qt5Widgets 5.2.0 REQUIRED)
 find_package(Qt5X11Extras 5.2.0 REQUIRED)
 find_package(Qt5Network 5.2.0 REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
+find_package(Qt5DBus 5.2 REQUIRED)
 
 # for translations
 find_package(Qt5LinguistTools REQUIRED)
@@ -104,6 +105,9 @@ message(STATUS "Update source translation translations/*.ts files: " ${UPDATE_TR
 message(STATUS "Documentation directory: " ${CMAKE_INSTALL_FULL_DOCDIR})
 add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_FULL_DOCDIR}")
 
+# app icon path
+add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/pixmaps/screengrab.png")
+
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
@@ -129,6 +133,7 @@ set(SCREENGRAB_SRC
     src/core/ui/configwidget.cpp
     src/core/ui/about.cpp
     src/core/ui/mainwindow.cpp
+    src/core/dbusnotifier.cpp
 )
 
 set(SCREENGRAB_HDR
@@ -195,7 +200,7 @@ if(SG_EXT_EDIT)
     target_link_libraries(screengrab extedit)
 endif()
 
-target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem)
+target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets Qt5::DBus KF5::WindowSystem)
 
 
 # make src.tar.gz

@@ -31,8 +31,10 @@
 
 #include <QDebug>
 
-#include "core/core.h"
 #include <KF5/KWindowSystem/KWindowSystem>
+
+#include "core/core.h"
+#include "dbusnotifier.h"
 
 #ifdef SG_EXT_UPLOADS
 #include "modules/uploader/moduleuploader.h"
@@ -234,7 +236,11 @@ void Core::checkAutoSave(bool first)
         if (!first)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            _wnd->showTrayMessage(message.header, message.message);
+            // FIXME - make call it on the disabled dbus notificxations
+            //_wnd->showTrayMessage(message.header, message.message);
+
+            DBusNotifier *notifier = new DBusNotifier();
+            notifier->displayNotify(message);
         }
     }
 }
@@ -270,7 +276,12 @@ void Core::getActiveWindow()
                                      geometry.x(),
                                      geometry.y(),
                                      geometry.width(),
-                                     geometry.height());
+                                                geometry.height());
+}
+
+void Core::sendSystemNotify(const StateNotifyMessage &notify)
+{
+    qDebug() << "Send system notification";
 }
 
 QString Core::getSaveFilePath(QString format)
@@ -377,7 +388,10 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 
             message.message = message.message + copyFileNameToCliipboard(fileName);
             _conf->updateLastSaveDate();
-            _wnd->showTrayMessage(message.header, message.message);
+            // FIXME - make call it on the disabled dbus notificxations
+            // _wnd->showTrayMessage(message.header, message.message);
+            DBusNotifier *notifier = new DBusNotifier();
+            notifier->displayNotify(message);
         }
         else
             qWarning() << "Error saving file " << fileName;
@@ -414,7 +428,10 @@ void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
-    _wnd->showTrayMessage(message.header, message.message);
+    // FIXME - make call it on the disabled dbus notificxations
+    // _wnd->showTrayMessage(message.header, message.message);
+    DBusNotifier *notifier = new DBusNotifier();
+    notifier->displayNotify(message);
 }
 
 void Core::openInExtViewer()

@@ -26,7 +26,6 @@
 
 #include "config.h"
 #include "regionselect.h"
-
 #include "modulemanager.h"
 
 #include "ui/mainwindow.h"
@@ -115,7 +114,7 @@ private:
     void checkAutoSave(bool first = false);
 
     void getActiveWindow();
-
+    void sendSystemNotify(const StateNotifyMessage& notify);
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
     QPixmap *_pixelMap; // pixel map
