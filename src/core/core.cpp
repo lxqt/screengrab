@@ -34,7 +34,10 @@
 #include <KF5/KWindowSystem/KWindowSystem>
 
 #include "core/core.h"
+
+#ifdef SG_DBUS_NOTIFY
 #include "dbusnotifier.h"
+#endif
 
 #ifdef SG_EXT_UPLOADS
 #include "modules/uploader/moduleuploader.h"
@@ -236,11 +239,7 @@ void Core::checkAutoSave(bool first)
         if (!first)
         {
             StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
-            // FIXME - make call it on the disabled dbus notificxations
-            //_wnd->showTrayMessage(message.header, message.message);
-
-            DBusNotifier *notifier = new DBusNotifier();
-            notifier->displayNotify(message);
+            sendNotify(message);
         }
     }
 }
@@ -388,10 +387,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 
             message.message = message.message + copyFileNameToCliipboard(fileName);
             _conf->updateLastSaveDate();
-            // FIXME - make call it on the disabled dbus notificxations
-            // _wnd->showTrayMessage(message.header, message.message);
-            DBusNotifier *notifier = new DBusNotifier();
-            notifier->displayNotify(message);
+            sendNotify(message);
         }
         else
             qWarning() << "Error saving file " << fileName;
@@ -424,14 +420,21 @@ QString Core::copyFileNameToCliipboard(QString file)
     return retString;
 }
 
+void Core::sendNotify(const StateNotifyMessage &message)
+{
+#ifdef SG_DBUS_NOTIFY
+    DBusNotifier *notifier = new DBusNotifier();
+    notifier->displayNotify(message);
+#else
+    _wnd->showTrayMessage(message.header, message.message);
+#endif
+}
+
 void Core::copyScreen()
 {
     QApplication::clipboard()->setPixmap(*_pixelMap, QClipboard::Clipboard);
     StateNotifyMessage message(tr("Copied"), tr("Screenshot is copied to clipboard"));
-    // FIXME - make call it on the disabled dbus notificxations
-    // _wnd->showTrayMessage(message.header, message.message);
-    DBusNotifier *notifier = new DBusNotifier();
-    notifier->displayNotify(message);
+    sendNotify(message);
 }
 
 void Core::openInExtViewer()

@@ -117,6 +117,8 @@ private:
     void sendSystemNotify(const StateNotifyMessage& notify);
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);
+    void sendNotify(const StateNotifyMessage& message);
+
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea;
