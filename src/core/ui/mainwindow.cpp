@@ -96,6 +96,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     help->setMenu(menuInfo);
 
     _ui->toolBar->addWidget(help);
+
+    QWidget* spacer = new QWidget();
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        _ui->toolBar->addWidget(spacer);
+
     _ui->toolBar->addAction(actQuit);
 
     void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
