@@ -244,4 +244,4 @@ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html" DESTINATION "${CMAKE_I
 # install desktop files
 install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 # install pixmap
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION ${CMAKE_INSTALL_DATADIR}/pixmaps)
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/32x32/apps")
