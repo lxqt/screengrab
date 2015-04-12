@@ -114,6 +114,7 @@ private:
     void checkAutoSave(bool first = false);
 
     void getActiveWindow();
+    void grabCursor(int offsetX, int offsetY);
     void sendSystemNotify(const StateNotifyMessage& notify);
     bool checkExsistFile(QString path);
     QString copyFileNameToCliipboard(QString file);

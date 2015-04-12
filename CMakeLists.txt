@@ -20,6 +20,24 @@ set(CMAKE_AUTOUIC ON)
 include(GNUInstallDirs)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+find_package(X11)
+if (X11_FOUND)
+    set(HAVE_X11 1)
+endif(X11_FOUND)
+
+# set up xcb and x11_xcb
+
+find_package(
+    XCB MODULE COMPONENTS
+        XCB
+        SHAPE
+        XFIXES
+)
+
+find_package(
+    X11_XCB MODULE
+)
+
 # add version define
 set(SCREENGRAB_VERSION "1.95")
 set(SCREENGRAB_VERSION_DEV "2.0-beta1")
@@ -145,6 +163,10 @@ if(SG_DBUS_NOTIFY)
     set(SCREENGRAB_SRC ${SCREENGRAB_SRC} src/core/dbusnotifier.cpp)
 endif()
 
+if(X11_FOUND)
+    set(SCREENGRAB_SRC ${SCREENGRAB_SRC} src/core/x11utils.cpp)
+endif()
+
 set(SCREENGRAB_HDR
     src/core/singleapp.h
 )
@@ -213,8 +235,27 @@ if(SG_DBUS_NOTIFY)
     target_link_libraries(screengrab Qt5::DBus)
 endif()
 
-target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem)
+if (X11_XCB_FOUND)
+    add_definitions( -DX11_XCB_FOUND="1")
+    target_link_libraries(screengrab ${X11_XCB_LIBRARIES})
+endif()
 
+if (XCB_XCB_FOUND)
+    add_definitions( -DXCB_XCB_FOUND="1")
+    target_link_libraries(screengrab ${XCB_XCB_LIBRARY})
+endif()
+
+if (XCB_SHAPE_FOUND)
+    add_definitions( -DXCB_SHAPE_FOUND="1")
+    target_link_libraries(screengrab ${XCB_SHAPE_LIBRARY})
+endif()
+
+if (XCB_XFIXES_FOUND)
+    add_definitions( -DXCB_XFOXES_FOUND="1")
+    target_link_libraries(screengrab ${XCB_XFIXES_LIBRARY})
+endif()
+
+target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem ${X11_LIBRARIES})
 
 # make src.tar.gz
 add_custom_target(dist @echo create source package)

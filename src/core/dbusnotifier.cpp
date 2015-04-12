@@ -33,6 +33,8 @@
 #define SERVICE_FREEDESKTOP "org.freedesktop.Notifications"
 #define PATH_FREEDESKTOP "/org/freedesktop/Notifications" ,"org.freedesktop.Notifications"
 
+#define CACHE_DIR "notify-cache"
+#define CACHE_PREV "preview.jpg"
 
 DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
 {
@@ -45,7 +47,15 @@ DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
 
     qWarning() << "Notify: DBus interfece created successfully.";
 
+    QDir dir(Config::getConfigDir());
+    if (!dir.exists(CACHE_DIR))
+        dir.mkdir(CACHE_DIR);
+
+    _previewPath = dir.absolutePath() + QDir::toNativeSeparators(QDir::separator()) + CACHE_PREV;
+    _appIconPath = QString(SG_ICONPATH);
+
     _notifyDuration = Config::instance()->getTimeTrayMess() * 1000;
+
 }
 
 DBusNotifier::~DBusNotifier()

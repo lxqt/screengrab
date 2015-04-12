@@ -32,6 +32,11 @@
 #include <QDebug>
 
 #include <KF5/KWindowSystem/KWindowSystem>
+#include <xcb/xfixes.h>
+
+#ifdef X11_XCB_FOUND
+#include "x11utils.h"
+#endif
 
 #include "core/core.h"
 
@@ -188,6 +193,7 @@ void Core::screenShot(bool first)
         const QDesktopWidget *desktop = QApplication::desktop();
         const int screenNum = desktop->screenNumber(QCursor::pos());
         *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+        grabCursor(0, 0);
 
         checkAutoSave(first);
         _wnd->updatePixmap(_pixelMap);
@@ -216,6 +222,8 @@ void Core::screenShot(bool first)
         *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
         break;
     }
+
+
 
     _wnd->updatePixmap(_pixelMap);
     _wnd->restoreFromShot();
@@ -276,6 +284,19 @@ void Core::getActiveWindow()
                                      geometry.y(),
                                      geometry.width(),
                                                 geometry.height());
+    grabCursor(geometry.x(), geometry.y());
+}
+
+void Core::grabCursor(int offsetX, int offsetY)
+{
+#ifdef XCB_XFOXES_FOUND
+    X11Utils::compositePointer(offsetX, offsetY, _pixelMap);
+#else
+    Q_UNUSED(offsetx);
+    Q_UNUSED(offsety);
+#endif
+
+
 }
 
 void Core::sendSystemNotify(const StateNotifyMessage &notify)
