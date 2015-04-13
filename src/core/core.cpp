@@ -290,7 +290,8 @@ void Core::getActiveWindow()
 void Core::grabCursor(int offsetX, int offsetY)
 {
 #ifdef XCB_XFOXES_FOUND
-    X11Utils::compositePointer(offsetX, offsetY, _pixelMap);
+    if (_conf->getIncludeCursor())
+        X11Utils::compositePointer(offsetX, offsetY, _pixelMap);
 #else
     Q_UNUSED(offsetx);
     Q_UNUSED(offsety);
