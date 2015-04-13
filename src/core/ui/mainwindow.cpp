@@ -107,6 +107,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(_ui->delayBox, delayChange, this, &MainWindow::delayBoxChange);
     void (QComboBox::*typeScr)(int) = &QComboBox::currentIndexChanged;
     connect(_ui->cbxTypeScr, typeScr, this, &MainWindow::typeScreenShotChange);
+    connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
 
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
@@ -403,11 +404,17 @@ void MainWindow::typeScreenShotChange(int type)
     _conf->setTypeScreen(type);
 }
 
+void MainWindow::checkIncludeCursor(bool include)
+{
+    _conf->setIncludeCursor(include);
+}
+
 // updating UI from configdata
 void MainWindow::updateUI()
 {
     _ui->cbxTypeScr->setCurrentIndex(_conf->getTypeScreen());
     _ui->delayBox->setValue(_conf->getDelay());
+    _ui->checkIncludeCursor->setChecked(_conf->getIncludeCursor());
 
     updateShortcuts();
 

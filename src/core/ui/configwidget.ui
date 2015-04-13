@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>278</height>
+    <width>634</width>
+    <height>294</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -106,7 +106,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page_6">
         <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -367,6 +367,13 @@
                 </widget>
                </item>
               </layout>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="cbxIncludeCursor">
+               <property name="text">
+                <string>Include mouse pointer</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QCheckBox" name="checkZommMouseArea">

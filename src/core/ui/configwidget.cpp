@@ -167,8 +167,8 @@ void ConfigDialog::loadSettings()
     _ui->checkAutoSave->setChecked(conf->getAutoSave());;
     _ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());;
     _ui->checkZommMouseArea->setChecked(conf->getZoomAroundMouse());
+    _ui->cbxIncludeCursor->setChecked(conf->getIncludeCursor());
 
-    // integration tab
     _ui->checkInTray->setChecked(conf->getCloseInTray());
     _ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
 
@@ -261,6 +261,7 @@ void ConfigDialog::saveSettings()
     conf->setAutoSaveFirst(_ui->checkAutoSaveFirst->isChecked());
     conf->setTrayMessages(_ui->cbxTrayMsg->currentIndex());
     conf->setCloseInTray(_ui->checkInTray->isChecked());
+    conf->setIncludeCursor(_ui->cbxIncludeCursor->isChecked());
     conf->setZoomAroundMouse(_ui->checkZommMouseArea->isChecked());
     conf->setAllowMultipleInstance(_ui->checkAllowCopies->isChecked());
     conf->setTimeTrayMess(_ui->timeTrayMess->value());
