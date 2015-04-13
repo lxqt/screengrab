@@ -56,6 +56,7 @@
 #define KEY_TYPE_SCREEN         "typeScreenDefault"
 #define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
 #define KEY_NODECOR             "noDecorations"
+#define KEY_INCLUDE_CURSOR      "includeCursor"
 
 Config* Config::ptrInstance = 0;
 
@@ -181,6 +182,16 @@ bool Config::getEnableExtView()
 void Config::setEnableExtView(bool val)
 {
     setValue(KEY_ENABLE_EXT_VIEWER, val);
+}
+
+bool Config::getIncludeCursor()
+{
+    return value(KEY_INCLUDE_CURSOR).toBool();
+}
+
+void Config::setIncludeCursor(bool val)
+{
+    setValue(KEY_INCLUDE_CURSOR, val);
 }
 
 QString Config::getSaveDir()
@@ -410,6 +421,7 @@ void Config::loadSettings()
     setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
     setNoDecoration(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
     setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
+    setIncludeCursor(_settings->value(KEY_INCLUDE_CURSOR, DEF_INCLUDE_CURSOR).toBool());
     _settings->endGroup();
 
     _settings->beginGroup("Display");
@@ -447,6 +459,7 @@ void Config::saveSettings()
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
     _settings->setValue(KEY_NODECOR, getNoDecoration());
+    _settings->setValue(KEY_INCLUDE_CURSOR, getIncludeCursor());
     _settings->endGroup();
 
     _settings->beginGroup("Display");
@@ -482,6 +495,7 @@ void Config::setDefaultSettings()
     setAutoSave(DEF_AUTO_SAVE);
     setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
     setTrayMessages(DEF_TRAY_MESS_TYPE);
+    setIncludeCursor(DEF_INCLUDE_CURSOR);
     setZoomAroundMouse(DEF_ZOOM_AROUND_MOUSE);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
