@@ -34,4 +34,4 @@ add_library(extedit
 set_property (TARGET extedit PROPERTY SOVERSION 1.0.0)
 install(TARGETS extedit DESTINATION ${SG_LIBDIR})
 
-target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras ${QTXDG_LIBRARIES})
+target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras Qt5Xdg)
