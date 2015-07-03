@@ -109,7 +109,6 @@ endif()
 if(SG_EXT_EDIT)
     add_definitions( -DSG_EXT_EDIT="1")
     find_package(Qt5Xdg REQUIRED)
-    include(${QTXDG_USE_FILE})
 endif()
 
 if(SG_DBUS_NOTIFY)
