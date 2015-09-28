@@ -43,11 +43,11 @@ void Uploader_ImgUr::startUploading()
 }
 
 /*!
- *     Return url for upload image
+ * Return url for upload image
  */
 QUrl Uploader_ImgUr::apiUrl()
 {
-    return QUrl("http://api.imgur.com/2/upload");
+    return QUrl("https://api.imgur.com/2/upload");
 }
 
 /*!
