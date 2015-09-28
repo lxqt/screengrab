@@ -31,13 +31,13 @@
 // mediacru.sh settings
 #define DEF_MCSH_URL                "https://mediacru.sh/api/upload/file"
 
-QStringList UploaderConfig::_labelsList = QStringList() << "MediaCrush" << "Imgur";
+QStringList UploaderConfig::_labelsList = QStringList() << "Imgur" << "MediaCrush";
 
 UploaderConfig::UploaderConfig()
 {
     QString configFile = Config::getConfigDir() + QDir::separator() + "uploader.conf";
     _settings = new QSettings(configFile, QSettings::IniFormat);
-    _groupsList << "mediacru.sh" << "imgur.com";
+    _groupsList << "imgur.com" << "mediacru.sh";
 }
 
 UploaderConfig::~UploaderConfig()
