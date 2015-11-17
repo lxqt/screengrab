@@ -53,7 +53,6 @@
 #define KEY_ZOOMBOX             "zoomAroundMouse"
 #define KEY_TIME_NOTIFY         "timeTrayMessages"
 #define KEY_ALLOW_COPIES        "AllowCopies"
-#define KEY_TYPE_SCREEN         "typeScreenDefault"
 #define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
 #define KEY_NODECOR             "noDecorations"
 #define KEY_INCLUDE_CURSOR      "includeCursor"
@@ -353,16 +352,6 @@ bool Config::getCloseInTray()
 void Config::setCloseInTray(bool val)
 {
     setValue(KEY_CLOSE_INTRAY, val);
-}
-
-int Config::getTypeScreen()
-{
-    return value(KEY_TYPE_SCREEN).toInt();
-}
-
-void Config::setTypeScreen(quint8 type)
-{
-    setValue(KEY_TYPE_SCREEN, type);
 }
 
 quint8 Config::getTimeTrayMess()

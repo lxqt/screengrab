@@ -167,10 +167,6 @@ public:
     bool getCloseInTray();
     void setCloseInTray(bool val);
 
-    // type of screen
-    int getTypeScreen();
-    void setTypeScreen(quint8 type);
-
     // tume of tray messages
     quint8 getTimeTrayMess();
     void setTimeTrayMess(int src);
