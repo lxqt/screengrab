@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
     if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
     {
-        QString type = QString::number(ScreenGrab->config()->getTypeScreen());
+        QString type = QString::number(ScreenGrab->config()->getDefScreenshotType());
         scr.sendMessage("screengrab --type=" + type);
         return 0;
     }

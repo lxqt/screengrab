@@ -399,7 +399,7 @@ void MainWindow::delayBoxChange(int delay)
 
 void MainWindow::typeScreenShotChange(int type)
 {
-    _conf->setTypeScreen(type);
+    _conf->setScreenshotType(type);
 }
 
 void MainWindow::checkIncludeCursor(bool include)
@@ -410,8 +410,8 @@ void MainWindow::checkIncludeCursor(bool include)
 // updating UI from configdata
 void MainWindow::updateUI()
 {
-    _ui->cbxTypeScr->setCurrentIndex(_conf->getTypeScreen());
     _ui->delayBox->setValue(_conf->getDelay());
+    _ui->cbxTypeScr->setCurrentIndex(_conf->getDefScreenshotType());
     _ui->checkIncludeCursor->setChecked(_conf->getIncludeCursor());
 
     updateShortcuts();

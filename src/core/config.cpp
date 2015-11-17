@@ -560,6 +560,7 @@ void Config::setDefaultSettings()
     setSaveFileName(DEF_SAVE_NAME);
     setSaveFormat(DEF_SAVE_FORMAT);
     setDefDelay(DEF_DELAY);
+    setScreenshotType(Core::FullScreen);
     setImageQuality(DEF_IMG_QUALITY);
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);

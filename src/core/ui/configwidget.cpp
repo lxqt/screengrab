@@ -154,6 +154,7 @@ void ConfigDialog::loadSettings()
     _ui->cbxFormat->setCurrentIndex(conf->getDefaultFormatID());
 
     _ui->defDelay->setValue(conf->getDefDelay());
+    _ui->cbxTypeScr->setCurrentIndex(conf->getDefScreenshotType());
     _ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
     _ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
     _ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
@@ -252,6 +253,7 @@ void ConfigDialog::saveSettings()
     conf->setSaveFileName(_ui->editFileName->text());
     conf->setSaveFormat(_ui->cbxFormat->currentText());
     conf->setDefDelay(_ui->defDelay->value());
+    conf->setDefScreenshotType(_ui->cbxTypeScr->currentIndex());
     conf->setDateTimeInFilename(_ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(_ui->editDateTmeTpl->text());
     conf->setAutoCopyFilenameOnSaving(_ui->cbxCopyFileName->currentIndex());
