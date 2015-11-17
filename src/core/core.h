@@ -71,6 +71,13 @@ public Q_SLOTS:
     void autoSave();
 
 public:
+    enum ScreenshotType {
+        FullScreen = 0,
+        Window,
+        Area,
+        PreviousSelection
+    };
+
     static Core* instance();
     ~Core();
 
