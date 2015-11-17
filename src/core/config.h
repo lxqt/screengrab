@@ -144,6 +144,14 @@ public:
     quint8 getDelay();
     void setDelay(quint8 sec);
 
+    // configured default screenshot type
+    int getDefScreenshotType();
+    void setDefScreenshotType(const int type);
+
+    // current screenshot type
+    int getScreenshotType();
+    void setScreenshotType(const int type);
+
     quint8 getAutoCopyFilenameOnSaving();
     void setAutoCopyFilenameOnSaving(quint8 val);
 
@@ -158,10 +166,6 @@ public:
     // closing in tray
     bool getCloseInTray();
     void setCloseInTray(bool val);
-
-    // type of screen
-    int getTypeScreen();
-    void setTypeScreen(quint8 type);
 
     // tume of tray messages
     quint8 getTimeTrayMess();
