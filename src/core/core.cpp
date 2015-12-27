@@ -244,7 +244,7 @@ void Core::checkAutoSave(bool first)
     {
         if (!first)
         {
-            StateNotifyMessage message(tr("New screen"), tr("New screen is getted!"));
+            StateNotifyMessage message(tr("New screen"), tr("A new screenshot was taken!"));
             sendNotify(message);
         }
     }

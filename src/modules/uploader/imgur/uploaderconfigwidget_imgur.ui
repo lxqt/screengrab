@@ -40,7 +40,7 @@
    <item>
     <widget class="QLabel" name="labImgurConfDescription">
      <property name="text">
-      <string>Now is nothing yet</string>
+      <string>No settings available right now</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

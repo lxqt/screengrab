@@ -43,7 +43,7 @@
    <item>
     <widget class="QLabel" name="labDesclabUrlription">
      <property name="text">
-      <string>URL forupload</string>
+      <string>Upload URL</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -56,14 +56,14 @@
    <item>
     <widget class="QLabel" name="labDescription">
      <property name="text">
-      <string>Central server MediaCrush is down, but you can set up self-hosted instance. And add  here url to it.</string>
+      <string>The central MediaCrush server is down. But you can set up a self-hosted instance and add its URL here.</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="labUrlExample">
      <property name="text">
-      <string notr="true">e.g. &quot;https://mediacru.sh/api/upload/file&quot;</string>
+      <string notr="true">E. g. &quot;https://mediacru.sh/api/upload/file&quot;</string>
      </property>
     </widget>
    </item>

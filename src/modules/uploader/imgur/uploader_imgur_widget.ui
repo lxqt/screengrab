@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="labTitle">
      <property name="text">
-      <string>Upload to ImgUr.com</string>
+      <string>Upload to Imgur</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
