@@ -40,10 +40,8 @@ UploaderConfigWidget::UploaderConfigWidget(QWidget *parent) :
 
     loadSettings();
 
-    _crush = new UploaderConfigWidget_MediaCrush(this);
     _imgur = new UploaderConfigWidget_ImgUr(this);
 
-    _ui->stackedHosts->addWidget(_crush);
     _ui->stackedHosts->addWidget(_imgur);
 
     void (QComboBox::*hostChanged)(int) = &QComboBox::currentIndexChanged;
@@ -100,7 +98,6 @@ void UploaderConfigWidget::saveSettings()
     config.saveSettings("common", savingValues);
 
     QMetaObject::invokeMethod(_imgur, "saveSettings");
-    QMetaObject::invokeMethod(_crush, "saveSettings");
 }
 
 void UploaderConfigWidget::changeEvent(QEvent *e)

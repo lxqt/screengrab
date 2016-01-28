@@ -216,41 +216,10 @@
     </message>
 </context>
 <context>
-    <name>UploaderConfigWidget_MediaCrush</name>
-    <message>
-        <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="20"/>
-        <source>Configuration for mediacru.sh upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/mediacrush/uploaderconfigwidget_mediacrush.ui" line="43"/>
-        <source>Now is nothing yet</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to ImgUr.com</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_MediaCrush_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/mediacrush/uploader_mediacrush_widget.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/mediacrush/uploader_mediacrush_widget.ui" line="20"/>
-        <source>Upload to MediaCrush</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

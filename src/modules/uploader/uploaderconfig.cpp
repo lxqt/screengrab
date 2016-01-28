@@ -28,10 +28,8 @@
 #define DEF_AUTO_COPY_RESULT_LIMK   false
 #define DEF_DEFAULT_HOST            "Imgur"
 
-// mediacru.sh settings
-#define DEF_MCSH_URL                "https://mediacru.sh/api/upload/file"
 
-QStringList UploaderConfig::_labelsList = QStringList() << "Imgur" << "MediaCrush";
+QStringList UploaderConfig::_labelsList = QStringList() << "Imgur";
 
 UploaderConfig::UploaderConfig()
 {
@@ -102,11 +100,6 @@ void UploaderConfig::defaultSettings()
     _settings->beginGroup("common");
     _settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
     _settings->setValue(KEY_DEFAULT_HOST, DEF_DEFAULT_HOST);
-    _settings->endGroup();
-
-    // mediacru.sh settings
-    _settings->beginGroup(_groupsList[0]);
-    _settings->setValue(KEY_MCSH_URL, DEF_MCSH_URL);
     _settings->endGroup();
 
     // imgur.com settings

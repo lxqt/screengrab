@@ -7,9 +7,6 @@ set(uploader_SRC
 	uploaderconfigwidget.cpp
 	imgur/uploader_imgur_widget.cpp
 	imgur/uploaderconfigwidget_imgur.cpp
-	mediacrush/uploader_mediacrush.cpp
-	mediacrush/uploader_mediacrush_widget.cpp
-	mediacrush/uploaderconfigwidget_mediacrush.cpp
 )
 
 set(uploader_UI
@@ -17,8 +14,6 @@ set(uploader_UI
 	uploaderconfigwidget.ui
 	imgur/uploader_imgur_widget.ui
 	imgur/uploaderconfigwidget_imgur.ui
-	mediacrush/uploader_mediacrush_widget.ui
-	mediacrush/uploaderconfigwidget_mediacrush.ui
 )
 
 lxqt_translate_ts(uploader_QMS

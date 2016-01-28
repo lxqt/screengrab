@@ -21,7 +21,6 @@
 #include "uploaderconfigwidget.h"
 #include "uploaderconfig.h"
 #include "imgur/uploader_imgur.h"
-#include "mediacrush/uploader_mediacrush.h"
 
 #include "core/core.h"
 
@@ -62,9 +61,6 @@ void ModuleUploader::init()
         switch(config.labelsList().indexOf(selectedtHost))
         {
         case 0:
-            uploader = new Uploader_MediaCrush(core->config()->getSaveFormat());
-            break;
-        case 1:
             uploader = new Uploader_ImgUr;
             break;
         default:

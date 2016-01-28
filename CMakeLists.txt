@@ -81,7 +81,7 @@ message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
 
 # options
 option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
-option(SG_EXT_UPLOADS "Enable upload screenshots to MediaCrush and imgur" ON)
+option(SG_EXT_UPLOADS "Enable upload screenshots to Imgur" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -117,7 +117,7 @@ if(SG_DBUS_NOTIFY)
 endif()
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
-message(STATUS "Upload to MediaCrush and imgur support: " ${SG_EXT_UPLOADS})
+message(STATUS "Imgur upload support: " ${SG_EXT_UPLOADS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Enable D-Bus notifications: " ${SG_DBUS_NOTIFY})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
@@ -155,7 +155,7 @@ set(SCREENGRAB_SRC
     src/core/modulemanager.cpp
     src/core/ui/configwidget.cpp
     src/core/ui/about.cpp
-    src/core/ui/mainwindow.cpp    
+    src/core/ui/mainwindow.cpp
 )
 
 if(SG_DBUS_NOTIFY)

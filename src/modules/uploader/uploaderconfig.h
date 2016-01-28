@@ -28,9 +28,6 @@
 #define KEY_AUTO_COPY_RESULT_LIMK   "autoCopyDirectLink"
 #define KEY_DEFAULT_HOST            "defaultHost"
 
-// Uploader config file mediacru.sh keys
-#define KEY_MCSH_URL                "uploadUrl"
-
 class UploaderConfig
 {
 

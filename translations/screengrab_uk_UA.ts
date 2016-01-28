@@ -585,13 +585,6 @@ any key or using the right or middle mouse buttons.</source>
     </message>
 </context>
 <context>
-    <name>UploaderConfigWidget_MediaCrush</name>
-    <message>
-        <source>Now is nothing yet</source>
-        <translation type="obsolete">Ще нічого немає</translation>
-    </message>
-</context>
-<context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <source>Upload to ImgUr.com</source>

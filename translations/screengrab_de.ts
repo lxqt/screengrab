@@ -656,36 +656,10 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     </message>
 </context>
 <context>
-    <name>UploaderConfigWidget_MediaCrush</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Formular</translation>
-    </message>
-    <message>
-        <source>Configuration for mediacru.sh upload</source>
-        <translation type="vanished">Konfiguration für &lt;mediacru.sh&gt;</translation>
-    </message>
-    <message>
-        <source>Now is nothing yet</source>
-        <translation type="vanished">Keine Konfiguration vorhanden</translation>
-    </message>
-</context>
-<context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <source>Upload to ImgUr.com</source>
         <translation type="vanished">Nach &lt;ImgUr.com&gt; hochladen</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_MediaCrush_Widget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Formular</translation>
-    </message>
-    <message>
-        <source>Upload to MediaCrush</source>
-        <translation type="vanished">Nach &lt;MediaCrush&gt; hochladen</translation>
     </message>
 </context>
 <context>
