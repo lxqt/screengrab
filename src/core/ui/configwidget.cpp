@@ -150,7 +150,6 @@ void ConfigDialog::loadSettings()
 
     _ui->cbxFormat->addItem("png");
     _ui->cbxFormat->addItem("jpg");
-    _ui->cbxFormat->addItem("bmp");
     _ui->cbxFormat->setCurrentIndex(conf->getDefaultFormatID());
 
     _ui->defDelay->setValue(conf->getDefDelay());

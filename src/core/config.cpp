@@ -130,7 +130,6 @@ Config::Config()
         saveSettings();
     }
 
-    _imageFormats << "png" << "jpg" << "bmp";
     _settings->setIniCodec("UTF-8");
     _scrNum = 0;
 }

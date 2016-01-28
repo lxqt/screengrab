@@ -497,7 +497,6 @@ void MainWindow::saveScreen()
 
     formatsAvalible["png"] = tr("PNG Files");
     formatsAvalible["jpg"] = tr("JPEG Files");
-    formatsAvalible["bmp"] = tr("BMP Files");
 
     QString format = "png";
     _conf->getSaveFormat();
