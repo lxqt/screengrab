@@ -18,9 +18,9 @@
 
 #include "modulemanager.h"
 
-#ifdef SG_EXT_UPLOADS
-#include "src/modules/uploader/moduleuploader.h"
-#endif
+// #ifdef SG_EXT_UPLOADS
+// #include "src/modules/uploader/moduleuploader.h"
+// #endif
 
 #ifdef SG_EXT_EDIT
 #include "src/modules/extedit/moduleextedit.h"
@@ -35,10 +35,10 @@ ModuleManager::ModuleManager()
 
 void ModuleManager::initModules()
 {
-#ifdef SG_EXT_UPLOADS
-    ModuleUploader *uploader = new ModuleUploader();
-    _modules->insert(MOD_UPLOADER , uploader);
-#endif
+//#ifdef SG_EXT_UPLOADS
+//    ModuleUploader *uploader = new ModuleUploader();
+//    _modules->insert(MOD_UPLOADER , uploader);
+//#endif
 #ifdef SG_EXT_EDIT
     ModuleExtEdit *extedit = new ModuleExtEdit();
     _modules->insert(MOD_EXT_EDIT.data(), extedit);
