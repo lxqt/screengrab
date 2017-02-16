@@ -301,14 +301,16 @@ QString Core::getSaveFilePath(QString format)
 
     do
     {
+        QDir dir(_conf->getSaveDir());
+        const QString filePath = dir.filePath(_conf->getSaveFileName());
         if (_conf->getDateTimeInFilename())
-            initPath = _conf->getSaveDir() + _conf->getSaveFileName() + "-" + getDateTimeFileName() + "." + format;
+            initPath = filePath + "-" + getDateTimeFileName() + "." + format;
         else
         {
             if (_conf->getScrNum() != 0)
-                initPath = _conf->getSaveDir() + _conf->getSaveFileName() + _conf->getScrNumStr() + "." + format;
+                initPath = filePath + _conf->getScrNumStr() + "." + format;
             else
-                initPath = _conf->getSaveDir() + _conf->getSaveFileName() + "." + format;
+                initPath = filePath + "." + format;
         }
     } while (checkExsistFile(initPath));
 
