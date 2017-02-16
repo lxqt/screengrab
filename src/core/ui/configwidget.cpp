@@ -320,15 +320,12 @@ QString ConfigDialog::getFormat()
 
 void ConfigDialog::selectDir()
 {
-    QString *directory = new QString;
-    {
-        *directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
-                _ui->editDir->text(), QFileDialog::ShowDirsOnly)+QDir::separator();
-        if (directory->toUtf8() != QDir::separator())
-            _ui->editDir->setText( *directory);
-    }
+    QString directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
+                _ui->editDir->text(), QFileDialog::ShowDirsOnly);
 
-    delete directory;
+    if (!directory.isEmpty()) {
+         _ui->editDir->setText(QDir::toNativeSeparators(directory));
+    }
 }
 
 void ConfigDialog::restoreDefaults()
