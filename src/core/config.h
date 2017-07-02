@@ -50,6 +50,7 @@ const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
 const bool DEF_SHOW_TRAY = true;
 const bool DEF_ENABLE_EXT_VIEWER = true;
 const bool DEF_INCLUDE_CURSOR = false;
+const bool DEF_FIT_INSIDE = true;
 
 // class worker with conf data
 class Config
@@ -224,6 +225,9 @@ public:
 
     bool getIncludeCursor();
     void setIncludeCursor(bool val);
+
+    bool getFitInside();
+    void setFitInside(bool val);
 
     static QString getSysLang();
 

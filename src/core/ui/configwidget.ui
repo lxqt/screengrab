@@ -580,6 +580,16 @@
           </widget>
          </item>
          <item>
+          <widget class="QCheckBox" name="checkFitInside">
+           <property name="toolTip">
+            <string>Fit to edges only inside selected screen area</string>
+           </property>
+           <property name="text">
+            <string>Fit to edges inside selected area</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>

@@ -30,6 +30,13 @@
 #include <QSize>
 #include <QPoint>
 
+enum Side{
+    TOP,
+    RIGHT,
+    BOTTOM,
+    LEFT
+};
+
 // class RegionSelect : public QDialog
 class RegionSelect : public QWidget
 {
@@ -59,7 +66,11 @@ private:
     QPoint _selStartPoint;
     QPoint _selEndPoint;
 
+    int _currentFit;
+    QVector<QRect> _fitRectangles;
+
     bool _processSelection;
+    bool _fittedSelection;
 
     QPixmap _desktopPixmapBkg;
     QPixmap _desktopPixmapClr;
@@ -67,8 +78,14 @@ private:
     void sharedInit();
     void drawBackGround();
     void drawRectSelection(QPainter &painter);
+    void selectFit();
+    void findFit();
+    void fitBorder(const QRect &boundRect, enum Side side, int &border);
 
     Config *_conf;
+
+    const int fitRectExpand = 20;
+    const int fitRectDepth = 50;
 
 };
 

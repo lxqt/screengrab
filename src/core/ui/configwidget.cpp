@@ -176,6 +176,8 @@ void ConfigDialog::loadSettings()
 
     _ui->slideImgQuality->setValue(conf->getImageQuality());
     _ui->cbxEnableExtView->setChecked(conf->getEnableExtView());
+
+    _ui->checkFitInside->setChecked(conf->getFitInside());
 }
 
 
@@ -268,6 +270,7 @@ void ConfigDialog::saveSettings()
     conf->setImageQuality(_ui->slideImgQuality->value());
     conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
     conf->setNoDecoration(_ui->checkNoDecorX11->isChecked());
+    conf->setFitInside(_ui->checkFitInside->isChecked());
 
     // save shortcuts in shortcutmanager
     int action = 0;
