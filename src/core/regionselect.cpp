@@ -32,6 +32,7 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     drawBackGround();
 
     _processSelection = false;
+    _fittedSelection = false;
 
     show();
 
@@ -50,6 +51,7 @@ RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* par
     drawBackGround();
 
     _processSelection = false;
+    _fittedSelection = false;
 
     show();
 
@@ -95,7 +97,7 @@ void RegionSelect::paintEvent(QPaintEvent *event)
 
 void RegionSelect::mousePressEvent(QMouseEvent* event)
 {
-    if (event->button() != Qt::LeftButton)
+    if (event->button() != Qt::LeftButton && event->button() != Qt::RightButton)
         return;
 
     _selStartPoint = event->pos();
@@ -106,6 +108,8 @@ void RegionSelect::mouseReleaseEvent(QMouseEvent* event)
 {
     _selEndPoint = event->pos();
     _processSelection = false;
+    if (event->button() == Qt::RightButton && !_fittedSelection)
+        selectFit();
 }
 
 void RegionSelect::mouseDoubleClickEvent(QMouseEvent* event)
@@ -122,6 +126,7 @@ void RegionSelect::mouseMoveEvent(QMouseEvent *event)
     {
         _selEndPoint = event->pos();
         _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();
+	_fittedSelection = false;
         update();
     }
 }
@@ -132,6 +137,8 @@ void RegionSelect::keyPressEvent(QKeyEvent* event)
     if (event->key() == Qt::Key_Escape)
         Q_EMIT processDone(false);
     // canceled select screen area
+    else if (event->key() == Qt::Key_Space)
+        selectFit();
     else if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
         Q_EMIT processDone(true);
     else
@@ -214,6 +221,153 @@ void RegionSelect::drawRectSelection(QPainter &painter)
             zoomCenter -= QPoint(zoomSide, zoomSide);
         painter.drawPixmap(zoomCenter, zoomPixmap);
     }
+}
+
+void RegionSelect::selectFit()
+{
+    if (_fittedSelection)
+        _currentFit = (_currentFit + 1) % _fitRectangles.size();
+    else
+    {
+        findFit();
+        _currentFit = 1;
+        _fittedSelection = true;
+    }
+    _selectRect = _fitRectangles[_currentFit];
+    update();
+}
+
+void RegionSelect::findFit()
+{
+    QRect boundingRect;
+    int left = _selectRect.left();
+    int top = _selectRect.top();
+    int right = _selectRect.right();
+    int bottom = _selectRect.bottom();
+
+    _fitRectangles.clear();
+    _fitRectangles.push_back(_selectRect);
+
+    // Set the rectangle in which to search for borders
+    if (_conf->getFitInside())
+        boundingRect = _selectRect;
+    else
+    {
+        boundingRect.setLeft(qMax(left - fitRectExpand, 0));
+        boundingRect.setTop(qMax(top - fitRectExpand, 0));
+        boundingRect.setRight(qMin(right + fitRectExpand, _sizeDesktop.width() - 1));
+        boundingRect.setBottom(qMin(bottom + fitRectExpand, _sizeDesktop.height() - 1));
+    }
+
+    // Find borders inside boundingRect
+    fitBorder(boundingRect, LEFT, left);
+    fitBorder(boundingRect, TOP, top);
+    fitBorder(boundingRect, RIGHT, right);
+    fitBorder(boundingRect, BOTTOM, bottom);
+
+    const QRect fitRectangle = QRect(QPoint(left, top), QPoint(right, bottom));
+    _fitRectangles.push_back(fitRectangle);
+}
+
+void RegionSelect::fitBorder(const QRect &boundRect, enum Side side, int &border)
+{
+    const QImage boundImage = _desktopPixmapClr.copy(boundRect).toImage();
+
+    // Set the relative coordinates of a box vertex and a vector along the box side
+    QPoint startPoint;
+    QPoint directionVector;
+    switch(side){
+    case TOP:
+        startPoint = QPoint(0,0);
+        directionVector = QPoint(1,0);
+        break;
+    case RIGHT:
+        startPoint = boundRect.topRight() - boundRect.topLeft();
+        directionVector = QPoint(0,1);
+        break;
+    case BOTTOM:
+        startPoint = boundRect.bottomRight() - boundRect.topLeft();
+        directionVector = QPoint(-1,0);
+        break;
+    case LEFT:
+        startPoint = boundRect.bottomLeft() - boundRect.topLeft();
+        directionVector = QPoint(0,-1);
+        break;
+    default:
+        return;
+    }
+
+    // Set vector normal to the box side
+    QPoint normalVector = QPoint(-directionVector.y(), directionVector.x());
+
+    // Setbox dimensions relative to the box side
+    int directionLength;
+    int normalDepth;
+    if (directionVector.x() == 0)
+    {
+        directionLength = boundRect.height() - 1;
+        normalDepth = boundRect.width() - 1;
+    }
+    else
+    {
+        directionLength = boundRect.width() - 1;
+        normalDepth = boundRect.height() - 1;
+    }
+
+    // Set how deep in the boundingRect to search for the border
+    if (_conf->getFitInside())
+        normalDepth = qMin(normalDepth/2 - 1, fitRectDepth);
+    else
+        normalDepth = qMin(normalDepth/2 - 1, fitRectDepth + fitRectExpand);
+
+    QVector<int> gradient = QVector<int>(normalDepth, 0);
+    QVector<int> preR = QVector<int>(normalDepth + 1, 0);
+    QVector<int> preG = QVector<int>(normalDepth + 1, 0);
+    QVector<int> preB = QVector<int>(normalDepth + 1, 0);
+
+    // Compute pixel Sobel normal gradients and add their absolute values parallel to the box side
+    for (int i = 1; i < directionLength; i++)
+    {
+        for (int j = 0; j <= normalDepth; j++)
+        {
+            QPoint point = startPoint + i*directionVector + j*normalVector;
+            QRgb pixelL = boundImage.pixel(point - directionVector);
+            QRgb pixelC = boundImage.pixel(point);
+            QRgb pixelR = boundImage.pixel(point + directionVector);
+            preR[j] = qRed(pixelL) + 2*qRed(pixelC) + qRed(pixelR);
+            preG[j] = qGreen(pixelL) + 2*qGreen(pixelC) + qGreen(pixelR);
+            preB[j] = qBlue(pixelL) + 2*qBlue(pixelC) + qBlue(pixelR);
+        }
+        for (int j = 1; j < normalDepth; j++)
+            gradient[j] += qAbs(preR[j-1] - preR[j+1]) + qAbs(preG[j-1] - preG[j+1]) + qAbs(preB[j-1] - preB[j+1]);
+    }
+
+    int maxGradient = 0;
+    int positionMax = 0;
+    for (int j = 1; j < normalDepth; j++)
+    {
+        // Scale pixel normal gradients and break if drop detected
+        gradient[j] = 1 + gradient[j]/(60*directionLength);
+        if (_conf->getFitInside() && gradient[j] <= maxGradient/2)
+            break;
+
+        // Keep searching for the maximum normal gradient
+        if (gradient[j] > maxGradient)
+        {
+            maxGradient = gradient[j];
+            positionMax = j;
+        }
+    }
+    // If all normal gradients small, keep the original user selected border
+    if (maxGradient <= 1)
+        return;
+
+    // Transform computed border back to original coordinates
+    startPoint = boundRect.topLeft() + startPoint + (positionMax + 1)*normalVector;
+    if (normalVector.x() == 0)
+        border = startPoint.y();
+    else
+        border = startPoint.x();
 }
 
 QPixmap RegionSelect::getSelection()

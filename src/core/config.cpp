@@ -56,6 +56,7 @@
 #define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
 #define KEY_NODECOR             "noDecorations"
 #define KEY_INCLUDE_CURSOR      "includeCursor"
+#define KEY_FIT_INSIDE          "fitInside"
 
 
 static const QLatin1String FullScreen("FullScreen");
@@ -455,6 +456,16 @@ void Config::setNoDecoration(bool val)
     setValue(KEY_NODECOR, val);
 }
 
+bool Config::getFitInside()
+{
+    return value(KEY_FIT_INSIDE).toBool();
+}
+
+void Config::setFitInside(bool val)
+{
+    setValue(KEY_FIT_INSIDE, val);
+}
+
 void Config::saveWndSize()
 {
     // saving size
@@ -497,6 +508,7 @@ void Config::loadSettings()
     setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
     setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
     setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
+    setFitInside(_settings->value(KEY_FIT_INSIDE, DEF_FIT_INSIDE).toBool());
     _settings->endGroup();
 
     setDelay(getDefDelay());
@@ -534,6 +546,7 @@ void Config::saveSettings()
     _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
     _settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
+    _settings->setValue(KEY_FIT_INSIDE, getFitInside());
     _settings->endGroup();
 
     _shortcuts->saveSettings();
@@ -565,6 +578,7 @@ void Config::setDefaultSettings()
     // setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);
     setShowTrayIcon(DEF_SHOW_TRAY);
     setEnableExtView(DEF_ENABLE_EXT_VIEWER);
+    setFitInside(DEF_FIT_INSIDE);
 
     _shortcuts->setDefaultSettings();
 
