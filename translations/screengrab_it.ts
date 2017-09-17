@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it_IT">
+<TS version="2.1" language="it">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="40"/>
         <source>using Qt </source>
-        <translation>usando le librerie QT</translation>
+        <translation>usando le librerie QT </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="50"/>
@@ -88,7 +88,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Bug tracker</source>
-        <translation type="unfinished"></translation>
+        <translation>Segnala bug</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="157"/>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="166"/>
         <source>Burjans L García D</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="168"/>
         <source> Italian translation</source>
-        <translation>Traduziona italiana</translation>
+        <translation> Traduziona italiana</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="172"/>
@@ -148,17 +148,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="176"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-build [Windows XP and 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="177"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation type="unfinished"> win32-build vecchio[Windows Vista]</translation>
+        <translation>win32-build vecchio [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="178"/>
         <source>win32-build [Windows 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-build [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -248,27 +248,27 @@
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished">è una applicazione per catturare velocemente schermate per tutte le piattaforme.</translation>
+        <translation>è una applicazione per catturare velocemente schermate per tutte le piattaforme.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a fullscreen screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura lo schermo intero</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura la finestra attiva</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura una selezione dello schermo</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="78"/>
         <source>Run the application with a hidden main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Avvia l&apos;&apos;applicazione con la finestra principale nascosta</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="428"/>
@@ -284,125 +284,20 @@
 <context>
     <name>DialogUploader</name>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
-        <source>Upload to internet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
-        <source>Upload to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
-        <source>Direct link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="189"/>
-        <source>Open this link in the default web-browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
-        <source>Copy this link to the clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
         <source>Copy</source>
-        <translation type="unfinished">Copia</translation>
+        <translation type="obsolete">Copia</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
-        <source>Extended preformed html or bb codes:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
-        <source>Link to delete image:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
-        <source>Upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation type="obsolete">Annulla</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source>Size: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source> pixel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
-        <source>Uploaded </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
-        <source>Ready to upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
-        <source>Upload processing... Please wait</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
-        <source>Receiving a response from the server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
-        <source>Upload completed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation type="obsolete">Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
-        <source>Error uploading screenshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
-        <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
-        <source>Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Errore</translation>
     </message>
 </context>
 <context>
@@ -415,7 +310,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="140"/>
         <source>Type: </source>
-        <translation>Tipo:</translation>
+        <translation>Tipo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
@@ -445,7 +340,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="219"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura cursore</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="248"/>
@@ -548,7 +443,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="342"/>
         <source>Screenshot </source>
-        <translation>Schermata</translation>
+        <translation>Schermata </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
@@ -586,19 +481,6 @@
     </message>
 </context>
 <context>
-    <name>ModuleUploader</name>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
-        <source>Upload the screenshot to the default image host</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
-        <source>Uploading</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="160"/>
@@ -611,106 +493,6 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pixel </translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
-        <source>External edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
-        <source>Edit in...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
-        <source>Upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Uploader</name>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="225"/>
-        <source>Direct link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="228"/>
-        <source>HTML code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="231"/>
-        <source>BB code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="234"/>
-        <source>HTML code with thumb image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="237"/>
-        <source>BB code with thumb image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
-        <source>URl to delete image</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget</name>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
-        <source>Common settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
-        <source>Default image host</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
-        <source>Always copy the link to the clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
-        <source>Hosts settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
-        <source>Settings for: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget_ImgUr</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
-        <source>Configuration for imgur.com upload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
-        <source>No settings available right now</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_ImgUr_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
-        <source>Upload to Imgur</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -772,32 +554,32 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="348"/>
         <source>Type: </source>
-        <translation type="unfinished">Tipo:</translation>
+        <translation>Tipo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="361"/>
         <source>Type of screenshot</source>
-        <translation type="unfinished">Tipo di cattura</translation>
+        <translation>Tipo di cattura</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="368"/>
         <source>Full screen</source>
-        <translation type="unfinished">Schermo intero</translation>
+        <translation>Schermo intero</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="373"/>
         <source>Window</source>
-        <translation type="unfinished">Finestra</translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Screen area</source>
-        <translation type="unfinished">Area dello schermo</translation>
+        <translation>Area dello schermo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="383"/>
         <source>Previous selection</source>
-        <translation type="unfinished">Selezione precedente</translation>
+        <translation>Selezione precedente</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="415"/>
@@ -807,7 +589,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="443"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cattura cursore</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="565"/>
@@ -822,12 +604,13 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="585"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Looks like not present in GUI</translatorcomment>
+        <translation>Adatta ai bordi all&apos;interno della selezione</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="588"/>
         <source>Fit to edges inside selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta a bordi all&apos;interno della selezione</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
