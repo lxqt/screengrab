@@ -108,14 +108,11 @@ QString AboutDialog::tabAbout()
     str += "<b>ScreenGrab</b> ";
     str += tr("is a crossplatform application for fast creating screenshots of your desktop.");
     str += "<br><br>";
-    str += tr("It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.");
+    str += tr("It is a light and powerful application, written in Qt.");
     str += "<br><br>";
 
-    str += tr("E-Mail")+" - ";
-    str += "<a href=mailto:doomer3d@gmail.com>doomer3d@gmail.com</a>";
-    str += "<br>";
-    str += tr("Web site")+" - ";
-    str += "<a href=http://screengrab.doomer.org>http://screengrab.doomer.org/</a>";
+    str += tr("Website")+" - ";
+    str += "<a href=\"https://github.com/QtDesktop/ScreenGrab\">https://github.com/QtDesktop/ScreenGrab</a>";
     str += "<br><br>";
 
     str += tr("Licensed under the ");
@@ -140,13 +137,9 @@ QString AboutDialog::tabHelpUs()
     str += "<li>" + tr("Report bugs and issues") + "</li>";
     str += "</ul>";
 
-    str += tr("E-Mail");
-    str += "<br>";
-    str += "<a href=mailto:doomer3d@gmail.com>mailto:doomer3d@gmail.com</a>";
-    str += "<br><br>";
     str += tr("Bug tracker");
     str += "<br>";
-    str += "<a href=https://github.com/DOOMer/screengrab/issues>https://github.com/DOOMer/screengrab/issues/</a>";
+    str += "<a href=https://github.com/QtDesktop/screengrab/issues>https://github.com/QtDesktop/screengrab/issues/</a>";
 
     return str;
 }
