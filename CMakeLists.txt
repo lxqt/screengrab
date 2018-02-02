@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 # set project's name
 project(screengrab)
 
-find_package(Qt5Widgets 5.2.0 REQUIRED)
-find_package(Qt5X11Extras 5.2.0 REQUIRED)
-find_package(Qt5Network 5.2.0 REQUIRED)
+find_package(Qt5Widgets 5.7.1 REQUIRED)
+find_package(Qt5X11Extras 5.7.1 REQUIRED)
+find_package(Qt5Network 5.7.1 REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
 
 # for translations
@@ -64,7 +64,10 @@ elseif(NOT SCREENGRAB_VERSION_DEV)
     set(VERSION "${SCREENGRAB_VERSION}")
 endif(SCREENGRAB_VERSION_DEV)
 
-add_definitions(-DVERSION="${VERSION}")
+add_definitions(
+    -DVERSION="${VERSION}"
+    -DQT_NO_FOREACH
+)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)

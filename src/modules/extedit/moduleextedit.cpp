@@ -47,9 +47,9 @@ void ModuleExtEdit::init()
 QMenu* ModuleExtEdit::initModuleMenu()
 {
     QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
-    QList<XdgAction*> actionsList = _extEdit->getActions();
+    const QList<XdgAction*> actionsList = _extEdit->getActions();
 
-    foreach (XdgAction *appAction, actionsList)
+    for (XdgAction *appAction : actionsList)
     {
         menu->addAction(appAction);
         appAction->disconnect(SIGNAL(triggered()));
