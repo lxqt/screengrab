@@ -88,6 +88,6 @@ void ExtEdit::createAppList()
     QMimeType mt = db.mimeTypeForFile(fileName);
     _appList = XdgDesktopFileCache::getApps(mt.name());
 
-    foreach (XdgDesktopFile *app, _appList)
+    for (XdgDesktopFile *app : qAsConst(_appList))
         _actionList << new XdgAction(app);
 }
