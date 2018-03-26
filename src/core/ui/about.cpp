@@ -112,7 +112,7 @@ QString AboutDialog::tabAbout()
     str += "<br><br>";
 
     str += tr("Website")+" - ";
-    str += "<a href=\"https://github.com/QtDesktop/ScreenGrab\">https://github.com/QtDesktop/ScreenGrab</a>";
+    str += "<a href=\"https://github.com/lxqt/screengrab\">https://github.com/lxqt/screengrab</a>";
     str += "<br><br>";
 
     str += tr("Licensed under the ");
@@ -139,7 +139,7 @@ QString AboutDialog::tabHelpUs()
 
     str += tr("Bug tracker");
     str += "<br>";
-    str += "<a href=https://github.com/QtDesktop/screengrab/issues>https://github.com/QtDesktop/screengrab/issues/</a>";
+    str += "<a href=https://github.com/lxqt/screengrab/issues>https://github.com/lxqt/screengrab/issues/</a>";
 
     return str;
 }
