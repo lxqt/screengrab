@@ -521,7 +521,7 @@ void Config::saveSettings()
 }
 
 void Config::saveScreenshotSettings()
-{
+{ // save the main window settings
     _settings->beginGroup("Base");
     _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
     _settings->setValue(KEY_NODECOR, getNoDecoration());
@@ -537,7 +537,7 @@ void Config::saveScreenshotSettings()
 
 // set default values
 void Config::setDefaultSettings()
-{ // save the main window settings
+{
     setSaveDir(getDirNameDefault());
     setSaveFileName(DEF_SAVE_NAME);
     setSaveFormat(DEF_SAVE_FORMAT);
