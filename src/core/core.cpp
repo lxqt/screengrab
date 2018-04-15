@@ -54,6 +54,7 @@ Core::Core()
 
     _conf = Config::instance();
     _conf->loadSettings();
+    _lastSelectedArea = _conf->getLastSelection();
 
     _pixelMap = new QPixmap;
     _selector = 0;
@@ -144,6 +145,9 @@ void Core::sleep(int msec)
 
 void Core::coreQuit()
 {
+    _conf->setLastSelection(_lastSelectedArea);
+    _conf->saveScreenshotSettings();
+
     _conf->setRestoredWndSize(_wnd->width(), _wnd->height());
     _conf->saveWndSize();
 
@@ -183,7 +187,7 @@ void Core::screenShot(bool first)
     if (_firstScreen)
         _conf->updateLastSaveDate();
 
-    switch(_conf->getScreenshotType())
+    switch(_conf->getDefScreenshotType())
     {
     case Core::FullScreen:
     {
@@ -290,7 +294,7 @@ void Core::grabCursor(int offsetX, int offsetY)
 
 }
 
-void Core::sendSystemNotify(const StateNotifyMessage &notify)
+void Core::sendSystemNotify(const StateNotifyMessage& /*notify*/)
 {
     qDebug() << "Send system notification";
 }
@@ -511,7 +515,7 @@ void Core::processCmdLineOpts(const QStringList& arguments)
     // Check commandline parameters and set screenshot type
     for (int i=0; i < _screenTypeOpts.count(); ++i)
         if (_cmdLine.isSet(_screenTypeOpts.at(i)))
-            _conf->setScreenshotType(i);
+            _conf->setDefScreenshotType(i);
 
 #ifdef SG_EXT_UPLOADS
     /// FIXMA - In module interface need add the mthod for geting module cmdLine options

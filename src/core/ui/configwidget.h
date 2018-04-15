@@ -62,7 +62,6 @@ private slots:
     void setVisibleDateTplEdit(bool);
     void changeTrayMsgType(int type);
     void changeTimeTrayMess(int sec);
-    void changeDefDelay(int val);
     void setVisibleAutoSaveFirst(bool status);
     void changeFormatType(int type);
     void changeImgQualituSlider(int pos);

@@ -33,10 +33,8 @@
 #define KEY_SAVEDIR             "defDir"
 #define KEY_SAVENAME            "defFilename"
 #define KEY_SAVEFORMAT          "defImgFormat"
-#define KEY_DELAY_DEF           "defDelay"
 #define KEY_DELAY               "delay"
 #define KEY_SCREENSHOT_TYPE_DEF "defScreenshotType"
-#define KEY_SCREENSHOT_TYPE     "screenshotType"
 #define KEY_IMG_QUALITY         "imageQuality"
 #define KEY_FILENAMEDATE        "insDateTimeInFilename"
 #define KEY_DATETIME_TPL        "templateDateTime"
@@ -57,6 +55,8 @@
 #define KEY_NODECOR             "noDecorations"
 #define KEY_INCLUDE_CURSOR      "includeCursor"
 #define KEY_FIT_INSIDE          "fitInside"
+
+#define KEY_LAST_SELECTION          "lastSelection"
 
 
 static const QLatin1String FullScreen("FullScreen");
@@ -108,30 +108,17 @@ static int screenshotTypeFromString(const QString& str)
     return r;
 }
 
+const static QStringList _imageFormats = {"png", "jpg"};
+
 Config* Config::ptrInstance = 0;
 
 // constructor
 Config::Config()
 {
-    _settings = new QSettings(getConfigFile(), QSettings::IniFormat);
+    _settings = new QSettings ("screengrab", "screengrab");
 
     _shortcuts = new ShortcutManager(_settings);
 
-    // check existing config file
-    if (!QFile::exists(getConfigFile()))
-    {
-        // creating conf file from set defaults
-        QFile cf(getConfigFile());
-        if (cf.open(QIODevice::WriteOnly))
-        {
-            cf.close();
-        }
-
-        setDefaultSettings();
-        saveSettings();
-    }
-
-    _settings->setIniCodec("UTF-8");
     _scrNum = 0;
 }
 
@@ -166,11 +153,6 @@ void Config::killInstance()
         delete ptrInstance;
         ptrInstance = 0;
     }
-}
-
-QString Config::getConfigFile()
-{
-    return getConfigDir() + QDir::separator() + CONFIG_FILE_NAME;
 }
 
 QString Config::getConfigDir()
@@ -273,16 +255,6 @@ void Config::setSaveFormat(QString format)
     setValue(KEY_SAVEFORMAT, format);
 }
 
-quint8 Config::getDefDelay()
-{
-    return value(KEY_DELAY_DEF).toInt();
-}
-
-void Config::setDefDelay(quint8 sec)
-{
-    setValue(KEY_DELAY_DEF, sec);
-}
-
 quint8 Config::getDelay()
 {
     return value(KEY_DELAY).toInt();
@@ -301,16 +273,6 @@ int Config::getDefScreenshotType()
 void Config::setDefScreenshotType(const int type)
 {
     setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), type);
-}
-
-int Config::getScreenshotType()
-{
-    return (value(QLatin1String(KEY_SCREENSHOT_TYPE)).toInt());
-}
-
-void Config::setScreenshotType(const int type)
-{
-    setValue(QLatin1String(KEY_SCREENSHOT_TYPE), type);
 }
 
 quint8 Config::getAutoCopyFilenameOnSaving()
@@ -466,6 +428,16 @@ void Config::setFitInside(bool val)
     setValue(KEY_FIT_INSIDE, val);
 }
 
+QRect Config::getLastSelection()
+{
+    return value(KEY_LAST_SELECTION).toRect();
+}
+
+void Config::setLastSelection(QRect rect)
+{
+    setValue(KEY_LAST_SELECTION, rect);
+}
+
 void Config::saveWndSize()
 {
     // saving size
@@ -482,7 +454,7 @@ void Config::loadSettings()
     setSaveDir(_settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
     setSaveFileName(_settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
     setSaveFormat(_settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
-    setDefDelay(_settings->value(KEY_DELAY, DEF_DELAY).toInt());
+    setDelay(_settings->value(KEY_DELAY, DEF_DELAY).toInt());
     setDefScreenshotType(screenshotTypeFromString(_settings->value(QLatin1String(KEY_SCREENSHOT_TYPE_DEF)).toString()));
     setAutoCopyFilenameOnSaving(_settings->value(KEY_FILENAME_TO_CLB, DEF_FILENAME_TO_CLB).toInt());
     setDateTimeInFilename(_settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
@@ -498,6 +470,7 @@ void Config::loadSettings()
     setTrayMessages(_settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
+    setLastSelection(_settings->value(KEY_LAST_SELECTION).toRect());
     // TODO - make set windows size without hardcode values
     setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(),
                        _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
@@ -511,33 +484,26 @@ void Config::loadSettings()
     setFitInside(_settings->value(KEY_FIT_INSIDE, DEF_FIT_INSIDE).toBool());
     _settings->endGroup();
 
-    setDelay(getDefDelay());
-
     _shortcuts->loadSettings();
 }
 
 void Config::saveSettings()
-{
+{ // save settings except for those on the main window
     _settings->beginGroup("Base");
     _settings->setValue(KEY_SAVEDIR, getSaveDir());
     _settings->setValue(KEY_SAVENAME, getSaveFileName());
     _settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
-    _settings->setValue(KEY_DELAY, getDefDelay());
-    _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
     _settings->setValue(KEY_FILENAME_TO_CLB, getAutoCopyFilenameOnSaving());
     _settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
     _settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
     _settings->setValue(KEY_AUTOSAVE, getAutoSave());
     _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
-    _settings->setValue(KEY_NODECOR, getNoDecoration());
-    _settings->setValue(KEY_INCLUDE_CURSOR, getIncludeCursor());
     _settings->endGroup();
 
     _settings->beginGroup("Display");
     _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
     _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
-    _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
     _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
     _settings->endGroup();
     saveWndSize();
@@ -554,14 +520,27 @@ void Config::saveSettings()
     resetScrNum();
 }
 
+void Config::saveScreenshotSettings()
+{
+    _settings->beginGroup("Base");
+    _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
+    _settings->setValue(KEY_NODECOR, getNoDecoration());
+    _settings->setValue(KEY_INCLUDE_CURSOR, getIncludeCursor());
+    _settings->setValue(KEY_DELAY, getDelay());
+    _settings->endGroup();
+
+    _settings->beginGroup("Display");
+    _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
+    _settings->setValue(KEY_LAST_SELECTION, getLastSelection());
+    _settings->endGroup();
+}
+
 // set default values
 void Config::setDefaultSettings()
-{
+{ // save the main window settings
     setSaveDir(getDirNameDefault());
     setSaveFileName(DEF_SAVE_NAME);
     setSaveFormat(DEF_SAVE_FORMAT);
-    setDefDelay(DEF_DELAY);
-    setScreenshotType(Core::FullScreen);
     setImageQuality(DEF_IMG_QUALITY);
     setDateTimeInFilename(DEF_DATETIME_FILENAME);
     setDateTimeTpl(DEF_DATETIME_TPL);
@@ -570,7 +549,6 @@ void Config::setDefaultSettings()
     setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
     setTrayMessages(DEF_TRAY_MESS_TYPE);
     setIncludeCursor(DEF_INCLUDE_CURSOR);
-    setZoomAroundMouse(DEF_ZOOM_AROUND_MOUSE);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     setTimeTrayMess(DEF_TIME_TRAY_MESS);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
@@ -581,9 +559,6 @@ void Config::setDefaultSettings()
     setFitInside(DEF_FIT_INSIDE);
 
     _shortcuts->setDefaultSettings();
-
-    setNoDecoration(DEF_X11_NODECOR);
-    setDelay(DEF_DELAY);
 
     quint8 countModules = Core::instance()->modules()->count();
     for (int i = 0; i < countModules; ++i)
@@ -596,6 +571,10 @@ QString Config::getDirNameDefault()
     return QDir::homePath()+QDir::separator();
 }
 
+QStringList Config::getFormatIDs() const
+{
+    return _imageFormats;
+}
 // get id of default save format
 int Config::getDefaultFormatID()
 {

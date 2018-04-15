@@ -39,21 +39,18 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     _ui->setupUi(this);
     conf = Config::instance();
 
-    connect(_ui->butSaveOpt, &QPushButton::clicked, this, &ConfigDialog::saveSettings);
+    connect(_ui->buttonBox->button(QDialogButtonBox::Save), &QPushButton::clicked, this, &ConfigDialog::saveSettings);
     connect(_ui->buttonBrowse, &QPushButton::clicked, this, &ConfigDialog::selectDir);
-    connect(_ui->butRestoreOpt, &QPushButton::clicked, this, &ConfigDialog::restoreDefaults);
+    connect(_ui->buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &ConfigDialog::restoreDefaults);
     connect(_ui->checkIncDate, &QCheckBox::toggled, this, &ConfigDialog::setVisibleDateTplEdit);
     connect(_ui->keyWidget, &QKeySequenceWidget::keySequenceAccepted, this, &ConfigDialog::acceptShortcut);
     connect(_ui->keyWidget, &QKeySequenceWidget::keyNotSupported, this, &ConfigDialog::keyNotSupported);
     connect(_ui->checkAutoSave, &QCheckBox::toggled, this, &ConfigDialog::setVisibleAutoSaveFirst);
-    connect(_ui->butCancel, &QPushButton::clicked, this, &ConfigDialog::reject);
+    connect(_ui->buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::clicked, this, &ConfigDialog::reject);
     connect(_ui->treeKeys, &QTreeWidget::expanded, _ui->treeKeys, &QTreeWidget::clearSelection);
     connect(_ui->treeKeys, &QTreeWidget::collapsed, this, &ConfigDialog::collapsTreeKeys);
     connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
     connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
-
-    void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
-    connect(_ui->defDelay, delayChange, this, &ConfigDialog::changeDefDelay);
 
     void (QSpinBox::*timeToTray)(int) = &QSpinBox::valueChanged;
     connect(_ui->timeTrayMess, timeToTray, this, &ConfigDialog::changeTimeTrayMess);
@@ -73,13 +70,11 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(_ui->cbxFormat, formatChabge, this, &ConfigDialog::changeFormatType);
 
     loadSettings();
-    changeDefDelay(conf->getDefDelay());
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
 
     setVisibleAutoSaveFirst(conf->getAutoSave());
 
     _ui->listWidget->setCurrentRow(0);
-    _ui->tabMain->setCurrentIndex(0);
 
     editDateTmeTpl(conf->getDateTimeTpl());
 
@@ -148,12 +143,9 @@ void ConfigDialog::loadSettings()
     _ui->editDir->setText(conf->getSaveDir());
     _ui->editFileName->setText(conf->getSaveFileName());
 
-    _ui->cbxFormat->addItem("png");
-    _ui->cbxFormat->addItem("jpg");
+    _ui->cbxFormat->addItems(conf->getFormatIDs());
     _ui->cbxFormat->setCurrentIndex(conf->getDefaultFormatID());
 
-    _ui->defDelay->setValue(conf->getDefDelay());
-    _ui->cbxTypeScr->setCurrentIndex(conf->getDefScreenshotType());
     _ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
     _ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
     _ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
@@ -162,15 +154,12 @@ void ConfigDialog::loadSettings()
     _ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
     changeTrayMsgType(_ui->cbxTrayMsg->currentIndex());
     _ui->timeTrayMess->setValue(conf->getTimeTrayMess());
-    _ui->checkAutoSave->setChecked(conf->getAutoSave());;
-    _ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());;
-    _ui->checkZommMouseArea->setChecked(conf->getZoomAroundMouse());
-    _ui->cbxIncludeCursor->setChecked(conf->getIncludeCursor());
+    _ui->checkAutoSave->setChecked(conf->getAutoSave());
+    _ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());
 
     _ui->checkInTray->setChecked(conf->getCloseInTray());
     _ui->checkAllowCopies->setChecked(conf->getAllowMultipleInstance());
 
-    _ui->checkNoDecorX11->setChecked(conf->getNoDecoration());
     _ui->checkShowTray->setChecked(conf->getShowTrayIcon());
     toggleCheckShowTray(conf->getShowTrayIcon());
 
@@ -201,17 +190,9 @@ void ConfigDialog::setVisibleAutoSaveFirst(bool status)
 void ConfigDialog::changeFormatType(int type)
 {
     if (type == 1)
-    {
-        _ui->slideImgQuality->setVisible(true);;
-        _ui->labImgQuality->setVisible(true);
-        _ui->labImgQualityCurrent->setVisible(true);;
-    }
+        _ui->groupQuality->setVisible(true);
     else
-    {
-        _ui->slideImgQuality->setVisible(false);
-        _ui->labImgQuality->setVisible(false);
-        _ui->labImgQualityCurrent->setVisible(false);;
-    }
+        _ui->groupQuality->setVisible(false);
 }
 
 
@@ -253,8 +234,6 @@ void ConfigDialog::saveSettings()
     conf->setSaveDir(_ui->editDir->text());
     conf->setSaveFileName(_ui->editFileName->text());
     conf->setSaveFormat(_ui->cbxFormat->currentText());
-    conf->setDefDelay(_ui->defDelay->value());
-    conf->setDefScreenshotType(_ui->cbxTypeScr->currentIndex());
     conf->setDateTimeInFilename(_ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(_ui->editDateTmeTpl->text());
     conf->setAutoCopyFilenameOnSaving(_ui->cbxCopyFileName->currentIndex());
@@ -262,14 +241,11 @@ void ConfigDialog::saveSettings()
     conf->setAutoSaveFirst(_ui->checkAutoSaveFirst->isChecked());
     conf->setTrayMessages(_ui->cbxTrayMsg->currentIndex());
     conf->setCloseInTray(_ui->checkInTray->isChecked());
-    conf->setIncludeCursor(_ui->cbxIncludeCursor->isChecked());
-    conf->setZoomAroundMouse(_ui->checkZommMouseArea->isChecked());
     conf->setAllowMultipleInstance(_ui->checkAllowCopies->isChecked());
     conf->setTimeTrayMess(_ui->timeTrayMess->value());
     conf->setShowTrayIcon(_ui->checkShowTray->isChecked());
     conf->setImageQuality(_ui->slideImgQuality->value());
     conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
-    conf->setNoDecoration(_ui->checkNoDecorX11->isChecked());
     conf->setFitInside(_ui->checkFitInside->isChecked());
 
     // save shortcuts in shortcutmanager
@@ -297,7 +273,6 @@ void ConfigDialog::saveSettings()
 
     // update values of front-end settings
     conf->saveSettings();
-    conf->setDelay(conf->getDefDelay());
 
     // call save method on modeule's configwidgets'
     for (int i = 0; i < _moduleWidgetNames.count(); ++i)
@@ -347,12 +322,6 @@ void ConfigDialog::restoreDefaults()
         conf->saveSettings();
         QDialog::accept();
     }
-}
-
-void ConfigDialog::changeDefDelay(int val)
-{
-    if (val == 0)
-        _ui->defDelay->setSpecialValueText(tr("None"));
 }
 
 void ConfigDialog::changeTimeTrayMess(int sec)
