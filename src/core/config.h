@@ -100,12 +100,6 @@ public:
     ~Config();
 
     /**
-     * @brief Gets the configuration file for screengrab. It's
-     * inside the folder returned by getConfigDir().
-     */
-    static QString getConfigFile();
-
-    /**
      * @brief Gets the directory where to save the configuration files.
      * Does not end with '/'.
      */
@@ -120,6 +114,11 @@ public:
      * Save configuration data to conf file
      */
     void saveSettings();
+
+    /**
+     * Save screenshot settings to conf file
+     */
+    void saveScreenshotSettings();
 
     /**
      * Reset configuration data from default values
@@ -138,20 +137,12 @@ public:
     QString getSaveFormat();
     void setSaveFormat(QString format);
 
-    // default delay
-    quint8 getDefDelay();
-    void setDefDelay(quint8 sec);
-
     quint8 getDelay();
     void setDelay(quint8 sec);
 
     // configured default screenshot type
     int getDefScreenshotType();
     void setDefScreenshotType(const int type);
-
-    // current screenshot type
-    int getScreenshotType();
-    void setScreenshotType(const int type);
 
     quint8 getAutoCopyFilenameOnSaving();
     void setAutoCopyFilenameOnSaving(quint8 val);
@@ -192,7 +183,8 @@ public:
     void setRestoredWndSize(int w, int h);
     void saveWndSize();
 
-    // get default image save format
+    // get image save format(s)
+    QStringList getFormatIDs() const;
     int getDefaultFormatID();
     QString getDirNameDefault();
 
@@ -229,6 +221,9 @@ public:
     bool getFitInside();
     void setFitInside(bool val);
 
+    QRect getLastSelection();
+    void setLastSelection(QRect rect);
+
     static QString getSysLang();
 
     ShortcutManager* shortcuts();
@@ -260,8 +255,6 @@ private:
     QHash<QString, QVariant> _confData;
 
     ShortcutManager *_shortcuts;
-
-    QVector<QString> _imageFormats;
 
     int _scrNum; // screen num in session
     QDateTime _dateLastSaving;

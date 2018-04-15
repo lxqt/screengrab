@@ -33,8 +33,7 @@ QStringList UploaderConfig::_labelsList = QStringList() << "Imgur";
 
 UploaderConfig::UploaderConfig()
 {
-    QString configFile = Config::getConfigDir() + QDir::separator() + "uploader.conf";
-    _settings = new QSettings(configFile, QSettings::IniFormat);
+    _settings = new QSettings ("screengrab", "uploader");
     _groupsList << "imgur.com" << "mediacru.sh";
 }
 

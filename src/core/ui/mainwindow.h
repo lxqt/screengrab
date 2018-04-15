@@ -105,6 +105,8 @@ private Q_SLOTS:
     void delayBoxChange(int);
     void typeScreenShotChange(int type);
     void checkIncludeCursor(bool include);
+    void checkNoDecoration(bool noDecor);
+    void checkZommMouseArea(bool zoom);
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
 

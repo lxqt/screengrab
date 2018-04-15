@@ -106,6 +106,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     void (QComboBox::*typeScr)(int) = &QComboBox::currentIndexChanged;
     connect(_ui->cbxTypeScr, typeScr, this, &MainWindow::typeScreenShotChange);
     connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
+    connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
+    connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
 
     QIcon icon(":/res/img/logo.png");
     setWindowIcon(icon);
@@ -392,14 +394,16 @@ void MainWindow::killTray()
 
 void MainWindow::delayBoxChange(int delay)
 {
-    if (delay == 0)
-        _ui->delayBox->setSpecialValueText(tr("None"));
     _conf->setDelay(delay);
 }
 
 void MainWindow::typeScreenShotChange(int type)
 {
-    _conf->setScreenshotType(type);
+    _conf->setDefScreenshotType(type);
+    // show/hide checkboxes according to the type
+    _ui->checkNoDecoration->setVisible(type == 1);
+    _ui->checkIncludeCursor->setVisible(type < 2);
+    _ui->checkZommMouseArea->setVisible(type >= 2);
 }
 
 void MainWindow::checkIncludeCursor(bool include)
@@ -407,11 +411,30 @@ void MainWindow::checkIncludeCursor(bool include)
     _conf->setIncludeCursor(include);
 }
 
+void MainWindow::checkNoDecoration(bool noDecor)
+{
+    _conf->setNoDecoration(noDecor);
+}
+
+void MainWindow::checkZommMouseArea(bool zoom)
+{
+    _conf->setZoomAroundMouse(zoom);
+}
+
 // updating UI from configdata
 void MainWindow::updateUI()
 {
     _ui->delayBox->setValue(_conf->getDelay());
-    _ui->cbxTypeScr->setCurrentIndex(_conf->getDefScreenshotType());
+
+    int type = _conf->getDefScreenshotType();
+    _ui->cbxTypeScr->setCurrentIndex(type);
+    // show/hide checkboxes according to the type
+    _ui->checkNoDecoration->setVisible(type == 1);
+    _ui->checkIncludeCursor->setVisible(type < 2);
+    _ui->checkZommMouseArea->setVisible(type >= 2);
+
+    _ui->checkZommMouseArea->setChecked(_conf->getZoomAroundMouse());
+    _ui->checkNoDecoration->setChecked(_conf->getNoDecoration());
     _ui->checkIncludeCursor->setChecked(_conf->getIncludeCursor());
 
     updateShortcuts();
@@ -494,32 +517,32 @@ void MainWindow::saveScreen()
 {
     // create initial filepath
     QHash<QString, QString> formatsAvalible;
+    const QStringList formatIDs = _conf->getFormatIDs();
+    for (const QString &formatID : formatIDs)
+        formatsAvalible[formatID] = tr("%1 Files").arg(formatID.toUpper());
 
-    formatsAvalible["png"] = tr("PNG Files");
-    formatsAvalible["jpg"] = tr("JPEG Files");
-
-    QString format = "png";
+    QString format = formatIDs.at(_conf->getDefaultFormatID());
     _conf->getSaveFormat();
 
     Core* c = Core::instance();
     QString filePath = c->getSaveFilePath(format);
 
-    // create file filters
-    QString fileFilters;
-
     QString filterSelected;
-    filterSelected = formatsAvalible[format];
 
+    // create file filters
+    QStringList fileFilters;
     QHash<QString, QString>::const_iterator iter = formatsAvalible.constBegin();
     while (iter != formatsAvalible.constEnd())
     {
-        fileFilters.append(iter.value() + " (*." + iter.key() + ");;");
+        QString str = iter.value() + " (*." + iter.key() + ")";
+        if (iter.key() == format)
+            filterSelected = str;
+        fileFilters << str;
         ++iter;
     }
-    fileFilters.chop(2);
 
     QString fileName;
-    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters, &filterSelected, QFileDialog::DontUseNativeDialog);
+    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(";;"), &filterSelected, QFileDialog::DontUseNativeDialog);
 
     QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
