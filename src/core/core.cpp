@@ -250,10 +250,27 @@ void Core::getActiveWindow()
 
     WId wnd = KWindowSystem::activeWindow();
 
-    if (!wnd)
+    // this window screenshot will be invalid
+    // if there's no active window or the active window is ours
+    bool invalid(!wnd || !KWindowSystem::hasWId(wnd) || (_wnd && _wnd->winId() == wnd));
+    if (!invalid)
+    { // or if it isn't on the current desktop
+        KWindowInfo info(wnd, NET::WMDesktop);
+        invalid = info.valid() && !info.isOnDesktop(KWindowSystem::currentDesktop());
+        if (!invalid)
+        { // or if it is a desktop or panel/dock
+            info = KWindowInfo(wnd, NET::WMWindowType);
+            QFlags<NET::WindowTypeMask> flags;
+            flags |= NET::DesktopMask;
+            flags |= NET::DockMask;
+            invalid = info.valid() && NET::typeMatchesMask(info.windowType(NET::AllTypesMask), flags);
+        }
+    }
+    // if this is an invalid screenshot, take a fullscreen shot instead
+    if (invalid)
     {
         *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
-        exit(1);
+        return;
     }
 
     // no decorations option is selected
