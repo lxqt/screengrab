@@ -542,7 +542,7 @@ void MainWindow::saveScreen()
     }
 
     QString fileName;
-    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(";;"), &filterSelected, QFileDialog::DontUseNativeDialog);
+    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(";;"), &filterSelected);
 
     QRegExp rx("\\(\\*\\.[a-z]{3,4}\\)");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
