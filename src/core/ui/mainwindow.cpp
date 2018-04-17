@@ -345,7 +345,7 @@ void MainWindow::displatScreenToolTip()
     if (_conf->getEnableExtView())
     {
         toolTip += "\n\n";
-        toolTip += tr("Double click for open screenshot in external default image viewer");
+        toolTip += tr("Double click to open screenshot in external default image viewer");
     }
 
     _ui->scrLabel->setToolTip(toolTip);
