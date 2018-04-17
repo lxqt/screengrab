@@ -185,6 +185,10 @@ qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 message(STATUS "Generating localize ...")
 
+set(SCREENGRAB_CONFIG_FILES
+    screengrab.conf
+)
+
 set(SCREENGRAB_DESKTOP_FILES_IN
     screengrab.desktop.in
 )
@@ -284,6 +288,8 @@ add_custom_command(COMMAND rm
 install(TARGETS screengrab RUNTIME DESTINATION bin)
 # install html docs
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html" DESTINATION "${CMAKE_INSTALL_FULL_DOCDIR}")
+# install config files
+install(FILES ${SCREENGRAB_CONFIG_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
 # install desktop files
 install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 # install pixmap
