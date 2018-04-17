@@ -259,27 +259,6 @@ endif()
 
 target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem ${X11_LIBRARIES})
 
-# make src.tar.gz
-add_custom_target(dist @echo create source package)
-set(SCREENGRAB_DIST "screengrab-${SCREENGRAB_VERSION}")
-add_custom_command(COMMAND cp
-    ARGS -R ${CMAKE_CURRENT_SOURCE_DIR} "/tmp/${SCREENGRAB_DIST}"
-    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-    TARGET dist
-)
-
-add_custom_command(COMMAND tar
-    ARGS cvfz "${CMAKE_CURRENT_BINARY_DIR}/${SCREENGRAB_DIST}.tar.gz" --exclude=*~ --exclude-vcs --exclude=localize/*qm --exclude=*.kdev4 --exclude=build --exclude=create-src.sh --exclude=win32 -C "/tmp" "${SCREENGRAB_DIST}"
-    WORKING_DIRECTORY "/tmp"
-    TARGET dist
-)
-
-add_custom_command(COMMAND rm
-    ARGS -rf "/tmp/${SCREENGRAB_DIST}"
-    WORKING_DIRECTORY "/tmp"
-    TARGET dist
-)
-
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)
 # install html docs
