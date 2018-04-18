@@ -31,15 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent):
     _ui->setupUi(this);
     _ui->labAppName->setText(_ui->labAppName->text() + QString(" <b>") + qApp->applicationVersion() + QString("</b>"));
 
-    QString versionInfo;
-    versionInfo = tr("built on ");
-    versionInfo.append(__DATE__);
-    versionInfo.append(" ");
-    versionInfo.append(__TIME__);
-
     _ui->labQtVer->setText(tr("using Qt ") + qVersion());
-
-    _ui->labVersion->setText(versionInfo);
 
     QTabBar *tabs = new QTabBar;
 
