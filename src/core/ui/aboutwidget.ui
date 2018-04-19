@@ -52,7 +52,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../screengrab.qrc">:/res/img/logo.png</pixmap>
+        <pixmap resource="../../../screengrab.qrc">:/res/img/logo.png</pixmap>
        </property>
       </widget>
      </item>
@@ -160,8 +160,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../screengrab.qrc"/>
-  <include location="../../screengrab.qrc"/>
+  <include location="../../../screengrab.qrc"/>
+  <include location="../../../screengrab.qrc"/>
  </resources>
  <connections/>
 </ui>

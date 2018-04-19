@@ -82,6 +82,7 @@ private:
     QMenu *_trayMenu;
     QShortcut *_hideWnd;
     bool _trayed;
+    QIcon appIcon;
 
 #ifdef SG_GLOBAL_SHORTCUTS
     QxtGlobalShortcut *_fullScreen;
@@ -95,6 +96,7 @@ private:
     void displatScreenToolTip();
     void createTray();
     void killTray();
+    void disableTrayMenuActions(bool disable);
     void updateShortcuts();
 
 private Q_SLOTS:

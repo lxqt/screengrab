@@ -38,7 +38,6 @@ AboutDialog::AboutDialog(QWidget *parent):
     _ui->frame->layout()->addWidget(tabs);
     _ui->frame->layout()->addWidget(_ui->txtArea);
 
-    tabs->setFixedHeight(24);
     tabs->insertTab(0, tr("About"));
     tabs->insertTab(1, tr("Thanks"));
     tabs->insertTab(2, tr("Help us"));

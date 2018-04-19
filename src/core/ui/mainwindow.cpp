@@ -32,7 +32,7 @@
 #include <QMenu>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
-    _ui(new Ui::MainWindow), _conf(NULL), _trayMenu(NULL)
+    _ui(new Ui::MainWindow), _conf(nullptr), _trayMenu(nullptr)
 {
     _ui->setupUi(this);
     _trayed = false;
@@ -56,8 +56,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(_globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
 #endif
 
-    _trayIcon = NULL;
-    _hideWnd = NULL;
+    _trayIcon = nullptr;
+    _hideWnd = nullptr;
+    _trayMenu = nullptr;
 
     // create actions menu
     actNew = new QAction(QIcon::fromTheme("document-new"), tr("New"), this);
@@ -109,8 +110,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
     connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
 
-    QIcon icon(":/res/img/logo.png");
-    setWindowIcon(icon);
+    appIcon = QIcon::fromTheme ("screengrab");
+    if (appIcon.isNull())
+        appIcon = QIcon(":/res/img/logo.png");
+
+    setWindowIcon(appIcon);
 
     QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());
     move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
@@ -221,7 +225,7 @@ void MainWindow::show()
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
-        _trayIcon->setContextMenu(_trayMenu); // enable context menu
+        _trayIcon->setContextMenu(_trayMenu);
     }
 
     if (_trayIcon)
@@ -232,7 +236,7 @@ void MainWindow::show()
 
 bool MainWindow::isTrayed() const
 {
-    return _trayIcon != NULL;
+    return _trayIcon != nullptr;
 }
 
 void MainWindow::showTrayMessage(const QString& header, const QString& message)
@@ -296,7 +300,7 @@ void MainWindow::showHelp()
 
 void MainWindow::showOptions()
 {
-    ConfigDialog *options = new ConfigDialog();
+    ConfigDialog *options = new ConfigDialog(this);
 #ifdef SG_GLOBAL_SHORTCUTS
     globalShortcutBlock(true);
 #endif
@@ -304,9 +308,12 @@ void MainWindow::showOptions()
     if (isMinimized())
     {
         showNormal();
+        disableTrayMenuActions(true);
         if (options->exec() == QDialog::Accepted)
             updateUI();
-        hideToShot();
+        disableTrayMenuActions(false);
+        if (_trayIcon) // the tray may have been removed
+            windowHideShow(); // hides the window in this case
     }
     else
     {
@@ -327,8 +334,10 @@ void MainWindow::showAbout()
     if (isMinimized())
     {
         showNormal();
+        disableTrayMenuActions(true);
         about->exec();
-        hideToShot();
+        disableTrayMenuActions(false);
+        windowHideShow(); // hides the window in this case
     }
     else
         about->exec();
@@ -372,24 +381,39 @@ void MainWindow::createTray()
     _trayMenu->addSeparator();
     _trayMenu->addAction(actQuit);
 
-    // icon menu
-    QIcon icon(":/res/img/logo.png");
-
     _trayIcon = new QSystemTrayIcon(this);
 
     _trayIcon->setContextMenu(_trayMenu);
-    _trayIcon->setIcon(icon);
+    _trayIcon->setIcon(appIcon);
     _trayIcon->show();
     connect(_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayClick);
 }
 
+void MainWindow::disableTrayMenuActions(bool disable)
+{
+    // On the one hand, QSystemTrayIcon::setContextMenu() can't be used for changing/removing
+    // the menu. On the other hand, deleting/recreating the current menu isn't a good way of
+    // disabling the context menu. Instead, we disable/enable menu ACTIONS when needed.
+    if (_trayMenu)
+    {
+        const QList<QAction*> actions = _trayMenu->actions();
+        for (QAction *action : actions)
+            action->setDisabled(disable);
+    }
+}
+
 void MainWindow::killTray()
 {
+    // the actions should be enabled because they're shared with the main window
+    disableTrayMenuActions(false);
+
     _trayed = false;
-    _trayMenu->clear();
+
+    delete _trayMenu;
+    _trayMenu = nullptr;
 
     delete _trayIcon;
-    _trayIcon = NULL;
+    _trayIcon = nullptr;
 }
 
 void MainWindow::delayBoxChange(int delay)
@@ -451,6 +475,12 @@ void MainWindow::updateUI()
 // mouse clicks on tray icom
 void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
 {
+    if (findChildren<QDialog*>().count() > 0)
+    { // just activate the window when there's a dialog
+        activateWindow();
+        raise();
+        return;
+    }
     switch(reason)
     {
         case QSystemTrayIcon::Trigger:
@@ -483,7 +513,7 @@ void MainWindow::hideToShot()
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(true);
-        _trayIcon->setContextMenu(NULL); // enable context menu
+        disableTrayMenuActions(true);
     }
 
     hide();
@@ -502,19 +532,23 @@ void MainWindow::showWindow(const QString& str)
 
 void MainWindow::restoreFromShot()
 {
-    if (!isVisible() && !_trayed)
-        showNormal();
-
-    // if show tray
     if (_conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
-        _trayIcon->setContextMenu(_trayMenu); // enable context menu
+        disableTrayMenuActions(false);
     }
+    showNormal();
 }
 
 void MainWindow::saveScreen()
 {
+    bool wasMinimized(isMinimized());
+    if (wasMinimized)
+    {
+        showNormal();
+        disableTrayMenuActions(true);
+    }
+
     // create initial filepath
     QHash<QString, QString> formatsAvalible;
     const QStringList formatIDs = _conf->getFormatIDs();
@@ -549,6 +583,12 @@ void MainWindow::saveScreen()
 
     filterSelected.chop(tmp + 1);
     format = formatsAvalible.key(filterSelected);
+
+    if (wasMinimized)
+    {
+        disableTrayMenuActions(false);
+        windowHideShow(); // hides the window in this case
+    }
 
     // if user canceled saving
     if (fileName.isEmpty())
