@@ -159,7 +159,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
     scaleSize.scale(_ui->scrLabel->size(), Qt::KeepAspectRatio);
 
-    // if not scrlabel pixmap
     if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
         updatePixmap(Core::instance()->getPixmap());
 }
@@ -178,8 +177,11 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 
 void MainWindow::updatePixmap(QPixmap *pMap)
 {
-    _ui->scrLabel->setPixmap(pMap->scaled(_ui->scrLabel->size(),
-                                          Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    QSize lSize = _ui->scrLabel->size();
+    // never scale up the image beyond its real size
+    _ui->scrLabel->setPixmap(lSize.width() < pMap->width() || lSize.height() < pMap->height()
+                                 ? pMap->scaled(lSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+                                 : *pMap);
 }
 
 void MainWindow::updateModulesActions(QList<QAction *> list)
