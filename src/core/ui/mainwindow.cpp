@@ -153,7 +153,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     // get size dcreen pixel map
     QSize scaleSize = Core::instance()->getPixmap()->size(); // get orig size pixmap
 
-    scaleSize.scale(_ui->scrLabel->size(), Qt::KeepAspectRatio);
+    scaleSize.scale(_ui->scrLabel->contentsRect().size(), Qt::KeepAspectRatio);
 
     if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
         updatePixmap(Core::instance()->getPixmap());
@@ -173,7 +173,7 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 
 void MainWindow::updatePixmap(QPixmap *pMap)
 {
-    QSize lSize = _ui->scrLabel->size();
+    QSize lSize = _ui->scrLabel->contentsRect().size();
     // never scale up the image beyond its real size
     _ui->scrLabel->setPixmap(lSize.width() < pMap->width() || lSize.height() < pMap->height()
                                  ? pMap->scaled(lSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)
