@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>ScreenGrab ist eine einfache, aber leistungsstarke Anwendung, die auf die Qt-Bibliotheken aufsetzt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Webseite</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -435,7 +435,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschließlich Mauszeiger</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -486,7 +486,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Doppelklicken, um das Bildschirmfoto in einem externen Bildbetrachter zu öffnen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="558"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Dateien</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
@@ -609,7 +609,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
         <source>Common settings</source>
-        <translation>Allgemein</translation>
+        <translation type="unfinished">Allgemeine Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
@@ -619,7 +619,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
         <source>Always copy the link to the clipboard</source>
-        <translation>Immer den Link in die Zwischenablage kopieren</translation>
+        <translation>Den Link immer in die Zwischenablage kopieren</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
