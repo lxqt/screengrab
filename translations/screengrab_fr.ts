@@ -496,12 +496,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Double cliquer pour visualiser la capture dans le lecteur externe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="558"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
