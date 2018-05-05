@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished">Авторські права &amp;copy; 2009-2012, Артем &apos;DOOMer&apos; Галічкін {2009-2013,?}</translation>
+        <translation>Авторські права &amp;copy; 2009-2013, Артем &apos;DOOMer&apos; Галічкін</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Двойной клик откроет скриншот во внешнем вьювере изображений</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
