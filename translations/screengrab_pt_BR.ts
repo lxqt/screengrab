@@ -4,10 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>built on </source>
-        <translation type="vanished">construído em</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
         <translation>usando o QT</translation>
@@ -36,10 +32,6 @@
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
         <translation>Licenciado sob a </translation>
-    </message>
-    <message>
-        <source>E-Mail</source>
-        <translation type="vanished">E-Mail</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
@@ -181,10 +173,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>None</source>
-        <translation type="vanished">Nenhum</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
         <translation>Exemplo:</translation>
@@ -212,14 +200,6 @@
 </context>
 <context>
     <name>Core</name>
-    <message>
-        <source>New screen</source>
-        <translation type="vanished">Nova tela</translation>
-    </message>
-    <message>
-        <source>New screen is getted!</source>
-        <translation type="vanished">A nova tela foi obtida!</translation>
-    </message>
     <message>
         <location filename="../src/core/core.cpp" line="421"/>
         <source>Saved</source>
@@ -408,10 +388,6 @@
         <translation>ScreenGrab</translation>
     </message>
     <message>
-        <source>Type: </source>
-        <translation type="vanished">Tipo:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
@@ -467,22 +443,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Getting new screenshot</source>
-        <translation type="vanished">Obtendo uma nova captura de tela</translation>
-    </message>
-    <message>
-        <source>New Screen</source>
-        <translation type="vanished">Nova</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="vanished">Ctrl+N</translation>
-    </message>
-    <message>
-        <source>Delay</source>
-        <translation type="vanished">Atraso</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Atrasar em segundos antes de obter a captura de tela</translation>
@@ -493,63 +453,15 @@
         <translation> seg</translation>
     </message>
     <message>
-        <source>Save current screenshot into graphical file</source>
-        <translation type="vanished">Salvar tela atual para um arquivo</translation>
-    </message>
-    <message>
-        <source>Save Screen</source>
-        <translation type="vanished">Salvar tela</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="vanished">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Copy current screenshot into clipboard</source>
-        <translation type="vanished">Copiar captura de tela atual para a área de transferência</translation>
-    </message>
-    <message>
-        <source>Copy Screen</source>
-        <translation type="vanished">Copiar tela</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="vanished">Ctrl+C</translation>
-    </message>
-    <message>
-        <source>Options dialog</source>
-        <translation type="vanished">Opções</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
         <translation>Opções</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="vanished">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Show help information</source>
-        <translation type="vanished">Mostrar informações de ajuda</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
         <translation>Ajuda</translation>
-    </message>
-    <message>
-        <source>F1</source>
-        <translation type="vanished">F1</translation>
-    </message>
-    <message>
-        <source>Exit from ScreenGrab</source>
-        <translation type="vanished">Sair do ScreenGrab</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="vanished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
@@ -606,18 +518,6 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
         <source>Show</source>
         <translation>Mostrar</translation>
-    </message>
-    <message>
-        <source>PNG Files</source>
-        <translation type="vanished">Arquivos PNG</translation>
-    </message>
-    <message>
-        <source>JPEG Files</source>
-        <translation type="vanished">Arquivos JPEG</translation>
-    </message>
-    <message>
-        <source>BMP Files</source>
-        <translation type="vanished">Arquivos BMP</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
@@ -780,10 +680,6 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <translation>Salvando formato de imagem padrão</translation>
     </message>
     <message>
-        <source>Default delay before grabbing screen</source>
-        <translation type="vanished">Atraso padrão antes de capturar a tela</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
         <translation>Inserindo data atual no nome do arquivo salvo</translation>
@@ -807,26 +703,6 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="obsolete">Tipo:</translation>
-    </message>
-    <message>
-        <source>Type of screenshot</source>
-        <translation type="obsolete">Tipo de captura de tela</translation>
-    </message>
-    <message>
-        <source>Full screen</source>
-        <translation type="obsolete">Tela cheia</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="obsolete">Janela ativa</translation>
-    </message>
-    <message>
-        <source>Screen area</source>
-        <translation type="obsolete">Área da tela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
@@ -919,37 +795,9 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation type="obsolete">Sair</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
         <translation>Não definida</translation>
-    </message>
-    <message>
-        <source>Restore default settings</source>
-        <translation type="vanished">Restaurar configurações padrões</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="vanished">Padrões</translation>
-    </message>
-    <message>
-        <source>Save settings</source>
-        <translation type="vanished">Salvar configurações</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Salvar</translation>
-    </message>
-    <message>
-        <source>Discard changes</source>
-        <translation type="vanished">Descartar alterações</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Cancelar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
@@ -960,10 +808,6 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default save directory:</source>
-        <translation type="vanished">Salvar no diretório padrão:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -979,10 +823,6 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
         <translation>Navegar</translation>
-    </message>
-    <message>
-        <source>Default filename:</source>
-        <translation type="vanished">Nome do arquivo padrão:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
@@ -1015,17 +855,9 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delay:</source>
-        <translation type="vanished">Atraso:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
         <translation> seg</translation>
-    </message>
-    <message>
-        <source>No window decoration</source>
-        <translation type="vanished">Sem decoração da janela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
@@ -1126,10 +958,6 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
         <source>Selected shortcut:</source>
         <translation>Atalho selecionado:</translation>
-    </message>
-    <message>
-        <source>Zoom area around mouse in selection mode</source>
-        <translation type="vanished">Zoom na área ao redor do mouse no modo de seleção</translation>
     </message>
 </context>
 </TS>

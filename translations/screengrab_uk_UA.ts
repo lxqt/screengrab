@@ -4,10 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>built on </source>
-        <translation type="vanished">дата збірки </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
         <translation>використовує Qt </translation>
@@ -41,10 +37,6 @@
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
         <translation>Допомога проекту</translation>
-    </message>
-    <message>
-        <source>Web site</source>
-        <translation type="vanished">Сайт</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
@@ -181,10 +173,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>None</source>
-        <translation type="vanished">Немає</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
         <translation>Приклад: </translation>
@@ -212,14 +200,6 @@
 </context>
 <context>
     <name>Core</name>
-    <message>
-        <source>New screen</source>
-        <translation type="vanished">Новий скріншот</translation>
-    </message>
-    <message>
-        <source>New screen is getted!</source>
-        <translation type="vanished">Новий знімок отримано!</translation>
-    </message>
     <message>
         <location filename="../src/core/core.cpp" line="421"/>
         <source>Saved</source>
@@ -408,10 +388,6 @@
         <translation>Скріншот </translation>
     </message>
     <message>
-        <source>Double click for open screenshot in external default image viewer</source>
-        <translation type="vanished">Подвійний клік відкриє скріншот у зовнішньому переглядачі</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
         <source>Quit</source>
         <translation>Вихід</translation>
@@ -448,18 +424,6 @@
         <translation>Про програму</translation>
     </message>
     <message>
-        <source>PNG Files</source>
-        <translation type="vanished">файли PNG</translation>
-    </message>
-    <message>
-        <source>JPEG Files</source>
-        <translation type="vanished">файли JPEG</translation>
-    </message>
-    <message>
-        <source>BMP Files</source>
-        <translation type="vanished">файли BMP</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
         <translation>Налаштування</translation>
@@ -488,10 +452,6 @@
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="vanished">Тип: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
@@ -539,10 +499,6 @@
         <translation type="unfinished">Без декорацій вікна</translation>
     </message>
     <message>
-        <source>Previous selection</source>
-        <translation type="vanished">Попередня вибрана частина</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
         <translation type="unfinished"></translation>
@@ -551,18 +507,6 @@
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Getting new screenshot</source>
-        <translation type="vanished">Отримати новий скріншот</translation>
-    </message>
-    <message>
-        <source>New Screen</source>
-        <translation type="vanished">Новий знімок</translation>
-    </message>
-    <message>
-        <source>Delay</source>
-        <translation type="vanished">Затримка</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
@@ -575,38 +519,10 @@
         <translation> сек</translation>
     </message>
     <message>
-        <source>Save current screenshot into graphical file</source>
-        <translation type="vanished">Зберегти скріншот в графічний файл</translation>
-    </message>
-    <message>
-        <source>Save Screen</source>
-        <translation type="vanished">Зберегти</translation>
-    </message>
-    <message>
-        <source>Copy current screenshot into clipboard</source>
-        <translation type="vanished">Копіювати скріншот до кишені</translation>
-    </message>
-    <message>
-        <source>Copy Screen</source>
-        <translation type="vanished">Копіювати</translation>
-    </message>
-    <message>
-        <source>Options dialog</source>
-        <translation type="vanished">Параметри програми</translation>
-    </message>
-    <message>
-        <source>Show help information</source>
-        <translation type="vanished">Показати довідкову інформацію</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
         <translation>Довідка</translation>
-    </message>
-    <message>
-        <source>Exit from ScreenGrab</source>
-        <translation type="vanished">Вийти з програми</translation>
     </message>
 </context>
 <context>
@@ -728,17 +644,9 @@ any key or using the right or middle mouse buttons.</source>
         <source>No settings available right now</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Now is nothing yet</source>
-        <translation type="vanished">Ще нічого немає</translation>
-    </message>
 </context>
 <context>
     <name>Uploader_ImgUr_Widget</name>
-    <message>
-        <source>Upload to ImgUr.com</source>
-        <translation type="vanished">Завантаження на ImgUr.com</translation>
-    </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
@@ -772,10 +680,6 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Формат зображень за замовчанням</translation>
     </message>
     <message>
-        <source>Default delay before grabbing screen</source>
-        <translation type="vanished">Затримка перед отримання скріншоту</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
         <translation>Вставка дати та часу в ім&apos;я файлу при збереженні</translation>
@@ -799,30 +703,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
         <translation>Якість картинки</translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="obsolete">Тип: </translation>
-    </message>
-    <message>
-        <source>Type of screenshot</source>
-        <translation type="obsolete">Тип скріншоту</translation>
-    </message>
-    <message>
-        <source>Full screen</source>
-        <translation type="obsolete">Весь екран</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="obsolete">Вікно</translation>
-    </message>
-    <message>
-        <source>Screen area</source>
-        <translation type="obsolete">Частина екрану</translation>
-    </message>
-    <message>
-        <source>Previous selection</source>
-        <translation type="obsolete">Попередня вибрана частина</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
@@ -915,37 +795,9 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation type="vanished">Вихід</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
         <translation>Не вибрана</translation>
-    </message>
-    <message>
-        <source>Restore default settings</source>
-        <translation type="vanished">Відновити початкові налаштування</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="vanished">За умовчанням</translation>
-    </message>
-    <message>
-        <source>Save settings</source>
-        <translation type="vanished">Зберегти налаштування</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Зберегти</translation>
-    </message>
-    <message>
-        <source>Discard changes</source>
-        <translation type="vanished">Закрити без змін</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Відміна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
@@ -956,10 +808,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default save directory:</source>
-        <translation type="vanished">Тека для збереження:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -975,10 +823,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
         <translation>Огляд</translation>
-    </message>
-    <message>
-        <source>Default filename:</source>
-        <translation type="vanished">Вихідне ім&apos;я файлу:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
@@ -1011,17 +855,9 @@ any key or using the right or middle mouse buttons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delay:</source>
-        <translation type="vanished">Затримка:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
         <translation> сек</translation>
-    </message>
-    <message>
-        <source>No window decoration</source>
-        <translation type="vanished">Без декорацій вікна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
@@ -1122,10 +958,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="512"/>
         <source>Time to display tray messages</source>
         <translation>Час показу спливаючих повідомлень</translation>
-    </message>
-    <message>
-        <source>Zoom area around mouse in selection mode</source>
-        <translation type="vanished">Масштаб області курсора в режимі вибору</translation>
     </message>
 </context>
 </TS>
