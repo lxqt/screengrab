@@ -501,7 +501,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="558"/>
         <source>%1 Files</source>
-        <translation type="unfinished">%1 Dateien</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
