@@ -42,7 +42,7 @@
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
         <translatorcomment>copyright updated to 2015, ok?</translatorcomment>
-        <translation>Copyright &amp;copy; 2009-2015, Artem &apos;DOOMer&apos; Galichkin </translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -487,7 +487,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Doppio clic per aprire la cattura in un editor esterno</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
