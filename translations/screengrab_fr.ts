@@ -4,10 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>built on </source>
-        <translation type="vanished">compilé le </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
         <translation>en utilisant Qt</translation>
@@ -31,18 +27,6 @@
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>est une application multi-plateforme pour créer des captures d&apos;écran de votre bureau.</translation>
-    </message>
-    <message>
-        <source>It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.</source>
-        <translation type="vanished">C&apos;est une application puissante et légére écrite avec le framework Qt de manière à être utilisé sous Windows et Linux.</translation>
-    </message>
-    <message>
-        <source>E-Mail</source>
-        <translation type="vanished">E-Mail</translation>
-    </message>
-    <message>
-        <source>Web site</source>
-        <translation type="vanished">Site Web</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -187,10 +171,6 @@
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Voulez vous restaurer les paramètres par défaut ?</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="vanished">Non</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
@@ -453,14 +433,6 @@
         <translation type="unfinished">Pas de décoration des fenêtres</translation>
     </message>
     <message>
-        <source>Previous selection</source>
-        <translation type="vanished">Sélection précedente</translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="vanished">Type: </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Délai en secondes avant de faire la capture</translation>
@@ -469,10 +441,6 @@
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
         <translation> sec</translation>
-    </message>
-    <message>
-        <source>Delay</source>
-        <translation type="vanished">Délai</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -536,10 +504,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Double click for open screenshot in external default image viewer</source>
-        <translation type="vanished">Double cliquer pour visualiser la capture dans le lecteur externe</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="499"/>
         <source>Hide</source>
@@ -554,14 +518,6 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
         <source>Show</source>
         <translation>Montrer</translation>
-    </message>
-    <message>
-        <source>PNG Files</source>
-        <translation type="vanished">Fichiers PNG</translation>
-    </message>
-    <message>
-        <source>JPEG Files</source>
-        <translation type="vanished">Fichiers JPEG</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
@@ -738,14 +694,6 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Raccourcis</translation>
     </message>
     <message>
-        <source>Saving</source>
-        <translation type="vanished">Enregistrement</translation>
-    </message>
-    <message>
-        <source>Default save directory:</source>
-        <translation type="vanished">Répertoire d&apos;enregistrement par défaut:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
         <translation>Chemin vers le répertoire d&apos;enregistrement par défaut</translation>
@@ -759,10 +707,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
         <translation>Parcourir</translation>
-    </message>
-    <message>
-        <source>Default filename:</source>
-        <translation type="vanished">Nom de fichier par défaut:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
@@ -800,49 +744,9 @@ any key or using the right or middle mouse buttons.</source>
         <translation>Copier le chemin complet</translation>
     </message>
     <message>
-        <source>Screenshot</source>
-        <translation type="vanished">Capture</translation>
-    </message>
-    <message>
-        <source>Delay:</source>
-        <translation type="vanished">Délai:</translation>
-    </message>
-    <message>
-        <source>Default delay before grabbing screen</source>
-        <translation type="vanished">Délai par défaut</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
         <translation> sec</translation>
-    </message>
-    <message>
-        <source>No window decoration</source>
-        <translation type="vanished">Pas de décoration des fenêtres</translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="vanished">Types: </translation>
-    </message>
-    <message>
-        <source>Type of screenshot</source>
-        <translation type="vanished">Type de capture</translation>
-    </message>
-    <message>
-        <source>Full screen</source>
-        <translation type="vanished">Plein écran</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="vanished">Fenêtre active</translation>
-    </message>
-    <message>
-        <source>Screen area</source>
-        <translation type="vanished">Sélection</translation>
-    </message>
-    <message>
-        <source>Previous selection</source>
-        <translation type="vanished">Sélection précedente</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -853,14 +757,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
         <translation>Qualité d&apos;image (1 - basse qualité, 100 - haute qualité)</translation>
-    </message>
-    <message>
-        <source>Include mouse pointer</source>
-        <translation type="vanished">Inclure le pointeur de la souris</translation>
-    </message>
-    <message>
-        <source>Zoom area around mouse in selection mode</source>
-        <translation type="vanished">Zoom autour du pointeur en mode sélection</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
@@ -1061,30 +957,6 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
         <translation>Non défini</translation>
-    </message>
-    <message>
-        <source>Restore default settings</source>
-        <translation type="vanished">Paramètres par défaut</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="vanished">Défaut</translation>
-    </message>
-    <message>
-        <source>Save settings</source>
-        <translation type="vanished">Enregister les paramètres</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Enregistrer</translation>
-    </message>
-    <message>
-        <source>Discard changes</source>
-        <translation type="vanished">Abandonner les changements</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Annuler</translation>
     </message>
 </context>
 </TS>

@@ -4,10 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>built on </source>
-        <translation type="vanished">erstellt</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
         <translation>mit Qt</translation>
@@ -38,17 +34,9 @@
         <translation>Lizensiert unter</translation>
     </message>
     <message>
-        <source>E-Mail</source>
-        <translation type="vanished">E-Mail</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
         <translation>Unterstützen Sie uns</translation>
-    </message>
-    <message>
-        <source>Web site</source>
-        <translation type="vanished">Webseite</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
@@ -64,10 +52,6 @@
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>ist eine plattformunabhängige Anwendung, um Bildschirmfotos aufzunehmen.</translation>
-    </message>
-    <message>
-        <source>It is a light and powerful application and has been written using the Qt framework, so that you are able to use in Windows and Linux.</source>
-        <translation type="vanished">ScreenGrab ist eine einfache, aber leistungsstarke Anwendung, die auf die Qt-Bibliotheken aufsetzt. Daher kann sie unter Windows und Linux genutzt werden.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -130,10 +114,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Burjans L GarcÃ­a D</source>
-        <translation type="vanished">Burjans L GarcÃ­a D</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
         <translation> Italienische Übersetzung</translation>
@@ -193,10 +173,6 @@
         <translation>Möchten Sie die Standardeinstellungen wieder herstellen?</translation>
     </message>
     <message>
-        <source>None</source>
-        <translation type="vanished">Keine</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
         <translation>Beispiel:</translation>
@@ -224,14 +200,6 @@
 </context>
 <context>
     <name>Core</name>
-    <message>
-        <source>New screen</source>
-        <translation type="vanished">Neues Foto</translation>
-    </message>
-    <message>
-        <source>New screen is getted!</source>
-        <translation type="vanished">Ein neues Foto wird aufgenommen!</translation>
-    </message>
     <message>
         <location filename="../src/core/core.cpp" line="421"/>
         <source>Saved</source>
@@ -420,10 +388,6 @@
         <translation>ScreenGrab</translation>
     </message>
     <message>
-        <source>Type: </source>
-        <translation type="vanished">Aufnahme:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
@@ -469,10 +433,6 @@
         <translation type="unfinished">Keine Fensterdekoration</translation>
     </message>
     <message>
-        <source>Previous selection</source>
-        <translation type="vanished">Vorige Auswahl</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
         <translation type="unfinished"></translation>
@@ -481,22 +441,6 @@
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Getting new screenshot</source>
-        <translation type="vanished">Erstelle neues Bildschirmfoto</translation>
-    </message>
-    <message>
-        <source>New Screen</source>
-        <translation type="vanished">Neues Foto</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="vanished">Strg+N</translation>
-    </message>
-    <message>
-        <source>Delay</source>
-        <translation type="vanished">Verzögerung</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
@@ -509,63 +453,15 @@
         <translation> Sek</translation>
     </message>
     <message>
-        <source>Save current screenshot into graphical file</source>
-        <translation type="vanished">Aktuelles Bildschirmfoto in Datei speichern</translation>
-    </message>
-    <message>
-        <source>Save Screen</source>
-        <translation type="vanished">Foto speichern</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="vanished">Strg+S</translation>
-    </message>
-    <message>
-        <source>Copy current screenshot into clipboard</source>
-        <translation type="vanished">Aktuelles Bildschirmfoto in die Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <source>Copy Screen</source>
-        <translation type="vanished">Bildschirmfoto kopieren</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="vanished">Strg+C</translation>
-    </message>
-    <message>
-        <source>Options dialog</source>
-        <translation type="vanished">Optionen-Dialog</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
         <translation>Optionen</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="vanished">Strg+O</translation>
-    </message>
-    <message>
-        <source>Show help information</source>
-        <translation type="vanished">Hilfe anzeigen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
         <translation>Hilfe</translation>
-    </message>
-    <message>
-        <source>F1</source>
-        <translation type="vanished">F1</translation>
-    </message>
-    <message>
-        <source>Exit from ScreenGrab</source>
-        <translation type="vanished">ScreenGrab beenden</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="vanished">Strg+Q</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
@@ -614,10 +510,6 @@
         <translation>Bildschirmfoto </translation>
     </message>
     <message>
-        <source>Double click for open screenshot in external default image viewer</source>
-        <translation type="vanished">Doppelklicken, um das Bildschirmfoto in einem externen Bildbetrachter zu öffnen</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
         <translation>Keine</translation>
@@ -626,18 +518,6 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
         <source>Show</source>
         <translation>Anzeigen</translation>
-    </message>
-    <message>
-        <source>PNG Files</source>
-        <translation type="vanished">PNG-Dateien</translation>
-    </message>
-    <message>
-        <source>JPEG Files</source>
-        <translation type="vanished">JPEG-Dateien</translation>
-    </message>
-    <message>
-        <source>BMP Files</source>
-        <translation type="vanished">BMP-Dateien</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
@@ -764,17 +644,9 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <source>No settings available right now</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Now is nothing yet</source>
-        <translation type="vanished">Keine Konfiguration vorhanden</translation>
-    </message>
 </context>
 <context>
     <name>Uploader_ImgUr_Widget</name>
-    <message>
-        <source>Upload to ImgUr.com</source>
-        <translation type="vanished">Nach &lt;ImgUr.com&gt; hochladen</translation>
-    </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
@@ -808,10 +680,6 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <translation>Standard-Bildformat</translation>
     </message>
     <message>
-        <source>Default delay before grabbing screen</source>
-        <translation type="vanished">Standard-Verzögerung vor der Aufnahme</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
         <translation>Aktuelles Datum und Uhrzeit in den Dateinamen einfügen</translation>
@@ -835,30 +703,6 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
         <translation>Bildqualität</translation>
-    </message>
-    <message>
-        <source>Type: </source>
-        <translation type="obsolete">Aufnahme:</translation>
-    </message>
-    <message>
-        <source>Type of screenshot</source>
-        <translation type="obsolete">Art des Bildschirmfotos</translation>
-    </message>
-    <message>
-        <source>Full screen</source>
-        <translation type="obsolete">Vollbild</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="obsolete">Aktives Fenster</translation>
-    </message>
-    <message>
-        <source>Screen area</source>
-        <translation type="obsolete">Bildschirm-Bereich</translation>
-    </message>
-    <message>
-        <source>Previous selection</source>
-        <translation type="obsolete">Vorige Auswahl</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
@@ -951,37 +795,9 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <translation>Hilfe</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation type="vanished">Beenden</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
         <translation>Nicht definiert</translation>
-    </message>
-    <message>
-        <source>Restore default settings</source>
-        <translation type="vanished">Standard-Einstellungen wieder herstellen</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="vanished">Standardwerte</translation>
-    </message>
-    <message>
-        <source>Save settings</source>
-        <translation type="vanished">Einstellungen speichern</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Speichern</translation>
-    </message>
-    <message>
-        <source>Discard changes</source>
-        <translation type="vanished">Änderungen verwerfen</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
@@ -992,14 +808,6 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
         <translation>Systemtray</translation>
-    </message>
-    <message>
-        <source>Saving</source>
-        <translation type="vanished">Speichere</translation>
-    </message>
-    <message>
-        <source>Default save directory:</source>
-        <translation type="vanished">Standard-Speicherordner:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -1015,10 +823,6 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
         <translation>Durchsuchen</translation>
-    </message>
-    <message>
-        <source>Default filename:</source>
-        <translation type="vanished">Standard-Dateiname:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
@@ -1051,21 +855,9 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <translation>Den vollständigen Dateipfad kopieren</translation>
     </message>
     <message>
-        <source>Screenshot</source>
-        <translation type="vanished">Bildschirmfoto</translation>
-    </message>
-    <message>
-        <source>Delay:</source>
-        <translation type="vanished">Verzögerung:</translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
         <translation> Sek</translation>
-    </message>
-    <message>
-        <source>No window decoration</source>
-        <translation type="vanished">Keine Fensterdekoration</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
@@ -1166,10 +958,6 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
         <source>Selected shortcut:</source>
         <translation>Ausgewählte Tastenkombination:</translation>
-    </message>
-    <message>
-        <source>Zoom area around mouse in selection mode</source>
-        <translation type="vanished">Bereich um den Mauszeiger beim Auswählen vergrößern</translation>
     </message>
 </context>
 </TS>
