@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Двойной клик откроет скриншот во внешнем вьювере изображений</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
