@@ -55,9 +55,8 @@ Contacts
 --------
 
 E-mail: doomer3d@gmail.com  
-Jabber: doomer@jabber.linux.it 
 Bug Tracker: https://github.com/lxqt/screengrab/issues  
-Web homepage: https://github.com/lxqt/screengrab
+Web homepage: https://github.com/lxqt/screengrab  
 
 
 Copyright (c) 2009-2013, Artem 'DOOMer' Galichkin
