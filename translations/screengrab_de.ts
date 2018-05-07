@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mache einen Screenshot von einem Ausschnitt des Bildschirms</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
