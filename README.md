@@ -54,8 +54,9 @@ Screengrab is licensed under the GPL v2. See file LICENSE in docs directory for 
 Contacts
 --------
 
-E-mail: doomer3d@gmail.com
-Jabber: doomer@jabber.linux.it
+E-mail: doomer3d@gmail.com  
+Jabber: doomer@jabber.linux.it 
+Bug Tracker: https://github.com/lxqt/screengrab/issues  
 Web homepage: https://github.com/lxqt/screengrab
 
 
