@@ -35,12 +35,15 @@ You can use some or all of these parameters to customise your build.
  * **-DSG_DOCDIR** - Name for the directory of user's documentation. Default setting:  "screengrab".
  * **-DQKSW_SHARED** - Enable shared linking with qkeysequencewidget library (in src/common/qksysekwesewidget). Default setting: OFF.
  
-**Build notes:**
+#### Build notes
 
- * For Debian based Linux distro (Debian Squeezy, Ubuntu 12.04, etc) - if you want to build ScreenGrab using the system version of the Qxt Library,  please use this command to run CMake:
- 
-	cmake -DSG_USE_SYSTEM_QXT=ON -DQXT_QXTCORE_INCLUDE_DIR=/usr/include/qxt/QxtCore -DQXT_QXTGUI_INCLUDE_DIR=/usr/include/qxt -DCMAKE_INSTALL_PREFIX=/usr ../
-
+For Debian based Linux distributions please use the distribution build tools. One can get the source-code with
+```
+apt source screengrab # Sources for the released package
+- or -
+git clone https://salsa.debian.org/lxqt-team/screengrab
+```
+Build with the tools provided by `devscripts` or better with `pbuilder` or `sbuild`
 
 ### LICENSE
 
