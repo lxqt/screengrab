@@ -1,12 +1,10 @@
-ScreenGrab
-==========
+# ScreenGrab
 
-version 2.0-dev
+##### version 2.0-dev
 
 ScreenGrab - A program for fast creating screenshots, and easily publishing them on internet image hosting services. It works on Linux and Windows operating systems. ScreenGrab uses the Qt framework and thus, it is independent from any desktop environment.
 
-Build requirements
-------------------
+### Build requirements
 
  * Qt5 >= 5.2 (Qt 4.x support only 1.x branch)
  * CMake >= 2.8.11 (only for building ScreenGrab from sources)
@@ -14,8 +12,7 @@ Build requirements
  * KF5WindowSystem
  * [optional] Qxt Library > 0.6 (if you want to build ScreenGrab using your system Qxt version - see the "Build options" section in this file)
 
-Build
------
+### Build
 
 To build ScreenGrab from sources, use these commands:
 
@@ -25,8 +22,7 @@ To build ScreenGrab from sources, use these commands:
 	make
 	make install
 
-Build options
--------------
+### Build options
 
 You can use some or all of these parameters to customise your build.
 
@@ -46,18 +42,18 @@ You can use some or all of these parameters to customise your build.
 	cmake -DSG_USE_SYSTEM_QXT=ON -DQXT_QXTCORE_INCLUDE_DIR=/usr/include/qxt/QxtCore -DQXT_QXTGUI_INCLUDE_DIR=/usr/include/qxt -DCMAKE_INSTALL_PREFIX=/usr ../
 
 
-LICENSE
--------
+### LICENSE
 
 Screengrab is licensed under the GPL v2. See file LICENSE in docs directory for more information
 
-Contacts
---------
+### Contacts
 
-E-mail: doomer3d@gmail.com  
-Bug Tracker: https://github.com/lxqt/screengrab/issues  
 Web homepage: https://github.com/lxqt/screengrab  
+Bug Tracker: https://github.com/lxqt/screengrab/issues  
 
 
-Copyright (c) 2009-2013, Artem 'DOOMer' Galichkin
+### Copyright
+
+(c) 2014-2018, LXQt Team  
+(c) 2009-2013, Artem 'DOOMer' Galichkin
 
