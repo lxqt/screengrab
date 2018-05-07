@@ -233,7 +233,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of the active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mache einen Screenshot des aktiven Fensters</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
