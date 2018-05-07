@@ -420,7 +420,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Verzögerung:</translation>
+        <translation>Verzögerung:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Keine Fensterdekoration</translation>
+        <translation>Keine Fensterdekoration</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -952,7 +952,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
         <source>Quit</source>
-        <translation type="unfinished">Beenden</translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
