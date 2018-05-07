@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished">ist eine plattformunabhängige Anwendung, um Bildschirmfotos aufzunehmen.</translation>
+        <translation>ist eine plattformunabhängige Anwendung, um Bildschirmfotos aufzunehmen.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
