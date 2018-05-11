@@ -120,6 +120,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
 
     _ui->scrLabel->installEventFilter(this);
+    _ui->delayBox->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -165,11 +166,21 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 {
-    if (obj == _ui->scrLabel && event->type() == QEvent::ToolTip)
-        displatScreenToolTip();
-
-    else if (obj == _ui->scrLabel && event->type() == QEvent::MouseButtonDblClick)
-        Core::instance()->openInExtViewer();
+    if (obj == _ui->scrLabel)
+    {
+        if (event->type() == QEvent::ToolTip)
+            displatScreenToolTip();
+        else if (event->type() == QEvent::MouseButtonDblClick)
+            Core::instance()->openInExtViewer();
+    }
+    else if (obj == _ui->delayBox)
+    { // filter out Ctrl+C because we need it
+        if (QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event))
+        {
+            if ((keyEvent->modifiers() & Qt::ControlModifier) && keyEvent->key() == Qt::Key_C)
+                return true;
+        }
+    }
 
     return QObject::eventFilter(obj, event);
 }
