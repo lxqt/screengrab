@@ -173,7 +173,7 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
         else if (event->type() == QEvent::MouseButtonDblClick)
             Core::instance()->openInExtViewer();
     }
-    else if (obj == _ui->delayBox)
+    else if (obj == _ui->delayBox && event->type() == QEvent::ShortcutOverride)
     { // filter out Ctrl+C because we need it
         if (QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event))
         {
