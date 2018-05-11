@@ -246,7 +246,7 @@ void Core::checkAutoSave(bool first)
     }
 }
 
-void Core::getActiveWindow()
+void Core::getActiveWindow() // called only with window screenshots
 {
     const QList<QScreen *> screens = qApp->screens();
     const QDesktopWidget *desktop = QApplication::desktop();
@@ -270,9 +270,16 @@ void Core::getActiveWindow()
             invalid = info.valid() && NET::typeMatchesMask(info.windowType(NET::AllTypesMask), flags);
         }
     }
+
+    // also invalid if the window is shaded/invisible
+    KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
+    if (!invalid && info.mappingState() != NET::Visible)
+        invalid = true;
+
     // if this is an invalid screenshot, take a fullscreen shot instead
     if (invalid)
     {
+        qWarning() << "Could not take a window screenshot.";
         *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
         return;
     }
@@ -283,11 +290,6 @@ void Core::getActiveWindow()
         *_pixelMap = screens[screenNum]->grabWindow(wnd);
         return;
     }
-
-    KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
-
-    if (info.mappingState() != NET::Visible)
-        qWarning() << "Window not visible";
 
     QRect geometry = info.frameGeometry();
     *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),

@@ -52,6 +52,20 @@ const bool DEF_ENABLE_EXT_VIEWER = true;
 const bool DEF_INCLUDE_CURSOR = false;
 const bool DEF_FIT_INSIDE = true;
 
+class Settings : public QSettings // prevents redundant writings
+{
+    Q_OBJECT
+public:
+    Settings(const QString &organization, const QString &application = QString(), QObject *parent = nullptr)
+        : QSettings (organization, application, parent) {}
+
+    void setValue(const QString &key, const QVariant &v) {
+        if (value(key) == v)
+            return;
+        QSettings::setValue(key, v);
+    }
+};
+
 // class worker with conf data
 class Config
 {
@@ -251,7 +265,7 @@ private:
      */
     void setValue(const QString& key, QVariant val);
 
-    QSettings *_settings;
+    Settings *_settings;
     QHash<QString, QVariant> _confData;
 
     ShortcutManager *_shortcuts;
