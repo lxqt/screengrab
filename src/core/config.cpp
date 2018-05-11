@@ -115,7 +115,7 @@ Config* Config::ptrInstance = 0;
 // constructor
 Config::Config()
 {
-    _settings = new QSettings ("screengrab", "screengrab");
+    _settings = new Settings("screengrab", "screengrab");
 
     _shortcuts = new ShortcutManager(_settings);
 
