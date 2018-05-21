@@ -1,7 +1,55 @@
 
-screengrab-1.97 / 2017-09-26
+screengrab-1.98 / 2018-05-21
 ============================
 
+  * Bumped SCREENGRAB_VERSION to 1.98
+  * Spanish translation update
+  * A more specific condition for Ctrl+C
+  * Filter out Ctrl+C in Delay box
+  * No window screenshot with shaded windows
+  * Translated using Weblate (German)
+  * Translated using Weblate (German)
+  * Translated using Weblate (German)
+  * Rewritten the debian related build infos
+  * some little changes regarding headlines and copyright
+  * removed doomer jabber
+  * added our bugtracker
+  * use our github repo as home
+  * Translated using Weblate (German)
+  * Translated using Weblate (German)
+  * Translated using Weblate (Ukrainian)
+  * Translated using Weblate (Spanish)
+  * Translated using Weblate (Russian)
+  * Translated using Weblate (Portuguese (Brazil))
+  * Translated using Weblate (Italian)
+  * Translated using Weblate (French)
+  * Translated using Weblate (German)
+  * Translated using Weblate (Russian)
+  * Translated using Weblate (French)
+  * Updated translation files again - changed the parameters for lupdate
+  * Translated using Weblate (Portuguese (Brazil))
+  * Translation maintenance
+  * Always use contents rect Fixes https://github.com/lxqt/screengrab/issues/67
+  * Never scale up beyond real size
+  * Several fixes, especially for the tray icon
+  * __DATE__ and __TIME__ macro are not very helpful for reproducible builds.
+  * Cleanup CMakeLists.txt and complete AUTHORS
+  * Added a minimum default configuration
+  * Handle invalid window screenshots
+  * Corrected a grammar mistake
+  * Always use native (LXQt) file dialog
+  * Just changed the location of a comment
+  * Cleanup and fixes
+  * Some ui polishing
+  * Improve screengrab app behaviour
+  * Drops Qt foreach
+  * fix some uris
+  * Update references in about dialog
+
+1.97 / 2017-09-26
+=================
+
+  * Release 1.97: Update changelog
   * Added basic .gitattributes
   * Bump SCREENGRAB_VERSION to 1.9.7
   * Added KF5WindowSystem to build requirements
