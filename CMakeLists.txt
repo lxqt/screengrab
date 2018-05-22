@@ -261,7 +261,8 @@ if (XCB_XFIXES_FOUND)
     target_link_libraries(screengrab ${XCB_XFIXES_LIBRARY})
 endif()
 
-target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem ${X11_LIBRARIES})
+# Link with Network and X11Extras. See pull#86. TODO: Should be optional when upload module is needed.
+target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem Qt5::X11Extras Qt5::Network ${X11_LIBRARIES})
 
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)
