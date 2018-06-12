@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation type="unfinished"></translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -877,7 +877,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
