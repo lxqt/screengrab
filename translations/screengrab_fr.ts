@@ -226,32 +226,32 @@
         <translation>Cacher la fenêtre principale</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="421"/>
+        <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved</source>
         <translation>Enregistrement</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="421"/>
+        <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved to </source>
         <translation>Enregistré vers </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="443"/>
+        <location filename="../src/core/core.cpp" line="445"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Le nom du fichier a été copié dans le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="449"/>
+        <location filename="../src/core/core.cpp" line="451"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Le chemin du fichier a été copié dans le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="471"/>
+        <location filename="../src/core/core.cpp" line="473"/>
         <source>Copied</source>
         <translation>Copié</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="471"/>
+        <location filename="../src/core/core.cpp" line="473"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La capture d&apos;écran a été copié dans le presse-papiers</translation>
     </message>
@@ -489,23 +489,23 @@
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
         <source>Screenshot </source>
         <translation>Capture d&apos;écran </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation type="unfinished">Double cliquer pour visualiser la capture dans le lecteur externe</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="558"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="499"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
         <source>Hide</source>
         <translation>Cacher</translation>
     </message>
@@ -515,12 +515,12 @@
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
         <source>Show</source>
         <translation>Montrer</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
         <source>Save As...</source>
         <translation>Enregistrer sous...</translation>
     </message>

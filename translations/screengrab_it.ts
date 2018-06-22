@@ -202,22 +202,22 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="421"/>
+        <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved</source>
         <translation>Salvata</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="443"/>
+        <location filename="../src/core/core.cpp" line="445"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Il nome del file salvato è stato copiato negli appunti</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="471"/>
+        <location filename="../src/core/core.cpp" line="473"/>
         <source>Copied</source>
         <translation>Copiata</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="421"/>
+        <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved to </source>
         <translation>Salvata in </translation>
     </message>
@@ -247,12 +247,12 @@
         <translation>Avvia l&apos;&apos;applicazione con la finestra principale nascosta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="449"/>
+        <location filename="../src/core/core.cpp" line="451"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Il percorso del file salvato è stato copiato negli appunti</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="471"/>
+        <location filename="../src/core/core.cpp" line="473"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La schermata è stata copiata negli appunti</translation>
     </message>
@@ -485,18 +485,18 @@
         <translation>Copia</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="359"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation type="unfinished">Doppio clic per aprire la cattura in un editor esterno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="368"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="499"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
         <source>Hide</source>
         <translation>Nascondi</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="558"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -506,7 +506,7 @@
         <translation>Informazioni su</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
         <source>Screenshot </source>
         <translation>Schermata </translation>
     </message>
@@ -516,12 +516,12 @@
         <translation>Nessuno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
         <source>Show</source>
         <translation>Mostra</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
         <source>Save As...</source>
         <translation>Salva con nome...</translation>
     </message>
