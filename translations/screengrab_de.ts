@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a fullscreen screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Mache einen Screenshot des gesamten Bildschirms</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
@@ -238,12 +238,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished">Mache einen Screenshot von einem Ausschnitt des Bildschirms</translation>
+        <translation>Mache einen Screenshot eines Bildschirmausschnitts</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Führe die Anwendung in verborgenem Hauptfenster aus</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="449"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeugleiste</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
         <source>Upload the screenshot to the default image host</source>
-        <translation type="unfinished"></translation>
+        <translation>Screenshot zum standardmäßigen Image-Host hochladen</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
@@ -650,7 +650,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen auf Imgur</translation>
     </message>
 </context>
 <context>
@@ -722,12 +722,12 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur an Rändern innerhalb des ausgwählten Bildschirmbereichs anpassen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>An Rändern innerhalb des ausgewählten Bildschirmbereichs anpassen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
@@ -867,12 +867,12 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Standartmäßiges Speicherverzeichnis</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation type="unfinished"></translation>
+        <translation>Standartmäßige Datei</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
