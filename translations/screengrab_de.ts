@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>mit Qt</translation>
+        <translation>mit Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Lizensiert unter</translation>
+        <translation>Lizensiert unter der </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
-        <translation>Beispiel:</translation>
+        <translation>Beispiel: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="426"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
         <source>Uploaded </source>
-        <translation>Hochgeladen</translation>
+        <translation>Hochgeladen </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
@@ -867,12 +867,12 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Standartmäßiges Speicherverzeichnis</translation>
+        <translation>Standardmäßiges Speicherverzeichnis</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>Standartmäßige Datei</translation>
+        <translation>Standardmäßige Datei</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
@@ -887,7 +887,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Beispiel:</translation>
+        <translation>Beispiel: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
