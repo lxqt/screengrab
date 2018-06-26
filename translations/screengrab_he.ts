@@ -5,115 +5,115 @@
     <name>AboutDialog</name>
     <message>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>בעזרת Qt </translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>על אודות</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>תודות</translation>
     </message>
     <message>
         <source>Help us</source>
-        <translation></translation>
+        <translation>לסייע לנו</translation>
     </message>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>הוא יישום ליצירת צילומי מסך של שולחן העבודה שלך.</translation>
     </message>
     <message>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>מדובר ביישום קטן ועצמתי, שנכתב ב־Qt.</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation></translation>
+        <translation>אתר</translation>
     </message>
     <message>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>מוגש בכפוף לרישיון </translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>כל הזכויות שמורות &amp;copy; 2009‏-2013, ארטיום ‚DOOMer’ גליצ׳קין</translation>
     </message>
     <message>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>ניתן להצטרף ולסייע לנו אם מתחשק לך. זו הזמנה לכל חובבי היישום.</translation>
     </message>
     <message>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>במה ניתן לסייע?</translation>
     </message>
     <message>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>לתרגם את ScreenGrab לשפות נוספות</translation>
     </message>
     <message>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>להציע הצעות לגרסאות הבאות</translation>
     </message>
     <message>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>לדווח על תקלות</translation>
     </message>
     <message>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>עוקב תקלות</translation>
     </message>
     <message>
         <source>Translate:</source>
-        <translation></translation>
+        <translation>תרגום:</translation>
     </message>
     <message>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> תרגום לפורטוגלית ברזילאית</translation>
     </message>
     <message>
         <source>Marcio Moraes</source>
-        <translation></translation>
+        <translation>מרצ׳ו מוראס</translation>
     </message>
     <message>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> תרגום לאוקראינית</translation>
     </message>
     <message>
         <source>Gennadi Motsyo</source>
-        <translation></translation>
+        <translation>גנאדי מוציו</translation>
     </message>
     <message>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> תרגום לספרדית</translation>
     </message>
     <message>
         <source>Burjans L García D</source>
-        <translation></translation>
+        <translation>בורשאנס ל גרסיה ד</translation>
     </message>
     <message>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation> תרגום לאיטלקית</translation>
     </message>
     <message>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>בדיקה:</translation>
     </message>
     <message>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>תמיכה בריבוי צדים ועוד בלינוקס</translation>
     </message>
     <message>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>תמיכה בריבוי צגים בלינוקס</translation>
     </message>
     <message>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>win32-build [Windows XP ו־7]</translation>
     </message>
     <message>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>win32-build ישנה [Windows Vista]</translation>
     </message>
     <message>
         <source>win32-build [Windows 7]</source>
@@ -124,181 +124,181 @@
     <name>ConfigDialog</name>
     <message>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>התיקייה %1 אינה קיימת. ליצור אותה?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation></translation>
+        <translation>אזהרה</translation>
     </message>
     <message>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>נא לבחור תיקייה</translation>
     </message>
     <message>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>לאפס את ההגדרות לבררת המחדל?</translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>דוגמה: </translation>
     </message>
     <message>
         <source>This key is already used in your system! Please select another.</source>
-        <translation></translation>
+        <translation>המערכת שלך כבר משתמשת במפתח הזה! נא לבחור באחד אחר.</translation>
     </message>
     <message>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation></translation>
+        <translation>התכנית ScreenGrab כבר משתמשת במפתח זה! נא לבחור באחד אחר.</translation>
     </message>
     <message>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation>המערכת שלך אינה תומכת במפתח זה!</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation></translation>
+        <translation>שגיאה</translation>
     </message>
 </context>
 <context>
     <name>Core</name>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>הוא יישום ליצירת צילומי מסך של שולחן העבודה שלך.</translation>
     </message>
     <message>
         <source>Take a fullscreen screenshot</source>
-        <translation></translation>
+        <translation>צילום המסך כולו</translation>
     </message>
     <message>
         <source>Take a screenshot of the active window</source>
-        <translation></translation>
+        <translation>צילום החלון הפעיל</translation>
     </message>
     <message>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation></translation>
+        <translation>צילום חלק מסוים מהמסך</translation>
     </message>
     <message>
         <source>Run the application with a hidden main window</source>
-        <translation></translation>
+        <translation>הפעלת היישום עם חלון ראשי מוסתר</translation>
     </message>
     <message>
         <source>Saved</source>
-        <translation></translation>
+        <translation>נשמר</translation>
     </message>
     <message>
         <source>Saved to </source>
-        <translation></translation>
+        <translation>נשמר אל </translation>
     </message>
     <message>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>שם הקובץ שנשמר מועתק ללוח הגזירים</translation>
     </message>
     <message>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>הנתיב לקובץ שנשמר מועתק ללוח הגזירים</translation>
     </message>
     <message>
         <source>Copied</source>
-        <translation></translation>
+        <translation>הועתק</translation>
     </message>
     <message>
         <source>Screenshot is copied to clipboard</source>
-        <translation></translation>
+        <translation>צילום המסך מועתק ללוח הגזירים</translation>
     </message>
 </context>
 <context>
     <name>DialogUploader</name>
     <message>
         <source>Upload to internet</source>
-        <translation></translation>
+        <translation>העלאה לאינטרנט</translation>
     </message>
     <message>
         <source>Upload to</source>
-        <translation></translation>
+        <translation>העלאה אל</translation>
     </message>
     <message>
         <source>Direct link:</source>
-        <translation></translation>
+        <translation>קישור ישיר:</translation>
     </message>
     <message>
         <source>Open this link in the default web-browser</source>
-        <translation></translation>
+        <translation>פתיחת הקישור הזה בדפדפן בררת המחדל</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation></translation>
+        <translation>פתיחה</translation>
     </message>
     <message>
         <source>Copy this link to the clipboard</source>
-        <translation></translation>
+        <translation>העתקת הקישור הזה אל לוח הגזירים</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>העתקה</translation>
     </message>
     <message>
         <source>Extended preformed html or bb codes:</source>
-        <translation></translation>
+        <translation>קודים של bb או html מורחב:</translation>
     </message>
     <message>
         <source>Link to delete image:</source>
-        <translation></translation>
+        <translation>קישור למחיקת תמונה:</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation></translation>
+        <translation>העלאה</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>ביטול</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation></translation>
+        <translation>גודל: </translation>
     </message>
     <message>
         <source> pixel</source>
-        <translation></translation>
+        <translation> פיקסלים</translation>
     </message>
     <message>
         <source>Uploaded </source>
-        <translation></translation>
+        <translation>הועלה </translation>
     </message>
     <message>
         <source>Ready to upload</source>
-        <translation></translation>
+        <translation>מוכן להעלאה</translation>
     </message>
     <message>
         <source>Upload processing... Please wait</source>
-        <translation></translation>
+        <translation>ההעלאה עוברת עיבוד… נא להמתין</translation>
     </message>
     <message>
         <source>Receiving a response from the server</source>
-        <translation></translation>
+        <translation>מתקבלת תגובה מהשרת</translation>
     </message>
     <message>
         <source>Upload completed</source>
-        <translation></translation>
+        <translation>ההעלאה הושלמה</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>סגירה</translation>
     </message>
     <message>
         <source>Error uploading screenshot</source>
-        <translation></translation>
+        <translation>העלאת צילום המסך נתקלה בשגיאה</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation></translation>
+        <translation>שגיאה</translation>
     </message>
     <message>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation></translation>
+        <translation>ניתן לפתוח את הקישור הזה בדפדפן בררת המחדל שלך, הוא עשוי למחוק את התמונה שלך מיידית, ללא אזהרות.</translation>
     </message>
     <message>
         <source>Are you sure you want to continue?</source>
-        <translation></translation>
+        <translation>להמשיך?</translation>
     </message>
 </context>
 <context>
@@ -309,122 +309,122 @@
     </message>
     <message>
         <source>Type:</source>
-        <translation></translation>
+        <translation>סוג:</translation>
     </message>
     <message>
         <source>Type of screenshot</source>
-        <translation></translation>
+        <translation>סוג צילום המסך</translation>
     </message>
     <message>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>מסך מלא</translation>
     </message>
     <message>
         <source>Window</source>
-        <translation></translation>
+        <translation>חלון</translation>
     </message>
     <message>
         <source>Screen area</source>
-        <translation></translation>
+        <translation>אזור במסך</translation>
     </message>
     <message>
         <source>Last selected area</source>
-        <translation></translation>
+        <translation>האזור האחרון שנבחר</translation>
     </message>
     <message>
         <source>Delay:</source>
-        <translation></translation>
+        <translation>השהיה:</translation>
     </message>
     <message>
         <source>Delay in seconds before taking screenshot</source>
-        <translation></translation>
+        <translation>השהיה בשניות בטרם צילום המסך</translation>
     </message>
     <message>
         <source>None</source>
-        <translation></translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> שניות</translation>
     </message>
     <message>
         <source>Zoom area around mouse</source>
-        <translation></translation>
+        <translation>התקרבות לאזור שמסביב לסמן</translation>
     </message>
     <message>
         <source>No window decoration</source>
-        <translation></translation>
+        <translation>ללא עיטור חלונות</translation>
     </message>
     <message>
         <source>Include mouse pointer</source>
-        <translation></translation>
+        <translation>כולל סמן העכבר</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>סרגל כלים</translation>
     </message>
     <message>
         <source>New</source>
-        <translation></translation>
+        <translation>חדש</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation></translation>
+        <translation>שמירה</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>העתקה</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation></translation>
+        <translation>אפשרויות</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation></translation>
+        <translation>עזרה</translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>על אודות</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>יציאה</translation>
     </message>
     <message>
         <source>Screenshot </source>
-        <translation></translation>
+        <translation>צילום מסך </translation>
     </message>
     <message>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation></translation>
+        <translation>יש ללחוץ לחיצה כפולה כדי לפתוח צילום מסך במציג תמונות חיצוני כבררת מחדל</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation></translation>
+        <translation>הסתרה</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation></translation>
+        <translation>הצגה</translation>
     </message>
     <message>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>קובצי %1</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation></translation>
+        <translation>שמירה בשם…</translation>
     </message>
 </context>
 <context>
     <name>ModuleUploader</name>
     <message>
         <source>Upload the screenshot to the default image host</source>
-        <translation></translation>
+        <translation>העלאת צילום המסך למארח התמונות כבררת מחדל</translation>
     </message>
     <message>
         <source>Uploading</source>
-        <translation></translation>
+        <translation>מתבצעת העלאה</translation>
     </message>
 </context>
 <context>
@@ -432,340 +432,341 @@
     <message>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation></translation>
+        <translation>נא להשתמש בעכבר שלך כדי לצייר ריבוע לצילום או
+לצאת עם כל מקש שהוא או הכפתורים הימני או האמצעי בעכבר.</translation>
     </message>
     <message>
         <source>%1 x %2 pixels </source>
-        <translation></translation>
+        <translation>%1 × %2 פיקסלים </translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>External edit</source>
-        <translation></translation>
+        <translation>עריכה חיצונית</translation>
     </message>
     <message>
         <source>Edit in...</source>
-        <translation></translation>
+        <translation>עריכה עם…</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation></translation>
+        <translation>העלאה</translation>
     </message>
 </context>
 <context>
     <name>Uploader</name>
     <message>
         <source>Direct link</source>
-        <translation></translation>
+        <translation>קישור ישיר</translation>
     </message>
     <message>
         <source>HTML code</source>
-        <translation></translation>
+        <translation>קוד HTML</translation>
     </message>
     <message>
         <source>BB code</source>
-        <translation></translation>
+        <translation>קוד BB</translation>
     </message>
     <message>
         <source>HTML code with thumb image</source>
-        <translation></translation>
+        <translation>קוד HTML עם תמונה מוקטנת</translation>
     </message>
     <message>
         <source>BB code with thumb image</source>
-        <translation></translation>
+        <translation>קוד BB עם תמונה מוקטנת</translation>
     </message>
     <message>
         <source>URl to delete image</source>
-        <translation></translation>
+        <translation>כתובת למחיקת תמונה</translation>
     </message>
 </context>
 <context>
     <name>UploaderConfigWidget</name>
     <message>
         <source>Common settings</source>
-        <translation></translation>
+        <translation>הגדרות משותפות</translation>
     </message>
     <message>
         <source>Default image host</source>
-        <translation></translation>
+        <translation>מארח תמונות כבררת מחדל</translation>
     </message>
     <message>
         <source>Always copy the link to the clipboard</source>
-        <translation></translation>
+        <translation>תמיד להעתיק את הקישור ללוח הגזירים</translation>
     </message>
     <message>
         <source>Hosts settings</source>
-        <translation></translation>
+        <translation>הגדרות מארחים</translation>
     </message>
     <message>
         <source>Settings for: </source>
-        <translation></translation>
+        <translation>הגדרות עבור: </translation>
     </message>
 </context>
 <context>
     <name>UploaderConfigWidget_ImgUr</name>
     <message>
         <source>Configuration for imgur.com upload</source>
-        <translation></translation>
+        <translation>הגדרות להעלאה אל imgur.com</translation>
     </message>
     <message>
         <source>No settings available right now</source>
-        <translation></translation>
+        <translation>אין הגדרות זמינות כרגע</translation>
     </message>
 </context>
 <context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <source>Upload to Imgur</source>
-        <translation></translation>
+        <translation>העלאה ל־‏Imgur</translation>
     </message>
 </context>
 <context>
     <name>aboutWidget</name>
     <message>
         <source>About Qt</source>
-        <translation></translation>
+        <translation>על אודות Qt</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>סגירה</translation>
     </message>
 </context>
 <context>
     <name>configwidget</name>
     <message>
         <source>Options</source>
-        <translation></translation>
+        <translation>אפשרויות</translation>
     </message>
     <message>
         <source>Main</source>
-        <translation></translation>
+        <translation>ראשי</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation></translation>
+        <translation>מתקדם</translation>
     </message>
     <message>
         <source>System tray</source>
-        <translation></translation>
+        <translation>מגש מערכת</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>קיצורי דרך</translation>
     </message>
     <message>
         <source>Default save directory</source>
-        <translation></translation>
+        <translation>תיקיית שמירה כבררת מחדל</translation>
     </message>
     <message>
         <source>Path to default selection dir for saving</source>
-        <translation></translation>
+        <translation>נתיב לתיקייה הנבחרת לשמירה כבררת מחדל</translation>
     </message>
     <message>
         <source>Browse filesystem</source>
-        <translation></translation>
+        <translation>עיון במערכת הקבצים</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation></translation>
+        <translation>עיון</translation>
     </message>
     <message>
         <source>Default file</source>
-        <translation></translation>
+        <translation>קובץ בררת מחדל</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation></translation>
+        <translation>שם:</translation>
     </message>
     <message>
         <source>Default filename</source>
-        <translation></translation>
+        <translation>שם קובץ כבררת מחדל</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation></translation>
+        <translation>תבנית</translation>
     </message>
     <message>
         <source>Default saving image format</source>
-        <translation></translation>
+        <translation>תבנית לשמירת קבצים כבררת מחדל</translation>
     </message>
     <message>
         <source>Copy file name to the clipboard when saving</source>
-        <translation></translation>
+        <translation>להעתיק את שם הקובץ ללוח הגזירים בעת השמירה</translation>
     </message>
     <message>
         <source>Do not copy</source>
-        <translation></translation>
+        <translation>לא להעתיק</translation>
     </message>
     <message>
         <source>Copy file name only</source>
-        <translation></translation>
+        <translation>להעתיק את שם הקובץ בלבד</translation>
     </message>
     <message>
         <source>Copy full file path</source>
-        <translation></translation>
+        <translation>להעתיק את הנתיב המלא לקובץ</translation>
     </message>
     <message>
         <source>Image quality</source>
-        <translation></translation>
+        <translation>איכות תמונה</translation>
     </message>
     <message>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation></translation>
+        <translation>איכות תמונה (1 - קובץ קטן, 100 - איכות גבוהה)</translation>
     </message>
     <message>
         <source>Inserting current date time into saved filename</source>
-        <translation></translation>
+        <translation>הוספת התאריך והשעה הנוכחיים לשם של הקובץ שנשמר</translation>
     </message>
     <message>
         <source>Insert current date and time in file name</source>
-        <translation></translation>
+        <translation>הוספת התאריך והשעה הנוכחית לשם הקובץ</translation>
     </message>
     <message>
         <source>Template: </source>
-        <translation></translation>
+        <translation>תבנית: </translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>דוגמה: </translation>
     </message>
     <message>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation></translation>
+        <translation>שמירת צילומי מסך אוטומטית במהלך הלכידה</translation>
     </message>
     <message>
         <source>Autosave screenshot</source>
-        <translation></translation>
+        <translation>שמירת צילומי מסך אוטומטית</translation>
     </message>
     <message>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>שמירת צילום המסך הראשון</translation>
     </message>
     <message>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation></translation>
+        <translation>לאפשר להריץ מספר עותקים של ScreenGrab</translation>
     </message>
     <message>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation></translation>
+        <translation>לאפשר מספר עותקים של ScreenGrab</translation>
     </message>
     <message>
         <source>Open in external viewer on double click</source>
-        <translation></translation>
+        <translation>פתיחה במציג חיצוני בלחיצה כפולה</translation>
     </message>
     <message>
         <source>Enable external viewer</source>
-        <translation></translation>
+        <translation>הפעלת מציג חיצוני</translation>
     </message>
     <message>
         <source>Fit to edges only inside selected screen area</source>
-        <translation></translation>
+        <translation>התאמה לקצוות רק בתוך אזור המסך הנבחר</translation>
     </message>
     <message>
         <source>Fit to edges inside selected area</source>
-        <translation></translation>
+        <translation>התאמה לקצוות בתוך האזור הנבחר</translation>
     </message>
     <message>
         <source>Show ScreenGrab in the system tray</source>
-        <translation></translation>
+        <translation>הצגת ScreenGrab במגש המערכת</translation>
     </message>
     <message>
         <source>Tray messages:</source>
-        <translation></translation>
+        <translation>הודעות מגש:</translation>
     </message>
     <message>
         <source>Tray messages display mode</source>
-        <translation></translation>
+        <translation>מצב תצוגת הודעות מגש</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation></translation>
+        <translation>לעולם לא</translation>
     </message>
     <message>
         <source>Tray mode</source>
-        <translation></translation>
+        <translation>מצב מגש</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation></translation>
+        <translation>תמיד</translation>
     </message>
     <message>
         <source>Time of display tray messages</source>
-        <translation></translation>
+        <translation>מועד הצגת הודעות מגש</translation>
     </message>
     <message>
         <source>Time to display tray messages</source>
-        <translation></translation>
+        <translation>מועד להצגת הודעות מגש</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> שניות</translation>
     </message>
     <message>
         <source>Minimize to tray on click close button</source>
-        <translation></translation>
+        <translation>מזעור למגש עם לחיצה על כפתור הסגירה</translation>
     </message>
     <message>
         <source>Minimize to tray when closing</source>
-        <translation></translation>
+        <translation>מזעור למגש בעת סגירה</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation></translation>
+        <translation>פעולה</translation>
     </message>
     <message>
         <source>Shortcut</source>
-        <translation></translation>
+        <translation>קיצור דרך</translation>
     </message>
     <message>
         <source>Global shortcuts</source>
-        <translation></translation>
+        <translation>קיצורי דרך גלובליים</translation>
     </message>
     <message>
         <source>Fill screen</source>
-        <translation></translation>
+        <translation>מילוי המסך</translation>
     </message>
     <message>
         <source>Active window</source>
-        <translation></translation>
+        <translation>חלון פעיל</translation>
     </message>
     <message>
         <source>Area select</source>
-        <translation></translation>
+        <translation>בחירת אזור</translation>
     </message>
     <message>
         <source>Local shortcuts</source>
-        <translation></translation>
+        <translation>קיצורי דרך מקומיים</translation>
     </message>
     <message>
         <source>New screen</source>
-        <translation></translation>
+        <translation>מסך חדש</translation>
     </message>
     <message>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>שמירת המסך</translation>
     </message>
     <message>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>העתקת המסך</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation></translation>
+        <translation>עזרה</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>יציאה</translation>
     </message>
     <message>
         <source>Selected shortcut:</source>
-        <translation></translation>
+        <translation>קיצורי דרך נבחרים:</translation>
     </message>
     <message>
         <source>Not defined</source>
-        <translation></translation>
+        <translation>לא מוגדר</translation>
     </message>
 </context>
 </TS>
