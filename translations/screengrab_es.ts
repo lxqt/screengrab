@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Traducir ScreenGrab a otros idiomas.</translation>
+        <translation>Traducir ScreenGrab a otros idiomas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation>Marcio Moraes</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation>Gennadi Motsyo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation>Burjans L García D</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation>ScreenGrab</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
