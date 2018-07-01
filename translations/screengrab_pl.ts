@@ -5,59 +5,59 @@
     <name>AboutDialog</name>
     <message>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>używa Qt </translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>O programie</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Podziękowania</translation>
     </message>
     <message>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Pomóż nam</translation>
     </message>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>jest wieloplatformową aplikacją pozwalającą na szybkie tworzenie zrzutów ekranu.</translation>
     </message>
     <message>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>Jest to lekka i funkcjonalna aplikacja napisana w Qt.</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation></translation>
+        <translation>Strona internetowa</translation>
     </message>
     <message>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>Na licencji </translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>Prawa autorskie &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>Możesz dołączyć do nas i pomóc nam jeżeli chcesz i lubisz tę aplikację.</translation>
     </message>
     <message>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Co możesz zrobić?</translation>
     </message>
     <message>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>Przetłumacz ScreenGrab na inne języki</translation>
     </message>
     <message>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>Podziel się sugestiami na następne wydanie</translation>
     </message>
     <message>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>Zgłoś błędy i problemy</translation>
     </message>
     <message>
         <source>Bug tracker</source>
@@ -65,11 +65,11 @@
     </message>
     <message>
         <source>Translate:</source>
-        <translation></translation>
+        <translation>Tłumacz:</translation>
     </message>
     <message>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> Tłumaczenie na brazylijski portugalski</translation>
     </message>
     <message>
         <source>Marcio Moraes</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> Tłumaczenie ukraińskie</translation>
     </message>
     <message>
         <source>Gennadi Motsyo</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> Tłumaczenie hiszpańskie</translation>
     </message>
     <message>
         <source>Burjans L García D</source>
@@ -93,27 +93,27 @@
     </message>
     <message>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation> Tłumaczenie włoskie</translation>
     </message>
     <message>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>Testowanie:</translation>
     </message>
     <message>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>Wsparcie wielu monitorów i inne na Linuksie</translation>
     </message>
     <message>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>Wsparcie dwóch monitorów na Linuksie</translation>
     </message>
     <message>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>win32-build [Windows XP i 7]</translation>
     </message>
     <message>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>stary win32-build [Windows Vista]</translation>
     </message>
     <message>
         <source>win32-build [Windows 7]</source>
@@ -124,23 +124,23 @@
     <name>ConfigDialog</name>
     <message>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>Ścieżka %1 nie istnieje. Czy chcesz ją utworzyć?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>Wybierz położenie</translation>
     </message>
     <message>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>Czy na pewno chcesz przywrócić ustawienia do domyślnych?</translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Przykład: </translation>
     </message>
     <message>
         <source>This key is already used in your system! Please select another.</source>
