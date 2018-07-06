@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>Це легка та потужна програма, що написана на Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Вебсайт</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -51,27 +51,27 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>ця мультиплатформова програма створена для швидкого отримання знімків Вашого робочого столу.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви можете приєднатись і допомогти нам (якщо бажаєте). Відгукніться на це запрошення, якщо Вам сподобалась ця програма.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Перекласти ScreenGrab на інші мови</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation>Побажання для майбутніх версій</translation>
+        <translation>Надати побажання для майбутніх релізів</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation>Повідомлення про помилки та проблеми </translation>
+        <translation>Повідомляти про помилки та несправну роботу</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation></translation>
+        <translation>Генадій Моцьо</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation type="unfinished"></translation>
+        <translation>Гарсія Бурянс Д</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
