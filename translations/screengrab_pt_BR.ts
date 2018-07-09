@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>usando o QT</translation>
+        <translation>usando o Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation>Tradução para o Português do Brasil</translation>
+        <translation> Tradução para o Português do Brasil</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,12 +96,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation>Tradução para o Ucraniano</translation>
+        <translation> Tradução para o Ucraniano</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation>Gennadi Motsyo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation>Burjans L García D</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
-        <translation>Exemplo:</translation>
+        <translation>Exemplo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="426"/>
@@ -385,7 +385,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation>ScreenGrab</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
@@ -887,7 +887,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Exemplo:</translation>
+        <translation>Exemplo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
