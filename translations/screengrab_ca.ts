@@ -5,71 +5,71 @@
     <name>AboutDialog</name>
     <message>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>mitjançant Qt </translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>Quant a</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Gràcies</translation>
     </message>
     <message>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Ajudeu-nos</translation>
     </message>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>és una aplicació multiplataforma per a la creació ràpida de captures de pantalla del vostre escriptori.</translation>
     </message>
     <message>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>És una aplicació lleugera i potent, escrita en Qt.</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation></translation>
+        <translation>Lloc web</translation>
     </message>
     <message>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>Llicenciat sota la </translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>Drets d&apos;autor &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>Podeu unir-vos a nosaltres i ajudar-nos si voleu. Aquesta és una invitació si us agrada aquesta aplicació.</translation>
     </message>
     <message>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Què podeu fer?</translation>
     </message>
     <message>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>Traduir ScreenGrab a altres llengües</translation>
     </message>
     <message>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>Fer suggeriments per als pròxims llançaments</translation>
     </message>
     <message>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>Informar dels errors i de les incidències</translation>
     </message>
     <message>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Seguiment d&apos;errors</translation>
     </message>
     <message>
         <source>Translate:</source>
-        <translation></translation>
+        <translation>Traducció:</translation>
     </message>
     <message>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> Traducció al portuguès de Brasil</translation>
     </message>
     <message>
         <source>Marcio Moraes</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> Traducció a l&apos;ucraïnès</translation>
     </message>
     <message>
         <source>Gennadi Motsyo</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> Traducció a l&apos;espanyol</translation>
     </message>
     <message>
         <source>Burjans L García D</source>
@@ -93,66 +93,66 @@
     </message>
     <message>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation> Traducció a l&apos;italià</translation>
     </message>
     <message>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>Proves:</translation>
     </message>
     <message>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>Admissió de monitors duals i altres a Linux</translation>
     </message>
     <message>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>Admissió de monitors duals a Linux</translation>
     </message>
     <message>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>Construcció win32 [Windows XP i 7]</translation>
     </message>
     <message>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>Construcció win32 antiga [Windows Vista]</translation>
     </message>
     <message>
         <source>win32-build [Windows 7]</source>
-        <translation></translation>
+        <translation>Construcció win32 [Windows 7]</translation>
     </message>
 </context>
 <context>
     <name>ConfigDialog</name>
     <message>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>No existeix el directori %1. Voleu crear-lo?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation></translation>
+        <translation>Avís</translation>
     </message>
     <message>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>Selecciona el directori</translation>
     </message>
     <message>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>Voleu restablir els ajusts als valors predeterminats?</translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Exemple: </translation>
     </message>
     <message>
         <source>This key is already used in your system! Please select another.</source>
-        <translation></translation>
+        <translation>Aquesta tecla ja s&apos;utilitza al vostre sistema. Seleccioneu-ne una altra.</translation>
     </message>
     <message>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation></translation>
+        <translation>Aquesta tecla ja s&apos;utilitza a ScreenGrab. Seleccioneu-ne una altra.</translation>
     </message>
     <message>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation>Aquesta tecla no està admesa al vostre sistema!</translation>
     </message>
     <message>
         <source>Error</source>
@@ -163,78 +163,78 @@
     <name>Core</name>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>és una aplicació multiplataforma per a la creació ràpida de captures de pantalla del vostre escriptori.</translation>
     </message>
     <message>
         <source>Take a fullscreen screenshot</source>
-        <translation></translation>
+        <translation>Feu captures de pantalla a pantalla completa</translation>
     </message>
     <message>
         <source>Take a screenshot of the active window</source>
-        <translation></translation>
+        <translation>Feu una captura de pantalla de la finestra activa</translation>
     </message>
     <message>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation></translation>
+        <translation>Feu captures de pantalla d&apos;una selecció de la pantalla</translation>
     </message>
     <message>
         <source>Run the application with a hidden main window</source>
-        <translation></translation>
+        <translation>Executeu l&apos;aplicació amb una finestra principal oculta</translation>
     </message>
     <message>
         <source>Saved</source>
-        <translation></translation>
+        <translation>Desat</translation>
     </message>
     <message>
         <source>Saved to </source>
-        <translation></translation>
+        <translation>Desat a </translation>
     </message>
     <message>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>El nom del fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>El camí al fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
         <source>Copied</source>
-        <translation></translation>
+        <translation>Copiat</translation>
     </message>
     <message>
         <source>Screenshot is copied to clipboard</source>
-        <translation></translation>
+        <translation>La captura de pantalla es copia al porta-retalls</translation>
     </message>
 </context>
 <context>
     <name>DialogUploader</name>
     <message>
         <source>Upload to internet</source>
-        <translation></translation>
+        <translation>Pujar-ho a Internet</translation>
     </message>
     <message>
         <source>Upload to</source>
-        <translation></translation>
+        <translation>Pujar-ho a</translation>
     </message>
     <message>
         <source>Direct link:</source>
-        <translation></translation>
+        <translation>Enllaç directe:</translation>
     </message>
     <message>
         <source>Open this link in the default web-browser</source>
-        <translation></translation>
+        <translation>Obre aquest enllaç al navegador web per defecte</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation></translation>
+        <translation>Obre</translation>
     </message>
     <message>
         <source>Copy this link to the clipboard</source>
-        <translation></translation>
+        <translation>Copia aquest enllaç al porta-retalls</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Extended preformed html or bb codes:</source>
@@ -242,51 +242,51 @@
     </message>
     <message>
         <source>Link to delete image:</source>
-        <translation></translation>
+        <translation>Enllaç per eliminar la imatge:</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation></translation>
+        <translation>Puja</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation></translation>
+        <translation>Mida: </translation>
     </message>
     <message>
         <source> pixel</source>
-        <translation></translation>
+        <translation> píxel</translation>
     </message>
     <message>
         <source>Uploaded </source>
-        <translation></translation>
+        <translation>Pujat </translation>
     </message>
     <message>
         <source>Ready to upload</source>
-        <translation></translation>
+        <translation>A punt per pujar</translation>
     </message>
     <message>
         <source>Upload processing... Please wait</source>
-        <translation></translation>
+        <translation>Processament de la pujada... Espereu</translation>
     </message>
     <message>
         <source>Receiving a response from the server</source>
-        <translation></translation>
+        <translation>Recepció d&apos;una resposta del servidor</translation>
     </message>
     <message>
         <source>Upload completed</source>
-        <translation></translation>
+        <translation>Pujada completada</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>Tanca</translation>
     </message>
     <message>
         <source>Error uploading screenshot</source>
-        <translation></translation>
+        <translation>Error en la pujada de la captura de pantalla</translation>
     </message>
     <message>
         <source>Error</source>
@@ -294,11 +294,11 @@
     </message>
     <message>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation></translation>
+        <translation>Obre aquest enllaç al navegador web per defecte, pot eliminar directament la imatge que heu carregat, sense cap avís.</translation>
     </message>
     <message>
         <source>Are you sure you want to continue?</source>
-        <translation></translation>
+        <translation>Esteu segur que voleu continuar?</translation>
     </message>
 </context>
 <context>
@@ -309,59 +309,59 @@
     </message>
     <message>
         <source>Type:</source>
-        <translation></translation>
+        <translation>Tipus:</translation>
     </message>
     <message>
         <source>Type of screenshot</source>
-        <translation></translation>
+        <translation>Tipus de la captura de pantalla</translation>
     </message>
     <message>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>Pantalla completa</translation>
     </message>
     <message>
         <source>Window</source>
-        <translation></translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <source>Screen area</source>
-        <translation></translation>
+        <translation>Àrea de la pantalla</translation>
     </message>
     <message>
         <source>Last selected area</source>
-        <translation></translation>
+        <translation>Última àrea seleccionada</translation>
     </message>
     <message>
         <source>Delay:</source>
-        <translation></translation>
+        <translation>Retard:</translation>
     </message>
     <message>
         <source>Delay in seconds before taking screenshot</source>
-        <translation></translation>
+        <translation>Retard en segons abans de prendre la captura de pantalla</translation>
     </message>
     <message>
         <source>None</source>
-        <translation></translation>
+        <translation>Cap</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> s</translation>
     </message>
     <message>
         <source>Zoom area around mouse</source>
-        <translation></translation>
+        <translation>Zoom a l&apos;àrea al voltant del ratolí</translation>
     </message>
     <message>
         <source>No window decoration</source>
-        <translation></translation>
+        <translation>Sense decoració de finestra</translation>
     </message>
     <message>
         <source>Include mouse pointer</source>
-        <translation></translation>
+        <translation>Inclou el punter del ratolí</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>Barra d&apos;eines</translation>
     </message>
     <message>
         <source>New</source>
@@ -369,11 +369,11 @@
     </message>
     <message>
         <source>Save</source>
-        <translation></translation>
+        <translation>Desa</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Options</source>
@@ -385,11 +385,11 @@
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>Quant a</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Surt</translation>
     </message>
     <message>
         <source>Screenshot </source>
@@ -397,34 +397,34 @@
     </message>
     <message>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation></translation>
+        <translation>Doble clic per obrir la captura de pantalla al visualitzador d&apos;imatges predeterminat extern</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation></translation>
+        <translation>Oculta</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation></translation>
+        <translation>Mostra</translation>
     </message>
     <message>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>%1 fitxers</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation></translation>
+        <translation>Desa com...</translation>
     </message>
 </context>
 <context>
     <name>ModuleUploader</name>
     <message>
         <source>Upload the screenshot to the default image host</source>
-        <translation></translation>
+        <translation>Puja la captura de pantalla a l&apos;amfitrió d&apos;imatges predeterminat</translation>
     </message>
     <message>
         <source>Uploading</source>
-        <translation></translation>
+        <translation>Pujada</translation>
     </message>
 </context>
 <context>
@@ -432,22 +432,23 @@
     <message>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation></translation>
+        <translation>Utilitzeu el ratolí per dibuixar un rectangle per capturar la pantalla o
+sortiu prement qualsevol tecla o els botons dret o central del ratolí.</translation>
     </message>
     <message>
         <source>%1 x %2 pixels </source>
-        <translation></translation>
+        <translation>%1 x %2 píxels </translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>External edit</source>
-        <translation></translation>
+        <translation>Edició externa</translation>
     </message>
     <message>
         <source>Edit in...</source>
-        <translation></translation>
+        <translation>Edita a...</translation>
     </message>
     <message>
         <source>Upload</source>
@@ -458,7 +459,7 @@ any key or using the right or middle mouse buttons.</source>
     <name>Uploader</name>
     <message>
         <source>Direct link</source>
-        <translation></translation>
+        <translation>Enllaç directe</translation>
     </message>
     <message>
         <source>HTML code</source>
@@ -470,11 +471,11 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>HTML code with thumb image</source>
-        <translation></translation>
+        <translation>Codi HTML amb la imatge en miniatura</translation>
     </message>
     <message>
         <source>BB code with thumb image</source>
-        <translation></translation>
+        <translation>Codi BB amb la imatge en miniatura</translation>
     </message>
     <message>
         <source>URl to delete image</source>
@@ -485,7 +486,7 @@ any key or using the right or middle mouse buttons.</source>
     <name>UploaderConfigWidget</name>
     <message>
         <source>Common settings</source>
-        <translation></translation>
+        <translation>Ajusts comuns</translation>
     </message>
     <message>
         <source>Default image host</source>
@@ -493,15 +494,15 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>Always copy the link to the clipboard</source>
-        <translation></translation>
+        <translation>Copia sempre l&apos;enllaç al porta-retalls</translation>
     </message>
     <message>
         <source>Hosts settings</source>
-        <translation></translation>
+        <translation>Ajusts dels amfitrions</translation>
     </message>
     <message>
         <source>Settings for: </source>
-        <translation></translation>
+        <translation>Ajusts per: </translation>
     </message>
 </context>
 <context>
@@ -512,25 +513,25 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>No settings available right now</source>
-        <translation></translation>
+        <translation>No hi ha cap ajust disponible ara mateix</translation>
     </message>
 </context>
 <context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <source>Upload to Imgur</source>
-        <translation></translation>
+        <translation>Puja a Imgur</translation>
     </message>
 </context>
 <context>
     <name>aboutWidget</name>
     <message>
         <source>About Qt</source>
-        <translation></translation>
+        <translation>Quant a Qt</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>Tanca</translation>
     </message>
 </context>
 <context>
@@ -541,11 +542,11 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>Main</source>
-        <translation></translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation></translation>
+        <translation>Avançat</translation>
     </message>
     <message>
         <source>System tray</source>
@@ -553,23 +554,23 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>Dreceres</translation>
     </message>
     <message>
         <source>Default save directory</source>
-        <translation></translation>
+        <translation>Directori de desament predeterminat</translation>
     </message>
     <message>
         <source>Path to default selection dir for saving</source>
-        <translation></translation>
+        <translation>Camí predeterminat al directori per seleccionar-ne un per estalviar temps</translation>
     </message>
     <message>
         <source>Browse filesystem</source>
-        <translation></translation>
+        <translation>Navega pel sistema de fitxers</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation></translation>
+        <translation>Navega</translation>
     </message>
     <message>
         <source>Default file</source>
@@ -581,7 +582,7 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>Default filename</source>
-        <translation></translation>
+        <translation>Nom de fitxer predeterminat</translation>
     </message>
     <message>
         <source>Format</source>
@@ -589,183 +590,183 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <source>Default saving image format</source>
-        <translation></translation>
+        <translation>Format d&apos;imatge predeterminat per estalviar temps</translation>
     </message>
     <message>
         <source>Copy file name to the clipboard when saving</source>
-        <translation></translation>
+        <translation>Copia el nom del fitxer al porta-retalls quan es desa</translation>
     </message>
     <message>
         <source>Do not copy</source>
-        <translation></translation>
+        <translation>No ho copiïs</translation>
     </message>
     <message>
         <source>Copy file name only</source>
-        <translation></translation>
+        <translation>Copia només el nom del fitxer</translation>
     </message>
     <message>
         <source>Copy full file path</source>
-        <translation></translation>
+        <translation>Copia el camí complet al fitxer</translation>
     </message>
     <message>
         <source>Image quality</source>
-        <translation></translation>
+        <translation>Qualitat d&apos;imatge</translation>
     </message>
     <message>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation></translation>
+        <translation>Qualitat d&apos;imatge (1 - fitxer petit, 100 - alta qualitat)</translation>
     </message>
     <message>
         <source>Inserting current date time into saved filename</source>
-        <translation></translation>
+        <translation>Inserció de la data actual al nom del fitxer desat</translation>
     </message>
     <message>
         <source>Insert current date and time in file name</source>
-        <translation></translation>
+        <translation>Inserció de la data i hora actual al nom del fitxer</translation>
     </message>
     <message>
         <source>Template: </source>
-        <translation></translation>
+        <translation>Plantilla: </translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Exemple: </translation>
     </message>
     <message>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation></translation>
+        <translation>Desament automàtic de captures de pantalla en el procés d&apos;agafament</translation>
     </message>
     <message>
         <source>Autosave screenshot</source>
-        <translation></translation>
+        <translation>Desa automàticament la captura de pantalla</translation>
     </message>
     <message>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Desa primer la captura de pantalla</translation>
     </message>
     <message>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation></translation>
+        <translation>Permet l&apos;execució de diverses còpies de ScreenGrab</translation>
     </message>
     <message>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation></translation>
+        <translation>Permet diverses instàncies de ScreenGrab</translation>
     </message>
     <message>
         <source>Open in external viewer on double click</source>
-        <translation></translation>
+        <translation>Obre al visualitzador extern amb el doble clic</translation>
     </message>
     <message>
         <source>Enable external viewer</source>
-        <translation></translation>
+        <translation>Habilita el visualitzador extern</translation>
     </message>
     <message>
         <source>Fit to edges only inside selected screen area</source>
-        <translation></translation>
+        <translation>Ajusta a les vores només dins de l&apos;àrea de la pantalla seleccionada</translation>
     </message>
     <message>
         <source>Fit to edges inside selected area</source>
-        <translation></translation>
+        <translation>Ajusta a les vores dins de l&apos;àrea seleccionada</translation>
     </message>
     <message>
         <source>Show ScreenGrab in the system tray</source>
-        <translation></translation>
+        <translation>Mostra ScreenGrab a la safata del sistema</translation>
     </message>
     <message>
         <source>Tray messages:</source>
-        <translation></translation>
+        <translation>Missatges de la safata:</translation>
     </message>
     <message>
         <source>Tray messages display mode</source>
-        <translation></translation>
+        <translation>Mode de visualització dels missatges de la safata</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation></translation>
+        <translation>Mai</translation>
     </message>
     <message>
         <source>Tray mode</source>
-        <translation></translation>
+        <translation>Mode safata</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation></translation>
+        <translation>Sempre</translation>
     </message>
     <message>
         <source>Time of display tray messages</source>
-        <translation></translation>
+        <translation>Temps de visualització dels missatges de la safata</translation>
     </message>
     <message>
         <source>Time to display tray messages</source>
-        <translation></translation>
+        <translation>Temps per mostrar el missatges de la safata</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> s</translation>
     </message>
     <message>
         <source>Minimize to tray on click close button</source>
-        <translation></translation>
+        <translation>Minimitza a la safata amb el clic al botó de tancar</translation>
     </message>
     <message>
         <source>Minimize to tray when closing</source>
-        <translation></translation>
+        <translation>Minimitza a la safata quan s&apos;està tancant</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation></translation>
+        <translation>Acció</translation>
     </message>
     <message>
         <source>Shortcut</source>
-        <translation></translation>
+        <translation>Drecera</translation>
     </message>
     <message>
         <source>Global shortcuts</source>
-        <translation></translation>
+        <translation>Dreceres globals</translation>
     </message>
     <message>
         <source>Fill screen</source>
-        <translation></translation>
+        <translation>Omple la pantalla</translation>
     </message>
     <message>
         <source>Active window</source>
-        <translation></translation>
+        <translation>Finestra activa</translation>
     </message>
     <message>
         <source>Area select</source>
-        <translation></translation>
+        <translation>Selecció de l&apos;àrea</translation>
     </message>
     <message>
         <source>Local shortcuts</source>
-        <translation></translation>
+        <translation>Dreceres locals</translation>
     </message>
     <message>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Pantalla nova</translation>
     </message>
     <message>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Desa la pantalla</translation>
     </message>
     <message>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Copia la pantalla</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation></translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Surt</translation>
     </message>
     <message>
         <source>Selected shortcut:</source>
-        <translation></translation>
+        <translation>Drecera seleccionada:</translation>
     </message>
     <message>
         <source>Not defined</source>
-        <translation></translation>
+        <translation>Sense definir</translation>
     </message>
 </context>
 </TS>
