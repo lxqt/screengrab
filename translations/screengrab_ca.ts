@@ -238,7 +238,7 @@
     </message>
     <message>
         <source>Extended preformed html or bb codes:</source>
-        <translation></translation>
+        <translation>Codis html o bb preformats ampliats:</translation>
     </message>
     <message>
         <source>Link to delete image:</source>
@@ -397,7 +397,7 @@
     </message>
     <message>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Doble clic per obrir la captura de pantalla al visualitzador d&apos;imatges predeterminat extern</translation>
+        <translation>Doble clic per obrir la captura de pantalla al visualitzador d&apos;imatges extern predeterminat</translation>
     </message>
     <message>
         <source>Hide</source>
