@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>New</source>
-        <translation></translation>
+        <translation>Nova</translation>
     </message>
     <message>
         <source>Save</source>
@@ -550,7 +550,7 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     </message>
     <message>
         <source>System tray</source>
-        <translation></translation>
+        <translation>Safata del sistema</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -574,11 +574,11 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     </message>
     <message>
         <source>Default file</source>
-        <translation></translation>
+        <translation>Fitxer predeterminat</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation></translation>
+        <translation>Nom:</translation>
     </message>
     <message>
         <source>Default filename</source>
