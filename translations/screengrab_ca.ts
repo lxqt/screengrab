@@ -562,7 +562,7 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     </message>
     <message>
         <source>Path to default selection dir for saving</source>
-        <translation>Camí predeterminat al directori per seleccionar-ne un per estalviar temps</translation>
+        <translation>Camí al directori predeterminat dels desaments per seleccionar-ne un</translation>
     </message>
     <message>
         <source>Browse filesystem</source>
@@ -590,7 +590,7 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     </message>
     <message>
         <source>Default saving image format</source>
-        <translation>Format d&apos;imatge predeterminat per estalviar temps</translation>
+        <translation>Format d&apos;imatge predeterminat de desament</translation>
     </message>
     <message>
         <source>Copy file name to the clipboard when saving</source>
@@ -622,7 +622,7 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     </message>
     <message>
         <source>Insert current date and time in file name</source>
-        <translation>Inserció de la data i hora actual al nom del fitxer</translation>
+        <translation>Insereix la data i hora actual al nom del fitxer</translation>
     </message>
     <message>
         <source>Template: </source>
