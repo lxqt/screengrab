@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Thanks</source>
-        <translation>Gràcies</translation>
+        <translation>Agraïments</translation>
     </message>
     <message>
         <source>Help us</source>
