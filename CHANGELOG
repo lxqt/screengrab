@@ -1,7 +1,35 @@
 
-screengrab-1.98 / 2018-05-21
+screengrab-1.99 / 2018-07-21
 ============================
 
+  * Translated using Weblate (Italian)
+  * Translated using Weblate (Catalan)
+  * Translated using Weblate (català)
+  * Translated using Weblate (català)
+  * Translated using Weblate (català)
+  * Translated using Weblate (Catalan)
+  * Added translation using Weblate (català)
+  * Translated using Weblate (Spanish)
+  * Translated using Weblate (Portuguese (Brazil))
+  * Translated using Weblate (Ukrainian (uk_UA))
+  * Translated using Weblate (Polish)
+  * Added translation promo
+  * Translated using Weblate (Spanish)
+  * Translated using Weblate (Polish)
+  * Added translation using Weblate (Polish)
+  * Translated using Weblate (Hebrew)
+  * Added translation using Weblate (Hebrew)
+  * Translated using Weblate (German)
+  * Translated using Weblate (German)
+  * Translated using Weblate (Lithuanian)
+  * Added translation using Weblate (Lithuanian)
+  * Translated using Weblate (German)
+  * Add X11Extras and Network to link target
+
+1.98 / 2018-05-21
+=================
+
+  * Release 1.98: Update changelog
   * Bumped SCREENGRAB_VERSION to 1.98
   * Spanish translation update
   * A more specific condition for Ctrl+C
