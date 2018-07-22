@@ -5,71 +5,71 @@
     <name>AboutDialog</name>
     <message>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>používá Qt </translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>O aplikaci</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Poděkování</translation>
     </message>
     <message>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Pomozte s vývojem</translation>
     </message>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>je multiplatformní aplikace pro rychlé pořizování zachycených snímků pracovní plochy.</translation>
     </message>
     <message>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>Je nenáročná a přitom funkcemi nabitá aplikace, naprogramovaná pomocí Qt.</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation></translation>
+        <translation>Webové stránky</translation>
     </message>
     <message>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>Licencováno za podmínek </translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>Autorské právo &amp;copy; 2009-2013, Artem „DOOMer“ Galichkin</translation>
     </message>
     <message>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>Pokud chcete, můžete se k nám připojit a pomoci. Pokud se vám tato aplikace líbí, toto je pozvánka.</translation>
     </message>
     <message>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Co můžete dělat?</translation>
     </message>
     <message>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>Překládat ScreenGrab do ostatních jazyků</translation>
     </message>
     <message>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>Navrhovat změny/vylepšení do příštích vydání</translation>
     </message>
     <message>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>Hlásit chyby a problémy</translation>
     </message>
     <message>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Evidence hlášení chyb</translation>
     </message>
     <message>
         <source>Translate:</source>
-        <translation></translation>
+        <translation>Překládat:</translation>
     </message>
     <message>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> Překlad do brazilské portugalštiny</translation>
     </message>
     <message>
         <source>Marcio Moraes</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> Překlad do ukrajinštiny</translation>
     </message>
     <message>
         <source>Gennadi Motsyo</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> Překlad do španělštiny</translation>
     </message>
     <message>
         <source>Burjans L García D</source>
@@ -93,168 +93,168 @@
     </message>
     <message>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation> Překlad do italštiny</translation>
     </message>
     <message>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>Testování:</translation>
     </message>
     <message>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>Podpora vícero monitorů a ostatní v systému GNU/Linux</translation>
     </message>
     <message>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>Podpora vícero monitorů v GNU/Linux</translation>
     </message>
     <message>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>win32 sestavení [Windows XP a 7]</translation>
     </message>
     <message>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>stará win32 sestavení [Windows Vista]</translation>
     </message>
     <message>
         <source>win32-build [Windows 7]</source>
-        <translation></translation>
+        <translation>win32 sestavení [Windows 7]</translation>
     </message>
 </context>
 <context>
     <name>ConfigDialog</name>
     <message>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>Složka %1 neexistuje. Chcete ji vytvořit?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation></translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>Vybrat složku</translation>
     </message>
     <message>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>Opravdu chcete vrátit nastavení do výchozích hodnot?</translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Příklad: </translation>
     </message>
     <message>
         <source>This key is already used in your system! Please select another.</source>
-        <translation></translation>
+        <translation>Tato klávesa je už ve vámi používaném systému přiřazena něčemu jinému! Vyberte jinou.</translation>
     </message>
     <message>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation></translation>
+        <translation>Tato klávesa je už ve ScreeGrab přiřazena něčemu jinému! Vyberte jinou.</translation>
     </message>
     <message>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation>Tato klávesa není ve vámi používaném operačním systému podporována!</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation></translation>
+        <translation>Chyba</translation>
     </message>
 </context>
 <context>
     <name>Core</name>
     <message>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>je multiplatformní aplikace pro pohotové pořizování snímků obrazovky pracovní plochy.</translation>
     </message>
     <message>
         <source>Take a fullscreen screenshot</source>
-        <translation></translation>
+        <translation>Pořídit snímek celé obrazovky</translation>
     </message>
     <message>
         <source>Take a screenshot of the active window</source>
-        <translation></translation>
+        <translation>Pořídit snímek aktivního okna</translation>
     </message>
     <message>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation></translation>
+        <translation>Pořídit snímek vybrané části obrazovky</translation>
     </message>
     <message>
         <source>Run the application with a hidden main window</source>
-        <translation></translation>
+        <translation>Spustit aplikaci tak, aby její hlavní okno zůstalo skryté</translation>
     </message>
     <message>
         <source>Saved</source>
-        <translation></translation>
+        <translation>Uloženo</translation>
     </message>
     <message>
         <source>Saved to </source>
-        <translation></translation>
+        <translation>Uloženo do </translation>
     </message>
     <message>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>Název uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>Popis umístění uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
         <source>Copied</source>
-        <translation></translation>
+        <translation>Zkopírováno</translation>
     </message>
     <message>
         <source>Screenshot is copied to clipboard</source>
-        <translation></translation>
+        <translation>Snímek obrazovky je zkopírován do schránky</translation>
     </message>
 </context>
 <context>
     <name>DialogUploader</name>
     <message>
         <source>Upload to internet</source>
-        <translation></translation>
+        <translation>Nahrát na Internet</translation>
     </message>
     <message>
         <source>Upload to</source>
-        <translation></translation>
+        <translation>Nahrát na</translation>
     </message>
     <message>
         <source>Direct link:</source>
-        <translation></translation>
+        <translation>Přímý odkaz:</translation>
     </message>
     <message>
         <source>Open this link in the default web-browser</source>
-        <translation></translation>
+        <translation>Otevřít tento odkaz ve výchozím webovém prohlížeči</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation></translation>
+        <translation>Otevřít</translation>
     </message>
     <message>
         <source>Copy this link to the clipboard</source>
-        <translation></translation>
+        <translation>Zkopírovat tento odkaz do schránky</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Zkopírovat</translation>
     </message>
     <message>
         <source>Extended preformed html or bb codes:</source>
-        <translation></translation>
+        <translation>Rozšířené předformátované html nebo bb kódy:</translation>
     </message>
     <message>
         <source>Link to delete image:</source>
-        <translation></translation>
+        <translation>Odkaz na smazání obrázku:</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation></translation>
+        <translation>Nahrát</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Storno</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation></translation>
+        <translation>Velikost: </translation>
     </message>
     <message>
         <source> pixel</source>
@@ -262,43 +262,43 @@
     </message>
     <message>
         <source>Uploaded </source>
-        <translation></translation>
+        <translation>Nahráno </translation>
     </message>
     <message>
         <source>Ready to upload</source>
-        <translation></translation>
+        <translation>Připraveno k nahrání</translation>
     </message>
     <message>
         <source>Upload processing... Please wait</source>
-        <translation></translation>
+        <translation>Zpracovávání nahrání – čekejte…</translation>
     </message>
     <message>
         <source>Receiving a response from the server</source>
-        <translation></translation>
+        <translation>Získávání odpovědi ze serveru</translation>
     </message>
     <message>
         <source>Upload completed</source>
-        <translation></translation>
+        <translation>Nahrání dokončeno</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>Zavřít</translation>
     </message>
     <message>
         <source>Error uploading screenshot</source>
-        <translation></translation>
+        <translation>Chyba při nahrávání  snímku obrazovky</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation></translation>
+        <translation>Otevření tohoto odkazu ve webovém prohlížeči může bez jakéhokoli varování vést ke smazání nahraného obrázku.</translation>
     </message>
     <message>
         <source>Are you sure you want to continue?</source>
-        <translation></translation>
+        <translation>Opravdu chcete pokračovat?</translation>
     </message>
 </context>
 <context>
@@ -309,122 +309,122 @@
     </message>
     <message>
         <source>Type:</source>
-        <translation></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>Type of screenshot</source>
-        <translation></translation>
+        <translation>Typ snímku obrazovky</translation>
     </message>
     <message>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>Celá obrazovka</translation>
     </message>
     <message>
         <source>Window</source>
-        <translation></translation>
+        <translation>Okno</translation>
     </message>
     <message>
         <source>Screen area</source>
-        <translation></translation>
+        <translation>Oblast obrazovky</translation>
     </message>
     <message>
         <source>Last selected area</source>
-        <translation></translation>
+        <translation>Posledně vybraná oblast</translation>
     </message>
     <message>
         <source>Delay:</source>
-        <translation></translation>
+        <translation>Prodleva:</translation>
     </message>
     <message>
         <source>Delay in seconds before taking screenshot</source>
-        <translation></translation>
+        <translation>Prodleva (v sekundách) před pořízením snímku</translation>
     </message>
     <message>
         <source>None</source>
-        <translation></translation>
+        <translation>Žádná</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> sek</translation>
     </message>
     <message>
         <source>Zoom area around mouse</source>
-        <translation></translation>
+        <translation>Přiblížit oblast okolo ukazatele myši</translation>
     </message>
     <message>
         <source>No window decoration</source>
-        <translation></translation>
+        <translation>Žádná dekorace okna</translation>
     </message>
     <message>
         <source>Include mouse pointer</source>
-        <translation></translation>
+        <translation>Včetně ukazatele myši</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>pruh nástrojů</translation>
     </message>
     <message>
         <source>New</source>
-        <translation></translation>
+        <translation>Nový</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation></translation>
+        <translation>Uložit</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Zkopírovat</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation></translation>
+        <translation>Možnosti</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation></translation>
+        <translation>Nápověda</translation>
     </message>
     <message>
         <source>About</source>
-        <translation></translation>
+        <translation>A aplikaci</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <source>Screenshot </source>
-        <translation></translation>
+        <translation>Snímek obrazovky </translation>
     </message>
     <message>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation></translation>
+        <translation>Dvojklikem snímek otevřít ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation></translation>
+        <translation>Skrýt</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation></translation>
+        <translation>Zobrazit</translation>
     </message>
     <message>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>%1 souborů</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation></translation>
+        <translation>Uložit jako…</translation>
     </message>
 </context>
 <context>
     <name>ModuleUploader</name>
     <message>
         <source>Upload the screenshot to the default image host</source>
-        <translation></translation>
+        <translation>Nahrát snímek na výchozího hostitele obrázků</translation>
     </message>
     <message>
         <source>Uploading</source>
-        <translation></translation>
+        <translation>Nahrávání</translation>
     </message>
 </context>
 <context>
@@ -432,340 +432,341 @@
     <message>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation></translation>
+        <translation>Pomocí myši vymezte čtyřúhelníkovou oblast, kterou zachytit nebo
+ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</translation>
     </message>
     <message>
         <source>%1 x %2 pixels </source>
-        <translation></translation>
+        <translation>%1 x %2 pixelů </translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>External edit</source>
-        <translation></translation>
+        <translation>Upravit v jiné aplikaci</translation>
     </message>
     <message>
         <source>Edit in...</source>
-        <translation></translation>
+        <translation>Upravit v…</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation></translation>
+        <translation>Nahrát</translation>
     </message>
 </context>
 <context>
     <name>Uploader</name>
     <message>
         <source>Direct link</source>
-        <translation></translation>
+        <translation>Přímý odkaz</translation>
     </message>
     <message>
         <source>HTML code</source>
-        <translation></translation>
+        <translation>HTML kód</translation>
     </message>
     <message>
         <source>BB code</source>
-        <translation></translation>
+        <translation>BB kód</translation>
     </message>
     <message>
         <source>HTML code with thumb image</source>
-        <translation></translation>
+        <translation>HTML kód s náhledovým obrázkem</translation>
     </message>
     <message>
         <source>BB code with thumb image</source>
-        <translation></translation>
+        <translation>BB kód s náhledovým obrázkem</translation>
     </message>
     <message>
         <source>URl to delete image</source>
-        <translation></translation>
+        <translation>URL adresa pro smazání obrázku</translation>
     </message>
 </context>
 <context>
     <name>UploaderConfigWidget</name>
     <message>
         <source>Common settings</source>
-        <translation></translation>
+        <translation>Společná nastavení</translation>
     </message>
     <message>
         <source>Default image host</source>
-        <translation></translation>
+        <translation>Výchozí hostitel obrázků</translation>
     </message>
     <message>
         <source>Always copy the link to the clipboard</source>
-        <translation></translation>
+        <translation>Vždy zkopírovat obrázek do schránky</translation>
     </message>
     <message>
         <source>Hosts settings</source>
-        <translation></translation>
+        <translation>Nastavení hostitelů</translation>
     </message>
     <message>
         <source>Settings for: </source>
-        <translation></translation>
+        <translation>Nastavení pro: </translation>
     </message>
 </context>
 <context>
     <name>UploaderConfigWidget_ImgUr</name>
     <message>
         <source>Configuration for imgur.com upload</source>
-        <translation></translation>
+        <translation>Nastavení pro nahrávání na imgur.com</translation>
     </message>
     <message>
         <source>No settings available right now</source>
-        <translation></translation>
+        <translation>V tuto chvíli nejsou k dispozici žádná nastavení</translation>
     </message>
 </context>
 <context>
     <name>Uploader_ImgUr_Widget</name>
     <message>
         <source>Upload to Imgur</source>
-        <translation></translation>
+        <translation>Nahrát na Imgur</translation>
     </message>
 </context>
 <context>
     <name>aboutWidget</name>
     <message>
         <source>About Qt</source>
-        <translation></translation>
+        <translation>O Qt</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>Zavřít</translation>
     </message>
 </context>
 <context>
     <name>configwidget</name>
     <message>
         <source>Options</source>
-        <translation></translation>
+        <translation>Volby</translation>
     </message>
     <message>
         <source>Main</source>
-        <translation></translation>
+        <translation>Hlavní</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation></translation>
+        <translation>Pokročilé</translation>
     </message>
     <message>
         <source>System tray</source>
-        <translation></translation>
+        <translation>Oznamovací oblast panelu</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>Zkratky</translation>
     </message>
     <message>
         <source>Default save directory</source>
-        <translation></translation>
+        <translation>Výchozí složka pro ukládání</translation>
     </message>
     <message>
         <source>Path to default selection dir for saving</source>
-        <translation></translation>
+        <translation>Popis umístění výchozí složky pro ukládání</translation>
     </message>
     <message>
         <source>Browse filesystem</source>
-        <translation></translation>
+        <translation>Procházet souborový systém</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation></translation>
+        <translation>Procházet</translation>
     </message>
     <message>
         <source>Default file</source>
-        <translation></translation>
+        <translation>Výchozí soubor</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation></translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <source>Default filename</source>
-        <translation></translation>
+        <translation>Výchozí název souboru</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation></translation>
+        <translation>Formát</translation>
     </message>
     <message>
         <source>Default saving image format</source>
-        <translation></translation>
+        <translation>Výchozí formát pro ukládání obrázků</translation>
     </message>
     <message>
         <source>Copy file name to the clipboard when saving</source>
-        <translation></translation>
+        <translation>Při ukládání zkopírovat název souboru do schránky</translation>
     </message>
     <message>
         <source>Do not copy</source>
-        <translation></translation>
+        <translation>Nekopírovat</translation>
     </message>
     <message>
         <source>Copy file name only</source>
-        <translation></translation>
+        <translation>Zkopírovat pouze název souboru</translation>
     </message>
     <message>
         <source>Copy full file path</source>
-        <translation></translation>
+        <translation>Zkopírovat úplný popis umístění souboru</translation>
     </message>
     <message>
         <source>Image quality</source>
-        <translation></translation>
+        <translation>Kvalita obrazu</translation>
     </message>
     <message>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation></translation>
+        <translation>Kvalita obrazu (1 – malý soubor, 100 – vysoká kvalita)</translation>
     </message>
     <message>
         <source>Inserting current date time into saved filename</source>
-        <translation></translation>
+        <translation>Vkládání aktuálního data a času do názvu uloženého souboru</translation>
     </message>
     <message>
         <source>Insert current date and time in file name</source>
-        <translation></translation>
+        <translation>Do názvu souboru vložit aktuální datum a čas</translation>
     </message>
     <message>
         <source>Template: </source>
-        <translation></translation>
+        <translation>Šablona: </translation>
     </message>
     <message>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Příklad: </translation>
     </message>
     <message>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation></translation>
+        <translation>Při zachycení snímek obrazovky automaticky uložit</translation>
     </message>
     <message>
         <source>Autosave screenshot</source>
-        <translation></translation>
+        <translation>Snímek obrazovky automaticky uložit</translation>
     </message>
     <message>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Uložit první snímek obrazovky</translation>
     </message>
     <message>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation></translation>
+        <translation>Umožnit spuštění vícero kopií ScreenGrab</translation>
     </message>
     <message>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation></translation>
+        <translation>Umožnit vícenásobné spuštění ScreenGrab</translation>
     </message>
     <message>
         <source>Open in external viewer on double click</source>
-        <translation></translation>
+        <translation>Při dvojkliku otevřít v externím prohlížeči</translation>
     </message>
     <message>
         <source>Enable external viewer</source>
-        <translation></translation>
+        <translation>Používat externí prohlížeč</translation>
     </message>
     <message>
         <source>Fit to edges only inside selected screen area</source>
-        <translation></translation>
+        <translation>Přizpůsobit okrajům pouze uvnitř označené oblasti obrazovky</translation>
     </message>
     <message>
         <source>Fit to edges inside selected area</source>
-        <translation></translation>
+        <translation>Přizpůsobit okrajům v označené oblasti</translation>
     </message>
     <message>
         <source>Show ScreenGrab in the system tray</source>
-        <translation></translation>
+        <translation>Zobrazovat ScreenGrab v oznamovací oblasti</translation>
     </message>
     <message>
         <source>Tray messages:</source>
-        <translation></translation>
+        <translation>Zprávy v oznamovací oblasti:</translation>
     </message>
     <message>
         <source>Tray messages display mode</source>
-        <translation></translation>
+        <translation>Režim zobrazování zpráv v oznamovací oblasti</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation></translation>
+        <translation>Nikdy</translation>
     </message>
     <message>
         <source>Tray mode</source>
-        <translation></translation>
+        <translation>Režim oznamovací oblasti</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation></translation>
+        <translation>Vždy</translation>
     </message>
     <message>
         <source>Time of display tray messages</source>
-        <translation></translation>
+        <translation>Doba zobrazení zpráv v oznamovací oblasti</translation>
     </message>
     <message>
         <source>Time to display tray messages</source>
-        <translation></translation>
+        <translation>Doba k zobrazení zpráv v oznamovací oblasti</translation>
     </message>
     <message>
         <source> sec</source>
-        <translation></translation>
+        <translation> sek</translation>
     </message>
     <message>
         <source>Minimize to tray on click close button</source>
-        <translation></translation>
+        <translation>Při kliknutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
     </message>
     <message>
         <source>Minimize to tray when closing</source>
-        <translation></translation>
+        <translation>Při zavření minimalizovat do oznamovací oblasti panelu</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation></translation>
+        <translation>Akce</translation>
     </message>
     <message>
         <source>Shortcut</source>
-        <translation></translation>
+        <translation>Klávesová zkratka</translation>
     </message>
     <message>
         <source>Global shortcuts</source>
-        <translation></translation>
+        <translation>Globální klávesové zkratky</translation>
     </message>
     <message>
         <source>Fill screen</source>
-        <translation></translation>
+        <translation>Vyplnit obrazovku</translation>
     </message>
     <message>
         <source>Active window</source>
-        <translation></translation>
+        <translation>Aktivní okno</translation>
     </message>
     <message>
         <source>Area select</source>
-        <translation></translation>
+        <translation>Výběr oblasti</translation>
     </message>
     <message>
         <source>Local shortcuts</source>
-        <translation></translation>
+        <translation>Místní zkratky</translation>
     </message>
     <message>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Nová obrazovka</translation>
     </message>
     <message>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Uložit obrazovku</translation>
     </message>
     <message>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Zkopírovat obrazovku</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation></translation>
+        <translation>Nápověda</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <source>Selected shortcut:</source>
-        <translation></translation>
+        <translation>Označená klávesová zkratka:</translation>
     </message>
     <message>
         <source>Not defined</source>
-        <translation></translation>
+        <translation>Neurčeno</translation>
     </message>
 </context>
 </TS>
