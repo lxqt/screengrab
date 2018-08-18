@@ -247,7 +247,7 @@ void Config::setSaveFileName(QString fileName)
 
 QString Config::getSaveFormat()
 {
-    return value(KEY_SAVEFORMAT).toString();
+    return value(KEY_SAVEFORMAT).toString().toLower();
 }
 
 void Config::setSaveFormat(QString format)
