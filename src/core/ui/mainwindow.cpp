@@ -565,11 +565,11 @@ void MainWindow::saveScreen()
     // create initial filepath
     QHash<QString, QString> formatsAvalible;
     const QStringList formatIDs = _conf->getFormatIDs();
+    if (formatIDs.isEmpty()) return;
     for (const QString &formatID : formatIDs)
         formatsAvalible[formatID] = tr("%1 Files").arg(formatID.toUpper());
 
-    QString format = formatIDs.at(_conf->getDefaultFormatID());
-    _conf->getSaveFormat();
+    QString format = formatIDs.at(qBound(0, _conf->getDefaultFormatID(), formatIDs.size() - 1));
 
     Core* c = Core::instance();
     QString filePath = c->getSaveFilePath(format);
