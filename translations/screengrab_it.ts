@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Sito Web</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
