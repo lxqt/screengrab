@@ -31,12 +31,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>Application légère et puissante écrite en Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Site Web</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -261,35 +261,35 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
         <source>Upload to internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger sur Internet</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
         <source>Upload to</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger sur</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
         <source>Direct link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lien direct :</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="189"/>
         <source>Open this link in the default web-browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir ce lien avec le navigateur par défaut</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
         <source>Copy this link to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier ce lien dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
@@ -305,12 +305,12 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lien pour effacer l&apos;image :</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
@@ -320,38 +320,38 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source>Size: </source>
-        <translation type="unfinished"></translation>
+        <translation>Taille : </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source> pixel</source>
-        <translation type="unfinished"></translation>
+        <translation> .pixel</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
         <source>Uploaded </source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargé </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Ready to upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Prêt à télécharger</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
         <source>Upload processing... Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement en cours... Patience.</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
         <source>Receiving a response from the server</source>
-        <translation type="unfinished"></translation>
+        <translation>Réponse du serveur en cours</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
         <source>Upload completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement terminé</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
         <source>Error uploading screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors du téléchargement de la copie d&apos;écran</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
@@ -372,12 +372,12 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrez ce lien dans votre navigateur par défaut, cela peut effacer directement l&apos;image téléchargée, sans le moindre avertissement.</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
         <source>Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Êtes vous sûr de vouloir continuer ?</translation>
     </message>
 </context>
 <context>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -415,7 +415,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Dernière zone selectionnée</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Fait un zoom de la zone située autour de la souris</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d&apos;outils</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
         <source>Uploading</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement en cours</translation>
     </message>
 </context>
 <context>
@@ -562,12 +562,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
         <source>Edit in...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editer avec...</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger</translation>
     </message>
 </context>
 <context>
@@ -575,32 +575,32 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="225"/>
         <source>Direct link</source>
-        <translation type="unfinished"></translation>
+        <translation>Lien direct</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="228"/>
         <source>HTML code</source>
-        <translation type="unfinished"></translation>
+        <translation>code HTML</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="231"/>
         <source>BB code</source>
-        <translation type="unfinished"></translation>
+        <translation>code BB</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="234"/>
         <source>HTML code with thumb image</source>
-        <translation type="unfinished"></translation>
+        <translation>code HTML avec image en vignette</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="237"/>
         <source>BB code with thumb image</source>
-        <translation type="unfinished"></translation>
+        <translation>code BB avec image en vignette</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
         <source>URl to delete image</source>
-        <translation type="unfinished"></translation>
+        <translation>URI pour effacer l&apos;image</translation>
     </message>
 </context>
 <context>
@@ -608,7 +608,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
         <source>Common settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres généraux</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
@@ -618,17 +618,17 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
         <source>Always copy the link to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Toujours copier le lien dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
         <source>Hosts settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres de l&apos;hôte</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
         <source>Settings for: </source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres pour : </translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
         <source>No settings available right now</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun paramétrage disponible pour le moment</translation>
     </message>
 </context>
 <context>
@@ -649,7 +649,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger sur imgur</translation>
     </message>
 </context>
 <context>
@@ -761,17 +761,17 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire de sauvegarde par défaut</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier par défaut</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
