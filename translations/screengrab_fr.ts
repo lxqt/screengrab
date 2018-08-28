@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation>Bug tracker</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
@@ -86,12 +86,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation>Brésilien - Portuguais</translation>
+        <translation> Brésilien - Portuguais</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation>Marcio Moraes</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
         <source>Direct link:</source>
-        <translation>Lien direct :</translation>
+        <translation>Lien direct:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation>Lien pour effacer l&apos;image :</translation>
+        <translation>Lien pour effacer l&apos;image:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source>Size: </source>
-        <translation>Taille : </translation>
+        <translation>Taille: </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation>Type :</translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -628,7 +628,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
         <source>Settings for: </source>
-        <translation>Paramètres pour : </translation>
+        <translation>Paramètres pour: </translation>
     </message>
 </context>
 <context>
@@ -771,7 +771,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation>Nom :</translation>
+        <translation>Nom:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
