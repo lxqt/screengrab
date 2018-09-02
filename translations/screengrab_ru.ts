@@ -160,7 +160,7 @@
         <location filename="../src/core/ui/configwidget.cpp" line="212"/>
         <location filename="../src/core/ui/configwidget.cpp" line="313"/>
         <source>Warning</source>
-        <translation>Предупрждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
