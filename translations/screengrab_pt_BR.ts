@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Testado em:</translation>
+        <translation>Teste:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -154,13 +154,13 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="301"/>
         <source>Select directory</source>
-        <translation>Selecionar diretório</translation>
+        <translation>Selecione o diretório</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="212"/>
         <location filename="../src/core/ui/configwidget.cpp" line="313"/>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation>Atenção</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="450"/>
         <source>This key is not supported on your system!</source>
-        <translation>Esta tecla não é suportada no seu sistema!</translation>
+        <translation>Essa tecla não é suportada no seu sistema!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="485"/>
@@ -295,7 +295,7 @@
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
         <source>Copy</source>
-        <translation type="unfinished">Copiar</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
@@ -357,7 +357,7 @@
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
@@ -405,7 +405,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation>Janela ativa</translation>
+        <translation>Janela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
@@ -420,7 +420,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Atraso:</translation>
+        <translation>Atraso:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Sem decoração da janela</translation>
+        <translation>Nenhuma decoração da janela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="506"/>
         <source>Show</source>
-        <translation>Mostrar</translation>
+        <translation>Exibir</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="581"/>
@@ -544,7 +544,7 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation>Use o mouse para desenhar um retângulo na tela ou saia pressionando
+        <translation>Use o mouse para desenhar um retângulo na tela ou sair pressionando
 qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     </message>
     <message>
@@ -677,7 +677,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Salvando formato de imagem padrão</translation>
+        <translation>Salvando imagem no formato padrão</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
@@ -807,7 +807,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandeja do sistema</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -892,7 +892,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Salvar automaticamente capturas de telas no processo de obtenção</translation>
+        <translation>Salvar automaticamente capturas de telas no processo de captura</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
@@ -952,7 +952,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
         <source>Quit</source>
-        <translation type="unfinished">Sair</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
