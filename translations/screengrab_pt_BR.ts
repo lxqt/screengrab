@@ -568,7 +568,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
         <source>Upload</source>
-        <translation>Upload</translation>
+        <translation>Enviar</translation>
     </message>
 </context>
 <context>
