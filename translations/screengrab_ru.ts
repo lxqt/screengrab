@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>Это легкое и мощное приложение, написанное на Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Сайт</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Файлы</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Приблизить область вокруг мыши</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить указатель мыши</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
         <source>Upload the screenshot to the default image host</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить снимок экрана в хранилище изображений по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
@@ -643,7 +643,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
         <source>No settings available right now</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет доступных настроек</translation>
     </message>
 </context>
 <context>
@@ -651,7 +651,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить на Imgur</translation>
     </message>
 </context>
 <context>
@@ -878,7 +878,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
