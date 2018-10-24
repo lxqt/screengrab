@@ -455,7 +455,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>Verktøylinje</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
