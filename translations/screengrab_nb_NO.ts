@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation></translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
