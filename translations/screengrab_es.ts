@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>¿Qué puede hacer?</translation>
+        <translation>¿Qué puede hacer usted?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
