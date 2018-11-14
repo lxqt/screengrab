@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>E&apos; un applicazione  leggera ma potente, scritto in Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Se ti piace questa applicazione puoi aiutarci!</translation>
+        <translation>Se ti piace questa applicazione puoi contribuire.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation>Traduzioni in Portoghese Brasiliano</translation>
+        <translation> ·Traduzioni in Portoghese Brasiliano</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation>Traduzioni in Ucraino</translation>
+        <translation> ·Traduzioni in Ucraino</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> ·Spanish translation</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
         <source>Upload to internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica in rete</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
         <source>Direct link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Collegamento diretto:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
@@ -284,7 +284,7 @@
         <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
@@ -296,7 +296,7 @@
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
         <source>Copy</source>
-        <translation type="unfinished">Copia</translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
@@ -358,7 +358,7 @@
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
@@ -416,17 +416,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Ultima area selezionata</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Ritardo:</translation>
+        <translation>Ritardo:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrandisce area intorno al cursore</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> sec</translation>
+        <translation> ·sec</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
@@ -487,7 +487,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished">Doppio clic per aprire la cattura in un editor esterno</translation>
+        <translation>Doppio clic per aprire la cattura in un editor esterno</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
@@ -559,12 +559,12 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
         <source>External edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor esterno</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
         <source>Edit in...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica con...</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
@@ -859,7 +859,7 @@ un tasto qualsiasi o usando il tasto destro o centrale del mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation></translation>
+        <translation> ·sec</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
