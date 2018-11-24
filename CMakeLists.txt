@@ -6,6 +6,9 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 # versions.
 project(screengrab)
 
+include(GNUInstallDirs)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 # options
 option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(SG_EXT_UPLOADS "Enable upload screenshots to Imgur" ON)
@@ -16,7 +19,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 # Minimum Versions
 set(KF5_MINIMUM_VERSION "5.36.0")
 set(QT_MINIMUM_VERSION "5.7.1")
-set(QTXDG_MINIMUM_VERSION "3.2.0")
+set(QTXDG_MINIMUM_VERSION "3.3.0")
 
 find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5Network ${QT_MINIMUM_VERSION} REQUIRED)
@@ -42,9 +45,6 @@ find_package(
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
-
-include(GNUInstallDirs)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # add version define
 set(SCREENGRAB_VERSION "1.99")
