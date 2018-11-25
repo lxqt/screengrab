@@ -686,12 +686,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation></translation>
+        <translation>Área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>Atallos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
@@ -836,22 +836,22 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation></translation>
+        <translation>Amosar ScreenGrab na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
         <source>Tray messages:</source>
-        <translation></translation>
+        <translation>Mensaxes na área de notificación:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="470"/>
         <source>Tray messages display mode</source>
-        <translation></translation>
+        <translation>Modo de presentación das mensaxes na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="474"/>
         <source>Never</source>
-        <translation></translation>
+        <translation>Nunca</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
