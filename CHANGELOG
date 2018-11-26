@@ -1,3 +1,9 @@
+screengrab-1.100 / 2018-12-01
+=============================
+
+  * Added Github Issue Template
+  * Don't crash with invalid config format
+  * Improved translations
 
 screengrab-1.99 / 2018-07-21
 ============================
