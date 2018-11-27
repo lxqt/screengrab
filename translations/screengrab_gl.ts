@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>usando Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -16,37 +16,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Grazas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Axúdenos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>é unha aplicación multiplataforma para facer rápidamente capturas de pantalla do escritorio.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>É unha aplicación lixeira e potente, escrita empregando Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation></translation>
+        <translation>Sitio web</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>Licenciada baixo a </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>Dereitos de autoría &amp;copy; 2009-2013, Artem «DOOMer» Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -56,37 +56,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Que pode facer vostede?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>Traducir ScreenGrab a outros idiomas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>Facer suxestións para próximas versións</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>Informar de fallos e outras incidencias</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Seguimento de erros</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation></translation>
+        <translation>Traducción:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> Tradución ao portugués do Brasil</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> Tradución ao ucraíno</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation> Tradución ao español</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation> Tradución ao italiano</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation></translation>
+        <translation>Probas:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>Construción win32 [Windows XP e 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>Construción win32 antigo [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation></translation>
+        <translation>Construción win32  [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,18 +154,18 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>Non existe o directorio %1. Quere crealo?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="212"/>
         <location filename="../src/core/ui/configwidget.cpp" line="313"/>
         <source>Warning</source>
-        <translation></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="301"/>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>Seleccione o directorio</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Exemplo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="426"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="485"/>
         <source>Error</source>
-        <translation></translation>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>
@@ -208,52 +208,52 @@
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a fullscreen screenshot</source>
-        <translation></translation>
+        <translation>Facer unha captura da pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of the active window</source>
-        <translation></translation>
+        <translation>Facer unha captura da xanela activa</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation></translation>
+        <translation>Facer unha captura dunha área da pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation></translation>
+        <translation>Executar a aplicación coa xanela principal agachada</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved</source>
-        <translation></translation>
+        <translation>Gardado</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="423"/>
         <source>Saved to </source>
-        <translation></translation>
+        <translation>Gardado en </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="445"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>O nome do ficheiro gardado copiase no portapapeis</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="451"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>A ruta ao ficheiro gardado copiase ao portapapelis</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="473"/>
         <source>Copied</source>
-        <translation></translation>
+        <translation>Copiado</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="473"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation></translation>
+        <translation>A captura de pantalla copiase ao portapapeis</translation>
     </message>
 </context>
 <context>
@@ -261,113 +261,113 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
         <source>Upload to internet</source>
-        <translation></translation>
+        <translation>Enviar á Internet</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
         <source>Upload to</source>
-        <translation></translation>
+        <translation>Enviar a</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
         <source>Direct link:</source>
-        <translation></translation>
+        <translation>Ligazón directa:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="189"/>
         <source>Open this link in the default web-browser</source>
-        <translation></translation>
+        <translation>Abrir esta ligazón no navegador predeterminado</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
         <source>Open</source>
-        <translation></translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
         <source>Copy this link to the clipboard</source>
-        <translation></translation>
+        <translation>Copiar esta ligazón no portapapeis</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
         <source>Extended preformed html or bb codes:</source>
-        <translation></translation>
+        <translation>Códigos «html» ou «bb» preformados estendidos:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation></translation>
+        <translation>Ligazón para eliminar a imaxe:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
         <source>Upload</source>
-        <translation></translation>
+        <translation>Enviar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source>Size: </source>
-        <translation></translation>
+        <translation>Tamaño: </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source> pixel</source>
-        <translation></translation>
+        <translation> píxel</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
         <source>Uploaded </source>
-        <translation></translation>
+        <translation>Enviado </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Ready to upload</source>
-        <translation></translation>
+        <translation>Listo para enviar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
         <source>Upload processing... Please wait</source>
-        <translation></translation>
+        <translation>Enviando... Agarde</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
         <source>Receiving a response from the server</source>
-        <translation></translation>
+        <translation>Recibindo a resposta do servidor</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
         <source>Upload completed</source>
-        <translation></translation>
+        <translation>Envío completado</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Pechar</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
         <source>Error uploading screenshot</source>
-        <translation></translation>
+        <translation>Produciuse un erro ao enviar a captura de pantalla</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
         <source>Error</source>
-        <translation></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
         <source>Are you sure you want to continue?</source>
-        <translation></translation>
+        <translation>Confirma que quere continuar?</translation>
     </message>
 </context>
 <context>
@@ -390,42 +390,42 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation></translation>
+        <translation>Tipo:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation></translation>
+        <translation>Tipo de captura de pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>Pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation></translation>
+        <translation>Xanela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation></translation>
+        <translation>Área da pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation></translation>
+        <translation>Última área seleccionada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation></translation>
+        <translation>Demora:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation></translation>
+        <translation>Demora en segundos antes facer a captura de pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -435,22 +435,22 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation></translation>
+        <translation> seg</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation></translation>
+        <translation>Ampliar a área arredor do rato</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation></translation>
+        <translation>Sen a decoración da xanela</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation></translation>
+        <translation>Incluír o punteiro do rato</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -460,33 +460,33 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
         <source>New</source>
-        <translation></translation>
+        <translation>Nova</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
         <source>Save</source>
-        <translation></translation>
+        <translation>Gardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
-        <translation></translation>
+        <translation>Opcións</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
-        <translation></translation>
+        <translation>Axuda</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
         <source>About</source>
-        <translation></translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
         <source>Screenshot </source>
-        <translation></translation>
+        <translation>Captura de pantalla </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
@@ -507,22 +507,22 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
         <source>Hide</source>
-        <translation></translation>
+        <translation>Agachar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
         <source>Show</source>
-        <translation></translation>
+        <translation>Amosar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>%1 ficheiro(s)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
         <source>Save As...</source>
-        <translation></translation>
+        <translation>Gardar como...</translation>
     </message>
 </context>
 <context>
@@ -530,12 +530,12 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
         <source>Upload the screenshot to the default image host</source>
-        <translation></translation>
+        <translation>Enviar a captura de pantalla ao sitio predeterminado para as imaxes</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
         <source>Uploading</source>
-        <translation></translation>
+        <translation>Enviando</translation>
     </message>
 </context>
 <context>
@@ -662,7 +662,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Pechar</translation>
     </message>
 </context>
 <context>
@@ -681,7 +681,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation></translation>
+        <translation>Avanzado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
@@ -786,7 +786,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation></translation>
+        <translation>Exemplo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
@@ -861,7 +861,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
         <source>Always</source>
-        <translation></translation>
+        <translation>Sempre</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="496"/>
@@ -876,7 +876,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation></translation>
+        <translation> seg</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
@@ -896,7 +896,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="580"/>
         <source>Shortcut</source>
-        <translation></translation>
+        <translation>Atallo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="585"/>
@@ -946,7 +946,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Saír</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
