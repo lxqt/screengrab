@@ -772,17 +772,17 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Inserir a data e hora actuais no nome do arquivo gardado</translation>
+        <translation>Inserindo a data e hora actuais no nome do arquivo gardado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation></translation>
+        <translation>Inserir a data e hora actuais no nome do arquivo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation></translation>
+        <translation>Modelo: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
@@ -792,52 +792,52 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation></translation>
+        <translation>Gardar automaticamente as capturas de pantalla no proceso de captura</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation></translation>
+        <translation>Gardar automaticamente a captura de pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Gardar a primeira captura de pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation></translation>
+        <translation>Permitir a execución de múltiples copias do ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation></translation>
+        <translation>Permitir múltiples instancias do ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation></translation>
+        <translation>Abrir no visor externo ao facer dobre clic</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation></translation>
+        <translation>Activar o visor externo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation></translation>
+        <translation>Axustar aos bordos só na área de pantalla seleccionada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation></translation>
+        <translation>Axustar aos bordos dentro da área seleccionada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>Amosar ScreenGrab na área de notificación</translation>
+        <translation>Amosar o ScreenGrab na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
@@ -857,7 +857,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
         <source>Tray mode</source>
-        <translation></translation>
+        <translation>Modo da área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
@@ -867,12 +867,12 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="496"/>
         <source>Time of display tray messages</source>
-        <translation></translation>
+        <translation>Duración das mensaxes na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="512"/>
         <source>Time to display tray messages</source>
-        <translation></translation>
+        <translation>Tempo ata amosar as mensaxes na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
@@ -882,17 +882,17 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
         <source>Minimize to tray on click close button</source>
-        <translation></translation>
+        <translation>Minimizar na área de notificación ao premer no botón de peche</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="536"/>
         <source>Minimize to tray when closing</source>
-        <translation></translation>
+        <translation>Minimizar na área de notificación ao pechar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="575"/>
         <source>Action</source>
-        <translation></translation>
+        <translation>Acción</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="580"/>
@@ -902,47 +902,47 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="585"/>
         <source>Global shortcuts</source>
-        <translation></translation>
+        <translation>Atallos globais</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Fill screen</source>
-        <translation></translation>
+        <translation>Encher a pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
         <source>Active window</source>
-        <translation></translation>
+        <translation>Xanela activa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="602"/>
         <source>Area select</source>
-        <translation></translation>
+        <translation>Seleccionar área</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="608"/>
         <source>Local shortcuts</source>
-        <translation></translation>
+        <translation>Atallos locais</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="612"/>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Pantalla nova</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="617"/>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Gardar a pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="622"/>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Copiar a pantalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="632"/>
         <source>Help</source>
-        <translation></translation>
+        <translation>Axuda</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
@@ -952,12 +952,12 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
         <source>Selected shortcut:</source>
-        <translation></translation>
+        <translation>Atallo seleccionado:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
-        <translation></translation>
+        <translation>Sen definir</translation>
     </message>
 </context>
 </TS>
