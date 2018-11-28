@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
         <source>Extended preformed html or bb codes:</source>
-        <translation>Códigos «html» ou «bb» preformados estendidos:</translation>
+        <translation>Códigos HTML ou BB» preformados estendidos:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
@@ -544,12 +544,13 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation></translation>
+        <translation>Use o rato para debuxar o rectángulo a capturar ou saia premendo
+calquera tecla ou os botóns dereito ou central do rato.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
-        <translation></translation>
+        <translation>%1 x %2 píxeles </translation>
     </message>
 </context>
 <context>
@@ -557,17 +558,17 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
         <source>External edit</source>
-        <translation></translation>
+        <translation>Edición externa</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
         <source>Edit in...</source>
-        <translation></translation>
+        <translation>Editar con..</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
         <source>Upload</source>
-        <translation></translation>
+        <translation>Enviar</translation>
     </message>
 </context>
 <context>
@@ -575,32 +576,32 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="225"/>
         <source>Direct link</source>
-        <translation></translation>
+        <translation>Ligazón directa</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="228"/>
         <source>HTML code</source>
-        <translation></translation>
+        <translation>Código HTML</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="231"/>
         <source>BB code</source>
-        <translation></translation>
+        <translation>Código BB</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="234"/>
         <source>HTML code with thumb image</source>
-        <translation></translation>
+        <translation>Código HTML con miniatura de imaxe</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="237"/>
         <source>BB code with thumb image</source>
-        <translation></translation>
+        <translation>Código BB con miniatura de imaxe</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
         <source>URl to delete image</source>
-        <translation></translation>
+        <translation>URI para eliminar a imaxe</translation>
     </message>
 </context>
 <context>
@@ -608,27 +609,27 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
         <source>Common settings</source>
-        <translation></translation>
+        <translation>Axustes xerais</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
         <source>Default image host</source>
-        <translation></translation>
+        <translation>Sitio predeterminado para as imaxes</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
         <source>Always copy the link to the clipboard</source>
-        <translation></translation>
+        <translation>Copiar sempre a ligazón no portapapeis</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
         <source>Hosts settings</source>
-        <translation></translation>
+        <translation>Configuración das máquinas</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
         <source>Settings for: </source>
-        <translation></translation>
+        <translation>Configuración para: </translation>
     </message>
 </context>
 <context>
@@ -636,12 +637,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
         <source>Configuration for imgur.com upload</source>
-        <translation></translation>
+        <translation>Configuración para enviar a imgur.com</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
         <source>No settings available right now</source>
-        <translation></translation>
+        <translation>Non hai axustes dispoñíbeis polo de agora</translation>
     </message>
 </context>
 <context>
@@ -649,7 +650,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation></translation>
+        <translation>Enviar a Imgur</translation>
     </message>
 </context>
 <context>
@@ -657,7 +658,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation></translation>
+        <translation>Sobre o Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
@@ -671,12 +672,12 @@ any key or using the right or middle mouse buttons.</source>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="627"/>
         <source>Options</source>
-        <translation></translation>
+        <translation>Opcións</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation></translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
@@ -696,82 +697,82 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation></translation>
+        <translation>Directorio predeterminado onde gardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation></translation>
+        <translation>Ruta ao directorio seleccionado como predeterminado para gardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
         <source>Browse filesystem</source>
-        <translation></translation>
+        <translation>Examinar o sistema de ficheiros</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation></translation>
+        <translation>Examinar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation></translation>
+        <translation>Ficheiro predeterminado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation></translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation></translation>
+        <translation>Nome predeterminado do ficheiro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation></translation>
+        <translation>Formato</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation></translation>
+        <translation>Formato predeterminado para gardar imaxes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation></translation>
+        <translation>Copiar o nome do ficheiro ao portapapeis ao gardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation></translation>
+        <translation>Non copiar nada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation></translation>
+        <translation>Copiar só o nome do ficheiro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation></translation>
+        <translation>Copiar a ruta completa do ficheiro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation></translation>
+        <translation>Calidade da imaxe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation></translation>
+        <translation>Calidade da imaxe (1 - ficheiro pequeno, 100 - alta calidade)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation></translation>
+        <translation>Inserir a data e hora actuais no nome do arquivo gardado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
