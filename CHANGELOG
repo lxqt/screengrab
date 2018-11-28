@@ -2,9 +2,10 @@ screengrab-1.100 / 2018-12-01
 =============================
 
   * Bumped SCREENGRAB_VERSION to 1.100
-  * Added Github Issue Template
   * Don't crash with invalid config format
-  * Improved translations
+  * Added Github Issue Template
+  * Updated translations
+  * Improved translationhandling
 
 screengrab-1.99 / 2018-07-21
 ============================
