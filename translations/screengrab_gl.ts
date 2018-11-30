@@ -26,12 +26,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>é unha aplicación multiplataforma para facer rápidamente capturas de pantalla do escritorio.</translation>
+        <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>É unha aplicación lixeira e potente, escrita empregando Qt.</translation>
+        <translation>É unha aplicación lixeira e potente, escrita en Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>Pode unirse a nós e axudarnos se quixer. Isto é un convite se lle gusta esta aplicación.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Traducción:</translation>
+        <translation>Tradución:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -126,12 +126,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>Compatibilidade para monitor dobre e outros en Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>Compatibilidade para monitor dobre en Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>Quere reiniciar os axustes predeterminados?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
@@ -180,17 +180,17 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="426"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation></translation>
+        <translation>Esta tecla xa está en uso polo sistema! Seleccione outra.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="432"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation></translation>
+        <translation>Esta tecla xa está en uso por ScreenGrab! Seleccione outra.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="450"/>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation>Esta tecla non está admitida no seu sistema!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="485"/>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
@@ -243,7 +243,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="451"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>A ruta ao ficheiro gardado copiase ao portapapelis</translation>
+        <translation>A ruta ao ficheiro gardado copiase ao portapapeis</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="473"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
         <source>Extended preformed html or bb codes:</source>
-        <translation>Códigos HTML ou BB» preformados estendidos:</translation>
+        <translation>Códigos HTML ou BB preformados estendidos:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation></translation>
+        <translation>Abrir a ligazón no navegador predeterminado; pode eliminar directamente a súa imaxe sen ningún aviso.</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation></translation>
+        <translation>Faga dobre clic para abrir a captura de pantalla no visor de imaxes externo predeterminado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
@@ -624,7 +624,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
         <source>Hosts settings</source>
-        <translation>Configuración das máquinas</translation>
+        <translation>Configuración dos servidores</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
@@ -637,7 +637,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
         <source>Configuration for imgur.com upload</source>
-        <translation>Configuración para enviar a imgur.com</translation>
+        <translation>Configuración para o envío a imgur.com</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
@@ -772,12 +772,12 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Inserindo a data e hora actuais no nome do arquivo gardado</translation>
+        <translation>Inserindo a data e hora actuais no nome do ficheiro gardado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Inserir a data e hora actuais no nome do arquivo</translation>
+        <translation>Inserir a data e hora actuais no nome do ficheiro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
@@ -792,7 +792,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Gardar automaticamente as capturas de pantalla no proceso de captura</translation>
+        <translation>Gardar automaticamente as capturas de pantalla durante o proceso de captura</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
@@ -872,7 +872,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="512"/>
         <source>Time to display tray messages</source>
-        <translation>Tempo ata amosar as mensaxes na área de notificación</translation>
+        <translation>Tempo para amosar as mensaxes na área de notificación</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
