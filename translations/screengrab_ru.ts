@@ -233,17 +233,17 @@
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of the active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Сделать снимок активного окна</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Сделать снимок выбранной области экрана</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить приложение со скрытым главным окном</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="451"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Последняя выбранная область</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -868,12 +868,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Директория для сохранения по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
