@@ -10,10 +10,10 @@ include(GNUInstallDirs)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # options
-option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
-option(SG_EXT_UPLOADS "Enable upload screenshots to Imgur" ON)
-option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
+option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
+option(SG_EXT_UPLOADS "Enable upload screenshots to Imgur" ON)
+option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # Minimum Versions
@@ -42,35 +42,17 @@ find_package(
     X11_XCB MODULE
 )
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-# add version define
-set(SCREENGRAB_VERSION "1.99")
-set(SCREENGRAB_VERSION_DEV "2.0-beta1")
-# set(DEV_BUILD True)
+set(SCREENGRAB_VERSION "1.100")
 
-if(SCREENGRAB_VERSION_DEV)
-    if(DEV_BUILD)
-        # search git executable
-        find_package(Git)
-        if(GIT_FOUND)
-        # executable git for check HEAD rev hash
-        execute_process(
-            COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
-            OUTPUT_VARIABLE GIT_HASH
-            OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-        endif()
-
-        set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV}-git-${GIT_HASH})")
-    else()
-        set(VERSION "${SCREENGRAB_VERSION}  (${SCREENGRAB_VERSION_DEV})")
-    endif()
-elseif(NOT SCREENGRAB_VERSION_DEV)
-    set(VERSION "${SCREENGRAB_VERSION}")
-endif(SCREENGRAB_VERSION_DEV)
+if (DEV_VERSION)
+    set(VERSION "${SCREENGRAB_VERSION}-dev (${DEV_VERSION})")
+else()
+    set(VERSION ${SCREENGRAB_VERSION})
+endif()
 
 add_definitions(
     -DVERSION="${VERSION}"
