@@ -223,12 +223,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished">кроссплатформенное приложение для быстрого создания снимков вашего рабочего стола.</translation>
+        <translation>кроссплатформенное приложение для быстрого создания снимков вашего рабочего стола.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a fullscreen screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Сделать снимок всего экрана</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished">Подвійний клік відкриє скріншот у зовнішньому переглядачі</translation>
+        <translation type="unfinished">Двойной клик открывает скриншот во внешнем просмотрщике</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
@@ -486,7 +486,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Задержка:</translation>
+        <translation>Задержка:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
