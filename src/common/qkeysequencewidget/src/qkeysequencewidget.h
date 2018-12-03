@@ -85,9 +85,9 @@ private:
 
 public:
     explicit QKeySequenceWidget(QWidget *parent = 0);
-    explicit QKeySequenceWidget(QKeySequence seq, QWidget *parent = 0);
+    explicit QKeySequenceWidget(const QKeySequence seq, QWidget *parent = 0);
     explicit QKeySequenceWidget(QString noneString, QWidget *parent = 0);
-    explicit QKeySequenceWidget(QKeySequence seq, QString noneString, QWidget *parent = 0);
+    explicit QKeySequenceWidget(const QKeySequence seq, const QString noneString, QWidget *parent = 0);
     virtual ~QKeySequenceWidget();
     QSize sizeHint() const;
     void setToolTip(const QString &tip);

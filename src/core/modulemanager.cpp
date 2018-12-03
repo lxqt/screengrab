@@ -63,7 +63,7 @@ AbstractModule* ModuleManager::getModule(const quint8 numid)
     return 0;
 }
 
-QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
+QList<QMenu*> ModuleManager::generateModulesMenus(const QStringList modules)
 {
     QList<QMenu*> list;
     if (modules.isEmpty() == true)
@@ -87,7 +87,7 @@ QList<QMenu*> ModuleManager::generateModulesMenus(QStringList modules)
     return list;
 }
 
-QList<QAction*> ModuleManager::generateModulesActions(QStringList modules)
+QList<QAction*> ModuleManager::generateModulesActions(const QStringList modules)
 {
     QList<QAction*> list;
 

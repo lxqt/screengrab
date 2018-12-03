@@ -105,7 +105,7 @@ public:
 
     bool runAsMinimized();
 
-    QString getSaveFilePath(QString format);
+    QString getSaveFilePath(const QString format);
     QString getDateTimeFileName();
     Config* config();
 
@@ -121,7 +121,7 @@ private:
     void getActiveWindow();
     void grabCursor(int offsetX, int offsetY);
     void sendSystemNotify(const StateNotifyMessage& notify);
-    bool checkExsistFile(QString path);
+    bool checkExsistFile(const QString path);
     QString copyFileNameToCliipboard(QString file);
     void sendNotify(const StateNotifyMessage& message);
 

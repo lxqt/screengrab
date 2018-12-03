@@ -40,8 +40,8 @@ public:
     void initModules();
     AbstractModule* getModule(const QByteArray& name);
     AbstractModule* getModule(const quint8 numid);
-    QList<QMenu*> generateModulesMenus(QStringList modules = QStringList());
-    QList<QAction*> generateModulesActions(QStringList modules = QStringList());
+    QList<QMenu*> generateModulesMenus(const QStringList modules = QStringList());
+    QList<QAction*> generateModulesActions(const QStringList modules = QStringList());
     quint8 count();
 
 private:

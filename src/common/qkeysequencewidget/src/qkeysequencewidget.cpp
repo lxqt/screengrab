@@ -50,7 +50,7 @@ QKeySequenceWidget::QKeySequenceWidget(QWidget *parent) :
   Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
   and string for \a noneString
 */
-QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(QKeySequence const seq, const QString noneString, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
@@ -62,7 +62,7 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QString noneString, QWi
 /*!
   Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
 */
-QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(const QKeySequence seq, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
@@ -74,7 +74,7 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence seq, QWidget *parent) :
 /*!
   Creates a QKeySequenceWidget object wuth \a parent and string for \a noneString
 */
-QKeySequenceWidget::QKeySequenceWidget(QString noneString, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(const QString noneString, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
