@@ -50,7 +50,7 @@ ShortcutManager::ShortcutManager(QSettings *settings) :
 
 ShortcutManager::~ShortcutManager()
 {
-    _shortcutSettings = NULL;
+    _shortcutSettings = nullptr;
     delete _shortcutSettings;
 }
 

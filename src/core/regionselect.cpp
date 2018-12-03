@@ -61,7 +61,7 @@ RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* par
 
 RegionSelect::~RegionSelect()
 {
-    _conf = NULL;
+    _conf = nullptr;
     delete _conf;
 }
 

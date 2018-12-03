@@ -216,7 +216,7 @@ void MainWindow::updateModulesenus(const QList<QMenu *> list)
         for (int i = 0; i < list.count(); ++i)
         {
             QMenu *menu = list.at(i);
-            if (menu != 0)
+            if (menu != nullptr)
             {
                 QToolButton* btn = new QToolButton(this);
                 btn->setText(menu->title());

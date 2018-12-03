@@ -57,7 +57,7 @@ void ModuleUploader::init()
         UploaderConfig config;
         QString selectedtHost = config.loadSingleParam(QByteArray("common"), QByteArray(KEY_DEFAULT_HOST)).toString();
 
-        Uploader *uploader = 0;
+        Uploader *uploader = nullptr;
         switch(config.labelsList().indexOf(selectedtHost))
         {
         case 0:
@@ -95,12 +95,12 @@ void ModuleUploader::defaultSettings()
 
 QMenu* ModuleUploader::initModuleMenu()
 {
-    return 0;
+    return nullptr;
 }
 
 QAction* ModuleUploader::initModuleAction()
 {
-    QAction *act = new QAction(QObject::tr("Upload"), 0);
+    QAction *act = new QAction(QObject::tr("Upload"), nullptr);
     act->setObjectName("actUpload");
     connect(act, &QAction::triggered, this, &ModuleUploader::init);
     return act;

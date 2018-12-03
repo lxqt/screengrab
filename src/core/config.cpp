@@ -110,7 +110,7 @@ static int screenshotTypeFromString(const QString& str)
 
 const static QStringList _imageFormats = {"png", "jpg"};
 
-Config* Config::ptrInstance = 0;
+Config* Config::ptrInstance = nullptr;
 
 // constructor
 Config::Config()
@@ -151,7 +151,7 @@ void Config::killInstance()
     if (ptrInstance)
     {
         delete ptrInstance;
-        ptrInstance = 0;
+        ptrInstance = nullptr;
     }
 }
 

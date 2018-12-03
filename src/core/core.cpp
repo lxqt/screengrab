@@ -46,7 +46,7 @@
 #include "modules/uploader/moduleuploader.h"
 #endif
 
-Core* Core::corePtr = 0;
+Core* Core::corePtr = nullptr;
 
 Core::Core()
 {
@@ -57,7 +57,7 @@ Core::Core()
     _lastSelectedArea = _conf->getLastSelection();
 
     _pixelMap = new QPixmap;
-    _selector = 0;
+    _selector = nullptr;
     _firstScreen = true;
 
     _cmdLine.setApplicationDescription("ScreenGrab " + tr("is a crossplatform application for fast creating screenshots of your desktop."));
@@ -81,7 +81,7 @@ Core::Core()
 
     sleep(250);
 
-    _wnd = NULL;
+    _wnd = nullptr;
 }
 
 Core::Core(const Core& ): QObject()
@@ -158,7 +158,7 @@ void Core::coreQuit()
     if (corePtr)
     {
         delete corePtr;
-        corePtr = NULL;
+        corePtr = nullptr;
     }
 
     qApp->quit();
