@@ -113,7 +113,7 @@ void ShortcutManager::setDefaultSettings()
     setShortcut(DEF_SHORTCUT_AREA,Config::shortcutAreaSelect, Config::globalShortcut);
 }
 
-void ShortcutManager::setShortcut(const QString key, int action, int type)
+void ShortcutManager::setShortcut(const QString &key, int action, int type)
 {
     _listShortcuts[action].key = key;
     _listShortcuts[action].action = action;

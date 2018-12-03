@@ -318,7 +318,7 @@ void Core::sendSystemNotify(const StateNotifyMessage& /*notify*/)
     qDebug() << "Send system notification";
 }
 
-QString Core::getSaveFilePath(const QString format)
+QString Core::getSaveFilePath(const QString &format)
 {
     QString initPath;
 
@@ -340,7 +340,7 @@ QString Core::getSaveFilePath(const QString format)
     return initPath;
 }
 
-bool Core::checkExsistFile(const QString path)
+bool Core::checkExsistFile(const QString &path)
 {
     bool exist = QFile::exists(path);
 

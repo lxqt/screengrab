@@ -51,7 +51,7 @@ public:
     void saveSettings();
     void setDefaultSettings();
 
-    void setShortcut(const QString key, int action, int type);
+    void setShortcut(const QString &key, int action, int type);
     QKeySequence getShortcut(int action);
     int getShortcutType(int action);
     QStringList getShortcutsList(int type);

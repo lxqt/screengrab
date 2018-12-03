@@ -85,9 +85,9 @@ private:
 
 public:
     explicit QKeySequenceWidget(QWidget *parent = 0);
-    explicit QKeySequenceWidget(const QKeySequence seq, QWidget *parent = 0);
-    explicit QKeySequenceWidget(QString noneString, QWidget *parent = 0);
-    explicit QKeySequenceWidget(const QKeySequence seq, const QString noneString, QWidget *parent = 0);
+    explicit QKeySequenceWidget(const QKeySequence &seq, QWidget *parent = 0);
+    explicit QKeySequenceWidget(const QString &noneString, QWidget *parent = 0);
+    explicit QKeySequenceWidget(const QKeySequence &seq, const QString &noneString, QWidget *parent = 0);
     virtual ~QKeySequenceWidget();
     QSize sizeHint() const;
     void setToolTip(const QString &tip);
@@ -118,7 +118,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void setKeySequence(const QKeySequence &key);
     void clearKeySequence();
-    void setNoneText(const QString text);
+    void setNoneText(const QString &text);
     void setClearButtonIcon(const QIcon& icon);
     void setClearButtonShow(QKeySequenceWidget::ClearButtonShow show);
     void captureKeySequence();

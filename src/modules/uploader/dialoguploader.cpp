@@ -83,8 +83,7 @@ DialogUploader::~DialogUploader()
 {
     qDebug() << "delete dialog upload";
 
-    if (_uploader)
-        delete _uploader;
+    delete _uploader;
     delete _uploaderWidget;
     delete _ui;
 }
@@ -137,8 +136,7 @@ void DialogUploader::slotSeletHost(int type)
 {
     _selectedHost = type;
 
-    if (_uploaderWidget)
-        delete _uploaderWidget;
+    delete _uploaderWidget;
 
     switch(_selectedHost)
     {

@@ -70,7 +70,7 @@ protected:
 
     virtual QUrl apiUrl();
     virtual void createData(bool inBase64 = false);
-    virtual void createRequest(const QByteArray& requestData, const QUrl url);
+    virtual void createRequest(const QByteArray& requestData, const QUrl &url);
 
     // vars
     QByteArray imageData;

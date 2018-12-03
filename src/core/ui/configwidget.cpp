@@ -363,7 +363,7 @@ void ConfigDialog::setVisibleDateTplEdit(bool checked)
     }
 }
 
-void ConfigDialog::editDateTmeTpl(const QString str)
+void ConfigDialog::editDateTmeTpl(const QString &str)
 {
     QString currentDateTime = QDateTime::currentDateTime().toString(str);
     _ui->labMaskExample->setText(tr("Example: ") + currentDateTime);
@@ -477,7 +477,7 @@ bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
 }
 #endif
 
-void ConfigDialog::showErrorMessage(const QString text)
+void ConfigDialog::showErrorMessage(const QString &text)
 {
     _ui->keyWidget->clearKeySequence();
     QMessageBox msg;

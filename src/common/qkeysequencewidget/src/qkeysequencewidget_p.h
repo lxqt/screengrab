@@ -53,7 +53,7 @@ public:
     QKeySequenceWidgetPrivate();
     virtual ~QKeySequenceWidgetPrivate();
 
-    void init(const QKeySequence keySeq, const QString noneStr);
+    void init(const QKeySequence &keySeq, const QString &noneStr);
     void updateView();
 
     void startRecording();

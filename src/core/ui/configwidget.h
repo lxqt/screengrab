@@ -45,7 +45,7 @@ private:
     void loadSettings();
     QString getFormat();
     bool checkUsedShortcuts();
-    void showErrorMessage(QString text);
+    void showErrorMessage(const QString &text);
 
     QStringList _moduleWidgetNames;
 
@@ -58,7 +58,7 @@ private slots:
     void doubleclickTreeKeys(QModelIndex index);
     void toggleCheckShowTray(bool checked);
     void currentItemChanged(const QModelIndex c ,const QModelIndex p);
-    void editDateTmeTpl(QString str);
+    void editDateTmeTpl(const QString &str);
     void setVisibleDateTplEdit(bool);
     void changeTrayMsgType(int type);
     void changeTimeTrayMess(int sec);

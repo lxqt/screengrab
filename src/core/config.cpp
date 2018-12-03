@@ -136,7 +136,7 @@ Config* Config::instance()
     return ptrInstance;
 }
 
-void Config::setValue(const QString &key, const QVariant val)
+void Config::setValue(const QString &key, const QVariant &val)
 {
     _confData[key] = val;
 }
@@ -230,7 +230,7 @@ QString Config::getSaveDir()
     return value(KEY_SAVEDIR).toString();
 }
 
-void Config::setSaveDir(const QString path)
+void Config::setSaveDir(const QString &path)
 {
     setValue(KEY_SAVEDIR, path);
 }
@@ -240,7 +240,7 @@ QString Config::getSaveFileName()
     return value(KEY_SAVENAME).toString();
 }
 
-void Config::setSaveFileName(const QString fileName)
+void Config::setSaveFileName(const QString &fileName)
 {
     setValue(KEY_SAVENAME, fileName);
 }
@@ -250,7 +250,7 @@ QString Config::getSaveFormat()
     return value(KEY_SAVEFORMAT).toString().toLower();
 }
 
-void Config::setSaveFormat(const QString format)
+void Config::setSaveFormat(const QString &format)
 {
     setValue(KEY_SAVEFORMAT, format);
 }
@@ -383,7 +383,7 @@ QString Config::getDateTimeTpl()
     return value(KEY_DATETIME_TPL).toString();
 }
 
-void Config::setDateTimeTpl(const QString tpl)
+void Config::setDateTimeTpl(const QString &tpl)
 {
     setValue(KEY_DATETIME_TPL, tpl);
 }

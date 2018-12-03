@@ -28,7 +28,7 @@
     \param argv Array of command line argwuments
     \param uniqueKey String key fo unicue shared data indefier
  */
-SingleApp::SingleApp(int& argc, char* argv[], const QString keyString) : QApplication(argc, argv), uniqueKey(keyString)
+SingleApp::SingleApp(int& argc, char* argv[], const QString &keyString) : QApplication(argc, argv), uniqueKey(keyString)
 {
         sharedMemory.setKey(uniqueKey);
         if (sharedMemory.attach())
