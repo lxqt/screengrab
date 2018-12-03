@@ -141,15 +141,15 @@ public:
 
     // save dir
     QString getSaveDir();
-    void setSaveDir(QString path);
+    void setSaveDir(const QString path);
 
     // filename default
     QString getSaveFileName();
-    void setSaveFileName(QString fileName);
+    void setSaveFileName(const QString fileName);
 
     // save format str
     QString getSaveFormat();
-    void setSaveFormat(QString format);
+    void setSaveFormat(const QString format);
 
     quint8 getDelay();
     void setDelay(quint8 sec);
@@ -204,7 +204,7 @@ public:
 
     // datetime template
     QString getDateTimeTpl();
-    void setDateTimeTpl(QString tpl);
+    void setDateTimeTpl(const QString tpl);
 
     // zoom aroundd mouse
     bool getZoomAroundMouse();
@@ -263,7 +263,7 @@ private:
      * @param String of name key
      * @param String of saved value
      */
-    void setValue(const QString& key, QVariant val);
+    void setValue(const QString& key, const QVariant val);
 
     Settings *_settings;
     QHash<QString, QVariant> _confData;

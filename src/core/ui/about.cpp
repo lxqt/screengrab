@@ -164,7 +164,7 @@ QString AboutDialog::tabThanks()
     return str;
 }
 
-void AboutDialog::on_txtArea_anchorClicked(QUrl url)
+void AboutDialog::on_txtArea_anchorClicked(const QUrl url)
 {
     QDesktopServices::openUrl(url);
 }

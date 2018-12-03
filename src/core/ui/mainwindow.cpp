@@ -195,7 +195,7 @@ void MainWindow::updatePixmap(QPixmap *pMap)
                                  : *pMap);
 }
 
-void MainWindow::updateModulesActions(QList<QAction *> list)
+void MainWindow::updateModulesActions(const QList<QAction *> list)
 {
     _ui->toolBar->insertSeparator(actOptions);
     if (list.count() > 0)
@@ -209,7 +209,7 @@ void MainWindow::updateModulesActions(QList<QAction *> list)
     }
 }
 
-void MainWindow::updateModulesenus(QList<QMenu *> list)
+void MainWindow::updateModulesenus(const QList<QMenu *> list)
 {
     if (list.count() > 0)
     {
