@@ -50,7 +50,7 @@ QKeySequenceWidget::QKeySequenceWidget(QWidget *parent) :
   Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
   and string for \a noneString
 */
-QKeySequenceWidget::QKeySequenceWidget(QKeySequence const seq, const QString noneString, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(QKeySequence const &seq, const QString &noneString, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
@@ -62,7 +62,7 @@ QKeySequenceWidget::QKeySequenceWidget(QKeySequence const seq, const QString non
 /*!
   Creates a QKeySequenceWidget object wuth \a parent and keysequence \a keySequence
 */
-QKeySequenceWidget::QKeySequenceWidget(const QKeySequence seq, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(const QKeySequence &seq, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
@@ -74,7 +74,7 @@ QKeySequenceWidget::QKeySequenceWidget(const QKeySequence seq, QWidget *parent) 
 /*!
   Creates a QKeySequenceWidget object wuth \a parent and string for \a noneString
 */
-QKeySequenceWidget::QKeySequenceWidget(const QString noneString, QWidget *parent) :
+QKeySequenceWidget::QKeySequenceWidget(const QString &noneString, QWidget *parent) :
         QWidget(parent), d_ptr(new QKeySequenceWidgetPrivate())
 {
     Q_D(QKeySequenceWidget);
@@ -178,7 +178,7 @@ void QKeySequenceWidget::captureKeySequence()
     \param text Text string
     \sa noneText
  */
-void QKeySequenceWidget::setNoneText(const QString text)
+void QKeySequenceWidget::setNoneText(const QString &text)
 {
     d_ptr->noneSequenceText = text;
     d_ptr->updateDisplayShortcut();
@@ -239,7 +239,7 @@ QKeySequenceWidgetPrivate::~QKeySequenceWidgetPrivate()
 
 }
 
-void QKeySequenceWidgetPrivate::init(const QKeySequence keySeq, const QString noneStr)
+void QKeySequenceWidgetPrivate::init(const QKeySequence &keySeq, const QString &noneStr)
 {
     Q_Q(QKeySequenceWidget);
     Q_UNUSED(q);

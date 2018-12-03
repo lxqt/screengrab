@@ -42,7 +42,7 @@ private:
     QTabBar *_tabs;
 
 private slots:
-    void on_txtArea_anchorClicked(const QUrl );
+    void on_txtArea_anchorClicked(const QUrl & );
     void changeTab(int tabIndex);
     void on_butClose_clicked();
     void on_butAboutQt_clicked();
