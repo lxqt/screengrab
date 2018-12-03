@@ -228,7 +228,7 @@ SLOT(clearKeySequence()));
 // Private class implementation
 
 QKeySequenceWidgetPrivate::QKeySequenceWidgetPrivate()
-    : layout(NULL), clearButton(NULL), shortcutButton(NULL)
+    : layout(nullptr), clearButton(nullptr), shortcutButton(nullptr)
 {
     Q_Q(QKeySequenceWidget);
     Q_UNUSED(q);

@@ -49,7 +49,7 @@ AbstractModule* ModuleManager::getModule(const QByteArray& name)
 {
     if (_modules->contains(name))
         return _modules->value(name);
-    return 0;
+    return nullptr;
 }
 
 AbstractModule* ModuleManager::getModule(const quint8 numid)
@@ -60,7 +60,7 @@ AbstractModule* ModuleManager::getModule(const quint8 numid)
         return _modules->value(key);
     }
 
-    return 0;
+    return nullptr;
 }
 
 QList<QMenu*> ModuleManager::generateModulesMenus(const QStringList modules)

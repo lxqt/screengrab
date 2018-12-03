@@ -28,7 +28,7 @@ void X11Utils::compositePointer(int offsetX, int offsetY, QPixmap *snapshot)
     Xcb::ScopedCPointer<xcb_xfixes_get_cursor_image_reply_t> cursor(
                 xcb_xfixes_get_cursor_image_reply(Xcb::connection(),
                                                   xcb_xfixes_get_cursor_image_unchecked(Xcb::connection()),
-                                                  NULL));
+                                                  nullptr));
 
     if (cursor.isNull()) {
         return;

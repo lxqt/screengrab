@@ -27,10 +27,7 @@ ModuleExtEdit::ModuleExtEdit()
 
 ModuleExtEdit::~ModuleExtEdit()
 {
-    if (_extEdit)
-    {
-        delete _extEdit;
-    }
+    delete _extEdit;
 }
 
 QString ModuleExtEdit::moduleName()
@@ -46,7 +43,7 @@ void ModuleExtEdit::init()
 
 QMenu* ModuleExtEdit::initModuleMenu()
 {
-    QMenu *menu = new QMenu(QObject::tr("Edit in..."), 0);
+    QMenu *menu = new QMenu(QObject::tr("Edit in..."), nullptr);
     const QList<XdgAction*> actionsList = _extEdit->getActions();
 
     for (XdgAction *appAction : actionsList)
@@ -62,7 +59,7 @@ QMenu* ModuleExtEdit::initModuleMenu()
 
 QWidget* ModuleExtEdit::initConfigWidget()
 {
-    return 0;
+    return nullptr;
 }
 
 void ModuleExtEdit::defaultSettings()
@@ -73,5 +70,5 @@ void ModuleExtEdit::defaultSettings()
 
 QAction* ModuleExtEdit::initModuleAction()
 {
-    return 0;
+    return nullptr;
 }

@@ -86,7 +86,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     QTreeWidgetItemIterator iter(_ui->treeKeys);
     while (*iter)
     {
-        if ((*iter)->parent() != NULL)
+        if ((*iter)->parent() != nullptr)
         {
             (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
 
@@ -119,7 +119,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     {
         AbstractModule* currentModule = Core::instance()->modules()->getModule(i);
 
-        if (currentModule->initConfigWidget() != 0)
+        if (currentModule->initConfigWidget() != nullptr)
         {
             _ui->listWidget->addItem(currentModule->moduleName());
             QWidget *currentModWidget = currentModule->initConfigWidget();
@@ -132,9 +132,8 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 ConfigDialog::~ConfigDialog()
 {
     delete _ui;
-    conf = NULL;
+    conf = nullptr;
     delete conf;
-
 }
 
 void ConfigDialog::loadSettings()
