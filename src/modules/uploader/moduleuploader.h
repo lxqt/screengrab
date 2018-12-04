@@ -29,7 +29,7 @@ class ModuleUploader: public QObject, public AbstractModule
 {
     Q_OBJECT
 public:
-    ModuleUploader(QObject *parent = 0);
+    ModuleUploader(QObject *parent = nullptr);
     QString moduleName();
     QWidget* initConfigWidget();
     void defaultSettings();
