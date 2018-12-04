@@ -48,8 +48,8 @@ struct StateNotifyMessage {
 
     StateNotifyMessage()
     {
-        header = "";
-        message = "";
+        header.clear();
+        message.clear();
     };
 
     StateNotifyMessage(QString h, QString m)

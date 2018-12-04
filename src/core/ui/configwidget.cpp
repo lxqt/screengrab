@@ -427,7 +427,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
     changeShortcut(seq);
 #endif
     }
-    else if (checkUsedShortcuts() && seq.toString() != "")
+    else if (checkUsedShortcuts() && !seq.toString().isEmpty())
         showErrorMessage(tr("This key is already used in ScreenGrab! Please select another."));
 }
 
