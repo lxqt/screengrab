@@ -148,10 +148,9 @@ void Core::coreQuit()
     _conf->setLastSelection(_lastSelectedArea);
     _conf->saveScreenshotSettings();
 
-    _conf->setRestoredWndSize(_wnd->width(), _wnd->height());
-    _conf->saveWndSize();
-
     if (_wnd) {
+        _conf->setRestoredWndSize(_wnd->width(), _wnd->height());
+        _conf->saveWndSize();
         _wnd->close();
     }
 
