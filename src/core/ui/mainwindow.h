@@ -51,8 +51,8 @@ public:
     void showTrayMessage(const QString& header, const QString& message);
     void setConfig(Config *config);
     void updatePixmap(QPixmap *pMap);
-    void updateModulesActions(QList<QAction*> list);
-    void updateModulesenus(QList<QMenu*> list);
+    void updateModulesActions(const QList<QAction *> &list);
+    void updateModulesenus(const QList<QMenu *> &list);
 
 public Q_SLOTS:
     void showWindow(const QString& str);

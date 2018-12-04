@@ -195,7 +195,7 @@ void MainWindow::updatePixmap(QPixmap *pMap)
                                  : *pMap);
 }
 
-void MainWindow::updateModulesActions(const QList<QAction *> list)
+void MainWindow::updateModulesActions(const QList<QAction *> &list)
 {
     _ui->toolBar->insertSeparator(actOptions);
     if (list.count() > 0)
@@ -209,7 +209,7 @@ void MainWindow::updateModulesActions(const QList<QAction *> list)
     }
 }
 
-void MainWindow::updateModulesenus(const QList<QMenu *> list)
+void MainWindow::updateModulesenus(const QList<QMenu *> &list)
 {
     if (list.count() > 0)
     {
@@ -234,16 +234,15 @@ void MainWindow::show()
 {
     if (!isVisible() && !_trayed)
         showNormal();
+    if (_trayIcon){
+        if (_conf->getShowTrayIcon())
+        {
+            _trayIcon->blockSignals(false);
+            _trayIcon->setContextMenu(_trayMenu);
+        }
 
-    if (_conf->getShowTrayIcon())
-    {
-        _trayIcon->blockSignals(false);
-        _trayIcon->setContextMenu(_trayMenu);
+    _trayIcon->setVisible(true);
     }
-
-    if (_trayIcon)
-        _trayIcon->setVisible(true);
-
     QMainWindow::show();
 }
 
