@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ця мультиплатформова програма створена для швидкого отримання знімків Вашого робочого столу.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
@@ -439,7 +439,7 @@
         <translation>Показати вікно</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
         <source>%1 Files</source>
         <translation type="unfinished"></translation>
     </message>
