@@ -495,7 +495,7 @@
         <translation>Ocultar</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
         <source>%1 Files</source>
         <translation>%1 Arquivos</translation>
     </message>
