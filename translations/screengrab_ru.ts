@@ -431,7 +431,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Нет</translation>
+        <translation type="unfinished">Нет</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
