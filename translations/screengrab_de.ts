@@ -947,7 +947,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="580"/>
         <source>Shortcut</source>
-        <translation>Tastenkombination</translation>
+        <translation>Tastenkürzel</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
