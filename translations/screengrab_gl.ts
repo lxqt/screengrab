@@ -26,12 +26,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
+        <translation>é un aplicativo multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>É unha aplicación lixeira e potente, escrita en Qt.</translation>
+        <translation>É un aplicativo lixeiro e potente, escrito en Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Pode unirse a nós e axudarnos se quixer. Isto é un convite se lle gusta esta aplicación.</translation>
+        <translation>Pode unirse a nós e axudarnos se quixer. Isto é un convite se lle gusta este aplicativo.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
+        <translation>é un aplicativo multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation>Executar a aplicación coa xanela principal agachada</translation>
+        <translation>Executar o aplicativo coa xanela principal agachada</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="423"/>
