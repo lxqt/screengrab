@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>ScreenGrab ist eine einfache, aber leistungsstarke Anwendung, die auf die Qt-Bibliotheken aufsetzt.</translation>
+        <translation>Es ist eine leichtgewichtige und leistungsstarke Anwendung, geschrieben in Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Lizensiert unter der </translation>
+        <translation>Lizenziert unter der </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation>Machen Sie Verbesserungsvorschläge für nächste Versionen</translation>
+        <translation>Machen Sie Vorschläge für zukünftige Versionen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation>Melden Sie Problem und Fehler</translation>
+        <translation>Melden Sie Fehler und Probleme</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Portugiesisch-Brasilianische Übersetzung</translation>
+        <translation> Brasilianisch-Portugiesische Übersetzung</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="301"/>
         <source>Select directory</source>
-        <translation>Ordner wählen</translation>
+        <translation>Verzeichnis auswählen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="212"/>
@@ -165,12 +165,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Der Ordner %1 existiert nicht. Möchten Sie ihn erstellen?</translation>
+        <translation>Das Verzeichnis %1 existiert nicht. Möchten Sie es erstellen?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Möchten Sie die Standardeinstellungen wieder herstellen?</translation>
+        <translation>Möchten Sie die Einstellungen auf die Standardwerte zurücksetzen?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="370"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation>Link, um das Bild zu löschen:</translation>
+        <translation>Link zum Löschen des Bildes:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
@@ -347,7 +347,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
         <source>Upload processing... Please wait</source>
-        <translation>Das Hochladen wird bearbeitet...bitte warten</translation>
+        <translation>Hochladen wird verarbeitet... Bitte warten</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
         <source>Error uploading screenshot</source>
-        <translation>Beim Hochladen ist ein Fehler aufgetreten</translation>
+        <translation>Fehler beim Hochladen des Bildschirmfotos</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
         <source>Are you sure you want to continue?</source>
-        <translation>Möchten Sie wirklich fortfahren?</translation>
+        <translation>Sind Sie sicher, dass Sie fortfahren möchten?</translation>
     </message>
 </context>
 <context>
@@ -405,17 +405,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation>Aktives Fenster</translation>
+        <translation>Fenster</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Bildschirm-Bereich</translation>
+        <translation>Bildschirmbereich</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation>Letzter gewählter Ausschnitt</translation>
+        <translation>Zuletzt ausgewählter Bereich</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Aufnahme-Verzögerung in Sekunden</translation>
+        <translation>Verzögerung in Sekunden vor der Aufnahme des Bildschirmfotos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
@@ -492,7 +492,7 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
         <source>Hide</source>
-        <translation>Verbergen</translation>
+        <translation>Ausblenden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
         <source>Uploading</source>
-        <translation>Hochladen</translation>
+        <translation>Wird hochgeladen</translation>
     </message>
 </context>
 <context>
@@ -558,7 +558,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
         <source>External edit</source>
-        <translation>Externer Editor</translation>
+        <translation>Externe Bearbeitung</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
@@ -601,7 +601,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
         <source>URl to delete image</source>
-        <translation>URI für das Löschen des Bildes</translation>
+        <translation>URl zum Löschen des Bildes</translation>
     </message>
 </context>
 <context>
@@ -614,7 +614,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
         <source>Default image host</source>
-        <translation>Standard-Service</translation>
+        <translation>Standard-Bildhost</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
@@ -637,7 +637,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
         <source>Configuration for imgur.com upload</source>
-        <translation>Konfiguration für &lt;imgur.com&gt;</translation>
+        <translation>Konfiguration zum Hochladen auf imgur.com</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
@@ -650,7 +650,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation>Hochladen auf Imgur</translation>
+        <translation>Auf Imgur hochladen</translation>
     </message>
 </context>
 <context>
@@ -677,7 +677,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Standard-Bildformat</translation>
+        <translation>Standard-Speicherformat für Bilder</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
@@ -692,12 +692,12 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Foto automatisch speichern</translation>
+        <translation>Bildschirmfoto automatisch speichern</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>Erstes Foto speichern</translation>
+        <translation>Erstes Bildschirmfoto speichern</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -722,7 +722,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation>Nur an Rändern innerhalb des ausgwählten Bildschirmbereichs anpassen</translation>
+        <translation>Nur an Rändern innerhalb des ausgewählten Bildschirmbereichs anpassen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
@@ -757,7 +757,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Fill screen</source>
-        <translation>Bildschirmfoto ausfüllen</translation>
+        <translation>Bildschirm ausfüllen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
@@ -767,7 +767,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="602"/>
         <source>Area select</source>
-        <translation>Bereich wählen</translation>
+        <translation>Bereich auswählen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="608"/>
@@ -777,7 +777,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="612"/>
         <source>New screen</source>
-        <translation>Neues Bildschirmfoto</translation>
+        <translation>Neuer Bildschirm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="617"/>
@@ -852,7 +852,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>Den vollständigen Dateipfad kopieren</translation>
+        <translation>Vollständigen Dateipfad kopieren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
@@ -867,12 +867,12 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Standardmäßiges Speicherverzeichnis</translation>
+        <translation>Standard-Speicherverzeichnis</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>Standardmäßige Datei</translation>
+        <translation>Standard-Datei</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
@@ -907,7 +907,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="474"/>
         <source>Never</source>
-        <translation>Keine</translation>
+        <translation>Nie</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
