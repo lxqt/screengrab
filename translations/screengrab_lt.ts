@@ -152,48 +152,48 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Katalogo %1 nėra. Ar norite jį sukurti?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="212"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="313"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="301"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
         <translation>Pasirinkite katalogą</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Ar norite atstatyti nustatymus į numatytuosius?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="370"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
         <translation>Pavyzdys: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="426"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
         <translation>Ši klavišų kombinacija jau yra naudojama jūsų sistemoje! Pasirinkite kitą.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="432"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Ši klavišų kombinacija jau yra naudojama programoje ScreenGrab! Pasirinkite kitą.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="450"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
         <translation>Ši klavišų kombinacija jūsų sistemoje nėra palaikoma!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="485"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
@@ -226,32 +226,32 @@
         <translation>Paleisti programą su paslėptu pagrindiniu langu</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved</source>
         <translation>Įrašyta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved to </source>
         <translation>Įrašyta į </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="444"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Įrašyto failo pavadinimas yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="451"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Kelias į įrašytą failą yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Copied</source>
         <translation>Nukopijuota</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Ekrano kopija yra nukopijuota į iškarpinę</translation>
     </message>
@@ -334,48 +334,48 @@
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
         <source>Ready to upload</source>
         <translation>Pasiruošę įkelti</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
         <source>Upload processing... Please wait</source>
         <translation>Vykdomas įkėlimas... Palaukite</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
         <source>Receiving a response from the server</source>
         <translation>Gaunamas atsakymas iš serverio</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
         <source>Upload completed</source>
         <translation>Įkėlimas užbaigtas</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Close</source>
         <translation>Užverti</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
         <source>Error uploading screenshot</source>
         <translation>Klaida, įkeliant ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
         <translation>Atverti šią nuorodą numatytojoje saityno naršyklėje, tai gali iš karto, be jokių įspėjimų ištrinti jūsų įkeltą paveikslą.</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Are you sure you want to continue?</source>
         <translation>Ar tikrai norite tęsti?</translation>
     </message>
@@ -494,33 +494,33 @@
         <translation>Išeiti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
         <source>Screenshot </source>
         <translation>Ekrano kopija </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Spustelėkite du kartus, norėdami atverti ekrano kopiją numatytojoje paveikslų žiūryklėje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
         <translation>Slėpti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
         <source>Show</source>
         <translation>Rodyti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
         <translation>%1 failų</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
         <translation>Įrašyti kaip...</translation>
     </message>
@@ -556,12 +556,12 @@ Paspauskite bet kurį klavišą arba dešinįjį ar vidurinį pelės mygtuką, n
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
         <translation>Išorinis redagavimas</translation>
     </message>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
         <translation>Redaguoti...</translation>
     </message>
@@ -906,8 +906,8 @@ Paspauskite bet kurį klavišą arba dešinįjį ar vidurinį pelės mygtuką, n
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
-        <source>Fill screen</source>
-        <translation>Visas ekranas</translation>
+        <source>Full screen</source>
+        <translation type="unfinished">Visas ekranas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>

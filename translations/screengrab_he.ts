@@ -152,48 +152,48 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>התיקייה %1 אינה קיימת. ליצור אותה?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="212"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="313"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
         <translation>אזהרה</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="301"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
         <translation>נא לבחור תיקייה</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>לאפס את ההגדרות לבררת המחדל?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="370"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
         <translation>דוגמה: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="426"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
         <translation>המערכת שלך כבר משתמשת במפתח הזה! נא לבחור באחד אחר.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="432"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>התכנית ScreenGrab כבר משתמשת במפתח זה! נא לבחור באחד אחר.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="450"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
         <translation>המערכת שלך אינה תומכת במפתח זה!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="485"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
@@ -226,32 +226,32 @@
         <translation>הפעלת היישום עם חלון ראשי מוסתר</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved</source>
         <translation>נשמר</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved to </source>
         <translation>נשמר אל </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="444"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>שם הקובץ שנשמר מועתק ללוח הגזירים</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="451"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>הנתיב לקובץ שנשמר מועתק ללוח הגזירים</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Copied</source>
         <translation>הועתק</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>צילום המסך מועתק ללוח הגזירים</translation>
     </message>
@@ -334,48 +334,48 @@
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
         <source>Ready to upload</source>
         <translation>מוכן להעלאה</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
         <source>Upload processing... Please wait</source>
         <translation>ההעלאה עוברת עיבוד… נא להמתין</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
         <source>Receiving a response from the server</source>
         <translation>מתקבלת תגובה מהשרת</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
         <source>Upload completed</source>
         <translation>ההעלאה הושלמה</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Close</source>
         <translation>סגירה</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
         <source>Error uploading screenshot</source>
         <translation>העלאת צילום המסך נתקלה בשגיאה</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
         <translation>ניתן לפתוח את הקישור הזה בדפדפן בררת המחדל שלך, הוא עשוי למחוק את התמונה שלך מיידית, ללא אזהרות.</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Are you sure you want to continue?</source>
         <translation>להמשיך?</translation>
     </message>
@@ -494,33 +494,33 @@
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
         <source>Screenshot </source>
         <translation>צילום מסך </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>יש ללחוץ לחיצה כפולה כדי לפתוח צילום מסך במציג תמונות חיצוני כבררת מחדל</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
         <translation>הסתרה</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
         <source>Show</source>
         <translation>הצגה</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
         <translation>קובצי %1</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
         <translation>שמירה בשם…</translation>
     </message>
@@ -556,12 +556,12 @@ any key or using the right or middle mouse buttons.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
         <translation>עריכה חיצונית</translation>
     </message>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
         <translation>עריכה עם…</translation>
     </message>
@@ -906,8 +906,8 @@ any key or using the right or middle mouse buttons.</source>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
-        <source>Fill screen</source>
-        <translation>מילוי המסך</translation>
+        <source>Full screen</source>
+        <translation type="unfinished">מסך מלא</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
