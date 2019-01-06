@@ -152,48 +152,48 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Non existe o directorio %1. Quere crealo?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="212"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="313"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="301"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
         <translation>Seleccione o directorio</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Quere reiniciar os axustes predeterminados?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="370"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
         <translation>Exemplo: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="426"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
         <translation>Esta tecla xa está en uso polo sistema! Seleccione outra.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="432"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Esta tecla xa está en uso por ScreenGrab! Seleccione outra.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="450"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
         <translation>Esta tecla non está admitida no seu sistema!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="485"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -226,32 +226,32 @@
         <translation>Executar o aplicativo coa xanela principal agachada</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="423"/>
+        <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved to </source>
         <translation>Gardado en </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="445"/>
+        <location filename="../src/core/core.cpp" line="444"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>O nome do ficheiro gardado copiase no portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="451"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>A ruta ao ficheiro gardado copiase ao portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Copied</source>
         <translation>Copiado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="473"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>A captura de pantalla copiase ao portapapeis</translation>
     </message>
@@ -334,48 +334,48 @@
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
         <source>Ready to upload</source>
         <translation>Listo para enviar</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="109"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
         <source>Upload processing... Please wait</source>
         <translation>Enviando... Agarde</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="162"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
         <source>Receiving a response from the server</source>
         <translation>Recibindo a resposta do servidor</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="179"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
         <source>Upload completed</source>
         <translation>Envío completado</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="201"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="216"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Close</source>
         <translation>Pechar</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="208"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
         <source>Error uploading screenshot</source>
         <translation>Produciuse un erro ao enviar a captura de pantalla</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="209"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="246"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
         <translation>Abrir a ligazón no navegador predeterminado; pode eliminar directamente a súa imaxe sen ningún aviso.</translation>
     </message>
     <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="247"/>
+        <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Are you sure you want to continue?</source>
         <translation>Confirma que quere continuar?</translation>
     </message>
@@ -494,33 +494,33 @@
         <translation>Saír</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
         <source>Screenshot </source>
         <translation>Captura de pantalla </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Faga dobre clic para abrir a captura de pantalla no visor de imaxes externo predeterminado</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="510"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
         <translation>Agachar</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="517"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
         <source>Show</source>
         <translation>Amosar</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
         <translation>%1 ficheiro(s)</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="592"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
         <translation>Gardar como...</translation>
     </message>
@@ -556,12 +556,12 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="38"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
         <translation>Edición externa</translation>
     </message>
     <message>
-        <location filename="../src/modules/extedit/moduleextedit.cpp" line="49"/>
+        <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
         <translation>Editar con..</translation>
     </message>
@@ -906,8 +906,8 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
-        <source>Fill screen</source>
-        <translation>Encher a pantalla</translation>
+        <source>Full screen</source>
+        <translation type="unfinished">Pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
