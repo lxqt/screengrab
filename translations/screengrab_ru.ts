@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="370"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished">Двойной клик открывает скриншот во внешнем просмотрщике</translation>
+        <translation>Двойной клик открывает скриншот во внешнем cтандартном средстве просмотра</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Без декораций окна</translation>
+        <translation>Без декораций окна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
