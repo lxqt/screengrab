@@ -907,7 +907,7 @@ calquera tecla ou os botóns dereito ou central do rato.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Pantalla completa</translation>
+        <translation>Pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
