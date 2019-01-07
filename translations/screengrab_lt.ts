@@ -907,7 +907,7 @@ Paspauskite bet kurį klavišą arba dešinįjį ar vidurinį pelės mygtuką, n
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Visas ekranas</translation>
+        <translation>Visas ekranas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
