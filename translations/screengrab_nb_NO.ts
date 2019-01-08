@@ -906,7 +906,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Fullskjerm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
