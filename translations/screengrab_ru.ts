@@ -218,7 +218,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved to </source>
-        <translation>Слхранено в </translation>
+        <translation>Сохранено в </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
