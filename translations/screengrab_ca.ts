@@ -907,7 +907,7 @@ sortiu prement qualsevol tecla o els botons dret o central del ratolí.</transla
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Pantalla completa</translation>
+        <translation>Pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
