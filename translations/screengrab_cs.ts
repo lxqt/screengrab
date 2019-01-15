@@ -907,7 +907,7 @@ ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Celá obrazovka</translation>
+        <translation>Celá obrazovka</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
