@@ -218,7 +218,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="422"/>
         <source>Saved to </source>
-        <translation>Слхранено в </translation>
+        <translation>Сохранено в </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Без декораций окна</translation>
+        <translation>Без декораций окна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -550,7 +550,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 пиксел </translation>
+        <translation>%1 x %2 пикс </translation>
     </message>
 </context>
 <context>
@@ -558,7 +558,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation type="unfinished">Внешнее редактирование</translation>
+        <translation>Внешнее редактирование</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
