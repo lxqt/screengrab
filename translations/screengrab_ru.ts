@@ -558,7 +558,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation>Внешнее редактирование</translation>
+        <translation>Внешний редактор</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
@@ -938,7 +938,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Весь экран</translation>
+        <translation>Весь экран</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
