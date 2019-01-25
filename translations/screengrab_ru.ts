@@ -723,12 +723,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation type="unfinished"></translation>
+        <translation>Если используются несколько экранов, обрезать выбранную область по краям текущего экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Обрезать область по размерам текущего экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
