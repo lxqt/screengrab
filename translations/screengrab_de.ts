@@ -947,7 +947,7 @@ indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Vollbild</translation>
+        <translation>Vollbild</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
