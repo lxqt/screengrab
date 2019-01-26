@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
-        <translation>Выбрать папку</translation>
+        <translation>Выбрать каталог</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Папка %1 не существует. Вы хотите создать её?</translation>
+        <translation>Каталог %1 не существует. Вы хотите создать его?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="311"/>
@@ -863,7 +863,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Директория для сохранения по умолчанию</translation>
+        <translation>Каталог для сохранения по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
