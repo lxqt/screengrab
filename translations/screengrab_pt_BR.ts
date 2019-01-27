@@ -727,7 +727,7 @@ qualquer tecla ou usando os botões direito ou do meio do mouse.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation>Ajustar dentro da área selecionada</translation>
+        <translation>Ajustar às bordas dentro da área selecionada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
