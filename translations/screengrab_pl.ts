@@ -907,7 +907,7 @@ używając dowolnego klawisza lub prawego bądź środkowego przycisku myszy.</t
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Pełny ekran</translation>
+        <translation>Pełny ekran</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
