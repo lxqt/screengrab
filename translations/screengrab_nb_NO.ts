@@ -56,12 +56,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Hva kan du gjøre?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation>Oversett ScreenGrab til andre språk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
