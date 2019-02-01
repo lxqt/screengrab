@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation></translation>
+        <translation>bruker Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -16,42 +16,42 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Takk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Hjelp oss</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>er et plattformuavhenging program for å raskt skape skjermbilder av ditt skrivebord.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation>Er et lettvekts og kraftfullt program skrevet med Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation></translation>
+        <translation>Nettside</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation>Lisensiert under </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation>Opphavsrett &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation>Du kan bli med og hjelpe oss hvis du ønsker. Dette er en invitasjon til deg som liker dette programmet.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
