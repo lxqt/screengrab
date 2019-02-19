@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>en utilisant Qt</translation>
+        <translation>utilisant Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Droits d&apos;auteur &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Traqueur de bogues</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
@@ -91,37 +91,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation></translation>
+        <translation>&quot;Marcio Moraes&quot;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation>Ukrainien</translation>
+        <translation> Traduction ukrainienne</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation>Gennadi Motsyo</translation>
+        <translation>&quot;Gennadi Motsyo&quot;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation>Espagnol</translation>
+        <translation> Traduction espagnol</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation>Burjans L García D</translation>
+        <translation>&quot;Burjans L García D&quot;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation>Italien</translation>
+        <translation> Traduction italienne</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Tests:</translation>
+        <translation>Test :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-build [Windows XP et 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation type="unfinished"></translation>
+        <translation>ancienne version de win32-build [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;win32-build [Windows 7]&quot;</translation>
     </message>
 </context>
 <context>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Le répertoire %1 n&apos;existe pas. Voulez vous le crééer ?</translation>
+        <translation>Le répertoire %1 n&apos;existe pas. Voulez vous le créer ?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
-        <translation>Exemple:</translation>
+        <translation>Exemple : </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
-        <translation>Cette touche n&apos;est pas supportée par votre système!</translation>
+        <translation>Cette touche n&apos;est pas supportée par votre système !</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="484"/>
@@ -295,12 +295,12 @@
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
         <source>Copy</source>
-        <translation type="unfinished">Copier</translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
         <source>Extended preformed html or bb codes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codes html ou bb préformés étendus :</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
         <source>Upload processing... Please wait</source>
-        <translation>Téléchargement en cours... Patience.</translation>
+        <translation>Téléchargement en cours... Merci de patienter</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
@@ -357,7 +357,7 @@
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
         <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
+        <translation>Fermer</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
         <source>Error</source>
-        <translation type="unfinished">Erreur</translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
@@ -385,7 +385,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation>ScreenGrab</translation>
+        <translation>&quot;ScreenGrab&quot;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
@@ -420,7 +420,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Délai:</translation>
+        <translation>Délai :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Pas de décoration des fenêtres</translation>
+        <translation>Pas de décoration des fenêtres</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> sec</translation>
+        <translation> seconde(s)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished">Double cliquer pour visualiser la capture dans le lecteur externe</translation>
+        <translation>Double cliquer pour visualiser la capture dans le lecteur externe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Non</translation>
+        <translation>Aucun</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
         <source>Upload the screenshot to the default image host</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger la capture d&apos;écran sur l&apos;hôte d&apos;image par défaut</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
@@ -549,7 +549,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2</translation>
+        <translation>%1 x %2 pixels </translation>
     </message>
 </context>
 <context>
@@ -557,7 +557,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Édition externe</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
@@ -613,7 +613,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
         <source>Default image host</source>
-        <translation type="unfinished"></translation>
+        <translation>Hôte d&apos;image par défaut</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
@@ -636,7 +636,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
         <source>Configuration for imgur.com upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuration pour le téléchargement vers imgur.com</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
@@ -746,7 +746,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation> sec</translation>
+        <translation> seconde(s)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -861,7 +861,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
         <source>Tray mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode bac</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
@@ -906,7 +906,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation type="unfinished">Plein écran</translation>
+        <translation>Plein écran</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
