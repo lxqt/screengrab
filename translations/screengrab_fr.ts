@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Traductions:</translation>
+        <translation>Traductions :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
         <source>Direct link:</source>
-        <translation>Lien direct:</translation>
+        <translation>Lien direct :</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation>Lien pour effacer l&apos;image:</translation>
+        <translation>Lien pour effacer l&apos;image :</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation>Type:</translation>
+        <translation>Type :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -771,7 +771,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation>Nom:</translation>
+        <translation>Nom :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
@@ -846,7 +846,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
         <source>Tray messages:</source>
-        <translation>Notifications:</translation>
+        <translation>Notifications :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="470"/>
@@ -951,7 +951,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
         <source>Selected shortcut:</source>
-        <translation>Raccourci sélectionné:</translation>
+        <translation>Raccourci sélectionné :</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
