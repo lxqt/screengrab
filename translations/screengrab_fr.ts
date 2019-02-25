@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation>Aidez nous</translation>
+        <translation>Aidez-nous</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>est une application multi-plateforme pour créer des captures d&apos;écran de votre bureau.</translation>
+        <translation>est une application multiplateforme permettant de créer rapidement des captures d&apos;écran de votre bureau.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Droits d&apos;auteur &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>Que pouvez vous faire ?</translation>
+        <translation>Que pouvez-vous faire ?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -86,12 +86,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Brésilien - Portuguais</translation>
+        <translation> Traduction en Portugais Brésilien</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation>&quot;Marcio Moraes&quot;</translation>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation>&quot;Gennadi Motsyo&quot;</translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation>&quot;Burjans L García D&quot;</translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>&quot;win32-build [Windows 7]&quot;</translation>
+        <translation>&apos;win32-build [Windows 7]&apos;</translation>
     </message>
 </context>
 <context>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Le répertoire %1 n&apos;existe pas. Voulez vous le créer ?</translation>
+        <translation>Le répertoire %1 n&apos;existe pas. Voulez-vous le créer ?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
@@ -165,12 +165,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
-        <translation>Choisissez un répertoire</translation>
+        <translation>Choisir un répertoire</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Voulez vous restaurer les paramètres par défaut ?</translation>
+        <translation>Voulez-vous rétablir les paramètres par défaut ?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="369"/>
@@ -180,12 +180,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation>Cette touche est déjà utilisé sur votre système! Veuillez en sélectionner une autre.</translation>
+        <translation>Cette touche est déjà utilisée dans votre système ! Veuillez en sélectionner une autre.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>Cette touche est déjà utilisé dans ScreenGrab! Veuillez en sélectionner une autre.</translation>
+        <translation>Cette touche est déjà utilisé dans ScreenGrab ! Veuillez en sélectionner une autre.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="449"/>
@@ -203,12 +203,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>est une application multi-plateforme pour créer des captures d&apos;écran de votre bureau.</translation>
+        <translation>est une application multiplateforme permettant de créer rapidement des captures d&apos;écran de votre bureau.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a fullscreen screenshot</source>
-        <translation>Prendre une capture d&apos;écran de l&apos;écran entier</translation>
+        <translation>Prendre une capture plein écran</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
         <source>Upload to internet</source>
-        <translation>Télécharger sur Internet</translation>
+        <translation>Transférer sur internet</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
         <source>Upload to</source>
-        <translation>Télécharger sur</translation>
+        <translation>Transférer sur</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
@@ -310,7 +310,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
         <source>Upload</source>
-        <translation>Télécharger</translation>
+        <translation>Transférer</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
         <source>Size: </source>
-        <translation>Taille: </translation>
+        <translation>Taille : </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
@@ -330,13 +330,13 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
         <source>Uploaded </source>
-        <translation>Téléchargé </translation>
+        <translation>Envoyé </translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
         <source>Ready to upload</source>
-        <translation>Prêt à télécharger</translation>
+        <translation>Prêt à être transféré</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
         <source>Upload completed</source>
-        <translation>Téléchargement terminé</translation>
+        <translation>Transfère terminé</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
         <source>Error uploading screenshot</source>
-        <translation>Erreur lors du téléchargement de la copie d&apos;écran</translation>
+        <translation>Erreur lors du transfère de la capture d&apos;écran</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
@@ -372,12 +372,12 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation>Ouvrez ce lien dans votre navigateur par défaut, cela peut effacer directement l&apos;image téléchargée, sans le moindre avertissement.</translation>
+        <translation>Ouvrir ce lien dans votre navigateur par défaut, cela peut effacer directement l&apos;image transférée, sans le moindre avertissement.</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
         <source>Are you sure you want to continue?</source>
-        <translation>Êtes vous sûr de vouloir continuer ?</translation>
+        <translation>Êtes-vous sûr de vouloir continuer ?</translation>
     </message>
 </context>
 <context>
@@ -385,7 +385,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation>&quot;ScreenGrab&quot;</translation>
+        <translation>ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
@@ -410,12 +410,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Sélection</translation>
+        <translation>Zone d&apos;écran</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation>Dernière zone selectionnée</translation>
+        <translation>Dernière zone sélectionnée</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> seconde(s)</translation>
+        <translation> sec</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>%1 Fichiers</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
         <source>Uploading</source>
-        <translation>Téléchargement en cours</translation>
+        <translation>Transfère en cours</translation>
     </message>
 </context>
 <context>
@@ -544,7 +544,8 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation>Utilisez la souris pour dessiner une zone rectangulaire à capture ou n&apos;importe quelle touche, clic droit ou clic de la molette pour quitter.</translation>
+        <translation>Utiliser votre souris pour dessiner un rectangle et faire une capture d&apos;écran ou quitter en appuyant
+sur n&apos;importe quelle touche ou en utilisant le bouton droit ou le bouton central de la souris.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
@@ -562,12 +563,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>Editer avec...</translation>
+        <translation>Éditer avec...</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
         <source>Upload</source>
-        <translation>Télécharger</translation>
+        <translation>Transférer</translation>
     </message>
 </context>
 <context>
@@ -600,7 +601,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
         <source>URl to delete image</source>
-        <translation>URI pour effacer l&apos;image</translation>
+        <translation>URL pour effacer l&apos;image</translation>
     </message>
 </context>
 <context>
@@ -608,7 +609,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
         <source>Common settings</source>
-        <translation>Paramètres généraux</translation>
+        <translation>Paramètres communs</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
@@ -628,7 +629,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
         <source>Settings for: </source>
-        <translation>Paramètres pour: </translation>
+        <translation>Paramètres pour : </translation>
     </message>
 </context>
 <context>
@@ -649,7 +650,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
         <source>Upload to Imgur</source>
-        <translation>Télécharger sur imgur</translation>
+        <translation>Transférer sur imgur</translation>
     </message>
 </context>
 <context>
@@ -716,7 +717,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation>Format</translation>
+        <translation>Format de l&apos;image</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
@@ -726,7 +727,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Copier le nom du fichier dans le presse-papiers lors de l&apos;enregistrement</translation>
+        <translation>Copier le nom du fichier dans le presse-papiers lors de la sauvegarde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -746,7 +747,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation> seconde(s)</translation>
+        <translation> sec</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -776,22 +777,22 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Ajouter la date au nom de fichier</translation>
+        <translation>Insertion de la date et de l&apos;heure actuelles dans le nom de fichier enregistré</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Ajouter la date au nom du fichier</translation>
+        <translation>Insérer la date et l&apos;heure actuelles dans le nom du fichier</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation>Modèle: </translation>
+        <translation>Modèle : </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Exemple: </translation>
+        <translation>Exemple : </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
@@ -821,27 +822,27 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation>Ouvir dans le visualiseur externe au double clic</translation>
+        <translation>Ouvrir dans la visionneuse externe en double-clic</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation>Activer le visualiseur externe</translation>
+        <translation>Activer la visionneuse externe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation>Faire correspondre les bords de la sélection avec les bords de la zone rectangulaire sélectionné</translation>
+        <translation>Ajuster aux bords uniquement dans la zone d&apos;écran sélectionnée</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation>Faire correspondre les bords de la sélection avec les bords de la zone rectangulaire sélectionné</translation>
+        <translation>Ajuster aux bords à l&apos;intérieur de la zone sélectionnée</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>Placer ScreenGrab dans la barre des tâches</translation>
+        <translation>Afficher ScreenGrab dans la barre des tâches</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
@@ -916,7 +917,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="602"/>
         <source>Area select</source>
-        <translation>Sélection</translation>
+        <translation>Zone de sélection</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="608"/>
