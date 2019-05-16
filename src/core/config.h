@@ -29,8 +29,8 @@
 #include <QDateTime>
 
 //  default values const
-const QString DEF_SAVE_NAME = "screen";
-const QString DEF_SAVE_FORMAT = "png";
+const QString DEF_SAVE_NAME = QStringLiteral("screen");
+const QString DEF_SAVE_FORMAT = QStringLiteral("png");
 const quint8 DEF_DELAY = 0;
 const bool DEF_X11_NODECOR = false;
 const quint8 DEF_TRAY_MESS_TYPE = 1;
@@ -46,7 +46,7 @@ const int DEF_TIME_TRAY_MESS = 5;
 const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
 const bool DEF_AUTO_SAVE_FIRST = false;
-const QString DEF_DATETIME_TPL = "yyyy-MM-dd-hh-mm-ss";
+const QString DEF_DATETIME_TPL = QStringLiteral("yyyy-MM-dd-hh-mm-ss");
 const bool DEF_SHOW_TRAY = true;
 const bool DEF_ENABLE_EXT_VIEWER = true;
 const bool DEF_INCLUDE_CURSOR = false;

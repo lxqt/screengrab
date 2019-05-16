@@ -53,7 +53,7 @@ QMenu* ModuleExtEdit::initModuleMenu()
         QObject::connect(appAction, SIGNAL(triggered()), _extEdit, SLOT(runExternalEditor()));
     }
 
-    menu->setObjectName("menuExtedit");
+    menu->setObjectName(QStringLiteral("menuExtedit"));
     return menu;
 }
 

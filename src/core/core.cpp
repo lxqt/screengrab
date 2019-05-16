@@ -64,19 +64,19 @@ Core::Core()
     _cmdLine.addHelpOption();
     _cmdLine.addVersionOption();
 
-    QCommandLineOption optFullScreen(QStringList() << "f" << "fullscreen", tr("Take a fullscreen screenshot"));
+    QCommandLineOption optFullScreen(QStringList() << QStringLiteral("f") << QStringLiteral("fullscreen"), tr("Take a fullscreen screenshot"));
     _cmdLine.addOption(optFullScreen);
     _screenTypeOpts.append(optFullScreen);
 
-    QCommandLineOption optActiveWnd(QStringList() << "a" << "active", tr("Take a screenshot of the active window"));
+    QCommandLineOption optActiveWnd(QStringList() << QStringLiteral("a") << QStringLiteral("active"), tr("Take a screenshot of the active window"));
     _cmdLine.addOption(optActiveWnd);
     _screenTypeOpts.append(optActiveWnd);
 
-    QCommandLineOption optSelectedRect(QStringList() << "r" << "region", tr("Take a screenshot of a selection of the screen"));
+    QCommandLineOption optSelectedRect(QStringList() << QStringLiteral("r") << QStringLiteral("region"), tr("Take a screenshot of a selection of the screen"));
     _cmdLine.addOption(optSelectedRect);
     _screenTypeOpts.append(optSelectedRect);
 
-    QCommandLineOption optRunMinimized(QStringList() << "m" << "minimized", tr("Run the application with a hidden main window"));
+    QCommandLineOption optRunMinimized(QStringList() << QStringLiteral("m") << QStringLiteral("minimized"), tr("Run the application with a hidden main window"));
     _cmdLine.addOption(optRunMinimized);
 
     sleep(250);
@@ -412,7 +412,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     bool saved = false;
     if (!fileName.isEmpty())
     {
-        if (format == "jpg")
+        if (format == QLatin1String("jpg"))
             saved = _pixelMap->save(fileName,format.toLatin1(), _conf->getImageQuality());
         else
             saved = _pixelMap->save(fileName,format.toLatin1(), -1);
@@ -434,7 +434,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 
 QString Core::copyFileNameToCliipboard(QString file)
 {
-    QString retString = "";
+    QString retString = QLatin1String("");
     switch (_conf->getAutoCopyFilenameOnSaving())
     {
     case Config::nameToClipboardFile:
@@ -479,13 +479,13 @@ void Core::openInExtViewer()
     {
         QString format = _conf->getSaveFormat();
         if (format.isEmpty())
-            format = "png";
+            format = QLatin1String("png");
 
         QString tempFileName = getTempFilename(format);
         writeScreen(tempFileName, format, true);
 
         QString exec;
-        exec = "xdg-open";
+        exec = QLatin1String("xdg-open");
         QStringList args;
         args << tempFileName;
 
@@ -537,8 +537,8 @@ void Core::processCmdLineOpts(const QStringList& arguments)
 
 #ifdef SG_EXT_UPLOADS
     /// FIXMA - In module interface need add the mthod for geting module cmdLine options
-    const QString UPLOAD_CMD_PARAM = "upload";
-    const QString UPLOAD_CMD_PARAM_SHORT = "u";
+    const QString UPLOAD_CMD_PARAM = QStringLiteral("upload");
+    const QString UPLOAD_CMD_PARAM_SHORT = QStringLiteral("u");
     QCommandLineOption u(QStringList() << UPLOAD_CMD_PARAM_SHORT << UPLOAD_CMD_PARAM);
 
     if (_cmdLine.isSet(u)) {
@@ -553,7 +553,7 @@ void Core::processCmdLineOpts(const QStringList& arguments)
 
 bool Core::runAsMinimized()
 {
-    return (_cmdLine.isSet("minimized") || _cmdLine.isSet("m"));
+    return (_cmdLine.isSet(QStringLiteral("minimized")) || _cmdLine.isSet(QStringLiteral("m")));
 }
 
 void Core::autoSave()
@@ -565,8 +565,8 @@ void Core::autoSave()
 
 QString Core::getVersionPrintable()
 {
-    QString str = "ScreenGrab: " + qApp->applicationVersion() + QString("\n");
-    str += "Qt: " + QString(qVersion()) + QString("\n");
+    QString str = "ScreenGrab: " + qApp->applicationVersion() + QStringLiteral("\n");
+    str += "Qt: " + QString(qVersion()) + QStringLiteral("\n");
     return str;
 }
 

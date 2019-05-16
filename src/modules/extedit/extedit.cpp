@@ -42,7 +42,7 @@ void ExtEdit::runExternalEditor()
     Core *core = Core::instance();
     QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
-        format = "png";
+        format = QLatin1String("png");
 
     _editFilename = core->getTempFilename(format);
     core->writeScreen(_editFilename, format, true);
@@ -81,7 +81,7 @@ void ExtEdit::createAppList()
     Core *core = Core::instance();
     QString format = core->config()->getSaveFormat();
     if (format.isEmpty())
-        format = "png";
+        format = QLatin1String("png");
 
     QString fileName = _editFilename.isEmpty() ? core->getTempFilename(format) : _editFilename;
     QMimeDatabase db;

@@ -29,12 +29,12 @@
 #define DEF_DEFAULT_HOST            "Imgur"
 
 
-QStringList UploaderConfig::_labelsList = QStringList() << "Imgur";
+QStringList UploaderConfig::_labelsList = QStringList() << QStringLiteral("Imgur");
 
 UploaderConfig::UploaderConfig()
 {
-    _settings = new QSettings ("screengrab", "uploader");
-    _groupsList << "imgur.com" << "mediacru.sh";
+    _settings = new QSettings (QStringLiteral("screengrab"), QStringLiteral("uploader"));
+    _groupsList << QStringLiteral("imgur.com") << QStringLiteral("mediacru.sh");
 }
 
 UploaderConfig::~UploaderConfig()
@@ -96,7 +96,7 @@ void UploaderConfig::saveSettings(const QByteArray& group, QVariantMap& mapValue
 
 void UploaderConfig::defaultSettings()
 {
-    _settings->beginGroup("common");
+    _settings->beginGroup(QStringLiteral("common"));
     _settings->setValue(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK);
     _settings->setValue(KEY_DEFAULT_HOST, DEF_DEFAULT_HOST);
     _settings->endGroup();
@@ -108,7 +108,7 @@ void UploaderConfig::defaultSettings()
 
 bool UploaderConfig::autoCopyResultLink()
 {
-    _settings->beginGroup("common");
+    _settings->beginGroup(QStringLiteral("common"));
     bool ret = _settings->value(KEY_AUTO_COPY_RESULT_LIMK, DEF_AUTO_COPY_RESULT_LIMK).toBool();
     _settings->endGroup();
 

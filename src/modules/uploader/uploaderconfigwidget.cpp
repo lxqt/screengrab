@@ -61,7 +61,7 @@ void UploaderConfigWidget::loadSettings()
 
     UploaderConfig config;
     QVariantMap loadValues;
-    loadValues.insert("autoCopyDirectLink", QVariant(false));
+    loadValues.insert(QStringLiteral("autoCopyDirectLink"), QVariant(false));
     loadValues.insert(KEY_DEFAULT_HOST, "");
     loadValues = config.loadSettings("common", loadValues);
 
@@ -83,7 +83,7 @@ void UploaderConfigWidget::loadSettings()
     }
     _ui->cbxHosts->setCurrentIndex(_ui->cbxDefaultHost->currentIndex());
 
-    _ui->checkAutoCopyMainLink->setChecked(loadValues["autoCopyDirectLink"].toBool());
+    _ui->checkAutoCopyMainLink->setChecked(loadValues[QStringLiteral("autoCopyDirectLink")].toBool());
 }
 
 void UploaderConfigWidget::saveSettings()

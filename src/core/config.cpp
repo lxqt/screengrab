@@ -115,7 +115,7 @@ Config* Config::ptrInstance = nullptr;
 // constructor
 Config::Config()
 {
-    _settings = new Settings("screengrab", "screengrab");
+    _settings = new Settings(QStringLiteral("screengrab"), QStringLiteral("screengrab"));
 
     _shortcuts = new ShortcutManager(_settings);
 
@@ -441,7 +441,7 @@ void Config::setLastSelection(QRect rect)
 void Config::saveWndSize()
 {
     // saving size
-    _settings->beginGroup("Display");
+    _settings->beginGroup(QStringLiteral("Display"));
     _settings->setValue(KEY_WND_WIDTH, getRestoredWndSize().width());
     _settings->setValue(KEY_WND_HEIGHT, getRestoredWndSize().height());
     _settings->endGroup();
@@ -450,7 +450,7 @@ void Config::saveWndSize()
 // load all settings  from conf file
 void Config::loadSettings()
 {
-    _settings->beginGroup("Base");
+    _settings->beginGroup(QStringLiteral("Base"));
     setSaveDir(_settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
     setSaveFileName(_settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
     setSaveFormat(_settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
@@ -466,7 +466,7 @@ void Config::loadSettings()
     setIncludeCursor(_settings->value(KEY_INCLUDE_CURSOR, DEF_INCLUDE_CURSOR).toBool());
     _settings->endGroup();
 
-    _settings->beginGroup("Display");
+    _settings->beginGroup(QStringLiteral("Display"));
     setTrayMessages(_settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
     setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
     setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
@@ -477,7 +477,7 @@ void Config::loadSettings()
     setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
-    _settings->beginGroup("System");
+    _settings->beginGroup(QStringLiteral("System"));
     setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
     setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
     setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
@@ -489,7 +489,7 @@ void Config::loadSettings()
 
 void Config::saveSettings()
 { // save settings except for those on the main window
-    _settings->beginGroup("Base");
+    _settings->beginGroup(QStringLiteral("Base"));
     _settings->setValue(KEY_SAVEDIR, getSaveDir());
     _settings->setValue(KEY_SAVENAME, getSaveFileName());
     _settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
@@ -501,14 +501,14 @@ void Config::saveSettings()
     _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
     _settings->endGroup();
 
-    _settings->beginGroup("Display");
+    _settings->beginGroup(QStringLiteral("Display"));
     _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
     _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
     _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
     _settings->endGroup();
     saveWndSize();
 
-    _settings->beginGroup("System");
+    _settings->beginGroup(QStringLiteral("System"));
     _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
     _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
     _settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
@@ -522,14 +522,14 @@ void Config::saveSettings()
 
 void Config::saveScreenshotSettings()
 { // save the main window settings
-    _settings->beginGroup("Base");
+    _settings->beginGroup(QStringLiteral("Base"));
     _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
     _settings->setValue(KEY_NODECOR, getNoDecoration());
     _settings->setValue(KEY_INCLUDE_CURSOR, getIncludeCursor());
     _settings->setValue(KEY_DELAY, getDelay());
     _settings->endGroup();
 
-    _settings->beginGroup("Display");
+    _settings->beginGroup(QStringLiteral("Display"));
     _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
     _settings->setValue(KEY_LAST_SELECTION, getLastSelection());
     _settings->endGroup();

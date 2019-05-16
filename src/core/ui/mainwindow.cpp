@@ -61,13 +61,13 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _trayMenu = nullptr;
 
     // create actions menu
-    actNew = new QAction(QIcon::fromTheme("document-new"), tr("New"), this);
-    actSave = new QAction(QIcon::fromTheme("document-save"), tr("Save"), this);
-    actCopy = new QAction(QIcon::fromTheme("edit-copy"), tr("Copy"), this);
-    actOptions = new QAction(QIcon::fromTheme("configure"), tr("Options"), this);
-    actHelp = new QAction(QIcon::fromTheme("system-help"), tr("Help"), this);
-    actAbout = new QAction(QIcon::fromTheme("system-about"), tr("About"), this);
-    actQuit = new QAction(QIcon::fromTheme("application-exit"), tr("Quit"), this);
+    actNew = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), tr("New"), this);
+    actSave = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), tr("Save"), this);
+    actCopy = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), tr("Copy"), this);
+    actOptions = new QAction(QIcon::fromTheme(QStringLiteral("configure")), tr("Options"), this);
+    actHelp = new QAction(QIcon::fromTheme(QStringLiteral("system-help")), tr("Help"), this);
+    actAbout = new QAction(QIcon::fromTheme(QStringLiteral("system-about")), tr("About"), this);
+    actQuit = new QAction(QIcon::fromTheme(QStringLiteral("application-exit")), tr("Quit"), this);
 
     // connect actions to slots
     Core *c = Core::instance();
@@ -91,7 +91,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     QToolButton *help = new QToolButton(this);
     help->setText(tr("Help"));
     help->setPopupMode(QToolButton::InstantPopup);
-    help->setIcon(QIcon::fromTheme("system-help"));
+    help->setIcon(QIcon::fromTheme(QStringLiteral("system-help")));
     help->setMenu(menuInfo);
 
     _ui->toolBar->addWidget(help);
@@ -110,7 +110,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
     connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
 
-    appIcon = QIcon::fromTheme ("screengrab");
+    appIcon = QIcon::fromTheme (QStringLiteral("screengrab"));
     if (appIcon.isNull())
         appIcon = QIcon(":/res/img/logo.png");
 
@@ -290,17 +290,17 @@ void MainWindow::showHelp()
 {
     QString localeHelpFile;
 
-    localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
+    localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
     if (!QFile::exists(localeHelpFile))
     {
-        localeHelpFile = QString(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section("_", 0, 0)  + "%1index.html";
+        localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section(QStringLiteral("_"), 0, 0)  + "%1index.html";
         localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
         if (!QFile::exists(localeHelpFile))
         {
-            localeHelpFile = QString(SG_DOCDIR) + "%1html%1en%1index.html";
+            localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1en%1index.html";
             localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
         }
     }
@@ -365,7 +365,7 @@ void MainWindow::displatScreenToolTip()
     QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
     if (_conf->getEnableExtView())
     {
-        toolTip += "\n\n";
+        toolTip += QLatin1String("\n\n");
         toolTip += tr("Double click to open screenshot in external default image viewer");
     }
 
@@ -588,7 +588,7 @@ void MainWindow::saveScreen()
     }
 
     QString fileName;
-    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(";;"), &filterSelected);
+    fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(QStringLiteral(";;")), &filterSelected);
 
     QRegExp rx(R"(\(\*\.[a-z]{3,4}\))");
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);

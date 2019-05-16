@@ -208,7 +208,7 @@ void ConfigDialog::saveSettings()
     {
         QMessageBox msg;
         msg.setText(tr("Directory %1 does not exist. Do you want to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
-        msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
+        msg.setWindowTitle("ScreenGrab" + QStringLiteral(" - ") + tr("Warning"));
         msg.setIcon(QMessageBox::Question);
         msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 
@@ -289,9 +289,9 @@ QString ConfigDialog::getFormat()
 {
     switch (_ui->cbxFormat->currentIndex())
     {
-        case 0: return "png";
-        case 1: return "jpg";
-        default: return "png";
+        case 0: return QStringLiteral("png");
+        case 1: return QStringLiteral("jpg");
+        default: return QStringLiteral("png");
     }
 }
 
@@ -309,7 +309,7 @@ void ConfigDialog::restoreDefaults()
 {
     QMessageBox msg;
     msg.setText(tr("Do you want to reset the settings to the defaults?"));
-    msg.setWindowTitle("ScreenGrab" + QString(" - ") + tr("Warning"));
+    msg.setWindowTitle("ScreenGrab" + QStringLiteral(" - ") + tr("Warning"));
     msg.setIcon(QMessageBox::Question);
     msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 
@@ -441,7 +441,7 @@ void ConfigDialog::changeShortcut(const QKeySequence& seq)
 void ConfigDialog::clearShrtcut()
 {
     QTreeWidgetItem *item = _ui->treeKeys->selectedItems().first();
-    item->setData(1, Qt::DisplayRole, QString(""));
+    item->setData(1, Qt::DisplayRole, QLatin1String(""));
 }
 
 void ConfigDialog::keyNotSupported()

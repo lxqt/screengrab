@@ -50,7 +50,7 @@ DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
         dir.mkdir(CACHE_DIR);
 
     _previewPath = dir.absolutePath() + QDir::toNativeSeparators(QDir::separator()) + CACHE_PREV;
-    _appIconPath = QString(SG_ICONPATH);
+    _appIconPath = QStringLiteral(SG_ICONPATH);
 
     _notifyDuration = Config::instance()->getTimeTrayMess() * 1000;
 
@@ -70,7 +70,7 @@ void DBusNotifier::displayNotify(const StateNotifyMessage &message)
     QList<QVariant> n = prepareNotification(message);
 
     if (!n.isEmpty()) {
-        QDBusReply<uint> reply = _notifier->callWithArgumentList(QDBus::Block,"Notify",n);
+        QDBusReply<uint> reply = _notifier->callWithArgumentList(QDBus::Block,QStringLiteral("Notify"),n);
     }
 
     deleteLater();

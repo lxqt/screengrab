@@ -248,7 +248,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence &keySeq, const QString &
     layout->setSpacing(1);
 
     clearButton = new QToolButton(q_func());
-    clearButton->setText("x");
+    clearButton->setText(QStringLiteral("x"));
 
     layout->addWidget(clearButton);
 
@@ -256,7 +256,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence &keySeq, const QString &
 
     if (noneStr.isNull() == true)
     {
-        noneSequenceText = "...";
+        noneSequenceText = QLatin1String("...");
     }
     else
     {
@@ -287,7 +287,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence &keySeq, const QString &
 void QKeySequenceWidgetPrivate::setToolTip(const QString &tip)
 {
     shortcutButton->setToolTip(tip);
-    clearButton->setToolTip("");
+    clearButton->setToolTip(QLatin1String(""));
 }
 
 // update the location of widgets
@@ -409,16 +409,16 @@ void QKeySequenceWidgetPrivate::updateDisplayShortcut()
                 str.append(",");
 
             if ((modifierKeys & Qt::META) )
-                str += "Meta + ";
+                str += QLatin1String("Meta + ");
 
             if ((modifierKeys & Qt::CTRL) )
-                str += "Ctrl + ";
+                str += QLatin1String("Ctrl + ");
 
             if ((modifierKeys & Qt::ALT) )
-                str += "Alt + ";
+                str += QLatin1String("Alt + ");
 
             if ((modifierKeys & Qt::SHIFT) )
-                str += "Shift + ";
+                str += QLatin1String("Shift + ");
         }
 
         // make it clear that input is still going on

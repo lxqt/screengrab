@@ -47,7 +47,7 @@ void Uploader_ImgUr::startUploading()
  */
 QUrl Uploader_ImgUr::apiUrl()
 {
-    return QUrl("https://api.imgur.com/2/upload");
+    return QUrl(QStringLiteral("https://api.imgur.com/2/upload"));
 }
 
 /*!
@@ -61,9 +61,9 @@ void Uploader_ImgUr::createData(bool inBase64)
     // create data for upload
     QByteArray uploadData;
 
-    uploadData.append(QString("key=").toUtf8());
-    uploadData.append(QUrl::toPercentEncoding("6920a141451d125b3e1357ce0e432409"));
-    uploadData.append(QString("&image=").toUtf8());
+    uploadData.append(QStringLiteral("key=").toUtf8());
+    uploadData.append(QUrl::toPercentEncoding(QStringLiteral("6920a141451d125b3e1357ce0e432409")));
+    uploadData.append(QStringLiteral("&image=").toUtf8());
     uploadData.append(QUrl::toPercentEncoding(this->imageData));
 
     this->imageData = uploadData;
