@@ -19,25 +19,25 @@
 #include "shortcutmanager.h"
 #include "src/core/config.h"
 
-const QString DEF_SHORTCUT_NEW = "Ctrl+N";
-const QString DEF_SHORTCUT_SAVE = "Ctrl+S";
-const QString DEF_SHORTCUT_COPY = "Ctrl+C";
-const QString DEF_SHORTCUT_OPT = "Ctrl+P";
-const QString DEF_SHORTCUT_HELP = "F1";
-const QString DEF_SHORTCUT_CLOSE = "Esc";
-const QString DEF_SHORTCUT_FULL = "";
-const QString DEF_SHORTCUT_ACTW = "";
-const QString DEF_SHORTCUT_AREA = "";
+const QString DEF_SHORTCUT_NEW = QStringLiteral("Ctrl+N");
+const QString DEF_SHORTCUT_SAVE = QStringLiteral("Ctrl+S");
+const QString DEF_SHORTCUT_COPY = QStringLiteral("Ctrl+C");
+const QString DEF_SHORTCUT_OPT = QStringLiteral("Ctrl+P");
+const QString DEF_SHORTCUT_HELP = QStringLiteral("F1");
+const QString DEF_SHORTCUT_CLOSE = QStringLiteral("Esc");
+const QString DEF_SHORTCUT_FULL = QLatin1String("");
+const QString DEF_SHORTCUT_ACTW = QLatin1String("");
+const QString DEF_SHORTCUT_AREA = QLatin1String("");
 
-const QString KEY_SHORTCUT_FULL = "FullScreen";
-const QString KEY_SHORTCUT_ACTW = "ActiveWindow";
-const QString KEY_SHORTCUT_AREA = "AreaSelection";
-const QString KEY_SHORTCUT_NEW = "NewScreen";
-const QString KEY_SHORTCUT_SAVE = "SaveScreen";
-const QString KEY_SHORTCUT_COPY = "CopyScreen";
-const QString KEY_SHORTCUT_OPT = "Options";
-const QString KEY_SHORTCUT_HELP = "Help";
-const QString KEY_SHORTCUT_CLOSE = "Close";
+const QString KEY_SHORTCUT_FULL = QStringLiteral("FullScreen");
+const QString KEY_SHORTCUT_ACTW = QStringLiteral("ActiveWindow");
+const QString KEY_SHORTCUT_AREA = QStringLiteral("AreaSelection");
+const QString KEY_SHORTCUT_NEW = QStringLiteral("NewScreen");
+const QString KEY_SHORTCUT_SAVE = QStringLiteral("SaveScreen");
+const QString KEY_SHORTCUT_COPY = QStringLiteral("CopyScreen");
+const QString KEY_SHORTCUT_OPT = QStringLiteral("Options");
+const QString KEY_SHORTCUT_HELP = QStringLiteral("Help");
+const QString KEY_SHORTCUT_CLOSE = QStringLiteral("Close");
 
 ShortcutManager::ShortcutManager(QSettings *settings) :
     _shortcutSettings(new QSettings)
@@ -56,7 +56,7 @@ ShortcutManager::~ShortcutManager()
 
 void ShortcutManager::loadSettings()
 {
-    _shortcutSettings->beginGroup("LocalShortcuts");
+    _shortcutSettings->beginGroup(QStringLiteral("LocalShortcuts"));
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_NEW, DEF_SHORTCUT_NEW).toString(),
                 Config::shortcutNew, Config::localShortcut);
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_SAVE, DEF_SHORTCUT_SAVE).toString(),
@@ -71,7 +71,7 @@ void ShortcutManager::loadSettings()
                 Config::shortcutClose, Config::localShortcut);
     _shortcutSettings->endGroup();
 
-    _shortcutSettings->beginGroup("GlobalShortcuts");
+    _shortcutSettings->beginGroup(QStringLiteral("GlobalShortcuts"));
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_FULL, DEF_SHORTCUT_FULL).toString(),
                 Config::shortcutFullScreen, Config::globalShortcut);
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_ACTW, DEF_SHORTCUT_ACTW).toString(),
@@ -83,7 +83,7 @@ void ShortcutManager::loadSettings()
 
 void ShortcutManager::saveSettings()
 {
-    _shortcutSettings->beginGroup("LocalShortcuts");
+    _shortcutSettings->beginGroup(QStringLiteral("LocalShortcuts"));
     _shortcutSettings->setValue(KEY_SHORTCUT_NEW, getShortcut(Config::shortcutNew));
     _shortcutSettings->setValue(KEY_SHORTCUT_SAVE, getShortcut(Config::shortcutSave));
     _shortcutSettings->setValue(KEY_SHORTCUT_COPY, getShortcut(Config::shortcutCopy));
@@ -92,7 +92,7 @@ void ShortcutManager::saveSettings()
     _shortcutSettings->setValue(KEY_SHORTCUT_CLOSE, getShortcut(Config::shortcutClose));
     _shortcutSettings->endGroup();
 
-    _shortcutSettings->beginGroup("GlobalShortcuts");
+    _shortcutSettings->beginGroup(QStringLiteral("GlobalShortcuts"));
     _shortcutSettings->setValue(KEY_SHORTCUT_FULL, getShortcut(Config::shortcutFullScreen));
     _shortcutSettings->setValue(KEY_SHORTCUT_ACTW, getShortcut(Config::shortcutActiveWnd));
     _shortcutSettings->setValue(KEY_SHORTCUT_AREA, getShortcut(Config::shortcutAreaSelect));
@@ -140,7 +140,7 @@ QStringList ShortcutManager::getShortcutsList(int type)
             if (!_listShortcuts[i].key.isNull())
                 retList << _listShortcuts[i].key;
             else
-                retList << QString("");
+                retList << QLatin1String("");
         }
     }
     return retList;

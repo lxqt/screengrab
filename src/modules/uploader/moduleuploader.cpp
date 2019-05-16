@@ -31,8 +31,8 @@
 
 #include <QDebug>
 
-const QString UPLOAD_CMD_PARAM = "upload";
-const QString UPLOAD_CMD_PARAM_SHORT = "u";
+const QString UPLOAD_CMD_PARAM = QStringLiteral("upload");
+const QString UPLOAD_CMD_PARAM_SHORT = QStringLiteral("u");
 
 ModuleUploader::ModuleUploader(QObject *parent) :
     QObject(parent), _ignoreCmdParam(false),
@@ -101,7 +101,7 @@ QMenu* ModuleUploader::initModuleMenu()
 QAction* ModuleUploader::initModuleAction()
 {
     QAction *act = new QAction(QObject::tr("Upload"), nullptr);
-    act->setObjectName("actUpload");
+    act->setObjectName(QStringLiteral("actUpload"));
     connect(act, &QAction::triggered, this, &ModuleUploader::init);
     return act;
 }

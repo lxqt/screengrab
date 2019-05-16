@@ -29,7 +29,7 @@ AboutDialog::AboutDialog(QWidget *parent):
     setWindowFlags(Qt::Dialog |  Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
 
     _ui->setupUi(this);
-    _ui->labAppName->setText(_ui->labAppName->text() + QString(" <b>") + qApp->applicationVersion() + QString("</b>"));
+    _ui->labAppName->setText(_ui->labAppName->text() + QStringLiteral(" <b>") + qApp->applicationVersion() + QStringLiteral("</b>"));
 
     _ui->labQtVer->setText(tr("using Qt ") + qVersion());
 
@@ -96,19 +96,19 @@ void AboutDialog::on_butClose_clicked()
 QString AboutDialog::tabAbout()
 {
     QString str;
-    str += "<b>ScreenGrab</b> ";
+    str += QLatin1String("<b>ScreenGrab</b> ");
     str += tr("is a crossplatform application for fast creating screenshots of your desktop.");
-    str += "<br><br>";
+    str += QLatin1String("<br><br>");
     str += tr("It is a light and powerful application, written in Qt.");
-    str += "<br><br>";
+    str += QLatin1String("<br><br>");
 
     str += tr("Website")+" - ";
-    str += "<a href=\"https://github.com/lxqt/screengrab\">https://github.com/lxqt/screengrab</a>";
-    str += "<br><br>";
+    str += QLatin1String("<a href=\"https://github.com/lxqt/screengrab\">https://github.com/lxqt/screengrab</a>");
+    str += QLatin1String("<br><br>");
 
     str += tr("Licensed under the ");
-    str += " <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a>";
-    str += "<br><br>";
+    str += QLatin1String(" <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a>");
+    str += QLatin1String("<br><br>");
 
     str += tr("Copyright &copy; 2009-2013, Artem 'DOOMer' Galichkin");
     return str;
@@ -118,19 +118,19 @@ QString AboutDialog::tabHelpUs()
 {
     QString str;
     str += tr("You can join us and help us if you want. This is an invitation if you like this application.");
-    str += "<br><br>";
+    str += QLatin1String("<br><br>");
 
     str += tr("What you can do?");
 
-    str += "<ul>";
+    str += QLatin1String("<ul>");
     str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
     str += "<li>" + tr("Make suggestions for next releases") + "</li>";
     str += "<li>" + tr("Report bugs and issues") + "</li>";
-    str += "</ul>";
+    str += QLatin1String("</ul>");
 
     str += tr("Bug tracker");
-    str += "<br>";
-    str += "<a href=https://github.com/lxqt/screengrab/issues>https://github.com/lxqt/screengrab/issues/</a>";
+    str += QLatin1String("<br>");
+    str += QLatin1String("<a href=https://github.com/lxqt/screengrab/issues>https://github.com/lxqt/screengrab/issues/</a>");
 
     return str;
 }
@@ -139,22 +139,22 @@ QString AboutDialog::tabThanks()
 {
     QString str;
     str += "<b>" + tr("Translate:") + "</b>";
-    str += "<br>";
+    str += QLatin1String("<br>");
     str += tr(" Brazilian Portuguese translation")  + "<br>";
     str += tr("Marcio Moraes") + " &lt;marciopanto@gmail.com&gt;<br>";
-    str += "<br>";
+    str += QLatin1String("<br>");
     str += tr(" Ukrainian translation") + "<br>";
     str += tr("Gennadi Motsyo") + " &lt;drool@altlinux.ru&gt;<br>";
-    str += "<br>";
+    str += QLatin1String("<br>");
     str += tr(" Spanish translation") + "<br>";
     str += tr("Burjans L García D") + " &lt;burjans@gmail.com&gt;<br>";
-    str += "<br>";
+    str += QLatin1String("<br>");
     str += tr(" Italian translation") + "<br>";
-    str += "speps &lt;dreamspepser@yahoo.it&gt;<br>";
-    str += "<br>";
+    str += QLatin1String("speps &lt;dreamspepser@yahoo.it&gt;<br>");
+    str += QLatin1String("<br>");
 
     str += "<b>" + tr("Testing:") + "</b>";
-    str += "<br>";
+    str += QLatin1String("<br>");
     str += "Jerome Leclanche - " + tr("Dual monitor support and other in Linux") + "<br>";
     str += "Alexander Sokolov - " + tr("Dual monitor support in Linux") + "<br>";
     str += "Alexantia - " + tr("win32-build [Windows XP and 7]") + "<br>";

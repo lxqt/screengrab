@@ -211,7 +211,7 @@ void RegionSelect::drawRectSelection(QPainter &painter)
         QPainter zoomPainer(&zoomPixmap); // create painter from pixmap maignifer
         zoomPainer.setPen(QPen(QBrush(QColor(255, 0, 0, 180)), 2));
         zoomPainer.drawRect(zoomPixmap.rect()); // draw
-        zoomPainer.drawText(zoomPixmap.rect().center() - QPoint(4, -4), "+");
+        zoomPainer.drawText(zoomPixmap.rect().center() - QPoint(4, -4), QStringLiteral("+"));
 
         // position for drawing preview
         QPoint zoomCenter = _selectRect.bottomRight();

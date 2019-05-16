@@ -224,10 +224,10 @@ void DialogUploader::slotCopyLink()
     QString objName = sender()->objectName();
     QString copyText;
 
-    if (objName == "butCopyLink")
+    if (objName == QLatin1String("butCopyLink"))
         copyText = _ui->editDirectLink->text();
 
-    if (objName == "butCopyExtCode")
+    if (objName == QLatin1String("butCopyExtCode"))
         copyText = _ui->editExtCode->text();
 
     qApp->clipboard()->setText(copyText);
