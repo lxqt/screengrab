@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation>Executar a aplicación coa xanela principal agachada</translation>
+        <translation>Executar a aplicación coa xanela principal agochada</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="422"/>
@@ -507,7 +507,7 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
-        <translation>Agachar</translation>
+        <translation>Agochar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
