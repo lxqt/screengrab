@@ -108,7 +108,7 @@ static int screenshotTypeFromString(const QString& str)
     return r;
 }
 
-const static QStringList _imageFormats = {"png", "jpg"};
+const static QStringList _imageFormats = {QStringLiteral("png"), QStringLiteral("jpg")};
 
 Config* Config::ptrInstance = nullptr;
 
@@ -159,7 +159,7 @@ QString Config::getConfigDir()
 {
     QString dir = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
     dir += QDir::separator();
-    dir += CONFIG_FILE_DIR;
+    dir += QStringLiteral(CONFIG_FILE_DIR);
 
     QDir qdir(dir);
     if (!qdir.exists())
@@ -175,7 +175,7 @@ QString Config::getScrNumStr()
     QString str = QString::number(_scrNum);
 
     if (_scrNum < 10)
-        str.prepend("0");
+        str.prepend(QLatin1Char('0'));
 
     return str;
 }
@@ -207,62 +207,62 @@ QDateTime Config::getLastSaveDate() const
 
 bool Config::getEnableExtView()
 {
-    return value(KEY_ENABLE_EXT_VIEWER).toBool();
+    return value(QLatin1String(KEY_ENABLE_EXT_VIEWER)).toBool();
 }
 
 void Config::setEnableExtView(bool val)
 {
-    setValue(KEY_ENABLE_EXT_VIEWER, val);
+    setValue(QLatin1String(KEY_ENABLE_EXT_VIEWER), val);
 }
 
 bool Config::getIncludeCursor()
 {
-    return value(KEY_INCLUDE_CURSOR).toBool();
+    return value(QLatin1String(KEY_INCLUDE_CURSOR)).toBool();
 }
 
 void Config::setIncludeCursor(bool val)
 {
-    setValue(KEY_INCLUDE_CURSOR, val);
+    setValue(QLatin1String(KEY_INCLUDE_CURSOR), val);
 }
 
 QString Config::getSaveDir()
 {
-    return value(KEY_SAVEDIR).toString();
+    return value(QLatin1String(KEY_SAVEDIR)).toString();
 }
 
 void Config::setSaveDir(const QString &path)
 {
-    setValue(KEY_SAVEDIR, path);
+    setValue(QLatin1String(KEY_SAVEDIR), path);
 }
 
 QString Config::getSaveFileName()
 {
-    return value(KEY_SAVENAME).toString();
+    return value(QLatin1String(KEY_SAVENAME)).toString();
 }
 
 void Config::setSaveFileName(const QString &fileName)
 {
-    setValue(KEY_SAVENAME, fileName);
+    setValue(QLatin1String(KEY_SAVENAME), fileName);
 }
 
 QString Config::getSaveFormat()
 {
-    return value(KEY_SAVEFORMAT).toString().toLower();
+    return value(QLatin1String(KEY_SAVEFORMAT)).toString().toLower();
 }
 
 void Config::setSaveFormat(const QString &format)
 {
-    setValue(KEY_SAVEFORMAT, format);
+    setValue(QLatin1String(KEY_SAVEFORMAT), format);
 }
 
 quint8 Config::getDelay()
 {
-    return value(KEY_DELAY).toInt();
+    return value(QLatin1String(KEY_DELAY)).toInt();
 }
 
 void Config::setDelay(quint8 sec)
 {
-    setValue(KEY_DELAY, sec);
+    setValue(QLatin1String(KEY_DELAY), sec);
 }
 
 int Config::getDefScreenshotType()
@@ -277,173 +277,173 @@ void Config::setDefScreenshotType(const int type)
 
 quint8 Config::getAutoCopyFilenameOnSaving()
 {
-    return value(KEY_FILENAME_TO_CLB).toInt();
+    return value(QLatin1String(KEY_FILENAME_TO_CLB)).toInt();
 }
 
 void Config::setAutoCopyFilenameOnSaving(quint8 val)
 {
-    setValue(KEY_FILENAME_TO_CLB, val);
+    setValue(QLatin1String(KEY_FILENAME_TO_CLB), val);
 }
 
 
 quint8 Config::getTrayMessages()
 {
-    return value(KEY_TRAYMESSAGES).toInt();
+    return value(QLatin1String(KEY_TRAYMESSAGES)).toInt();
 }
 
 void Config::setTrayMessages(quint8 type)
 {
-    setValue(KEY_TRAYMESSAGES, type);
+    setValue(QLatin1String(KEY_TRAYMESSAGES), type);
 }
 
 bool Config::getAllowMultipleInstance()
 {
-    return value(KEY_ALLOW_COPIES).toBool();
+    return value(QLatin1String(KEY_ALLOW_COPIES)).toBool();
 }
 
 void Config::setAllowMultipleInstance(bool val)
 {
-    setValue(KEY_ALLOW_COPIES, val);
+    setValue(QLatin1String(KEY_ALLOW_COPIES), val);
 }
 
 bool Config::getCloseInTray()
 {
-    return value(KEY_CLOSE_INTRAY).toBool();
+    return value(QLatin1String(KEY_CLOSE_INTRAY)).toBool();
 }
 
 void Config::setCloseInTray(bool val)
 {
-    setValue(KEY_CLOSE_INTRAY, val);
+    setValue(QLatin1String(KEY_CLOSE_INTRAY), val);
 }
 
 quint8 Config::getTimeTrayMess()
 {
-    return value(KEY_TIME_NOTIFY).toInt();
+    return value(QLatin1String(KEY_TIME_NOTIFY)).toInt();
 }
 
 void Config::setTimeTrayMess(int sec)
 {
-    setValue(KEY_TIME_NOTIFY, sec);
+    setValue(QLatin1String(KEY_TIME_NOTIFY), sec);
 }
 
 QSize Config::getRestoredWndSize()
 {
-    QSize wndSize(value(KEY_WND_WIDTH).toInt(), value(KEY_WND_HEIGHT).toInt());
+    QSize wndSize(value(QLatin1String(KEY_WND_WIDTH)).toInt(), value(QLatin1String(KEY_WND_HEIGHT)).toInt());
     return wndSize;
 }
 
 void Config::setRestoredWndSize(int w, int h)
 {
-    setValue(KEY_WND_WIDTH, w);
-    setValue(KEY_WND_HEIGHT, h);
+    setValue(QLatin1String(KEY_WND_WIDTH), w);
+    setValue(QLatin1String(KEY_WND_HEIGHT), h);
 }
 
 bool Config::getDateTimeInFilename()
 {
-    return value(KEY_FILENAMEDATE).toBool();
+    return value(QLatin1String(KEY_FILENAMEDATE)).toBool();
 }
 
 void Config::setDateTimeInFilename(bool val)
 {
-    setValue(KEY_FILENAMEDATE, val);
+    setValue(QLatin1String(KEY_FILENAMEDATE), val);
 }
 
 bool Config::getAutoSave()
 {
-    return value(KEY_AUTOSAVE).toBool();
+    return value(QLatin1String(KEY_AUTOSAVE)).toBool();
 }
 
 void Config::setAutoSave(bool val)
 {
-    setValue(KEY_AUTOSAVE, val);
+    setValue(QLatin1String(KEY_AUTOSAVE), val);
 }
 
 quint8 Config::getImageQuality()
 {
-    return value(KEY_IMG_QUALITY).toInt();
+    return value(QLatin1String(KEY_IMG_QUALITY)).toInt();
 }
 
 void Config::setImageQuality(quint8 qualuty)
 {
-    setValue(KEY_IMG_QUALITY, qualuty);
+    setValue(QLatin1String(KEY_IMG_QUALITY), qualuty);
 }
 
 bool Config::getAutoSaveFirst()
 {
-    return value(KEY_AUTOSAVE_FIRST).toBool();
+    return value(QLatin1String(KEY_AUTOSAVE_FIRST)).toBool();
 }
 
 void Config::setAutoSaveFirst(bool val)
 {
-    setValue(KEY_AUTOSAVE_FIRST, val);
+    setValue(QLatin1String(KEY_AUTOSAVE_FIRST), val);
 }
 
 QString Config::getDateTimeTpl()
 {
-    return value(KEY_DATETIME_TPL).toString();
+    return value(QLatin1String(KEY_DATETIME_TPL)).toString();
 }
 
 void Config::setDateTimeTpl(const QString &tpl)
 {
-    setValue(KEY_DATETIME_TPL, tpl);
+    setValue(QLatin1String(KEY_DATETIME_TPL), tpl);
 }
 
 bool Config::getZoomAroundMouse()
 {
-    return value(KEY_ZOOMBOX).toBool();
+    return value(QLatin1String(KEY_ZOOMBOX)).toBool();
 }
 
 void Config::setZoomAroundMouse(bool val)
 {
-    setValue(KEY_ZOOMBOX, val);
+    setValue(QLatin1String(KEY_ZOOMBOX), val);
 }
 
 bool Config::getShowTrayIcon()
 {
-    return value(KEY_SHOW_TRAY).toBool();
+    return value(QLatin1String(KEY_SHOW_TRAY)).toBool();
 }
 
 void Config::setShowTrayIcon(bool val)
 {
-    setValue(KEY_SHOW_TRAY, val);
+    setValue(QLatin1String(KEY_SHOW_TRAY), val);
 }
 
 bool Config::getNoDecoration()
 {
-    return value(KEY_NODECOR).toBool();
+    return value(QLatin1String(KEY_NODECOR)).toBool();
 }
 
 void Config::setNoDecoration(bool val)
 {
-    setValue(KEY_NODECOR, val);
+    setValue(QLatin1String(KEY_NODECOR), val);
 }
 
 bool Config::getFitInside()
 {
-    return value(KEY_FIT_INSIDE).toBool();
+    return value(QLatin1String(KEY_FIT_INSIDE)).toBool();
 }
 
 void Config::setFitInside(bool val)
 {
-    setValue(KEY_FIT_INSIDE, val);
+    setValue(QLatin1String(KEY_FIT_INSIDE), val);
 }
 
 QRect Config::getLastSelection()
 {
-    return value(KEY_LAST_SELECTION).toRect();
+    return value(QLatin1String(KEY_LAST_SELECTION)).toRect();
 }
 
 void Config::setLastSelection(QRect rect)
 {
-    setValue(KEY_LAST_SELECTION, rect);
+    setValue(QLatin1String(KEY_LAST_SELECTION), rect);
 }
 
 void Config::saveWndSize()
 {
     // saving size
     _settings->beginGroup(QStringLiteral("Display"));
-    _settings->setValue(KEY_WND_WIDTH, getRestoredWndSize().width());
-    _settings->setValue(KEY_WND_HEIGHT, getRestoredWndSize().height());
+    _settings->setValue(QLatin1String(KEY_WND_WIDTH), getRestoredWndSize().width());
+    _settings->setValue(QLatin1String(KEY_WND_HEIGHT), getRestoredWndSize().height());
     _settings->endGroup();
 }
 
@@ -451,37 +451,37 @@ void Config::saveWndSize()
 void Config::loadSettings()
 {
     _settings->beginGroup(QStringLiteral("Base"));
-    setSaveDir(_settings->value(KEY_SAVEDIR, getDirNameDefault()).toString() );
-    setSaveFileName(_settings->value(KEY_SAVENAME,DEF_SAVE_NAME).toString());
-    setSaveFormat(_settings->value(KEY_SAVEFORMAT, DEF_SAVE_FORMAT).toString());
-    setDelay(_settings->value(KEY_DELAY, DEF_DELAY).toInt());
+    setSaveDir(_settings->value(QLatin1String(KEY_SAVEDIR), getDirNameDefault()).toString() );
+    setSaveFileName(_settings->value(QLatin1String(KEY_SAVENAME),DEF_SAVE_NAME).toString());
+    setSaveFormat(_settings->value(QLatin1String(KEY_SAVEFORMAT), DEF_SAVE_FORMAT).toString());
+    setDelay(_settings->value(QLatin1String(KEY_DELAY), DEF_DELAY).toInt());
     setDefScreenshotType(screenshotTypeFromString(_settings->value(QLatin1String(KEY_SCREENSHOT_TYPE_DEF)).toString()));
-    setAutoCopyFilenameOnSaving(_settings->value(KEY_FILENAME_TO_CLB, DEF_FILENAME_TO_CLB).toInt());
-    setDateTimeInFilename(_settings->value(KEY_FILENAMEDATE, DEF_DATETIME_FILENAME).toBool());
-    setDateTimeTpl(_settings->value(KEY_DATETIME_TPL, DEF_DATETIME_TPL).toString());
-    setAutoSave(_settings->value(KEY_AUTOSAVE, DEF_AUTO_SAVE).toBool());
-    setAutoSaveFirst(_settings->value(KEY_AUTOSAVE_FIRST, DEF_AUTO_SAVE_FIRST).toBool());
-    setNoDecoration(_settings->value(KEY_NODECOR, DEF_X11_NODECOR).toBool());
-    setImageQuality(_settings->value(KEY_IMG_QUALITY, DEF_IMG_QUALITY).toInt());
-    setIncludeCursor(_settings->value(KEY_INCLUDE_CURSOR, DEF_INCLUDE_CURSOR).toBool());
+    setAutoCopyFilenameOnSaving(_settings->value(QLatin1String(KEY_FILENAME_TO_CLB), DEF_FILENAME_TO_CLB).toInt());
+    setDateTimeInFilename(_settings->value(QLatin1String(KEY_FILENAMEDATE), DEF_DATETIME_FILENAME).toBool());
+    setDateTimeTpl(_settings->value(QLatin1String(KEY_DATETIME_TPL), DEF_DATETIME_TPL).toString());
+    setAutoSave(_settings->value(QLatin1String(KEY_AUTOSAVE), DEF_AUTO_SAVE).toBool());
+    setAutoSaveFirst(_settings->value(QLatin1String(KEY_AUTOSAVE_FIRST), DEF_AUTO_SAVE_FIRST).toBool());
+    setNoDecoration(_settings->value(QLatin1String(KEY_NODECOR), DEF_X11_NODECOR).toBool());
+    setImageQuality(_settings->value(QLatin1String(KEY_IMG_QUALITY), DEF_IMG_QUALITY).toInt());
+    setIncludeCursor(_settings->value(QLatin1String(KEY_INCLUDE_CURSOR), DEF_INCLUDE_CURSOR).toBool());
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("Display"));
-    setTrayMessages(_settings->value(KEY_TRAYMESSAGES, DEF_TRAY_MESS_TYPE).toInt());
-    setTimeTrayMess(_settings->value(KEY_TIME_NOTIFY, DEF_TIME_TRAY_MESS).toInt( ));
-    setZoomAroundMouse(_settings->value(KEY_ZOOMBOX, DEF_ZOOM_AROUND_MOUSE).toBool());
-    setLastSelection(_settings->value(KEY_LAST_SELECTION).toRect());
+    setTrayMessages(_settings->value(QLatin1String(KEY_TRAYMESSAGES), DEF_TRAY_MESS_TYPE).toInt());
+    setTimeTrayMess(_settings->value(QLatin1String(KEY_TIME_NOTIFY), DEF_TIME_TRAY_MESS).toInt( ));
+    setZoomAroundMouse(_settings->value(QLatin1String(KEY_ZOOMBOX), DEF_ZOOM_AROUND_MOUSE).toBool());
+    setLastSelection(_settings->value(QLatin1String(KEY_LAST_SELECTION)).toRect());
     // TODO - make set windows size without hardcode values
-    setRestoredWndSize(_settings->value(KEY_WND_WIDTH, DEF_WND_WIDTH).toInt(),
-                       _settings->value(KEY_WND_HEIGHT, DEF_WND_HEIGHT).toInt());
-    setShowTrayIcon(_settings->value(KEY_SHOW_TRAY, DEF_SHOW_TRAY).toBool());
+    setRestoredWndSize(_settings->value(QLatin1String(KEY_WND_WIDTH), DEF_WND_WIDTH).toInt(),
+                       _settings->value(QLatin1String(KEY_WND_HEIGHT), DEF_WND_HEIGHT).toInt());
+    setShowTrayIcon(_settings->value(QLatin1String(KEY_SHOW_TRAY), DEF_SHOW_TRAY).toBool());
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("System"));
-    setCloseInTray(_settings->value(KEY_CLOSE_INTRAY, DEF_CLOSE_IN_TRAY).toBool());
-    setAllowMultipleInstance(_settings->value(KEY_ALLOW_COPIES, DEF_ALLOW_COPIES).toBool());
-    setEnableExtView(_settings->value(KEY_ENABLE_EXT_VIEWER, DEF_ENABLE_EXT_VIEWER).toBool());
-    setFitInside(_settings->value(KEY_FIT_INSIDE, DEF_FIT_INSIDE).toBool());
+    setCloseInTray(_settings->value(QLatin1String(KEY_CLOSE_INTRAY), DEF_CLOSE_IN_TRAY).toBool());
+    setAllowMultipleInstance(_settings->value(QLatin1String(KEY_ALLOW_COPIES), DEF_ALLOW_COPIES).toBool());
+    setEnableExtView(_settings->value(QLatin1String(KEY_ENABLE_EXT_VIEWER), DEF_ENABLE_EXT_VIEWER).toBool());
+    setFitInside(_settings->value(QLatin1String(KEY_FIT_INSIDE), DEF_FIT_INSIDE).toBool());
     _settings->endGroup();
 
     _shortcuts->loadSettings();
@@ -490,29 +490,29 @@ void Config::loadSettings()
 void Config::saveSettings()
 { // save settings except for those on the main window
     _settings->beginGroup(QStringLiteral("Base"));
-    _settings->setValue(KEY_SAVEDIR, getSaveDir());
-    _settings->setValue(KEY_SAVENAME, getSaveFileName());
-    _settings->setValue(KEY_SAVEFORMAT, getSaveFormat());
-    _settings->setValue(KEY_FILENAME_TO_CLB, getAutoCopyFilenameOnSaving());
-    _settings->setValue(KEY_FILENAMEDATE, getDateTimeInFilename());
-    _settings->setValue(KEY_DATETIME_TPL, getDateTimeTpl());
-    _settings->setValue(KEY_AUTOSAVE, getAutoSave());
-    _settings->setValue(KEY_AUTOSAVE_FIRST, getAutoSaveFirst());
-    _settings->setValue(KEY_IMG_QUALITY, getImageQuality());
+    _settings->setValue(QLatin1String(KEY_SAVEDIR), getSaveDir());
+    _settings->setValue(QLatin1String(KEY_SAVENAME), getSaveFileName());
+    _settings->setValue(QLatin1String(KEY_SAVEFORMAT), getSaveFormat());
+    _settings->setValue(QLatin1String(KEY_FILENAME_TO_CLB), getAutoCopyFilenameOnSaving());
+    _settings->setValue(QLatin1String(KEY_FILENAMEDATE), getDateTimeInFilename());
+    _settings->setValue(QLatin1String(KEY_DATETIME_TPL), getDateTimeTpl());
+    _settings->setValue(QLatin1String(KEY_AUTOSAVE), getAutoSave());
+    _settings->setValue(QLatin1String(KEY_AUTOSAVE_FIRST), getAutoSaveFirst());
+    _settings->setValue(QLatin1String(KEY_IMG_QUALITY), getImageQuality());
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("Display"));
-    _settings->setValue(KEY_TRAYMESSAGES, getTrayMessages());
-    _settings->setValue(KEY_TIME_NOTIFY, getTimeTrayMess());
-    _settings->setValue(KEY_SHOW_TRAY, getShowTrayIcon());
+    _settings->setValue(QLatin1String(KEY_TRAYMESSAGES), getTrayMessages());
+    _settings->setValue(QLatin1String(KEY_TIME_NOTIFY), getTimeTrayMess());
+    _settings->setValue(QLatin1String(KEY_SHOW_TRAY), getShowTrayIcon());
     _settings->endGroup();
     saveWndSize();
 
     _settings->beginGroup(QStringLiteral("System"));
-    _settings->setValue(KEY_CLOSE_INTRAY, getCloseInTray());
-    _settings->setValue(KEY_ALLOW_COPIES, getAllowMultipleInstance());
-    _settings->setValue(KEY_ENABLE_EXT_VIEWER, getEnableExtView());
-    _settings->setValue(KEY_FIT_INSIDE, getFitInside());
+    _settings->setValue(QLatin1String(KEY_CLOSE_INTRAY), getCloseInTray());
+    _settings->setValue(QLatin1String(KEY_ALLOW_COPIES), getAllowMultipleInstance());
+    _settings->setValue(QLatin1String(KEY_ENABLE_EXT_VIEWER), getEnableExtView());
+    _settings->setValue(QLatin1String(KEY_FIT_INSIDE), getFitInside());
     _settings->endGroup();
 
     _shortcuts->saveSettings();
@@ -524,14 +524,14 @@ void Config::saveScreenshotSettings()
 { // save the main window settings
     _settings->beginGroup(QStringLiteral("Base"));
     _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
-    _settings->setValue(KEY_NODECOR, getNoDecoration());
-    _settings->setValue(KEY_INCLUDE_CURSOR, getIncludeCursor());
-    _settings->setValue(KEY_DELAY, getDelay());
+    _settings->setValue(QLatin1String(KEY_NODECOR), getNoDecoration());
+    _settings->setValue(QLatin1String(KEY_INCLUDE_CURSOR), getIncludeCursor());
+    _settings->setValue(QLatin1String(KEY_DELAY), getDelay());
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("Display"));
-    _settings->setValue(KEY_ZOOMBOX, getZoomAroundMouse());
-    _settings->setValue(KEY_LAST_SELECTION, getLastSelection());
+    _settings->setValue(QLatin1String(KEY_ZOOMBOX), getZoomAroundMouse());
+    _settings->setValue(QLatin1String(KEY_LAST_SELECTION), getLastSelection());
     _settings->endGroup();
 }
 
@@ -592,7 +592,7 @@ QString Config::getSysLang()
         lang = qgetenv("LANG");
 
     if (!lang.isEmpty())
-        return QLocale (lang).name();
+        return QLocale (QString::fromLocal8Bit(lang)).name();
     else
         return  QLocale::system().name();
 }

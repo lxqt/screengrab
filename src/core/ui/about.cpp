@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent):
     _ui->setupUi(this);
     _ui->labAppName->setText(_ui->labAppName->text() + QStringLiteral(" <b>") + qApp->applicationVersion() + QStringLiteral("</b>"));
 
-    _ui->labQtVer->setText(tr("using Qt ") + qVersion());
+    _ui->labQtVer->setText(tr("using Qt ") + QString::fromUtf8(qVersion()));
 
     QTabBar *tabs = new QTabBar;
 
@@ -102,7 +102,7 @@ QString AboutDialog::tabAbout()
     str += tr("It is a light and powerful application, written in Qt.");
     str += QLatin1String("<br><br>");
 
-    str += tr("Website")+" - ";
+    str += tr("Website")+QLatin1String(" - ");
     str += QLatin1String("<a href=\"https://github.com/lxqt/screengrab\">https://github.com/lxqt/screengrab</a>");
     str += QLatin1String("<br><br>");
 
@@ -123,9 +123,9 @@ QString AboutDialog::tabHelpUs()
     str += tr("What you can do?");
 
     str += QLatin1String("<ul>");
-    str += "<li>" + tr("Translate ScreenGrab to other languages") + "</li>";
-    str += "<li>" + tr("Make suggestions for next releases") + "</li>";
-    str += "<li>" + tr("Report bugs and issues") + "</li>";
+    str += QLatin1String("<li>") + tr("Translate ScreenGrab to other languages") + QLatin1String("</li>");
+    str += QLatin1String("<li>") + tr("Make suggestions for next releases") + QLatin1String("</li>");
+    str += QLatin1String("<li>") + tr("Report bugs and issues") + QLatin1String("</li>");
     str += QLatin1String("</ul>");
 
     str += tr("Bug tracker");
@@ -138,28 +138,28 @@ QString AboutDialog::tabHelpUs()
 QString AboutDialog::tabThanks()
 {
     QString str;
-    str += "<b>" + tr("Translate:") + "</b>";
+    str += QLatin1String("<b>") + tr("Translate:") + QLatin1String("</b>");
     str += QLatin1String("<br>");
-    str += tr(" Brazilian Portuguese translation")  + "<br>";
-    str += tr("Marcio Moraes") + " &lt;marciopanto@gmail.com&gt;<br>";
+    str += tr(" Brazilian Portuguese translation")  + QLatin1String("<br>");
+    str += tr("Marcio Moraes") + QLatin1String(" &lt;marciopanto@gmail.com&gt;<br>");
     str += QLatin1String("<br>");
-    str += tr(" Ukrainian translation") + "<br>";
-    str += tr("Gennadi Motsyo") + " &lt;drool@altlinux.ru&gt;<br>";
+    str += tr(" Ukrainian translation") + QLatin1String("<br>");
+    str += tr("Gennadi Motsyo") + QLatin1String(" &lt;drool@altlinux.ru&gt;<br>");
     str += QLatin1String("<br>");
-    str += tr(" Spanish translation") + "<br>";
-    str += tr("Burjans L García D") + " &lt;burjans@gmail.com&gt;<br>";
+    str += tr(" Spanish translation") + QLatin1String("<br>");
+    str += tr("Burjans L García D") + QLatin1String(" &lt;burjans@gmail.com&gt;<br>");
     str += QLatin1String("<br>");
-    str += tr(" Italian translation") + "<br>";
+    str += tr(" Italian translation") + QLatin1String("<br>");
     str += QLatin1String("speps &lt;dreamspepser@yahoo.it&gt;<br>");
     str += QLatin1String("<br>");
 
-    str += "<b>" + tr("Testing:") + "</b>";
+    str += QLatin1String("<b>") + tr("Testing:") + QLatin1String("</b>");
     str += QLatin1String("<br>");
-    str += "Jerome Leclanche - " + tr("Dual monitor support and other in Linux") + "<br>";
-    str += "Alexander Sokolov - " + tr("Dual monitor support in Linux") + "<br>";
-    str += "Alexantia - " + tr("win32-build [Windows XP and 7]") + "<br>";
-    str += "iNight - " + tr("old win32-build [Windows Vista]") + "<br>";
-    str += "burjans - " + tr("win32-build [Windows 7]") + "<br>";
+    str += QLatin1String("Jerome Leclanche - ") + tr("Dual monitor support and other in Linux") + QLatin1String("<br>");
+    str += QLatin1String("Alexander Sokolov - ") + tr("Dual monitor support in Linux") + QLatin1String("<br>");
+    str += QLatin1String("Alexantia - ") + tr("win32-build [Windows XP and 7]") + QLatin1String("<br>");
+    str += QLatin1String("iNight - ") + tr("old win32-build [Windows Vista]") + QLatin1String("<br>");
+    str += QLatin1String("burjans - ") + tr("win32-build [Windows 7]") + QLatin1String("<br>");
 
     return str;
 }

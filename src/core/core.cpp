@@ -60,7 +60,7 @@ Core::Core()
     _selector = nullptr;
     _firstScreen = true;
 
-    _cmdLine.setApplicationDescription("ScreenGrab " + tr("is a crossplatform application for fast creating screenshots of your desktop."));
+    _cmdLine.setApplicationDescription(QStringLiteral("ScreenGrab ") + tr("is a crossplatform application for fast creating screenshots of your desktop."));
     _cmdLine.addHelpOption();
     _cmdLine.addVersionOption();
 
@@ -326,13 +326,13 @@ QString Core::getSaveFilePath(const QString &format)
         QDir dir(_conf->getSaveDir());
         const QString filePath = dir.filePath(_conf->getSaveFileName());
         if (_conf->getDateTimeInFilename())
-            initPath = filePath + "-" + getDateTimeFileName() + "." + format;
+            initPath = filePath + QStringLiteral("-") + getDateTimeFileName() + QStringLiteral(".") + format;
         else
         {
             if (_conf->getScrNum() != 0)
-                initPath = filePath + _conf->getScrNumStr() + "." + format;
+                initPath = filePath + _conf->getScrNumStr() + QStringLiteral(".") + format;
             else
-                initPath = filePath + "." + format;
+                initPath = filePath + QStringLiteral(".") + format;
         }
     } while (checkExsistFile(initPath));
 
@@ -354,7 +354,7 @@ QString Core::getDateTimeFileName()
     QString currentDateTime = QDateTime::currentDateTime().toString(_conf->getDateTimeTpl());
 
     if (currentDateTime == _conf->getLastSaveDate().toString(_conf->getDateTimeTpl()) && _conf->getScrNum() != 0)
-        currentDateTime += "-" + _conf->getScrNumStr();
+        currentDateTime += QStringLiteral("-") + _conf->getScrNumStr();
     else
         _conf->resetScrNum();
 
@@ -380,7 +380,7 @@ QString Core::getTempFilename(const QString& format)
     _tempFilename = QUuid::createUuid().toString();
     int size = _tempFilename.size() - 2;
     _tempFilename = _tempFilename.mid(1, size).left(8);
-    _tempFilename = QDir::tempPath() + QDir::separator() + "screenshot-" + _tempFilename + "." + format;
+    _tempFilename = QDir::tempPath() + QDir::separator() + QStringLiteral("screenshot-") + _tempFilename + QStringLiteral(".") + format;
     return _tempFilename;
 }
 
@@ -396,14 +396,14 @@ void Core::killTempFile()
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
 {
     // adding extension format
-    if (!fileName.contains("." + format))
-        fileName.append("." + format);
+    if (!fileName.contains(QStringLiteral(".") + format))
+        fileName.append(QStringLiteral(".") + format);
 
     // saving temp file (for uploader module)
     if (tmpScreen)
     {
         if (!fileName.isEmpty())
-            return _pixelMap->save(fileName, format.toLatin1(), _conf->getImageQuality());
+            return _pixelMap->save(fileName, format.toLatin1().constData(), _conf->getImageQuality());
         else
             return false;
     }
@@ -413,9 +413,9 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     if (!fileName.isEmpty())
     {
         if (format == QLatin1String("jpg"))
-            saved = _pixelMap->save(fileName,format.toLatin1(), _conf->getImageQuality());
+            saved = _pixelMap->save(fileName,format.toLatin1().constData(), _conf->getImageQuality());
         else
-            saved = _pixelMap->save(fileName,format.toLatin1(), -1);
+            saved = _pixelMap->save(fileName,format.toLatin1().constData(), -1);
 
         if (saved)
         {
@@ -439,7 +439,7 @@ QString Core::copyFileNameToCliipboard(QString file)
     {
     case Config::nameToClipboardFile:
     {
-        file = file.section('/', -1);
+        file = file.section(QLatin1Char('/'), -1);
         QApplication::clipboard()->setText(file);
         retString = QChar(QChar::LineSeparator) + tr("Name of saved file is copied to the clipboard");
         break;
@@ -565,8 +565,8 @@ void Core::autoSave()
 
 QString Core::getVersionPrintable()
 {
-    QString str = "ScreenGrab: " + qApp->applicationVersion() + QStringLiteral("\n");
-    str += "Qt: " + QString(qVersion()) + QStringLiteral("\n");
+    QString str = QStringLiteral("ScreenGrab: ") + qApp->applicationVersion() + QStringLiteral("\n");
+    str += QStringLiteral("Qt: ") + QString::fromLatin1(qVersion()) + QStringLiteral("\n");
     return str;
 }
 
@@ -580,7 +580,7 @@ QByteArray Core::getScreenData()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    _pixelMap->save(&buffer, _conf->getSaveFormat().toLatin1());
+    _pixelMap->save(&buffer, _conf->getSaveFormat().toLatin1().constData());
     return bytes;
 }
 

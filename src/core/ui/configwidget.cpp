@@ -197,7 +197,7 @@ void ConfigDialog::changeFormatType(int type)
 
 void ConfigDialog::changeImgQualituSlider(int pos)
 {
-    QString text = " " + QString::number(pos) + "%";
+    QString text = QLatin1Char(' ') + QString::number(pos) + QLatin1Char('%');
     _ui->labImgQualityCurrent->setText(text);
 }
 
@@ -208,7 +208,7 @@ void ConfigDialog::saveSettings()
     {
         QMessageBox msg;
         msg.setText(tr("Directory %1 does not exist. Do you want to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
-        msg.setWindowTitle("ScreenGrab" + QStringLiteral(" - ") + tr("Warning"));
+        msg.setWindowTitle(QStringLiteral("ScreenGrab") + QStringLiteral(" - ") + tr("Warning"));
         msg.setIcon(QMessageBox::Question);
         msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 
@@ -309,7 +309,7 @@ void ConfigDialog::restoreDefaults()
 {
     QMessageBox msg;
     msg.setText(tr("Do you want to reset the settings to the defaults?"));
-    msg.setWindowTitle("ScreenGrab" + QStringLiteral(" - ") + tr("Warning"));
+    msg.setWindowTitle(QStringLiteral("ScreenGrab") + QStringLiteral(" - ") + tr("Warning"));
     msg.setIcon(QMessageBox::Question);
     msg.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 

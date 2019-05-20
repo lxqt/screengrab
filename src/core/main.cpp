@@ -24,8 +24,8 @@
 
 int main(int argc, char *argv[])
 {
-    SingleApp scr(argc, argv, VERSION);
-    scr.setApplicationVersion(VERSION);
+    SingleApp scr(argc, argv, QStringLiteral(VERSION));
+    scr.setApplicationVersion(QStringLiteral(VERSION));
     scr.setOrganizationName(QStringLiteral("lxqt"));
     scr.setOrganizationDomain(QStringLiteral("https://lxqt.org"));
     scr.setApplicationName(QStringLiteral("screengrab"));
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
     {
         QString type = QString::number(ScreenGrab->config()->getDefScreenshotType());
-        scr.sendMessage("screengrab --type=" + type);
+        scr.sendMessage(QStringLiteral("screengrab --type=") + type);
         return 0;
     }
 

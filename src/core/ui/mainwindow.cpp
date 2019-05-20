@@ -112,7 +112,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     appIcon = QIcon::fromTheme (QStringLiteral("screengrab"));
     if (appIcon.isNull())
-        appIcon = QIcon(":/res/img/logo.png");
+        appIcon = QIcon(QStringLiteral(":/res/img/logo.png"));
 
     setWindowIcon(appIcon);
 
@@ -290,17 +290,17 @@ void MainWindow::showHelp()
 {
     QString localeHelpFile;
 
-    localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1" + Config::getSysLang()+"%1index.html";
+    localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1") + Config::getSysLang()+QStringLiteral("%1index.html");
     localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
     if (!QFile::exists(localeHelpFile))
     {
-        localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1" + Config::getSysLang().section(QStringLiteral("_"), 0, 0)  + "%1index.html";
+        localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1") + Config::getSysLang().section(QStringLiteral("_"), 0, 0)  + QStringLiteral("%1index.html");
         localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
 
         if (!QFile::exists(localeHelpFile))
         {
-            localeHelpFile = QStringLiteral(SG_DOCDIR) + "%1html%1en%1index.html";
+            localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1en%1index.html");
             localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
         }
     }
@@ -362,7 +362,7 @@ void MainWindow::displatScreenToolTip()
     QSize pSize = Core::instance()->getPixmap()->size();
     quint16 w = pSize.width();
     quint16 h = pSize.height();
-    QString toolTip = tr("Screenshot ") + QString::number(w) + "x" + QString::number(h);
+    QString toolTip = tr("Screenshot ") + QString::number(w) + QStringLiteral("x") + QString::number(h);
     if (_conf->getEnableExtView())
     {
         toolTip += QLatin1String("\n\n");
@@ -580,7 +580,7 @@ void MainWindow::saveScreen()
     QHash<QString, QString>::const_iterator iter = formatsAvalible.constBegin();
     while (iter != formatsAvalible.constEnd())
     {
-        QString str = iter.value() + " (*." + iter.key() + ")";
+        QString str = iter.value() + QStringLiteral(" (*.") + iter.key() + QStringLiteral(")");
         if (iter.key() == format)
             filterSelected = str;
         fileFilters << str;
@@ -590,7 +590,7 @@ void MainWindow::saveScreen()
     QString fileName;
     fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(QStringLiteral(";;")), &filterSelected);
 
-    QRegExp rx(R"(\(\*\.[a-z]{3,4}\))");
+    QRegExp rx(QStringLiteral(R"(\(\*\.[a-z]{3,4}\))"));
     quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
 
     filterSelected.chop(tmp + 1);
