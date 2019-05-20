@@ -29,14 +29,16 @@
 #include "config.h"
 
 #define SERVICE_FREEDESKTOP "org.freedesktop.Notifications"
-#define PATH_FREEDESKTOP "/org/freedesktop/Notifications" ,"org.freedesktop.Notifications"
+#define PATH_FREEDESKTOP "/org/freedesktop/Notifications"
+#define INTERFACE_FREEDESKTOP "org.freedesktop.Notifications"
+
 
 #define CACHE_DIR "notify-cache"
 #define CACHE_PREV "preview.jpg"
 
 DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
 {
-    _notifier = new QDBusInterface(SERVICE_FREEDESKTOP, PATH_FREEDESKTOP,
+    _notifier = new QDBusInterface(QStringLiteral(SERVICE_FREEDESKTOP), QStringLiteral(PATH_FREEDESKTOP), QStringLiteral(INTERFACE_FREEDESKTOP),
                                    QDBusConnection::sessionBus(), this);
     if (_notifier->lastError().type() != QDBusError::NoError) {
         qWarning() << "Notify: Unable to create interface.";
@@ -46,10 +48,10 @@ DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
     qWarning() << "Notify: DBus interfece created successfully.";
 
     QDir dir(Config::getConfigDir());
-    if (!dir.exists(CACHE_DIR))
-        dir.mkdir(CACHE_DIR);
+    if (!dir.exists(QStringLiteral(CACHE_DIR)))
+        dir.mkdir(QStringLiteral(CACHE_DIR));
 
-    _previewPath = dir.absolutePath() + QDir::toNativeSeparators(QDir::separator()) + CACHE_PREV;
+    _previewPath = dir.absolutePath() + QDir::toNativeSeparators(QDir::separator()) + QStringLiteral(CACHE_PREV);
     _appIconPath = QStringLiteral(SG_ICONPATH);
 
     _notifyDuration = Config::instance()->getTimeTrayMess() * 1000;
@@ -80,7 +82,7 @@ QList<QVariant> DBusNotifier::prepareNotification(const StateNotifyMessage& mess
 {
     QList<QVariant> args;
 
-    args << "Screen Grab";
+    args << QLatin1Literal("Screen Grab");
     args << QVariant(QVariant::UInt); // id
 
     // app-icon(path to icon on disk)

@@ -56,7 +56,7 @@ void SingleApp::receiveMessage()
         QLocalSocket *localSocket = localServer->nextPendingConnection();
         if (!localSocket->waitForReadyRead(timeout))
         {
-                qDebug("%s", qPrintable(localSocket->errorString().toLatin1()));
+                qDebug("%s", qPrintable(localSocket->errorString()));
                 return;
         }
         QByteArray byteArray = localSocket->readAll();
@@ -89,13 +89,13 @@ bool SingleApp::sendMessage(const QString &message)
         localSocket.connectToServer(uniqueKey, QIODevice::WriteOnly);
         if (!localSocket.waitForConnected(timeout))
         {
-                qDebug("%s",qPrintable(localSocket.errorString().toLatin1()));
+                qDebug("%s",qPrintable(localSocket.errorString()));
                 return false;
         }
         localSocket.write(message.toUtf8());
         if (!localSocket.waitForBytesWritten(timeout))
         {
-                qDebug("%s",qPrintable(localSocket.errorString().toLatin1()));
+                qDebug("%s",qPrintable(localSocket.errorString()));
                 return false;
         }
         localSocket.disconnectFromServer();
