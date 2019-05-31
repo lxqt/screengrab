@@ -24,7 +24,11 @@
 #include <QX11Info>
 
 #include <X11/Xlib-xcb.h>
+#ifdef SG_USE_SYSTEM_KF5
 #include <fixx11h.h>
+#else
+#include "fixx11h.h"
+#endif
 #include <xcb/xcb.h>
 
 namespace X11Utils {

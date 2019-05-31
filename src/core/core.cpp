@@ -29,7 +29,9 @@
 
 #include <QDebug>
 
+#ifdef SG_USE_SYSTEM_KF5
 #include <KF5/KWindowSystem/KWindowSystem>
+#endif
 #include <xcb/xfixes.h>
 
 #ifdef X11_XCB_FOUND
@@ -251,6 +253,7 @@ void Core::getActiveWindow() // called only with window screenshots
     const QDesktopWidget *desktop = QApplication::desktop();
     const int screenNum = desktop->screenNumber(QCursor::pos());
 
+#ifdef SG_USE_SYSTEM_KF5
     WId wnd = KWindowSystem::activeWindow();
 
     // this window screenshot will be invalid
@@ -274,12 +277,53 @@ void Core::getActiveWindow() // called only with window screenshots
     KWindowInfo info(wnd, NET::XAWMState | NET::WMFrameExtents);
     if (!invalid && info.mappingState() != NET::Visible)
         invalid = true;
+#else
+    XWindowAttributes attr;
+    xcb_connection_t *conn = QX11Info::connection();
+
+    xcb_grab_server(conn);
+
+    xcb_connection_t *connection = QX11Info::connection();
+    xcb_get_input_focus_reply_t *focusReply;
+    xcb_query_tree_cookie_t treeCookie;
+    xcb_query_tree_reply_t *treeReply;
+
+    focusReply = xcb_get_input_focus_reply(conn, xcb_get_input_focus(connection), nullptr);
+    xcb_window_t wnd = focusReply->focus;
+    while (1) {
+        treeCookie = xcb_query_tree(connection, wnd);
+        treeReply = xcb_query_tree_reply(connection, treeCookie, nullptr);
+        if (!treeReply) {
+            wnd = 0;
+            break;
+        }
+        if (wnd == treeReply->root || treeReply->parent == treeReply->root) {
+            break;
+        } else {
+            wnd = treeReply->parent;
+        }
+        free(treeReply);
+    }
+    free(treeReply);
+
+    // this window screenshot will be invalid
+    // if there's no active window or the active window is ours
+    bool invalid(!wnd || (_wnd && _wnd->winId() == wnd));
+    if (!invalid)
+    {
+        int stat = XGetWindowAttributes(QX11Info::display(), wnd, &attr);
+        invalid =  !stat || attr.map_state != IsViewable;
+    }
+#endif
 
     // if this is an invalid screenshot, take a fullscreen shot instead
     if (invalid)
     {
         qWarning() << "Could not take a window screenshot.";
         *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+#ifndef SG_USE_SYSTEM_KF5
+        xcb_ungrab_server(conn);
+#endif
         return;
     }
 
@@ -287,9 +331,13 @@ void Core::getActiveWindow() // called only with window screenshots
     if (_conf->getNoDecoration())
     {
         *_pixelMap = screens[screenNum]->grabWindow(wnd);
+#ifndef SG_USE_SYSTEM_KF5
+        xcb_ungrab_server(conn);
+#endif
         return;
     }
 
+#ifdef SG_USE_SYSTEM_KF5
     QRect geometry = info.frameGeometry();
     *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),
                                      geometry.x(),
@@ -297,6 +345,15 @@ void Core::getActiveWindow() // called only with window screenshots
                                      geometry.width(),
                                                 geometry.height());
     grabCursor(geometry.x(), geometry.y());
+#else
+    *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),
+                                     attr.x,
+                                     attr.y,
+                                     attr.width,
+                                     attr.height);
+    grabCursor(attr.x, attr.y);
+    xcb_ungrab_server(conn);
+#endif
 }
 
 void Core::grabCursor(int offsetX, int offsetY)
