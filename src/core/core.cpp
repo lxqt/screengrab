@@ -547,6 +547,8 @@ void Core::processCmdLineOpts(const QStringList& arguments)
         uploader->init();
     } else
         initWindow();
+#else
+    initWindow();
 #endif
 
 }
