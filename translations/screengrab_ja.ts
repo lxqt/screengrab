@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>このアプリケーションについて</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
@@ -486,7 +486,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>このアプリケーションについて</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
@@ -657,12 +657,12 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Qtについて</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
