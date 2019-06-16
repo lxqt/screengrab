@@ -157,7 +157,7 @@ void RegionSelect::drawBackGround()
     painter.drawRect(QApplication::desktop()->rect());
 
     QRect txtRect = QApplication::desktop()->screenGeometry(QApplication::desktop()->primaryScreen());
-    QString txtTip = QApplication::tr("Click and drag to draw a rectangle, then double click or press Enter\nto take a screenshot. Press Escape to exit the program.");
+    QString txtTip = QApplication::tr("Click and drag to draw a rectangle, then double click or press Enter\nto take a screenshot.");
 
     txtRect.setHeight(qRound((float) (txtRect.height() / 10))); // rounded val of text rect height
 
