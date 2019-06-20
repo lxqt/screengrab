@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation type="unfinished"></translation>
+        <translation>Qt を使用 </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation type="unfinished"></translation>
+        <translation>私達にご協力を</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>はデスクトップのスクリーンショットを手軽に取得するためのクロスプラットフォームのアプリケーションです。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
