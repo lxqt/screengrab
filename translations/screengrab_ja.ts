@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>Qt を使用 </translation>
+        <translation>Qt を使用しています : Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation type="unfinished"></translation>
+        <translation>翻訳:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -481,7 +481,7 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>終了</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
@@ -657,7 +657,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation>Qtについて</translation>
+        <translation>Qt について</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
@@ -941,7 +941,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="632"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
