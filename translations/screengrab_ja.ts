@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
         <source>Link to delete image:</source>
-        <translation>イメージを削除するリンク:</translation>
+        <translation>画像を削除するリンク:</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
@@ -452,7 +452,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>マウス・ポインタを含める</translation>
+        <translation>マウスポインターを含める</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -509,7 +509,7 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
-        <translation>メインウィンドウを表示しない</translation>
+        <translation>メインウィンドウを非表示にする</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
         <source>Upload the screenshot to the default image host</source>
-        <translation>既定のイメージ・ホストにスクリーンショットをアップロードします</translation>
+        <translation>既定の画像ホストにスクリーンショットをアップロードします</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
@@ -603,7 +603,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
         <source>URl to delete image</source>
-        <translation>イメージを削除する URL</translation>
+        <translation>画像を削除する URL</translation>
     </message>
 </context>
 <context>
@@ -616,7 +616,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
         <source>Default image host</source>
-        <translation>既定のイメージ・ホスト</translation>
+        <translation>既定の画像ホスト</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
