@@ -547,7 +547,7 @@
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
         <translation>スクリーンショットにマウスを使用して四角形を描画します。任意のキーを押すか、
-右または中央のマウス・ボタンで終了します。(訳注: Enter ダブルクリック ESC)</translation>
+右または中央のマウス・ボタンで終了します。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
