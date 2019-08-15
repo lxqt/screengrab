@@ -519,7 +519,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation>%1 個のファイル</translation>
+        <translation>%1 ファイル</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
