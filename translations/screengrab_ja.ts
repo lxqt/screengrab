@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation>感謝</translation>
+        <translation>お礼</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
@@ -239,13 +239,13 @@
         <location filename="../src/core/core.cpp" line="444"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>
-保存したファイルの名前をクリップボードにコピーしました</translation>
+保存したファイルの名前をクリップボードへコピーしました</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="450"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>
-保存したファイルのパスをクリップボードにコピーしました</translation>
+保存したファイルのパスをクリップボードへコピーしました</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="472"/>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="472"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>スクリーンショットをクリップボードにコピーしました</translation>
+        <translation>スクリーンショットをクリップボードへコピーしました</translation>
     </message>
 </context>
 <context>
@@ -291,7 +291,7 @@
         <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
         <source>Copy this link to the clipboard</source>
-        <translation>リンク先をクリップボードにコピーします</translation>
+        <translation>リンク先をクリップボードへコピーします</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation>クリップボードにコピーする</translation>
+        <translation>クリップボードへコピーする</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
@@ -621,7 +621,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
         <source>Always copy the link to the clipboard</source>
-        <translation>常にリンクをクリップボードにコピーする</translation>
+        <translation>常にリンクをクリップボードへコピーする</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
@@ -744,7 +744,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>保存時にクリップボードにファイル名をコピー</translation>
+        <translation>保存時にファイル名をクリップボードへコピー</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
