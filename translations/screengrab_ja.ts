@@ -180,12 +180,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation>このキーは、このシステムで既に使用されています！ 他のキーを選択してください。</translation>
+        <translation>このキーは、このシステムで既に使用されています！ 他のキーを選択して下さい。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>このキーは、ScreenGrab で既に使用されています！ 他のキーを選択してください。</translation>
+        <translation>このキーは、ScreenGrab で既に使用されています！ 他のキーを選択して下さい。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="449"/>
@@ -524,7 +524,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
-        <translation>名前をつけて保存...</translation>
+        <translation>名前を付けて保存...</translation>
     </message>
 </context>
 <context>
@@ -546,8 +546,8 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
-        <translation>スクリーンショットにマウスを使用して四角形を描画します。任意のキーを押すか、
-右または中央のマウス・ボタンで終了します。</translation>
+        <translation>スクリーンショットにマウスを使用して四角形を描画します。
+任意のキーを押すか、右または中央のマウス・ボタンで終了します。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
