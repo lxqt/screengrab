@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>je multiplatformní aplikace pro rychlé pořizování zachycených snímků pracovní plochy.</translation>
+        <translation>je to multiplatformní aplikace pro pohotové pořizování zachycených snímků pracovní plochy.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Překládat:</translation>
+        <translation>Překlady:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation>Podpora vícero monitorů a ostatní v systému GNU/Linux</translation>
+        <translation>Podpora vícero monitorů a další v systému GNU/Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation>Tato klávesa je už ve vámi používaném systému přiřazena něčemu jinému! Vyberte jinou.</translation>
+        <translation>Tato klávesa je už ve vámi používaném operačním systému přiřazena něčemu jinému! Vyberte jinou.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="431"/>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
         <source>Error uploading screenshot</source>
-        <translation>Chyba při nahrávání  snímku obrazovky</translation>
+        <translation>Chyba při nahrávání snímku obrazovky</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
-        <translation>Možnosti</translation>
+        <translation>Předvolby</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
@@ -486,7 +486,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
         <source>About</source>
-        <translation>A aplikaci</translation>
+        <translation>O aplikaci</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
@@ -545,7 +545,7 @@
         <source>Use your mouse to draw a rectangle to screenshot or exit pressing
 any key or using the right or middle mouse buttons.</source>
         <translation>Pomocí myši vymezte čtyřúhelníkovou oblast, kterou zachytit nebo
-ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</translation>
+ukončete stisknutím libovolné klávesy nebo prostředního tlačítka myši.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
@@ -672,7 +672,7 @@ ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="627"/>
         <source>Options</source>
-        <translation>Volby</translation>
+        <translation>Předvolby</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
@@ -792,7 +792,7 @@ ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Při zachycení snímek obrazovky automaticky uložit</translation>
+        <translation>Po zachycení snímky obrazovky hned automaticky ukládat</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
@@ -807,7 +807,7 @@ ukončete stisknutím libovolné klávesy či prostředního tlačítka myši.</
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation>Umožnit spuštění vícero kopií ScreenGrab</translation>
+        <translation>Umožnit mít ScreenGrab spuštěné vícekrát vedle sebe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
