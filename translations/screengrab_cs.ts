@@ -31,7 +31,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Je nenáročná a přitom funkcemi nabitá aplikace, naprogramovaná pomocí Qt.</translation>
+        <translation>Je to nenáročná a přitom funkcemi nabitá aplikace, naprogramovaná pomocí Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -857,7 +857,7 @@ ukončete stisknutím libovolné klávesy nebo prostředního tlačítka myši.<
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
         <source>Tray mode</source>
-        <translation>Režim oznamovací oblasti</translation>
+        <translation>Dle režimu oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
@@ -872,7 +872,7 @@ ukončete stisknutím libovolné klávesy nebo prostředního tlačítka myši.<
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="512"/>
         <source>Time to display tray messages</source>
-        <translation>Doba k zobrazení zpráv v oznamovací oblasti</translation>
+        <translation>Doba trvání zobrazení zpráv v oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
