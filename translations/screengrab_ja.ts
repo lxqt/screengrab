@@ -544,10 +544,9 @@
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="160"/>
-        <source>Use your mouse to draw a rectangle to screenshot or exit pressing
-any key or using the right or middle mouse buttons.</source>
-        <translation>スクリーンショットにマウスを使用して四角形を描画します。
-任意のキーを押すか、右または中央のマウス・ボタンで終了します。</translation>
+        <source>Click and drag to draw a rectangle, then double click or press Enter
+to take a screenshot.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
@@ -769,7 +768,7 @@ any key or using the right or middle mouse buttons.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>画質 (1 = ファイルサイズ小 　 100 = 高品質)</translation>
+        <translation>画質 (1 = ファイルサイズ小 &#x3000; 100 = 高品質)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
