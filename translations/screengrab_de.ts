@@ -542,10 +542,9 @@
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="160"/>
-        <source>Use your mouse to draw a rectangle to screenshot or exit pressing
-any key or using the right or middle mouse buttons.</source>
-        <translation>Markieren Sie mit der Maus einen rechteckigen Ausschnitt oder beenden Sie den Vorgang,
-indem Sie die &lt;Esc&gt;-Taste oder die mittlere Maustaste drücken.</translation>
+        <source>Click and drag to draw a rectangle, then double click or press Enter
+to take a screenshot.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
