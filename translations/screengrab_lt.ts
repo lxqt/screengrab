@@ -544,7 +544,9 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustelėkite ir tempkite, norėdami nubrėžti stačiakampį, o tuomet,
+norėdami padaryti ekrano kopiją, spustelėkite du kartus
+arba paspauskite Įvesties (Enter) klavišą.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
