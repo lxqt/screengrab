@@ -544,7 +544,8 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikk og dra for å tegne et rektangel, så dobbeltklikk eller trykk Enter
+for å ta et skjermbilde.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
