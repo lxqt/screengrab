@@ -544,7 +544,8 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prema e arrastra para debuxar un rectángulo, após faga dobre clic ou prema Intro
+para facer unha captura de pantalla.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
