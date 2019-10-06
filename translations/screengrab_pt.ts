@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Nenhum</translation>
+        <translation>Nada</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
@@ -544,7 +544,8 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique e arraste para desenhar um retângulo e, depois, duplo clique
+ou Enter para obter a captura.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
