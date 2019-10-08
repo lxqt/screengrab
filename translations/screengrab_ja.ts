@@ -546,7 +546,7 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>クリックとドラッグで四角形を描いて、それからダブルクリックするか Enter キーを押してスクリーンショットを取得します。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
@@ -768,7 +768,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>画質 (1 = ファイルサイズ小 &#x3000; 100 = 高品質)</translation>
+        <translation>画質 (1 = ファイルサイズ小 　 100 = 高品質)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
