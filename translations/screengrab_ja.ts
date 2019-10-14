@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>あなたは何ができますか？</translation>
+        <translation>あなたは何をしますか？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -374,7 +374,7 @@
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
         <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation>既定のウェブ・ブラウザでこのリンクを開きます。警告なしに、すぐにアップロードした画像が削除されることがあります。</translation>
+        <translation>既定のウェブブラウザーでこのリンクを開きます。警告なしに、すぐにアップロードした画像が削除されることがあります。</translation>
     </message>
     <message>
         <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
