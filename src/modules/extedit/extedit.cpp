@@ -19,6 +19,8 @@
 #include "extedit.h"
 #include "core/core.h"
 
+#include <XdgMimeApps>
+
 #include <QDebug>
 #include <QMimeDatabase>
 
@@ -85,8 +87,9 @@ void ExtEdit::createAppList()
 
     QString fileName = _editFilename.isEmpty() ? core->getTempFilename(format) : _editFilename;
     QMimeDatabase db;
+    XdgMimeApps mimeAppsDb;
     QMimeType mt = db.mimeTypeForFile(fileName);
-    _appList = XdgDesktopFileCache::getApps(mt.name());
+    _appList = mimeAppsDb.apps(mt.name());
 
     for (XdgDesktopFile *app : qAsConst(_appList))
         _actionList << new XdgAction(app);
