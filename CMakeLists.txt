@@ -27,19 +27,19 @@ find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5X11Extras ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
 
-find_package(X11)
-if (X11_FOUND)
-    set(HAVE_X11 1)
-endif(X11_FOUND)
+# right now we declare it as required
+find_package(X11 REQUIRED)
+set(HAVE_X11 1)
 
 find_package(
-    XCB MODULE COMPONENTS
+    XCB REQUIRED MODULE COMPONENTS
         XCB
         SHAPE
         XFIXES
 )
+
 find_package(
-    X11_XCB MODULE
+    X11_XCB REQUIRED MODULE
 )
 
 set(CMAKE_AUTOMOC ON)
