@@ -12,7 +12,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # options
 option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
-option(SG_EXT_UPLOADS "Enable upload screenshots to Imgur" ON)
 option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
@@ -88,10 +87,6 @@ if(SG_GLOBALSHORTCUTS)
     endif()
 endif(SG_GLOBALSHORTCUTS)
 
-if(SG_EXT_UPLOADS)
-    add_definitions( -DSG_EXT_UPLOADS="1")
-endif()
-
 if(SG_EXT_EDIT)
     add_definitions( -DSG_EXT_EDIT="1")
     find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
@@ -103,7 +98,6 @@ if(SG_DBUS_NOTIFY)
 endif()
 
 message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
-message(STATUS "Imgur upload support: " ${SG_EXT_UPLOADS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Enable D-Bus notifications: " ${SG_DBUS_NOTIFY})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
@@ -120,11 +114,6 @@ add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
-
-if(SG_EXT_UPLOADS)
-    include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader")
-    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/uploader")
-endif()
 
 if (SG_EXT_EDIT)
     include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit")
@@ -219,10 +208,6 @@ if(SG_GLOBALSHORTCUTS)
     else(SG_USE_SYSTEM_QXT)
         target_link_libraries(screengrab qxt)
     endif(SG_USE_SYSTEM_QXT)
-endif()
-
-if(SG_EXT_UPLOADS)
-    target_link_libraries(screengrab uploader)
 endif()
 
 if(SG_EXT_EDIT)
