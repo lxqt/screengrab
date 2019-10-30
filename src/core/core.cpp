@@ -42,10 +42,6 @@
 #include "dbusnotifier.h"
 #endif
 
-#ifdef SG_EXT_UPLOADS
-#include "modules/uploader/moduleuploader.h"
-#endif
-
 Core* Core::corePtr = nullptr;
 
 Core::Core()
@@ -399,7 +395,7 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     if (!fileName.contains(QStringLiteral(".") + format))
         fileName.append(QStringLiteral(".") + format);
 
-    // saving temp file (for uploader module)
+    // saving temp file
     if (tmpScreen)
     {
         if (!fileName.isEmpty())
@@ -535,22 +531,7 @@ void Core::processCmdLineOpts(const QStringList& arguments)
         if (_cmdLine.isSet(_screenTypeOpts.at(i)))
             _conf->setDefScreenshotType(i);
 
-#ifdef SG_EXT_UPLOADS
-    /// FIXMA - In module interface need add the mthod for geting module cmdLine options
-    const QString UPLOAD_CMD_PARAM = QStringLiteral("upload");
-    const QString UPLOAD_CMD_PARAM_SHORT = QStringLiteral("u");
-    QCommandLineOption u(QStringList() << UPLOAD_CMD_PARAM_SHORT << UPLOAD_CMD_PARAM);
-
-    if (_cmdLine.isSet(u)) {
-        ModuleUploader *uploader = static_cast<ModuleUploader*>(_modules.getModule(MOD_UPLOADER));
-        connect(uploader, &ModuleUploader::uploadCompleteWithQuit, qApp, &QApplication::quit);
-        uploader->init();
-    } else
-        initWindow();
-#else
     initWindow();
-#endif
-
 }
 
 bool Core::runAsMinimized()
