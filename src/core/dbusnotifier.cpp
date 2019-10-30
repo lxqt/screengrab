@@ -45,8 +45,6 @@ DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
         return;
     }
 
-    qWarning() << "Notify: DBus interfece created successfully.";
-
     QDir dir(Config::getConfigDir());
     if (!dir.exists(QStringLiteral(CACHE_DIR)))
         dir.mkdir(QStringLiteral(CACHE_DIR));
