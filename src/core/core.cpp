@@ -395,6 +395,15 @@ bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
     if (!fileName.contains(QStringLiteral(".") + format))
         fileName.append(QStringLiteral(".") + format);
 
+    // saving temp file
+    if (tmpScreen)
+    {
+        if (!fileName.isEmpty())
+            return _pixelMap->save(fileName, format.toLatin1().constData(), _conf->getImageQuality());
+        else
+            return false;
+    }
+
     // writing file
     bool saved = false;
     if (!fileName.isEmpty())
