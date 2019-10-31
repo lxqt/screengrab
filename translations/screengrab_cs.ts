@@ -201,183 +201,59 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="59"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>je multiplatformní aplikace pro pohotové pořizování snímků obrazovky pracovní plochy.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="63"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Pořídit snímek celé obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a screenshot of the active window</source>
         <translation>Pořídit snímek aktivního okna</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Pořídit snímek vybrané části obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="75"/>
         <source>Run the application with a hidden main window</source>
         <translation>Spustit aplikaci tak, aby její hlavní okno zůstalo skryté</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="422"/>
+        <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="422"/>
+        <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved to </source>
         <translation>Uloženo do </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="444"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Název uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="450"/>
+        <location filename="../src/core/core.cpp" line="437"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Popis umístění uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="472"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Copied</source>
         <translation>Zkopírováno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="472"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snímek obrazovky je zkopírován do schránky</translation>
-    </message>
-</context>
-<context>
-    <name>DialogUploader</name>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
-        <source>Upload to internet</source>
-        <translation>Nahrát na Internet</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
-        <source>Upload to</source>
-        <translation>Nahrát na</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
-        <source>Direct link:</source>
-        <translation>Přímý odkaz:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="189"/>
-        <source>Open this link in the default web-browser</source>
-        <translation>Otevřít tento odkaz ve výchozím webovém prohlížeči</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
-        <source>Open</source>
-        <translation>Otevřít</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
-        <source>Copy this link to the clipboard</source>
-        <translation>Zkopírovat tento odkaz do schránky</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
-        <source>Copy</source>
-        <translation>Zkopírovat</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
-        <source>Extended preformed html or bb codes:</source>
-        <translation>Rozšířené předformátované html nebo bb kódy:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
-        <source>Link to delete image:</source>
-        <translation>Odkaz na smazání obrázku:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
-        <source>Upload</source>
-        <translation>Nahrát</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
-        <source>Cancel</source>
-        <translation>Storno</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source>Size: </source>
-        <translation>Velikost: </translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source> pixel</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
-        <source>Uploaded </source>
-        <translation>Nahráno </translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
-        <source>Ready to upload</source>
-        <translation>Připraveno k nahrání</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
-        <source>Upload processing... Please wait</source>
-        <translation>Zpracovávání nahrání – čekejte…</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
-        <source>Receiving a response from the server</source>
-        <translation>Získávání odpovědi ze serveru</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
-        <source>Upload completed</source>
-        <translation>Nahrání dokončeno</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
-        <source>Close</source>
-        <translation>Zavřít</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
-        <source>Error uploading screenshot</source>
-        <translation>Chyba při nahrávání snímku obrazovky</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
-        <source>Error</source>
-        <translation>Chyba</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
-        <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation>Otevření tohoto odkazu ve webovém prohlížeči může bez jakéhokoli varování vést ke smazání nahraného obrázku.</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
-        <source>Are you sure you want to continue?</source>
-        <translation>Opravdu chcete pokračovat?</translation>
     </message>
 </context>
 <context>
@@ -526,19 +402,6 @@
     </message>
 </context>
 <context>
-    <name>ModuleUploader</name>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
-        <source>Upload the screenshot to the default image host</source>
-        <translation>Nahrát snímek na výchozího hostitele obrázků</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
-        <source>Uploading</source>
-        <translation>Nahrávání</translation>
-    </message>
-</context>
-<context>
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="160"/>
@@ -564,93 +427,6 @@ pořiďte snímek obrazovky.</translation>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
         <translation>Upravit v…</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
-        <source>Upload</source>
-        <translation>Nahrát</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader</name>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="225"/>
-        <source>Direct link</source>
-        <translation>Přímý odkaz</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="228"/>
-        <source>HTML code</source>
-        <translation>HTML kód</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="231"/>
-        <source>BB code</source>
-        <translation>BB kód</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="234"/>
-        <source>HTML code with thumb image</source>
-        <translation>HTML kód s náhledovým obrázkem</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="237"/>
-        <source>BB code with thumb image</source>
-        <translation>BB kód s náhledovým obrázkem</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
-        <source>URl to delete image</source>
-        <translation>URL adresa pro smazání obrázku</translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget</name>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
-        <source>Common settings</source>
-        <translation>Společná nastavení</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
-        <source>Default image host</source>
-        <translation>Výchozí hostitel obrázků</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
-        <source>Always copy the link to the clipboard</source>
-        <translation>Vždy zkopírovat obrázek do schránky</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
-        <source>Hosts settings</source>
-        <translation>Nastavení hostitelů</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
-        <source>Settings for: </source>
-        <translation>Nastavení pro: </translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget_ImgUr</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
-        <source>Configuration for imgur.com upload</source>
-        <translation>Nastavení pro nahrávání na imgur.com</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
-        <source>No settings available right now</source>
-        <translation>V tuto chvíli nejsou k dispozici žádná nastavení</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_ImgUr_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
-        <source>Upload to Imgur</source>
-        <translation>Nahrát na Imgur</translation>
     </message>
 </context>
 <context>
