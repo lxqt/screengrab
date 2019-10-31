@@ -28,7 +28,6 @@
 
 #include <QAction>
 
-const QByteArray MOD_UPLOADER = "uploader";
 const QByteArray MOD_EXT_EDIT = "extedit";
 
 typedef QMap<QByteArray, AbstractModule*> ModuleList_t;

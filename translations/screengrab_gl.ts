@@ -201,183 +201,59 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="59"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="63"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Facer unha captura da pantalla completa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a screenshot of the active window</source>
         <translation>Facer unha captura da xanela activa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Facer unha captura dunha área da pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="75"/>
         <source>Run the application with a hidden main window</source>
         <translation>Executar a aplicación coa xanela principal agochada</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="422"/>
+        <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="422"/>
+        <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved to </source>
         <translation>Gardado en </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="444"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>O nome do ficheiro gardado copiase no portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="450"/>
+        <location filename="../src/core/core.cpp" line="437"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>A ruta ao ficheiro gardado copiase ao portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="472"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Copied</source>
         <translation>Copiado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="472"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>A captura de pantalla copiase ao portapapeis</translation>
-    </message>
-</context>
-<context>
-    <name>DialogUploader</name>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="14"/>
-        <source>Upload to internet</source>
-        <translation>Enviar á Internet</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="22"/>
-        <source>Upload to</source>
-        <translation>Enviar a</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="76"/>
-        <source>Direct link:</source>
-        <translation>Ligazón directa:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="98"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="189"/>
-        <source>Open this link in the default web-browser</source>
-        <translation>Abrir esta ligazón no navegador predeterminado</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="101"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="192"/>
-        <source>Open</source>
-        <translation>Abrir</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="114"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="155"/>
-        <source>Copy this link to the clipboard</source>
-        <translation>Copiar esta ligazón no portapapeis</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="117"/>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="158"/>
-        <source>Copy</source>
-        <translation>Copiar</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="128"/>
-        <source>Extended preformed html or bb codes:</source>
-        <translation>Códigos HTML ou BB preformados estendidos:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="167"/>
-        <source>Link to delete image:</source>
-        <translation>Ligazón para eliminar a imaxe:</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="300"/>
-        <source>Upload</source>
-        <translation>Enviar</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.ui" line="313"/>
-        <source>Cancel</source>
-        <translation>Cancelar</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source>Size: </source>
-        <translation>Tamaño: </translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="58"/>
-        <source> pixel</source>
-        <translation> píxel</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="68"/>
-        <source>Uploaded </source>
-        <translation>Enviado </translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="71"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="212"/>
-        <source>Ready to upload</source>
-        <translation>Listo para enviar</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="108"/>
-        <source>Upload processing... Please wait</source>
-        <translation>Enviando... Agarde</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="160"/>
-        <source>Receiving a response from the server</source>
-        <translation>Recibindo a resposta do servidor</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="177"/>
-        <source>Upload completed</source>
-        <translation>Envío completado</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="199"/>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="214"/>
-        <source>Close</source>
-        <translation>Pechar</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="206"/>
-        <source>Error uploading screenshot</source>
-        <translation>Produciuse un erro ao enviar a captura de pantalla</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="207"/>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="244"/>
-        <source>Open this link in your default web-browser, it may directly delete your uploaded image, without any warnings.</source>
-        <translation>Abrir a ligazón no navegador predeterminado; pode eliminar directamente a súa imaxe sen ningún aviso.</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/dialoguploader.cpp" line="245"/>
-        <source>Are you sure you want to continue?</source>
-        <translation>Confirma que quere continuar?</translation>
     </message>
 </context>
 <context>
@@ -526,19 +402,6 @@
     </message>
 </context>
 <context>
-    <name>ModuleUploader</name>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="41"/>
-        <source>Upload the screenshot to the default image host</source>
-        <translation>Enviar a captura de pantalla ao sitio predeterminado para as imaxes</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="48"/>
-        <source>Uploading</source>
-        <translation>Enviando</translation>
-    </message>
-</context>
-<context>
     <name>QApplication</name>
     <message>
         <location filename="../src/core/regionselect.cpp" line="160"/>
@@ -564,93 +427,6 @@ para facer unha captura de pantalla.</translation>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
         <translation>Editar con..</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/moduleuploader.cpp" line="103"/>
-        <source>Upload</source>
-        <translation>Enviar</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader</name>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="225"/>
-        <source>Direct link</source>
-        <translation>Ligazón directa</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="228"/>
-        <source>HTML code</source>
-        <translation>Código HTML</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="231"/>
-        <source>BB code</source>
-        <translation>Código BB</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="234"/>
-        <source>HTML code with thumb image</source>
-        <translation>Código HTML con miniatura de imaxe</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="237"/>
-        <source>BB code with thumb image</source>
-        <translation>Código BB con miniatura de imaxe</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploader.cpp" line="240"/>
-        <source>URl to delete image</source>
-        <translation>URI para eliminar a imaxe</translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget</name>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="24"/>
-        <source>Common settings</source>
-        <translation>Axustes xerais</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="32"/>
-        <source>Default image host</source>
-        <translation>Sitio predeterminado para as imaxes</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="44"/>
-        <source>Always copy the link to the clipboard</source>
-        <translation>Copiar sempre a ligazón no portapapeis</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="65"/>
-        <source>Hosts settings</source>
-        <translation>Configuración dos servidores</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/uploaderconfigwidget.ui" line="73"/>
-        <source>Settings for: </source>
-        <translation>Configuración para: </translation>
-    </message>
-</context>
-<context>
-    <name>UploaderConfigWidget_ImgUr</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="20"/>
-        <source>Configuration for imgur.com upload</source>
-        <translation>Configuración para o envío a imgur.com</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploaderconfigwidget_imgur.ui" line="43"/>
-        <source>No settings available right now</source>
-        <translation>Non hai axustes dispoñíbeis polo de agora</translation>
-    </message>
-</context>
-<context>
-    <name>Uploader_ImgUr_Widget</name>
-    <message>
-        <location filename="../src/modules/uploader/imgur/uploader_imgur_widget.ui" line="20"/>
-        <source>Upload to Imgur</source>
-        <translation>Enviar a Imgur</translation>
     </message>
 </context>
 <context>
