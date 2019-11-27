@@ -6,52 +6,52 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation></translation>
+        <translation type="unfinished">using Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation></translation>
+        <translation>Σχετικά</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Ευχαριστίες</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation></translation>
+        <translation>Βοηθήστε μας</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation type="unfinished">is a crossplatform application for fast creating screenshots of your desktop.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation></translation>
+        <translation type="unfinished">It is a light and powerful application, written in Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation></translation>
+        <translation>Ιστοσελίδα</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation></translation>
+        <translation type="unfinished">Licensed under the </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation></translation>
+        <translation type="unfinished">Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation></translation>
+        <translation type="unfinished">You can join us and help us if you want. This is an invitation if you like this application.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation></translation>
+        <translation type="unfinished">Translate ScreenGrab to other languages</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Ιχνηλάτης σφαλμάτων</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation></translation>
+        <translation type="unfinished">Μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation></translation>
+        <translation type="unfinished">Ισπανική μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation></translation>
+        <translation type="unfinished">Ιταλική μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation></translation>
+        <translation type="unfinished">Έλεγχος %1: %2</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -160,12 +160,12 @@
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
-        <translation></translation>
+        <translation type="unfinished">Προειδοποίηση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
-        <translation></translation>
+        <translation>Επιλογή καταλόγου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="311"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
-        <translation></translation>
+        <translation type="unfinished">Παράδειγμα:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
-        <translation></translation>
+        <translation type="unfinished">Σφάλμα</translation>
     </message>
 </context>
 <context>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved</source>
-        <translation></translation>
+        <translation>Αποθηκεύτηκε</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Copied</source>
-        <translation></translation>
+        <translation>Αντιγράφηκε</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation></translation>
+        <translation>Τύπος:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>Πλήρης οθόνη</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation></translation>
+        <translation>&amp;Νέο παράθυρο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation></translation>
+        <translation>Καθυστέρηση:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
@@ -306,12 +306,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation></translation>
+        <translation type="unfinished">Ουδεμία</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation></translation>
+        <translation type="unfinished"> δευτ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -331,48 +331,48 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>Γραμμή εργαλείων</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
         <source>New</source>
-        <translation></translation>
+        <translation>Νέο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
         <source>Save</source>
-        <translation></translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
-        <translation></translation>
+        <translation>Επιλογές</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
-        <translation></translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
         <source>About</source>
-        <translation></translation>
+        <translation>Σχετικά</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
         <source>Screenshot </source>
-        <translation></translation>
+        <translation type="unfinished">Στιγμιότυπο </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
@@ -383,22 +383,22 @@
         <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
-        <translation></translation>
+        <translation>Απόκρυψη</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
         <source>Show</source>
-        <translation></translation>
+        <translation>Εμφάνιση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation></translation>
+        <translation>%1 Αρχεία</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
-        <translation></translation>
+        <translation>Αποθήκευση ως...</translation>
     </message>
 </context>
 <context>
@@ -412,7 +412,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
-        <translation></translation>
+        <translation>%1 x %2 εικονοστοιχεία </translation>
     </message>
 </context>
 <context>
@@ -420,12 +420,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation></translation>
+        <translation>Εξωτερική επεξεργασία</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation></translation>
+        <translation>Επεξεργασία με...</translation>
     </message>
 </context>
 <context>
@@ -433,12 +433,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation></translation>
+        <translation>Σχετικά με την Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -447,27 +447,27 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="627"/>
         <source>Options</source>
-        <translation></translation>
+        <translation>Επιλογές</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation></translation>
+        <translation>Κύριο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation></translation>
+        <translation>Για προχωρημένους</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation></translation>
+        <translation type="unfinished">Πλαίσιο συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>Συντομεύσεις</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
@@ -487,7 +487,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation></translation>
+        <translation type="unfinished">Περιήγηση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
@@ -497,7 +497,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation></translation>
+        <translation type="unfinished">Όνομα:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
@@ -507,7 +507,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation></translation>
+        <translation type="unfinished">Μορφή</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
@@ -537,7 +537,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation></translation>
+        <translation type="unfinished">Ποιότητα εικόνας</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
@@ -557,12 +557,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation></translation>
+        <translation type="unfinished">Πρότυπο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation></translation>
+        <translation type="unfinished">Παράδειγμα:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
@@ -627,7 +627,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="474"/>
         <source>Never</source>
-        <translation></translation>
+        <translation type="unfinished">Ποτέ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
@@ -637,7 +637,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
         <source>Always</source>
-        <translation></translation>
+        <translation type="unfinished">Πάντα</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="496"/>
@@ -652,7 +652,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation></translation>
+        <translation type="unfinished"> δευτ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
@@ -667,27 +667,27 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="575"/>
         <source>Action</source>
-        <translation></translation>
+        <translation type="unfinished">Ενέργεια</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="580"/>
         <source>Shortcut</source>
-        <translation></translation>
+        <translation type="unfinished">Συντόμευση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="585"/>
         <source>Global shortcuts</source>
-        <translation></translation>
+        <translation type="unfinished">Καθολικές συντομεύσεις</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation></translation>
+        <translation>Πλήρης οθόνη</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
         <source>Active window</source>
-        <translation></translation>
+        <translation>Ενεργό παράθυρο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="602"/>
@@ -717,12 +717,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="632"/>
         <source>Help</source>
-        <translation></translation>
+        <translation type="unfinished">Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
         <source>Quit</source>
-        <translation></translation>
+        <translation type="unfinished">Έξοδος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
@@ -732,7 +732,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
-        <translation></translation>
+        <translation type="unfinished">δεν προσδιορίστηκε</translation>
     </message>
 </context>
 </TS>
