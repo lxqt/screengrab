@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation></translation>
+        <translation>Τι μπορείτε να κάνετε;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
