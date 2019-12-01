@@ -338,17 +338,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
         <source>New</source>
-        <translation>新しいスクリーンショット</translation>
+        <translation>新規取得</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
         <source>Save</source>
-        <translation>名前を付けて保存する</translation>
+        <translation>名前を付けて保存</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation>クリップボードへコピーする</translation>
+        <translation>クリップボードへコピー</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
@@ -544,7 +544,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>画質 (1 = ファイルサイズ小 &#x3000; 100 = 高品質)</translation>
+        <translation>画質 (1 = ファイルサイズ小 〜 100 = 高品質)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
