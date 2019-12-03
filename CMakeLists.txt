@@ -193,15 +193,6 @@ add_executable(screengrab
     ${SCREENGRAB_QM_LOADER}
 )
 
-target_compile_definitions(screengrab
-    PRIVATE
-        QT_USE_QSTRINGBUILDER
-        QT_NO_CAST_FROM_ASCII
-        QT_NO_CAST_TO_ASCII
-        QT_NO_URL_CAST_FROM_STRING
-        QT_NO_CAST_FROM_BYTEARRAY
-)
-
 if(SG_GLOBALSHORTCUTS)
     if(SG_USE_SYSTEM_QXT)
         target_link_libraries(screengrab ${QXT_QXTCORE_LIB_RELEASE} ${QXT_QXTGUI_LIB_RELEASE})
