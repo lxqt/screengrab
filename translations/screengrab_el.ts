@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation type="unfinished">using Qt </translation>
+        <translation>χρήση της Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished">is a crossplatform application for fast creating screenshots of your desktop.</translation>
+        <translation>είναι μια ανεξαρτήτου πλατύβαθρου εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished">It is a light and powerful application, written in Qt.</translation>
+        <translation>Ελαφριά και ισχυρή εφαρμογή γραμμένη σε Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -41,17 +41,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation type="unfinished">Licensed under the </translation>
+        <translation>Υπόκειται στην άδεια χρήσης </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished">Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Πνευματικά δικαιώματα &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished">You can join us and help us if you want. This is an invitation if you like this application.</translation>
+        <translation>Αν σας αρέσει η εφαρμογή είστε ευπρόσδεκτος-η να συμμετάσχετε στην ανάπτυξή της.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation type="unfinished">Translate ScreenGrab to other languages</translation>
+        <translation>Να μεταφράσετε το ScreenGrab σε άλλες γλώσσες</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation></translation>
+        <translation>Να κάνετε προτάσεις για τις επόμενες εκδόσεις</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation></translation>
+        <translation>Να αναφέρετε σφάλματα και δυσλειτουργίες</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation type="unfinished">Μετάφραση</translation>
+        <translation>Μετάφραση:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation></translation>
+        <translation> Πορτογαλικά Βραζιλίας</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation></translation>
+        <translation> Ουκρανική μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation type="unfinished">Ισπανική μετάφραση</translation>
+        <translation> Ισπανική μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,37 +116,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation type="unfinished">Ιταλική μετάφραση</translation>
+        <translation> Ιταλική μετάφραση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation type="unfinished">Έλεγχος %1: %2</translation>
+        <translation>Δοκιμές:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation></translation>
+        <translation>Υποστήριξη διπλής οθόνης και άλλων στο Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation></translation>
+        <translation>Υποστήριξη διπλής οθόνης στο Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation></translation>
+        <translation>κατασκευή win32 [Windows XP και 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation></translation>
+        <translation>κατασκευή παλαιού win32 [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation></translation>
+        <translation>κατασκευή win32 [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,13 +154,13 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation></translation>
+        <translation>Ο κατάλογος %1 δεν υπάρχει. Θέλετε να τον δημιουργήσετε;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="300"/>
@@ -170,32 +170,32 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation></translation>
+        <translation>Επιθυμείτε να επαναφέρετε όλες τις ρυθμίσεις στις προκαθορισμένες;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
-        <translation type="unfinished">Παράδειγμα:</translation>
+        <translation>Παράδειγμα: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation></translation>
+        <translation>Το κλειδί αυτό χρησιμοποιείται ήδη στο σύστημά σας! Παρακαλώ επιλέξτε ένα άλλο.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation></translation>
+        <translation>Το κλειδί αυτό χρησιμοποιείται ήδη στο ScreenGrab! Παρακαλώ επιλέξτε ένα άλλο.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
-        <translation></translation>
+        <translation>Το κλειδί αυτό δεν υποστηρίζεται από το σύστημά σας!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
-        <translation type="unfinished">Σφάλμα</translation>
+        <translation>Σφάλμα</translation>
     </message>
 </context>
 <context>
@@ -203,27 +203,27 @@
     <message>
         <location filename="../src/core/core.cpp" line="59"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation></translation>
+        <translation>είναι μια ανεξαρτήτου πλατύβαθρου εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>Take a fullscreen screenshot</source>
-        <translation></translation>
+        <translation>Λήψη ενός στιγμιότυπου πλήρους οθόνης</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a screenshot of the active window</source>
-        <translation></translation>
+        <translation>Λήψη ενός στιγμιότυπου του ενεργού παραθύρου</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation></translation>
+        <translation>Λήψη ενός στιγμιότυπου μιας περιοχής της οθόνης</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Run the application with a hidden main window</source>
-        <translation></translation>
+        <translation>Εκτέλεση της εφαρμογής με το κύριο παράθυρο καταχωνιασμένο</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
@@ -233,17 +233,17 @@
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved to </source>
-        <translation></translation>
+        <translation>Αποθηκεύτηκε στο </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>Το όνομα του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="437"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation></translation>
+        <translation>Η διαδρομή του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
@@ -253,7 +253,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation></translation>
+        <translation>Το στιγμιότυπο της οθόνης αντιγράφηκε στο πρόχειρο</translation>
     </message>
 </context>
 <context>
