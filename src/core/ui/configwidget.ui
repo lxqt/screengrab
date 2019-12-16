@@ -404,10 +404,11 @@
          <item>
           <widget class="QCheckBox" name="checkFitInside">
            <property name="toolTip">
-            <string>Fit to edges only inside selected screen area</string>
+            <string>If this is unchecked, the selected area
+might become larger to fit to outer edges</string>
            </property>
            <property name="text">
-            <string>Fit to edges inside selected area</string>
+            <string>Fit to edges inside selected area by right clicking</string>
            </property>
           </widget>
          </item>

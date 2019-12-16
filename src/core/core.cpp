@@ -19,7 +19,6 @@
 #include <QMutex>
 #include <QWaitCondition>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QScreen>
 #include <QChar>
 #include <QBuffer>
@@ -171,6 +170,21 @@ void Core::setScreen()
 
 }
 
+void Core::getFullScreenPixmap(QScreen* screen)
+{
+    const auto siblings = screen->virtualSiblings();
+    if (siblings.size() == 1)
+        *_pixelMap = screen->grabWindow(0); // 0 for the entire screen
+    else
+    { // consider all siblings
+        QPixmap pix = QPixmap(screen->virtualSize());
+        pix.fill(Qt::transparent);
+        QPainter painter(&pix);
+        for (const auto& sc : siblings)
+            painter.drawPixmap(sc->geometry().topLeft(), sc->grabWindow(0));
+        *_pixelMap = pix;
+    }
+}
 
 // get screenshot
 void Core::screenShot(bool first)
@@ -186,10 +200,10 @@ void Core::screenShot(bool first)
     {
     case Core::FullScreen:
     {
-        const QList<QScreen *> screens = qApp->screens();
-        const QDesktopWidget *desktop = QApplication::desktop();
-        const int screenNum = desktop->screenNumber(QCursor::pos());
-        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+        auto screen = QGuiApplication::screenAt(QCursor::pos());
+        if (screen == nullptr)
+            screen = QGuiApplication::screens().at(0);
+        getFullScreenPixmap(screen);
         grabCursor(0, 0);
 
         checkAutoSave(first);
@@ -216,7 +230,7 @@ void Core::screenShot(bool first)
         break;
     }
     default:
-        *_pixelMap = QPixmap::grabWindow(QApplication::desktop()->winId());
+        getFullScreenPixmap(QGuiApplication::primaryScreen());
         break;
     }
 
@@ -243,9 +257,9 @@ void Core::checkAutoSave(bool first)
 
 void Core::getActiveWindow() // called only with window screenshots
 {
-    const QList<QScreen *> screens = qApp->screens();
-    const QDesktopWidget *desktop = QApplication::desktop();
-    const int screenNum = desktop->screenNumber(QCursor::pos());
+    auto screen = QGuiApplication::screenAt(QCursor::pos());
+    if (screen == nullptr)
+        screen = QGuiApplication::screens().at(0);
 
     WId wnd = KWindowSystem::activeWindow();
 
@@ -275,23 +289,22 @@ void Core::getActiveWindow() // called only with window screenshots
     if (invalid)
     {
         qWarning() << "Could not take a window screenshot.";
-        *_pixelMap = screens[screenNum]->grabWindow(desktop->winId());
+        *_pixelMap = screen->grabWindow(0);
         return;
     }
 
     // no decorations option is selected
     if (_conf->getNoDecoration())
     {
-        *_pixelMap = screens[screenNum]->grabWindow(wnd);
+        *_pixelMap = screen->grabWindow(wnd);
         return;
     }
 
     QRect geometry = info.frameGeometry();
-    *_pixelMap = screens[screenNum]->grabWindow(QApplication::desktop()->winId(),
-                                     geometry.x(),
-                                     geometry.y(),
-                                     geometry.width(),
-                                                geometry.height());
+    // The offscreen part of the window will appear as a black area in the screenshot.
+    // Until a better method is found, the offscreen area is ignored here.
+    QRect r = screen->virtualGeometry().intersected(geometry);
+    *_pixelMap = screen->grabWindow(0, r.x(), r.y(), r.width(), r.height());
     grabCursor(geometry.x(), geometry.y());
 }
 
