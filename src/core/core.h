@@ -125,6 +125,8 @@ private:
     QString copyFileNameToCliipboard(QString file);
     void sendNotify(const StateNotifyMessage& message);
 
+    void getFullScreenPixmap(QScreen* screen);
+
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea;

@@ -18,7 +18,6 @@
 
 #include "src/core/regionselect.h"
 
-#include <QDesktopWidget>
 #include <QApplication>
 #include <QScreen>
 
@@ -71,15 +70,23 @@ void RegionSelect::sharedInit()
     setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
 
-    _sizeDesktop = QApplication::desktop()->size();
+    auto screen = QGuiApplication::screenAt(QCursor::pos());
+    if (screen == nullptr)
+        screen = QGuiApplication::screens().at(0);
+
+    _sizeDesktop = screen->virtualSize();
     resize(_sizeDesktop);
 
-    const QList<QScreen *> screens = qApp->screens();
-    const QDesktopWidget *desktop = QApplication::desktop();
-    const int screenNum = desktop->screenNumber(QCursor::pos());
-
-    if (screenNum < screens.count()) {
-        _desktopPixmapBkg = screens[screenNum]->grabWindow(desktop->winId());
+    const auto siblings = screen->virtualSiblings();
+    if (siblings.size() == 1)
+        _desktopPixmapBkg = screen->grabWindow(0); // 0 for the entire screen
+    else
+    { // consider all siblings
+        _desktopPixmapBkg = QPixmap(screen->virtualSize());
+        _desktopPixmapBkg.fill(Qt::transparent);
+        QPainter painter(&_desktopPixmapBkg);
+        for (const auto& sc : siblings)
+            painter.drawPixmap(sc->geometry().topLeft(), sc->grabWindow(0));
     }
 
     _desktopPixmapClr = _desktopPixmapBkg;
@@ -153,11 +160,14 @@ void RegionSelect::drawBackGround()
     // set painter brush on 85% transparency
     painter.setBrush(QBrush(QColor(0, 0, 0, 85), Qt::SolidPattern));
 
-    // draw rect of desktop size in poainter
-    painter.drawRect(QApplication::desktop()->rect());
+    auto screens = QGuiApplication::screens();
+    const QRect geometry = screens.isEmpty() ? QRect() : screens.at(0)->virtualGeometry();
 
-    QRect txtRect = QApplication::desktop()->screenGeometry(QApplication::desktop()->primaryScreen());
-    QString txtTip = QApplication::tr("Click and drag to draw a rectangle, then double click or press Enter\nto take a screenshot.");
+    // draw rect of desktop size in poainter
+    painter.drawRect(QRect(QPoint(0, 0), geometry.size()));
+
+    QRect txtRect = geometry;
+    QString txtTip = QApplication::tr("Click and drag to draw a rectangle,\nright click to fit to edges,\ndouble click or press Enter\nto take a screenshot.");
 
     txtRect.setHeight(qRound((float) (txtRect.height() / 10))); // rounded val of text rect height
 
