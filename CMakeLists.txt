@@ -17,7 +17,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 
 # Minimum Versions
 set(KF5_MINIMUM_VERSION "5.36.0")
-set(QT_MINIMUM_VERSION "5.7.1")
+set(QT_MINIMUM_VERSION "5.10.0")
 set(QTXDG_MINIMUM_VERSION "3.4.0")
 
 find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
