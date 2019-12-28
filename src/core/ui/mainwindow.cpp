@@ -210,7 +210,7 @@ void MainWindow::updateModulesActions(const QList<QAction *> &list)
     }
 }
 
-void MainWindow::updateModulesenus(const QList<QMenu *> &list)
+void MainWindow::updateModulesMenus(const QList<QMenu *> &list)
 {
     if (list.count() > 0)
     {
