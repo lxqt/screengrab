@@ -52,7 +52,7 @@ public:
     void setConfig(Config *config);
     void updatePixmap(QPixmap *pMap);
     void updateModulesActions(const QList<QAction *> &list);
-    void updateModulesenus(const QList<QMenu *> &list);
+    void updateModulesMenus(const QList<QMenu *> &list);
 
 public Q_SLOTS:
     void showWindow(const QString& str);

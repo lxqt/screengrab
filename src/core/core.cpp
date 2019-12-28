@@ -107,7 +107,7 @@ void Core::initWindow(const QString& ipcMessage)
         _wnd = new MainWindow;
         _wnd->setConfig(_conf);
         _wnd->updateModulesActions(_modules.generateModulesActions());
-        _wnd->updateModulesenus(_modules.generateModulesMenus());
+        _wnd->updateModulesMenus(_modules.generateModulesMenus());
 
         screenShot(true); // first screenshot
 
