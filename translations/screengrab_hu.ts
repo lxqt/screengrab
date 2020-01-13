@@ -11,12 +11,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Névjegy</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation>Köszönet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
