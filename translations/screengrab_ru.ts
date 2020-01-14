@@ -512,7 +512,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Сворачивает в трей по клику на кнопку закрытия</translation>
+        <translation>Сворачивает в трей при закрытии основного окна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="536"/>
