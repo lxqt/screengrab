@@ -407,7 +407,7 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation>Klikněte a natáhněte obdélník, pak dvojklikem nebo stiskem Enter
+        <translation>Klepněte a natáhněte obdélník, pak dvojklikem nebo stiskem Enter
 pořiďte snímek obrazovky.</translation>
     </message>
     <message>
@@ -658,7 +658,7 @@ pořiďte snímek obrazovky.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Při kliknutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
+        <translation>Při klepnutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="536"/>

@@ -17,7 +17,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 
 # Minimum Versions
 set(KF5_MINIMUM_VERSION "5.36.0")
-set(QT_MINIMUM_VERSION "5.7.1")
+set(QT_MINIMUM_VERSION "5.10.0")
 set(QTXDG_MINIMUM_VERSION "3.4.0")
 
 find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
@@ -26,19 +26,19 @@ find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5X11Extras ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
 
-find_package(X11)
-if (X11_FOUND)
-    set(HAVE_X11 1)
-endif(X11_FOUND)
+# right now we declare it as required
+find_package(X11 REQUIRED)
+set(HAVE_X11 1)
 
 find_package(
-    XCB MODULE COMPONENTS
+    XCB REQUIRED MODULE COMPONENTS
         XCB
         SHAPE
         XFIXES
 )
+
 find_package(
-    X11_XCB MODULE
+    X11_XCB REQUIRED MODULE
 )
 
 set(CMAKE_AUTOMOC ON)
@@ -191,15 +191,6 @@ add_executable(screengrab
     ${SCREENGRAB_QMS}
     ${SCREENGRAB_DESKTOP_FILES}
     ${SCREENGRAB_QM_LOADER}
-)
-
-target_compile_definitions(screengrab
-    PRIVATE
-        QT_USE_QSTRINGBUILDER
-        QT_NO_CAST_FROM_ASCII
-        QT_NO_CAST_TO_ASCII
-        QT_NO_URL_CAST_FROM_STRING
-        QT_NO_CAST_FROM_BYTEARRAY
 )
 
 if(SG_GLOBALSHORTCUTS)

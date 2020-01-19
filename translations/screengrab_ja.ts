@@ -338,17 +338,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
         <source>New</source>
-        <translation>新しいスクリーンショット</translation>
+        <translation>新規取得</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
         <source>Save</source>
-        <translation>名前を付けて保存する</translation>
+        <translation>名前を付けて保存</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation>クリップボードへコピーする</translation>
+        <translation>クリップボードへコピー</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>

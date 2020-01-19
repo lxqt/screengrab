@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<TS version="2.1" language="sv">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>używa Qt </translation>
+        <translation>använder Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation>O programie</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation>Podziękowania</translation>
+        <translation>Tack</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation>Pomóż nam</translation>
+        <translation>Hjälp oss</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>jest wieloplatformową aplikacją pozwalającą na szybkie tworzenie zrzutów ekranu.</translation>
+        <translation>är ett plattformsöverskridande program för snabba skärmklipp på ditt skrivbord.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Jest to lekka i funkcjonalna aplikacja napisana w Qt.</translation>
+        <translation>Det är ett ljust och kraftullt program, skrivet i Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation>Strona internetowa</translation>
+        <translation>Webbplats</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Na licencji </translation>
+        <translation>Licensierat under </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Prawa autorskie &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Możesz dołączyć do nas i pomóc nam jeżeli chcesz i lubisz tę aplikację.</translation>
+        <translation>Du kan gå med och hjälpa oss om du vill. Detta är en inbjudan om du gillar detta program.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>Co możesz zrobić?</translation>
+        <translation>Vad du kan göra?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Przetłumacz ScreenGrab na inne języki</translation>
+        <translation>Översätt ScreenGrab till andra språk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation>Podziel się sugestiami na następne wydanie</translation>
+        <translation>Kom med förslag till kommande versioner</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation>Zgłoś błędy i problemy</translation>
+        <translation>Rapportera fel och problem</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Ärendehanterare</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Tłumaczenie:</translation>
+        <translation>Översättare:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Tłumaczenie na brazylijski portugalski</translation>
+        <translation> Brasiliensk-Portugisisk översättning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation></translation>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation> Tłumaczenie ukraińskie</translation>
+        <translation> Ukrainsk översättning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation></translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation> Tłumaczenie hiszpańskie</translation>
+        <translation> Spansk översättning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation></translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation> Tłumaczenie włoskie</translation>
+        <translation> Italiensk översättning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Testowanie:</translation>
+        <translation>Testning:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation>Wsparcie wielu monitorów i inne na Linuksie</translation>
+        <translation>Dubbelskärmsstöd och annat i Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation>Wsparcie dwóch monitorów na Linuksie</translation>
+        <translation>Dubbelskärmsstöd i Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>win32-build [Windows XP i 7]</translation>
+        <translation>win32-kompilering [Windows XP och 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation>stary win32-build [Windows Vista]</translation>
+        <translation>gammal win32-kompilering [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation></translation>
+        <translation>win32-kompilering [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,48 +154,48 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="210"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Ścieżka %1 nie istnieje. Czy chcesz ją utworzyć?</translation>
+        <translation>Mappen %1 finns inte. Vill du skapa den?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="211"/>
         <location filename="../src/core/ui/configwidget.cpp" line="312"/>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="300"/>
         <source>Select directory</source>
-        <translation>Wybierz położenie</translation>
+        <translation>Välj mapp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="311"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Czy na pewno chcesz przywrócić ustawienia do domyślnych?</translation>
+        <translation>Vill du återställa inställningarna till standardvärden?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="369"/>
         <source>Example: </source>
-        <translation>Przykład: </translation>
+        <translation>Exempel: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="425"/>
         <source>This key is already used in your system! Please select another.</source>
-        <translation>Ten klucz jest już używany w Twoim systemie! Wybierz inny.</translation>
+        <translation>Denna tangent används redan i ditt system! Välj en annan.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="431"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>Ten klucz jest już używany przez ScreenGrab! Wybierz inny.</translation>
+        <translation>Denna tangent används redan i ScreenGrab! Välj en annan.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="449"/>
         <source>This key is not supported on your system!</source>
-        <translation>Ten klucz nie jest obsługiwany przez Twój system!</translation>
+        <translation>Denna tangent stöds inte av ditt system!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="484"/>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Fel</translation>
     </message>
 </context>
 <context>
@@ -203,57 +203,57 @@
     <message>
         <location filename="../src/core/core.cpp" line="59"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>jest wieloplatformową aplikacją do szybkiego tworzenia zrzutów ekranu pulpitu.</translation>
+        <translation>är ett plattformsöverskridande program för att snabbt skapa skärmklipp av ditt skrivbord.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>Take a fullscreen screenshot</source>
-        <translation>Zrób zrzut pełnego ekranu</translation>
+        <translation>Ta ett helskärmsklipp</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a screenshot of the active window</source>
-        <translation>Zrób zrzut ekranu aktywnego okna</translation>
+        <translation>Ta ett skärmklipp av aktivt fönster</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation>Zrób zrzut zaznaczonego obszaru ekranu</translation>
+        <translation>Ta ett skärmklipp av ett område på skärmen</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="75"/>
         <source>Run the application with a hidden main window</source>
-        <translation>Uruchom aplikację z ukrytym głównym oknem</translation>
+        <translation>Kör programmet med dolt programfönster</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved</source>
-        <translation>Zapisano</translation>
+        <translation>Sparat</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="409"/>
         <source>Saved to </source>
-        <translation>Zapisano do </translation>
+        <translation>Sparat i </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Nazwa zapisanego pliku została skopiowana do schowka</translation>
+        <translation>Namnet på sparad fil kopieras till urklipp</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="437"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Ścieżka zapisanego pliku została skopiowana do schowka</translation>
+        <translation>Sökväg till sparad fil kopieras till urklipp</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Copied</source>
-        <translation>Skopiowano</translation>
+        <translation>Kopierat</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Zrzut ekranu został skopiowany do schowka</translation>
+        <translation>Skärmklipp kopieras till urklipp</translation>
     </message>
 </context>
 <context>
@@ -261,144 +261,144 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation></translation>
+        <translation>ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation>Rodzaj:</translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>Rodzaj zrzutu ekranu</translation>
+        <translation>Skärmklippstyp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation>Pełny ekran</translation>
+        <translation>Helskärm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation>Okno</translation>
+        <translation>Fönster</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Fragment ekranu</translation>
+        <translation>Skärmområde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation>Ostatnio zaznaczony obszar</translation>
+        <translation>Senast valda område</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation>Opóźnienie:</translation>
+        <translation>Fördröjning:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Opóźnienie w sekundach przed wykonaniem zrzutu ekranu</translation>
+        <translation>Fördöjning i sekunder, före skärmklippet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Brak</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> s</translation>
+        <translation> sek</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation>Powiększ obszar przy kursorze</translation>
+        <translation>Zooma området runt muspekaren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation>Bez dekoracji okna</translation>
+        <translation>Ingen fönsterdekoration</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>Uwzględnij wskaźnik myszy</translation>
+        <translation>Inkludera muspekaren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>Verktygsfält</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
         <source>New</source>
-        <translation>Nowy</translation>
+        <translation>Nytt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Spara</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
         <source>Copy</source>
-        <translation>Kopiuj</translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Alternativ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation>Hjälp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
         <source>About</source>
-        <translation>O programie</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
         <source>Quit</source>
-        <translation>Wyjdź</translation>
+        <translation>Avsluta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
         <source>Screenshot </source>
-        <translation>Zrzut ekranu </translation>
+        <translation>Skärmklipp </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Naciśnij dwukrotnie aby otworzyć zrzut ekranu w domyślnej zewnętrznej przeglądarce zdjęć</translation>
+        <translation>Dubbelklick för att öppna skärmklipp i extern standardbildvisare</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
         <source>Hide</source>
-        <translation>Ukryj</translation>
+        <translation>Dölj</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
         <source>Show</source>
-        <translation>Pokaż</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
         <source>%1 Files</source>
-        <translation>%1 plików</translation>
+        <translation>%1 filer</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
         <source>Save As...</source>
-        <translation>Zapisz jako…</translation>
+        <translation>Spara som...</translation>
     </message>
 </context>
 <context>
@@ -407,13 +407,13 @@
         <location filename="../src/core/regionselect.cpp" line="160"/>
         <source>Click and drag to draw a rectangle, then double click or press Enter
 to take a screenshot.</source>
-        <translation>Naciśnij i przytrzymaj aby narysować prostokąt, potem kliknij dwukrotnie lub
-naciśnij Enter aby wykonać zrzut ekranu.</translation>
+        <translation>Klicka och dra för att rita en rektangel, dubbelklicka sedan
+eller tryck Retur, för att ta ett skärmklipp.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="192"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 pikseli </translation>
+        <translation>%1 x %2 pixlar </translation>
     </message>
 </context>
 <context>
@@ -421,12 +421,12 @@ naciśnij Enter aby wykonać zrzut ekranu.</translation>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation>Edytuj na zewnątrz</translation>
+        <translation>Extern redigering</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>Edytuj w…</translation>
+        <translation>Redigera i...</translation>
     </message>
 </context>
 <context>
@@ -434,12 +434,12 @@ naciśnij Enter aby wykonać zrzut ekranu.</translation>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation>Om Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
         <source>Close</source>
-        <translation>Zamknij</translation>
+        <translation>Stäng</translation>
     </message>
 </context>
 <context>
@@ -448,292 +448,292 @@ naciśnij Enter aby wykonać zrzut ekranu.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="627"/>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Alternativ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation>Główne</translation>
+        <translation>Primärt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation>Zaawansowane</translation>
+        <translation>Avancerat</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation>Zasobnik systemowy</translation>
+        <translation>Systemfältet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation>Skróty</translation>
+        <translation>Genvägar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Domyślny katalog zapisu</translation>
+        <translation>Standardmapp att spara i</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation>Ścieżka domyślnego zapytania o miejsce zapisu</translation>
+        <translation>Sökväg till standarmapp att spara skärmklipp i</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
         <source>Browse filesystem</source>
-        <translation>Przeglądaj system plików</translation>
+        <translation>Bläddra i filsystemet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation>Przeglądaj</translation>
+        <translation>Bläddra</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>Domyślny plik</translation>
+        <translation>Standardfil</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation>Nazwa:</translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation>Domyślna nazwa pliku</translation>
+        <translation>Standard filnamn</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation></translation>
+        <translation>Format</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Domyślny format zapisywania obrazów</translation>
+        <translation>Standard filformat att spara</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Kopiuj nazwę pliku do schowka po zapisaniu</translation>
+        <translation>Kopiera filnamn till urklipp när filer sparas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation>Nie kopiuj</translation>
+        <translation>Kopiera inte</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation>Kopiuj tylko nazwę pliku</translation>
+        <translation>Kopiera endast filnamn</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>Kopiuj pełną ścieżkę do pliku</translation>
+        <translation>Kopiera fullständig sökväg</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>Jakość obrazów</translation>
+        <translation>Bildkvalitet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>Jakość obrazu (1 — mały plik, 100 — wysoka jakość)</translation>
+        <translation>Bildkvalitet (1 - Liten fil, 100 - Hög kvalitet)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Wstawianie obecnej daty do nazwy zapisywanego pliku</translation>
+        <translation>Infogar aktuellt datum och tid i filnamnen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Wstawiaj datę i godzinę w nazwę plików</translation>
+        <translation>Infoga aktuellt datum och tid i filnamn</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation>Szablon: </translation>
+        <translation>Mall: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Przykład: </translation>
+        <translation>Exempel: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Automatyczny zapis zrzutów ekranu w procesie przechwytywania</translation>
+        <translation>Sparar skärmklipp automatiskt i klipprocessen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Automatycznie zapisuj zrzut ekranu</translation>
+        <translation>Spara skärmklipp automatiskt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Spara första skärmklippet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation>Pozwól na uruchamianie wielu kopii ScreenGrab</translation>
+        <translation>Tillåt samtidig körning av flera ScreenGrab-instanser</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation>Pozwól na wiele instancji ScreenGrab</translation>
+        <translation>Tillåt flera instanser av ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation>Otwieraj zewnętrzny podgląd dwukrotnym kliknięciem</translation>
+        <translation>Öppna i extern visare vid dubbelklick</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation>Włącz zewnętrzną przeglądarkę</translation>
+        <translation>Aktivera extern bildvisare</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>Fit to edges only inside selected screen area</source>
-        <translation></translation>
+        <translation>Anpassa till kanterna endast i markerat skärmområde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="410"/>
         <source>Fit to edges inside selected area</source>
-        <translation></translation>
+        <translation>Anpassa till kanterna i markerat område</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="448"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>Pokazuj ScreenGrab w zasobniku systemowym</translation>
+        <translation>Visa ScreenGrab i systemfältet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="457"/>
         <source>Tray messages:</source>
-        <translation>Wiadomości w zasobniku:</translation>
+        <translation>Systemmeddelanden:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="470"/>
         <source>Tray messages display mode</source>
-        <translation>Tryb wyświetlania wiadomości w zasobniku</translation>
+        <translation>Visningsläge för systemmeddelanden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="474"/>
         <source>Never</source>
-        <translation>Nigdy</translation>
+        <translation>Aldrig</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="479"/>
         <source>Tray mode</source>
-        <translation>Tryb zasobnika</translation>
+        <translation>Systemfältet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="484"/>
         <source>Always</source>
-        <translation>Zawsze</translation>
+        <translation>Alltid</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="496"/>
         <source>Time of display tray messages</source>
-        <translation>Czas wyświetlania wiadomości w zasobniku</translation>
+        <translation>Tid för visning av systemmeddelanden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="512"/>
         <source>Time to display tray messages</source>
-        <translation>Czas wyświetlania wiadomości w zasobniku</translation>
+        <translation>Tid att visa systemmeddelanden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="515"/>
         <source> sec</source>
-        <translation> s</translation>
+        <translation> sek</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="533"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Minimalizuj do zasobnika po zamknięciu okna</translation>
+        <translation>Minimerar till systemfältet med stängknappen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="536"/>
         <source>Minimize to tray when closing</source>
-        <translation>Minimalizuj do zasobnika przy zamykaniu</translation>
+        <translation>Minimera till systemfältet vid stängning</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="575"/>
         <source>Action</source>
-        <translation>Działanie</translation>
+        <translation>Åtgärd</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="580"/>
         <source>Shortcut</source>
-        <translation>Skrót</translation>
+        <translation>Genväg</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="585"/>
         <source>Global shortcuts</source>
-        <translation>Globalne skróty</translation>
+        <translation>Globala genvägar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="592"/>
         <source>Full screen</source>
-        <translation>Pełny ekran</translation>
+        <translation>Helskärm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="597"/>
         <source>Active window</source>
-        <translation>Aktywne okno</translation>
+        <translation>Aktivt fönster</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="602"/>
         <source>Area select</source>
-        <translation>Wybór obszaru</translation>
+        <translation>Områdesmarkering</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="608"/>
         <source>Local shortcuts</source>
-        <translation>Lokalne skróty</translation>
+        <translation>Lokala genvägar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="612"/>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Nytt klipp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="617"/>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Spara klipp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="622"/>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Kopiera klipp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="632"/>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation>Hjälp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="637"/>
         <source>Quit</source>
-        <translation>Wyjdź</translation>
+        <translation>Avsluta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="648"/>
         <source>Selected shortcut:</source>
-        <translation>Wybrany skrót:</translation>
+        <translation>Vald genväg:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="655"/>
         <source>Not defined</source>
-        <translation>Nie zdefiniowano</translation>
+        <translation>Inte definierad</translation>
     </message>
 </context>
 </TS>

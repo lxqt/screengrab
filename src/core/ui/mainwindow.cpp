@@ -23,7 +23,7 @@
 
 #include <QDir>
 #include <QFileDialog>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QHash>
 #include <QHashIterator>
 #include <QRegExp>
@@ -116,7 +116,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     setWindowIcon(appIcon);
 
-    QRect geometry = QApplication::desktop()->availableGeometry(QApplication::desktop()->screenNumber());
+    auto screens = QGuiApplication::screens();
+    const QRect geometry = screens.isEmpty() ? QRect() : screens.at(0)->availableGeometry();
     move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
 
     _ui->scrLabel->installEventFilter(this);
