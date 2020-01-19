@@ -24,10 +24,6 @@
 #include "about.h"
 #include "configwidget.h"
 
-#ifdef SG_GLOBAL_SHORTCUTS
-#include <QxtGui/QxtGlobalShortcut>
-#endif
-
 #include <QMenu>
 #include <QSystemTrayIcon>
 #include <QDesktopServices>
@@ -83,15 +79,6 @@ private:
     QShortcut *_hideWnd;
     bool _trayed;
     QIcon appIcon;
-
-#ifdef SG_GLOBAL_SHORTCUTS
-    QxtGlobalShortcut *_fullScreen;
-    QxtGlobalShortcut *_activeWindow;
-    QxtGlobalShortcut *_areaSelection;
-
-    QVector<QxtGlobalShortcut*> _globalShortcuts;
-    QSignalMapper *_globalShortcutSignals;
-#endif
 
     void displatScreenToolTip();
     void createTray();

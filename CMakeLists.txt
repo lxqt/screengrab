@@ -12,7 +12,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # options
 option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
-option(SG_GLOBALSHORTCUTS "Enable global shortcuts" OFF)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # Minimum Versions
@@ -77,16 +76,6 @@ include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
 include(Qt5TranslationLoader)
 
-if(SG_GLOBALSHORTCUTS)
-    add_definitions( -DSG_GLOBAL_SHORTCUTS="1")
-
-    if(SG_USE_SYSTEM_QXT)
-        # find qxt
-        find_package(Qxt REQUIRED COMPONENTS QxtCore, QxtGui)
-        include_directories(${QXT_QXTCORE_INCLUDE_DIR} ${QXT_QXTGUI_INCLUDE_DIR})
-    endif()
-endif(SG_GLOBALSHORTCUTS)
-
 if(SG_EXT_EDIT)
     add_definitions( -DSG_EXT_EDIT="1")
     find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
@@ -97,7 +86,6 @@ if(SG_DBUS_NOTIFY)
     add_definitions( -DSG_DBUS_NOTIFY="1")
 endif()
 
-message(STATUS "Global shortcuts support: " ${SG_GLOBALSHORTCUTS})
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Enable D-Bus notifications: " ${SG_DBUS_NOTIFY})
 message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
@@ -192,14 +180,6 @@ add_executable(screengrab
     ${SCREENGRAB_DESKTOP_FILES}
     ${SCREENGRAB_QM_LOADER}
 )
-
-if(SG_GLOBALSHORTCUTS)
-    if(SG_USE_SYSTEM_QXT)
-        target_link_libraries(screengrab ${QXT_QXTCORE_LIB_RELEASE} ${QXT_QXTGUI_LIB_RELEASE})
-    else(SG_USE_SYSTEM_QXT)
-        target_link_libraries(screengrab qxt)
-    endif(SG_USE_SYSTEM_QXT)
-endif()
 
 if(SG_EXT_EDIT)
     target_link_libraries(screengrab extedit)

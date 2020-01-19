@@ -49,10 +49,6 @@ private:
 
     QStringList _moduleWidgetNames;
 
-#ifdef SG_GLOBAL_SHORTCUTS
-    bool avalibelGlobalShortcuts(const QKeySequence& seq);
-#endif
-
 private slots:
     void collapsTreeKeys(QModelIndex index);
     void doubleclickTreeKeys(QModelIndex index);

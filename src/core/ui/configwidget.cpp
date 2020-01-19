@@ -22,10 +22,6 @@
 #include "ui_configwidget.h"
 #include "../core.h"
 
-#ifdef SG_GLOBAL_SHORTCUTS
-#include <QxtGui/QxtGlobalShortcut>
-#endif
-
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -89,22 +85,8 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
         if ((*iter)->parent() != nullptr)
         {
             (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
-
-#ifndef SG_GLOBAL_SHORTCUTS
-            if (conf->shortcuts()->getShortcutType(action) == Config::globalShortcut)
-                (*iter)->setHidden(true);
-#endif
             ++action;
         }
-        else
-        {
-#ifndef SG_GLOBAL_SHORTCUTS
-            int numGlobalShortcuts = conf->shortcuts()->getShortcutsList(Config::globalShortcut).count();
-            if ((*iter)->childCount() == numGlobalShortcuts)
-                (*iter)->setHidden(true);
-#endif
-        }
-
         ++iter;
     }
 
@@ -418,14 +400,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
 {
     if (!checkUsedShortcuts())
     {
-#ifdef SG_GLOBAL_SHORTCUTS
-        if (avalibelGlobalShortcuts(seq))
-            changeShortcut(seq);
-        else
-            showErrorMessage(tr("This key is already used in your system! Please select another."));
-#else
-    changeShortcut(seq);
-#endif
+        changeShortcut(seq);
     }
     else if (checkUsedShortcuts() && !seq.toString().isEmpty())
         showErrorMessage(tr("This key is already used in ScreenGrab! Please select another."));
@@ -461,21 +436,6 @@ bool ConfigDialog::checkUsedShortcuts()
     }
     return false;
 }
-
-#ifdef SG_GLOBAL_SHORTCUTS
-bool ConfigDialog::avalibelGlobalShortcuts(const QKeySequence& seq)
-{
-    bool ok = false;
-    QxtGlobalShortcut *tmpShortcut = new QxtGlobalShortcut;
-    if (tmpShortcut->setShortcut(QKeySequence(seq)) == true)
-    {
-        tmpShortcut->setDisabled(true);
-        ok = true;
-    }
-    delete tmpShortcut;
-    return ok;
-}
-#endif
 
 void ConfigDialog::showErrorMessage(const QString &text)
 {

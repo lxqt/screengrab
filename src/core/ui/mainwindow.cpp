@@ -37,25 +37,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->setupUi(this);
     _trayed = false;
 
-#ifdef SG_GLOBAL_SHORTCUTS
-    // signal mapper
-    _globalShortcutSignals = new QSignalMapper(this);
-
-    // global shortcuts
-    _fullScreen = new QxtGlobalShortcut(this);
-    _activeWindow = new QxtGlobalShortcut(this);
-    _areaSelection = new QxtGlobalShortcut(this);
-    _globalShortcuts << _fullScreen << _activeWindow << _areaSelection;
-
-    for (int i = 0; i < _globalShortcuts.count(); ++i )
-    {
-        connect(_globalShortcuts[i], SIGNAL(activated()), _globalShortcutSignals, SLOT(map()) );
-        _globalShortcutSignals->setMapping(_globalShortcuts[i], i);
-    }
-
-    connect(_globalShortcutSignals, SIGNAL(mapped(int)), this, SLOT(globalShortcutActivate(int)));
-#endif
-
     _trayIcon = nullptr;
     _hideWnd = nullptr;
     _trayMenu = nullptr;
@@ -314,9 +295,6 @@ void MainWindow::showHelp()
 void MainWindow::showOptions()
 {
     ConfigDialog *options = new ConfigDialog(this);
-#ifdef SG_GLOBAL_SHORTCUTS
-    globalShortcutBlock(true);
-#endif
 
     if (isMinimized())
     {
@@ -334,9 +312,6 @@ void MainWindow::showOptions()
             updateUI();
     }
 
-#ifdef SG_GLOBAL_SHORTCUTS
-    globalShortcutBlock(false);
-#endif
     delete options;
 }
 
@@ -618,28 +593,4 @@ void MainWindow::updateShortcuts()
     actOptions->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutOptions));
     actHelp->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutHelp));
     actQuit->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose));
-
-#ifdef SG_GLOBAL_SHORTCUTS
-    for (int i = 0; i < _globalShortcuts.count(); ++i)
-        _globalShortcuts[i]->setShortcut(QKeySequence(_core->conf->shortcuts()->getShortcut(i)));
-#endif
 }
-
-#ifdef SG_GLOBAL_SHORTCUTS
-void MainWindow::globalShortcutBlock(bool state)
-{
-    for (int i = 0; i < _globalShortcuts.count(); ++i)
-        _globalShortcuts[i]->setDisabled(state);
-}
-
-
-void MainWindow::globalShortcutActivate(int type)
-{
-    _ui->cbxTypeScr->setCurrentIndex(type);
-    typeScreenShotChange(type);
-
-    if (!_trayed)
-        hide();
-    QTimer::singleShot(200, _core, SLOT(screenShot()));
-}
-#endif
