@@ -98,11 +98,6 @@ private Q_SLOTS:
     void checkZommMouseArea(bool zoom);
     void updateUI();
     void trayClick(QSystemTrayIcon::ActivationReason reason);
-
-#ifdef SG_GLOBAL_SHORTCUTS
-    void globalShortcutActivate(int type);
-    void globalShortcutBlock(bool state);
-#endif
 };
 
 #endif // MAINWINDOW_H
