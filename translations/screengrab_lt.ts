@@ -152,48 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Katalogo %1 nėra. Ar norite jį sukurti?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
         <source>Warning</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
         <translation>Pasirinkite katalogą</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Ar norite atstatyti nustatymus į numatytuosius?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
         <translation>Pavyzdys: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
-        <source>This key is already used in your system! Please select another.</source>
-        <translation>Ši klavišų kombinacija jau yra naudojama jūsų sistemoje! Pasirinkite kitą.</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Ši klavišų kombinacija jau yra naudojama programoje ScreenGrab! Pasirinkite kitą.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
         <translation>Ši klavišų kombinacija jūsų sistemoje nėra palaikoma!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
@@ -201,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="59"/>
+        <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>yra daugiaplatformė programa, skirta greitoms jūsų darbalaukio ekrano kopijoms.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Padaryti viso ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a screenshot of the active window</source>
         <translation>Padaryti aktyvaus lango ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Padaryti ekrano žymėjimo ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Run the application with a hidden main window</source>
         <translation>Paleisti programą su paslėptu pagrindiniu langu</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved</source>
         <translation>Įrašyta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
         <translation>Įrašyta į </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Įrašyto failo pavadinimas yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="437"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Kelias į įrašytą failą yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
         <translation>Nukopijuota</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Ekrano kopija yra nukopijuota į iškarpinę</translation>
     </message>
@@ -334,69 +329,69 @@
         <translation>Įrankių juosta</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
         <translation>Nauja</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
         <translation>Įrašyti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
         <translation>Kopijuoti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
         <translation>Parinktys</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
         <translation>Žinynas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
         <translation>Apie</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
         <translation>Išeiti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
         <translation>Ekrano kopija </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Spustelėkite du kartus, norėdami atverti ekrano kopiją numatytojoje paveikslų žiūryklėje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
         <translation>Slėpti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
         <translation>Rodyti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
         <translation>%1 failų</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
         <translation>Įrašyti kaip...</translation>
     </message>
@@ -404,15 +399,15 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="160"/>
-        <source>Click and drag to draw a rectangle, then double click or press Enter
+        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <source>Click and drag to draw a rectangle,
+right click to fit to edges,
+double click or press Enter
 to take a screenshot.</source>
-        <translation>Spustelėkite ir tempkite, norėdami nubrėžti stačiakampį, o tuomet,
-norėdami padaryti ekrano kopiją, spustelėkite du kartus
-arba paspauskite Įvesties (Enter) klavišą.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="192"/>
+        <location filename="../src/core/regionselect.cpp" line="202"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pikselių </translation>
     </message>
@@ -447,7 +442,7 @@ arba paspauskite Įvesties (Enter) klavišą.</translation>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="627"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Options</source>
         <translation>Parinktys</translation>
     </message>
@@ -603,136 +598,137 @@ arba paspauskite Įvesties (Enter) klavišą.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
-        <source>Fit to edges only inside selected screen area</source>
-        <translation>Talpinti į kraštus tik pažymėtoje ekrano srityje</translation>
+        <source>If this is unchecked, the selected area
+might become larger to fit to outer edges</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="410"/>
-        <source>Fit to edges inside selected area</source>
-        <translation>Talpinti į kraštus pažymėtoje ekrano srityje</translation>
+        <location filename="../src/core/ui/configwidget.ui" line="411"/>
+        <source>Fit to edges inside selected area by right clicking</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="448"/>
+        <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation>Rodyti ScreenGrab sistemos dėkle</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="457"/>
+        <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
         <translation>Dėklo pranešimai:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="470"/>
+        <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
         <translation>Dėklo pranešimų rodymo veiksena</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="474"/>
+        <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
         <translation>Niekada</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="479"/>
+        <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
         <translation>Dėklo veiksena</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="484"/>
+        <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
         <translation>Visada</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="496"/>
+        <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
         <translation>Dėklo pranešimų rodymo trukmė</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="512"/>
+        <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
         <translation>Dėklo pranešimų rodymo trukmė</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="515"/>
+        <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
         <translation> sek.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="533"/>
+        <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
         <translation>Spustelėjus užvėrimo mygtuką, suskleisti į dėklą</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="536"/>
+        <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
         <translation>Užvėrus, suskleisti į dėklą</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="575"/>
+        <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
         <translation>Veiksmas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="580"/>
+        <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
         <translation>Spartusis klavišas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="585"/>
+        <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
         <translation>Visuotiniai spartieji klavišai</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="592"/>
+        <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
         <translation>Visas ekranas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="597"/>
+        <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
         <translation>Aktyvus langas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="602"/>
+        <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
         <translation>Pažymėta sritis</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="608"/>
+        <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
         <translation>Vietiniai spartieji klavišai</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="612"/>
+        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>Nauja ekrano kopija</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="617"/>
+        <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
         <translation>Įrašyti ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="622"/>
+        <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
         <translation>Kopijuoti ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="632"/>
+        <location filename="../src/core/ui/configwidget.ui" line="633"/>
         <source>Help</source>
         <translation>Žinynas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="637"/>
+        <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
         <translation>Išeiti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="648"/>
+        <location filename="../src/core/ui/configwidget.ui" line="649"/>
         <source>Selected shortcut:</source>
         <translation>Pasirinktas spartusis klavišas:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="655"/>
+        <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
         <translation>Neapibrėžta</translation>
     </message>

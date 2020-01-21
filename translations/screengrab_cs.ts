@@ -152,48 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Složka %1 neexistuje. Chcete ji vytvořit?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
         <translation>Vybrat složku</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Opravdu chcete vrátit nastavení do výchozích hodnot?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
         <translation>Příklad: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
-        <source>This key is already used in your system! Please select another.</source>
-        <translation>Tato klávesa je už ve vámi používaném operačním systému přiřazena něčemu jinému! Vyberte jinou.</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Tato klávesa je už ve ScreeGrab přiřazena něčemu jinému! Vyberte jinou.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
         <translation>Tato klávesa není ve vámi používaném operačním systému podporována!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -201,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="59"/>
+        <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>je multiplatformní aplikace pro pohotové pořizování snímků obrazovky pracovní plochy.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Pořídit snímek celé obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a screenshot of the active window</source>
         <translation>Pořídit snímek aktivního okna</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Pořídit snímek vybrané části obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Run the application with a hidden main window</source>
         <translation>Spustit aplikaci tak, aby její hlavní okno zůstalo skryté</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
         <translation>Uloženo do </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Název uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="437"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Popis umístění uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
         <translation>Zkopírováno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snímek obrazovky je zkopírován do schránky</translation>
     </message>
@@ -334,69 +329,69 @@
         <translation>pruh nástrojů</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
         <translation>Nový</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
         <translation>Zkopírovat</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
         <translation>Předvolby</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
         <translation>O aplikaci</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
         <translation>Snímek obrazovky </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Dvojklikem snímek otevřít ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
         <translation>Skrýt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
         <translation>Zobrazit</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
         <translation>%1 souborů</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
         <translation>Uložit jako…</translation>
     </message>
@@ -404,14 +399,15 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="160"/>
-        <source>Click and drag to draw a rectangle, then double click or press Enter
+        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <source>Click and drag to draw a rectangle,
+right click to fit to edges,
+double click or press Enter
 to take a screenshot.</source>
-        <translation>Klepněte a natáhněte obdélník, pak dvojklikem nebo stiskem Enter
-pořiďte snímek obrazovky.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="192"/>
+        <location filename="../src/core/regionselect.cpp" line="202"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pixelů </translation>
     </message>
@@ -446,7 +442,7 @@ pořiďte snímek obrazovky.</translation>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="627"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Options</source>
         <translation>Předvolby</translation>
     </message>
@@ -602,136 +598,137 @@ pořiďte snímek obrazovky.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
-        <source>Fit to edges only inside selected screen area</source>
-        <translation>Přizpůsobit okrajům pouze uvnitř označené oblasti obrazovky</translation>
+        <source>If this is unchecked, the selected area
+might become larger to fit to outer edges</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="410"/>
-        <source>Fit to edges inside selected area</source>
-        <translation>Přizpůsobit okrajům v označené oblasti</translation>
+        <location filename="../src/core/ui/configwidget.ui" line="411"/>
+        <source>Fit to edges inside selected area by right clicking</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="448"/>
+        <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation>Zobrazovat ScreenGrab v oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="457"/>
+        <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
         <translation>Zprávy v oznamovací oblasti:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="470"/>
+        <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
         <translation>Režim zobrazování zpráv v oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="474"/>
+        <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
         <translation>Nikdy</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="479"/>
+        <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
         <translation>Dle režimu oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="484"/>
+        <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
         <translation>Vždy</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="496"/>
+        <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
         <translation>Doba zobrazení zpráv v oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="512"/>
+        <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
         <translation>Doba trvání zobrazení zpráv v oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="515"/>
+        <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
         <translation> sek</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="533"/>
+        <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
         <translation>Při klepnutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="536"/>
+        <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
         <translation>Při zavření minimalizovat do oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="575"/>
+        <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
         <translation>Akce</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="580"/>
+        <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
         <translation>Klávesová zkratka</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="585"/>
+        <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
         <translation>Globální klávesové zkratky</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="592"/>
+        <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
         <translation>Celá obrazovka</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="597"/>
+        <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
         <translation>Aktivní okno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="602"/>
+        <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
         <translation>Výběr oblasti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="608"/>
+        <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
         <translation>Místní zkratky</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="612"/>
+        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>Nová obrazovka</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="617"/>
+        <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
         <translation>Uložit obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="622"/>
+        <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
         <translation>Zkopírovat obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="632"/>
+        <location filename="../src/core/ui/configwidget.ui" line="633"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="637"/>
+        <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="648"/>
+        <location filename="../src/core/ui/configwidget.ui" line="649"/>
         <source>Selected shortcut:</source>
         <translation>Označená klávesová zkratka:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="655"/>
+        <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
         <translation>Neurčeno</translation>
     </message>

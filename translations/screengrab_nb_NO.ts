@@ -152,48 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="210"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Mappen %1 finnes ikke. Ønsker du å skape den?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="211"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="312"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="300"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
         <translation>Velg mappe</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="311"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Ønsker å du å tilbakestille til forvalgte innstillinger?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="369"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
         <translation>Eksempel: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="425"/>
-        <source>This key is already used in your system! Please select another.</source>
-        <translation>Denne nøkkelen er allerede brukt på ditt system! Vennligst velg en annen.</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="431"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Denne nøkkelen er allerede brukt i ScreenGrab! Vennligst velg en annen.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="449"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
         <translation>Denne nøkkelen støttes ikke på ditt system!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="484"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
@@ -201,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="59"/>
+        <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>er et plattformuavhengig program for å raskt ta skjermbilder av ditt skrivebord.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Ta et fullskjerms skjermbilde</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a screenshot of the active window</source>
         <translation>Ta et skjermbilde av det aktive vinduet</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Ta et skjermbilde av et utvalg på skjermen</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Run the application with a hidden main window</source>
         <translation>Kjør programmet med et skjult hovedvindu</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved</source>
         <translation>Lagret</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="409"/>
+        <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
         <translation>Lagret til </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Navnet på lagret fil er kopiert til utklippsboken</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="437"/>
+        <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Filsti til lagret fil er kopiert til utklippsboken</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
         <translation>Kopiert</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Skjermbildet er kopiert til utklippsboken</translation>
     </message>
@@ -334,69 +329,69 @@
         <translation>Verktøylinje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="64"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
         <translation>Ny</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="65"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
         <translation>Lagre</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="66"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
         <translation>Kopier</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="67"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
         <translation>Valg</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="68"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="92"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
         <translation>Hjelp</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="69"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="70"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
         <translation>Avslutt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="365"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
         <translation>Skjermbilde </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="369"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Dobbelklikk for å åpne skjermbilde i ekstern standard bildeviser</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="378"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="509"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
         <translation>Skjul</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="516"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
         <translation>Vis</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="569"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
         <translation>%1 filer</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="591"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
         <translation>Lagre som...</translation>
     </message>
@@ -404,14 +399,15 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="160"/>
-        <source>Click and drag to draw a rectangle, then double click or press Enter
+        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <source>Click and drag to draw a rectangle,
+right click to fit to edges,
+double click or press Enter
 to take a screenshot.</source>
-        <translation>Klikk og dra for å tegne et rektangel, så dobbeltklikk eller trykk Enter
-for å ta et skjermbilde.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="192"/>
+        <location filename="../src/core/regionselect.cpp" line="202"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 punkter </translation>
     </message>
@@ -446,7 +442,7 @@ for å ta et skjermbilde.</translation>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="627"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Options</source>
         <translation>Valg</translation>
     </message>
@@ -602,136 +598,137 @@ for å ta et skjermbilde.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
-        <source>Fit to edges only inside selected screen area</source>
-        <translation>Tilpass til kanter bare inne i valgte skjermområde</translation>
+        <source>If this is unchecked, the selected area
+might become larger to fit to outer edges</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="410"/>
-        <source>Fit to edges inside selected area</source>
-        <translation>Tilpass til kanter inne i valgte område</translation>
+        <location filename="../src/core/ui/configwidget.ui" line="411"/>
+        <source>Fit to edges inside selected area by right clicking</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="448"/>
+        <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation>Vis ScreenGrab i systemtrauet</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="457"/>
+        <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
         <translation>Traubeskjeder:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="470"/>
+        <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
         <translation>Traubeskjed viser modus</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="474"/>
+        <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
         <translation>Aldri</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="479"/>
+        <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
         <translation>Traumodus</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="484"/>
+        <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
         <translation>Alltid</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="496"/>
+        <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
         <translation>Tid å vise traubeskjeder</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="512"/>
+        <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
         <translation>Tid å vise traubeskjeder</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="515"/>
+        <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
         <translation> sek</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="533"/>
+        <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
         <translation>Minimer til systemtrau ved klikk på lukkeknappen</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="536"/>
+        <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
         <translation>Minimer til systemtrau ved lukking</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="575"/>
+        <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
         <translation>Handling</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="580"/>
+        <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
         <translation>Snarvei</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="585"/>
+        <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
         <translation>Globale snarveier</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="592"/>
+        <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
         <translation>Fullskjerm</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="597"/>
+        <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
         <translation>Aktivt vindu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="602"/>
+        <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
         <translation>Områdevalg</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="608"/>
+        <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
         <translation>Lokale snarveier</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="612"/>
+        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>Ny skjerm</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="617"/>
+        <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
         <translation>Lagre skjerm</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="622"/>
+        <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
         <translation>Kopier skjerm</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="632"/>
+        <location filename="../src/core/ui/configwidget.ui" line="633"/>
         <source>Help</source>
         <translation>Hjelp</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="637"/>
+        <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
         <translation>Avslutt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="648"/>
+        <location filename="../src/core/ui/configwidget.ui" line="649"/>
         <source>Selected shortcut:</source>
         <translation>Valgt snarvei:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="655"/>
+        <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
         <translation>Ikke definert</translation>
     </message>
