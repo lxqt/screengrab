@@ -404,7 +404,8 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Удерживая клавишу мыши и перемещая курсор, нарисуйте прямоугольник.
+Затем щёлкните два раза или нажмите Ввод, чтобы получить снимок экрана.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
