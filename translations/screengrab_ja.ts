@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>win32-build [Windows XP and 7]</translation>
+        <translation>win32 のビルド [Windows XP and 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation>old win32-build [Windows Vista]</translation>
+        <translation>昔の win32 のビルド [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>win32-build [Windows 7]</translation>
+        <translation>win32 のビルド [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -406,7 +406,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>クリックしてドラッグで長方形を描き、
+それから境界に合わせるには右クリックして、
+ダブルクリックするか Enter キーを押して
+スクリーンショットを取得します。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -602,12 +605,12 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>これをオフにすると、選択した範囲が外側の境界に合うように大きくなります</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>右クリックで選択した範囲の内側の境界に合わせる</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
