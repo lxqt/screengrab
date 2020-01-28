@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>Egy többplatformos alkalmazás képrnyőképek gyors készítésére az asztalról.</translation>
+        <translation>Egy többplatformos alkalmazás képernyőképek gyors készítésére.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
