@@ -404,7 +404,11 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikněte a natáhněte obdélník,
+kliknutím pravým tlačítkem
+přizpůsobte hranám,
+dvojklikem nebo stiskem klávesy
+Enter pořiďte snímek obrazovky.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -600,12 +604,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud toto není zaškrtnuto, oblast výběru
+se může zvětšit aby obsáhla vnější hrany</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknutím pravým tlačítkem uvnitř oblasti výběru přizpůsobíte hranám</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
