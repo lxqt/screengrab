@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustelėkite ir tempkite norėdami piešti stačiakampį,
+spustelėkite dešiniuoju pelės mygtuku norėdami talpinti į kraštus,
+spustelėkite du kartus kairiuoju pelės mygtuku arba
+paspauskite Įvedimo (Enter) klavišą, kad padarytumėte ekrano kopiją.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -600,12 +603,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Jei žymėjimas yra nuimtas, pažymėta sritis
+gali tapti didesnė taip, kad tilptų į išorinius kraštus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustelėjus dešiniuoju pelės mygtuku, talpinti į pažymėtos srities išorinius kraštus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
