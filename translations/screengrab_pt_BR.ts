@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique e arraste para desenhar um retângulo,
+clique com o botão direito para ajustar às bordas,
+clique duas vezes ou pressione Enter
+para fazer uma captura de tela.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -655,12 +658,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Se esta opção estiver desmarcada, a área selecionada
+pode ficar maior para caber nas bordas externas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste as arestas dentro da área selecionada clicando com o botão direito</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
