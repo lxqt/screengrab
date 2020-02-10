@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Это легкое и мощное приложение, написанное на Qt.</translation>
+        <translation>Это лёгкое и мощное приложение, написанное на Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>win32-версии [Windows XP and 7]</translation>
+        <translation>win32-версии [Windows XP и 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
@@ -616,13 +616,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Если не отмечено, выделенная область может быть
-увеличена, чтобы включить внешние видимые границы</translation>
+        <translation>Если не отмечено, по щелчку правой кнопкой выделенная область
+будет увеличена, чтобы включить внешние видимые границы</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>По щелчку правой кнопкой уменьшать выбранную область до видимых граней внутри оной</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
