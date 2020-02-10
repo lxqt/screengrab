@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent):
     _ui->setupUi(this);
     _ui->labAppName->setText(_ui->labAppName->text() + QStringLiteral(" <b>") + qApp->applicationVersion() + QStringLiteral("</b>"));
 
-    _ui->labQtVer->setText(tr("using Qt ") + QString::fromUtf8(qVersion()));
+    _ui->labQtVer->setText(tr("using Qt %1").arg(QString::fromUtf8(qVersion())));
 
     QTabBar *tabs = new QTabBar;
 
@@ -102,12 +102,11 @@ QString AboutDialog::tabAbout()
     str += tr("It is a light and powerful application, written in Qt.");
     str += QLatin1String("<br><br>");
 
-    str += tr("Website")+QLatin1String(" - ");
-    str += QLatin1String("<a href=\"https://github.com/lxqt/screengrab\">https://github.com/lxqt/screengrab</a>");
+    str += tr("Website - <a href=\"%1\">%1</a>").arg(QLatin1String("https://github.com/lxqt/screengrab"));
     str += QLatin1String("<br><br>");
 
-    str += tr("Licensed under the ");
-    str += QLatin1String(" <a href=http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>GPL v2</a>");
+    str += tr("Licensed under the <a href=%1>GPL v2</a>")
+        .arg(QLatin1String("http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"));
     str += QLatin1String("<br><br>");
 
     str += tr("Copyright &copy; 2009-2013, Artem 'DOOMer' Galichkin");
