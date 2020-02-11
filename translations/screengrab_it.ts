@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>E&apos; un applicazione  leggera ma potente, scritto in Qt.</translation>
+        <translation>È un&apos;applicazione leggera e potente, scritta in Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation>Sito Web</translation>
+        <translation>Sito web</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -405,7 +405,7 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fare clic e trascinare per disegnare un rettangolo, fare clic con il tasto destro per adattare ai bordi, fare doppio clic o premere Invio per acquisire uno screenshot.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -656,12 +656,12 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se questa opzione è deselezionata, l&apos;area selezionata potrebbe allargarsi per adattarsi ai bordi esterni</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adatta ai bordi all&apos;interno dell&apos;area selezionata facendo clic con il tasto destro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
