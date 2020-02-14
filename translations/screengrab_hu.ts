@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>Egy többplatformos alkalmazás képernyőképek gyors készítésére.</translation>
+        <translation>Egy többplatformos alkalmazás gyors képernyőképkészítésre.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation>Mentve</translation>
+        <translation>Mentveide: </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
@@ -306,7 +306,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation>mp</translation>
+        <translation> mp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>Egérmutató benne legyen</translation>
+        <translation>Egérkurzor is</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Képernyőkép</translation>
+        <translation>Képernyőkép </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
@@ -459,7 +459,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation>Paneltálca</translation>
+        <translation>Rendszertálca</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
@@ -559,12 +559,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Példa:</translation>
+        <translation>Példa: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Automatikusan mentse a képernyőképeket a húzás során</translation>
+        <translation>Képernyőképek automatikus mentése a húzás során</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
@@ -579,7 +579,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A screengrab több példányának engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
@@ -600,27 +600,28 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ha ez nincs bejelölve, akkor a kijelölt terület
+nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Szélek igazítása a kijelölt területhez jobb kattintásra</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>ScreenGrab megjelenítése a paneltálcán</translation>
+        <translation>ScreenGrab megjelenítése a rendszertálcán</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation>Tálca üzenetek:</translation>
+        <translation>Rendszertálca üzenetek:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rendszertálca üzenetek megjelenítési módja</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -630,7 +631,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation>Panel mód</translation>
+        <translation>Rendszertálca mód</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
@@ -640,7 +641,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>Paneltálca üzenetek megjelenítési ideje</translation>
+        <translation>Rendszertálca üzenetek megjelenítési ideje</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
@@ -655,12 +656,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Bezárás gombra kattintáskor minimalizálás paneltálcára</translation>
+        <translation>Bezárás gombra kattintáskor minimalizálás rendszertálcára</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Bezáráskor minimalizálás paneltálcára</translation>
+        <translation>Bezáráskor minimalizálás renszertálcára</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
@@ -685,17 +686,17 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
-        <translation>Aktív ablak</translation>
+        <translation>Aktuális ablak</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
-        <translation>Terület kiválasztása</translation>
+        <translation>Terület kijelölése</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
-        <translation>Helyi hivatkozások</translation>
+        <translation>Helyi gyorsbillentyűk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="613"/>
