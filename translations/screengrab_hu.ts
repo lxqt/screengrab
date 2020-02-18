@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>Qt verzió</translation>
+        <translation>Qt verzió </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
