@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kattintson és húzza a terület kijelöléséhez,
+jobb kattintással igazíthatja a széleket,
+dupla kattintással vagy Enterrel pedig
+elkészítheti a képet.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
