@@ -404,10 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished">Kattintson és húzza a terület kijelöléséhez,
-jobb kattintással igazíthatja a széleket,
-dupla kattintással vagy Enterrel pedig
-elkészítheti a képet.</translation>
+        <translation>Kattintson és húzza a terület kijelöléséhez,
+kattintson jobb egérgombbal, hogy illeszkedjen a szélekhez,
+kattintson duplán, vagy nyomja meg az Enter billentyűt
+a befejezéshez.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -517,7 +517,7 @@ elkészítheti a képet.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Fájl nevének másolása vágólapra mentéskor</translation>
+        <translation>Mentéskor fájl nevének vágólapra másolása</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -582,12 +582,12 @@ elkészítheti a képet.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished">A screengrab több példányának engedélyezése</translation>
+        <translation>Több ablak engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation>A ScreenGrab több példányának engedélyezése</translation>
+        <translation>Több ablak engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
@@ -674,12 +674,12 @@ nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
-        <translation>Hivatkozás</translation>
+        <translation>Kombináció</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
-        <translation>Globális hivatkozások</translation>
+        <translation>Globális gyorsbillentyűk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="593"/>
