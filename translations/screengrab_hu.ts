@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Ezalatt licenszelve: </translation>
+        <translation>Licensz: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
@@ -51,12 +51,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Csatlakozhat hozzánk, és segíthet nekünk, ha akar. Ez egy meghívás,  ha tetszik ez az alkalmazás.</translation>
+        <translation>Csatlakozhat hozzánk, és segíthet nekünk, ha akar. Ez egy meghívás, ha tetszik ez az alkalmazás.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>Mit szeretne tenni?</translation>
+        <translation>Miben segíthet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation>Hibakereső</translation>
+        <translation>Hibakövető</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation>Brazil-portugál fordítás</translation>
+        <translation> Brazil-portugál fordítás</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation>Ukrán fordítás</translation>
+        <translation> Ukrán fordítás</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation>Spanyol fordítás</translation>
+        <translation> Spanyol fordítás</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation>Olasz fordítás</translation>
+        <translation> Olasz fordítás</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Teszt:</translation>
+        <translation>Tesztelés:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>régi win32-build [Windows Vista]</translation>
+        <translation>win32 kiadás [Windows XP és 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation>régi win32-build [Windows Vista]</translation>
+        <translation>régi win32 kiadás [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>win32-build [Windows 7]</translation>
+        <translation>win32 kiadás [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
-        <translation>Példa:</translation>
+        <translation>Példa: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>Egy többplatformos alkalmazás képrnyőképek gyors készítésére az asztalról.</translation>
+        <translation>Egy többplatformos alkalmazás gyors képernyőképkészítésére az asztalról.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation>Mentveide: </translation>
+        <translation>Mentve ide: </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Semmi</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>Egérkurzor is</translation>
+        <translation>Egérmutató is</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -331,7 +331,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
-        <translation>Új</translation>
+        <translation>Új képernyőkép</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
@@ -412,7 +412,7 @@ a befejezéshez.</translation>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 pixel</translation>
+        <translation>%1 x %2 pixel </translation>
     </message>
 </context>
 <context>
@@ -452,7 +452,7 @@ a befejezéshez.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation>Fő</translation>
+        <translation>Alap</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
@@ -547,7 +547,7 @@ a befejezéshez.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Aktuális dátum és idő a  mentett fájlnévbe</translation>
+        <translation>Aktuális dátum és idő a mentett fájlnévbe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
@@ -603,13 +603,13 @@ a befejezéshez.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished">Ha ez nincs bejelölve, akkor a kijelölt terület
+        <translation>Ha ez nincs bejelölve, akkor a kijelölt terület
 nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Szélek igazítása a kijelölt területhez jobb kattintásra</translation>
+        <translation>Jobb kattintásra a szélek igazítása a kijelölt területhez</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
@@ -624,7 +624,7 @@ nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation type="unfinished">Rendszertálca üzenetek megjelenítési módja</translation>
+        <translation>Rendszertálca üzenetek megjelenítési módja</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -649,7 +649,7 @@ nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Idő amíg látható a üzenet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -659,12 +659,12 @@ nagyobb lehet, hogy illeszkedjen a külső szélekhez</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Bezárás gombra kattintáskor minimalizálás rendszertálcára</translation>
+        <translation>Bezárás gombra kattintáskor minimalizálás a rendszertálcára</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Bezáráskor minimalizálás renszertálcára</translation>
+        <translation>Bezáráskor minimalizálás a renszertálcára</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
