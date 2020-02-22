@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation></translation>
+        <translation>Τύπος στιγμιότυπου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -281,12 +281,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation></translation>
+        <translation>Περιοχή της οθόνης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation></translation>
+        <translation>Τελευταία επιλεγμένη περιοχή</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -296,32 +296,32 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation></translation>
+        <translation>Καθυστέρηση σε δευτερόλεπτα πριν από τη λήψη του στιγμιότυπου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation type="unfinished">Ουδεμία</translation>
+        <translation>Ουδεμία</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation type="unfinished"> δευτ</translation>
+        <translation> δευτ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation></translation>
+        <translation>Εστίαση της περιοχής γύρω από το ποντίκι</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation></translation>
+        <translation>Χωρίς διακοσμήσεις του παραθύρου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation></translation>
+        <translation>Συμπερίληψη της κατάδειξης του ποντικιού</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation type="unfinished">Στιγμιότυπο </translation>
+        <translation>Στιγμιότυπο </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation></translation>
+        <translation>Διπλό κλικ για άνοιγμα του στιγμιότυπου στον εξωτερικό προεπιλεγμένο προβολέα εικόνων</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλικ και σύρσιμο για σχεδίαση ενός ορθογωνίου
+δεξί κλικ για ταίριασμα στις άκρες
+διπλό κλικ ή Enter για
+λήψη του στιγμιότυπου.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -469,7 +472,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation></translation>
+        <translation>Προεπιλεγμένος κατάλογος αποθήκευσης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -479,198 +482,199 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
         <source>Browse filesystem</source>
-        <translation></translation>
+        <translation>Περιήγηση του συστήματος αρχείων</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation type="unfinished">Περιήγηση</translation>
+        <translation>Περιήγηση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation></translation>
+        <translation>Προκαθορισμένο αρχείο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished">Όνομα:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation></translation>
+        <translation>Προκαθορισμένο όνομα αρχείου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation></translation>
+        <translation>Προκαθορισμένη μορφή αποθήκευσης της εικόνας</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation></translation>
+        <translation>Αντιγραφή του ονόματος αρχείου στο πρόχειρο κατά την αποθήκευση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation></translation>
+        <translation>Να μην αντιγραφεί</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation></translation>
+        <translation>Αντιγραφή μόνο του ονόματος του αρχείου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation></translation>
+        <translation>Αντιγραφή της πλήρους διαδρομής</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation type="unfinished">Ποιότητα εικόνας</translation>
+        <translation>Ποιότητα εικόνας</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation></translation>
+        <translation>Ποιότητα εικόνας (1 - μικρό αρχείο, 100 - υψηλή ποιότητα)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation></translation>
+        <translation>Εισαγωγή της τρέχουσας ώρας και ημερομηνίας στο όνομα αρχείου αποθήκευσης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation></translation>
+        <translation>Εισαγωγή της τρέχουσας ώρας και ημερομηνίας στο όνομα αρχείου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation type="unfinished">Πρότυπο</translation>
+        <translation type="unfinished">Πρότυπο: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation type="unfinished">Παράδειγμα:</translation>
+        <translation>Παράδειγμα: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation></translation>
+        <translation>Αυτόματη αποθήκευση των στιγμιότυπων κατά την διαδικασία σύλληψης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation></translation>
+        <translation>Αυτόματη αποθήκευση του στιγμιότυπου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Αποθήκευση του πρώτου στιγμιότυπου</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation></translation>
+        <translation type="unfinished">Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation></translation>
+        <translation>Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation></translation>
+        <translation>Άνοιγμα σε εξωτερικό προβολέα με διπλό κλικ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation></translation>
+        <translation>Ενεργοποίηση του εξωτερικού προβολέα</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Αν είναι αποεπιλεγμένο, η επιλεγμένη περιοχή μπορεί
+να αυξηθεί για να ταιριάξει στο εξωτερικό περιθώριο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταίριασμα στις άκρες εντός της επιλεγμένης περιοχής με διπλό κλικ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation></translation>
+        <translation>Εμφάνιση του ScreenGrab στο πλαίσιο συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation></translation>
+        <translation>Μηνύματα πλαισίου συστήματος:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation></translation>
+        <translation>Τρόπος εμφάνισης των μηνυμάτων του πλαισίου συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
-        <translation type="unfinished">Ποτέ</translation>
+        <translation>Ποτέ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation></translation>
+        <translation>Λειτουργία πλαισίου συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
-        <translation type="unfinished">Πάντα</translation>
+        <translation>Πάντα</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation></translation>
+        <translation>Χρόνος εμφάνισης των μηνυμάτων του πλαισίου συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation></translation>
+        <translation>Χρόνος για την εμφάνιση των μηνυμάτων του πλαισίου συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
-        <translation type="unfinished"> δευτ</translation>
+        <translation> δευτ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation></translation>
+        <translation>Ελαχιστοποίηση στο πλαίσιο συστήματος με κλικ στο κουμπί κλεισίματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation></translation>
+        <translation>Ελαχιστοποίηση στο πλαίσιο συστήματος κατά το κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
-        <translation type="unfinished">Ενέργεια</translation>
+        <translation>Ενέργεια</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Συντόμευση</translation>
+        <translation>Συντόμευση</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
@@ -690,12 +694,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
-        <translation></translation>
+        <translation>Επιλογή περιοχής</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
-        <translation></translation>
+        <translation>Τοπικές συντομεύσεις</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="613"/>
@@ -715,22 +719,22 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="633"/>
         <source>Help</source>
-        <translation type="unfinished">Βοήθεια</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="649"/>
         <source>Selected shortcut:</source>
-        <translation></translation>
+        <translation>Επιλεγμένη συντόμευση:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
-        <translation type="unfinished">δεν προσδιορίστηκε</translation>
+        <translation>Δεν προσδιορίστηκε</translation>
     </message>
 </context>
 </TS>
