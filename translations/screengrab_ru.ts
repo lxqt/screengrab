@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation>Сайт</translation>
+        <translation>Веб-сайт</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Артём &apos;DOOMer&apos; Галичкин</translation>
+        <translation>Автор &amp;copy; 2009-2013, Артём &apos;DOOMer&apos; Галичкин</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation>Поддержка работы на двух мониторах  в Linux</translation>
+        <translation>Поддержка двух мониторов в Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
@@ -302,7 +302,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation type="unfinished">Нет</translation>
+        <translation>Ни одного</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
