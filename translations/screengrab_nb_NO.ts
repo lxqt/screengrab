@@ -31,7 +31,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Er et lettvekts og kraftfullt program skrevet med Qt.</translation>
+        <translation>Det er et lettvekts og kraftfullt program skrevet med Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>Hva kan du gjøre?</translation>
+        <translation>Hva du kan gjøre:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Oversett:</translation>
+        <translation>Oversettere:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Tester:</translation>
+        <translation>Testing:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Ønsker å du å tilbakestille til forvalgte innstillinger?</translation>
+        <translation>Ønsker å du å stille tilbake til standardinnstillinger?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="351"/>
@@ -180,12 +180,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>Denne nøkkelen er allerede brukt i ScreenGrab! Vennligst velg en annen.</translation>
+        <translation>Denne tasten er allerede brukt i ScreenGrab! Vennligst velg en annen.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
-        <translation>Denne nøkkelen støttes ikke på ditt system!</translation>
+        <translation>Denne tasten støttes ikke på ditt system!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="444"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation>Lagret til </translation>
+        <translation>Lagret i </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Forsinkelse i sekunder før skjermbilde tas</translation>
+        <translation>Forsinkelse i sekunder før skjermbildet tas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Dobbelklikk for å åpne skjermbilde i ekstern standard bildeviser</translation>
+        <translation>Dobbelklikk for å åpne skjermbildet i en ekstern standard bildeviser</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikk og dra for å tegne et rektangel,
+høyreklikk for å tilpasse til kanter,
+dobbeltklikk eller trykk Enter
+for å ta et skjermbilde.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -422,7 +425,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>Rediger i..</translation>
+        <translation>Rediger i...</translation>
     </message>
 </context>
 <context>
@@ -469,7 +472,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Standard lagringsmappe</translation>
+        <translation>Standard mappe for lagring</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -529,7 +532,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>Kopier hele filstien</translation>
+        <translation>Kopier fullstendig filsti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -574,7 +577,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>Lagre første skjermbilde</translation>
+        <translation>Lagre det første skjermbildet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
@@ -600,12 +603,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvis dette ikke er markert kan det markerte området
+bli større for å tilpasses til ytre kanter</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilpass til kanter på innsiden av det valgte området ved å høyreklikke</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
@@ -620,7 +624,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>Traubeskjed viser modus</translation>
+        <translation>Visningsmodus for traubeskjeder</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
