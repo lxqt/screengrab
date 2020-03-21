@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>Construción win32  [Windows 7]</translation>
+        <translation>Construción win32 [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prema e arrastre para debuxar un rectángulo,
+co botón dereito para axustar aos bordos,
+dobre clic ou prema Intro para facer unha
+captura de pantalla.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -600,12 +603,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Se non está marcado, a área seleccionada
+pode ser maior para adaptarse aos bordos exteriores</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste aos bordos da área seleccionada premendo co botón dereito</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
