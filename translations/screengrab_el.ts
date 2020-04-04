@@ -462,7 +462,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation type="unfinished">Πλαίσιο συστήματος</translation>
+        <translation>Πλαίσιο συστήματος</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
@@ -557,7 +557,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation type="unfinished">Πρότυπο: </translation>
+        <translation>Πρότυπο: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
@@ -582,7 +582,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished">Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
+        <translation>Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
@@ -679,7 +679,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
-        <translation type="unfinished">Καθολικές συντομεύσεις</translation>
+        <translation>Καθολικές συντομεύσεις</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="593"/>
