@@ -26,12 +26,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>είναι μια ανεξαρτήτου πλατύβαθρου εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας.</translation>
+        <translation>είναι μια ανεξαρτήτου πλατφόρμας εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας σας.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Ελαφριά και ισχυρή εφαρμογή γραμμένη σε Qt</translation>
+        <translation>Μία ελαφριά και ισχυρή εφαρμογή γραμμένη σε Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Αν σας αρέσει η εφαρμογή είστε ευπρόσδεκτος-η να συμμετάσχετε στην ανάπτυξή της.</translation>
+        <translation>Αν σας αρέσει η εφαρμογή μπορείτε να συμμετάσχετε στην ανάπτυξή της.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
