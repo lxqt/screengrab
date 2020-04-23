@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Essa é um aplicativo leve e poderoso, escrito em Qt.</translation>
+        <translation>Esse é um aplicativo leve e poderoso, escrito em Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
@@ -378,7 +378,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Screenshot </translation>
+        <translation>Captura de tela </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -405,9 +405,9 @@ right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
         <translation>Clique e arraste para desenhar um retângulo,
-clique com o botão direito para ajustar às bordas,
-clique duas vezes ou pressione Enter
-para fazer uma captura de tela.</translation>
+clique direito para encaixar nas bordas,
+clique duplo ou pressione Enter,
+para tirar uma screenshot.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -658,13 +658,13 @@ para fazer uma captura de tela.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Se esta opção estiver desmarcada, a área selecionada
-pode ficar maior para caber nas bordas externas</translation>
+        <translation>Se isto estiver desmarcado, a área selecionada
+pode ficar maior para se ajustar às bordas externas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Ajuste as arestas dentro da área selecionada clicando com o botão direito</translation>
+        <translation>Encaixe as bordas dentro da área selecionada com o botão direito</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
