@@ -39,5 +39,9 @@ void X11Utils::compositePointer(int offsetX, int offsetY, QPixmap *snapshot)
                           QImage::Format_ARGB32_Premultiplied);
 
     QPainter painter(snapshot);
-    painter.drawImage(QPointF(cursor->x - cursor->xhot - offsetX, cursor->y - cursor ->yhot - offsetY), qcursorimg);
+
+    // NOTE: The device pixel ratio is not considered for the cursor automatically.
+    qreal pixelRatio = snapshot->devicePixelRatio();
+    qcursorimg.setDevicePixelRatio(pixelRatio);
+    painter.drawImage(QPointF((cursor->x - cursor->xhot) / pixelRatio - offsetX, (cursor->y - cursor ->yhot) / pixelRatio - offsetY), qcursorimg);
 }

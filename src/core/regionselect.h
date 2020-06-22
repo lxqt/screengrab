@@ -60,7 +60,7 @@ Q_SIGNALS:
     void processDone(bool grabbed);
 
 private:
-    QRect _selectRect;
+    QRectF _selectRect;
     QSize _sizeDesktop;
 
     QPoint _selStartPoint;
@@ -81,6 +81,9 @@ private:
     void selectFit();
     void findFit();
     void fitBorder(const QRect &boundRect, enum Side side, int &border);
+
+    QRectF pixmapRect(const QRectF &widgetRect) const;
+    QRectF widgetRect(const QRectF &pixmapRect) const;
 
     Config *_conf;
 
