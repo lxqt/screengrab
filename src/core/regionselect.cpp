@@ -24,6 +24,7 @@
 RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
     :QWidget(parent)
 {
+    _currentFit = 0;
     _conf = mainconf;
     sharedInit();
 
@@ -42,6 +43,7 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
 RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
     : QWidget(parent)
 {
+    _currentFit = 0;
     _conf = mainconf;
     sharedInit();
     _selectRect = lastRect;
@@ -132,9 +134,12 @@ void RegionSelect::mouseMoveEvent(QMouseEvent *event)
     if (_processSelection)
     {
         _selEndPoint = event->pos();
-        _selectRect = QRect(_selStartPoint, _selEndPoint).normalized();
-	_fittedSelection = false;
-        update();
+        if ((_selEndPoint - _selStartPoint).manhattanLength() > 10) // ignore mouse trembles
+        {
+            _selectRect = QRectF(_selStartPoint, _selEndPoint).normalized(); // relative to the widget
+	        _fittedSelection = false;
+            update();
+        }
     }
 }
 
@@ -195,7 +200,7 @@ void RegionSelect::drawBackGround()
 
 void RegionSelect::drawRectSelection(QPainter &painter)
 {
-    painter.drawPixmap(_selectRect, _desktopPixmapClr, _selectRect);
+    painter.drawPixmap(_selectRect, _desktopPixmapClr, pixmapRect(_selectRect));
     painter.setPen(QPen(QBrush(QColor(0, 0, 0, 255)), 2));
     painter.drawRect(_selectRect);
 
@@ -204,31 +209,34 @@ void RegionSelect::drawRectSelection(QPainter &painter)
 
     if (!_selEndPoint.isNull() && _conf->getZoomAroundMouse())
     {
-        const quint8 zoomSide = 200;
+        const int zoomSide = 200;
 
-        // create magnifer coords
+        // create magnifier widget coordinates
         QPoint zoomStart = _selEndPoint;
         zoomStart -= QPoint(zoomSide/5, zoomSide/5); // 40, 40
 
         QPoint zoomEnd = _selEndPoint;
         zoomEnd += QPoint(zoomSide/5, zoomSide/5);
 
-        // creating rect area for magnifer
+        // creating the widget rect area for magnifier
         QRect zoomRect = QRect(zoomStart, zoomEnd);
 
-        QPixmap zoomPixmap = _desktopPixmapClr.copy(zoomRect).scaled(QSize(zoomSide, zoomSide), Qt::KeepAspectRatio);
+        qreal pixelRatio = _desktopPixmapClr.devicePixelRatio();
+        int scaledSize = qRound(zoomSide * pixelRatio);
+        QPixmap zoomPixmap = _desktopPixmapClr.copy(pixmapRect(zoomRect).toRect()).scaled(QSize(scaledSize, scaledSize), Qt::KeepAspectRatio);
 
-        QPainter zoomPainer(&zoomPixmap); // create painter from pixmap maignifer
+        QPainter zoomPainer(&zoomPixmap); // create painter from the scaled pixmap
         zoomPainer.setPen(QPen(QBrush(QColor(255, 0, 0, 180)), 2));
-        zoomPainer.drawRect(zoomPixmap.rect()); // draw
-        zoomPainer.drawText(zoomPixmap.rect().center() - QPoint(4, -4), QStringLiteral("+"));
+        QRectF r = widgetRect(zoomPixmap.rect());
+        zoomPainer.drawRect(r); // draw
+        zoomPainer.drawText(r.center() - QPointF(4, -4), QStringLiteral("+"));
 
         // position for drawing preview
-        QPoint zoomCenter = _selectRect.bottomRight();
-
-        if (zoomCenter.x() + zoomSide > _desktopPixmapClr.rect().width()
-            || zoomCenter.y() + zoomSide > _desktopPixmapClr.rect().height())
-            zoomCenter -= QPoint(zoomSide, zoomSide);
+        QPoint zoomCenter = _selectRect.bottomRight().toPoint();
+        if (qRound(zoomCenter.x() * pixelRatio) + zoomPixmap.width() > _desktopPixmapClr.rect().width())
+            zoomCenter -= QPoint(qRound(zoomPixmap.width() / pixelRatio), 0);
+        if (qRound(zoomCenter.y() * pixelRatio) + zoomPixmap.height() > _desktopPixmapClr.rect().height())
+            zoomCenter -= QPoint(0, qRound(zoomPixmap.height() / pixelRatio));
         painter.drawPixmap(zoomCenter, zoomPixmap);
     }
 }
@@ -236,31 +244,41 @@ void RegionSelect::drawRectSelection(QPainter &painter)
 void RegionSelect::selectFit()
 {
     if (_fittedSelection)
+    {
+        if (_fitRectangles.isEmpty())
+            return;
         _currentFit = (_currentFit + 1) % _fitRectangles.size();
+    }
     else
     {
         findFit();
         _currentFit = 1;
         _fittedSelection = true;
     }
-    _selectRect = _fitRectangles[_currentFit];
+
+    // fitting is done in terms of the pixmap coordinates but we want the widget rectangle
+    _selectRect = widgetRect(_fitRectangles[_currentFit]);
+
     update();
 }
 
 void RegionSelect::findFit()
 {
+    // fitting should be done in terms of the pixmap coordinates
+    QRect r = pixmapRect(_selectRect).toRect();
+
     QRect boundingRect;
-    int left = _selectRect.left();
-    int top = _selectRect.top();
-    int right = _selectRect.right();
-    int bottom = _selectRect.bottom();
+    int left = r.left();
+    int top = r.top();
+    int right = r.right();
+    int bottom = r.bottom();
 
     _fitRectangles.clear();
-    _fitRectangles.push_back(_selectRect);
+    _fitRectangles.push_back(r);
 
     // Set the rectangle in which to search for borders
     if (_conf->getFitInside())
-        boundingRect = _selectRect;
+        boundingRect = r;
     else
     {
         boundingRect.setLeft(qMax(left - fitRectExpand, 0));
@@ -281,6 +299,8 @@ void RegionSelect::findFit()
 
 void RegionSelect::fitBorder(const QRect &boundRect, enum Side side, int &border)
 {
+    if (!boundRect.isValid())
+        return;
     const QImage boundImage = _desktopPixmapClr.copy(boundRect).toImage();
 
     // Set the relative coordinates of a box vertex and a vector along the box side
@@ -382,12 +402,32 @@ void RegionSelect::fitBorder(const QRect &boundRect, enum Side side, int &border
 
 QPixmap RegionSelect::getSelection()
 {
-    QPixmap sel;
-    sel = _desktopPixmapClr.copy(_selectRect);
+    QPixmap sel = _desktopPixmapClr.copy(pixmapRect(_selectRect).toRect());
     return sel;
 }
 
 QPoint RegionSelect::getSelectionStartPos()
 {
-    return _selectRect.topLeft();
+    return _selectRect.topLeft().toPoint();
+}
+
+// Transform a widget rectangle (calculated in terms of the widget coordinates)
+// to a pixmap rectangle (calculated in terms of the pixmap coordinates):
+QRectF RegionSelect::pixmapRect(const QRectF &widgetRect) const
+{
+    qreal pixelRatio = _desktopPixmapClr.devicePixelRatio();
+    QRectF r;
+    r.setTopLeft(widgetRect.topLeft() * pixelRatio);
+    r.setBottomRight(widgetRect.bottomRight() * pixelRatio);
+    return r;
+}
+
+// Transform a pixmap rectangle to a widget rectangle:
+QRectF RegionSelect::widgetRect(const QRectF &pixmapRect) const
+{
+    qreal pixelRatio = _desktopPixmapClr.devicePixelRatio();
+    QRectF r;
+    r.setTopLeft(pixmapRect.topLeft() / pixelRatio);
+    r.setBottomRight(pixmapRect.bottomRight() / pixelRatio);
+    return r;
 }

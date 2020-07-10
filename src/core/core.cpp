@@ -192,7 +192,7 @@ void Core::screenShot(bool first)
     sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
 
-    // Update date last crenshot, if it is  a first screen
+    // Update the last saving date, if this is the first screenshot
     if (_firstScreen)
         _conf->updateLastSaveDate();
 
@@ -301,6 +301,13 @@ void Core::getActiveWindow() // called only with window screenshots
     }
 
     QRect geometry = info.frameGeometry();
+
+    // WARNING: Until now, "KWindowInfo::frameGeometry" does not consider the screens's
+    // device pixel ratio. So, the frame geometry should be transformed.
+    qreal pixelRatio = screen->devicePixelRatio();
+    geometry.setTopLeft(QPointF(geometry.topLeft() / pixelRatio).toPoint());
+    geometry.setBottomRight(QPointF(geometry.bottomRight() / pixelRatio).toPoint());
+
     // The offscreen part of the window will appear as a black area in the screenshot.
     // Until a better method is found, the offscreen area is ignored here.
     QRect r = screen->virtualGeometry().intersected(geometry);
@@ -588,8 +595,8 @@ void Core::regionGrabbed(bool grabbed)
 
         int x = _selector->getSelectionStartPos().x();
         int y = _selector->getSelectionStartPos().y();
-        int w = _pixelMap->rect().width();
-        int h = _pixelMap->rect().height();
+        int w = _pixelMap->rect().width() / _pixelMap->devicePixelRatio();
+        int h = _pixelMap->rect().height() / _pixelMap->devicePixelRatio();
         _lastSelectedArea.setRect(x, y, w, h);
 
         checkAutoSave();
