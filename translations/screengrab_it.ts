@@ -656,7 +656,8 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished">Se questa opzione è deselezionata, l&apos;area selezionata potrebbe allargarsi per adattarsi ai bordi esterni</translation>
+        <translation>Se questa opzione è deselezionata, l&apos;area selezionata potrebbe
+ allargarsi per adattarsi ai bordi esterni</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
