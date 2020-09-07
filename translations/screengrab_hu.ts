@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Licensz: </translation>
+        <translation>Licenc: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
