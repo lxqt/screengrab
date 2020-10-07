@@ -62,8 +62,11 @@ Bug Tracker: https://github.com/lxqt/screengrab/issues
 (c) 2009-2013, Artem 'DOOMer' Galichkin
 
 
-### Translation (Weblate)
+### Translation
 
-<a href="https://weblate.lxqt.org/projects/lxqt/screengrab/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/screengrab/multi-auto.svg" alt="Translation status" />
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/screengrab/)
+
+<a href="https://translate.lxqt-project.org/projects/lxqt-desktop/screengrab/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/screengrab/multi-auto.svg" alt="Translation status" />
 </a>
+
