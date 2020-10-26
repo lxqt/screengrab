@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>win32-build [Windows XP and 7]</translation>
+        <translation>win32-Build [Windows XP und 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>win32-build [Windows 7]</translation>
+        <translation>win32-Build [Windows 7]</translation>
     </message>
 </context>
 <context>
