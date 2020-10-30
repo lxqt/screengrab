@@ -233,14 +233,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>
-保存したファイルの名前をクリップボードへコピーしました</translation>
+        <translation>保存したファイルの名前をクリップボードへコピーしました</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>
-保存したファイルのパスをクリップボードへコピーしました</translation>
+        <translation>保存したファイルのパスをクリップボードへコピーしました</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
