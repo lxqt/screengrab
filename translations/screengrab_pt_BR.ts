@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>win32-build [Windows 7]</translation>
+        <translation>Versão win32 [Windows 7]</translation>
     </message>
 </context>
 <context>
