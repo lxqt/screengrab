@@ -16,8 +16,8 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 
 # Minimum Versions
 set(KF5_MINIMUM_VERSION "5.36.0")
-set(QT_MINIMUM_VERSION "5.10.0")
-set(QTXDG_MINIMUM_VERSION "3.5.0")
+set(QT_MINIMUM_VERSION "5.12.0")
+set(QTXDG_MINIMUM_VERSION "3.6.0")
 
 find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5Network ${QT_MINIMUM_VERSION} REQUIRED)
@@ -44,7 +44,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(SCREENGRAB_VERSION "2.0.1")
+set(SCREENGRAB_VERSION "2.1.0")
 
 if (DEV_VERSION)
     set(VERSION "${SCREENGRAB_VERSION}-dev (${DEV_VERSION})")
