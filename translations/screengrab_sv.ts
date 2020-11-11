@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klicka och dra för a rita en rektangel
+högerklicka för att expandera till kanter
+dubbelklicka eller tryck Enter
+för att ta en skärmdump.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
