@@ -603,12 +603,13 @@ för att ta en skärmdump.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Om detta är inaktiverat, kan markerat
+område bli större för att passa ytterkanterna</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassa till kanterna på insidan av markerat område med högerklick</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
