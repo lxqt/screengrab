@@ -404,7 +404,9 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klicken und Ziehen, um einen rechteckigen Bereich auszuwählen,
+Rechtsklick um ihn an die Kanten anzupassen,
+Doppelklick oder Enter um ein Bildschirmfoto aufzunehmen.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -660,7 +662,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Mit Rechtsklick den ausgewählten Bereich an die Kanten anpassen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
