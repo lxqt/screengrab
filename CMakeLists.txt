@@ -164,6 +164,7 @@ lxqt_translate_ts(SCREENGRAB_QMS
 
 lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
     SOURCES ${SCREENGRAB_DESKTOP_FILES_IN}
+    USE_YAML
 )
 
 qt5_translation_loader(SCREENGRAB_QM_LOADER

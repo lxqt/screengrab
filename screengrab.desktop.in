@@ -1,7 +1,4 @@
 [Desktop Entry]
-Name=ScreenGrab
-Comment=Screen capture
-GenericName=Screen Capture Program
 Exec=screengrab
 Icon=screengrab
 Terminal=false
