@@ -80,7 +80,7 @@ QList<QVariant> DBusNotifier::prepareNotification(const StateNotifyMessage& mess
 {
     QList<QVariant> args;
 
-    args << QLatin1Literal("Screen Grab");
+    args << QLatin1String("Screen Grab");
     args << QVariant(QVariant::UInt); // id
 
     // app-icon(path to icon on disk)
