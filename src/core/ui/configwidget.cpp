@@ -279,7 +279,7 @@ QString ConfigDialog::getFormat()
 
 void ConfigDialog::selectDir()
 {
-    QString directory = QFileDialog::getExistingDirectory(this, trUtf8("Select directory"),
+    QString directory = QFileDialog::getExistingDirectory(this, tr("Select directory"),
                 _ui->editDir->text(), QFileDialog::ShowDirsOnly);
 
     if (!directory.isEmpty()) {
