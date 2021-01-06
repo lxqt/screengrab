@@ -203,7 +203,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Ім&apos;я збереженого файлу скопійовано в буфер обміну </translation>
+        <translation>Назву збереженого файлу скопійовано в буфер обміну</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
@@ -213,12 +213,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation>Збережено до</translation>
+        <translation>Збережено до </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished">ця мультиплатформова програма створена для швидкого отримання знімків Вашого робочого столу.</translation>
+        <translation>— багатоплатформова програма для швидкого створення знімків екрана вашої стільниці.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished">Двойной клик откроет скриншот во внешнем вьювере изображений</translation>
+        <translation>Двічі клацніть, щоб відкрити знімок екрана у зовнішньому переглядачі файлів</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
@@ -357,7 +357,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished">Затримка:</translation>
+        <translation>Затримка:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
@@ -367,7 +367,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished">Без декорацій вікна</translation>
+        <translation>Без декорацій вікна</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
@@ -710,12 +710,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
-        <translation type="unfinished">Весь екран</translation>
+        <translation>Весь екран</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
-        <translation type="unfinished">Вихід</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="649"/>
