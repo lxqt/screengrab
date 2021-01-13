@@ -297,7 +297,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
-        <translation>Налаштування</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -387,7 +387,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> сек</translation>
+        <translation> с</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
@@ -444,7 +444,7 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Options</source>
-        <translation>Налаштування</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
@@ -625,7 +625,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
-        <translation> сек</translation>
+        <translation> с</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
