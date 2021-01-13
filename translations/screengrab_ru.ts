@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation></translation>
+        <translation>Марсиу Морайс (Marcio Moraes)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation>Геннадий Моцьо</translation>
+        <translation>Геннадий Моцьо (Gennadi Motsyo)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation></translation>
+        <translation>Бурханс Л. Гарсия Д. (Burjans L García D)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Скриншот скопирован в буфер обмена</translation>
+        <translation>Снимок экрана скопирован в буфер обмена</translation>
     </message>
 </context>
 <context>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Скриншот </translation>
+        <translation>Снимок экрана </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
@@ -332,7 +332,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>Тип скриншота</translation>
+        <translation>Тип снимка экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -382,7 +382,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Задержка в секундах перед получением скриншота</translation>
+        <translation>Задержка в секундах перед получением снимка экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
@@ -465,12 +465,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Австосохранение скриншота</translation>
+        <translation>Австосохранение снимка экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>Сохранять первый скриншот</translation>
+        <translation>Сохранять первый снимок экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -662,7 +662,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Автоматическое сохранение скриншотов при их получении</translation>
+        <translation>Автоматическое сохранение снимков экрана при их получении</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
