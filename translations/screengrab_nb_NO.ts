@@ -233,7 +233,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Navnet på lagret fil er kopiert til utklippsboken</translation>
+        <translation>Navn på lagret fil kopiert til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Skjermbildet er kopiert til utklippsboken</translation>
+        <translation>Skjermbilde kopiert til utklippstavlen</translation>
     </message>
 </context>
 <context>
