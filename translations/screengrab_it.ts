@@ -662,7 +662,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished">Adatta ai bordi all&apos;interno dell&apos;area selezionata facendo clic con il tasto destro</translation>
+        <translation>Adatta ai bordi all&apos;interno dell&apos;area selezionata facendo clic con il tasto destro</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
