@@ -457,7 +457,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation>拡張</translation>
+        <translation>詳細</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
