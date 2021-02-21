@@ -165,12 +165,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталогу %1 не існує. Створити його?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>Хочете відновити типові налаштування?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="351"/>
@@ -223,17 +223,17 @@
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
         <source>Take a fullscreen screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Зробити знімок всього екрана</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a screenshot of the active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Зробити знімок активного вікна</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Зробити знімок вибраної ділянки екрана</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
@@ -243,7 +243,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Шлях до збереженого файлу скопійовано в буфер обміну</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 файлів</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
@@ -327,7 +327,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Включити вказівник миші</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
@@ -454,12 +454,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Вставка дати та часу в ім&apos;я файлу при збереженні</translation>
+        <translation>Вставка дати та часу в назву файлу під час збереження</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити поточну дату та час в назву файлу</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
@@ -564,7 +564,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Системний лоток</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -594,22 +594,22 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати назву файлу в буфер обміну під час збереження</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Не копіювати</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати лише назву файлу</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати повний шлях до файлу</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
@@ -635,17 +635,17 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Типовий каталог збереження</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation type="unfinished"></translation>
+        <translation>Типовий файл</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
