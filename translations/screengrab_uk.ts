@@ -36,7 +36,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation>Допомога проекту</translation>
+        <translation>Допомога проєкту</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
@@ -56,27 +56,27 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Ви можете приєднатись і допомогти нам (якщо бажаєте). Відгукніться на це запрошення, якщо Вам сподобалась ця програма.</translation>
+        <translation>Ви можете приєднатись і допомогти нам, якщо бажаєте. Відгукніться на це запрошення, якщо вам до вподоби ця програма.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Перекласти ScreenGrab на інші мови</translation>
+        <translation>Перекласти ScreenGrab на іншими мовами</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation>Надати побажання для майбутніх релізів</translation>
+        <translation>Надіслати побажання для майбутніх випусків</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation>Повідомляти про помилки та несправну роботу</translation>
+        <translation>Повідомити про вади та помилки</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation>Баг-трекер</translation>
+        <translation>Відстеження вад</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation>Гарсія Бурянс Д</translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
-        <translation>Вибір теки</translation>
+        <translation>Вибрати теку</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="193"/>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цю комбінацію вже використано в Scraingrab! Виберіть іншу.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="424"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
         <source>Run the application with a hidden main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск програми з прихованим головним вікном</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Скріншот скопійовано до кишені</translation>
+        <translation>Знімок екрана скопійовано до буфера обміну</translation>
     </message>
 </context>
 <context>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Скріншот </translation>
+        <translation>Знімок екрана </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
@@ -332,7 +332,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>Тип скріншоту</translation>
+        <translation>Тип знімка екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -347,12 +347,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Частина екрану</translation>
+        <translation>Частина екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Остання вибрана ділянка</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Збільшити ділянку довкола вказівника</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -377,12 +377,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель інструментів</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Затримка в секундах перед отримання скріншоту</translation>
+        <translation>Затримка в секундах до знімання екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Клацніть і перетягніть, щоб розтягнути прямокутник,
+клацніть правою кнопкою миші, щоб відповідати краям,
+двічі клацніть або натисніть Enter,
+щоб зробити знімок екрана.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -449,7 +452,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Формат зображень за замовчанням</translation>
+        <translation>Типовий формат зображень</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
@@ -464,27 +467,27 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Автозберігання скріншотів</translation>
+        <translation>Автозбереження знімків екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>Зберігати перший скріншот</translation>
+        <translation>Зберігати перший знімок екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>Якість картинки</translation>
+        <translation>Якість зображення</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>Якість картинки (1--меньшийрозмір файла, 100--найкраща якість)</translation>
+        <translation>Якість зображення (1— малий розмір файла, 100 — найкраща якість)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Дозволити запуск багатьох копій ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
@@ -494,17 +497,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати ScreenGrab у системному лотку</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation type="unfinished"></translation>
+        <translation>Згортати в системний лоток кнопкою закриття</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation type="unfinished"></translation>
+        <translation>Згортати в системний лоток після закриття</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
@@ -514,7 +517,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
-        <translation>Глобальні</translation>
+        <translation>Загальні комбінації клавіш</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="598"/>
@@ -529,7 +532,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальні комбінації клавіш</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="613"/>
@@ -544,7 +547,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
-        <translation>Копіювати скріншот</translation>
+        <translation>Копіювати знімок екрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="633"/>
@@ -584,7 +587,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation>Вихідне ім&apos;я файлу</translation>
+        <translation>Типова назва файлу</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
@@ -615,12 +618,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо це не позначено, виділена ділянка може
+збільшитися для припасування до зовнішніх країв</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Припасувати до країв усередині вибраної ділянки, клацнувши правою кнопкою миші</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -695,12 +699,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Дозволити кілька екземплярів ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити в зовнішньому переглядачі подвійним клацанням</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="581"/>

@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation>Přiblížit oblast okolo ukazatele myši</translation>
+        <translation>Přiblížit oblast okolo ukazovátka myši</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>Včetně ukazatele myši</translation>
+        <translation>Včetně ukazovátka myši</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
