@@ -243,7 +243,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
-        <translation>コピーしました</translation>
+        <translation>コピー完了</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
@@ -517,7 +517,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>保存時にファイル名をクリップボードへコピー</translation>
+        <translation>保存時にファイル名をクリップボードへ</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -618,12 +618,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation>トレイのメッセージ:</translation>
+        <translation>トレイ・メッセージ:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>トレイ・メッセージの表示モード</translation>
+        <translation>トレイ・メッセージの表示モードです</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -643,12 +643,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>トレイのメッセージを表示する時間</translation>
+        <translation>トレイ・メッセージの表示時間</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation>トレイのメッセージを表示する時間</translation>
+        <translation>トレイにメッセージを表示する時間です</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -693,7 +693,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
-        <translation>範囲を選択</translation>
+        <translation>範囲の選択</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="609"/>
@@ -708,7 +708,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
-        <translation>画面を保存</translation>
+        <translation>画面の保存</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
