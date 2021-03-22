@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>ця мультиплатформова програма створена для швидкого отримання знімків Вашого робочого столу.</translation>
+        <translation>ця міжплатформова програма створена для швидкого отримання знімків стільниці.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
