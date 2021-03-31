@@ -17,7 +17,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 # Minimum Versions
 set(KF5_MINIMUM_VERSION "5.36.0")
 set(QT_MINIMUM_VERSION "5.12.0")
-set(QTXDG_MINIMUM_VERSION "3.6.0")
+set(QTXDG_MINIMUM_VERSION "3.4.0")
 
 find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5Network ${QT_MINIMUM_VERSION} REQUIRED)
@@ -102,6 +102,7 @@ add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget/src")
+include_directories("/usr/include/qt5xdg")
 
 if (SG_EXT_EDIT)
     include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/modules/extedit")
