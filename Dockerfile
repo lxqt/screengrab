@@ -10,6 +10,6 @@ RUN apt update && apt install -y --no-install-recommends gcc g++ make cmake \
 WORKDIR /src
 RUN ls /usr/include/qt5xdg
 COPY ./ ./
-RUN mkdir build && cd build && cmake -DSG_DBUS_NOTIFY=ON ../ && make VERBOSE=1 && make install
-RUN strip --strip-unneeded /usr/local/bin/screengrab
-ENTRYPOINT /usr/local/bin/screengrab
+RUN mkdir build && cd build && cmake -DSG_DBUS_NOTIFY=ON -DCMAKE_INSTALL_PREFIX=/usr  ../ && make VERBOSE=1 && make install
+RUN strip --strip-unneeded /usr/bin/screengrab
+ENTRYPOINT /usr/bin/screengrab
