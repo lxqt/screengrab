@@ -4,27 +4,27 @@
 
 ScreenGrab - A program for fast creating screenshots, and easily publishing them on internet image hosting services. It works on Linux and Windows operating systems. ScreenGrab uses the Qt framework and thus, it is independent from any desktop environment.
 
-### Build requirements
+### Requirements
 
- * Qt5 >= 5.2 (Qt 4.x support only 1.x branch)
- * CMake >= 3.1.0 (only for building ScreenGrab from sources)
- * GCC > 4.5
- * KF5WindowSystem
- * [optional] Qxt Library > 0.6 (if you want to build ScreenGrab using your system Qxt version - see the "Build options" section in this file)
+- Ubuntu:focal
+- docker
 
 ### Build
 
 To build ScreenGrab from sources, use these commands:
 
-	mkdir build
-	cd build
-	cmake [BUILD OPTIONS] ../
-	make
-	make install
+```
+docker build -t screengrab .
+id=$(docker create screengrab)
+docker cp $id:/usr/local/bin/screengrab - > screengrab.tar
+tar xf screengrab.tar
+rm screengrab.tar
+docker rm -v $id
+```
 
 ### Build options
 
-You can use some or all of these parameters to customise your build.
+You can use some or all of these parameters to customise your build in Dockerfile.
 
  * **-DCMAKE_INSTALL_PREFIX** - Install prefix for Linux distro. Default setting: "/usr".
  * **-DSG_XDG_CONFIG_SUPPORT** - Place config files into XDGC_CONFIG_HOME directory (usually - ~/.config/${app_name) ). Default setting: ON. In previous versions the config files were stored in ~/.screengrab (Set this parameter to "OFF" to store the config files here).
