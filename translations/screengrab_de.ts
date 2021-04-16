@@ -657,7 +657,8 @@ Doppelklick oder Enter um ein Bildschirmfoto aufzunehmen.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn dies nicht aktiviert ist, kann der ausgewählte Bereich
+größer werden um bis an den äußeren Rand zu reichen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
