@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="el">
+<TS version="2.1" language="nl">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation>χρήση της Qt </translation>
+        <translation>gebruikmakend van Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation>Σχετικά</translation>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation>Ευχαριστίες</translation>
+        <translation>Met dank aan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation>Βοηθήστε μας</translation>
+        <translation>Meehelpen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>είναι μια ανεξαρτήτου πλατφόρμας εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας σας.</translation>
+        <translation>is een platform-onafhankelijk programma voor het maken van schermfoto&apos;s van uw werkomgeving.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Μία ελαφριά και ισχυρή εφαρμογή γραμμένη σε Qt.</translation>
+        <translation>Het is een licht doch krachtig programma, gemaakt met Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation>Ιστοσελίδα</translation>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Υπόκειται στην άδεια χρήσης </translation>
+        <translation>Uitgebracht onder de volgende licentie: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Πνευματικά δικαιώματα &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Αν σας αρέσει η εφαρμογή μπορείτε να συμμετάσχετε στην ανάπτυξή της.</translation>
+        <translation>Als u wilt, kunt u ons helpen - bij deze bent u uitgenodigd.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation>Τι μπορείτε να κάνετε;</translation>
+        <translation>Wat kan ik doen?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Να μεταφράσετε το ScreenGrab σε άλλες γλώσσες</translation>
+        <translation>Vertaal ScreenGrab naar andere talen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation>Να κάνετε προτάσεις για τις επόμενες εκδόσεις</translation>
+        <translation>Deel ideeën</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation>Να αναφέρετε σφάλματα και δυσλειτουργίες</translation>
+        <translation>Meld bugs en problemen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation>Ιχνηλάτης σφαλμάτων</translation>
+        <translation>Bugtracker:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation>Μετάφραση:</translation>
+        <translation>Vertaling:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Πορτογαλικά Βραζιλίας</translation>
+        <translation> Braziliaans-Portugese vertaling</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>Marcio Moraes</source>
-        <translation></translation>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation> Ουκρανική μετάφραση</translation>
+        <translation> Oekraïense vertaling</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
         <source>Gennadi Motsyo</source>
-        <translation></translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation> Ισπανική μετάφραση</translation>
+        <translation> Spaanse vertaling</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
         <source>Burjans L García D</source>
-        <translation></translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation> Ιταλική μετάφραση</translation>
+        <translation> Italiaanse vertaling</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation>Δοκιμές:</translation>
+        <translation>Testen:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation>Υποστήριξη διπλής οθόνης και άλλων στο Linux</translation>
+        <translation>Ondersteuning voor meerdere beeldschermen en andere Linux-gerelateerde zaken</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation>Υποστήριξη διπλής οθόνης στο Linux</translation>
+        <translation>Ondersteuning voor meerdere beeldschermen op Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>κατασκευή win32 [Windows XP και 7]</translation>
+        <translation>win32-versie [Windows XP en 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation>κατασκευή παλαιού win32 [Windows Vista]</translation>
+        <translation>oude win32-versie [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation>κατασκευή win32 [Windows 7]</translation>
+        <translation>win32-versie [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,43 +154,43 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Ο κατάλογος %1 δεν υπάρχει. Θέλετε να τον δημιουργήσετε;</translation>
+        <translation>De map ‘%1’ bestaat niet. Wilt u deze aanmaken?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="193"/>
         <location filename="../src/core/ui/configwidget.cpp" line="294"/>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
-        <translation>Επιλογή καταλόγου</translation>
+        <translation>Kies een map</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Επιθυμείτε να επαναφέρετε όλες τις ρυθμίσεις στις προκαθορισμένες;</translation>
+        <translation>Weet u zeker dat u alle standaardinstellingen wilt herstellen?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
-        <translation>Παράδειγμα: </translation>
+        <translation>Voorbeeld: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>Το κλειδί αυτό χρησιμοποιείται ήδη στο ScreenGrab! Παρακαλώ επιλέξτε ένα άλλο.</translation>
+        <translation>Deze toets wordt al gebruikt door ScreenGrab! Kies een andere.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
-        <translation>Το κλειδί αυτό δεν υποστηρίζεται από το σύστημά σας!</translation>
+        <translation>Deze toets wordt niet ondersteund op uw systeem!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="444"/>
         <source>Error</source>
-        <translation>Σφάλμα</translation>
+        <translation>Foutmelding</translation>
     </message>
 </context>
 <context>
@@ -198,57 +198,57 @@
     <message>
         <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>είναι μια ανεξαρτήτου πλατύβαθρου εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας.</translation>
+        <translation>is een platform-onafhankelijk programma voor het maken van snelle schermfoto&apos;s van uw werkomgeving.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
         <source>Take a fullscreen screenshot</source>
-        <translation>Λήψη ενός στιγμιότυπου πλήρους οθόνης</translation>
+        <translation>Schermfoto van het volledige scherm maken</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a screenshot of the active window</source>
-        <translation>Λήψη ενός στιγμιότυπου του ενεργού παραθύρου</translation>
+        <translation>Schermfoto van actief venster maken</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation>Λήψη ενός στιγμιότυπου μιας περιοχής της οθόνης</translation>
+        <translation>Schermfoto van selectie op scherm maken</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
         <source>Run the application with a hidden main window</source>
-        <translation>Εκτέλεση της εφαρμογής με το κύριο παράθυρο καταχωνιασμένο</translation>
+        <translation>Programma uitvoeren met verborgen hoofdvenster</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved</source>
-        <translation>Αποθηκεύτηκε</translation>
+        <translation>Opgeslagen</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation>Αποθηκεύτηκε στο </translation>
+        <translation>Opgeslagen in </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Το όνομα του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
+        <translation>De naam van het opgeslagen bestand is gekopieerd naar het klembord</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Η διαδρομή του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
+        <translation>De locatie van het opgeslagen bestand is gekopieerd naar het klembord</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
-        <translation>Αντιγράφηκε</translation>
+        <translation>Gekopieerd</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Το στιγμιότυπο της οθόνης αντιγράφηκε στο πρόχειρο</translation>
+        <translation>De schermfoto is gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
@@ -256,144 +256,144 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation></translation>
+        <translation>ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation>Τύπος:</translation>
+        <translation>Soort:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>Τύπος στιγμιότυπου</translation>
+        <translation>Het soort schermfoto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation>Πλήρης οθόνη</translation>
+        <translation>Volledig scherm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation>&amp;Νέο παράθυρο</translation>
+        <translation>Venster</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Περιοχή της οθόνης</translation>
+        <translation>Selectie</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation>Τελευταία επιλεγμένη περιοχή</translation>
+        <translation>Vorig geselecteerd gebied</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation>Καθυστέρηση:</translation>
+        <translation>Wachttijd:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Καθυστέρηση σε δευτερόλεπτα πριν από τη λήψη του στιγμιότυπου</translation>
+        <translation>Wachttijd alvorens de schermfoto te maken</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Ουδεμία</translation>
+        <translation>Geen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> δευτ</translation>
+        <translation> sec.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation>Εστίαση της περιοχής γύρω από το ποντίκι</translation>
+        <translation>Gebied rond cursor vergroten</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation>Χωρίς διακοσμήσεις του παραθύρου</translation>
+        <translation>Geen vensterdecoraties</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>Συμπερίληψη της κατάδειξης του ποντικιού</translation>
+        <translation>Cursor tonen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation>Γραμμή εργαλείων</translation>
+        <translation>Werkbalk</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
-        <translation>Νέο</translation>
+        <translation>Nieuw</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
-        <translation>Αποθήκευση</translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
-        <translation>Αντιγραφή</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
-        <translation>Επιλογές</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
-        <translation>Βοήθεια</translation>
+        <translation>Hulp</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation>Σχετικά</translation>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
-        <translation>Έξοδος</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Στιγμιότυπο </translation>
+        <translation>Schermfoto </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Διπλό κλικ για άνοιγμα του στιγμιότυπου στον εξωτερικό προεπιλεγμένο προβολέα εικόνων</translation>
+        <translation>Dubbelklik om de schermfoto te openen in het standaard weergaveprogramma</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
-        <translation>Απόκρυψη</translation>
+        <translation>Verbergen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
-        <translation>Εμφάνιση</translation>
+        <translation>Tonen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
-        <translation>%1 Αρχεία</translation>
+        <translation>%1-bestanden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
-        <translation>Αποθήκευση ως...</translation>
+        <translation>Opslaan als…</translation>
     </message>
 </context>
 <context>
@@ -404,15 +404,15 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation>Κλικ και σύρσιμο για σχεδίαση ενός ορθογωνίου
-δεξί κλικ για ταίριασμα στις άκρες
-διπλό κλικ ή Enter για
-λήψη του στιγμιότυπου.</translation>
+        <translation>Klik en sleep om een rechthoek te tekenen.
+Klik rechts om op te rekken tot aan de
+randen. Dubbelklik of druk op Enter om de
+schermfoto te maken.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 εικονοστοιχεία </translation>
+        <translation>%1 x %2 pixels </translation>
     </message>
 </context>
 <context>
@@ -420,12 +420,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation>Εξωτερική επεξεργασία</translation>
+        <translation>Bewerken in ander programma</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>Επεξεργασία με...</translation>
+        <translation>Bewerken in…</translation>
     </message>
 </context>
 <context>
@@ -433,12 +433,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
         <source>About Qt</source>
-        <translation>Σχετικά με την Qt</translation>
+        <translation>Over Qt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
         <source>Close</source>
-        <translation>Κλείσιμο</translation>
+        <translation>Sluiten</translation>
     </message>
 </context>
 <context>
@@ -447,294 +447,294 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Options</source>
-        <translation>Επιλογές</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation>Κύριο</translation>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation>Για προχωρημένους</translation>
+        <translation>Geavanceerd</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation>Πλαίσιο συστήματος</translation>
+        <translation>Systeemvak</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation>Συντομεύσεις</translation>
+        <translation>Sneltoetsen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Προεπιλεγμένος κατάλογος αποθήκευσης</translation>
+        <translation>Opslaan in:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation>Διαδρομή προς τον προκαθορισμένο κατάλογο αποθήκευσης</translation>
+        <translation>Locatie van de map waarin schermfoto&apos;s worden opgeslagen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
         <source>Browse filesystem</source>
-        <translation>Περιήγηση του συστήματος αρχείων</translation>
+        <translation>Klik om een map te kiezen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation>Περιήγηση</translation>
+        <translation>Bladeren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>Προκαθορισμένο αρχείο</translation>
+        <translation>Standaardbestand</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation>Προκαθορισμένο όνομα αρχείου</translation>
+        <translation>De naam waaronder een schermfoto wordt opgeslagen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation>Μορφή</translation>
+        <translation>Bestandsformaat</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Προκαθορισμένη μορφή αποθήκευσης της εικόνας</translation>
+        <translation>Het bestandsformaat waarin schermfoto&apos;s worden opgeslagen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Αντιγραφή του ονόματος αρχείου στο πρόχειρο κατά την αποθήκευση</translation>
+        <translation>Bestandsnaam kopiëren naar klembord</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation>Να μην αντιγραφεί</translation>
+        <translation>Nooit</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation>Αντιγραφή μόνο του ονόματος του αρχείου</translation>
+        <translation>Alleen bestandsnaam</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>Αντιγραφή της πλήρους διαδρομής</translation>
+        <translation>Volledige bestandslocatie</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>Ποιότητα εικόνας</translation>
+        <translation>Afbeeldingskwaliteit</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>Ποιότητα εικόνας (1 - μικρό αρχείο, 100 - υψηλή ποιότητα)</translation>
+        <translation>Afbeeldingskwaliteit (1 = klein bestand; 100 = hoge kwaliteit)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Εισαγωγή της τρέχουσας ώρας και ημερομηνίας στο όνομα αρχείου αποθήκευσης</translation>
+        <translation>Voeg de huidige datum en tijd toe aan bestandsnamen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Εισαγωγή της τρέχουσας ώρας και ημερομηνίας στο όνομα αρχείου</translation>
+        <translation>Huidige datum en tijd toevoegen aan bestandsnamen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation>Πρότυπο: </translation>
+        <translation>Slabloon: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>Παράδειγμα: </translation>
+        <translation>Sjabloon: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Αυτόματη αποθήκευση των στιγμιότυπων κατά την διαδικασία σύλληψης</translation>
+        <translation>Sla schermfoto&apos;s automatisch op na het maken ervan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Αυτόματη αποθήκευση του στιγμιότυπου</translation>
+        <translation>Automatisch opslaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>Αποθήκευση του πρώτου στιγμιότυπου</translation>
+        <translation>Eerste schermfoto opslaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation>Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
+        <translation>Sta toe dat ScreenGrab meermaals geopend mag worden</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation>Να επιτρέπονται περισσότερες εκτελέσεις του Screengrab</translation>
+        <translation>Meerdere vensters toestaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation>Άνοιγμα σε εξωτερικό προβολέα με διπλό κλικ</translation>
+        <translation>Open foto&apos;s in een extern programma door te dubbelklikken</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation>Ενεργοποίηση του εξωτερικού προβολέα</translation>
+        <translation>Externe weergave gebruiken</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Αν είναι αποεπιλεγμένο, η επιλεγμένη περιοχή μπορεί
-να αυξηθεί για να ταιριάξει στο εξωτερικό περιθώριο</translation>
+        <translation>Als u dit uitschakelt, dan wordt het selectiegebied
+vergroot zodat het binnen de buitenste randen past</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Ταίριασμα στις άκρες εντός της επιλεγμένης περιοχής με διπλό κλικ</translation>
+        <translation>Oprekken naar randen binnen selectiegebied door rechts te klikken</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>Εμφάνιση του ScreenGrab στο πλαίσιο συστήματος</translation>
+        <translation>Systeemvakpictogram tonen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation>Μηνύματα πλαισίου συστήματος:</translation>
+        <translation>Systeemvakmeldingen:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>Τρόπος εμφάνισης των μηνυμάτων του πλαισίου συστήματος</translation>
+        <translation>Hoe en wanneer systeemvakmeldingen moeten worden getoond</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
-        <translation>Ποτέ</translation>
+        <translation>Nooit</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation>Λειτουργία πλαισίου συστήματος</translation>
+        <translation>Systeemvakmodus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
-        <translation>Πάντα</translation>
+        <translation>Altijd</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>Χρόνος εμφάνισης των μηνυμάτων του πλαισίου συστήματος</translation>
+        <translation>Meldingen tonen gedurende</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation>Χρόνος για την εμφάνιση των μηνυμάτων του πλαισίου συστήματος</translation>
+        <translation>Hoe lang meldingen moeten worden getoond</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
-        <translation> δευτ</translation>
+        <translation> sec.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Ελαχιστοποίηση στο πλαίσιο συστήματος με κλικ στο κουμπί κλεισίματος</translation>
+        <translation>Minimaliseer ScreenGrab naar het systeemvak na het klikken op de sluitknop</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Ελαχιστοποίηση στο πλαίσιο συστήματος κατά το κλείσιμο</translation>
+        <translation>Minimaliseren naar systeemvak in plaats van sluiten</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
-        <translation>Ενέργεια</translation>
+        <translation>Actie</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
-        <translation>Συντόμευση</translation>
+        <translation>Sneltoets</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>Global shortcuts</source>
-        <translation>Καθολικές συντομεύσεις</translation>
+        <translation>Algemene sneltoetsen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
-        <translation>Πλήρης οθόνη</translation>
+        <translation>Volledig scherm</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
-        <translation>Ενεργό παράθυρο</translation>
+        <translation>Actief venster</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="603"/>
         <source>Area select</source>
-        <translation>Επιλογή περιοχής</translation>
+        <translation>Gebied selecteren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="609"/>
         <source>Local shortcuts</source>
-        <translation>Τοπικές συντομεύσεις</translation>
+        <translation>Lokale sneltoetsen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
-        <translation>Νέα σύλληψη</translation>
+        <translation>Nieuwe schermfoto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
-        <translation>Αποθήκευση της σύλληψης</translation>
+        <translation>Schermfoto opslaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
-        <translation>Αντιγραφή της σύλληψης</translation>
+        <translation>Schermfoto kopiëren</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="633"/>
         <source>Help</source>
-        <translation>Βοήθεια</translation>
+        <translation>Hulp tonen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="638"/>
         <source>Quit</source>
-        <translation>Έξοδος</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="649"/>
         <source>Selected shortcut:</source>
-        <translation>Επιλεγμένη συντόμευση:</translation>
+        <translation>Gekozen sneltoets:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
-        <translation>Δεν προσδιορίστηκε</translation>
+        <translation>Niet ingesteld</translation>
     </message>
 </context>
 </TS>
