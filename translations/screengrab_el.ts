@@ -477,7 +477,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation></translation>
+        <translation>Διαδρομή προς τον προκαθορισμένο κατάλογο αποθήκευσης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
@@ -704,17 +704,17 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Νέα σύλληψη</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Αποθήκευση της σύλληψης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Αντιγραφή της σύλληψης</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="633"/>
