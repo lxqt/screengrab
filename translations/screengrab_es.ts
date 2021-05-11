@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse y arrastre para dibujar un rectángulo,
+pulse con el botón secundario para ajustar a los bordes, o
+pulse dos veces o presione Intro
+para hacer la captura de pantalla.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -594,7 +597,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Copiar el nombre de archivo al portapapeles al guardar</translation>
+        <translation>Copiar nombre de archivo en el portapapeles al guardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -615,12 +618,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Si se desmarca, el área seleccionada puede
+volverse mayor para ajustarse a los bordes exteriores</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste a los bordes del área seleccionada con el botón secundario del ratón</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -635,12 +639,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>Directorio por omisión donde guardar</translation>
+        <translation>Directorio predeterminado donde guardar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>Archivo por omisión</translation>
+        <translation>Archivo predeterminado</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
@@ -660,7 +664,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>Guarda automaticamente las capturas de pantalla en un proceso de grabacion</translation>
+        <translation>Guardar automáticamente las capturas de pantalla en el proceso de captura</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
