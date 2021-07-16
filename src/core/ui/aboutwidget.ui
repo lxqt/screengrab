@@ -64,7 +64,7 @@
           <string notr="true">&lt;b&gt;ScreenGrab&lt;/b&gt;</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignBottom</set>
+          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
          </property>
         </widget>
        </item>
@@ -74,7 +74,7 @@
           <string notr="true"/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignTop</set>
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
          </property>
         </widget>
        </item>
