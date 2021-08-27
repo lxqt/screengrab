@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="58"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>je višeplatformski program za brzo stvaranje snimaka radne površine.</translation>
+        <translation>je višeplatformski program za brzo snimanje radne površine.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
@@ -233,12 +233,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Ime spremljene datoteke kopira se u međuspremnik</translation>
+        <translation>Ime spremljene datoteke je kopirano u međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="459"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Staza do spremljene datoteke kopira se u međuspremnik</translation>
+        <translation>Staza do spremljene datoteke je kopirana u međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>Snimka ekrana kopira se u međuspremnik</translation>
+        <translation>Snimka ekrana je kopirana u međuspremnik</translation>
     </message>
 </context>
 <context>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>Odgađanje snimanja ekrana</translation>
+        <translation>Odgađanje snimanja ekrana u sekundama</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -547,12 +547,12 @@ za snimanje ekrana.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Umeće trenutačan datum i vrijeme u spremljeno ime datoteke</translation>
+        <translation>Umeće se trenutačni datum i vrijeme u spremljeno ime datoteke</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Umetni trenutačan datum i vrijeme u ime datoteke</translation>
+        <translation>Umetni trenutačni datum i vrijeme u ime datoteke</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
@@ -634,7 +634,7 @@ možda biti veće, da bi se poklapilo s rubovima</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation>Modus trake</translation>
+        <translation>Modus programske trake</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
@@ -664,7 +664,7 @@ možda biti veće, da bi se poklapilo s rubovima</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Smanji na traku pri zatvaranju</translation>
+        <translation>Smanji na programsku traku pri zatvaranju</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
@@ -684,12 +684,12 @@ možda biti veće, da bi se poklapilo s rubovima</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="593"/>
         <source>Full screen</source>
-        <translation>Cjeloekranski prikaz</translation>
+        <translation>Cijeli ekran</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Active window</source>
-        <translation>Aktivan prozor</translation>
+        <translation>Aktivni prozor</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="603"/>
@@ -734,7 +734,7 @@ možda biti veće, da bi se poklapilo s rubovima</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="656"/>
         <source>Not defined</source>
-        <translation>Ne definirani</translation>
+        <translation>Nije definirano</translation>
     </message>
 </context>
 </TS>
