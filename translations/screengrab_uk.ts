@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation>Про програму</translation>
+        <translation>Про</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
@@ -292,7 +292,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation>Про програму</translation>
+        <translation>Про</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
