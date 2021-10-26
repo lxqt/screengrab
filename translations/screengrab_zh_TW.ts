@@ -6,87 +6,87 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt </source>
-        <translation type="unfinished"></translation>
+        <translation>使用 Qt </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation>謝謝</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation type="unfinished"></translation>
+        <translation>幫助我們</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>是一個用於快速螢幕截圖的跨平台的應用程式。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>它是用 Qt 編寫的一個輕巧而強大的應用程式。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>網站</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation type="unfinished"></translation>
+        <translation>根據授權 </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果您願意，您可以加入我們並幫助我們。 如果您喜歡這個應用程序，這是一個邀請。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation type="unfinished"></translation>
+        <translation>你可以做什麼？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation type="unfinished"></translation>
+        <translation>將 ScreenGrab 翻譯成其他語言</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Make suggestions for next releases</source>
-        <translation type="unfinished"></translation>
+        <translation>為未來版本提出建議</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="128"/>
         <source>Report bugs and issues</source>
-        <translation type="unfinished"></translation>
+        <translation>回報錯誤和問題</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="131"/>
         <source>Bug tracker</source>
-        <translation type="unfinished"></translation>
+        <translation>錯誤追蹤</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="141"/>
         <source>Translate:</source>
-        <translation type="unfinished"></translation>
+        <translation>翻譯：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation type="unfinished"></translation>
+        <translation> 巴西葡萄牙語翻譯</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation type="unfinished"></translation>
+        <translation> 烏克蘭語翻譯</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation type="unfinished"></translation>
+        <translation> 西班牙語翻譯</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,37 +116,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation type="unfinished"></translation>
+        <translation> 意大利語翻譯</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
         <source>Testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>測試：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>支持雙螢幕和其他於Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>Dual monitor support in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>支持雙螢幕於Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-build [Windows XP and 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation type="unfinished"></translation>
+        <translation>舊的 win32-build [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="162"/>
         <source>win32-build [Windows 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-build [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,43 +154,43 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="192"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 資料夾不存在。 你想建立它嗎？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="193"/>
         <location filename="../src/core/ui/configwidget.cpp" line="294"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="282"/>
         <source>Select directory</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇資料夾</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="293"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>是否要將設定重置爲預設值？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="351"/>
         <source>Example: </source>
-        <translation type="unfinished"></translation>
+        <translation>例如： </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation type="unfinished"></translation>
+        <translation>此密鑰已在ScreenGrab中使用! 請另選擇一個。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="424"/>
         <source>This key is not supported on your system!</source>
-        <translation type="unfinished"></translation>
+        <translation>您的系統不支援此密鑰！</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="444"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>錯誤</translation>
     </message>
 </context>
 <context>
@@ -223,12 +223,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>已儲存</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="431"/>
         <source>Saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>已儲存於 </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="453"/>
@@ -243,12 +243,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Copied</source>
-        <translation type="unfinished"></translation>
+        <translation>已複製</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="481"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>螢幕截圖已經複製到剪貼板</translation>
     </message>
 </context>
 <context>
@@ -271,129 +271,129 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>全螢幕</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation type="unfinished"></translation>
+        <translation>視窗</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation type="unfinished"></translation>
+        <translation>螢幕區域</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>最後選擇區域</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished"></translation>
+        <translation>延遲：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>螢幕截圖前延遲幾秒</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>無</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation type="unfinished"></translation>
+        <translation> 秒</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>鼠標周圍的縮放區域</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished"></translation>
+        <translation>無視窗裝飾</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>包括鼠標指針</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>工具欄</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>建立</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>複製</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>選項</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>幫助</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>退出</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation type="unfinished"></translation>
+        <translation>螢幕截圖 </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>雙擊以在外部預設圖像查看器中打開螢幕截圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>隱藏</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 文件</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存爲…</translation>
     </message>
 </context>
 <context>
@@ -417,7 +417,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation type="unfinished"></translation>
+        <translation>外部編輯</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
