@@ -404,7 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Feu clic i arrossegueu per dibuixar un rectangle,
+clic dret per ajustar-se a les vores,
+doble clic o premeu Enter
+per fer una captura de pantalla.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -600,12 +603,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Si no està marcat, l&apos;àrea seleccionada
+es pot fer més gran per ajustar-se a les vores exteriors</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajusta a les vores dins de l&apos;àrea seleccionada prement botó dret del ratolí</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
