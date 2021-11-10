@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Dvojklepnutím snímek otevřít ve výchozím prohlížeči obrázků</translation>
+        <translation>Dvojklikem snímek otevřít ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
