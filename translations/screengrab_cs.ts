@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Autorské právo &amp;copy; 2009-2013, Artem „DOOMer“ Galichkin</translation>
+        <translation>Autorská práva &amp;copy; 2009-2013, Artem „DOOMer“ Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation>pruh nástrojů</translation>
+        <translation>lišta nástrojů</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Dvojklikem snímek otevřít ve výchozím prohlížeči obrázků</translation>
+        <translation>Dvojklikem snímek otevřete ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
@@ -407,7 +407,7 @@ to take a screenshot.</source>
         <translation>Klikněte a natáhněte obdélník,
 kliknutím pravým tlačítkem
 přizpůsobte hranám,
-dvojklokem nebo stiskem klávesy
+dvojklikem nebo stiskem klávesy
 Enter pořiďte snímek obrazovky.</translation>
     </message>
     <message>
