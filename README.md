@@ -69,7 +69,7 @@ package manager to search for string 'screengrab'.
 
 ## LICENSE
 
-ScreenBrab is licensed GPLv2+. The LICENSE file in the docs directory has more info.
+ScreenGrab is licensed GPLv2+. The LICENSE file in the docs directory has more info.
 
 
 ## Copyright
