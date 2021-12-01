@@ -404,7 +404,11 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknij i przeciągnij, aby zaznaczyć obszar
+naciśnij prawym klawiszem myszy by dopasować do krawędzi,
+kliknij dwukrotnie lub wciśnij Enter
+aby wykonać zrzut ekranu.
+</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="202"/>
@@ -600,12 +604,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeśli nie wybrano, zaznaczony obszar
+może zostać powiększony, aby wypełnić do zewnętrznych krawędzi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Dopasuj do krawędzi wewnątrz zaznaczonego obszaru naciskając prawy przycisk myszy</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
