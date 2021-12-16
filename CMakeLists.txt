@@ -97,7 +97,7 @@ message(STATUS "Documentation directory: " ${CMAKE_INSTALL_FULL_DOCDIR})
 add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_FULL_DOCDIR}")
 
 # app icon path
-add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/pixmaps/screengrab.png")
+add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps/screengrab.svg")
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/common/qkeysequencewidget")
@@ -222,4 +222,4 @@ install(FILES ${SCREENGRAB_CONFIG_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/${
 # install desktop files
 install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 # install pixmap
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.png" DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/32x32/apps")
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.svg" DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps")
