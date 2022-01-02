@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="109"/>
         <source>Licensed under the </source>
-        <translation>Lisensiert under </translation>
+        <translation>Lisensiert </translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation>Zoomområde rundt muspeker</translation>
+        <translation>Forstørrelsesområde rundt muspeker</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -462,7 +462,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation>Systemtrau</translation>
+        <translation>Systemkurv</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
@@ -614,17 +614,17 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>Vis ScreenGrab i systemtrauet</translation>
+        <translation>Vis ScreenGrab i systemkurven</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation>Traubeskjeder:</translation>
+        <translation>Systemkurvsbeskjeder:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>Visningsmodus for traubeskjeder</translation>
+        <translation>Visningsmodus for systemkurvsbeskjeder</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -634,7 +634,7 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation>Traumodus</translation>
+        <translation>Systemkurvsmodus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
@@ -644,12 +644,12 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>Tid å vise traubeskjeder</translation>
+        <translation>Tid å vise systemkurvsbeskjeder</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation>Tid å vise traubeskjeder</translation>
+        <translation>Tid å vise systemkurvsbeskjeder</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -659,12 +659,12 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Minimer til systemtrau ved klikk på lukkeknappen</translation>
+        <translation>Minimer til systemkurv ved klikk på lukkeknappen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Minimer til systemtrau ved lukking</translation>
+        <translation>Minimer til systemkurv ved lukking</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
