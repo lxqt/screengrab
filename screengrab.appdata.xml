@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.lxqt.screengrab</id>
+  <url type="homepage">https://github.com/lxqt/screengrab</url>
+  <url type="bugtracker">https://github.com/lxqt/screengrab/issues</url>
+
+  <name>ScreenGrab</name>
+  <summary>Screenhot Tool in Qt</summary>
+
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+
+  <description>
+    <p>
+      Powerful screen capture utility in Qt.
+      Capture screen, window or area.
+      Features:
+    </p>
+    <ul>
+      <li>Delay</li>
+      <li>Edit directly in other applications</li>
+      <li>Automatic saving; insert date+time in filename</li>
+      <li>Fit to edges by right click</li>
+      <li>Custom shortcuts</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">screengrab.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/lxqt/screengrab/raw/master/screengrab.png</image>
+    </screenshot>
+  </screenshots>
+</component>
