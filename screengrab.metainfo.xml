@@ -3,6 +3,7 @@
   <id>io.github.lxqt.screengrab</id>
   <url type="homepage">https://github.com/lxqt/screengrab</url>
   <url type="bugtracker">https://github.com/lxqt/screengrab/issues</url>
+  <content_rating type="oars-1.1"/>
 
   <name>ScreenGrab</name>
   <summary>Screenhot Tool in Qt</summary>
