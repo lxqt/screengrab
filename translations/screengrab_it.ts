@@ -87,7 +87,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> ·Traduzioni in Portoghese Brasiliano</translation>
+        <translation> ·Traduzione in Portoghese Brasiliano</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation> ·Traduzioni in Ucraino</translation>
+        <translation> ·Traduzione in Ucraino</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation> ·Spanish translation</translation>
+        <translation> ·Traduzione in Spagnolo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation> Traduziona italiana</translation>
+        <translation> Traduzione in Italiano</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
@@ -374,7 +374,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation>Informazioni su</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
