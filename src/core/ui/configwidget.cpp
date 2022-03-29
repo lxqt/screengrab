@@ -43,8 +43,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(_ui->keyWidget, &QKeySequenceWidget::keyNotSupported, this, &ConfigDialog::keyNotSupported);
     connect(_ui->checkAutoSave, &QCheckBox::toggled, this, &ConfigDialog::setVisibleAutoSaveFirst);
     connect(_ui->buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::clicked, this, &ConfigDialog::reject);
-    connect(_ui->treeKeys, &QTreeWidget::expanded, _ui->treeKeys, &QTreeWidget::clearSelection);
-    connect(_ui->treeKeys, &QTreeWidget::collapsed, this, &ConfigDialog::collapsTreeKeys);
     connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
     connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
 
@@ -74,19 +72,15 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 
     editDateTmeTpl(conf->getDateTimeTpl());
 
-    _ui->treeKeys->expandAll();
     _ui->treeKeys->header()->setSectionResizeMode(QHeaderView::Stretch);
 
     // adding shortcut values in treewidge
-    int action = 0;
+    int action = 3; // starting with shortcutNew
     QTreeWidgetItemIterator iter(_ui->treeKeys);
     while (*iter)
     {
-        if ((*iter)->parent() != nullptr)
-        {
-            (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
-            ++action;
-        }
+        (*iter)->setData(1, Qt::DisplayRole, conf->shortcuts()->getShortcut(action));
+        ++action;
         ++iter;
     }
 
@@ -230,25 +224,12 @@ void ConfigDialog::saveSettings()
     conf->setFitInside(_ui->checkFitInside->isChecked());
 
     // save shortcuts in shortcutmanager
-    int action = 0;
+    int action = 3; // starting with shortcutNew
     QTreeWidgetItemIterator iter(_ui->treeKeys);
     while (*iter)
     {
-        if ((*iter)->parent())
-        {
-            switch((*iter)->parent()->childCount())
-            {
-            case 3:
-                conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 0);
-                break;
-            case 6:
-                conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
-                break;
-            default:
-                break;
-            }
-            ++action;
-        }
+        conf->shortcuts()->setShortcut((*iter)->data(1, Qt::DisplayRole).toString(), action, 1);
+        ++action;
         ++iter;
     }
 
@@ -363,11 +344,12 @@ void ConfigDialog::toggleCheckShowTray(bool checked)
 void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 {
     Q_UNUSED(p)
-    if (c.parent().isValid())
+    if (c.isValid())
     {
         _ui->labUsedShortcut->setVisible(true);
         _ui->keyWidget->setVisible(true);
 
+        _ui->keyWidget->cancelRecording();
         QTreeWidgetItem *item = _ui->treeKeys->currentItem();
         _ui->keyWidget->setKeySequence(QKeySequence(item->data(1, Qt::DisplayRole).toString()));
     }
@@ -380,20 +362,9 @@ void ConfigDialog::currentItemChanged(const QModelIndex c, const QModelIndex p)
 
 void ConfigDialog::doubleclickTreeKeys(QModelIndex index)
 {
-    if (index.parent().isValid())
-    {
-        connect(_ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
-        _ui->keyWidget->captureKeySequence();
-    }
-}
-
-void ConfigDialog::collapsTreeKeys(QModelIndex index)
-{
-    if (!index.parent().isValid())
-    {
-        _ui->labUsedShortcut->setVisible(false);
-        _ui->keyWidget->setVisible(false);
-    }
+    Q_UNUSED(index)
+    connect(_ui->keyWidget, SIGNAL(keySequenceChanged(QKeySequence)), this, SLOT(changeShortcut(QKeySequence)));
+    _ui->keyWidget->captureKeySequence();
 }
 
 void ConfigDialog::acceptShortcut(const QKeySequence& seq)
@@ -402,7 +373,7 @@ void ConfigDialog::acceptShortcut(const QKeySequence& seq)
     {
         changeShortcut(seq);
     }
-    else if (checkUsedShortcuts() && !seq.toString().isEmpty())
+    else if (!seq.toString().isEmpty())
         showErrorMessage(tr("This key is already used in ScreenGrab! Please select another."));
 }
 
