@@ -357,7 +357,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation>O aplikácií</translation>
+        <translation>O programe</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
