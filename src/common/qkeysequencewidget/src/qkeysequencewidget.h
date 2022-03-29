@@ -94,6 +94,7 @@ public:
     QKeySequence keySequence() const;
     QString noneText() const;
     QIcon clearButtonIcon() const;
+    void cancelRecording();
 
     /*!
       \brief Modes of sohow ClearButton

@@ -583,61 +583,33 @@ might become larger to fit to outer edges</string>
            </column>
            <item>
             <property name="text">
-             <string>Global shortcuts</string>
+             <string>New screen</string>
             </property>
-            <property name="text">
-             <string/>
-            </property>
-            <item>
-             <property name="text">
-              <string>Full screen</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Active window</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Area select</string>
-             </property>
-            </item>
            </item>
            <item>
             <property name="text">
-             <string>Local shortcuts</string>
+             <string>Save screen</string>
             </property>
-            <item>
-             <property name="text">
-              <string>New screen</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Save screen</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Copy screen</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Options</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Help</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Quit</string>
-             </property>
-            </item>
+           </item>
+           <item>
+            <property name="text">
+             <string>Copy screen</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Options</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Help</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Quit</string>
+            </property>
            </item>
           </widget>
          </item>

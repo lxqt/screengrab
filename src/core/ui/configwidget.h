@@ -50,7 +50,6 @@ private:
     QStringList _moduleWidgetNames;
 
 private slots:
-    void collapsTreeKeys(QModelIndex index);
     void doubleclickTreeKeys(QModelIndex index);
     void toggleCheckShowTray(bool checked);
     void currentItemChanged(const QModelIndex c ,const QModelIndex p);

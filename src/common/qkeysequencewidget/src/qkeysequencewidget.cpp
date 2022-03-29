@@ -165,6 +165,14 @@ void QKeySequenceWidget::clearKeySequence()
 }
 
 /*!
+    Cancels recosring.
+ */
+void QKeySequenceWidget::cancelRecording()
+{
+    d_ptr->cancelRecording();
+}
+
+/*!
  * Start process capturing key sequence.
  * This slot is designed for software process capturing key sequence.
  */
