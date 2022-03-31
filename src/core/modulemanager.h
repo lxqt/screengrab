@@ -36,6 +36,7 @@ class ModuleManager
 {
 public:
     ModuleManager();
+    ~ModuleManager();
     void initModules();
     AbstractModule* getModule(const QByteArray& name);
     AbstractModule* getModule(const quint8 numid);

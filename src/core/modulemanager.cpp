@@ -37,6 +37,16 @@ void ModuleManager::initModules()
 #endif
 }
 
+ModuleManager::~ModuleManager()
+{
+    if (!_modules->isEmpty())
+    {
+        qDeleteAll(_modules->values());
+        _modules->clear();
+    }
+    delete _modules;
+}
+
 AbstractModule* ModuleManager::getModule(const QByteArray& name)
 {
     if (_modules->contains(name))

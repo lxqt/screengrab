@@ -28,7 +28,6 @@ ExtEdit::ExtEdit(QObject *parent) :
     QObject(parent), _watcherEditedFile(new QFileSystemWatcher(this))
 {
     createAppList();
-    _fileIsChanged = false;
     connect(_watcherEditedFile, &QFileSystemWatcher::fileChanged, this, &ExtEdit::editedFileChanged);
 }
 
@@ -46,36 +45,17 @@ void ExtEdit::runExternalEditor()
     if (format.isEmpty())
         format = QLatin1String("png");
 
-    _editFilename = core->getTempFilename(format);
-    core->writeScreen(_editFilename, format, true);
+    QString editFilename = core->getTempFilename(format);
+    core->writeScreen(editFilename, format, true);
 
-    QProcess *execProcess = new QProcess(this);
-    void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
-    connect(execProcess, signal, this, &ExtEdit::closedExternalEditor);
-
-     execProcess->start(action->desktopFile().expandExecString().first(),
-                        QStringList() << _editFilename);
-    _watcherEditedFile->addPath(_editFilename);
-}
-
-void ExtEdit::closedExternalEditor(int, QProcess::ExitStatus)
-{
-    Core *core = Core::instance();
-
-    if (_fileIsChanged == true)
-        core->updatePixmap();
-
-    _fileIsChanged = false;
-    _watcherEditedFile->removePath(_editFilename);
-
-    sender()->deleteLater();
-    core->killTempFile();
-    _editFilename.clear();
+    QProcess::startDetached(action->desktopFile().expandExecString().first(),
+                            QStringList() << editFilename);
+    _watcherEditedFile->addPath(editFilename);
 }
 
 void ExtEdit::editedFileChanged(const QString&)
 {
-    _fileIsChanged = true;
+    Core::instance()->updatePixmap();
 }
 
 void ExtEdit::createAppList()
@@ -85,12 +65,12 @@ void ExtEdit::createAppList()
     if (format.isEmpty())
         format = QLatin1String("png");
 
-    QString fileName = _editFilename.isEmpty() ? core->getTempFilename(format) : _editFilename;
+    QString fileName = core->getTempFilename(format);
     QMimeDatabase db;
     XdgMimeApps mimeAppsDb;
     QMimeType mt = db.mimeTypeForFile(fileName);
-    _appList = mimeAppsDb.apps(mt.name());
+    const QList<XdgDesktopFile*> appList = mimeAppsDb.apps(mt.name());
 
-    for (XdgDesktopFile *app : qAsConst(_appList))
+    for (XdgDesktopFile *app : appList)
         _actionList << new XdgAction(app);
 }

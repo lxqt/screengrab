@@ -37,16 +37,12 @@ public Q_SLOTS:
     void runExternalEditor();
 
 private Q_SLOTS:
-    void closedExternalEditor(int exitCode, QProcess::ExitStatus exitStatus);
     void editedFileChanged(const QString & path);
 
 private:
     void createAppList();
 
-    QList<XdgDesktopFile*> _appList;
     QList<XdgAction*> _actionList;
-    QString _editFilename;
-    bool _fileIsChanged;
     QFileSystemWatcher *_watcherEditedFile;
 };
 
