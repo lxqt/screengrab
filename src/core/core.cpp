@@ -25,8 +25,12 @@
 #include <QFile>
 #include <QDir>
 #include <QUuid>
+#include <QMimeDatabase>
 
 #include <QDebug>
+
+#include <XdgMimeApps>
+#include <qt5xdg/XdgDesktopFile>
 
 #include <KF5/KWindowSystem/KWindowSystem>
 #include <xcb/xfixes.h>
@@ -97,6 +101,13 @@ Core* Core::instance()
 
 Core::~Core()
 {
+    // first terminate the external app cleanly
+    if (auto process = findChild<QProcess*>())
+    {
+        process->terminate();
+        process->waitForFinished();
+    }
+
     delete _pixelMap;
     _conf->killInstance();
 }
@@ -500,16 +511,24 @@ void Core::openInExtViewer()
         QString tempFileName = getTempFilename(format);
         writeScreen(tempFileName, format, true);
 
-        QString exec;
-        exec = QLatin1String("xdg-open");
-        QStringList args;
-        args << tempFileName;
+        QMimeDatabase db;
+        XdgMimeApps mimeAppsDb;
+        QMimeType mt = db.mimeTypeForFile(tempFileName);
+        auto app = mimeAppsDb.defaultApp(mt.name());
+        if (app != nullptr)
+        {
+            QString exec;
+            exec = app->expandExecString().first();
+            delete app;
+            QStringList args;
+            args << tempFileName;
 
-        QProcess *execProcess = new QProcess(this);
+            QProcess *execProcess = new QProcess(this);
+            connect(execProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                    this, &Core::closeExtViewer);
 
-        void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
-        connect(execProcess, signal, this, &Core::closeExtViewer);
-        execProcess->start(exec, args);
+            execProcess->start(exec, args);
+        }
     }
 }
 
