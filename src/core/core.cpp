@@ -194,7 +194,7 @@ void Core::getFullScreenPixmap(QScreen* screen)
 // get screenshot
 void Core::screenShot(bool first)
 {
-    killTempFile(); // remove the old temp fle if any
+    killTempFile(); // remove the old temp file if any
 
     sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
@@ -402,7 +402,6 @@ QString Core::getTempFilename(const QString& format)
 {
     if (_tempFilename.isEmpty())
     {
-        killTempFile(); // remove the old temp file if any
         _tempFilename = QUuid::createUuid().toString();
         int size = _tempFilename.size() - 2;
         _tempFilename = _tempFilename.mid(1, size).left(8);
