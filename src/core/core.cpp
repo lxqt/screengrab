@@ -25,8 +25,12 @@
 #include <QFile>
 #include <QDir>
 #include <QUuid>
+#include <QMimeDatabase>
 
 #include <QDebug>
+
+#include <XdgMimeApps>
+#include <qt5xdg/XdgDesktopFile>
 
 #include <KF5/KWindowSystem/KWindowSystem>
 #include <xcb/xfixes.h>
@@ -97,6 +101,7 @@ Core* Core::instance()
 
 Core::~Core()
 {
+    killTempFile();
     delete _pixelMap;
     _conf->killInstance();
 }
@@ -189,6 +194,8 @@ void Core::getFullScreenPixmap(QScreen* screen)
 // get screenshot
 void Core::screenShot(bool first)
 {
+    killTempFile(); // remove the old temp file if any
+
     sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
 
@@ -393,20 +400,23 @@ void Core::updatePixmap()
 
 QString Core::getTempFilename(const QString& format)
 {
-    _tempFilename = QUuid::createUuid().toString();
-    int size = _tempFilename.size() - 2;
-    _tempFilename = _tempFilename.mid(1, size).left(8);
-    _tempFilename = QDir::tempPath() + QDir::separator() + QStringLiteral("screenshot-") + _tempFilename + QStringLiteral(".") + format;
+    if (_tempFilename.isEmpty())
+    {
+        _tempFilename = QUuid::createUuid().toString();
+        int size = _tempFilename.size() - 2;
+        _tempFilename = _tempFilename.mid(1, size).left(8);
+        _tempFilename = QDir::tempPath() + QDir::separator()
+                        + QStringLiteral("screenshot-") + _tempFilename
+                        + QStringLiteral(".") + format;
+    }
     return _tempFilename;
 }
 
 void Core::killTempFile()
 {
     if (QFile::exists(_tempFilename))
-    {
         QFile::remove(_tempFilename);
-        _tempFilename.clear();
-    }
+    _tempFilename.clear();
 }
 
 bool Core::writeScreen(QString& fileName, QString& format, bool tmpScreen)
@@ -500,23 +510,21 @@ void Core::openInExtViewer()
         QString tempFileName = getTempFilename(format);
         writeScreen(tempFileName, format, true);
 
-        QString exec;
-        exec = QLatin1String("xdg-open");
-        QStringList args;
-        args << tempFileName;
+        QMimeDatabase db;
+        XdgMimeApps mimeAppsDb;
+        QMimeType mt = db.mimeTypeForFile(tempFileName);
+        auto app = mimeAppsDb.defaultApp(mt.name());
+        if (app != nullptr)
+        {
+            QString exec;
+            exec = app->expandExecString().first();
+            delete app;
+            QStringList args;
+            args << tempFileName;
 
-        QProcess *execProcess = new QProcess(this);
-
-        void (QProcess:: *signal)(int, QProcess::ExitStatus) = &QProcess::finished;
-        connect(execProcess, signal, this, &Core::closeExtViewer);
-        execProcess->start(exec, args);
+            QProcess::startDetached(exec, args);
+        }
     }
-}
-
-void Core::closeExtViewer(int, QProcess::ExitStatus)
-{
-    sender()->deleteLater();
-    killTempFile();
 }
 
 ModuleManager* Core::modules()

@@ -144,7 +144,6 @@ private:
 
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
-    void closeExtViewer(int exitCode, QProcess::ExitStatus exitStatus);
 
 };
 
