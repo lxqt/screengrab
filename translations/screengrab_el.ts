@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation>Ουδεμία</translation>
+        <translation>Καμία</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
