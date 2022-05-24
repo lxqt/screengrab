@@ -180,7 +180,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="406"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>התכנית ScreenGrab כבר משתמשת במפתח זה! נא לבחור באחד אחר.</translation>
+        <translation>מקש זה כבר נמצא בשימוש של ידי ScreenGrab! נא לבחור אחד אחר.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="424"/>
