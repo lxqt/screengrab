@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Brazilian Portuguese translation</translation>
+        <translation> Бразилски португалски превод</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source> Ukrainian translation</source>
-        <translation> Ukrainian translation</translation>
+        <translation> Украински превод</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="147"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source> Spanish translation</source>
-        <translation> Spanish translation</translation>
+        <translation> Испански превод</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="150"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="152"/>
         <source> Italian translation</source>
-        <translation> Italian translation</translation>
+        <translation> Италиански превод</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="156"/>
