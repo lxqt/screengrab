@@ -318,7 +318,14 @@ void Core::getActiveWindow() // called only with window screenshots
     // The offscreen part of the window will appear as a black area in the screenshot.
     // Until a better method is found, the offscreen area is ignored here.
     QRect r = screen->virtualGeometry().intersected(geometry);
-    *_pixelMap = screen->grabWindow(0, r.x(), r.y(), r.width(), r.height());
+
+    // the window positon should be calculated relative to the screen
+    *_pixelMap = screen->grabWindow(0,
+                                    r.x() - screen->geometry().x(),
+                                    r.y() - screen->geometry().y(),
+                                    r.width(),
+                                    r.height());
+
     grabCursor(geometry.x(), geometry.y());
 }
 
