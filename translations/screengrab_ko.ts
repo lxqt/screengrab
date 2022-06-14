@@ -336,12 +336,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
-        <translation>저장</translation>
+        <translation>저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
-        <translation>복사</translation>
+        <translation>복사하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
-        <translation>표시</translation>
+        <translation>표시하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
@@ -393,7 +393,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
-        <translation>다른 이름으로 저장...</translation>
+        <translation>다른 이름으로 저장하기...</translation>
     </message>
 </context>
 <context>
@@ -420,12 +420,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation>외부 편집</translation>
+        <translation>외부 편집하기</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>다음에서 편집...</translation>
+        <translation>다음에서 편집하기...</translation>
     </message>
 </context>
 <context>
@@ -477,7 +477,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation>저장을 위한 기본 선택 디렉토리 경로</translation>
+        <translation>저장을 위한 기본 선택 디렉터리 경로</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
@@ -517,7 +517,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>저장할 때 파일 이름을 클립보드에 복사</translation>
+        <translation>저장할 때 파일 이름을 클립보드에 복사하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -527,12 +527,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation>파일 이름만 복사</translation>
+        <translation>파일 이름만 복사하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>전체 파일 경로 복사</translation>
+        <translation>전체 파일 경로 복사하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
@@ -572,17 +572,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>스크린샷 자동 저장</translation>
+        <translation>스크린샷 자동 저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>첫 번째 스크린샷 저장</translation>
+        <translation>첫 스크린샷 저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation>ScreenGrab의 연속 여러장 복사 허용</translation>
+        <translation>ScreenGrab의 연속 여러장 복사하기 허용</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
@@ -614,7 +614,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>시스템 트레이에 ScreenGrab 표시</translation>
+        <translation>시스템 트레이에 ScreenGrab 표시하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
@@ -709,12 +709,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="618"/>
         <source>Save screen</source>
-        <translation>화면 저장</translation>
+        <translation>화면 저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="623"/>
         <source>Copy screen</source>
-        <translation>화면 복사</translation>
+        <translation>화면 복사하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="633"/>
