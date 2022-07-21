@@ -27,7 +27,7 @@ it is independent from any desktop environment.
  * GCC > 4.5
  * KF5WindowSystem
  * [lxqt-build-tools](https://github.com/lxqt/lxqt-build-tools)
- * [libqtxdg](https://github.com/lxqt/libqtxdg/)
+ * [libqtxdg](https://github.com/lxqt/libqtxdg/)(if compiled with the ability to edit screenshots in external apps, which is the case by default)
 
 To build ScreenGrab from sources, use these commands:
 
