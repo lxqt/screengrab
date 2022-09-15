@@ -66,10 +66,6 @@ message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
 
-set(SG_LIBDIR "${CMAKE_INSTALL_LIBDIR}/screengrab")
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
-message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
-
 # Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
 #   bring any dependency on lxqt.
 include(LXQtTranslateTs)

@@ -50,7 +50,6 @@ config files were stored in ~/.screengrab (Set this parameter to "OFF" to store 
  * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main actions to create screenshots. Default setting: ON.
  * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. Default setting: OFF.
  * **-DSG_DOCDIR** - Name for the directory of user's documentation. Default setting:  "screengrab".
- * **-DQKSW_SHARED** - Enable shared linking with qkeysequencewidget library (in src/common/qksysekwesewidget).
 Dfault setting: OFF.
  * **-DDEV_VERSION** - Set a dev-version here, maybe git describe $foo. Default not set.
 

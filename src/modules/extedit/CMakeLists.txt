@@ -24,12 +24,10 @@ qt5_translation_loader(extedit_QM_LOADER
 )
 
 add_library(extedit
-    SHARED
+    STATIC
         ${extedit_SRC}
         ${extedit_QMS}
         ${extedit_QM_LOADER}
 )
-set_property (TARGET extedit PROPERTY SOVERSION 1.0.0)
-install(TARGETS extedit DESTINATION ${SG_LIBDIR})
 
 target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras Qt5Xdg)
