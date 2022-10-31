@@ -425,7 +425,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation type="unfinished">以 ... 編輯</translation>
+        <translation>以 ... 編輯</translation>
     </message>
 </context>
 <context>
