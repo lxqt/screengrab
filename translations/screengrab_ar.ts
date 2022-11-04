@@ -4,11 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="34"/>
-        <source>using Qt </source>
-        <translation>استعمال Qt </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
         <translation>حول</translation>
@@ -34,117 +29,122 @@
         <translation>إنه تطبيق خفيف وقوي ، مكتوب بلغة Qt.</translation>
     </message>
     <message>
+        <location filename="../src/core/ui/about.cpp" line="34"/>
+        <source>using Qt %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
-        <source>Website</source>
-        <translation>الموقع الالكتروني</translation>
+        <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="109"/>
-        <source>Licensed under the </source>
-        <translation>مرخصة بموجب </translation>
+        <location filename="../src/core/ui/about.cpp" line="108"/>
+        <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="113"/>
+        <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
         <translation>حقوق النشر © 2009-2013 ، Artem &quot;DOOMer&quot; Galichkin</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="120"/>
+        <location filename="../src/core/ui/about.cpp" line="119"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
         <translation>يمكنك الانضمام إلينا ومساعدتنا إذا أردت. هذه دعوة إذا كنت تحب هذا التطبيق.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="123"/>
+        <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
         <translation>ما تستطيع فعله؟</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="126"/>
+        <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
         <translation>ترجمة ScreenGrab إلى لغات أخرى</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="127"/>
+        <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Make suggestions for next releases</source>
         <translation>قدم اقتراحات للإصدارات القادمة</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="128"/>
+        <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Report bugs and issues</source>
         <translation>الإبلاغ عن الأخطاء والمشكلات</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="131"/>
+        <location filename="../src/core/ui/about.cpp" line="130"/>
         <source>Bug tracker</source>
         <translation>تعقب الأخطاء</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="141"/>
+        <location filename="../src/core/ui/about.cpp" line="140"/>
         <source>Translate:</source>
         <translation>يترجم:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="143"/>
+        <location filename="../src/core/ui/about.cpp" line="142"/>
         <source> Brazilian Portuguese translation</source>
         <translation> ترجمة البرتغالية البرازيلية</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="144"/>
+        <location filename="../src/core/ui/about.cpp" line="143"/>
         <source>Marcio Moraes</source>
         <translation>مارسيو مورايس</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="146"/>
+        <location filename="../src/core/ui/about.cpp" line="145"/>
         <source> Ukrainian translation</source>
         <translation> الترجمة الأوكرانية</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="147"/>
+        <location filename="../src/core/ui/about.cpp" line="146"/>
         <source>Gennadi Motsyo</source>
         <translation>جينادي موتسيو</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="149"/>
+        <location filename="../src/core/ui/about.cpp" line="148"/>
         <source> Spanish translation</source>
         <translation> ترجمة إسبانية</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="150"/>
+        <location filename="../src/core/ui/about.cpp" line="149"/>
         <source>Burjans L García D</source>
         <translation>برجان إل غارسيا د</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="152"/>
+        <location filename="../src/core/ui/about.cpp" line="151"/>
         <source> Italian translation</source>
         <translation> ترجمة إيطالية</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="156"/>
+        <location filename="../src/core/ui/about.cpp" line="155"/>
         <source>Testing:</source>
         <translation>اختبارات:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="158"/>
+        <location filename="../src/core/ui/about.cpp" line="157"/>
         <source>Dual monitor support and other in Linux</source>
         <translation>دعم الشاشة المزدوجة وغيرها في لينكس</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="159"/>
+        <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support in Linux</source>
         <translation>دعم الشاشة المزدوجة في لينكس</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="160"/>
+        <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>win32-build [Windows XP and 7]</source>
         <translation>win32-build [Windows XP و 7]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="161"/>
+        <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>old win32-build [Windows Vista]</source>
         <translation>win32-build القديم [Windows Vista]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="162"/>
+        <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>win32-build [Windows 7]</source>
         <translation>win32-build [Windows 7]</translation>
     </message>
@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>الدليل %1 غير موجود. هل تريد إنشائه؟</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
         <source>Warning</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="263"/>
         <source>Select directory</source>
         <translation>حدد الدليل</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="274"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>هل تريد إعادة ضبط الإعدادات على الإعدادات الافتراضية؟</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="332"/>
         <source>Example: </source>
         <translation>مثال: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="377"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>هذا المفتاح مستخدم بالفعل في ScreenGrab! الرجاء تحديد آخر.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="395"/>
         <source>This key is not supported on your system!</source>
         <translation>هذا المفتاح غير مدعوم في نظامك!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="415"/>
         <source>Error</source>
         <translation>خطأ</translation>
     </message>
@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="58"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>هو تطبيق متعدد المنصات لإنشاء لقطات شاشة سريعة لسطح المكتب.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="62"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a fullscreen screenshot</source>
         <translation>خذ لقطة شاشة بملء الشاشة</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="66"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
         <translation>التقط لقطة شاشة للنافذة النشطة</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="70"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>التقط لقطة شاشة لمجموعة مختارة من الشاشة</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="74"/>
+        <location filename="../src/core/core.cpp" line="78"/>
         <source>Run the application with a hidden main window</source>
         <translation>قم بتشغيل التطبيق مع نافذة رئيسية مخفية</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved</source>
         <translation>تم الحفظ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved to </source>
         <translation>تم الحفظ في </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="453"/>
+        <location filename="../src/core/core.cpp" line="477"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>يتم نسخ اسم الملف المحفوظ إلى الحافظة</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="483"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>يتم نسخ مسار الملف المحفوظ إلى الحافظة</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Copied</source>
         <translation>تم النسخ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>تم نسخ لقطة الشاشة إلى الحافظة</translation>
     </message>
@@ -399,7 +399,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <location filename="../src/core/regionselect.cpp" line="175"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -410,7 +410,7 @@ to take a screenshot.</source>
 لأخذ لقطة شاشة.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="202"/>
+        <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 بكسل </translation>
     </message>
@@ -431,12 +431,12 @@ to take a screenshot.</source>
 <context>
     <name>aboutWidget</name>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="118"/>
         <source>About Qt</source>
         <translation>Qt عن</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="144"/>
         <source>Close</source>
         <translation>إغلاق</translation>
     </message>
@@ -445,7 +445,7 @@ to take a screenshot.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="628"/>
+        <location filename="../src/core/ui/configwidget.ui" line="601"/>
         <source>Options</source>
         <translation>خيارات</translation>
     </message>
@@ -678,61 +678,36 @@ might become larger to fit to outer edges</source>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
-        <source>Global shortcuts</source>
-        <translation>اختصارات عالمية</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="593"/>
-        <source>Full screen</source>
-        <translation>تكبير الشاشة</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="598"/>
-        <source>Active window</source>
-        <translation>نافذة نشطة</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="603"/>
-        <source>Area select</source>
-        <translation>حدد المنطقة</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="609"/>
-        <source>Local shortcuts</source>
-        <translation>الاختصارات المحلية</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>شاشة جديدة</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="618"/>
+        <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
         <translation>حفظ الشاشة</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="623"/>
+        <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
         <translation>نسخ الشاشة</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="633"/>
+        <location filename="../src/core/ui/configwidget.ui" line="606"/>
         <source>Help</source>
         <translation>مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="638"/>
+        <location filename="../src/core/ui/configwidget.ui" line="611"/>
         <source>Quit</source>
         <translation>إنهِ</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="649"/>
+        <location filename="../src/core/ui/configwidget.ui" line="621"/>
         <source>Selected shortcut:</source>
         <translation>الاختصار المحدد:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="656"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Not defined</source>
         <translation>غير معرف</translation>
     </message>
