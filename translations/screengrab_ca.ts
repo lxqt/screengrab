@@ -4,11 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="34"/>
-        <source>using Qt </source>
-        <translation>mitjançant Qt </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
         <translation>Quant a</translation>
@@ -34,117 +29,122 @@
         <translation>És una aplicació lleugera i potent, escrita en Qt.</translation>
     </message>
     <message>
+        <location filename="../src/core/ui/about.cpp" line="34"/>
+        <source>using Qt %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
-        <source>Website</source>
-        <translation>Lloc web</translation>
+        <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="109"/>
-        <source>Licensed under the </source>
-        <translation>Llicenciat sota la </translation>
+        <location filename="../src/core/ui/about.cpp" line="108"/>
+        <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="113"/>
+        <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
         <translation>Drets d&apos;autor &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="120"/>
+        <location filename="../src/core/ui/about.cpp" line="119"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
         <translation>Podeu unir-vos a nosaltres i ajudar-nos si voleu. Aquesta és una invitació si us agrada aquesta aplicació.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="123"/>
+        <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
         <translation>Què podeu fer?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="126"/>
+        <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
         <translation>Traduir ScreenGrab a altres llengües</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="127"/>
+        <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Make suggestions for next releases</source>
         <translation>Fer suggeriments per als pròxims llançaments</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="128"/>
+        <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Report bugs and issues</source>
         <translation>Informar dels errors i de les incidències</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="131"/>
+        <location filename="../src/core/ui/about.cpp" line="130"/>
         <source>Bug tracker</source>
         <translation>Seguiment d&apos;errors</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="141"/>
+        <location filename="../src/core/ui/about.cpp" line="140"/>
         <source>Translate:</source>
         <translation>Traducció:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="143"/>
+        <location filename="../src/core/ui/about.cpp" line="142"/>
         <source> Brazilian Portuguese translation</source>
         <translation> Traducció al portuguès de Brasil</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="144"/>
+        <location filename="../src/core/ui/about.cpp" line="143"/>
         <source>Marcio Moraes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="146"/>
+        <location filename="../src/core/ui/about.cpp" line="145"/>
         <source> Ukrainian translation</source>
         <translation> Traducció a l&apos;ucraïnès</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="147"/>
+        <location filename="../src/core/ui/about.cpp" line="146"/>
         <source>Gennadi Motsyo</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="149"/>
+        <location filename="../src/core/ui/about.cpp" line="148"/>
         <source> Spanish translation</source>
         <translation> Traducció a l&apos;espanyol</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="150"/>
+        <location filename="../src/core/ui/about.cpp" line="149"/>
         <source>Burjans L García D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="152"/>
+        <location filename="../src/core/ui/about.cpp" line="151"/>
         <source> Italian translation</source>
         <translation> Traducció a l&apos;italià</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="156"/>
+        <location filename="../src/core/ui/about.cpp" line="155"/>
         <source>Testing:</source>
         <translation>Proves:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="158"/>
+        <location filename="../src/core/ui/about.cpp" line="157"/>
         <source>Dual monitor support and other in Linux</source>
         <translation>Admissió de monitors duals i altres a Linux</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="159"/>
+        <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support in Linux</source>
         <translation>Admissió de monitors duals a Linux</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="160"/>
+        <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>win32-build [Windows XP and 7]</source>
         <translation>Construcció win32 [Windows XP i 7]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="161"/>
+        <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>old win32-build [Windows Vista]</source>
         <translation>Construcció win32 antiga [Windows Vista]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="162"/>
+        <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>win32-build [Windows 7]</source>
         <translation>Construcció win32 [Windows 7]</translation>
     </message>
@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>No existeix el directori %1. Voleu crear-lo?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
         <source>Warning</source>
         <translation>Avís</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="263"/>
         <source>Select directory</source>
         <translation>Selecciona el directori</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="274"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Voleu restablir els ajusts als valors predeterminats?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="332"/>
         <source>Example: </source>
         <translation>Exemple: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="377"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>Aquesta tecla ja s&apos;utilitza a ScreenGrab. Seleccioneu-ne una altra.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="395"/>
         <source>This key is not supported on your system!</source>
         <translation>Aquesta tecla no està admesa al vostre sistema!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="415"/>
         <source>Error</source>
         <translation></translation>
     </message>
@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="58"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>és una aplicació multiplataforma per a la creació ràpida de captures de pantalla del vostre escriptori.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="62"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Feu captures de pantalla a pantalla completa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="66"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
         <translation>Feu una captura de pantalla de la finestra activa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="70"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Feu captures de pantalla d&apos;una selecció de la pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="74"/>
+        <location filename="../src/core/core.cpp" line="78"/>
         <source>Run the application with a hidden main window</source>
         <translation>Executeu l&apos;aplicació amb una finestra principal oculta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved to </source>
         <translation>Desat a </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="453"/>
+        <location filename="../src/core/core.cpp" line="477"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>El nom del fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="483"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>El camí al fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Copied</source>
         <translation>Copiat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La captura de pantalla es copia al porta-retalls</translation>
     </message>
@@ -399,7 +399,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <location filename="../src/core/regionselect.cpp" line="175"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -410,7 +410,7 @@ doble clic o premeu Enter
 per fer una captura de pantalla.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="202"/>
+        <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 píxels </translation>
     </message>
@@ -431,12 +431,12 @@ per fer una captura de pantalla.</translation>
 <context>
     <name>aboutWidget</name>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="118"/>
         <source>About Qt</source>
         <translation>Quant a Qt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="144"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -445,7 +445,7 @@ per fer una captura de pantalla.</translation>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="628"/>
+        <location filename="../src/core/ui/configwidget.ui" line="601"/>
         <source>Options</source>
         <translation></translation>
     </message>
@@ -678,61 +678,36 @@ es pot fer més gran per ajustar-se a les vores exteriors</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
-        <source>Global shortcuts</source>
-        <translation>Dreceres globals</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="593"/>
-        <source>Full screen</source>
-        <translation>Pantalla completa</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="598"/>
-        <source>Active window</source>
-        <translation>Finestra activa</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="603"/>
-        <source>Area select</source>
-        <translation>Selecció de l&apos;àrea</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="609"/>
-        <source>Local shortcuts</source>
-        <translation>Dreceres locals</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>Pantalla nova</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="618"/>
+        <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
         <translation>Desa la pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="623"/>
+        <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
         <translation>Copia la pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="633"/>
+        <location filename="../src/core/ui/configwidget.ui" line="606"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="638"/>
+        <location filename="../src/core/ui/configwidget.ui" line="611"/>
         <source>Quit</source>
         <translation>Surt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="649"/>
+        <location filename="../src/core/ui/configwidget.ui" line="621"/>
         <source>Selected shortcut:</source>
         <translation>Drecera seleccionada:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="656"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Not defined</source>
         <translation>Sense definir</translation>
     </message>

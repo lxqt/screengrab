@@ -4,11 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="34"/>
-        <source>using Qt </source>
-        <translation>使用 Qt </translation>
-    </message>
-    <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
         <translation>关于</translation>
@@ -34,117 +29,122 @@
         <translation>这是一个使用Qt编写的，轻巧而强大的应用程序。</translation>
     </message>
     <message>
+        <location filename="../src/core/ui/about.cpp" line="34"/>
+        <source>using Qt %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
-        <source>Website</source>
-        <translation>网站</translation>
+        <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="109"/>
-        <source>Licensed under the </source>
-        <translation>根据许可 </translation>
+        <location filename="../src/core/ui/about.cpp" line="108"/>
+        <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="113"/>
+        <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
         <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="120"/>
+        <location filename="../src/core/ui/about.cpp" line="119"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
         <translation>您可以加入我们，并在需要时为我们提供帮助。如果您喜欢此应用程序，这是一个邀请。</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="123"/>
+        <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
         <translation>你可以做什么？</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="126"/>
+        <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
         <translation>使用其他语言来翻译ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="127"/>
+        <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Make suggestions for next releases</source>
         <translation>对下一个版本提出建议</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="128"/>
+        <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Report bugs and issues</source>
         <translation>报告错误和问题</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="131"/>
+        <location filename="../src/core/ui/about.cpp" line="130"/>
         <source>Bug tracker</source>
         <translation>错误追踪</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="141"/>
+        <location filename="../src/core/ui/about.cpp" line="140"/>
         <source>Translate:</source>
         <translation>翻译：</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="143"/>
+        <location filename="../src/core/ui/about.cpp" line="142"/>
         <source> Brazilian Portuguese translation</source>
         <translation> Brazilian Portuguese translation</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="144"/>
+        <location filename="../src/core/ui/about.cpp" line="143"/>
         <source>Marcio Moraes</source>
         <translation>Marcio Moraes</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="146"/>
+        <location filename="../src/core/ui/about.cpp" line="145"/>
         <source> Ukrainian translation</source>
         <translation> Ukrainian translation</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="147"/>
+        <location filename="../src/core/ui/about.cpp" line="146"/>
         <source>Gennadi Motsyo</source>
         <translation>Gennadi Motsyo</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="149"/>
+        <location filename="../src/core/ui/about.cpp" line="148"/>
         <source> Spanish translation</source>
         <translation> Spanish translation</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="150"/>
+        <location filename="../src/core/ui/about.cpp" line="149"/>
         <source>Burjans L García D</source>
         <translation>Burjans L García D</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="152"/>
+        <location filename="../src/core/ui/about.cpp" line="151"/>
         <source> Italian translation</source>
         <translation> Italian translation</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="156"/>
+        <location filename="../src/core/ui/about.cpp" line="155"/>
         <source>Testing:</source>
         <translation>测试：</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="158"/>
+        <location filename="../src/core/ui/about.cpp" line="157"/>
         <source>Dual monitor support and other in Linux</source>
         <translation>双监视器支持和其他Linux支持</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="159"/>
+        <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support in Linux</source>
         <translation>Linux中的双显示器支持</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="160"/>
+        <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>win32-build [Windows XP and 7]</source>
         <translation>win32-build [Windows XP and 7]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="161"/>
+        <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>old win32-build [Windows Vista]</source>
         <translation>旧的 win32-build [Windows Vista]</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/about.cpp" line="162"/>
+        <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>win32-build [Windows 7]</source>
         <translation>win32-build [Windows 7]</translation>
     </message>
@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="192"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>文件夹 %1 不存在，你要创建吗？</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="193"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="294"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="282"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="263"/>
         <source>Select directory</source>
         <translation>选择文件夹</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="293"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="274"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>是否要将设置重设为默认值？</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="351"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="332"/>
         <source>Example: </source>
         <translation>例如： </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="406"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="377"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>此密钥已在ScreenGrab中使用！请选择另一个。</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="424"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="395"/>
         <source>This key is not supported on your system!</source>
         <translation>您的系统不支持此密钥！</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="444"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="415"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="58"/>
+        <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>是用于快速创建桌面屏幕截图的跨平台应用程序。</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="62"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a fullscreen screenshot</source>
         <translation>截取全屏截图</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="66"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
         <translation>截取活动窗口的屏幕截图</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="70"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>截取选中区域屏幕截图</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="74"/>
+        <location filename="../src/core/core.cpp" line="78"/>
         <source>Run the application with a hidden main window</source>
         <translation>使用隐藏的主窗口运行应用程序</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved</source>
         <translation>已保存</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="431"/>
+        <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved to </source>
         <translation>已保存到 </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="453"/>
+        <location filename="../src/core/core.cpp" line="477"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>保存的文件已经复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="459"/>
+        <location filename="../src/core/core.cpp" line="483"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>保存的文件路径已复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Copied</source>
         <translation>已复制</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="481"/>
+        <location filename="../src/core/core.cpp" line="505"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>截屏已复制到剪贴板</translation>
     </message>
@@ -399,7 +399,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="170"/>
+        <location filename="../src/core/regionselect.cpp" line="175"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -410,7 +410,7 @@ to take a screenshot.</source>
 截图。</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="202"/>
+        <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pixels </translation>
     </message>
@@ -431,12 +431,12 @@ to take a screenshot.</source>
 <context>
     <name>aboutWidget</name>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="128"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="118"/>
         <source>About Qt</source>
         <translation>关于 Qt</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/aboutwidget.ui" line="154"/>
+        <location filename="../src/core/ui/aboutwidget.ui" line="144"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -445,7 +445,7 @@ to take a screenshot.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="628"/>
+        <location filename="../src/core/ui/configwidget.ui" line="601"/>
         <source>Options</source>
         <translation>选项</translation>
     </message>
@@ -678,61 +678,36 @@ might become larger to fit to outer edges</source>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
-        <source>Global shortcuts</source>
-        <translation>全局快捷键</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="593"/>
-        <source>Full screen</source>
-        <translation>全屏</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="598"/>
-        <source>Active window</source>
-        <translation>活动窗口</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="603"/>
-        <source>Area select</source>
-        <translation>选择区域</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="609"/>
-        <source>Local shortcuts</source>
-        <translation>本地快捷键</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="613"/>
         <source>New screen</source>
         <translation>新的屏幕</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="618"/>
+        <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
         <translation>保存屏幕</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="623"/>
+        <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
         <translation>复制屏幕</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="633"/>
+        <location filename="../src/core/ui/configwidget.ui" line="606"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="638"/>
+        <location filename="../src/core/ui/configwidget.ui" line="611"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="649"/>
+        <location filename="../src/core/ui/configwidget.ui" line="621"/>
         <source>Selected shortcut:</source>
         <translation>选择的快捷键：</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="656"/>
+        <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Not defined</source>
         <translation>未声明</translation>
     </message>
