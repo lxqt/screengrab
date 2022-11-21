@@ -387,7 +387,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation> сек</translation>
+        <translation> с</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
@@ -607,7 +607,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
-        <translation> сек</translation>
+        <translation> с</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
