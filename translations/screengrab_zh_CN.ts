@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation>谢谢</translation>
+        <translation>鸣谢</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
