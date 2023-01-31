@@ -31,17 +31,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>używa Qt %1</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Strona internetowa - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="108"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Wydane na licencji &lt;a href=%1&gt;GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="130"/>
         <source>Bug tracker</source>
-        <translation></translation>
+        <translation>Śledzenie błędów</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="140"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation></translation>
+        <translation>pasek narzędzi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
@@ -407,8 +407,7 @@ to take a screenshot.</source>
         <translation>Kliknij i przeciągnij, aby zaznaczyć obszar
 naciśnij prawym klawiszem myszy by dopasować do krawędzi,
 kliknij dwukrotnie lub wciśnij Enter
-aby wykonać zrzut ekranu.
-</translation>
+aby wykonać zrzut ekranu.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
@@ -578,7 +577,7 @@ aby wykonać zrzut ekranu.
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation></translation>
+        <translation>Zapisz pierwszy zrzut ekranu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
@@ -680,17 +679,17 @@ może zostać powiększony, aby wypełnić do zewnętrznych krawędzi</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>New screen</source>
-        <translation></translation>
+        <translation>Nowy zrzut ekranu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
-        <translation></translation>
+        <translation>Zapisz zrzut ekranu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
-        <translation></translation>
+        <translation>Kopiuj zrzut ekranu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="606"/>
