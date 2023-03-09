@@ -31,17 +31,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt %1 を使用しています</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>ウェブサイト - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="108"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=%1&gt;GPL v2&lt;/a&gt; の下でライセンスされています</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
