@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>est une application multiplateforme permettant de créer rapidement des captures d&apos;écran de votre bureau.</translation>
+        <translation>est une application multiplateforme permettant de créer rapidement des captures d’écran de votre bureau.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem « DOOMer » Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Traduire ScreenGrab dans d&apos;autres langues</translation>
+        <translation>Traduire ScreenGrab dans d’autres langues</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>win32-build [Windows 7]</source>
-        <translation>&apos;win32-build [Windows 7]&apos;</translation>
+        <translation>win32-build [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Le répertoire %1 n&apos;existe pas. Voulez-vous le créer ?</translation>
+        <translation>Le répertoire %1 n’existe pas. Voulez-vous le créer ?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="187"/>
@@ -185,7 +185,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="395"/>
         <source>This key is not supported on your system!</source>
-        <translation>Cette touche n&apos;est pas supportée par votre système !</translation>
+        <translation>Cette touche n’est pas supportée par votre système !</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="415"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>est une application multiplateforme permettant de créer rapidement des captures d&apos;écran de votre bureau.</translation>
+        <translation>est une application multiplateforme permettant de créer rapidement des captures d’écran de votre bureau.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
@@ -208,12 +208,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
-        <translation>Prendre une capture d&apos;écran de la fenêtre active</translation>
+        <translation>Prendre une capture d’écran de la fenêtre active</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation>Prendre une capture d&apos;écran d&apos;une zone sélectionnée</translation>
+        <translation>Prendre une capture d’écran d’une zone sélectionnée</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="78"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="505"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>La capture d&apos;écran a été copié dans le presse-papiers</translation>
+        <translation>La capture d’écran a été copié dans le presse-papiers</translation>
     </message>
 </context>
 <context>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation>Zone d&apos;écran</translation>
+        <translation>Zone d’écran</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation>Barre d&apos;outils</translation>
+        <translation>Barre d’outils</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation>Capture d&apos;écran </translation>
+        <translation>Capture d’écran </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
@@ -405,9 +405,9 @@ right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
         <translation>Cliquer et faire glisser pour dessiner un rectangle,
-clic droit pour s&apos;adapter aux arêtes,
+clic droit pour s’adapter aux arêtes,
 double-cliquez ou appuyez sur Entrée
-pour prendre une capture d&apos;écran.</translation>
+pour prendre une capture d’écran.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
@@ -472,7 +472,7 @@ pour prendre une capture d&apos;écran.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation>Chemin vers le répertoire d&apos;enregistrement par défaut</translation>
+        <translation>Chemin vers le répertoire d’enregistrement par défaut</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
@@ -492,12 +492,12 @@ pour prendre une capture d&apos;écran.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation>Format de l&apos;image</translation>
+        <translation>Format de l’image</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Format d&apos;image par défaut</translation>
+        <translation>Format d’image par défaut</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
@@ -523,13 +523,13 @@ pour prendre une capture d&apos;écran.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Si cette case n&apos;est pas cochée, la zone sélectionnée
-peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
+        <translation>Si cette case n’est pas cochée, la zone sélectionnée
+peut devenir plus grande pour s’adapter aux bords extérieurs</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Ajuster aux bords à l&apos;intérieur de la zone sélectionnée par un clic droit</translation>
+        <translation>Ajuster aux bords à l’intérieur de la zone sélectionnée par un clic droit</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -539,12 +539,12 @@ peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>Qualité d&apos;image</translation>
+        <translation>Qualité d’image</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>Qualité d&apos;image (1 - basse qualité, 100 - haute qualité)</translation>
+        <translation>Qualité d’image (1 - basse qualité, 100 - haute qualité)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
@@ -564,12 +564,12 @@ peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>Insertion de la date et de l&apos;heure actuelles dans le nom de fichier enregistré</translation>
+        <translation>Insertion de la date et de l’heure actuelles dans le nom de fichier enregistré</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>Insérer la date et l&apos;heure actuelles dans le nom du fichier</translation>
+        <translation>Insérer la date et l’heure actuelles dans le nom du fichier</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
@@ -629,7 +629,7 @@ peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>Mode d&apos;affichage des notifications</translation>
+        <translation>Mode d’affichage des notifications</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -649,22 +649,22 @@ peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>Temps d&apos;affichage des notifications</translation>
+        <translation>Temps d’affichage des notifications</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation>Temps d&apos;affichage des notifications</translation>
+        <translation>Temps d’affichage des notifications</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Minimiser lors d&apos;un clic sur le bouton de fermeture</translation>
+        <translation>Minimiser lors d’un clic sur le bouton de fermeture</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation>Minimiser lors d&apos;un clic sur le bouton de fermeture</translation>
+        <translation>Minimiser lors d’un clic sur le bouton de fermeture</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
