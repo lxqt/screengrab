@@ -450,7 +450,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Формат скриншотов по умолчанию</translation>
+        <translation>Стандартный формат сохранения снимков</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
@@ -515,17 +515,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>New screen</source>
-        <translation>Новый скриншот</translation>
+        <translation>Новый снимок экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
-        <translation>Сохранить скриншот</translation>
+        <translation>Сохранить снимок экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
-        <translation>Копировать скриншот</translation>
+        <translation>Копировать снимок экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="606"/>
