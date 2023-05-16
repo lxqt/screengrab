@@ -6,82 +6,82 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiitokset</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation type="unfinished"></translation>
+        <translation>Auta meitä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>on alustariippumaton sovellus kuvakaappauksien ottamiseen työpöydällä.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se on kevyt ja tehokas sovellus, kirjoitettu Qt:eellä.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>käyttäen Qt %1</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivusto - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="108"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=%1&gt;GPL v2&lt;/a&gt; -lisenssi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutsumme liittymään mukaan ja auttamaan jos haluat.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitä voit tehdä?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Käännä ScreenGrab muille kielille</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
         <source>Make suggestions for next releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Anna ehdotuksia seuraaviin versioihin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Report bugs and issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoita vioista ja ongelmista</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="130"/>
         <source>Bug tracker</source>
-        <translation type="unfinished"></translation>
+        <translation>Vianseuranta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="140"/>
         <source>Translate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kääntö:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
