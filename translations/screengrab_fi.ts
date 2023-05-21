@@ -86,47 +86,47 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source> Brazilian Portuguese translation</source>
-        <translation type="unfinished"></translation>
+        <translation> Brasilianportugalinnos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source> Ukrainian translation</source>
-        <translation type="unfinished"></translation>
+        <translation> Ukrainannos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source>Gennadi Motsyo</source>
-        <translation type="unfinished"></translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="148"/>
         <source> Spanish translation</source>
-        <translation type="unfinished"></translation>
+        <translation> Espanjannos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source>Burjans L García D</source>
-        <translation type="unfinished"></translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="151"/>
         <source> Italian translation</source>
-        <translation type="unfinished"></translation>
+        <translation> Italiannos</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="155"/>
         <source>Testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Testaus:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="157"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuki kahdelle näytölle ja muuta Linuxissa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
