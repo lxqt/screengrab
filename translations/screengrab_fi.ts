@@ -190,7 +190,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="415"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
 </context>
 <context>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="62"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>on alustariippumaton sovellus kuvakaappauksien ottamiseen työpöydällä.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
@@ -208,7 +208,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a screenshot of the active window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota kuvakaappaus aktiivisesta ikkunasta</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
@@ -218,7 +218,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="78"/>
         <source>Run the application with a hidden main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Suorita sovellus piilotetulla pääikkunalla</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="455"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennettu nimellä </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="477"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="483"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennetun tiedoston polku on kopioitu työpöydälle</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="505"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="505"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvakaappaus on kopioitu työpöydälle</translation>
     </message>
 </context>
 <context>
@@ -261,139 +261,139 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyyppi:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvakaappauksen tyyppi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
         <source>Full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko näyttö</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="101"/>
         <source>Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikkuna</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="106"/>
         <source>Screen area</source>
-        <translation type="unfinished"></translation>
+        <translation>Alue näytöllä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation type="unfinished"></translation>
+        <translation>Viimeksi valittu alue</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
         <source>Delay:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viive:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Viive sekunneissa ennen kaappausta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Heti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source> sec</source>
-        <translation type="unfinished"></translation>
+        <translation> sek</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurenna aluetta hiiren ympärillä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
         <source>No window decoration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei ikkunakehyksiä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä hiiren kursori</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Työkalurivi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="73"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohje</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
         <source>Screenshot </source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvankaappaus </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa kaapattu kuva ulkoisessa oletuskuvankatselimessa kaksoisklikkaamalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
         <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
         <source>%1 Files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tiedostoa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
         <source>Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna nimellä...</translation>
     </message>
 </context>
 <context>
@@ -404,12 +404,15 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piirrä nelikulmio klikkaamalla ja 
+vetämällä, sovita reunoihin oikealla 
+klikkauksella, kaappaa kaksoisklik-
+kaamalla tai painamalla Enter.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 x %2 pikseliä </translation>
     </message>
 </context>
 <context>
@@ -417,12 +420,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulkoinen muokkaus</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa sovelluksessa...</translation>
     </message>
 </context>
 <context>
@@ -430,12 +433,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="118"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tietoa Qt:stä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="144"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje</translation>
     </message>
 </context>
 <context>
@@ -444,137 +447,137 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="601"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
         <source>Main</source>
-        <translation type="unfinished"></translation>
+        <translation>Pääasetukset</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="82"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisäasetukset</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusalue</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikanäppäimet</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennuksen oletushakemisto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Polku oletushakemistoon, johon tallennetaan</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
         <source>Browse filesystem</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa tiedostojärjestelmää</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletustiedosto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletustiedostonimi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostotyyppi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena käytettävä kuvatyyppi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi tiedostonimi leikepöydälle tallennettaessa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
         <source>Do not copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Älä kopioi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi vain tiedostonimi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi koko polku</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvan laatu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvan laatu (1 - pieni tiedosto, 100 - korkea laatu)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisätään aika ja päivä tallennettuun tiedostonimeen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää aika ja päivä tiedostonimeen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation type="unfinished"></translation>
+        <translation>Nimimalli: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation type="unfinished"></translation>
+        <translation>Esimerkki: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva tallennetaan automaattisesti kaappausvaiheessa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna automaattisesti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna ensimmäinen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
