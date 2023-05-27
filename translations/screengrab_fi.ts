@@ -131,22 +131,22 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support in Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuki kaksoisnäytölle Linuxissa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-koostaminen [Windows XP ja 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation type="unfinished"></translation>
+        <translation>vanha win32-koostaminen [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
         <source>win32-build [Windows 7]</source>
-        <translation type="unfinished"></translation>
+        <translation>win32-koostaminen [Windows 7]</translation>
     </message>
 </context>
 <context>
@@ -154,38 +154,38 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakemisto %1 ei ole olemassa. Haluatko luoda sen?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="187"/>
         <location filename="../src/core/ui/configwidget.cpp" line="275"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="263"/>
         <source>Select directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse hakemisto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="274"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti palauttaa asetukset oletusarvoihinsa?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="332"/>
         <source>Example: </source>
-        <translation type="unfinished"></translation>
+        <translation>Esimerkki: </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="377"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation type="unfinished"></translation>
+        <translation>ScreenGrab käyttää jo tätä näppäintä! Valitse joku toinen.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="395"/>
         <source>This key is not supported on your system!</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestelmäsi ei tue tätä näppäintä!</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="415"/>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="66"/>
         <source>Take a fullscreen screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota kuva koko ruudusta</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="70"/>
@@ -213,7 +213,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota kuva valitusta alueesta</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="78"/>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="455"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennettu</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="455"/>
@@ -233,17 +233,17 @@
     <message>
         <location filename="../src/core/core.cpp" line="477"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennetun tiedoston nimi on kopioitu leikepöydälle</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="483"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Tallennetun tiedoston polku on kopioitu työpöydälle</translation>
+        <translation>Tallennetun tiedoston polku on kopioitu leikepöydälle</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="505"/>
         <source>Copied</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioitu</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="505"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvankaappaus (ScreenGrab)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
@@ -582,53 +582,54 @@ kaamalla tai painamalla Enter.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Salli useaa samanaikaista kopiota ohjelmasta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>Sallitaanko useita ScreenGrab-instansseja</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa ulkoisessa katselimessa kaksoisklikkaamalla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä ulkoista katselinta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos ei valittu, valitsemasi alue saattaa kasvaa isommaksi 
+käyttääkseen vapaan tilan ulkoisten reunojen välissä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaksoisklikkaa sovittaaksesi reunoihin valitun alueen sisällä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="449"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä ScreenGrab ilmoitusalueella</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusalueviestit:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusalueviestien näyttötapa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Älä näytä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
@@ -638,77 +639,77 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Aina</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusviestien näyttöaika</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekunteja kuinka kauan ilmoitusviestit näkyvät näytöllä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
         <source> sec</source>
-        <translation type="unfinished"></translation>
+        <translation> sek</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="534"/>
         <source>Minimize to tray on click close button</source>
-        <translation type="unfinished"></translation>
+        <translation>Pienennä ilmoitusalueelle suljettaessa</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="537"/>
         <source>Minimize to tray when closing</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulkemisen sijaan, pienennä ilmoitusalueelle</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="576"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Toiminto</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="581"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikanäppäin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>New screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi näyttö</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna näyttö</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi näyttö</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="606"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohje</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="611"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="621"/>
         <source>Selected shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittu pikanäppäin:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="628"/>
         <source>Not defined</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei asetettu</translation>
     </message>
 </context>
 </TS>
