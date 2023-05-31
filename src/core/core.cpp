@@ -32,7 +32,8 @@
 #include <XdgMimeApps>
 #include <qt5xdg/XdgDesktopFile>
 
-#include <KF5/KWindowSystem/KWindowSystem>
+#include <KWindowSystem/KWindowSystem>
+#include <KWindowSystem/KX11Extras>
 #include <xcb/xfixes.h>
 
 #ifdef X11_XCB_FOUND
@@ -268,15 +269,15 @@ void Core::getActiveWindow() // called only with window screenshots
     if (screen == nullptr)
         screen = QGuiApplication::screens().at(0);
 
-    WId wnd = KWindowSystem::activeWindow();
+    WId wnd = KX11Extras::activeWindow();
 
     // this window screenshot will be invalid
     // if there's no active window or the active window is ours
-    bool invalid(!wnd || !KWindowSystem::hasWId(wnd) || (_wnd && _wnd->winId() == wnd));
+    bool invalid(!wnd || !KX11Extras::hasWId(wnd) || (_wnd && _wnd->winId() == wnd));
     if (!invalid)
     { // or if it isn't on the current desktop
         KWindowInfo info(wnd, NET::WMDesktop);
-        invalid = info.valid() && !info.isOnDesktop(KWindowSystem::currentDesktop());
+        invalid = info.valid() && !info.isOnDesktop(KX11Extras::currentDesktop());
         if (!invalid)
         { // or if it is a desktop or panel/dock
             info = KWindowInfo(wnd, NET::WMWindowType);
