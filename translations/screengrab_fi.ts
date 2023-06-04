@@ -433,7 +433,7 @@ kaamalla tai painamalla Enter.</translation>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="118"/>
         <source>About Qt</source>
-        <translation type="unfinished">Tietoa Qt:stä</translation>
+        <translation>Tietoja Qt:stä</translation>
     </message>
     <message>
         <location filename="../src/core/ui/aboutwidget.ui" line="144"/>
