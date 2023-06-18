@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
         <source>win32-build [Windows XP and 7]</source>
-        <translation>win32-build [Windows XP and 7]</translation>
+        <translation>win32-build [Windows XP и 7]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="160"/>
         <source>old win32-build [Windows Vista]</source>
-        <translation>old win32-build [Windows Vista]</translation>
+        <translation>старият win32-build [Windows Vista]</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="161"/>
