@@ -142,7 +142,8 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
     scaleSize.scale(_ui->scrLabel->contentsRect().size(), Qt::KeepAspectRatio);
 
-    if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
+    const QPixmap pixmap = _ui->scrLabel->pixmap(Qt::ReturnByValue);
+    if (pixmap.isNull() || scaleSize != pixmap.size())
         updatePixmap(Core::instance()->getPixmap());
 }
 
