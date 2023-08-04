@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Det är ett ljust och kraftullt program, skrivet i Qt.</translation>
+        <translation>Det är ett resurssnålt och kraftullt program, skrivet i Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
