@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="127"/>
         <source>Report bugs and issues</source>
-        <translation>Imformar bugs e problemas</translation>
+        <translation>Informar bugs e problemas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="130"/>
