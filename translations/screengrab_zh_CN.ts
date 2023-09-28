@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="43"/>
         <source>Help us</source>
-        <translation>帮助我们</translation>
+        <translation>参与与帮助</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
