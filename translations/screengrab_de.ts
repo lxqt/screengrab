@@ -41,17 +41,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>verwendet Qt %1</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="108"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lizenziert als &lt;a href=%1&gt;GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
@@ -637,8 +637,8 @@ Doppelklick oder Enter um ein Bildschirmfoto aufzunehmen.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Wenn dies nicht aktiviert ist, kann der ausgewählte Bereich
-größer werden um bis an den äußeren Rand zu reichen</translation>
+        <translation>Wenn die Option deaktiviert ist, kann der ausgewählte Bereich
+größer werden, um an die äußeren Kanten zu passen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
