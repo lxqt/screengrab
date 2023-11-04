@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="62"/>
+        <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>είναι μια ανεξαρτήτου πλατύβαθρου εφαρμογή για γρήγορη δημιουργία στιγμιοτύπων της επιφάνειας εργασίας.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="66"/>
+        <location filename="../src/core/core.cpp" line="67"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Λήψη ενός στιγμιότυπου πλήρους οθόνης</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="70"/>
+        <location filename="../src/core/core.cpp" line="71"/>
         <source>Take a screenshot of the active window</source>
         <translation>Λήψη ενός στιγμιότυπου του ενεργού παραθύρου</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="74"/>
+        <location filename="../src/core/core.cpp" line="75"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Λήψη ενός στιγμιότυπου μιας περιοχής της οθόνης</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="78"/>
+        <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
         <translation>Εκτέλεση της εφαρμογής με το κύριο παράθυρο καταχωνιασμένο</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="455"/>
+        <location filename="../src/core/core.cpp" line="456"/>
         <source>Saved</source>
         <translation>Αποθηκεύτηκε</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="455"/>
+        <location filename="../src/core/core.cpp" line="456"/>
         <source>Saved to </source>
         <translation>Αποθηκεύτηκε στο </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="477"/>
+        <location filename="../src/core/core.cpp" line="478"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Το όνομα του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="483"/>
+        <location filename="../src/core/core.cpp" line="484"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Η διαδρομή του αποθηκευμένου αρχείου αντιγράφτηκε στο πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="505"/>
+        <location filename="../src/core/core.cpp" line="506"/>
         <source>Copied</source>
         <translation>Αντιγράφηκε</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="505"/>
+        <location filename="../src/core/core.cpp" line="506"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Το στιγμιότυπο της οθόνης αντιγράφηκε στο πρόχειρο</translation>
     </message>
@@ -365,33 +365,33 @@
         <translation>Έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="341"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="342"/>
         <source>Screenshot </source>
         <translation>Στιγμιότυπο </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="345"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Διπλό κλικ για άνοιγμα του στιγμιότυπου στον εξωτερικό προεπιλεγμένο προβολέα εικόνων</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="354"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="485"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="486"/>
         <source>Hide</source>
         <translation>Απόκρυψη</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="492"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="493"/>
         <source>Show</source>
         <translation>Εμφάνιση</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="545"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="546"/>
         <source>%1 Files</source>
         <translation>%1 Αρχεία</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="567"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="568"/>
         <source>Save As...</source>
         <translation>Αποθήκευση ως...</translation>
     </message>
