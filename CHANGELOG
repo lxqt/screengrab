@@ -1,3 +1,8 @@
+2.7.0 / 2023-11-05
+==================
+ * Ported deprecated KWindowSystem methods.
+ * Ported away from an obsolete QLabel method.
+
 2.6.0 / 2023-04-15
 ==================
  * Updated translations and bumped the version.
