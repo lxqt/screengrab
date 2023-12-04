@@ -634,7 +634,7 @@ käyttääkseen vapaan tilan ulkoisten reunojen välissä</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä ilmaisualuetta</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
