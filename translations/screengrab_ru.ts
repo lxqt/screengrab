@@ -410,7 +410,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 пикс </translation>
+        <translation>%1 x %2 пкс </translation>
     </message>
 </context>
 <context>
