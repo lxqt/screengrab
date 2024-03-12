@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>jest wieloplatformową aplikacją pozwalającą na szybkie tworzenie zrzutów ekranu.</translation>
+        <translation>jest wieloplatformowym programem do szybkiego tworzenia zrzutów ekranu.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>Jest to lekka i funkcjonalna aplikacja napisana w Qt.</translation>
+        <translation>Jest to lekki i funkcjonalny program napisany w Qt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Możesz dołączyć do nas i pomóc nam jeżeli chcesz i lubisz tę aplikację.</translation>
+        <translation>Możesz dołączyć do nas i pomóc nam, jeśli chcesz i lubisz ten program.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="122"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="63"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>jest wieloplatformową aplikacją do szybkiego tworzenia zrzutów ekranu pulpitu.</translation>
+        <translation>jest wieloplatformowym programem do szybkiego tworzenia zrzutów ekranu pulpitu.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="67"/>
@@ -218,7 +218,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="79"/>
         <source>Run the application with a hidden main window</source>
-        <translation>Uruchom aplikację z ukrytym głównym oknem</translation>
+        <translation>Uruchom program z ukrytym głównym oknem</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="456"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Naciśnij dwukrotnie aby otworzyć zrzut ekranu w domyślnej zewnętrznej przeglądarce zdjęć</translation>
+        <translation>Kliknij dwukrotnie, aby otworzyć zrzut ekranu w zewnętrznej domyślnej przeglądarce obrazów</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
@@ -404,9 +404,9 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation>Kliknij i przeciągnij, aby zaznaczyć obszar
-naciśnij prawym klawiszem myszy by dopasować do krawędzi,
-kliknij dwukrotnie lub wciśnij Enter
+        <translation>Kliknij i przeciągnij, aby zaznaczyć obszar,
+naciśnij prawym klawiszem myszy, aby dopasować do krawędzi,
+kliknij dwukrotnie lub wciśnij Enter,
 aby wykonać zrzut ekranu.</translation>
     </message>
     <message>
