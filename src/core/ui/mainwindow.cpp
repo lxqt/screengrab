@@ -49,6 +49,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     actHelp = new QAction(QIcon::fromTheme(QStringLiteral("system-help")), tr("Help"), this);
     actAbout = new QAction(QIcon::fromTheme(QStringLiteral("system-about")), tr("About"), this);
     actQuit = new QAction(QIcon::fromTheme(QStringLiteral("application-exit")), tr("Quit"), this);
+    actHideQuit = new QAction(QIcon::fromTheme(QStringLiteral("application-exit")), tr("QuitHide"), this);
 
     // connect actions to slots
     Core *c = Core::instance();
@@ -79,9 +80,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        _ui->toolBar->addWidget(spacer);
+    _ui->toolBar->addWidget(spacer);
 
-    _ui->toolBar->addAction(actQuit);
+    _ui->toolBar->addAction(actHideQuit);
 
     void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
     connect(_ui->delayBox, delayChange, this, &MainWindow::delayBoxChange);
@@ -217,14 +218,14 @@ void MainWindow::show()
 {
     if (!isVisible() && !_trayed)
         showNormal();
-    if (_trayIcon){
+    if (_trayIcon) {
         if (_conf->getShowTrayIcon())
         {
             _trayIcon->blockSignals(false);
             _trayIcon->setContextMenu(_trayMenu);
         }
 
-    _trayIcon->setVisible(true);
+        _trayIcon->setVisible(true);
     }
     QMainWindow::show();
 }
@@ -451,6 +452,17 @@ void MainWindow::updateUI()
     _ui->checkIncludeCursor->setChecked(_conf->getIncludeCursor());
 
     updateShortcuts();
+    Core* c = Core::instance();
+
+    if (_conf->getShowTrayIcon()) {
+        disconnect(actHideQuit, &QAction::triggered, c, &Core::coreQuit);
+        connect(actHideQuit, &QAction::triggered, this, &MainWindow::windowHideShow);
+        actHideQuit->setText(tr("Hide"));
+    } else {
+        disconnect(actHideQuit, &QAction::triggered, this, &MainWindow::windowHideShow);
+        connect(actHideQuit, &QAction::triggered, c, &Core::coreQuit);
+        actHideQuit->setText(tr("Quit"));
+    }
 
     // create tray object
     if (_conf->getShowTrayIcon() && !_trayIcon)
