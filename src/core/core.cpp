@@ -30,7 +30,7 @@
 #include <QDebug>
 
 #include <XdgMimeApps>
-#include <qt5xdg/XdgDesktopFile>
+#include <qt6xdg/XdgDesktopFile>
 
 #include <KWindowSystem>
 #include <KX11Extras>

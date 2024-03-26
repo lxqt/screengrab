@@ -8,7 +8,6 @@ set (extedit_HDR
 )
 
 lxqt_translate_ts(extedit_QMS
-    USE_QT6 TRUE
     UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
     TEMPLATE "extedit"
     TRANSLATION_DIR "${CMAKE_SOURCE_DIR}/translations"

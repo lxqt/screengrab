@@ -23,8 +23,8 @@
 #include <QProcess>
 #include <QFileSystemWatcher>
 #include <QAction>
-#include <qt5xdg/XdgDesktopFile>
-#include <qt5xdg/XdgAction>
+#include <qt6xdg/XdgDesktopFile>
+#include <qt6xdg/XdgAction>
 
 class ExtEdit : public QObject
 {
