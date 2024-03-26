@@ -20,8 +20,8 @@
 #define X11UTILS_H
 
 #include <QPixmap>
+#include <QGuiApplication>
 #include <QScopedPointer>
-#include <QX11Info>
 
 #include <X11/Xlib-xcb.h>
 #include <fixx11h.h>
@@ -42,7 +42,14 @@ namespace Xcb {
 
     inline xcb_connection_t *connection()
     {
-        return XGetXCBConnection(QX11Info::display());
+        if (auto x11NativeInterface = qGuiApp->nativeInterface<QNativeInterface::QX11Application>())
+        {
+            if (Display *dpy = x11NativeInterface->display())
+            {
+                return XGetXCBConnection(dpy);
+            }
+        }
+        return nullptr;
     }
 } // namespace Xcb
 

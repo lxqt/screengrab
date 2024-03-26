@@ -20,26 +20,26 @@
 #define SHORTCUTMANAGER_H
 
 #include <QSettings>
-#include <QVector>
+#include <QList>
 #include <QStringList>
 #include <QKeySequence>
 
 struct Shortcut {
     QString key;
-    int type;
-    int action;
+    int type = 0;
+    int action = 0;
     Shortcut() {};
     Shortcut(QString k, int t, int a)
     {
-    key = k;
-    type = t;
-    action = a;
+        key = k;
+        type = t;
+        action = a;
     }
 };
 
 Q_DECLARE_METATYPE(Shortcut)
 
-typedef QVector<Shortcut> ShortcutList;
+typedef QList<Shortcut> ShortcutList;
 
 class ShortcutManager
 {

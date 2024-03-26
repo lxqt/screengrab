@@ -36,7 +36,6 @@
 #include <QByteArray>
 #include <QRect>
 #include <QProcess>
-#include <QX11Info>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 

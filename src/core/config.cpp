@@ -24,7 +24,7 @@
 #include <QDir>
 #include <QFile>
 #include <QLocale>
-#include <QVector>
+#include <QList>
 #include <QDebug>
 
 #define CONFIG_FILE_DIR "screengrab"

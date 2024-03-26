@@ -8,7 +8,7 @@ set (extedit_HDR
 )
 
 lxqt_translate_ts(extedit_QMS
-    USE_QT5 TRUE
+    USE_QT6 TRUE
     UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
     TEMPLATE "extedit"
     TRANSLATION_DIR "${CMAKE_SOURCE_DIR}/translations"
@@ -18,7 +18,7 @@ lxqt_translate_ts(extedit_QMS
     INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/translations"
 )
 
-qt5_translation_loader(extedit_QM_LOADER
+qt6_translation_loader(extedit_QM_LOADER
     "${CMAKE_INSTALL_FULL_DATADIR}/${PROJECT_NAME}/translations"
     "extedit"
 )
@@ -30,4 +30,4 @@ add_library(extedit
         ${extedit_QM_LOADER}
 )
 
-target_link_libraries(extedit Qt5::Widgets Qt5::X11Extras Qt5Xdg)
+target_link_libraries(extedit Qt6::Widgets Qt6Xdg)

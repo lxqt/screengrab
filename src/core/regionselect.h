@@ -67,7 +67,7 @@ private:
     QPoint _selEndPoint;
 
     int _currentFit;
-    QVector<QRect> _fitRectangles;
+    QList<QRect> _fitRectangles;
 
     bool _processSelection;
     bool _fittedSelection;
