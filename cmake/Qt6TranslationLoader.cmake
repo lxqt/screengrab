@@ -25,11 +25,11 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
 #
-# These functions enables "automatic" translation loading in Qt5 apps
+# These functions enables "automatic" translation loading in Qt6 apps
 #   and libs. They generate a .cpp file that takes care of everything. The
 #   user doesn't have to do anything in the source code.
 #
-# qt5_translation_loader(<source_files> <translations_dir> <catalog_name>)
+# Qt6_translation_loader(<source_files> <translations_dir> <catalog_name>)
 #
 # Output:
 #   <source_files> Appends the generated file to this variable.
@@ -40,10 +40,10 @@
 
 set(__CURRENT_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-function(qt5_translation_loader source_files translations_dir catalog_name)
+function(qt6_translation_loader source_files translations_dir catalog_name)
     configure_file(
-        ${__CURRENT_DIR}/Qt5TranslationLoader.cpp.in
-        Qt5TranslationLoader.cpp @ONLY
+        ${__CURRENT_DIR}/Qt6TranslationLoader.cpp.in
+        Qt6TranslationLoader.cpp @ONLY
     )
-    set(${source_files} ${${source_files}} ${CMAKE_CURRENT_BINARY_DIR}/Qt5TranslationLoader.cpp PARENT_SCOPE)
+    set(${source_files} ${${source_files}} ${CMAKE_CURRENT_BINARY_DIR}/Qt6TranslationLoader.cpp PARENT_SCOPE)
 endfunction()

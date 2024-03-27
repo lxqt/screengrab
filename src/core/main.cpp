@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
     scr.setOrganizationName(QStringLiteral("lxqt"));
     scr.setOrganizationDomain(QStringLiteral("https://lxqt.org"));
     scr.setApplicationName(QStringLiteral("screengrab"));
-    scr.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
     ScreenGrab->processCmdLineOpts(scr.arguments());

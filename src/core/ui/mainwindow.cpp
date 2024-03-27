@@ -26,7 +26,7 @@
 #include <QScreen>
 #include <QHash>
 #include <QHashIterator>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QTimer>
 #include <QToolButton>
 #include <QMenu>
@@ -567,8 +567,8 @@ void MainWindow::saveScreen()
     QString fileName;
     fileName = QFileDialog::getSaveFileName(this, tr("Save As..."),  filePath, fileFilters.join(QStringLiteral(";;")), &filterSelected);
 
-    QRegExp rx(QStringLiteral(R"(\(\*\.[a-z]{3,4}\))"));
-    quint8 tmp = filterSelected.size() - rx.indexIn(filterSelected);
+    static const QRegularExpression rx(QStringLiteral(R"(\(\*\.[a-z]{3,4}\))"));
+    quint8 tmp = filterSelected.size() - filterSelected.indexOf(rx);
 
     filterSelected.chop(tmp + 1);
     format = formatsAvalible.key(filterSelected);

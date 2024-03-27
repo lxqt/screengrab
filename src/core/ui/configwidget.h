@@ -22,7 +22,6 @@
 #include "../config.h"
 
 #include <QDialog>
-#include <QTextCodec>
 #include <QDateTime>
 #include <QModelIndex>
 #include <QTreeWidgetItem>

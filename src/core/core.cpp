@@ -30,10 +30,11 @@
 #include <QDebug>
 
 #include <XdgMimeApps>
-#include <qt5xdg/XdgDesktopFile>
+#include <qt6xdg/XdgDesktopFile>
 
-#include <KWindowSystem/KWindowSystem>
-#include <KWindowSystem/KX11Extras>
+#include <KWindowSystem>
+#include <KX11Extras>
+#include <KWindowInfo>
 #include <xcb/xfixes.h>
 
 #ifdef X11_XCB_FOUND

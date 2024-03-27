@@ -15,15 +15,14 @@ option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # Minimum Versions
-set(KF5_MINIMUM_VERSION "5.101.0")
-set(QT_MINIMUM_VERSION "5.15.0")
-set(QTXDG_MINIMUM_VERSION "3.12.0")
+set(KF6_MINIMUM_VERSION "6.0.0")
+set(QT_MINIMUM_VERSION "6.6.0")
+set(QTXDG_MINIMUM_VERSION "4.0.0")
 
-find_package(Qt5LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5Network ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5X11Extras ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
 
 # right now we declare it as required
 find_package(X11 REQUIRED)
@@ -44,7 +43,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(SCREENGRAB_VERSION "2.7.0")
+set(SCREENGRAB_VERSION "2.8.0")
 
 if (DEV_VERSION)
     set(VERSION "${SCREENGRAB_VERSION}-dev (${DEV_VERSION})")
@@ -70,15 +69,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual 
 #   bring any dependency on lxqt.
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
-include(Qt5TranslationLoader)
+include(Qt6TranslationLoader)
 
 if(SG_EXT_EDIT)
     add_definitions( -DSG_EXT_EDIT="1")
-    find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
+    find_package(Qt6Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 endif()
 
 if(SG_DBUS_NOTIFY)
-    find_package(Qt5DBus ${QT_MINIMUM_VERSION} REQUIRED)
+    find_package(Qt6DBus ${QT_MINIMUM_VERSION} REQUIRED)
     add_definitions( -DSG_DBUS_NOTIFY="1")
 endif()
 
@@ -137,7 +136,7 @@ set(SCREENGRAB_UI
 
 # Qt resource file
 set(SCREENGRAB_QRC screengrab.qrc)
-qt5_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
+qt6_add_resources(QRC_SOURCES ${SCREENGRAB_QRC})
 
 message(STATUS "Generating localize ...")
 
@@ -150,7 +149,6 @@ set(SCREENGRAB_DESKTOP_FILES_IN
 )
 
 lxqt_translate_ts(SCREENGRAB_QMS
-    USE_QT5 TRUE
     UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
     SOURCES
         ${SCREENGRAB_SRC}
@@ -163,7 +161,7 @@ lxqt_translate_desktop(SCREENGRAB_DESKTOP_FILES
     USE_YAML
 )
 
-qt5_translation_loader(SCREENGRAB_QM_LOADER
+qt6_translation_loader(SCREENGRAB_QM_LOADER
     "${CMAKE_INSTALL_FULL_DATADIR}/${PROJECT_NAME}/translations"
     ${PROJECT_NAME}
 )
@@ -183,7 +181,7 @@ if(SG_EXT_EDIT)
 endif()
 
 if(SG_DBUS_NOTIFY)
-    target_link_libraries(screengrab Qt5::DBus)
+    target_link_libraries(screengrab Qt6::DBus)
 endif()
 
 if (X11_XCB_FOUND)
@@ -206,8 +204,8 @@ if (XCB_XFIXES_FOUND)
     target_link_libraries(screengrab ${XCB_XFIXES_LIBRARY})
 endif()
 
-# Link with Network and X11Extras. See pull#86. TODO: Should be optional when upload module is needed.
-target_link_libraries(screengrab qkeysequencewidget Qt5::Widgets KF5::WindowSystem Qt5::X11Extras Qt5::Network ${X11_LIBRARIES})
+# Link with Network. See pull#86. TODO: Should be optional when upload module is needed.
+target_link_libraries(screengrab qkeysequencewidget Qt6::Widgets KF6::WindowSystem Qt6::Network ${X11_LIBRARIES})
 
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)

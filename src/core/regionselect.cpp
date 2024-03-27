@@ -350,10 +350,10 @@ void RegionSelect::fitBorder(const QRect &boundRect, enum Side side, int &border
     else
         normalDepth = qMin(normalDepth/2 - 1, fitRectDepth + fitRectExpand);
 
-    QVector<int> gradient = QVector<int>(normalDepth, 0);
-    QVector<int> preR = QVector<int>(normalDepth + 1, 0);
-    QVector<int> preG = QVector<int>(normalDepth + 1, 0);
-    QVector<int> preB = QVector<int>(normalDepth + 1, 0);
+    QList<int> gradient = QList<int>(normalDepth, 0);
+    QList<int> preR = QList<int>(normalDepth + 1, 0);
+    QList<int> preG = QList<int>(normalDepth + 1, 0);
+    QList<int> preB = QList<int>(normalDepth + 1, 0);
 
     // Compute pixel Sobel normal gradients and add their absolute values parallel to the box side
     for (int i = 1; i < directionLength; i++)
