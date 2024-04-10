@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="140"/>
         <source>Translate:</source>
-        <translation>Переводы:</translation>
+        <translation>Перевод:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
