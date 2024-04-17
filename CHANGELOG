@@ -1,3 +1,7 @@
+2.8.0 / 2024-04-17
+==================
+ * Ported to Qt6.
+
 2.7.0 / 2023-11-05
 ==================
  * Ported deprecated KWindowSystem methods.
