@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     scr.setOrganizationName(QStringLiteral("lxqt"));
     scr.setOrganizationDomain(QStringLiteral("https://lxqt.org"));
     scr.setApplicationName(QStringLiteral("screengrab"));
+    scr.setDesktopFileName(QStringLiteral("screengrab"));
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
     ScreenGrab->processCmdLineOpts(scr.arguments());
