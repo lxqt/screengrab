@@ -21,6 +21,7 @@
 
 #include <XdgMimeApps>
 
+#include <QtAlgorithms>
 #include <QDebug>
 #include <QMimeDatabase>
 
@@ -73,4 +74,6 @@ void ExtEdit::createAppList()
 
     for (XdgDesktopFile *app : appList)
         _actionList << new XdgAction(app);
+
+    qDeleteAll(appList);
 }
