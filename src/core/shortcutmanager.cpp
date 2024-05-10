@@ -40,18 +40,14 @@ const QString KEY_SHORTCUT_HELP = QStringLiteral("Help");
 const QString KEY_SHORTCUT_CLOSE = QStringLiteral("Close");
 
 ShortcutManager::ShortcutManager(QSettings *settings) :
-    _shortcutSettings(new QSettings)
+    _shortcutSettings(settings)
 {
-    _shortcutSettings = settings;
-
     for (int i = Config::shortcutFullScreen; i <= Config::shortcutClose; ++i)
         _listShortcuts << Shortcut();
 }
 
 ShortcutManager::~ShortcutManager()
 {
-    _shortcutSettings = nullptr;
-    delete _shortcutSettings;
 }
 
 void ShortcutManager::loadSettings()
