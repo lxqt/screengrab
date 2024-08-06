@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Mappen %1 finnes ikke. Ønsker du å skape den?</translation>
+        <translation>Mappen %1 finnes ikke. Vil du opprette den?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="187"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="274"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Ønsker å du å stille tilbake til standardinnstillinger?</translation>
+        <translation>Vil du tilbakestille til standardinnstillingene?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="332"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="484"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Filsti til lagret fil er kopiert til utklippsboken</translation>
+        <translation>Filbane til lagret fil er kopiert til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="506"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>Type skjermbilde</translation>
+        <translation>Skjermbildetype</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>Options</source>
-        <translation>Valg</translation>
+        <translation>Alternativer</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
@@ -447,7 +447,7 @@ for å ta et skjermbilde.</translation>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
         <location filename="../src/core/ui/configwidget.ui" line="601"/>
         <source>Options</source>
-        <translation>Valg</translation>
+        <translation>Alternativer</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="77"/>
@@ -517,7 +517,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>Kopier filnavn til utklippsboken ved lagring</translation>
+        <translation>Kopier filnavn til utklippstavlen ved lagring</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -619,12 +619,12 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="458"/>
         <source>Tray messages:</source>
-        <translation>Systemkurvsbeskjeder:</translation>
+        <translation>Systemkurvmeldinger:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="471"/>
         <source>Tray messages display mode</source>
-        <translation>Visningsmodus for systemkurvsbeskjeder</translation>
+        <translation>Visningsmodus for systemkurvmeldinger</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="475"/>
@@ -634,7 +634,7 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="480"/>
         <source>Tray mode</source>
-        <translation>Systemkurvsmodus</translation>
+        <translation>Systemkurvmodus</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="485"/>
@@ -644,12 +644,12 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="497"/>
         <source>Time of display tray messages</source>
-        <translation>Tid å vise systemkurvsbeskjeder</translation>
+        <translation>Tid for visning av systemkurvmeldinger</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="513"/>
         <source>Time to display tray messages</source>
-        <translation>Tid å vise systemkurvsbeskjeder</translation>
+        <translation>Tid å vise systemkurvmeldinger</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="516"/>
@@ -679,17 +679,17 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="586"/>
         <source>New screen</source>
-        <translation>Ny skjerm</translation>
+        <translation>Nytt skjermbilde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="591"/>
         <source>Save screen</source>
-        <translation>Lagre skjerm</translation>
+        <translation>Lagre skjermbilde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="596"/>
         <source>Copy screen</source>
-        <translation>Kopier skjerm</translation>
+        <translation>Kopier skjermbilde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="606"/>
