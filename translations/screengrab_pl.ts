@@ -420,7 +420,7 @@ aby wykonać zrzut ekranu.</translation>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="35"/>
         <source>External edit</source>
-        <translation>Edytuj na zewnątrz</translation>
+        <translation>Edytuj w innym programie</translation>
     </message>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
