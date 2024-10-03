@@ -74,6 +74,7 @@ private:
     QAction *actAbout;
     QAction *actHelp;
     QAction *actQuit;
+    QAction *actHideQuit;
     Config *_conf;
     QMenu *_trayMenu;
     QShortcut *_hideWnd;
