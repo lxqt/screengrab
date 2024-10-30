@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>er et plattformuavhenging program for å raskt skape skjermbilder av ditt skrivebord.</translation>
+        <translation>er et plattformuavhenging program for å raskt lage skjermbilder av skrivebordet ditt.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source> Brazilian Portuguese translation</source>
-        <translation> Brasilliansk Portugisisk oversettelse</translation>
+        <translation> Brasiliansk-portugisisk oversettelse</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
@@ -412,7 +412,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
         <source>%1 x %2 pixels </source>
-        <translation>%1 x %2 punkter </translation>
+        <translation>%1 x %2 piksler </translation>
     </message>
 </context>
 <context>
@@ -487,7 +487,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="138"/>
         <source>Browse</source>
-        <translation>Se gjennom</translation>
+        <translation>Bla gjennom</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
@@ -512,7 +512,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>Standard bildeformat</translation>
+        <translation>Standard bildelagringsformat</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
@@ -587,7 +587,7 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
         <source>Allow multiple instances of ScreenGrab</source>
-        <translation>Tillat flere utgaver av ScreenGrab</translation>
+        <translation>Tillat flere instanser av ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
@@ -597,13 +597,13 @@ for å ta et skjermbilde.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
         <source>Enable external viewer</source>
-        <translation>Slå på ekstern bildeviser</translation>
+        <translation>Aktiver ekstern bildeviser</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>Hvis dette ikke er markert kan det markerte området
+        <translation>Hvis dette ikke er aktivert kan det markerte området
 bli større for å tilpasses til ytre kanter</translation>
     </message>
     <message>
