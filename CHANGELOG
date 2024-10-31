@@ -1,3 +1,8 @@
+2.9.0 / 2024-11-05
+==================
+ * Properly initialized and destroyed shortcuts settings.
+ * Fixed a memory leak in a pointer `QList`.
+
 2.8.0 / 2024-04-17
 ==================
  * Ported to Qt6.
