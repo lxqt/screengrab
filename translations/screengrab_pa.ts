@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਤੁਹਾਡੇ ਡੈਸਕਟਾਪ ਦੇ ਤੇਜ਼ੀ ਨਾਲ ਸਕਰੀਨਸ਼ਾਟ ਲੈਣ ਲਈ ਅੰਤਰ-ਮੰਚ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
         <translation>ਪੂਰੀ ਸਕਰੀਨ ਦਾ ਸਕਰੀਨਸ਼ਾਟ ਲਵੋ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
         <translation>ਸਰਗਰਮ ਵਿੰਡੋ ਦਾ ਸਕਰੀਨਸ਼ਾਟ ਲਵੋ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>ਸਕਰੀਨ ਦੇ ਚੁਣੇ ਹਿੱਸੇ ਦਾ ਸਕਰੀਨਸ਼ਾਟ ਲਵੋ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
         <translation>ਲੁਕਵੀ ਮੁੱਖ ਵਿੰਡੋ ਨਾਲ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਚਲਾਓ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved</source>
         <translation>ਸੰਭਾਲਿਆ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved to </source>
         <translation>ਇੱਥੇ ਸੰਭਾਲਿਆ </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="479"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>ਸੰਭਾਲੀ ਹੋਈ ਫਾਇਲ ਦਾ ਨਾਂ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="484"/>
+        <location filename="../src/core/core.cpp" line="485"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>ਸੰਭਾਲੀ ਹੋਈ ਫਾਇਲ ਦਾ ਪਾਥ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Copied</source>
         <translation>ਕਾਪੀ ਕੀਤਾ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>ਸਕਰੀਨਸ਼ਾਟ ਨੂੰ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ ਹੈ</translation>
     </message>
