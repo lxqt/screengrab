@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>je multiplatformová aplikácia pre rýchle fotografovanie pracovnej plochy.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Odfotiť celú obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
         <translation>Odfotiť aktívne okno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Odfotiť vybranú časť obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
         <translation>Spustiť aplikáciu a skryť jej hlavné okno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved</source>
         <translation>Uložené</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved to </source>
         <translation>Uložené do </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="479"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Názov uloženého súboru je skopírovaný v schránke</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="484"/>
+        <location filename="../src/core/core.cpp" line="485"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Cesta k uloženému súboru je uložená v schránke</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Copied</source>
         <translation>Skopírované</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snímka obrazovky je skopírovaná v schránke</translation>
     </message>

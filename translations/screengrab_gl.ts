@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>é unha aplicación multiplataforma para facer rapidamente capturas de pantalla do seu escritorio.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Facer unha captura da pantalla completa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
         <translation>Facer unha captura da xanela activa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Facer unha captura dunha área da pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
         <translation>Executar a aplicación coa xanela principal agochada</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved to </source>
         <translation>Gardado en </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="479"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>O nome do ficheiro gardado copiase no portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="484"/>
+        <location filename="../src/core/core.cpp" line="485"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>A ruta ao ficheiro gardado copiase ao portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Copied</source>
         <translation>Copiado</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>A captura de pantalla copiase ao portapapeis</translation>
     </message>

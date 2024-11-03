@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>은 데스크탑의 스크린샷을 빠르게 생성하기 위한 크로스 플랫폼 응용 프로그램입니다.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
         <translation>전체 화면 스크린샷 찍기</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
         <translation>활성 창의 스크린샷 찍기</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>선택한 화면의 스크린샷 찍기</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
         <translation>숨겨진 기본 창으로 응용 프로그램 실행</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved</source>
         <translation>저장됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved to </source>
         <translation>저장 위치 </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="479"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>저장된 파일의 이름이 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="484"/>
+        <location filename="../src/core/core.cpp" line="485"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>저장된 파일의 경로가 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Copied</source>
         <translation>복사됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>스크린샷이 클립보드에 복사되었습니다</translation>
     </message>

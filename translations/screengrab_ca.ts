@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="63"/>
+        <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>és una aplicació multiplataforma per a la creació ràpida de captures de pantalla del vostre escriptori.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="67"/>
+        <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Feu captures de pantalla a pantalla completa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="71"/>
+        <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
         <translation>Feu una captura de pantalla de la finestra activa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="75"/>
+        <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Feu captures de pantalla d&apos;una selecció de la pantalla</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="79"/>
+        <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
         <translation>Executeu l&apos;aplicació amb una finestra principal oculta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="456"/>
+        <location filename="../src/core/core.cpp" line="457"/>
         <source>Saved to </source>
         <translation>Desat a </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="479"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>El nom del fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="484"/>
+        <location filename="../src/core/core.cpp" line="485"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>El camí al fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Copied</source>
         <translation>Copiat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="506"/>
+        <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La captura de pantalla es copia al porta-retalls</translation>
     </message>
