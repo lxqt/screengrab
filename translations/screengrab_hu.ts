@@ -31,12 +31,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="34"/>
         <source>using Qt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>felhasználva Qt %1</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="105"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Weboldal - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="108"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Minden jog fenntartva &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
-        <translation>Miben segíthet</translation>
+        <translation>Mit tehet?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="125"/>

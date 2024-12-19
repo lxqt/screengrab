@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>은 데스크탑의 스크린샷을 빠르게 생성하기 위한 크로스 플랫폼 응용 프로그램입니다.</translation>
+        <translation>은 데스크톱의 스크린숏을 빠르게 생성할 수 있는 크로스 플랫폼 애플리케이션입니다.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="377"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>이 키는 이미 ScreenGrab에서 사용 중입니다! 다른 것을 선택하십시오.</translation>
+        <translation>이 키는 이미 ScreenGrab에서 사용 중입니다! 다른 키를 선택해 주세요.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="395"/>
@@ -198,22 +198,22 @@
     <message>
         <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>은 데스크탑의 스크린샷을 빠르게 생성하기 위한 크로스 플랫폼 응용 프로그램입니다.</translation>
+        <translation>은 데스크톱의 스크린숏을 빠르게 생성할 수 있는 크로스 플랫폼 애플리케이션입니다.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
-        <translation>전체 화면 스크린샷 찍기</translation>
+        <translation>전체화면 스크린숏 찍기</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
-        <translation>활성 창의 스크린샷 찍기</translation>
+        <translation>활성 창 스크린숏 찍기</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation>선택한 화면의 스크린샷 찍기</translation>
+        <translation>선택한 화면 스크린숏 찍기</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="80"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="507"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>스크린샷이 클립보드에 복사되었습니다</translation>
+        <translation>스크린숏이 클립보드에 복사되었습니다</translation>
     </message>
 </context>
 <context>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>스크린샷 유형</translation>
+        <translation>스크린숏 유형</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>스크린샷을 찍기 전 몇 초의 지연시간</translation>
+        <translation>스크린숏 찍기 전 지연 시간(초)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="342"/>
         <source>Screenshot </source>
-        <translation>스크린샷 </translation>
+        <translation>스크린숏 </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>외부 기본 이미지 뷰어에서 스크린샷을 열려면 두 번 클릭</translation>
+        <translation>외부 기본 이미지 뷰어에서 스크린숏을 열려면 두 번 클릭</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
@@ -406,8 +406,8 @@ double click or press Enter
 to take a screenshot.</source>
         <translation>직사각형을 그리려면 클릭하고 드래그하고,
 가장자리에 맞추려면 마우스 오른쪽 버튼을 클릭하고,
-스크린샷을 찍으려면
-두 번 클릭하거나 Enter 키를 누릅니다.</translation>
+스크린숏을 찍으려면
+더블클릭하거나 Enter를 눌러주세요.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
@@ -567,17 +567,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>캡처 과정에서 자동으로 스크린샷 저장</translation>
+        <translation>캡처 과정에서 스크린숏 자동으로 저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>스크린샷 자동 저장하기</translation>
+        <translation>스크린숏 자동저장</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>첫 스크린샷 저장하기</translation>
+        <translation>첫 번째 스크린숏 저장하기</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
