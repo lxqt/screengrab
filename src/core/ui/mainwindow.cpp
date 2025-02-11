@@ -234,33 +234,6 @@ bool MainWindow::isTrayed() const
     return _trayIcon != nullptr;
 }
 
-void MainWindow::showTrayMessage(const QString& header, const QString& message)
-{
-    if (_conf->getShowTrayIcon())
-    {
-        switch(_conf->getTrayMessages())
-        {
-            case 0: break; // never shown
-            case 1: // main window hidden
-            {
-                if (isHidden() && _trayed)
-                {
-                    _trayIcon->showMessage(header, message,
-                    QSystemTrayIcon::MessageIcon(), _conf->getTimeTrayMess()*1000 ); //5000
-                }
-                break;
-            }
-            case 2: // always show
-            {
-                _trayIcon->showMessage(header, message,
-                QSystemTrayIcon::MessageIcon(), _conf->getTimeTrayMess()*1000 );
-                break;
-            }
-            default: break;
-        }
-    }
-}
-
 
 void MainWindow::setConfig(Config *config)
 {
