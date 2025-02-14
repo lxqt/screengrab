@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="182"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>%1 디렉터리가 없습니다. 만드시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="183"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="271"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="263"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="259"/>
         <source>Select directory</source>
         <translation>디렉터리 선택</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="274"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="270"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>설정을 기본값으로 재설정하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="332"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="314"/>
         <source>Example: </source>
         <translation>예시: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="355"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>이 키는 이미 ScreenGrab에서 사용 중입니다! 다른 키를 선택해 주세요.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="395"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="373"/>
         <source>This key is not supported on your system!</source>
         <translation>이 키는 시스템에서 지원되지 않습니다!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="415"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="393"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
@@ -221,32 +221,32 @@
         <translation>숨겨진 기본 창으로 응용 프로그램 실행</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="457"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved</source>
         <translation>저장됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="457"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved to </source>
         <translation>저장 위치 </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="479"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>저장된 파일의 이름이 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="485"/>
+        <location filename="../src/core/core.cpp" line="478"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>저장된 파일의 경로가 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="507"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Copied</source>
         <translation>복사됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="507"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>스크린숏이 클립보드에 복사되었습니다</translation>
     </message>
@@ -365,33 +365,33 @@
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="342"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="315"/>
         <source>Screenshot </source>
         <translation>스크린숏 </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>외부 기본 이미지 뷰어에서 스크린숏을 열려면 두 번 클릭</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="486"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation>숨김</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="493"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="466"/>
         <source>Show</source>
         <translation>표시하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="546"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="519"/>
         <source>%1 Files</source>
         <translation>%1 파일</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="568"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="541"/>
         <source>Save As...</source>
         <translation>다른 이름으로 저장하기...</translation>
     </message>
@@ -445,7 +445,7 @@ to take a screenshot.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="601"/>
+        <location filename="../src/core/ui/configwidget.ui" line="568"/>
         <source>Options</source>
         <translation>옵션</translation>
     </message>
@@ -612,102 +612,77 @@ might become larger to fit to outer edges</source>
         <translation>마우스 오른쪽 버튼을 클릭하여 선택한 영역 내부의 가장자리에 맞추기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="449"/>
+        <location filename="../src/core/ui/configwidget.ui" line="418"/>
+        <source>Notify on saving and copying</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="427"/>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="494"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation>시스템 트레이에 ScreenGrab 표시하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="458"/>
-        <source>Tray messages:</source>
-        <translation>트레이 메시지:</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="471"/>
-        <source>Tray messages display mode</source>
-        <translation>트레이 메시지 화면표시 모드</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="475"/>
-        <source>Never</source>
-        <translation>표시안함</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="480"/>
-        <source>Tray mode</source>
-        <translation>트레이 모드</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="485"/>
-        <source>Always</source>
-        <translation>항상</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="497"/>
-        <source>Time of display tray messages</source>
-        <translation>화면표시 트레이 메시지의 시간</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="513"/>
-        <source>Time to display tray messages</source>
-        <translation>트레이 메시지를 화면표시할 시간</translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="516"/>
+        <location filename="../src/core/ui/configwidget.ui" line="434"/>
         <source> sec</source>
         <translation> 초</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="534"/>
+        <location filename="../src/core/ui/configwidget.ui" line="501"/>
         <source>Minimize to tray on click close button</source>
         <translation>닫기 버튼 클릭 시 트레이로 최소화</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="537"/>
+        <location filename="../src/core/ui/configwidget.ui" line="504"/>
         <source>Minimize to tray when closing</source>
         <translation>닫을 때 트레이로 최소화</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="576"/>
+        <location filename="../src/core/ui/configwidget.ui" line="543"/>
         <source>Action</source>
         <translation>동작</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="581"/>
+        <location filename="../src/core/ui/configwidget.ui" line="548"/>
         <source>Shortcut</source>
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="586"/>
+        <location filename="../src/core/ui/configwidget.ui" line="553"/>
         <source>New screen</source>
         <translation>새 화면</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="591"/>
+        <location filename="../src/core/ui/configwidget.ui" line="558"/>
         <source>Save screen</source>
         <translation>화면 저장하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="596"/>
+        <location filename="../src/core/ui/configwidget.ui" line="563"/>
         <source>Copy screen</source>
         <translation>화면 복사하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="606"/>
+        <location filename="../src/core/ui/configwidget.ui" line="573"/>
         <source>Help</source>
         <translation>도움말</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="611"/>
+        <location filename="../src/core/ui/configwidget.ui" line="578"/>
         <source>Quit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="621"/>
+        <location filename="../src/core/ui/configwidget.ui" line="588"/>
         <source>Selected shortcut:</source>
         <translation>선택한 단축키:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="628"/>
+        <location filename="../src/core/ui/configwidget.ui" line="595"/>
         <source>Not defined</source>
         <translation>정의되지 않음</translation>
     </message>

@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="182"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="183"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="271"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="263"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="259"/>
         <source>Select directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="274"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="270"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="332"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="314"/>
         <source>Example: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="377"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="355"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="395"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="373"/>
         <source>This key is not supported on your system!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="415"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="393"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">is a cross-platform application that allows you to create screenshots of your desktop.</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="68"/>
@@ -221,32 +221,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="457"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="457"/>
+        <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="479"/>
+        <location filename="../src/core/core.cpp" line="472"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="485"/>
+        <location filename="../src/core/core.cpp" line="478"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="507"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="507"/>
+        <location filename="../src/core/core.cpp" line="501"/>
         <source>Screenshot is copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -357,7 +357,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">About</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="51"/>
@@ -365,33 +365,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="342"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="315"/>
         <source>Screenshot </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="346"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="355"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="486"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="459"/>
         <source>Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="493"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="466"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="546"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="519"/>
         <source>%1 Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="568"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="541"/>
         <source>Save As...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -442,7 +442,7 @@ to take a screenshot.</source>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="601"/>
+        <location filename="../src/core/ui/configwidget.ui" line="568"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -608,102 +608,77 @@ might become larger to fit to outer edges</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="449"/>
+        <location filename="../src/core/ui/configwidget.ui" line="418"/>
+        <source>Notify on saving and copying</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="427"/>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="494"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="458"/>
-        <source>Tray messages:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="471"/>
-        <source>Tray messages display mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="475"/>
-        <source>Never</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="480"/>
-        <source>Tray mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="485"/>
-        <source>Always</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="497"/>
-        <source>Time of display tray messages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="513"/>
-        <source>Time to display tray messages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/core/ui/configwidget.ui" line="516"/>
+        <location filename="../src/core/ui/configwidget.ui" line="434"/>
         <source> sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="534"/>
+        <location filename="../src/core/ui/configwidget.ui" line="501"/>
         <source>Minimize to tray on click close button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="537"/>
+        <location filename="../src/core/ui/configwidget.ui" line="504"/>
         <source>Minimize to tray when closing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="576"/>
+        <location filename="../src/core/ui/configwidget.ui" line="543"/>
         <source>Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="581"/>
+        <location filename="../src/core/ui/configwidget.ui" line="548"/>
         <source>Shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="586"/>
+        <location filename="../src/core/ui/configwidget.ui" line="553"/>
         <source>New screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="591"/>
+        <location filename="../src/core/ui/configwidget.ui" line="558"/>
         <source>Save screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="596"/>
+        <location filename="../src/core/ui/configwidget.ui" line="563"/>
         <source>Copy screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="606"/>
+        <location filename="../src/core/ui/configwidget.ui" line="573"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="611"/>
+        <location filename="../src/core/ui/configwidget.ui" line="578"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="621"/>
+        <location filename="../src/core/ui/configwidget.ui" line="588"/>
         <source>Selected shortcut:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="628"/>
+        <location filename="../src/core/ui/configwidget.ui" line="595"/>
         <source>Not defined</source>
         <translation type="unfinished"></translation>
     </message>
