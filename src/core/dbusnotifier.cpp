@@ -52,7 +52,7 @@ DBusNotifier::DBusNotifier(QObject *parent) : QObject(parent)
     _previewPath = dir.absolutePath() + QDir::toNativeSeparators(QDir::separator()) + QStringLiteral(CACHE_PREV);
     _appIconPath = QStringLiteral(SG_ICONPATH);
 
-    _notifyDuration = Config::instance()->getTimeTrayMess() * 1000;
+    _notifyDuration = Config::instance()->getNotificationTimeout() * 1000;
 
 }
 

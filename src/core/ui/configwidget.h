@@ -54,8 +54,8 @@ private slots:
     void currentItemChanged(const QModelIndex c ,const QModelIndex p);
     void editDateTmeTpl(const QString &str);
     void setVisibleDateTplEdit(bool);
-    void changeTrayMsgType(int type);
-    void changeTimeTrayMess(int sec);
+    void showNotification(bool show);
+    void changeNotificationTimeout(int sec);
     void setVisibleAutoSaveFirst(bool status);
     void changeFormatType(int type);
     void changeImgQualituSlider(int pos);

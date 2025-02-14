@@ -33,7 +33,6 @@ const QString DEF_SAVE_NAME = QStringLiteral("screen");
 const QString DEF_SAVE_FORMAT = QStringLiteral("png");
 const quint8 DEF_DELAY = 0;
 const bool DEF_X11_NODECOR = false;
-const quint8 DEF_TRAY_MESS_TYPE = 1;
 const quint8 DEF_FILENAME_TO_CLB = 0;
 const quint8 DEF_IMG_QUALITY = 80;
 const bool DEF_CLOSE_IN_TRAY = false;
@@ -42,7 +41,8 @@ const bool DEF_ZOOM_AROUND_MOUSE = false;
 // TODO - make set windows size without hardcode values
 const int DEF_WND_WIDTH = 480;
 const int DEF_WND_HEIGHT = 281;
-const int DEF_TIME_TRAY_MESS = 5;
+const bool DEF_HAS_NOTIFICATION = true;
+const int DEF_NOTIFICATION_TIMEOUT = 5;
 const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
 const bool DEF_AUTO_SAVE_FIRST = false;
@@ -161,10 +161,6 @@ public:
     quint8 getAutoCopyFilenameOnSaving();
     void setAutoCopyFilenameOnSaving(quint8 val);
 
-    // trayMessages
-    quint8 getTrayMessages();
-    void setTrayMessages(quint8 type);
-
     // allow multiple copies
     bool getAllowMultipleInstance();
     void setAllowMultipleInstance(bool val);
@@ -173,9 +169,11 @@ public:
     bool getCloseInTray();
     void setCloseInTray(bool val);
 
-    // tume of tray messages
-    quint8 getTimeTrayMess();
-    void setTimeTrayMess(int src);
+    // notification
+    bool hasNotification();
+    void showNotification(bool show);
+    quint8 getNotificationTimeout();
+    void setNotificationTimeout(int sec);
 
     bool getDateTimeInFilename();
     void setDateTimeInFilename(bool val);

@@ -44,7 +44,6 @@ public:
     ~MainWindow();
     void show();
     bool isTrayed() const;
-    void showTrayMessage(const QString& header, const QString& message);
     void setConfig(Config *config);
     void updatePixmap(QPixmap *pMap);
     void updateModulesActions(const QList<QAction *> &list);

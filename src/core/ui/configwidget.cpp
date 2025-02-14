@@ -46,11 +46,8 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
     connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
 
-    void (QSpinBox::*timeToTray)(int) = &QSpinBox::valueChanged;
-    connect(_ui->timeTrayMess, timeToTray, this, &ConfigDialog::changeTimeTrayMess);
-
-    void (QComboBox::*trayMessType)(int) = &QComboBox::currentIndexChanged;
-    connect(_ui->cbxTrayMsg, trayMessType, this, &ConfigDialog::changeTrayMsgType);
+    connect(_ui->checkNotify, &QGroupBox::clicked, this, &ConfigDialog::showNotification);
+    connect(_ui->spinDuration, &QSpinBox::valueChanged, this, &ConfigDialog::changeNotificationTimeout);
 
     connect(_ui->treeKeys, &QTreeWidget::doubleClicked, this, &ConfigDialog::doubleclickTreeKeys);
     connect(_ui->treeKeys, &QTreeWidget::activated, this, &ConfigDialog::doubleclickTreeKeys);
@@ -126,9 +123,8 @@ void ConfigDialog::loadSettings()
     _ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
 
     // display tab
-    _ui->cbxTrayMsg->setCurrentIndex(conf->getTrayMessages());
-    changeTrayMsgType(_ui->cbxTrayMsg->currentIndex());
-    _ui->timeTrayMess->setValue(conf->getTimeTrayMess());
+    _ui->checkNotify->setChecked(conf->hasNotification());
+    _ui->spinDuration->setValue(conf->getNotificationTimeout());
     _ui->checkAutoSave->setChecked(conf->getAutoSave());
     _ui->checkAutoSaveFirst->setChecked(conf->getAutoSaveFirst());
 
@@ -214,10 +210,10 @@ void ConfigDialog::saveSettings()
     conf->setAutoCopyFilenameOnSaving(_ui->cbxCopyFileName->currentIndex());
     conf->setAutoSave(_ui->checkAutoSave->isChecked());
     conf->setAutoSaveFirst(_ui->checkAutoSaveFirst->isChecked());
-    conf->setTrayMessages(_ui->cbxTrayMsg->currentIndex());
     conf->setCloseInTray(_ui->checkInTray->isChecked());
     conf->setAllowMultipleInstance(_ui->checkAllowCopies->isChecked());
-    conf->setTimeTrayMess(_ui->timeTrayMess->value());
+    conf->showNotification(_ui->checkNotify->isChecked());
+    conf->setNotificationTimeout(_ui->spinDuration->value());
     conf->setShowTrayIcon(_ui->checkShowTray->isChecked());
     conf->setImageQuality(_ui->slideImgQuality->value());
     conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
@@ -286,28 +282,14 @@ void ConfigDialog::restoreDefaults()
     }
 }
 
-void ConfigDialog::changeTimeTrayMess(int sec)
+void ConfigDialog::showNotification(bool show)
 {
-    conf->setTimeTrayMess(sec);
+    conf->showNotification(show);
 }
 
-void ConfigDialog::changeTrayMsgType(int type)
+void ConfigDialog::changeNotificationTimeout(int sec)
 {
-    switch(type)
-    {
-    case 0:
-    {
-        _ui->labTimeTrayMess->setVisible(false);
-        _ui->timeTrayMess->setVisible(false);
-        break;
-    }
-    default:
-    {
-        _ui->labTimeTrayMess->setVisible(true);
-        _ui->timeTrayMess->setVisible(true);
-        break;
-    }
-    }
+    conf->setNotificationTimeout(sec);
 }
 
 void ConfigDialog::setVisibleDateTplEdit(bool checked)
@@ -334,10 +316,6 @@ void ConfigDialog::editDateTmeTpl(const QString &str)
 
 void ConfigDialog::toggleCheckShowTray(bool checked)
 {
-    _ui->labTrayMessages->setEnabled(checked);
-    _ui->cbxTrayMsg->setEnabled(checked);
-    _ui->timeTrayMess->setEnabled(checked);
-    _ui->labTimeTrayMess->setEnabled(checked);
     _ui->checkInTray->setEnabled(checked);
 }
 

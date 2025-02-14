@@ -340,13 +340,6 @@ void Core::grabCursor(int offsetX, int offsetY)
     Q_UNUSED(offsetx);
     Q_UNUSED(offsety);
 #endif
-
-
-}
-
-void Core::sendSystemNotify(const StateNotifyMessage& /*notify*/)
-{
-    qDebug() << "Send system notification";
 }
 
 QString Core::getSaveFilePath(const QString &format)
@@ -494,10 +487,11 @@ QString Core::copyFileNameToCliipboard(QString file)
 void Core::sendNotify(const StateNotifyMessage &message)
 {
 #ifdef SG_DBUS_NOTIFY
-    DBusNotifier *notifier = new DBusNotifier();
-    notifier->displayNotify(message);
-#else
-    _wnd->showTrayMessage(message.header, message.message);
+    if (_conf->hasNotification())
+    {
+        DBusNotifier *notifier = new DBusNotifier();
+        notifier->displayNotify(message);
+    }
 #endif
 }
 

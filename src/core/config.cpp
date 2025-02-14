@@ -44,12 +44,12 @@
 
 #define KEY_SHOW_TRAY           "showTrayIcon"
 #define KEY_CLOSE_INTRAY        "closeInTray"
-#define KEY_TRAYMESSAGES        "trayMessages"
 
 #define KEY_WND_WIDTH           "windowWidth"
 #define KEY_WND_HEIGHT          "windowHeight"
 #define KEY_ZOOMBOX             "zoomAroundMouse"
-#define KEY_TIME_NOTIFY         "timeTrayMessages"
+#define KEY_NOTIFY              "showNotification"
+#define KEY_TIME_NOTIFY         "notificationTimeout"
 #define KEY_ALLOW_COPIES        "AllowCopies"
 #define KEY_ENABLE_EXT_VIEWER   "enbaleExternalView"
 #define KEY_NODECOR             "noDecorations"
@@ -285,17 +285,6 @@ void Config::setAutoCopyFilenameOnSaving(quint8 val)
     setValue(QLatin1String(KEY_FILENAME_TO_CLB), val);
 }
 
-
-quint8 Config::getTrayMessages()
-{
-    return value(QLatin1String(KEY_TRAYMESSAGES)).toInt();
-}
-
-void Config::setTrayMessages(quint8 type)
-{
-    setValue(QLatin1String(KEY_TRAYMESSAGES), type);
-}
-
 bool Config::getAllowMultipleInstance()
 {
     return value(QLatin1String(KEY_ALLOW_COPIES)).toBool();
@@ -316,12 +305,22 @@ void Config::setCloseInTray(bool val)
     setValue(QLatin1String(KEY_CLOSE_INTRAY), val);
 }
 
-quint8 Config::getTimeTrayMess()
+bool Config::hasNotification()
 {
-    return value(QLatin1String(KEY_TIME_NOTIFY)).toInt();
+    return value(QLatin1String(KEY_NOTIFY)).toBool();
 }
 
-void Config::setTimeTrayMess(int sec)
+void Config::showNotification(bool show)
+{
+    setValue(QLatin1String(KEY_NOTIFY), show);
+}
+
+quint8 Config::getNotificationTimeout()
+{
+    return qMax(1, value(QLatin1String(KEY_TIME_NOTIFY)).toInt());
+}
+
+void Config::setNotificationTimeout(int sec)
 {
     setValue(QLatin1String(KEY_TIME_NOTIFY), sec);
 }
@@ -467,8 +466,8 @@ void Config::loadSettings()
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("Display"));
-    setTrayMessages(_settings->value(QLatin1String(KEY_TRAYMESSAGES), DEF_TRAY_MESS_TYPE).toInt());
-    setTimeTrayMess(_settings->value(QLatin1String(KEY_TIME_NOTIFY), DEF_TIME_TRAY_MESS).toInt( ));
+    showNotification(_settings->value(QLatin1String(KEY_NOTIFY), DEF_HAS_NOTIFICATION).toBool());
+    setNotificationTimeout(qMax(1, _settings->value(QLatin1String(KEY_TIME_NOTIFY), DEF_NOTIFICATION_TIMEOUT).toInt()));
     setZoomAroundMouse(_settings->value(QLatin1String(KEY_ZOOMBOX), DEF_ZOOM_AROUND_MOUSE).toBool());
     setLastSelection(_settings->value(QLatin1String(KEY_LAST_SELECTION)).toRect());
     // TODO - make set windows size without hardcode values
@@ -502,9 +501,9 @@ void Config::saveSettings()
     _settings->endGroup();
 
     _settings->beginGroup(QStringLiteral("Display"));
-    _settings->setValue(QLatin1String(KEY_TRAYMESSAGES), getTrayMessages());
-    _settings->setValue(QLatin1String(KEY_TIME_NOTIFY), getTimeTrayMess());
     _settings->setValue(QLatin1String(KEY_SHOW_TRAY), getShowTrayIcon());
+    _settings->setValue(QLatin1String(KEY_NOTIFY), hasNotification());
+    _settings->setValue(QLatin1String(KEY_TIME_NOTIFY), getNotificationTimeout());
     _settings->endGroup();
     saveWndSize();
 
@@ -547,10 +546,10 @@ void Config::setDefaultSettings()
     setAutoCopyFilenameOnSaving(DEF_FILENAME_TO_CLB);
     setAutoSave(DEF_AUTO_SAVE);
     setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
-    setTrayMessages(DEF_TRAY_MESS_TYPE);
     setIncludeCursor(DEF_INCLUDE_CURSOR);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
-    setTimeTrayMess(DEF_TIME_TRAY_MESS);
+    showNotification(DEF_HAS_NOTIFICATION);
+    setNotificationTimeout(DEF_NOTIFICATION_TIMEOUT);
     setAllowMultipleInstance(DEF_ALLOW_COPIES);
     // TODO - make set windows size without hardcode values
     // setRestoredWndSize(DEF_WND_WIDTH, DEF_WND_HEIGHT);

@@ -119,7 +119,6 @@ private:
 
     void getActiveWindow();
     void grabCursor(int offsetX, int offsetY);
-    void sendSystemNotify(const StateNotifyMessage& notify);
     bool checkExsistFile(const QString &path);
     QString copyFileNameToCliipboard(QString file);
     void sendNotify(const StateNotifyMessage& message);
