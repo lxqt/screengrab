@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     SingleApp scr(argc, argv, QStringLiteral(VERSION));
     scr.setApplicationVersion(QStringLiteral(VERSION));
     scr.setOrganizationName(QStringLiteral("lxqt"));
-    scr.setOrganizationDomain(QStringLiteral("https://lxqt.org"));
+    scr.setOrganizationDomain(QStringLiteral("lxqt-project.org"));
     scr.setApplicationName(QStringLiteral("screengrab"));
     Core *ScreenGrab = Core::instance();
     ScreenGrab->modules()->initModules();
