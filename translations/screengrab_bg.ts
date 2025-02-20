@@ -614,12 +614,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Уведомяване при запазване и копиране</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Продължителност:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>

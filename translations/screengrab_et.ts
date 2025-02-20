@@ -614,12 +614,12 @@ võib olla liiga suur mahtumaks välispiiridesse</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Teavita salvestamisest ja kopeerimisest</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kestus:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>

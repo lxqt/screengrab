@@ -620,12 +620,12 @@ mu ebiri ku lutimbe okumpi ne we kisookedde</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Yolesa obubaka buli lwe waba wo ekikazibwa oba ekikolebwamu koppi</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Budde:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>

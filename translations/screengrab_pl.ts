@@ -614,12 +614,12 @@ może zostać powiększony, aby wypełnić do zewnętrznych krawędzi</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Powiadamiaj o zapisywaniu i kopiowaniu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>
