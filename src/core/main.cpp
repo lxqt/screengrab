@@ -31,10 +31,6 @@ int main(int argc, char *argv[])
     scr.setApplicationName(QStringLiteral("screengrab"));
     scr.setDesktopFileName(QStringLiteral("screengrab"));
     Core *ScreenGrab = Core::instance();
-    ScreenGrab->modules()->initModules();
-    ScreenGrab->processCmdLineOpts(scr.arguments());
-
-    QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
     if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
     {
@@ -42,6 +38,10 @@ int main(int argc, char *argv[])
         scr.sendMessage(QStringLiteral("screengrab --type=") + type);
         return 0;
     }
+
+    ScreenGrab->modules()->initModules();
+    ScreenGrab->processCmdLineOpts(scr.arguments());
+    QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
     return scr.exec();
 }
