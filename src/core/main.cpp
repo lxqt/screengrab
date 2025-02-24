@@ -31,16 +31,23 @@ int main(int argc, char *argv[])
     scr.setApplicationName(QStringLiteral("screengrab"));
     scr.setDesktopFileName(QStringLiteral("screengrab"));
     Core *ScreenGrab = Core::instance();
+    ScreenGrab->processCmdLineOpts(scr.arguments());
+    // SingleApp should be initialized only after processing command-line options
+    // because otherwise, if the help or version option is given, the app will
+    // exit suddenly, without clearing the shared memory.
+    scr.init();
 
     if (!ScreenGrab->config()->getAllowMultipleInstance() && scr.isRunning())
     {
+        // Send a message to the current instance and exit.
         QString type = QString::number(ScreenGrab->config()->getDefScreenshotType());
         scr.sendMessage(QStringLiteral("screengrab --type=") + type);
         return 0;
     }
 
+    // Initialize the modules as well as the window and listen to messages.
     ScreenGrab->modules()->initModules();
-    ScreenGrab->processCmdLineOpts(scr.arguments());
+    ScreenGrab->initWindow();
     QObject::connect(&scr, &SingleApp::messageReceived, ScreenGrab, &Core::initWindow);
 
     return scr.exec();
