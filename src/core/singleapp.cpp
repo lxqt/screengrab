@@ -23,81 +23,92 @@
 #include "singleapp.h"
 
 /*!
-    Creates of sungle application object
-    \param argc Nuber of command line arguments
+    Creates the single application object
+    \param argc Number of command line arguments
     \param argv Array of command line argwuments
-    \param uniqueKey String key fo unicue shared data indefier
+    \param uniqueKey String key for unique shared data identifier
  */
 SingleApp::SingleApp(int& argc, char* argv[], const QString &keyString) : QApplication(argc, argv), uniqueKey(keyString)
 {
-        sharedMemory.setKey(uniqueKey);
-        if (sharedMemory.attach())
-                runned = true;
-        else
+    running = false;
+    localServer = nullptr;
+}
+
+/*!
+    Initializes the single application by creating shared memory or attaching to it
+ */
+void SingleApp::init()
+{
+    sharedMemory.setKey(uniqueKey);
+    if (sharedMemory.attach())
+        running = true;
+    else
+    {
+        running = false;
+        // create shared memory.
+        if (!sharedMemory.create(1))
         {
-                runned = false;
-                // create shared memory.
-                if (!sharedMemory.create(1))
-                {
-                        qDebug("Unable to create single instance.");
-                        return;
-                }
-                // create local server and listen to incomming messages from other instances.
-                localServer = new QLocalServer(this);
-                connect(localServer, SIGNAL(newConnection()), this, SLOT(receiveMessage()));
-                localServer->listen(uniqueKey);
+            qDebug("Unable to create single instance.");
+            return;
         }
+        // create local server and listen to incomming messages from other instances.
+        localServer = new QLocalServer(this);
+        connect(localServer, SIGNAL(newConnection()), this, SLOT(receiveMessage()));
+        localServer->listen(uniqueKey);
+    }
 }
 
 // public slots.
 
 void SingleApp::receiveMessage()
 {
-        QLocalSocket *localSocket = localServer->nextPendingConnection();
-        if (!localSocket->waitForReadyRead(timeout))
-        {
-                qDebug("%s", qPrintable(localSocket->errorString()));
-                return;
-        }
-        QByteArray byteArray = localSocket->readAll();
-        QString message = QString::fromUtf8(byteArray.constData());
-        emit messageReceived(message);
-        localSocket->disconnectFromServer();
+    if (localServer == nullptr)
+        return;
+    QLocalSocket *localSocket = localServer->nextPendingConnection();
+    if (!localSocket->waitForReadyRead(timeout))
+    {
+        qDebug("%s", qPrintable(localSocket->errorString()));
+        return;
+    }
+    QByteArray byteArray = localSocket->readAll();
+    QString message = QString::fromUtf8(byteArray.constData());
+    emit messageReceived(message);
+    localSocket->disconnectFromServer();
 }
 
 // public functions.
 
 /*!
-    Checking instance application
-    \return bool Return tue is another instance running
+    Checks if the instance is running
+    \return bool Return tue if running
  */
 bool SingleApp::isRunning()
 {
-        return runned;
+    return running;
 }
 
-/*1 
-    Sending message to another running instance of application
-    \param message String dended message
-    \tryitn bool Return status ofsending message process
+/*1
+    Sends message to another running instance of application
+    \param message String sent message
+    \tryitn bool Return status of sending process
  */
 bool SingleApp::sendMessage(const QString &message)
 {
-        if (!runned)
-                return false;
-        QLocalSocket localSocket(this);
-        localSocket.connectToServer(uniqueKey, QIODevice::WriteOnly);
-        if (!localSocket.waitForConnected(timeout))
-        {
-                qDebug("%s",qPrintable(localSocket.errorString()));
-                return false;
-        }
-        localSocket.write(message.toUtf8());
-        if (!localSocket.waitForBytesWritten(timeout))
-        {
-                qDebug("%s",qPrintable(localSocket.errorString()));
-                return false;
-        }
-        localSocket.disconnectFromServer();
-        return true;
+    if (!running)
+        return false;
+    QLocalSocket localSocket(this);
+    localSocket.connectToServer(uniqueKey, QIODevice::WriteOnly);
+    if (!localSocket.waitForConnected(timeout))
+    {
+        qDebug("%s",qPrintable(localSocket.errorString()));
+        return false;
+    }
+    localSocket.write(message.toUtf8());
+    if (!localSocket.waitForBytesWritten(timeout))
+    {
+        qDebug("%s",qPrintable(localSocket.errorString()));
+        return false;
+    }
+    localSocket.disconnectFromServer();
+    return true;
 }

@@ -559,10 +559,10 @@ void Core::processCmdLineOpts(const QStringList& arguments)
 
     // Check commandline parameters and set screenshot type
     for (int i=0; i < _screenTypeOpts.count(); ++i)
+    {
         if (_cmdLine.isSet(_screenTypeOpts.at(i)))
             _conf->setDefScreenshotType(i);
-
-    initWindow();
+    }
 }
 
 bool Core::runAsMinimized()

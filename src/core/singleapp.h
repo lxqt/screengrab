@@ -25,26 +25,27 @@
 
 class SingleApp : public QApplication
 {
-        Q_OBJECT
+    Q_OBJECT
 public:
-        SingleApp(int &argc, char *argv[], const QString &keyString);
+    SingleApp(int &argc, char *argv[], const QString &keyString);
+    void init();
 
-        bool isRunning();
-        bool sendMessage(const QString &message);
+    bool isRunning();
+    bool sendMessage(const QString &message);
 
 public Q_SLOTS:
-        void receiveMessage();
+    void receiveMessage();
 
 Q_SIGNALS:
-        void messageReceived(const QString& message);
+    void messageReceived(const QString& message);
 
 private:
-        bool runned;
-        QString uniqueKey;
-        QSharedMemory sharedMemory;
-        QLocalServer *localServer;
+    bool running;
+    QString uniqueKey;
+    QSharedMemory sharedMemory;
+    QLocalServer *localServer;
 
-        static const int timeout = 1000;
+    static const int timeout = 1000;
 };
 
 #endif // SINGLEAPP_H
