@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="100"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>是一個用於快速螢幕截圖的跨平台的應用程式。</translation>
+        <translation>是一個用於快速螢幕擷圖的跨平台的應用程式。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="102"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="112"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>版權所有 &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="119"/>
@@ -198,57 +198,57 @@
     <message>
         <location filename="../src/core/core.cpp" line="64"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>是一個讓你可以快速截取桌面截圖的跨平臺應用程式。</translation>
+        <translation>是一個可以快速擷取桌面螢幕畫面的跨平臺應用程式。</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="68"/>
         <source>Take a fullscreen screenshot</source>
-        <translation>截取全畫面的截圖</translation>
+        <translation>全螢幕畫面擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="72"/>
         <source>Take a screenshot of the active window</source>
-        <translation>截取活躍中的視窗的截圖</translation>
+        <translation>作用視窗擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="76"/>
         <source>Take a screenshot of a selection of the screen</source>
-        <translation>截取畫面上選取範圍的截圖</translation>
+        <translation>選取區域畫面擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="80"/>
         <source>Run the application with a hidden main window</source>
-        <translation>在執行時隱藏主視窗</translation>
+        <translation>在執行應用程式時隱藏主視窗</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved</source>
-        <translation>已儲存</translation>
+        <translation>已經儲存</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="450"/>
         <source>Saved to </source>
-        <translation>已儲存於 </translation>
+        <translation>已經儲存至 </translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="472"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>檔案名稱已複製到到剪貼簿</translation>
+        <translation>檔案名稱已經複製至剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="478"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>檔案路徑已複製到剪貼簿</translation>
+        <translation>檔案路徑已經複製至剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="501"/>
         <source>Copied</source>
-        <translation>已複製</translation>
+        <translation>已經複製</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="501"/>
         <source>Screenshot is copied to clipboard</source>
-        <translation>螢幕截圖已經複製到剪貼板</translation>
+        <translation>螢幕畫面已經複製至剪貼簿</translation>
     </message>
 </context>
 <context>
@@ -256,17 +256,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="14"/>
         <source>ScreenGrab</source>
-        <translation>ScreenGrab</translation>
+        <translation>ScreenGrab 螢幕擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="79"/>
         <source>Type:</source>
-        <translation>類型:</translation>
+        <translation>類型：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="89"/>
         <source>Type of screenshot</source>
-        <translation>截圖的類型</translation>
+        <translation>螢幕畫面的類型</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="96"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="111"/>
         <source>Last selected area</source>
-        <translation>最後選擇區域</translation>
+        <translation>最後選取區域</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="141"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="154"/>
         <source>Delay in seconds before taking screenshot</source>
-        <translation>螢幕截圖前延遲幾秒</translation>
+        <translation>螢幕擷圖前延遲秒數</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="157"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="203"/>
         <source>Zoom area around mouse</source>
-        <translation>鼠標周圍的縮放區域</translation>
+        <translation>游標周圍的縮放區域</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="210"/>
@@ -321,17 +321,17 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="217"/>
         <source>Include mouse pointer</source>
-        <translation>包括鼠標指針</translation>
+        <translation>包括游標指針</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="246"/>
         <source>toolBar</source>
-        <translation>工具欄</translation>
+        <translation>工具列</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>New</source>
-        <translation>建立</translation>
+        <translation>新建</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="315"/>
         <source>Screenshot </source>
-        <translation>螢幕截圖 </translation>
+        <translation>螢幕畫面擷圖 </translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>雙擊以在外部預設圖像查看器中打開螢幕截圖</translation>
+        <translation>點按二下在外部預設的圖像檢視器中開啟螢幕畫面擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
@@ -388,12 +388,12 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="519"/>
         <source>%1 Files</source>
-        <translation>%1 文件</translation>
+        <translation>%1 個檔案</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="541"/>
         <source>Save As...</source>
-        <translation>儲存爲…</translation>
+        <translation>另存為…</translation>
     </message>
 </context>
 <context>
@@ -404,10 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation>單點左鍵並拖曳來畫出一個矩形，
-單點右鍵來貼齊邊緣，
-雙按或是按下 Enter 鍵
-來截取螢幕截圖。</translation>
+        <translation>點按左鍵拖曳畫出矩形，
+點按右鍵來貼齊邊緣，
+點按二下或按 Enter 鍵
+來擷取螢幕畫面。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="207"/>
@@ -425,7 +425,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/modules/extedit/moduleextedit.cpp" line="46"/>
         <source>Edit in...</source>
-        <translation>以 ... 編輯</translation>
+        <translation>編輯於…</translation>
     </message>
 </context>
 <context>
@@ -467,17 +467,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
         <source>Shortcuts</source>
-        <translation>快捷鍵</translation>
+        <translation>快速鍵</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>預設的儲存目錄</translation>
+        <translation>預設的儲存路徑</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
         <source>Path to default selection dir for saving</source>
-        <translation>請選擇預設儲存目錄的路徑</translation>
+        <translation>選擇預設用於儲存的路徑</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="135"/>
@@ -492,17 +492,17 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="148"/>
         <source>Default file</source>
-        <translation>檔案預設值</translation>
+        <translation>預設檔案</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="161"/>
         <source>Name:</source>
-        <translation>名稱:</translation>
+        <translation>名稱：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="168"/>
         <source>Default filename</source>
-        <translation>預設的檔案名稱</translation>
+        <translation>預設檔案名稱</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="179"/>
@@ -512,12 +512,12 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>預設儲存的檔案格式</translation>
+        <translation>預設的儲存圖像檔案格式</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
         <source>Copy file name to the clipboard when saving</source>
-        <translation>儲存時複製檔名到剪貼簿</translation>
+        <translation>儲存之時複製檔案名稱至剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="225"/>
@@ -527,62 +527,62 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="230"/>
         <source>Copy file name only</source>
-        <translation>只複製檔名</translation>
+        <translation>僅複製檔案名稱</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="235"/>
         <source>Copy full file path</source>
-        <translation>複製完整路徑</translation>
+        <translation>複製完整檔案路徑</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>畫質</translation>
+        <translation>圖像畫質</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
         <source>Image quality (1 - small file, 100 - high quality)</source>
-        <translation>畫質 ( 1 - 較小的檔案 ~ 100 - 高畫質 )</translation>
+        <translation>畫質 ( 1 - 較小檔案 ~ 100 - 高畫質 )</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="316"/>
         <source>Inserting current date time into saved filename</source>
-        <translation>儲存時在檔名內加入現在的日期時間</translation>
+        <translation>儲存檔案名稱加上目前日期時間</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="319"/>
         <source>Insert current date and time in file name</source>
-        <translation>在檔名裡加入現在的日期時間</translation>
+        <translation>在檔案名稱中加上目前日期時間</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="328"/>
         <source>Template: </source>
-        <translation>樣板: </translation>
+        <translation>範本： </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="353"/>
         <source>Example: </source>
-        <translation>範例: </translation>
+        <translation>範例： </translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="363"/>
         <source>Automatically saving screenshots in grabbing process</source>
-        <translation>截圖時自動儲存</translation>
+        <translation>在擷圖程序中自動儲存螢幕畫面</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>自動儲存截圖</translation>
+        <translation>自動儲存擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
         <source>Save first screenshot</source>
-        <translation>儲存原始截圖</translation>
+        <translation>儲存首張擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="387"/>
         <source>Allow run multiplies copy of ScreenGrab</source>
-        <translation>允許同時間有多個 ScreenGrab 執行</translation>
+        <translation>允許同時間多個 ScreenGrab 執行</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="390"/>
@@ -592,7 +592,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation>雙按以外部檢視器開啟</translation>
+        <translation>點按二下用外部檢視器開啟</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
@@ -603,22 +603,23 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="407"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>如果不勾選此選項，選擇區域可能會為了貼合邊緣而變大</translation>
+        <translation>如果不勾選此選項，
+選取區域可能會變大來貼合邊緣</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>單點右鍵以貼合選擇區域內的邊界</translation>
+        <translation>在所選區域之中點按滑鼠右鍵來貼合邊界</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>在存檔及複製之時提示通知</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>時間：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>
@@ -633,12 +634,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="501"/>
         <source>Minimize to tray on click close button</source>
-        <translation>關閉時縮小到狀態列</translation>
+        <translation>點按關閉鈕來縮小至狀態列</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="504"/>
         <source>Minimize to tray when closing</source>
-        <translation>關閉時縮小到狀態列</translation>
+        <translation>關閉時縮小至狀態列</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="543"/>
@@ -648,22 +649,22 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="548"/>
         <source>Shortcut</source>
-        <translation>快捷鍵</translation>
+        <translation>快速鍵</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="553"/>
         <source>New screen</source>
-        <translation>截取新畫面</translation>
+        <translation>新建螢幕畫面</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="558"/>
         <source>Save screen</source>
-        <translation>儲存畫面</translation>
+        <translation>儲存螢幕畫面</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="563"/>
         <source>Copy screen</source>
-        <translation>複製畫面</translation>
+        <translation>複製螢幕畫面</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="573"/>
@@ -678,7 +679,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="588"/>
         <source>Selected shortcut:</source>
-        <translation>已選取的快捷鍵:</translation>
+        <translation>選取快速鍵：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="595"/>
