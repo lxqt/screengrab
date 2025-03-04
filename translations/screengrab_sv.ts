@@ -614,12 +614,12 @@ område bli större för att passa ytterkanterna</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifiera vid sparning och kopiering</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Längd:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>

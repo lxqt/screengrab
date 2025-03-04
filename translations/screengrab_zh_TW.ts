@@ -126,12 +126,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="157"/>
         <source>Dual monitor support and other in Linux</source>
-        <translation>支持雙螢幕和其他於Linux</translation>
+        <translation>雙螢幕支援和其他於 Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="158"/>
         <source>Dual monitor support in Linux</source>
-        <translation>支持雙螢幕於Linux</translation>
+        <translation>雙螢幕支援於 Linux</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="159"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="182"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>%1 資料夾不存在。 你想建立它嗎？</translation>
+        <translation>%1 目錄不存在。 你想建立它嗎？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="183"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="259"/>
         <source>Select directory</source>
-        <translation>選擇資料夾</translation>
+        <translation>選擇目錄</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="270"/>
@@ -462,7 +462,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="87"/>
         <source>System tray</source>
-        <translation>系統狀態列</translation>
+        <translation>系統匣</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="92"/>
@@ -472,7 +472,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="116"/>
         <source>Default save directory</source>
-        <translation>預設的儲存路徑</translation>
+        <translation>預設的儲存目錄</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="122"/>
@@ -624,7 +624,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="494"/>
         <source>Show ScreenGrab in the system tray</source>
-        <translation>在系統狀態列顯示 ScreenGrab</translation>
+        <translation>在系統匣顯示 ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="434"/>
@@ -634,12 +634,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="501"/>
         <source>Minimize to tray on click close button</source>
-        <translation>點按關閉鈕來縮小至狀態列</translation>
+        <translation>點按關閉鈕來縮小至系統匣</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="504"/>
         <source>Minimize to tray when closing</source>
-        <translation>關閉時縮小至狀態列</translation>
+        <translation>關閉時縮小至系統匣</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="543"/>
