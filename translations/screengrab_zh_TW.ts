@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="122"/>
         <source>What you can do?</source>
-        <translation>你可以做什麼？</translation>
+        <translation>您能夠做什麼？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="125"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="151"/>
         <source> Italian translation</source>
-        <translation> 意大利語翻譯</translation>
+        <translation> 義大利語翻譯</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="155"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="182"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>%1 目錄不存在。 你想建立它嗎？</translation>
+        <translation>目錄 %1 並不存在。 確定要建立它嗎？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="183"/>
@@ -180,12 +180,12 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="355"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>此密鑰已在ScreenGrab中使用! 請另選擇一個。</translation>
+        <translation>此密鑰已在 ScreenGrab 中使用！請選擇另一個。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="373"/>
         <source>This key is not supported on your system!</source>
-        <translation>您的系統不支援此密鑰！</translation>
+        <translation>此密鑰在您的系統上不支援！</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="393"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>點按二下在外部預設的圖像檢視器中開啟螢幕畫面擷圖</translation>
+        <translation>點按二下在外部預設的影像圖檔檢視器中開啟螢幕畫面擷圖</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
@@ -405,7 +405,7 @@ right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
         <translation>點按左鍵拖曳畫出矩形，
-點按右鍵來貼齊邊緣，
+點按右鍵來符合邊緣，
 點按二下或按 Enter 鍵
 來擷取螢幕畫面。</translation>
     </message>
@@ -512,7 +512,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="192"/>
         <source>Default saving image format</source>
-        <translation>預設的儲存圖像檔案格式</translation>
+        <translation>預設的儲存圖檔格式</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="211"/>
@@ -537,7 +537,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="245"/>
         <source>Image quality</source>
-        <translation>圖像畫質</translation>
+        <translation>圖檔畫質</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="251"/>
@@ -609,12 +609,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>在所選區域之中點按滑鼠右鍵來貼合邊界</translation>
+        <translation>在所選區域之中點按滑鼠右鍵來貼合邊緣</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation>在存檔及複製之時提示通知</translation>
+        <translation>在存檔及複製之時顯示通知</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>

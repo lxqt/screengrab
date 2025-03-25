@@ -465,7 +465,7 @@ to take a screenshot.</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="366"/>
         <source>Autosave screenshot</source>
-        <translation>Австосохранение снимка экрана</translation>
+        <translation>Автосохранение снимка экрана</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="378"/>
