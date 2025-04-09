@@ -17,7 +17,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 # Minimum Versions
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
-set(QTXDG_MINIMUM_VERSION "4.1.0")
+set(QTXDG_MINIMUM_VERSION "4.2.0")
 
 find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
@@ -43,7 +43,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(SCREENGRAB_VERSION "2.9.0")
+set(SCREENGRAB_VERSION "2.10.0")
 
 if (DEV_VERSION)
     set(VERSION "${SCREENGRAB_VERSION}-dev (${DEV_VERSION})")
