@@ -7,7 +7,6 @@ cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
 project(screengrab)
 
 include(GNUInstallDirs)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # options
 option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
@@ -18,11 +17,13 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
 set(QTXDG_MINIMUM_VERSION "4.2.0")
+set(LXQTBT_MINIMUM_VERSION "2.2.0")
 
 find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 
 # right now we declare it as required
 find_package(X11 REQUIRED)
@@ -63,10 +64,6 @@ endif()
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
-
-# Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't
-#   bring any dependency on lxqt.
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
 include(Qt6TranslationLoader)
