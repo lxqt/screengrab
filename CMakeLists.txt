@@ -64,6 +64,8 @@ endif()
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 message(STATUS "Install prefix: " ${CMAKE_INSTALL_PREFIX})
 
+include(LXQtPreventInSourceBuilds)
+include(LXQtCompilerSettings NO_POLICY_SCOPE)
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
 include(Qt6TranslationLoader)
