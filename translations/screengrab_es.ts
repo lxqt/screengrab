@@ -609,12 +609,12 @@ volverse mayor para ajustarse a los bordes exteriores</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Notificar al guardar y copiar</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="427"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de duración:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="434"/>
