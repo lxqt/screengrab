@@ -1,3 +1,12 @@
+2.10.0 / 2025-04-17
+===================
+ * Made copying/saving notifications optional.
+ * Corrected the organization domain.
+ * Call `setDesktopFileName()` to set proper app-id on wayland.
+ * Don't allocate useless resources in single instance mode.
+ * Fixed handling of shared memory.
+ * Fixed FTBFS due to `cmake_minimum_required`.
+
 2.9.0 / 2024-11-05
 ==================
  * Properly initialized and destroyed shortcuts settings.
