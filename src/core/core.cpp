@@ -319,6 +319,7 @@ void Core::showWaylandScreenshot(const QPixmap& pixmap)
     if (!pixmap.isNull())
     {
         *_pixelMap = pixmap;
+        checkAutoSave(_firstScreen);
         _wnd->updatePixmap(_pixelMap);
         _wnd->restoreFromShot();
     }
