@@ -29,9 +29,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QEvent>
 #include <QKeyEvent>
 #include <QIcon>
+#include <QString>
 
 #include "qkeysequencewidget_p.h"
 #include "qkeysequencewidget.h"
+
+using namespace Qt::Literals::StringLiterals;
 
 /*!
   Creates a QKeySequenceWidget object wuth \a parent and empty \a keySequence
@@ -281,7 +284,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence &keySeq, const QString &
 
     showClearButton = QKeySequenceWidget::ShowRight;
 
-    clearButton->setIcon(QIcon(":/img/delete_32.png"));
+    clearButton->setIcon(QIcon(":/img/delete_32.png"_L1));
 
     // unfocused clear button  afyer created (small hack)
     clearButton->setFocusPolicy(Qt::NoFocus);
@@ -407,14 +410,14 @@ void QKeySequenceWidgetPrivate::updateDisplayShortcut()
 {
     // empty string if no non-modifier was pressed
     QString str = currentSequence.toString(QKeySequence::NativeText);
-    str.replace('&', QLatin1String("&&"));  // TODO -- check it
+    str.replace('&'_L1, QLatin1String("&&"));  // TODO -- check it
 
     if (isRecording == true)
     {
         if (modifierKeys)
         {
             if (str.isEmpty() == false)
-                str.append(",");
+                str.append(','_L1);
 
             if ((modifierKeys & Qt::META) )
                 str += QLatin1String("Meta + ");
@@ -430,7 +433,7 @@ void QKeySequenceWidgetPrivate::updateDisplayShortcut()
         }
 
         // make it clear that input is still going on
-        str.append("...");
+        str.append("..."_L1);
     }
 
     // if is noting
