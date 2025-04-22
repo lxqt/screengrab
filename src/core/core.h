@@ -125,6 +125,9 @@ private:
 
     void getFullScreenPixmap(QScreen* screen);
 
+    void waylandScreenShot();
+    void showWaylandScreenshot(const QPixmap& pixmap);
+
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
     QRect _lastSelectedArea;

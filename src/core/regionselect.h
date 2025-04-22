@@ -25,10 +25,12 @@
 #include <QWidget>
 
 #include <QMouseEvent>
+#include <QShowEvent>
 #include <QPainter>
 #include <QPixmap>
 #include <QSize>
 #include <QPoint>
+#include <QScreen>
 
 enum Side{
     TOP,
@@ -42,11 +44,13 @@ class RegionSelect : public QWidget
 {
     Q_OBJECT
 public:
-    RegionSelect(Config *mainconf, QWidget *parent = 0);
-    RegionSelect(Config *mainconf, const QRect& lastRect, QWidget *parent = 0);
+    RegionSelect(Config *mainconf, QScreen *screen = nullptr, QWidget *parent = nullptr);
+    RegionSelect(Config *mainconf, const QRect& lastRect, QScreen *screen = nullptr, QWidget *parent = nullptr);
     virtual ~RegionSelect();
-    QPixmap getSelection();
-    QPoint getSelectionStartPos();
+
+    QPixmap getSelection() const;
+    QRect getSelectionRect() const;
+    QPoint getSelectionStartPos() const;
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -55,6 +59,7 @@ protected:
     void mouseDoubleClickEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
+    void showEvent(QShowEvent *event);
 
 Q_SIGNALS:
     void processDone(bool grabbed);
@@ -86,6 +91,8 @@ private:
     QRectF widgetRect(const QRectF &pixmapRect) const;
 
     Config *_conf;
+
+    QScreen *_selectedScreen;
 
     const int fitRectExpand = 20;
     const int fitRectDepth = 50;

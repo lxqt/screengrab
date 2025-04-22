@@ -85,11 +85,38 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
     connect(_ui->delayBox, delayChange, this, &MainWindow::delayBoxChange);
-    void (QComboBox::*typeScr)(int) = &QComboBox::currentIndexChanged;
-    connect(_ui->cbxTypeScr, typeScr, this, &MainWindow::typeScreenShotChange);
+    connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
     connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
     connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
+
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        auto screens = QGuiApplication::screens();
+        if (screens.size() > 1)
+        {
+            // sort screens from left to right and top to bottom
+            std::sort(screens.begin(), screens.end(), [](QScreen *a1, QScreen *a2) {
+                QPoint p1(a1->geometry().topLeft());
+                QPoint p2(a2->geometry().topLeft());
+                return (qAbs(p1.x() - p2.x()) > qAbs(p1.y() - p2.y())
+                        ? p1.x() < p2.x() : p1.y() < p2.y());
+            });
+            for (const auto &screen : std::as_const(screens))
+                _ui-> cbxScr->addItem(screen->name());
+            _ui-> cbxScr->setCurrentIndex(0);
+        }
+        else
+        {
+            _ui->labScr->hide();
+            _ui->cbxScr->hide();
+        }
+    }
+    else
+    {
+        _ui->labScr->hide();
+        _ui->cbxScr->hide();
+    }
 
     appIcon = QIcon::fromTheme (QStringLiteral("screengrab"));
     if (appIcon.isNull())
@@ -211,6 +238,27 @@ void MainWindow::updateModulesMenus(const QList<QMenu *> &list)
         }
         _ui->toolBar->insertSeparator(actOptions);
     }
+}
+
+QScreen* MainWindow::selectedScreen() const
+{
+    auto screens = QGuiApplication::screens();
+    if (screens.isEmpty())
+        return qApp->primaryScreen();
+    if (screens.size() == 1)
+        return screens.at(0);
+    for (const auto &screen : std::as_const(screens))
+    {
+        if (_ui->cbxScr->currentText() == screen->name())
+            return screen;
+    }
+    std::sort(screens.begin(), screens.end(), [](QScreen *a1, QScreen *a2) {
+        QPoint p1(a1->geometry().topLeft());
+        QPoint p2(a2->geometry().topLeft());
+        return (qAbs(p1.x() - p2.x()) > qAbs(p1.y() - p2.y())
+                ? p1.x() < p2.x() : p1.y() < p2.y());
+    });
+    return screens.at(0);
 }
 
 void MainWindow::show()
@@ -387,9 +435,9 @@ void MainWindow::typeScreenShotChange(int type)
 {
     _conf->setDefScreenshotType(type);
     // show/hide checkboxes according to the type
-    _ui->checkNoDecoration->setVisible(type == 1);
+    _ui->checkNoDecoration->setVisible(type == 1 && QGuiApplication::platformName() != QStringLiteral("wayland"));
     _ui->checkIncludeCursor->setVisible(type < 2);
-    _ui->checkZommMouseArea->setVisible(type >= 2);
+    _ui->checkZommMouseArea->setVisible(type >= 2 && QGuiApplication::platformName() != QStringLiteral("wayland"));
 }
 
 void MainWindow::checkIncludeCursor(bool include)
@@ -415,9 +463,9 @@ void MainWindow::updateUI()
     int type = _conf->getDefScreenshotType();
     _ui->cbxTypeScr->setCurrentIndex(type);
     // show/hide checkboxes according to the type
-    _ui->checkNoDecoration->setVisible(type == 1);
+    _ui->checkNoDecoration->setVisible(type == 1 && QGuiApplication::platformName() != QStringLiteral("wayland"));
     _ui->checkIncludeCursor->setVisible(type < 2);
-    _ui->checkZommMouseArea->setVisible(type >= 2);
+    _ui->checkZommMouseArea->setVisible(type >= 2 && QGuiApplication::platformName() != QStringLiteral("wayland"));
 
     _ui->checkZommMouseArea->setChecked(_conf->getZoomAroundMouse());
     _ui->checkNoDecoration->setChecked(_conf->getNoDecoration());

@@ -48,6 +48,7 @@ public:
     void updatePixmap(QPixmap *pMap);
     void updateModulesActions(const QList<QAction *> &list);
     void updateModulesMenus(const QList<QMenu *> &list);
+    QScreen* selectedScreen() const;
 
 public Q_SLOTS:
     void showWindow(const QString& str);

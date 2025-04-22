@@ -19,13 +19,16 @@
 #include "src/core/regionselect.h"
 
 #include <QApplication>
-#include <QScreen>
 
-RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
+#include <LayerShellQt/shell.h>
+#include <LayerShellQt/window.h>
+
+RegionSelect::RegionSelect(Config *mainconf, QScreen *screen, QWidget *parent)
     :QWidget(parent)
 {
     _currentFit = 0;
     _conf = mainconf;
+    _selectedScreen = screen;
     sharedInit();
 
     move(0, 0);
@@ -36,15 +39,19 @@ RegionSelect::RegionSelect(Config *mainconf, QWidget *parent)
 
     show();
 
-    grabKeyboard();
-    grabMouse();
+    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+    {
+        grabKeyboard();
+        grabMouse();
+    }
 }
 
-RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* parent)
+RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QScreen *screen, QWidget* parent)
     : QWidget(parent)
 {
     _currentFit = 0;
     _conf = mainconf;
+    _selectedScreen = screen;
     sharedInit();
     _selectRect = lastRect;
 
@@ -56,8 +63,11 @@ RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QWidget* par
 
     show();
 
-    grabKeyboard();
-    grabMouse();
+    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+    {
+        grabKeyboard();
+        grabMouse();
+    }
 }
 
 RegionSelect::~RegionSelect()
@@ -69,8 +79,14 @@ RegionSelect::~RegionSelect()
 void RegionSelect::sharedInit()
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
-    setWindowState(Qt::WindowFullScreen);
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        setAttribute(Qt::WA_TranslucentBackground);
     setCursor(Qt::CrossCursor);
+
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        return;
+
+    setWindowState(Qt::WindowFullScreen);
 
     auto screen = QGuiApplication::screenAt(QCursor::pos());
     if (screen == nullptr)
@@ -94,12 +110,63 @@ void RegionSelect::sharedInit()
     _desktopPixmapClr = _desktopPixmapBkg;
 }
 
+void RegionSelect::showEvent(QShowEvent *event)
+{
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        winId();
+        if (QWindow* win = windowHandle())
+        {
+            if (LayerShellQt::Window* layershell = LayerShellQt::Window::get(win))
+            {
+                layershell->setLayer(LayerShellQt::Window::Layer::LayerOverlay);
+                LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop
+                                                         | LayerShellQt::Window::AnchorBottom
+                                                         | LayerShellQt::Window::AnchorLeft
+                                                         | LayerShellQt::Window::AnchorRight};
+                layershell->setAnchors(anchors);
+                layershell->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityExclusive);
+                layershell->setExclusiveZone(-1); // not moved to accommodate for other surfaces
+                win->setScreen(_selectedScreen == nullptr ? qApp->primaryScreen() : _selectedScreen);
+                layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromQWindow);
+            }
+        }
+    }
+    QWidget::showEvent(event);
+}
+
 void RegionSelect::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
 
-    painter.drawPixmap(QPoint(0, 0), _desktopPixmapBkg);
+    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+        painter.drawPixmap(QPoint(0, 0), _desktopPixmapBkg);
+    else if (!_processSelection)
+    { // the tip should be drawn here because the overlay is transparent under Wayland
+        static const QString tip = QApplication::tr("Click and drag to draw a rectangle,\ndouble click or press Enter\nto take a screenshot,\nor press Escape to cancel.");
+        QRect txtRect = rect();
+        txtRect.setHeight(qRound((static_cast<float>(txtRect.height()) / 10)));
+        QRect txtBgRect = painter.boundingRect(txtRect, Qt::AlignCenter, tip);
+        txtBgRect.setX(txtBgRect.x() - 6);
+        txtBgRect.setY(txtBgRect.y() - 6);
+        txtBgRect.setWidth(txtBgRect.width() + 12);
+        txtBgRect.setHeight(txtBgRect.height() + 12);
+        painter.save();
+        painter.setClipRegion(txtBgRect);
+#if (QT_VERSION >= QT_VERSION_CHECK(6,8,0))
+        // a workaround for artifacts under Wayland
+        auto origMode = painter.compositionMode();
+        painter.setCompositionMode(QPainter::CompositionMode_Clear);
+        painter.fillRect(txtBgRect, Qt::transparent);
+        painter.setCompositionMode(origMode);
+#endif
+        painter.setPen(QPen(Qt::white));
+        painter.setBrush(QBrush(QColor(0, 0, 0, 180), Qt::SolidPattern));
+        painter.drawRect(txtBgRect.adjusted(0, 0, -1, -1));
+        painter.drawText(txtBgRect, Qt::AlignCenter, tip);
+        painter.restore();
+    }
 
     drawRectSelection(painter);
 }
@@ -159,6 +226,9 @@ void RegionSelect::keyPressEvent(QKeyEvent* event)
 
 void RegionSelect::drawBackGround()
 {
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        return; // not for Wayland, where the tip is drawn inside paintEvent()
+
     // create painter on  pixelmap of desktop
     QPainter painter(&_desktopPixmapBkg);
 
@@ -200,14 +270,33 @@ void RegionSelect::drawBackGround()
 
 void RegionSelect::drawRectSelection(QPainter &painter)
 {
-    painter.drawPixmap(_selectRect, _desktopPixmapClr, pixmapRect(_selectRect));
-    painter.setPen(QPen(QBrush(QColor(0, 0, 0, 255)), 2));
-    painter.drawRect(_selectRect);
+    painter.save(); // restored at the end of this function
 
-    QString txtSize = QApplication::tr("%1 x %2 pixels ").arg(_selectRect.width()).arg(_selectRect.height());
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        QColor color = palette().color(QPalette::Active, QPalette::Highlight);
+        painter.setClipRegion(_selectRect.toRect());
+        painter.setPen(color);
+        color.setAlpha(90);
+        painter.setBrush(color);
+        painter.drawRect(_selectRect.toRect().adjusted(0, 0, -1, -1));
+        painter.setPen(palette().color(QPalette::Active, QPalette::HighlightedText));
+    }
+    else
+    {
+        painter.drawPixmap(_selectRect, _desktopPixmapClr, pixmapRect(_selectRect));
+        painter.setPen(QPen(QBrush(QColor(0, 0, 0, 255)), 2));
+        painter.drawRect(_selectRect);
+    }
+
+    // QRectF does not include its right and bottom edges; also, see getSelectionRect()
+    int w = _selectRect.toRect().width() + 1;
+    int h = _selectRect.toRect().height() + 1;
+    QString txtSize = QApplication::tr("%1 x %2 pixels ").arg(w).arg(h);
     painter.drawText(_selectRect, Qt::AlignBottom | Qt::AlignRight, txtSize);
 
-    if (!_selEndPoint.isNull() && _conf->getZoomAroundMouse())
+    if (QGuiApplication::platformName() != QStringLiteral("wayland")
+        && !_selEndPoint.isNull() && _conf->getZoomAroundMouse())
     {
         const int zoomSide = 200;
 
@@ -239,10 +328,15 @@ void RegionSelect::drawRectSelection(QPainter &painter)
             zoomCenter -= QPoint(0, qRound(zoomPixmap.height() / pixelRatio));
         painter.drawPixmap(zoomCenter, zoomPixmap);
     }
+
+    painter.restore();
 }
 
 void RegionSelect::selectFit()
 {
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        return; // not for Wayland, where the area screenshot is taken directly
+
     if (_fittedSelection)
     {
         if (_fitRectangles.isEmpty())
@@ -400,13 +494,23 @@ void RegionSelect::fitBorder(const QRect &boundRect, enum Side side, int &border
         border = startPoint.x();
 }
 
-QPixmap RegionSelect::getSelection()
+QPixmap RegionSelect::getSelection() const
 {
     QPixmap sel = _desktopPixmapClr.copy(pixmapRect(_selectRect).toRect());
     return sel;
 }
 
-QPoint RegionSelect::getSelectionStartPos()
+QRect RegionSelect::getSelectionRect() const
+{
+    // NOTE: "QRectF::toRect()" gives a QRect that does not include the right and bottom edges.
+    // Therefore, we need to grow it by one pixel to the right and bottom.
+    QRect res = _selectRect.toRect().marginsAdded(QMargins(0 , 0, 1, 1));
+
+    QScreen *scr = _selectedScreen == nullptr ? qApp->primaryScreen() : _selectedScreen;
+    return res.intersected(QRect(QPoint(0, 0), scr->size()));
+}
+
+QPoint RegionSelect::getSelectionStartPos() const
 {
     return _selectRect.topLeft().toPoint();
 }
