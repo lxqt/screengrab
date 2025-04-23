@@ -156,7 +156,8 @@ void Core::coreQuit()
     if (_wnd) {
         _conf->setRestoredWndSize(_wnd->width(), _wnd->height());
         _conf->saveWndSize();
-        _wnd->close();
+        if (_wnd->isVisible())
+            _wnd->close();
     }
 
     if (corePtr)
