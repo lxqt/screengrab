@@ -169,18 +169,25 @@ void MainWindow::closeEvent(QCloseEvent *e)
         actQuit->activate(QAction::Trigger);
 }
 
-// resize main window
-void MainWindow::resizeEvent(QResizeEvent *event)
+void MainWindow::fitPixmap()
 {
-    Q_UNUSED(event)
-    // get size dcreen pixel map
-    QSize scaleSize = Core::instance()->getPixmap()->size(); // get orig size pixmap
-
+    QSize scaleSize = Core::instance()->getPixmap()->size(); // orig pixmap size
     scaleSize.scale(_ui->scrLabel->contentsRect().size(), Qt::KeepAspectRatio);
-
     const QPixmap pixmap = _ui->scrLabel->pixmap(Qt::ReturnByValue);
     if (pixmap.isNull() || scaleSize != pixmap.size())
         updatePixmap(Core::instance()->getPixmap());
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    fitPixmap();
+}
+
+void MainWindow::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+    fitPixmap();
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
