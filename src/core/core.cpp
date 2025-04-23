@@ -47,6 +47,8 @@
 #include "dbusnotifier.h"
 #endif
 
+#include "wayland/ScreenShot.h"
+
 Core* Core::corePtr = nullptr;
 
 Core::Core()
@@ -80,7 +82,8 @@ Core::Core()
     QCommandLineOption optRunMinimized(QStringList() << QStringLiteral("m") << QStringLiteral("minimized"), tr("Run the application with a hidden main window"));
     _cmdLine.addOption(optRunMinimized);
 
-    sleep(250);
+    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+        sleep(250);
 
     _wnd = nullptr;
 }
@@ -118,9 +121,8 @@ void Core::initWindow(const QString& ipcMessage)
 
         screenShot(true); // first screenshot
 
-        _wnd->resize(_conf->getRestoredWndSize());
-
-        if (_wnd) {
+        if (QGuiApplication::platformName() != QStringLiteral("wayland")) {
+            _wnd->resize(_conf->getRestoredWndSize());
             if (runAsMinimized())
             {
                 if (_wnd->isTrayed())
@@ -198,12 +200,19 @@ void Core::screenShot(bool first)
 {
     killTempFile(); // remove the old temp file if any
 
-    sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
+    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+        sleep(400); // delay for hide "fade effect" bug in the KWin with compositing
     _firstScreen = first;
 
     // Update the last saving date, if this is the first screenshot
     if (_firstScreen)
         _conf->updateLastSaveDate();
+
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        waylandScreenShot();
+        return;
+    }
 
     switch(_conf->getDefScreenshotType())
     {
@@ -247,6 +256,86 @@ void Core::screenShot(bool first)
 
     _wnd->updatePixmap(_pixelMap);
     _wnd->restoreFromShot();
+}
+
+// Should be called only on Wayland.
+void Core::waylandScreenShot()
+{
+    if (_selector != nullptr)
+        return; // an area screenshot is in progress
+
+    switch(_conf->getDefScreenshotType())
+    {
+    case Core::Area:
+        _selector = new RegionSelect(_conf, _wnd->selectedScreen());
+        [[fallthrough]];
+    case Core::PreviousSelection:
+    {
+        if (_selector == nullptr)
+            _selector = new RegionSelect(_conf, _lastSelectedArea, _wnd->selectedScreen());
+        connect(_selector, &RegionSelect::processDone, this, [this](bool grabbed) {
+            if (!grabbed)
+            {
+                _wnd->restoreFromShot();
+                _selector->deleteLater();
+                _selector = nullptr;
+                return;
+            }
+            auto ws = new LXQt::Wayland::ScreenShot(false,
+                                                    _wnd->selectedScreen(),
+                                                    _selector->getSelectionRect(),
+                                                    this);
+            _selector->hide();
+            connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
+                    [this, ws] (const QPixmap& pixmap) {
+                showWaylandScreenshot(pixmap);
+                _lastSelectedArea = _selector->getSelectionRect();
+                _selector->deleteLater();
+                _selector = nullptr;
+                ws->deleteLater();
+            });
+        });
+        break;
+    }
+    default: // for now, we can take only a fullscreen shot
+    {
+        auto ws = new LXQt::Wayland::ScreenShot(_conf->getIncludeCursor(),
+                                                _wnd->selectedScreen(),
+                                                QRect(),
+                                                this);
+        connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
+                [this, ws] (const QPixmap& pixmap) {
+            showWaylandScreenshot(pixmap);
+            ws->deleteLater();
+        });
+        break;
+    }
+    }
+}
+
+// Should be called only on Wayland.
+void Core::showWaylandScreenshot(const QPixmap& pixmap)
+{
+    if (!pixmap.isNull())
+    {
+        *_pixelMap = pixmap;
+        checkAutoSave(_firstScreen);
+        _wnd->updatePixmap(_pixelMap);
+        _wnd->restoreFromShot();
+    }
+    if (_firstScreen)
+    {
+        _wnd->resize(_conf->getRestoredWndSize());
+        if (runAsMinimized())
+        {
+            if (_wnd->isTrayed())
+                _wnd->windowHideShow();
+            else
+                _wnd->showMinimized();
+        }
+        else
+            _wnd->show();
+    }
 }
 
 void Core::checkAutoSave(bool first)

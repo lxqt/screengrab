@@ -16,12 +16,15 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 # Minimum Versions
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
+set(SHELLQT_MINIMUM_VERSION "6.0.0")
 set(QTXDG_MINIMUM_VERSION "4.2.0")
 set(LXQTBT_MINIMUM_VERSION "2.2.0")
 
 find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6WaylandClient ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6LinguistTools  ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(LayerShellQt ${SHELLQT_MINIMUM_VERSION} REQUIRED)
 find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 
@@ -82,7 +85,6 @@ endif()
 
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
 message(STATUS "Enable D-Bus notifications: " ${SG_DBUS_NOTIFY})
-message(STATUS "Use system Qxt Library: " ${SG_USE_SYSTEM_QXT})
 message(STATUS "Update source translation translations/*.ts files: " ${UPDATE_TRANSLATIONS})
 
 # docs
@@ -113,6 +115,8 @@ set(SCREENGRAB_SRC
     src/core/ui/configwidget.cpp
     src/core/ui/about.cpp
     src/core/ui/mainwindow.cpp
+    src/core/wayland/ScreenCopy.cpp
+    src/core/wayland/ScreenShot.cpp
 )
 
 if(SG_DBUS_NOTIFY)
@@ -204,7 +208,12 @@ if (XCB_XFIXES_FOUND)
 endif()
 
 # Link with Network. See pull#86. TODO: Should be optional when upload module is needed.
-target_link_libraries(screengrab qkeysequencewidget Qt6::Widgets KF6::WindowSystem Qt6::Network ${X11_LIBRARIES})
+target_link_libraries(screengrab qkeysequencewidget Qt6::Widgets KF6::WindowSystem Qt6::Network ${X11_LIBRARIES}
+LayerShellQtInterface Qt6::GuiPrivate Qt6::WaylandClient Qt6::WaylandClientPrivate Qt6::WaylandGlobalPrivate)
+
+qt6_generate_wayland_protocol_client_sources(screengrab FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/core/wayland/wlr-screencopy-unstable-v1.xml
+)
 
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)
