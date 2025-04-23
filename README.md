@@ -2,18 +2,19 @@
 
 ## Overview
 
-An application for creating screenshots. ScreenGrab uses the Qt framework and thus,
-it is independent from any desktop environment.
+An application for creating screenshots for X11 and Wayland (using wlr-screencopy-unstable-v1). ScreenGrab uses the Qt framework and thus, it is independent from any desktop environment.
 
 ![ScreenGrab](screengrab.png)
 
 ## Features
 
-* Screenshot of screen area, window, fullscreen and last selected area
+* Screenshot of screen area, window (X11 only), fullscreen and last selected area
+* Screen selection (Wayland only)
 * Delay
 * Edit directly in other applications
-* Automatic saving; insert date+time in filename
-* Fit to edges by right click
+* Automatic saving; insert date+time in custom filename
+* Copy file name or full path to clipboard
+* Fit to edges by right click (X11 only)
 * Custom shortcuts
 
 ## Installation
@@ -23,11 +24,14 @@ it is independent from any desktop environment.
 #### Build requirements
 
  * Qt6 >= 6.6
- * CMake >= 3.1.0 (only for building ScreenGrab from sources)
+ * CMake >= 3.18.0
  * GCC > 4.5
- * KF6WindowSystem
+ * KF6WindowSystem (for X11 support)
+ * qt6-wayland >= 6.6 (for Wayland support)
+ * layershell-qt >= 6 (for Wayland support)
  * [lxqt-build-tools](https://github.com/lxqt/lxqt-build-tools)
- * [libqtxdg](https://github.com/lxqt/libqtxdg/)(if compiled with the ability to edit screenshots in external apps, which is the case by default)
+ * [libqtxdg](https://github.com/lxqt/libqtxdg/)(if compiled with the ability to edit
+ screenshots in external apps, which is the case by default)
 
 To build ScreenGrab from sources, use these commands:
 
@@ -42,13 +46,9 @@ To build ScreenGrab from sources, use these commands:
 You can use some or all of these parameters to customise your build.
 
  * **-DCMAKE_INSTALL_PREFIX** - Install prefix for Linux distro. Default setting: "/usr".
- * **-DSG_XDG_CONFIG_SUPPORT** - Place config files into XDGC_CONFIG_HOME directory
 (usually - ~/.config/${app_name) ). Default setting: ON. In previous versions the
 config files were stored in ~/.screengrab (Set this parameter to "OFF" to store the config files here).
- * **-DSG_EXT_UPLOADS** - Enable uploading screenshots to image hosting services. Default setting: ON.
  * **-DSG_DBUS_NOTIFY** - Enable D-Bus notifications.
- * **-DSG_GLOBALSHORTCUTS** - Enable global shortcuts for main actions to create screenshots. Default setting: ON.
- * **-DSG_USE_SYSTEM_QXT** - Use system version Qxt Library for global shortcuts. Default setting: OFF.
  * **-DSG_DOCDIR** - Name for the directory of user's documentation. Default setting:  "screengrab".
 Dfault setting: OFF.
  * **-DDEV_VERSION** - Set a dev-version here, maybe git describe $foo. Default not set.
@@ -75,7 +75,7 @@ Screengrab is licensed under the GPL v2. See file LICENSE in docs directory for 
 
 ## Copyright
 
-(c) 2014-2022, LXQt Project  
+(c) 2014-2025, LXQt Project  
 (c) 2009-2013, Artem 'DOOMer' Galichkin
 
 ## Translation
