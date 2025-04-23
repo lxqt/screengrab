@@ -60,6 +60,11 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     void (QComboBox::*formatChabge)(int) = &QComboBox::currentIndexChanged;
     connect(_ui->cbxFormat, formatChabge, this, &ConfigDialog::changeFormatType);
 
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        _ui->checkFitInside->hide();
+    else
+        _ui->checkLastScreen->hide();
+
     loadSettings();
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
 
@@ -138,6 +143,8 @@ void ConfigDialog::loadSettings()
     _ui->cbxEnableExtView->setChecked(conf->getEnableExtView());
 
     _ui->checkFitInside->setChecked(conf->getFitInside());
+
+    _ui->checkLastScreen->setChecked(conf->getRemLastScreen());
 }
 
 
@@ -218,6 +225,7 @@ void ConfigDialog::saveSettings()
     conf->setImageQuality(_ui->slideImgQuality->value());
     conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
     conf->setFitInside(_ui->checkFitInside->isChecked());
+    conf->setRemLastScreen(_ui->checkLastScreen->isChecked());
 
     // save shortcuts in shortcutmanager
     int action = 3; // starting with shortcutNew

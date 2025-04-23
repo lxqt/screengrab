@@ -107,6 +107,7 @@ Core* Core::instance()
 Core::~Core()
 {
     killTempFile();
+    delete _selector;
     delete _pixelMap;
     _conf->killInstance();
 }
@@ -336,6 +337,8 @@ void Core::showWaylandScreenshot(const QPixmap& pixmap)
         else
             _wnd->show();
     }
+    else if (pixmap.isNull())
+        _wnd->restoreFromShot();
 }
 
 void Core::checkAutoSave(bool first)
@@ -704,4 +707,5 @@ void Core::regionGrabbed(bool grabbed)
 
     _wnd->updatePixmap(_pixelMap);
     _selector->deleteLater();
+    _selector = nullptr;
 }

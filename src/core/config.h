@@ -51,6 +51,7 @@ const bool DEF_SHOW_TRAY = true;
 const bool DEF_ENABLE_EXT_VIEWER = true;
 const bool DEF_INCLUDE_CURSOR = false;
 const bool DEF_FIT_INSIDE = true;
+const bool DEF_REM_LAST_SCREEN = false;
 
 class Settings : public QSettings // prevents redundant writings
 {
@@ -158,6 +159,10 @@ public:
     int getDefScreenshotType();
     void setDefScreenshotType(const int type);
 
+    // last screen name (only for Wayland)
+    QString getScreen();
+    void setScreen(const QString &screen);
+
     quint8 getAutoCopyFilenameOnSaving();
     void setAutoCopyFilenameOnSaving(quint8 val);
 
@@ -232,6 +237,10 @@ public:
 
     bool getFitInside();
     void setFitInside(bool val);
+
+    // whether the last screen should be remembered (only for Wayland)
+    bool getRemLastScreen();
+    void setRemLastScreen(bool val);
 
     QRect getLastSelection();
     void setLastSelection(QRect rect);

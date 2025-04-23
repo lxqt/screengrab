@@ -81,12 +81,13 @@ void RegionSelect::sharedInit()
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
         setAttribute(Qt::WA_TranslucentBackground);
+    // Setting the state to fullscreen is safe with Wayland too
+    // (and tells Kvantum not to apply KWin's blur effect).
+    setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
 
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
         return;
-
-    setWindowState(Qt::WindowFullScreen);
 
     auto screen = QGuiApplication::screenAt(QCursor::pos());
     if (screen == nullptr)

@@ -65,30 +65,33 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
 
     wl_shm *shm = nullptr;
 
-    //qDebug() << "Using Wayland display:" << qDisplay->display();
-    //qDebug() << qDisplay->screens();
 
+    // NOTE: If there are persistent issues in detecting wlr_screencopy_manager_interface,
+    // then use a QEventLoop and wait for the QtWaylandClient::QWaylandDisplay::globalAdded
+    // to advertise the wlr_screencopy_manager_interface. The required code is commented out.
 
     // qDisplay->initialize();
 
     /*QEventLoop loop;
 
     QObject::connect(
-        qDisplay, &QtWaylandClient::QWaylandDisplay::globalAdded, [ &loop ] ( const QtWaylandClient::QWaylandDisplay::RegistryGlobal& global ) {
+        qDisplay, &QtWaylandClient::QWaylandDisplay::globalAdded, [ &loop ] (const QtWaylandClient::QWaylandDisplay::RegistryGlobal& global) {
             qDebug() << global.interface << "added";
 
-            if ( ( global.interface == zwlr_screencopy_manager_v1_interface.name ) && ( scrnCopyMgr == nullptr ) ) {
-                zwlr_screencopy_manager_v1 *wlrScreenCopyMgr = (zwlr_screencopy_manager_v1 *)wl_registry_bind( global.registry, global.id, &zwlr_screencopy_manager_v1_interface, 3 );
+            if ((global.interface == zwlr_screencopy_manager_v1_interface.name) && (scrnCopyMgr == nullptr))
+            {
+                zwlr_screencopy_manager_v1 *wlrScreenCopyMgr = (zwlr_screencopy_manager_v1 *)wl_registry_bind(global.registry, global.id, &zwlr_screencopy_manager_v1_interface, 3);
 
-                if ( wlrScreenCopyMgr ) {
+                if (wlrScreenCopyMgr)
+                {
                     scrnCopyMgr = new LXQt::Wayland::ScreenCopyManager( wlrScreenCopyMgr );
                 }
 
                 loop.quit();
             }
-
-            else if ( global.interface == wl_shm_interface.name ) {
-                shm = (wl_shm *)wl_registry_bind( global.registry, global.id, &wl_shm_interface, global.version );
+            else if (global.interface == wl_shm_interface.name)
+            {
+                shm = (wl_shm *)wl_registry_bind(global.registry, global.id, &wl_shm_interface, global.version);
             }
         }
     );*/
@@ -111,7 +114,8 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
         }
     }
 
-    /*if ( ( scrnCopyMgr == nullptr ) || ( shm == nullptr ) ) {
+    /*if ((scrnCopyMgr == nullptr) || (shm == nullptr))
+    {
         loop.exec();
     }*/
 
@@ -157,7 +161,7 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
         }
     });
 
-    QObject::connect(frame, &LXQt::Wayland::ScreenCopyFrame::ready, this, [this, screen]
+    QObject::connect(frame, &LXQt::Wayland::ScreenCopyFrame::ready, this, [this]
                      (LXQt::Wayland::ScreenFrameBuffer *buffer) {
         if (buffer == nullptr)
         {
