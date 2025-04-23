@@ -46,9 +46,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
     connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
 
-    connect(_ui->checkNotify, &QGroupBox::clicked, this, &ConfigDialog::showNotification);
-    connect(_ui->spinDuration, &QSpinBox::valueChanged, this, &ConfigDialog::changeNotificationTimeout);
-
     connect(_ui->treeKeys, &QTreeWidget::doubleClicked, this, &ConfigDialog::doubleclickTreeKeys);
     connect(_ui->treeKeys, &QTreeWidget::activated, this, &ConfigDialog::doubleclickTreeKeys);
     connect(_ui->treeKeys->selectionModel(), &QItemSelectionModel::currentChanged,
@@ -288,16 +285,6 @@ void ConfigDialog::restoreDefaults()
         conf->saveSettings();
         QDialog::accept();
     }
-}
-
-void ConfigDialog::showNotification(bool show)
-{
-    conf->showNotification(show);
-}
-
-void ConfigDialog::changeNotificationTimeout(int sec)
-{
-    conf->setNotificationTimeout(sec);
 }
 
 void ConfigDialog::setVisibleDateTplEdit(bool checked)
