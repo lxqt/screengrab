@@ -81,12 +81,13 @@ void RegionSelect::sharedInit()
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
         setAttribute(Qt::WA_TranslucentBackground);
+    // Setting the state to fullscreen is safe with Wayland too
+    // (and tells Kvantum not to apply KWin's blur effect).
+    setWindowState(Qt::WindowFullScreen);
     setCursor(Qt::CrossCursor);
 
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
         return;
-
-    setWindowState(Qt::WindowFullScreen);
 
     auto screen = QGuiApplication::screenAt(QCursor::pos());
     if (screen == nullptr)
@@ -145,11 +146,10 @@ void RegionSelect::paintEvent(QPaintEvent *event)
     else if (!_processSelection)
     { // the tip should be drawn here because the overlay is transparent under Wayland
         static const QString tip = QApplication::tr("Click and drag to draw a rectangle,\ndouble click or press Enter\nto take a screenshot,\nor press Escape to cancel.");
-        QRect txtRect = rect();
-        txtRect.setHeight(qRound((static_cast<float>(txtRect.height()) / 10)));
-        QRect txtBgRect = painter.boundingRect(txtRect, Qt::AlignCenter, tip);
-        txtBgRect.setX(txtBgRect.x() - 6);
-        txtBgRect.setY(txtBgRect.y() - 6);
+        QRect txtBgRect = painter.boundingRect(rect(), Qt::AlignHCenter | Qt::AlignTop, tip);
+        txtBgRect.moveTop(50);
+        txtBgRect.setLeft(txtBgRect.x() - 6);
+        txtBgRect.setTop(txtBgRect.y() - 6);
         txtBgRect.setWidth(txtBgRect.width() + 12);
         txtBgRect.setHeight(txtBgRect.height() + 12);
         painter.save();

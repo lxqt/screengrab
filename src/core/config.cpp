@@ -35,6 +35,7 @@
 #define KEY_SAVEFORMAT          "defImgFormat"
 #define KEY_DELAY               "delay"
 #define KEY_SCREENSHOT_TYPE_DEF "defScreenshotType"
+#define KEY_SCREEN              "defScreen"
 #define KEY_IMG_QUALITY         "imageQuality"
 #define KEY_FILENAMEDATE        "insDateTimeInFilename"
 #define KEY_DATETIME_TPL        "templateDateTime"
@@ -55,8 +56,8 @@
 #define KEY_NODECOR             "noDecorations"
 #define KEY_INCLUDE_CURSOR      "includeCursor"
 #define KEY_FIT_INSIDE          "fitInside"
-
-#define KEY_LAST_SELECTION          "lastSelection"
+#define KEY_REM_LAST_SCREEN     "remLastScreen"
+#define KEY_LAST_SELECTION      "lastSelection"
 
 
 static const QLatin1String FullScreen("FullScreen");
@@ -275,6 +276,16 @@ void Config::setDefScreenshotType(const int type)
     setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), type);
 }
 
+QString Config::getScreen()
+{
+    return (value(QLatin1String(KEY_SCREEN)).toString());
+}
+
+void Config::setScreen(const QString &screen)
+{
+    setValue(QLatin1String(KEY_SCREEN), screen);
+}
+
 quint8 Config::getAutoCopyFilenameOnSaving()
 {
     return value(QLatin1String(KEY_FILENAME_TO_CLB)).toInt();
@@ -427,6 +438,16 @@ void Config::setFitInside(bool val)
     setValue(QLatin1String(KEY_FIT_INSIDE), val);
 }
 
+bool Config::getRemLastScreen()
+{
+    return value(QLatin1String(KEY_REM_LAST_SCREEN)).toBool();
+}
+
+void Config::setRemLastScreen(bool val)
+{
+    setValue(QLatin1String(KEY_REM_LAST_SCREEN), val);
+}
+
 QRect Config::getLastSelection()
 {
     return value(QLatin1String(KEY_LAST_SELECTION)).toRect();
@@ -455,6 +476,7 @@ void Config::loadSettings()
     setSaveFormat(_settings->value(QLatin1String(KEY_SAVEFORMAT), DEF_SAVE_FORMAT).toString());
     setDelay(_settings->value(QLatin1String(KEY_DELAY), DEF_DELAY).toInt());
     setDefScreenshotType(screenshotTypeFromString(_settings->value(QLatin1String(KEY_SCREENSHOT_TYPE_DEF)).toString()));
+    setScreen(_settings->value(QLatin1String(KEY_SCREEN)).toString());
     setAutoCopyFilenameOnSaving(_settings->value(QLatin1String(KEY_FILENAME_TO_CLB), DEF_FILENAME_TO_CLB).toInt());
     setDateTimeInFilename(_settings->value(QLatin1String(KEY_FILENAMEDATE), DEF_DATETIME_FILENAME).toBool());
     setDateTimeTpl(_settings->value(QLatin1String(KEY_DATETIME_TPL), DEF_DATETIME_TPL).toString());
@@ -481,6 +503,7 @@ void Config::loadSettings()
     setAllowMultipleInstance(_settings->value(QLatin1String(KEY_ALLOW_COPIES), DEF_ALLOW_COPIES).toBool());
     setEnableExtView(_settings->value(QLatin1String(KEY_ENABLE_EXT_VIEWER), DEF_ENABLE_EXT_VIEWER).toBool());
     setFitInside(_settings->value(QLatin1String(KEY_FIT_INSIDE), DEF_FIT_INSIDE).toBool());
+    setRemLastScreen(_settings->value(QLatin1String(KEY_REM_LAST_SCREEN), DEF_REM_LAST_SCREEN).toBool());
     _settings->endGroup();
 
     _shortcuts->loadSettings();
@@ -512,6 +535,7 @@ void Config::saveSettings()
     _settings->setValue(QLatin1String(KEY_ALLOW_COPIES), getAllowMultipleInstance());
     _settings->setValue(QLatin1String(KEY_ENABLE_EXT_VIEWER), getEnableExtView());
     _settings->setValue(QLatin1String(KEY_FIT_INSIDE), getFitInside());
+    _settings->setValue(QLatin1String(KEY_REM_LAST_SCREEN), getRemLastScreen());
     _settings->endGroup();
 
     _shortcuts->saveSettings();
@@ -523,6 +547,8 @@ void Config::saveScreenshotSettings()
 { // save the main window settings
     _settings->beginGroup(QStringLiteral("Base"));
     _settings->setValue(QLatin1String(KEY_SCREENSHOT_TYPE_DEF), screenshotTypeToString(getDefScreenshotType()));
+    if (getRemLastScreen()) // save it only if needed
+        _settings->setValue(QLatin1String(KEY_SCREEN), getScreen());
     _settings->setValue(QLatin1String(KEY_NODECOR), getNoDecoration());
     _settings->setValue(QLatin1String(KEY_INCLUDE_CURSOR), getIncludeCursor());
     _settings->setValue(QLatin1String(KEY_DELAY), getDelay());

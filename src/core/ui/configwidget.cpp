@@ -46,9 +46,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     connect(_ui->checkShowTray, &QCheckBox::toggled, this, &ConfigDialog::toggleCheckShowTray);
     connect(_ui->editDateTmeTpl, &QLineEdit::textEdited, this, &ConfigDialog::editDateTmeTpl);
 
-    connect(_ui->checkNotify, &QGroupBox::clicked, this, &ConfigDialog::showNotification);
-    connect(_ui->spinDuration, &QSpinBox::valueChanged, this, &ConfigDialog::changeNotificationTimeout);
-
     connect(_ui->treeKeys, &QTreeWidget::doubleClicked, this, &ConfigDialog::doubleclickTreeKeys);
     connect(_ui->treeKeys, &QTreeWidget::activated, this, &ConfigDialog::doubleclickTreeKeys);
     connect(_ui->treeKeys->selectionModel(), &QItemSelectionModel::currentChanged,
@@ -59,6 +56,11 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 
     void (QComboBox::*formatChabge)(int) = &QComboBox::currentIndexChanged;
     connect(_ui->cbxFormat, formatChabge, this, &ConfigDialog::changeFormatType);
+
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+        _ui->checkFitInside->hide();
+    else
+        _ui->checkLastScreen->hide();
 
     loadSettings();
     setVisibleDateTplEdit(conf->getDateTimeInFilename());
@@ -138,6 +140,8 @@ void ConfigDialog::loadSettings()
     _ui->cbxEnableExtView->setChecked(conf->getEnableExtView());
 
     _ui->checkFitInside->setChecked(conf->getFitInside());
+
+    _ui->checkLastScreen->setChecked(conf->getRemLastScreen());
 }
 
 
@@ -218,6 +222,7 @@ void ConfigDialog::saveSettings()
     conf->setImageQuality(_ui->slideImgQuality->value());
     conf->setEnableExtView(_ui->cbxEnableExtView->isChecked());
     conf->setFitInside(_ui->checkFitInside->isChecked());
+    conf->setRemLastScreen(_ui->checkLastScreen->isChecked());
 
     // save shortcuts in shortcutmanager
     int action = 3; // starting with shortcutNew
@@ -280,16 +285,6 @@ void ConfigDialog::restoreDefaults()
         conf->saveSettings();
         QDialog::accept();
     }
-}
-
-void ConfigDialog::showNotification(bool show)
-{
-    conf->showNotification(show);
-}
-
-void ConfigDialog::changeNotificationTimeout(int sec)
-{
-    conf->setNotificationTimeout(sec);
 }
 
 void ConfigDialog::setVisibleDateTplEdit(bool checked)

@@ -413,6 +413,16 @@ might become larger to fit to outer edges</string>
           </widget>
          </item>
          <item>
+          <widget class="QCheckBox" name="checkLastScreen">
+           <property name="toolTip">
+            <string>With multiple screens</string>
+           </property>
+           <property name="text">
+            <string>Remember last selected screen in next session</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QGroupBox" name="checkNotify">
            <property name="title">
             <string>Notify on saving and copying</string>

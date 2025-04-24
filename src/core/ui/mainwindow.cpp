@@ -83,8 +83,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     _ui->toolBar->addAction(actQuit);
 
-    void (QSpinBox::*delayChange)(int) = &QSpinBox::valueChanged;
-    connect(_ui->delayBox, delayChange, this, &MainWindow::delayBoxChange);
+    connect(_ui->delayBox, &QSpinBox::valueChanged, this, &MainWindow::delayBoxChange);
     connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
     connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
@@ -92,6 +91,12 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
+        // Wayland does not support window screenshot for now.
+        // WARNING: If window shot becomes possible, change this and all occurrences of
+        // _ui->cbxTypeScr->setCurrentIndex as well as MainWindow::typeScreenShotChange
+        // in this file.
+        _ui->cbxTypeScr->removeItem(1);
+
         auto screens = QGuiApplication::screens();
         if (screens.size() > 1)
         {
@@ -104,7 +109,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
             });
             for (const auto &screen : std::as_const(screens))
                 _ui-> cbxScr->addItem(screen->name());
-            _ui-> cbxScr->setCurrentIndex(0);
+            _ui->cbxScr->setCurrentIndex(0);
+            connect(_ui->cbxScr, &QComboBox::currentTextChanged, this,
+                    [this] (const QString &text) {
+                _conf->setScreen(text);
+            });
         }
         else
         {
@@ -160,18 +169,25 @@ void MainWindow::closeEvent(QCloseEvent *e)
         actQuit->activate(QAction::Trigger);
 }
 
-// resize main window
-void MainWindow::resizeEvent(QResizeEvent *event)
+void MainWindow::fitPixmap()
 {
-    Q_UNUSED(event)
-    // get size dcreen pixel map
-    QSize scaleSize = Core::instance()->getPixmap()->size(); // get orig size pixmap
-
+    QSize scaleSize = Core::instance()->getPixmap()->size(); // orig pixmap size
     scaleSize.scale(_ui->scrLabel->contentsRect().size(), Qt::KeepAspectRatio);
-
     const QPixmap pixmap = _ui->scrLabel->pixmap(Qt::ReturnByValue);
     if (pixmap.isNull() || scaleSize != pixmap.size())
         updatePixmap(Core::instance()->getPixmap());
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    fitPixmap();
+}
+
+void MainWindow::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+    fitPixmap();
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event)
@@ -433,11 +449,32 @@ void MainWindow::delayBoxChange(int delay)
 
 void MainWindow::typeScreenShotChange(int type)
 {
-    _conf->setDefScreenshotType(type);
-    // show/hide checkboxes according to the type
-    _ui->checkNoDecoration->setVisible(type == 1 && QGuiApplication::platformName() != QStringLiteral("wayland"));
-    _ui->checkIncludeCursor->setVisible(type < 2);
-    _ui->checkZommMouseArea->setVisible(type >= 2 && QGuiApplication::platformName() != QStringLiteral("wayland"));
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        if (type == 0)
+        {
+            _conf->setDefScreenshotType(0); // fullscreen
+            _ui->checkIncludeCursor->setVisible(true);
+        }
+        else
+        {
+            _ui->checkIncludeCursor->setVisible(false);
+            if (type < 3)
+                _conf->setDefScreenshotType(type + 1);
+
+        }
+        _ui->checkNoDecoration->hide();
+        _ui->checkZommMouseArea->hide();
+    }
+    else
+    {
+        if (type < 4)
+            _conf->setDefScreenshotType(type);
+        // show/hide checkboxes according to the type
+        _ui->checkNoDecoration->setVisible(type == 1);
+        _ui->checkIncludeCursor->setVisible(type < 2);
+        _ui->checkZommMouseArea->setVisible(type >= 2);
+    }
 }
 
 void MainWindow::checkIncludeCursor(bool include)
@@ -461,11 +498,37 @@ void MainWindow::updateUI()
     _ui->delayBox->setValue(_conf->getDelay());
 
     int type = _conf->getDefScreenshotType();
-    _ui->cbxTypeScr->setCurrentIndex(type);
-    // show/hide checkboxes according to the type
-    _ui->checkNoDecoration->setVisible(type == 1 && QGuiApplication::platformName() != QStringLiteral("wayland"));
-    _ui->checkIncludeCursor->setVisible(type < 2);
-    _ui->checkZommMouseArea->setVisible(type >= 2 && QGuiApplication::platformName() != QStringLiteral("wayland"));
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        if (type < 2)
+        {
+            _ui->cbxTypeScr->setCurrentIndex(0);
+            _ui->checkIncludeCursor->setVisible(true);
+        }
+        else
+        {
+            _ui->checkIncludeCursor->setVisible(false);
+            if (type < 4)
+                _ui->cbxTypeScr->setCurrentIndex(type - 1);
+        }
+        _ui->checkNoDecoration->hide();
+        _ui->checkZommMouseArea->hide();
+
+        // if the last screen should be remembered, set up the combo-box
+        if (_conf->getRemLastScreen())
+            _ui->cbxScr->setCurrentText(_conf->getScreen());
+        // if the screen of the config file does not exist, correct it
+        _conf->setScreen(_ui->cbxScr->currentText());
+    }
+    else
+    {
+        if (type < 4)
+            _ui->cbxTypeScr->setCurrentIndex(type);
+        // show/hide checkboxes according to the type
+        _ui->checkNoDecoration->setVisible(type == 1);
+        _ui->checkIncludeCursor->setVisible(type < 2);
+        _ui->checkZommMouseArea->setVisible(type >= 2);
+    }
 
     _ui->checkZommMouseArea->setChecked(_conf->getZoomAroundMouse());
     _ui->checkNoDecoration->setChecked(_conf->getNoDecoration());
@@ -535,8 +598,16 @@ void MainWindow::showWindow(const QString& str)
     QString typeNum = str[str.size() - 1];
     int type = typeNum.toInt();
 
-    // change type scrren in config & on main window
-    _ui->cbxTypeScr->setCurrentIndex(type);
+    // change screenshot type in config & on main window
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        if (type < 2)
+            _ui->cbxTypeScr->setCurrentIndex(0);
+        else if (type < 4)
+            _ui->cbxTypeScr->setCurrentIndex(type - 1);
+    }
+    else if (type < 4)
+        _ui->cbxTypeScr->setCurrentIndex(type);
     typeScreenShotChange(type);
 }
 

@@ -59,7 +59,8 @@ public Q_SLOTS:
 protected:
     void closeEvent(QCloseEvent *e);
     void changeEvent(QEvent *e);
-    void resizeEvent(QResizeEvent *event); // event resuze window
+    void resizeEvent(QResizeEvent *event);
+    void showEvent(QShowEvent *event);
     bool eventFilter(QObject *obj, QEvent *event);
 
 private:
@@ -85,6 +86,7 @@ private:
     void killTray();
     void disableTrayMenuActions(bool disable);
     void updateShortcuts();
+    void fitPixmap();
 
 private Q_SLOTS:
     void saveScreen();
