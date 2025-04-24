@@ -152,43 +152,43 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="182"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="186"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
         <translation>Mapa %1 ne postoji. Želiš li je stvoriti?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="183"/>
-        <location filename="../src/core/ui/configwidget.cpp" line="271"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="187"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="276"/>
         <source>Warning</source>
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="259"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="264"/>
         <source>Select directory</source>
         <translation>Odaberi mapu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="270"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="275"/>
         <source>Do you want to reset the settings to the defaults?</source>
         <translation>Želilš li vratiti sve postavke na standardne vrijednosti?</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="314"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="309"/>
         <source>Example: </source>
         <translation>Primjer: </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="355"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="350"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
         <translation>ScreenGrab već koristi ovu tipku. Odaberi jednu drugu.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="373"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="368"/>
         <source>This key is not supported on your system!</source>
         <translation>Tvoj sustav ne podržava ovu tipku!</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.cpp" line="393"/>
+        <location filename="../src/core/ui/configwidget.cpp" line="388"/>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
@@ -196,57 +196,57 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="64"/>
+        <location filename="../src/core/core.cpp" line="66"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
         <translation>je višeplatformski program za brzo snimanje radne površine.</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="68"/>
+        <location filename="../src/core/core.cpp" line="70"/>
         <source>Take a fullscreen screenshot</source>
         <translation>Snimi cijeli ekran</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="72"/>
+        <location filename="../src/core/core.cpp" line="74"/>
         <source>Take a screenshot of the active window</source>
         <translation>Snimi aktivan prozor</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="76"/>
+        <location filename="../src/core/core.cpp" line="78"/>
         <source>Take a screenshot of a selection of the screen</source>
         <translation>Snimi odabrano područje na ekranu</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="80"/>
+        <location filename="../src/core/core.cpp" line="82"/>
         <source>Run the application with a hidden main window</source>
         <translation>Pokreni program sa skrivenim glavnim prozorom</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="450"/>
+        <location filename="../src/core/core.cpp" line="543"/>
         <source>Saved</source>
         <translation>Spremljeno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="450"/>
+        <location filename="../src/core/core.cpp" line="543"/>
         <source>Saved to </source>
         <translation>Spremljeno u </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="472"/>
+        <location filename="../src/core/core.cpp" line="565"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Ime spremljene datoteke je kopirano u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="478"/>
+        <location filename="../src/core/core.cpp" line="571"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Staza do spremljene datoteke je kopirana u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="501"/>
+        <location filename="../src/core/core.cpp" line="594"/>
         <source>Copied</source>
         <translation>Kopirano</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="501"/>
+        <location filename="../src/core/core.cpp" line="594"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snimka ekrana je kopirana u međuspremnik</translation>
     </message>
@@ -259,72 +259,77 @@
         <translation>ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="79"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="73"/>
+        <source>Screen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/mainwindow.ui" line="105"/>
         <source>Type:</source>
         <translation>Vrsta:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="89"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="115"/>
         <source>Type of screenshot</source>
         <translation>Vrsta snimke ekrana</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="96"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
         <source>Full screen</source>
         <translation>Cijeli ekran</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="101"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
         <source>Window</source>
         <translation>Prozor</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="106"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
         <source>Screen area</source>
         <translation>Područje ekrana</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="111"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
         <source>Last selected area</source>
         <translation>Zadnje odabrano područje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="141"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
         <source>Delay:</source>
         <translation>Odgoda:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="154"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Odgađanje snimanja ekrana u sekundama</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
         <source>None</source>
         <translation>Bez</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
         <source> sec</source>
         <translation> s</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="203"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
         <source>Zoom area around mouse</source>
         <translation>Zumiraj područje oko miša</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="210"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
         <source>No window decoration</source>
         <translation>Bez okvira prozora</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="217"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
         <source>Include mouse pointer</source>
         <translation>Uključi miša u snimku</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="246"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
         <source>toolBar</source>
         <translation>alatna traka</translation>
     </message>
@@ -365,33 +370,33 @@
         <translation>Zatvori</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="315"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="379"/>
         <source>Screenshot </source>
         <translation>Snimka ekrana</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="383"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Dvostrukim pritiskom otvori snimku ekrana u vanjskom standardnom programu za prikaz slika</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="459"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="392"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="570"/>
         <source>Hide</source>
         <translation>Sakrij</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="466"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="577"/>
         <source>Show</source>
         <translation>Prikaži</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="519"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
         <source>%1 Files</source>
         <translation>%1 datoteke</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="541"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="660"/>
         <source>Save As...</source>
         <translation>Spremi kao …</translation>
     </message>
@@ -399,7 +404,15 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="175"/>
+        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <source>Click and drag to draw a rectangle,
+double click or press Enter
+to take a screenshot,
+or press Escape to cancel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/regionselect.cpp" line="245"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -410,7 +423,7 @@ pritisni dvaput ili pritisni Enter
 za snimanje ekrana.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="207"/>
+        <location filename="../src/core/regionselect.cpp" line="295"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 × %2 px </translation>
     </message>
@@ -445,7 +458,7 @@ za snimanje ekrana.</translation>
     <name>configwidget</name>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="26"/>
-        <location filename="../src/core/ui/configwidget.ui" line="568"/>
+        <location filename="../src/core/ui/configwidget.ui" line="578"/>
         <source>Options</source>
         <translation>Opcije</translation>
     </message>
@@ -613,76 +626,86 @@ možda biti veće, da bi se poklapilo s rubovima</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
+        <source>With multiple screens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="421"/>
+        <source>Remember last selected screen in next session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/ui/configwidget.ui" line="428"/>
         <source>Notify on saving and copying</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="427"/>
+        <location filename="../src/core/ui/configwidget.ui" line="437"/>
         <source>Duration:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="494"/>
+        <location filename="../src/core/ui/configwidget.ui" line="504"/>
         <source>Show ScreenGrab in the system tray</source>
         <translation>Prikaži ScreenGrab u programskoj traci</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="434"/>
+        <location filename="../src/core/ui/configwidget.ui" line="444"/>
         <source> sec</source>
         <translation> s</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="501"/>
+        <location filename="../src/core/ui/configwidget.ui" line="511"/>
         <source>Minimize to tray on click close button</source>
         <translation>Smanji na programsku traku kad se pritisne gumb za zatvaranje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="504"/>
+        <location filename="../src/core/ui/configwidget.ui" line="514"/>
         <source>Minimize to tray when closing</source>
         <translation>Smanji na programsku traku pri zatvaranju</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="543"/>
+        <location filename="../src/core/ui/configwidget.ui" line="553"/>
         <source>Action</source>
         <translation>Radnja</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="548"/>
+        <location filename="../src/core/ui/configwidget.ui" line="558"/>
         <source>Shortcut</source>
         <translation>Prečac</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="553"/>
+        <location filename="../src/core/ui/configwidget.ui" line="563"/>
         <source>New screen</source>
         <translation>Novi prozor</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="558"/>
+        <location filename="../src/core/ui/configwidget.ui" line="568"/>
         <source>Save screen</source>
         <translation>Spremi ekran</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="563"/>
+        <location filename="../src/core/ui/configwidget.ui" line="573"/>
         <source>Copy screen</source>
         <translation>Kopiraj ekran</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="573"/>
+        <location filename="../src/core/ui/configwidget.ui" line="583"/>
         <source>Help</source>
         <translation>Pomoć</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="578"/>
+        <location filename="../src/core/ui/configwidget.ui" line="588"/>
         <source>Quit</source>
         <translation>Zatvori</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="588"/>
+        <location filename="../src/core/ui/configwidget.ui" line="598"/>
         <source>Selected shortcut:</source>
         <translation>Odabrani prečaci:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/configwidget.ui" line="595"/>
+        <location filename="../src/core/ui/configwidget.ui" line="605"/>
         <source>Not defined</source>
         <translation>Nije definirano</translation>
     </message>
