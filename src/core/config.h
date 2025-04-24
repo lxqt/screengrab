@@ -88,7 +88,7 @@ public:
         shortcutSave = 4,
         shortcutCopy = 5,
         shortcutOptions = 6,
-        shortcutHelp = 7,
+        shortcutHelp = 7, // FIXME: remove this
         shortcutClose = 8
     };
 

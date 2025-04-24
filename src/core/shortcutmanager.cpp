@@ -61,8 +61,6 @@ void ShortcutManager::loadSettings()
                 Config::shortcutCopy, Config::localShortcut);
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_OPT, DEF_SHORTCUT_OPT).toString(),
                 Config::shortcutOptions, Config::localShortcut);
-    setShortcut(_shortcutSettings->value(KEY_SHORTCUT_HELP, DEF_SHORTCUT_HELP).toString(),
-                Config::shortcutHelp, Config::localShortcut);
     setShortcut(_shortcutSettings->value(KEY_SHORTCUT_CLOSE, DEF_SHORTCUT_CLOSE).toString(),
                 Config::shortcutClose, Config::localShortcut);
     _shortcutSettings->endGroup();
@@ -84,7 +82,6 @@ void ShortcutManager::saveSettings()
     _shortcutSettings->setValue(KEY_SHORTCUT_SAVE, getShortcut(Config::shortcutSave));
     _shortcutSettings->setValue(KEY_SHORTCUT_COPY, getShortcut(Config::shortcutCopy));
     _shortcutSettings->setValue(KEY_SHORTCUT_OPT, getShortcut(Config::shortcutOptions));
-    _shortcutSettings->setValue(KEY_SHORTCUT_HELP, getShortcut(Config::shortcutHelp));
     _shortcutSettings->setValue(KEY_SHORTCUT_CLOSE, getShortcut(Config::shortcutClose));
     _shortcutSettings->endGroup();
 
@@ -101,7 +98,6 @@ void ShortcutManager::setDefaultSettings()
     setShortcut(DEF_SHORTCUT_SAVE,Config::shortcutSave, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_COPY,Config::shortcutCopy, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_OPT,Config::shortcutOptions, Config::localShortcut);
-    setShortcut(DEF_SHORTCUT_HELP,Config::shortcutHelp, Config::localShortcut);
     setShortcut(DEF_SHORTCUT_CLOSE,Config::shortcutClose, Config::localShortcut);
 
     setShortcut(DEF_SHORTCUT_FULL,Config::shortcutFullScreen, Config::globalShortcut);

@@ -46,8 +46,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     actSave = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), tr("Save"), this);
     actCopy = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), tr("Copy"), this);
     actOptions = new QAction(QIcon::fromTheme(QStringLiteral("configure")), tr("Options"), this);
-    actHelp = new QAction(QIcon::fromTheme(QStringLiteral("system-help")), tr("Help"), this);
-    actAbout = new QAction(QIcon::fromTheme(QStringLiteral("system-about")), tr("About"), this);
+    actAbout = new QAction(QIcon::fromTheme(QStringLiteral("help-about")), tr("About"), this);
     actQuit = new QAction(QIcon::fromTheme(QStringLiteral("application-exit")), tr("Quit"), this);
 
     // connect actions to slots
@@ -59,23 +58,13 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     connect(actCopy, &QAction::triggered, c, &Core::copyScreen);
     connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
     connect(actAbout, &QAction::triggered, this, &MainWindow::showAbout);
-    connect(actHelp, &QAction::triggered, this, &MainWindow::showHelp);
 
     _ui->toolBar->addAction(actNew);
     _ui->toolBar->addAction(actSave);
     _ui->toolBar->addAction(actCopy);
     _ui->toolBar->addAction(actOptions);
     _ui->toolBar->addSeparator();
-    QMenu *menuInfo = new QMenu(this);
-    menuInfo->addAction(actHelp);
-    menuInfo->addAction(actAbout);
-    QToolButton *help = new QToolButton(this);
-    help->setText(tr("Help"));
-    help->setPopupMode(QToolButton::InstantPopup);
-    help->setIcon(QIcon::fromTheme(QStringLiteral("system-help")));
-    help->setMenu(menuInfo);
-
-    _ui->toolBar->addWidget(help);
+    _ui->toolBar->addAction(actAbout);
 
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -162,7 +151,8 @@ void MainWindow::closeEvent(QCloseEvent *e)
 {
     if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
     {
-        windowHideShow();
+        if (findChildren<QDialog*>().isEmpty()) // do not hide with a modal dialog
+            windowHideShow();
         e->ignore();
     }
     else
@@ -305,31 +295,6 @@ void MainWindow::setConfig(Config *config)
     updateUI();
 }
 
-
-void MainWindow::showHelp()
-{
-    QString localeHelpFile;
-
-    localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1") + Config::getSysLang()+QStringLiteral("%1index.html");
-    localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-
-    if (!QFile::exists(localeHelpFile))
-    {
-        localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1") + Config::getSysLang().section(QStringLiteral("_"), 0, 0)  + QStringLiteral("%1index.html");
-        localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-
-        if (!QFile::exists(localeHelpFile))
-        {
-            localeHelpFile = QStringLiteral(SG_DOCDIR) + QStringLiteral("%1html%1en%1index.html");
-            localeHelpFile = localeHelpFile.arg(QString(QDir::separator()));
-        }
-    }
-
-    // open find localize or eng help help
-    QDesktopServices::openUrl(QUrl::fromLocalFile(localeHelpFile));
-}
-
-
 void MainWindow::showOptions()
 {
     ConfigDialog *options = new ConfigDialog(this);
@@ -355,6 +320,15 @@ void MainWindow::showOptions()
 
 void MainWindow::showAbout()
 {
+    const auto dialogs  = findChildren<QDialog*>();
+    for (const auto &dialog : dialogs)
+    {
+        if (dialog->objectName() == QStringLiteral("aboutDialog"))
+        {
+            return;
+        }
+    }
+
     AboutDialog *about = new AboutDialog(this);
 
     if (isMinimized())
@@ -402,7 +376,6 @@ void MainWindow::createTray()
     _trayMenu->addSeparator();
     _trayMenu->addAction(actOptions);
     _trayMenu->addSeparator();
-    _trayMenu->addAction(actHelp);
     _trayMenu->addAction(actAbout);
     _trayMenu->addSeparator();
     _trayMenu->addAction(actQuit);
@@ -550,8 +523,11 @@ void MainWindow::trayClick(QSystemTrayIcon::ActivationReason reason)
 {
     if (findChildren<QDialog*>().count() > 0)
     { // just activate the window when there's a dialog
-        activateWindow();
-        raise();
+        if (QGuiApplication::platformName() != QStringLiteral("wayland"))
+        {
+            activateWindow();
+            raise();
+        }
         return;
     }
     switch(reason)
@@ -572,7 +548,7 @@ void MainWindow::windowHideShow()
         showNormal();
         activateWindow();
     }
-    else
+    else if (findChildren<QDialog*>().isEmpty()) // do not hide with a modal dialog
     {
         actHideShow->setText(tr("Show"));
         showMinimized();
@@ -602,13 +578,21 @@ void MainWindow::showWindow(const QString& str)
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
         if (type < 2)
+        {
             _ui->cbxTypeScr->setCurrentIndex(0);
+            typeScreenShotChange(0);
+        }
         else if (type < 4)
+        {
             _ui->cbxTypeScr->setCurrentIndex(type - 1);
+            typeScreenShotChange(type - 1);
+        }
     }
     else if (type < 4)
+    {
         _ui->cbxTypeScr->setCurrentIndex(type);
-    typeScreenShotChange(type);
+        typeScreenShotChange(type);
+    }
 }
 
 void MainWindow::restoreFromShot()
@@ -684,6 +668,5 @@ void MainWindow::updateShortcuts()
     actSave->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutSave));
     actCopy->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutCopy));
     actOptions->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutOptions));
-    actHelp->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutHelp));
     actQuit->setShortcut(_conf->shortcuts()->getShortcut(Config::shortcutClose));
 }
