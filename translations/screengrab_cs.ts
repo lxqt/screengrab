@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="319"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Dvojklikem snímek otevřete ve výchozím prohlížeči obrázků</translation>
+        <translation>Dvojklepnutím snímek otevřete ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="328"/>
@@ -404,10 +404,10 @@
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation>Klikněte a natáhněte obdélník,
-kliknutím pravým tlačítkem
+        <translation>Klepněte a natáhněte obdélník,
+klepnutím pravým tlačítkem
 přizpůsobte hranám,
-dvojklikem nebo stiskem klávesy
+dvojklepnutím nebo stiskem klávesy
 Enter pořiďte snímek obrazovky.</translation>
     </message>
     <message>
@@ -593,7 +593,7 @@ Enter pořiďte snímek obrazovky.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="397"/>
         <source>Open in external viewer on double click</source>
-        <translation>Při dvojkliku otevřít v externím prohlížeči</translation>
+        <translation>Při dvojklepnutí otevřít v externím prohlížeči</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="400"/>
@@ -610,7 +610,7 @@ se může zvětšit aby obsáhla vnější hrany</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="411"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Kliknutím pravým tlačítkem uvnitř oblasti výběru přizpůsobíte hranám</translation>
+        <translation>Klepnutím pravým tlačítkem uvnitř oblasti výběru přizpůsobíte hranám</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
@@ -635,7 +635,7 @@ se může zvětšit aby obsáhla vnější hrany</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="501"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Při kliknutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
+        <translation>Při klepnutí na tlačítko zavření zmenšit do oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="504"/>
