@@ -73,7 +73,6 @@ private:
     QAction *actCopy;
     QAction *actOptions;
     QAction *actAbout;
-    QAction *actHelp;
     QAction *actQuit;
     Config *_conf;
     QMenu *_trayMenu;
@@ -90,7 +89,6 @@ private:
 
 private Q_SLOTS:
     void saveScreen();
-    void showHelp();
     void showOptions();
     void showAbout();
     void delayBoxChange(int);

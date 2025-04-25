@@ -150,6 +150,9 @@ void Core::sleep(int msec)
 
 void Core::coreQuit()
 {
+    if (_wnd && !_wnd->findChildren<QDialog*>().isEmpty())
+        return; // WARNING: quitting with a modal dialog causes crash
+
     _conf->setLastSelection(_lastSelectedArea);
     _conf->saveScreenshotSettings();
 
@@ -200,6 +203,15 @@ void Core::getFullScreenPixmap(QScreen* screen)
 // get screenshot
 void Core::screenShot(bool first)
 {
+    // WARNING: With a modal dialog, the mouse and keyboard can be blocked
+    // when an area screenshot is taken (e.g., by a global shortcut).
+    if (!_wnd->findChildren<QDialog*>().isEmpty()
+        && (_conf->getDefScreenshotType() == Core::Area
+            || _conf->getDefScreenshotType() == Core::PreviousSelection))
+    {
+        return;
+    }
+
     killTempFile(); // remove the old temp file if any
 
     if (QGuiApplication::platformName() != QStringLiteral("wayland"))

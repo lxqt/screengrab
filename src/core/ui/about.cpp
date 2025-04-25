@@ -26,9 +26,8 @@ AboutDialog::AboutDialog(QWidget *parent):
     QDialog(parent),
     _ui(new Ui::aboutWidget)
 {
-    setWindowFlags(Qt::Dialog |  Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
-
     _ui->setupUi(this);
+    setObjectName(QStringLiteral("aboutDialog"));
     _ui->labAppName->setText(_ui->labAppName->text() + QStringLiteral(" <b>") + qApp->applicationVersion() + QStringLiteral("</b>"));
 
     _ui->labQtVer->setText(tr("using Qt %1").arg(QString::fromUtf8(qVersion())));
@@ -110,6 +109,8 @@ QString AboutDialog::tabAbout()
     str += QLatin1String("<br><br>");
 
     str += tr("Copyright &copy; 2009-2013, Artem 'DOOMer' Galichkin");
+    str += QLatin1String("<br>");
+    str += tr("Copyright &copy; 2013-2025, LXQt team");
     return str;
 }
 
@@ -137,28 +138,11 @@ QString AboutDialog::tabHelpUs()
 QString AboutDialog::tabThanks()
 {
     QString str;
-    str += QLatin1String("<b>") + tr("Translate:") + QLatin1String("</b>");
-    str += QLatin1String("<br>");
-    str += tr(" Brazilian Portuguese translation")  + QLatin1String("<br>");
-    str += tr("Marcio Moraes") + QLatin1String(" &lt;marciopanto@gmail.com&gt;<br>");
-    str += QLatin1String("<br>");
-    str += tr(" Ukrainian translation") + QLatin1String("<br>");
-    str += tr("Gennadi Motsyo") + QLatin1String(" &lt;drool@altlinux.ru&gt;<br>");
-    str += QLatin1String("<br>");
-    str += tr(" Spanish translation") + QLatin1String("<br>");
-    str += tr("Burjans L García D") + QLatin1String(" &lt;burjans@gmail.com&gt;<br>");
-    str += QLatin1String("<br>");
-    str += tr(" Italian translation") + QLatin1String("<br>");
-    str += QLatin1String("speps &lt;dreamspepser@yahoo.it&gt;<br>");
-    str += QLatin1String("<br>");
 
-    str += QLatin1String("<b>") + tr("Testing:") + QLatin1String("</b>");
-    str += QLatin1String("<br>");
-    str += QLatin1String("Jerome Leclanche - ") + tr("Dual monitor support and other in Linux") + QLatin1String("<br>");
-    str += QLatin1String("Alexander Sokolov - ") + tr("Dual monitor support in Linux") + QLatin1String("<br>");
-    str += QLatin1String("Alexantia - ") + tr("win32-build [Windows XP and 7]") + QLatin1String("<br>");
-    str += QLatin1String("iNight - ") + tr("old win32-build [Windows Vista]") + QLatin1String("<br>");
-    str += QLatin1String("burjans - ") + tr("win32-build [Windows 7]") + QLatin1String("<br>");
+    str += QLatin1String("<b>") + tr("Special thanks to:") + QLatin1String("</b>");
+    str += QLatin1String("<ul>");
+    str += QLatin1String("<li>") + QLatin1String("Artem Galichkin - DOOMer @ GitHub (") + tr("for creating ScreenGrab") + QLatin1String(")</li>");
+    str += QLatin1String("<li>") + QLatin1String("Marcus Britanicus @ GitHub (") + tr("for supporting wlr screencopy protocol") + QLatin1String(")</li>");
 
     return str;
 }
