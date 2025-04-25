@@ -53,7 +53,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     Core *c = Core::instance();
 
     connect(actQuit, &QAction::triggered, c, &Core::coreQuit);
-    connect(actNew, &QAction::triggered, c, &Core::setScreen);
+    connect(actNew, &QAction::triggered, c, &Core::newScreenshot);
     connect(actSave, &QAction::triggered, this, &MainWindow::saveScreen);
     connect(actCopy, &QAction::triggered, c, &Core::copyScreen);
     connect(actOptions, &QAction::triggered, this, &MainWindow::showOptions);
@@ -424,18 +424,11 @@ void MainWindow::typeScreenShotChange(int type)
 {
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
+        _ui->checkIncludeCursor->setVisible(true);
         if (type == 0)
-        {
             _conf->setDefScreenshotType(0); // fullscreen
-            _ui->checkIncludeCursor->setVisible(true);
-        }
-        else
-        {
-            _ui->checkIncludeCursor->setVisible(false);
-            if (type < 3)
-                _conf->setDefScreenshotType(type + 1);
-
-        }
+        else if (type < 3)
+            _conf->setDefScreenshotType(type + 1);
         _ui->checkNoDecoration->hide();
         _ui->checkZommMouseArea->hide();
     }
@@ -473,17 +466,13 @@ void MainWindow::updateUI()
     int type = _conf->getDefScreenshotType();
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
+        _ui->checkIncludeCursor->setVisible(true);
         if (type < 2)
         {
             _ui->cbxTypeScr->setCurrentIndex(0);
-            _ui->checkIncludeCursor->setVisible(true);
         }
-        else
-        {
-            _ui->checkIncludeCursor->setVisible(false);
-            if (type < 4)
-                _ui->cbxTypeScr->setCurrentIndex(type - 1);
-        }
+        else if (type < 4)
+            _ui->cbxTypeScr->setCurrentIndex(type - 1);
         _ui->checkNoDecoration->hide();
         _ui->checkZommMouseArea->hide();
 

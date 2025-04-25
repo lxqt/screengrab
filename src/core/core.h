@@ -64,9 +64,9 @@ class Core : public QObject
 
 public Q_SLOTS:
     void coreQuit();
-    void setScreen();
+    void newScreenshot();
 
-    void screenShot(bool first = false);
+    void screenShot(bool first = false, bool delayed = false);
     void autoSave();
 
 public:
@@ -122,11 +122,9 @@ private:
     bool checkExsistFile(const QString &path);
     QString copyFileNameToCliipboard(QString file);
     void sendNotify(const StateNotifyMessage& message);
-
     void getFullScreenPixmap(QScreen* screen);
-
-    void waylandScreenShot();
-    void showWaylandScreenshot(const QPixmap& pixmap);
+    void showScreenshot();
+    void waylandScreenShot(bool delayed);
 
     QPixmap *_pixelMap; // pixel map
     RegionSelect *_selector; // region grabber widget
@@ -145,6 +143,7 @@ private:
 
 private Q_SLOTS:
     void regionGrabbed(bool grabbed);
+    void takeWaylandAreaScreenshot(bool checkCursor = true);
 
 };
 
