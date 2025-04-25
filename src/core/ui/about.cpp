@@ -108,7 +108,9 @@ QString AboutDialog::tabAbout()
         .arg(QLatin1String("http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"));
     str += QLatin1String("<br><br>");
 
-    str += tr("Copyright &copy; 2009-2025, LXQt team");
+    str += tr("Copyright &copy; 2009-2013, Artem 'DOOMer' Galichkin");
+    str += QLatin1String("<br>");
+    str += tr("Copyright &copy; 2013-2025, LXQt team");
     return str;
 }
 
@@ -139,8 +141,8 @@ QString AboutDialog::tabThanks()
 
     str += QLatin1String("<b>") + tr("Special thanks to:") + QLatin1String("</b>");
     str += QLatin1String("<ul>");
-    str += QLatin1String("<li>") + QLatin1String("Artem Galichkin - DOOMer at GitHub (") + tr("for creating ScreenGrab") + QLatin1String(")</li>");
-    str += QLatin1String("<li>") + QLatin1String("Marcus Britanicus at GitHub (") + tr("for supporting wlr screencopy protocol") + QLatin1String(")</li>");
+    str += QLatin1String("<li>") + QLatin1String("Artem Galichkin - DOOMer @ GitHub (") + tr("for creating ScreenGrab") + QLatin1String(")</li>");
+    str += QLatin1String("<li>") + QLatin1String("Marcus Britanicus @ GitHub (") + tr("for supporting wlr screencopy protocol") + QLatin1String(")</li>");
 
     return str;
 }
