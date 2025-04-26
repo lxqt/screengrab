@@ -91,7 +91,7 @@ wl_output * getWlOutputFromQScreen( QScreen *screen ) {
 }
 
 
-LXQt::Wayland::ScreenFrameBuffer::~ScreenFrameBuffer() {
+LXQt::Wayland::_buffer::~_buffer() {
     if ( buffer ) {
         wl_buffer_destroy( buffer );
     }
