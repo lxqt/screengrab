@@ -274,13 +274,23 @@ void RegionSelect::drawRectSelection(QPainter &painter)
 
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
-        QColor color = palette().color(QPalette::Active, QPalette::Highlight);
         painter.setClipRegion(_selectRect.toRect());
-        painter.setPen(color);
+        QColor color = palette().color(QPalette::Active, QPalette::Highlight);
         color.setAlpha(90);
-        painter.setBrush(color);
-        painter.drawRect(_selectRect.toRect().adjusted(0, 0, -1, -1));
-        painter.setPen(palette().color(QPalette::Active, QPalette::HighlightedText));
+        painter.setBrush(color); // background
+        color = palette().color(QPalette::Active, QPalette::HighlightedText);
+        color.setAlpha(110);
+        painter.setPen(color); // border
+        QRect selRect = _selectRect.toRect().adjusted(0, 0, -1, -1);
+#if (QT_VERSION >= QT_VERSION_CHECK(6,8,0))
+        // a workaround for artifacts under Wayland
+        auto origMode = painter.compositionMode();
+        painter.setCompositionMode(QPainter::CompositionMode_Clear);
+        painter.fillRect(selRect, Qt::transparent);
+        painter.setCompositionMode(origMode);
+#endif
+        painter.drawRect(selRect);
+        painter.setPen(palette().color(QPalette::Active, QPalette::HighlightedText)); // text
     }
     else
     {

@@ -36,7 +36,6 @@ const QString KEY_SHORTCUT_NEW = QStringLiteral("NewScreen");
 const QString KEY_SHORTCUT_SAVE = QStringLiteral("SaveScreen");
 const QString KEY_SHORTCUT_COPY = QStringLiteral("CopyScreen");
 const QString KEY_SHORTCUT_OPT = QStringLiteral("Options");
-const QString KEY_SHORTCUT_HELP = QStringLiteral("Help");
 const QString KEY_SHORTCUT_CLOSE = QStringLiteral("Close");
 
 ShortcutManager::ShortcutManager(QSettings *settings) :
@@ -114,7 +113,7 @@ void ShortcutManager::setShortcut(const QString &key, int action, int type)
 
 QKeySequence ShortcutManager::getShortcut(int action)
 {
-    return QKeySequence(_listShortcuts[action].key);;
+    return QKeySequence(_listShortcuts[action].key);
 }
 
 int ShortcutManager::getShortcutType(int action)

@@ -82,6 +82,9 @@ Core::Core()
     QCommandLineOption optRunMinimized(QStringList() << QStringLiteral("m") << QStringLiteral("minimized"), tr("Run the application with a hidden main window"));
     _cmdLine.addOption(optRunMinimized);
 
+    QCommandLineOption optShowNoWin(QStringList() << QStringLiteral("n") << QStringLiteral("no-win"), tr("Save screenshot and exit, without showing window"));
+    _cmdLine.addOption(optShowNoWin);
+
     if (QGuiApplication::platformName() != QStringLiteral("wayland"))
         sleep(250);
 
@@ -239,7 +242,7 @@ void Core::screenShot(bool first, bool delayed)
         getFullScreenPixmap(screen);
         grabCursor(0, 0);
 
-        checkAutoSave(first);
+        checkAutoSave();
         _wnd->updatePixmap(_pixelMap);
         showScreenshot();
         break;
@@ -247,7 +250,7 @@ void Core::screenShot(bool first, bool delayed)
     case Core::Window:
     {
         getActiveWindow();
-        checkAutoSave(first);
+        checkAutoSave();
         _wnd->updatePixmap(_pixelMap);
         showScreenshot();
         break;
@@ -314,7 +317,7 @@ void Core::waylandScreenShot(bool delayed)
             if (!pixmap.isNull())
             {
                 *_pixelMap = pixmap;
-                checkAutoSave(_firstScreen);
+                checkAutoSave();
                 _wnd->updatePixmap(_pixelMap);
             }
             showScreenshot();
@@ -338,7 +341,7 @@ void Core::takeWaylandAreaScreenshot(bool checkCursor)
         if (!pixmap.isNull())
         {
             *_pixelMap = pixmap;
-            checkAutoSave(_firstScreen);
+            checkAutoSave();
             _wnd->updatePixmap(_pixelMap);
         }
         showScreenshot();
@@ -351,6 +354,11 @@ void Core::takeWaylandAreaScreenshot(bool checkCursor)
 
 void Core::showScreenshot()
 {
+    if (noWin())
+    { // quit if no window should be shown
+        QTimer::singleShot(0, this, &Core::coreQuit);
+        return;
+    }
     _wnd->restoreFromShot();
     _wnd->resize(_conf->getRestoredWndSize());
     if (runAsMinimized())
@@ -362,12 +370,16 @@ void Core::showScreenshot()
     }
 }
 
-void Core::checkAutoSave(bool first)
+void Core::checkAutoSave()
 {
+    if (noWin())
+    { // always auto-save with no window
+        QTimer::singleShot(0, this, SLOT(autoSave()));
+        return;
+    }
     if (_conf->getAutoSave())
     {
-        // hack
-        if (first)
+        if (_firstScreen)
         {
             if (_conf->getAutoSaveFirst())
                 QTimer::singleShot(600, this, SLOT(autoSave()));
@@ -683,6 +695,13 @@ bool Core::runAsMinimized()
     return (_cmdLine.isSet(QStringLiteral("minimized")) || _cmdLine.isSet(QStringLiteral("m")));
 }
 
+bool Core::noWin()
+{
+    return (_firstScreen
+            && (_cmdLine.isSet(QStringLiteral("no-win"))
+                || _cmdLine.isSet(QStringLiteral("n"))));
+}
+
 void Core::autoSave()
 {
     QString format = _conf->getSaveFormat();
@@ -723,7 +742,7 @@ void Core::regionGrabbed(bool grabbed)
         int h = _pixelMap->rect().height() / _pixelMap->devicePixelRatio();
         _lastSelectedArea.setRect(x, y, w, h);
 
-        checkAutoSave(_firstScreen);
+        checkAutoSave();
     }
 
     _wnd->updatePixmap(_pixelMap);

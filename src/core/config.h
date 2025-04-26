@@ -88,8 +88,7 @@ public:
         shortcutSave = 4,
         shortcutCopy = 5,
         shortcutOptions = 6,
-        shortcutHelp = 7, // FIXME: remove this
-        shortcutClose = 8
+        shortcutClose = 7
     };
 
     Q_DECLARE_FLAGS(ShortcutAction, Actions)

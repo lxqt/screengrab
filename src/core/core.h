@@ -103,6 +103,7 @@ public:
     void processCmdLineOpts(const QStringList& arguments);
 
     bool runAsMinimized();
+    bool noWin();
 
     QString getSaveFilePath(const QString &format);
     QString getDateTimeFileName();
@@ -115,7 +116,7 @@ private:
 
     static Core *corePtr;
 
-    void checkAutoSave(bool first = false);
+    void checkAutoSave();
 
     void getActiveWindow();
     void grabCursor(int offsetX, int offsetY);
