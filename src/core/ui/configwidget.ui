@@ -538,11 +538,6 @@ might become larger to fit to outer edges</string>
            </item>
            <item>
             <property name="text">
-             <string>Help</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
              <string>Quit</string>
             </property>
            </item>
