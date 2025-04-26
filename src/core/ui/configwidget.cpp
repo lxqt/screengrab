@@ -102,6 +102,10 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
             _moduleWidgetNames << currentModWidget->objectName();
         }
     }
+
+    // resize the list widget to its content
+    _ui->listWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    _ui->listWidget->setMaximumWidth(_ui->listWidget->sizeHintForColumn(0) + 2 * _ui->listWidget->frameWidth() + 4);
 }
 
 ConfigDialog::~ConfigDialog()

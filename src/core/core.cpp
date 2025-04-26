@@ -114,26 +114,17 @@ Core::~Core()
 
 void Core::initWindow(const QString& ipcMessage)
 {
-    if (!_wnd) {
+    if (!_wnd)
+    {
         _wnd = new MainWindow;
         _wnd->setConfig(_conf);
         _wnd->updateModulesActions(_modules.generateModulesActions());
         _wnd->updateModulesMenus(_modules.generateModulesMenus());
 
         screenShot(true); // first screenshot
-
-        if (QGuiApplication::platformName() != QStringLiteral("wayland")) {
-            _wnd->resize(_conf->getRestoredWndSize());
-            if (runAsMinimized())
-            {
-                if (_wnd->isTrayed())
-                    _wnd->windowHideShow();
-                else
-                    _wnd->showMinimized();
-            } else
-                _wnd->show();
-        }
-    } else {
+    }
+    else
+    {
         _wnd->showWindow(ipcMessage);
         screenShot();
     }
@@ -172,15 +163,25 @@ void Core::coreQuit()
     qApp->quit();
 }
 
-void Core::setScreen()
+void Core::newScreenshot()
 {
     _wnd->hideToShot();
 
-    // new code experimental
     if (_conf->getDelay() == 0)
         QTimer::singleShot(200, this, SLOT(screenShot()));
     else
+    {
+        if (QGuiApplication::platformName() == QStringLiteral("wayland")
+            && (_conf->getDefScreenshotType() == Core::Area
+                || _conf->getDefScreenshotType() == Core::PreviousSelection))
+        {
+            // Since a Wayland area screenshot is taken on a transparent overlay,
+            // the delay should be applied after selecting the area.
+            screenShot(false, true);
+            return;
+        }
         QTimer::singleShot(1000 * _conf->getDelay(), this, SLOT(screenShot()));
+    }
 
 }
 
@@ -201,7 +202,7 @@ void Core::getFullScreenPixmap(QScreen* screen)
 }
 
 // get screenshot
-void Core::screenShot(bool first)
+void Core::screenShot(bool first, bool delayed)
 {
     // WARNING: With a modal dialog, the mouse and keyboard can be blocked
     // when an area screenshot is taken (e.g., by a global shortcut).
@@ -224,7 +225,7 @@ void Core::screenShot(bool first)
 
     if (QGuiApplication::platformName() == QStringLiteral("wayland"))
     {
-        waylandScreenShot();
+        waylandScreenShot(delayed);
         return;
     }
 
@@ -240,6 +241,7 @@ void Core::screenShot(bool first)
 
         checkAutoSave(first);
         _wnd->updatePixmap(_pixelMap);
+        showScreenshot();
         break;
     }
     case Core::Window:
@@ -247,6 +249,7 @@ void Core::screenShot(bool first)
         getActiveWindow();
         checkAutoSave(first);
         _wnd->updatePixmap(_pixelMap);
+        showScreenshot();
         break;
     }
     case Core::Area:
@@ -263,17 +266,14 @@ void Core::screenShot(bool first)
     }
     default:
         getFullScreenPixmap(QGuiApplication::primaryScreen());
+        _wnd->updatePixmap(_pixelMap);
+        showScreenshot();
         break;
     }
-
-
-
-    _wnd->updatePixmap(_pixelMap);
-    _wnd->restoreFromShot();
 }
 
 // Should be called only on Wayland.
-void Core::waylandScreenShot()
+void Core::waylandScreenShot(bool delayed)
 {
     if (_selector != nullptr)
         return; // an area screenshot is in progress
@@ -287,7 +287,7 @@ void Core::waylandScreenShot()
     {
         if (_selector == nullptr)
             _selector = new RegionSelect(_conf, _lastSelectedArea, _wnd->selectedScreen());
-        connect(_selector, &RegionSelect::processDone, this, [this](bool grabbed) {
+        connect(_selector, &RegionSelect::processDone, this, [this, delayed](bool grabbed) {
             if (!grabbed)
             {
                 _wnd->restoreFromShot();
@@ -295,19 +295,11 @@ void Core::waylandScreenShot()
                 _selector = nullptr;
                 return;
             }
-            auto ws = new LXQt::Wayland::ScreenShot(false,
-                                                    _wnd->selectedScreen(),
-                                                    _selector->getSelectionRect(),
-                                                    this);
             _selector->hide();
-            connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
-                    [this, ws] (const QPixmap& pixmap) {
-                showWaylandScreenshot(pixmap);
-                _lastSelectedArea = _selector->getSelectionRect();
-                _selector->deleteLater();
-                _selector = nullptr;
-                ws->deleteLater();
-            });
+            if (delayed)
+                QTimer::singleShot(1000 * _conf->getDelay(), this, SLOT(takeWaylandAreaScreenshot()));
+            else
+                takeWaylandAreaScreenshot(false);
         });
         break;
     }
@@ -319,7 +311,13 @@ void Core::waylandScreenShot()
                                                 this);
         connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
                 [this, ws] (const QPixmap& pixmap) {
-            showWaylandScreenshot(pixmap);
+            if (!pixmap.isNull())
+            {
+                *_pixelMap = pixmap;
+                checkAutoSave(_firstScreen);
+                _wnd->updatePixmap(_pixelMap);
+            }
+            showScreenshot();
             ws->deleteLater();
         });
         break;
@@ -327,31 +325,41 @@ void Core::waylandScreenShot()
     }
 }
 
-// Should be called only on Wayland.
-void Core::showWaylandScreenshot(const QPixmap& pixmap)
+void Core::takeWaylandAreaScreenshot(bool checkCursor)
 {
-    if (!pixmap.isNull())
-    {
-        *_pixelMap = pixmap;
-        checkAutoSave(_firstScreen);
-        _wnd->updatePixmap(_pixelMap);
-        _wnd->restoreFromShot();
-    }
-    if (_firstScreen)
-    {
-        _wnd->resize(_conf->getRestoredWndSize());
-        if (runAsMinimized())
+    if (_selector == nullptr)
+        return;
+    auto ws = new LXQt::Wayland::ScreenShot(checkCursor ? _conf->getIncludeCursor() : false,
+                                            _wnd->selectedScreen(),
+                                            _selector->getSelectionRect(),
+                                            this);
+    connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
+            [this, ws] (const QPixmap& pixmap) {
+        if (!pixmap.isNull())
         {
-            if (_wnd->isTrayed())
-                _wnd->windowHideShow();
-            else
-                _wnd->showMinimized();
+            *_pixelMap = pixmap;
+            checkAutoSave(_firstScreen);
+            _wnd->updatePixmap(_pixelMap);
         }
+        showScreenshot();
+        _lastSelectedArea = _selector->getSelectionRect();
+        _selector->deleteLater();
+        _selector = nullptr;
+        ws->deleteLater();
+    });
+}
+
+void Core::showScreenshot()
+{
+    _wnd->restoreFromShot();
+    _wnd->resize(_conf->getRestoredWndSize());
+    if (runAsMinimized())
+    {
+        if (_wnd->isTrayed())
+            _wnd->windowHideShow();
         else
-            _wnd->show();
+            _wnd->showMinimized();
     }
-    else if (pixmap.isNull())
-        _wnd->restoreFromShot();
 }
 
 void Core::checkAutoSave(bool first)
@@ -715,10 +723,15 @@ void Core::regionGrabbed(bool grabbed)
         int h = _pixelMap->rect().height() / _pixelMap->devicePixelRatio();
         _lastSelectedArea.setRect(x, y, w, h);
 
-        checkAutoSave();
+        checkAutoSave(_firstScreen);
     }
 
     _wnd->updatePixmap(_pixelMap);
+    showScreenshot();
+
+    // The selector should be closed only after it is hidden; otherwise, with the "-m"
+    // command-line option, the app will exit because its last window will be closed.
+    _selector->hide();
     _selector->deleteLater();
     _selector = nullptr;
 }

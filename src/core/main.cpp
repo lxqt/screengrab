@@ -20,16 +20,30 @@
 #include "core/core.h"
 #include "ui/mainwindow.h"
 
+#include <signal.h>
 #include <QDebug>
+
+void handleQuitSignals (const std::vector<int>& quitSignals)
+{ // a minimal signal handler
+    auto handler = [](int sig)->void {
+        Q_UNUSED(sig)
+        QCoreApplication::quit();
+    };
+    for (int sig : quitSignals)
+        signal (sig, handler);
+}
 
 int main(int argc, char *argv[])
 {
-    SingleApp scr(argc, argv, QStringLiteral(VERSION));
+    SingleApp scr(argc, argv, QString::fromUtf8(qgetenv("USER")) + QStringLiteral("-screengrab-") + QStringLiteral(VERSION));
     scr.setApplicationVersion(QStringLiteral(VERSION));
     scr.setOrganizationName(QStringLiteral("lxqt"));
     scr.setOrganizationDomain(QStringLiteral("lxqt-project.org"));
     scr.setApplicationName(QStringLiteral("screengrab"));
     scr.setDesktopFileName(QStringLiteral("screengrab"));
+
+    handleQuitSignals({SIGQUIT, SIGINT, SIGTERM, SIGHUP});
+
     Core *ScreenGrab = Core::instance();
     ScreenGrab->processCmdLineOpts(scr.arguments());
     // SingleApp should be initialized only after processing command-line options
