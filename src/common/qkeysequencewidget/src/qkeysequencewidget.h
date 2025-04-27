@@ -65,7 +65,7 @@ class QKeySequenceWidgetPrivate;
 class QKeySequenceWidget : public QWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(QKeySequenceWidget);
+    Q_DECLARE_PRIVATE(QKeySequenceWidget)
     Q_PRIVATE_SLOT(d_func(), void doneRecording())
 
     Q_PROPERTY(QKeySequence keySequence READ keySequence WRITE setKeySequence)
@@ -99,7 +99,7 @@ public:
         ShowRight   = 0x02  /**< ClearButton isow is left */
     };
 
-    Q_DECLARE_FLAGS(ClearButtonShow, ClearButton);
+    Q_DECLARE_FLAGS(ClearButtonShow, ClearButton)
     Q_FLAGS(ClearButtonShow)
 
     QKeySequenceWidget::ClearButtonShow clearButtonShow() const;
