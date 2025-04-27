@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -409,7 +409,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknij i przeciągnij, aby narysować prostokąt,
+kliknij dwukrotnie lub naciśnij Enter,
+aby wykonać zrzut ekranu,
+lub naciśnij Escape, aby anulować.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -627,12 +630,12 @@ może zostać powiększony, aby wypełnić do zewnętrznych krawędzi</translati
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Z wieloma ekranami</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="421"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapamiętaj ostatnio wybrany ekran w następnej sesji</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="428"/>

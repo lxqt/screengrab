@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekraan:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -409,7 +409,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ristküliku joonistamiseks klõpsa ja lohista,
+ekraanipildi tegemiseks
+topeltklõpsa või vajuta sisestusklahvi
+või katkestamiseks vajuta „Esc“ klahvi.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -627,12 +630,12 @@ võib olla liiga suur mahtumaks välispiiridesse</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitme ekraani puhul</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="421"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Jäta viimativalitud ekraan järgmiseks sessiooniks meelde</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="428"/>

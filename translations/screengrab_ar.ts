@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>شاشة:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -409,7 +409,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>انقر واسحب لرسم مستطيل،
+ أو انقر نقرًا مزدوجًا أو اضغط على مفتاح الإدخال
+ لالتقاط لقطة شاشة، 
+أو اضغط على مفتاح الهروب للإلغاء.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -627,12 +630,12 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>مع شاشات متعددة</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="421"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>تذكر آخر شاشة محددة في الجلسة التالية</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="428"/>
