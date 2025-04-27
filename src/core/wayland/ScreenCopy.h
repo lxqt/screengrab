@@ -97,9 +97,6 @@ class LXQt::Wayland::ScreenCopyManager : public QObject {
 
         /** Raw zwlr_screencopy_manager_v1 pointer */
         struct zwlr_screencopy_manager_v1 *mObj;
-
-        /** A map of screen names and buffers */
-        QMap<QString, LXQt::Wayland::ScreenFrameBuffer *> mScreenBufferMap;
 };
 
 class LXQt::Wayland::ScreenCopyFrame : public QObject {

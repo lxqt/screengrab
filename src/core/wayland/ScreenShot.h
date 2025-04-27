@@ -47,7 +47,8 @@ namespace LXQt {
 
         private:
             ScreenCopyManager *scrnCopyMgr;
-
+            ScreenCopyFrame *frame;
+            ScreenFrameBuffer *buffer;
         };
     }
 }

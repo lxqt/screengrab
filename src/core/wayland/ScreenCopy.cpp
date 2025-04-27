@@ -211,10 +211,6 @@ LXQt::Wayland::ScreenCopyManager::ScreenCopyManager( struct zwlr_screencopy_mana
 
 
 LXQt::Wayland::ScreenCopyManager::~ScreenCopyManager() {
-    // Clean up screen buffers
-    qDeleteAll( mScreenBufferMap );
-    mScreenBufferMap.clear();
-
     zwlr_screencopy_manager_v1_destroy( mObj );
 }
 

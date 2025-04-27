@@ -45,7 +45,9 @@ QMap<wl_shm_format, QImage::Format> mFormats{
 
 LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QRect &rect, QObject *parent) :
     QObject (parent),
-    scrnCopyMgr(nullptr)  {
+    scrnCopyMgr(nullptr),
+    frame(nullptr),
+    buffer(nullptr) {
 
     /** Get the QWaylandDisplay object. We can do everything else from here. */
     QtWaylandClient::QWaylandDisplay *qDisplay = nullptr;
@@ -128,9 +130,8 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
     }
 
 
-    LXQt::Wayland::ScreenCopyFrame *frame =
-        rect.isEmpty() ? scrnCopyMgr->captureOutput(drawCursor, screen)
-                       : scrnCopyMgr->captureOutputRegion(drawCursor, screen, rect);
+    frame = rect.isEmpty() ? scrnCopyMgr->captureOutput(drawCursor, screen)
+                           : scrnCopyMgr->captureOutputRegion(drawCursor, screen, rect);
 
     if ( frame == nullptr )
     {
@@ -140,9 +141,9 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
         return;
     }
 
-    LXQt::Wayland::ScreenFrameBuffer *buffer = new LXQt::Wayland::ScreenFrameBuffer;
+    buffer = new LXQt::Wayland::ScreenFrameBuffer;
 
-    QObject::connect(frame, &LXQt::Wayland::ScreenCopyFrame::bufferDone, this, [frame, buffer, shm]() {
+    QObject::connect(frame, &LXQt::Wayland::ScreenCopyFrame::bufferDone, this, [this, shm]() {
         for (LXQt::Wayland::FrameBufferInfo info: frame->availableFormats())
         {
             if (mFormats.contains(info.format))
@@ -183,6 +184,7 @@ LXQt::Wayland::ScreenShot::ScreenShot(bool drawCursor, QScreen *screen, const QR
 }
 
 LXQt::Wayland::ScreenShot::~ScreenShot() {
+    delete frame;
+    delete buffer;
     delete scrnCopyMgr;
-    scrnCopyMgr = nullptr;
 }
