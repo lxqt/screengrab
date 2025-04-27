@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="125"/>
         <source>Translate ScreenGrab to other languages</source>
-        <translation>Vertaal ScreenGrab naar andere talen</translation>
+        <translation>Help mee om ScreenGrab te vertalen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Scherm:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -409,7 +409,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klik en versleep om een rechthoek te tekenen.
+Dubbelklik of druk op enter om een
+schermfoto te maken, of op escape
+om af te breken.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -627,12 +630,12 @@ vergroot zodat het binnen de buitenste randen past</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="418"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Met meerdere schermen</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="421"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorig scherm gebruiken na opstarten</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="428"/>
