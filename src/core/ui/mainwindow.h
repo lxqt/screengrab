@@ -76,7 +76,6 @@ private:
     QAction *actQuit;
     Config *_conf;
     QMenu *_trayMenu;
-    QShortcut *_hideWnd;
     bool _trayed;
     QIcon appIcon;
 
