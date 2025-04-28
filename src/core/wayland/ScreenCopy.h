@@ -71,7 +71,7 @@ namespace LXQt {
 }
 
 class LXQt::Wayland::ScreenCopyManager : public QObject {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         ScreenCopyManager( struct ::zwlr_screencopy_manager_v1 *scrnMgr );
@@ -97,13 +97,10 @@ class LXQt::Wayland::ScreenCopyManager : public QObject {
 
         /** Raw zwlr_screencopy_manager_v1 pointer */
         struct zwlr_screencopy_manager_v1 *mObj;
-
-        /** A map of screen names and buffers */
-        QMap<QString, LXQt::Wayland::ScreenFrameBuffer *> mScreenBufferMap;
 };
 
 class LXQt::Wayland::ScreenCopyFrame : public QObject {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         enum Error {

@@ -36,7 +36,7 @@ class QPixmap;
 namespace LXQt {
     namespace Wayland {
         class ScreenShot : public QObject {
-            Q_OBJECT;
+            Q_OBJECT
 
         public:
             ScreenShot(bool drawCursor, QScreen *screen, const QRect &rect, QObject *parent = nullptr);
@@ -47,7 +47,8 @@ namespace LXQt {
 
         private:
             ScreenCopyManager *scrnCopyMgr;
-
+            ScreenCopyFrame *frame;
+            ScreenFrameBuffer *buffer;
         };
     }
 }
