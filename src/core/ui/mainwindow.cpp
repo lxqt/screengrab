@@ -38,7 +38,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _trayed = false;
 
     _trayIcon = nullptr;
-    _hideWnd = nullptr;
     _trayMenu = nullptr;
 
     // create actions menu
@@ -122,10 +121,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     setWindowIcon(appIcon);
 
-    auto screens = QGuiApplication::screens();
-    const QRect geometry = screens.isEmpty() ? QRect() : screens.at(0)->availableGeometry();
-    move(geometry.width() / 2 - width() / 2, geometry.height() / 2 - height() / 2);
-
     _ui->scrLabel->installEventFilter(this);
     _ui->delayBox->installEventFilter(this);
 }
@@ -149,7 +144,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    if (_conf->getCloseInTray() && _conf->getShowTrayIcon())
+    if (!Core::instance()->noWin() && _conf->getCloseInTray() && _conf->getShowTrayIcon())
     {
         if (findChildren<QDialog*>().isEmpty()) // do not hide with a modal dialog
             windowHideShow();
@@ -176,6 +171,16 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::showEvent(QShowEvent *event)
 {
+    if (QGuiApplication::platformName() != QStringLiteral("wayland")
+        && !event->spontaneous())
+    { // center the window on X11
+        auto screen = QGuiApplication::screenAt(QCursor::pos());
+        if (screen == nullptr)
+            screen = QGuiApplication::primaryScreen();
+        const QRect geometry = screen ? screen->availableGeometry() : QRect();
+        move(geometry.x() + (geometry.width() - width()) / 2,
+             geometry.y() + (geometry.height() - height()) / 2);
+    }
     QMainWindow::showEvent(event);
     fitPixmap();
 }
@@ -498,8 +503,8 @@ void MainWindow::updateUI()
 
     updateShortcuts();
 
-    // create tray object
-    if (_conf->getShowTrayIcon() && !_trayIcon)
+    // create tray object, but not with the "-n" option
+    if (!Core::instance()->noWin() && _conf->getShowTrayIcon() && !_trayIcon)
         createTray();
 
     // kill tray object, if tray was disabled in the configuration dialog
@@ -548,7 +553,7 @@ void MainWindow::windowHideShow()
 
 void MainWindow::hideToShot()
 {
-    if (_conf->getShowTrayIcon())
+    if (_trayIcon && _conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(true);
         disableTrayMenuActions(true);
@@ -586,7 +591,7 @@ void MainWindow::showWindow(const QString& str)
 
 void MainWindow::restoreFromShot()
 {
-    if (_conf->getShowTrayIcon())
+    if (_trayIcon && _conf->getShowTrayIcon())
     {
         _trayIcon->blockSignals(false);
         disableTrayMenuActions(false);

@@ -359,8 +359,8 @@ void Core::showScreenshot()
         QTimer::singleShot(0, this, &Core::coreQuit);
         return;
     }
+    _wnd->resize(_conf->getRestoredWndSize()); // before showing, to center the window on X11
     _wnd->restoreFromShot();
-    _wnd->resize(_conf->getRestoredWndSize());
     if (runAsMinimized())
     {
         if (_wnd->isTrayed())
