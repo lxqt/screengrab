@@ -121,16 +121,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     setWindowIcon(appIcon);
 
-    if (QGuiApplication::platformName() != QStringLiteral("wayland"))
-    { // center the window on X11
-        auto screen = QGuiApplication::screenAt(QCursor::pos());
-        if (screen == nullptr)
-            screen = QGuiApplication::primaryScreen();
-        const QRect geometry = screen ? screen->availableGeometry() : QRect();
-        move(geometry.x() + (geometry.width() - width()) / 2,
-             geometry.y() + (geometry.height() - height()) / 2);
-    }
-
     _ui->scrLabel->installEventFilter(this);
     _ui->delayBox->installEventFilter(this);
 }
@@ -181,6 +171,16 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::showEvent(QShowEvent *event)
 {
+    if (QGuiApplication::platformName() != QStringLiteral("wayland")
+        && !event->spontaneous())
+    { // center the window on X11
+        auto screen = QGuiApplication::screenAt(QCursor::pos());
+        if (screen == nullptr)
+            screen = QGuiApplication::primaryScreen();
+        const QRect geometry = screen ? screen->availableGeometry() : QRect();
+        move(geometry.x() + (geometry.width() - width()) / 2,
+             geometry.y() + (geometry.height() - height()) / 2);
+    }
     QMainWindow::showEvent(event);
     fitPixmap();
 }
