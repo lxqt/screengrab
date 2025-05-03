@@ -26,7 +26,7 @@
     </ul>
   </description>
 
-  <launchable type="desktop-id">screengrab.desktop</launchable>
+  <launchable type="desktop-id">org.lxqt_project.ScreenGrab.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image>https://github.com/lxqt/screengrab/raw/master/screengrab.png</image>

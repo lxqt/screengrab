@@ -169,6 +169,9 @@ qt6_translation_loader(SCREENGRAB_QM_LOADER
     ${PROJECT_NAME}
 )
 
+# Follow freedesktop specifications
+set(DNS_DESKTOP_FILENAME "org.lxqt_project.ScreenGrab.desktop")
+
 # generating executable
 add_executable(screengrab
     ${SCREENGRAB_SRC}
@@ -222,9 +225,9 @@ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html" DESTINATION "${CMAKE_I
 # install config files
 install(FILES ${SCREENGRAB_CONFIG_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
 # install desktop files
-install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+install(FILES ${SCREENGRAB_DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications RENAME ${DNS_DESKTOP_FILENAME})
 # install pixmap
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/screengrab.svg" DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps")
-install(FILES screengrab.metainfo.xml
+install(FILES org.lxqt_project.ScreenGrab.metainfo.xml
     DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo
 )
