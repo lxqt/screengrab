@@ -11,37 +11,37 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
         <source>Thanks</source>
-        <translation>謝謝</translation>
+        <translation>感謝</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="42"/>
         <source>Help us</source>
-        <translation>幫助我們</translation>
+        <translation>協助我們</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="99"/>
         <source>is a crossplatform application for fast creating screenshots of your desktop.</source>
-        <translation>是一個用於快速螢幕擷圖的跨平台的應用程式。</translation>
+        <translation>是跨平台應用程式，用於桌面電腦的螢幕擷圖快速建立。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="101"/>
         <source>It is a light and powerful application, written in Qt.</source>
-        <translation>它是用 Qt 編寫的一個輕巧而強大的應用程式。</translation>
+        <translation>它是輕量又強力的應用程式，採用 Qt 編寫而成。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="33"/>
         <source>using Qt %1</source>
-        <translation>正在使用Qt%1</translation>
+        <translation>正在使用 Qt %1</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="104"/>
         <source>Website - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>網站 - %1</translation>
+        <translation>網站 - &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="107"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation>根據 GPL v2 的許可</translation>
+        <translation>授權基於 &lt;a href=%1&gt;GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="111"/>
@@ -51,12 +51,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>版權所有 &amp;copy; 2013-2025, LXQt 團隊</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>如果您願意，您可以加入我們並幫助我們。 如果您喜歡這個應用程序，這是一個邀請。</translation>
+        <translation>如果您願意，可以加入幫助我們。 如果您喜歡這個應用程式，這即是邀請。</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>特別致謝：</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>致力建立 ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>用於支援 WLR 螢幕擷圖協議</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="190"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>目錄 %1 並不存在。 確定要建立它嗎？</translation>
+        <translation>目錄 %1 不存在。 確定要建立它嗎？</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="191"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存螢幕擷圖並離開，不用顯示視窗</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -347,7 +347,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
         <source>Save As...</source>
-        <translation>另存為…</translation>
+        <translation>另存新檔…</translation>
     </message>
 </context>
 <context>

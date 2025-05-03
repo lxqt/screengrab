@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Prawa autorskie &amp;copy; 2013-2025, zespół LXQt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szczególne podziękowania dla:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>za tworzenie ScreenGraba</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>za obsługę protokołu kopii ekranu wlr</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz zrzut ekranu i wyjdź bez pokazywania okna</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
