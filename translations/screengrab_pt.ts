@@ -46,17 +46,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="111"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation>Copyright &amp;copy; 2009-2019, Artem &apos;DOOMer&apos; Galichkin</translation>
+        <translation>Direitos de autor; 2009-2013, Artem ‘DOOMer’ Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Direitos de autor; 2013-2025, a equipa LXQt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation>Pode ajudar-nos a melhorar a aplicação. Este é um convito casp goste da aplicação.</translation>
+        <translation>Se quiser, pode juntar-se a nós e ajudar-nos. Este é um convite se gostar desta aplicação.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Um agradecimento especial a:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>por criar o ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>por suportar o protocolo de cópia de ecrã wlr</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="190"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>%1 não existe. Deseja criar o diretório?</translation>
+        <translation>%1 não existe. Pretende criar o diretório?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="191"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="279"/>
         <source>Do you want to reset the settings to the defaults?</source>
-        <translation>Tem a certeza de que deseja repor as definições padrão?</translation>
+        <translation>Tem a certeza de que pretende repor as definições predefinidas?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="313"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="354"/>
         <source>This key is already used in ScreenGrab! Please select another.</source>
-        <translation>Esta tecla já está a ser utilizada or ScreenGrab. Por favor escolha outra.</translation>
+        <translation>Esta tecla já está a ser utilizada no ScreenGrab. Por favor escolha outra.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="372"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar a captura de ecrã e sair, sem mostrar a janela</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -188,12 +188,12 @@
     <message>
         <location filename="../src/core/core.cpp" line="597"/>
         <source>Name of saved file is copied to the clipboard</source>
-        <translation>Nome do ficheiro é copiado para a área de transferência</translation>
+        <translation>Nome do ficheiro copiado para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="603"/>
         <source>Path to saved file is copied to the clipboard</source>
-        <translation>Caminho do ficheiro é copiado para a área de transferência</translation>
+        <translation>Caminho do ficheiro copiado para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="626"/>
