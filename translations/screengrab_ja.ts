@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copyright &amp;copy; 2013-2025, LXQt team</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
