@@ -16,6 +16,7 @@ An application for creating screenshots for X11 and Wayland (using wlr-screencop
 * Copy file name or full path to clipboard
 * Fit to edges by right click (X11 only)
 * Custom shortcuts
+* Command line options
 
 ## Installation
 
@@ -75,7 +76,7 @@ Screengrab is licensed under the GPL v2. See file LICENSE in docs directory for 
 
 ## Copyright
 
-(c) 2014-2025, LXQt Project  
+(c) 2014-2025, LXQt Team
 (c) 2009-2013, Artem 'DOOMer' Galichkin
 
 ## Translation

@@ -13,15 +13,18 @@
 
   <description>
     <p>
-      Powerful screen capture utility in Qt.
-      Capture screen, window or area.
+      Powerful screen capture utility in Qt for X11 and Wayland
+      Capture screen, window (X11), area or selected area
       Features:
     </p>
     <ul>
       <li>Delay</li>
       <li>Edit directly in other applications</li>
-      <li>Automatic saving; insert date+time in filename</li>
-      <li>Fit to edges by right click</li>
+      <li>Automatic saving; insert date+time in custom filename</li>
+      <li>Copy to clipboard</li>
+      <li>Fit to edges by right click (X11)</li>
+      <li>Select screen (Wayland)</li>
+      <li>Powerful command line options</li>
       <li>Custom shortcuts</li>
     </ul>
   </description>
