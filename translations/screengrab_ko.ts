@@ -289,63 +289,63 @@
         <translation>도구 모음</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
         <translation>새로 찍기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>Save</source>
         <translation>저장하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Copy</source>
         <translation>복사하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Options</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <source>Quit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="353"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
         <source>Screenshot </source>
         <translation>스크린숏 </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="357"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>외부 기본 이미지 뷰어에서 스크린숏을 열려면 두 번 클릭</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="535"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
         <source>Hide</source>
         <translation>숨김</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="542"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
         <source>Show</source>
         <translation>표시하기</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="611"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
         <source>%1 Files</source>
         <translation>%1 파일</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
         <source>Save As...</source>
         <translation>다른 이름으로 저장하기...</translation>
     </message>
