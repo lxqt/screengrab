@@ -289,63 +289,63 @@
         <translation>Thanh công cụ</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
         <translation>Tạo mới</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>Save</source>
         <translation>Lưu lại</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Copy</source>
         <translation>Sao chép</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Options</source>
         <translation>Tùy chọn</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <source>Quit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="353"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
         <source>Screenshot </source>
         <translation>Ảnh chụp màn hình </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="357"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Nhấp đúp chuột để mở ảnh chụp màn hình trong trình xem ảnh mặc định bên ngoài</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="535"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
         <source>Hide</source>
         <translation>Ẩn</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="542"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
         <source>Show</source>
         <translation>Hiện</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="611"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
         <source>%1 Files</source>
         <translation>%1 Tập tin</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
         <source>Save As...</source>
         <translation>Lưu thành...</translation>
     </message>

@@ -289,63 +289,63 @@
         <translation>工具列</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
         <translation>新建</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Copy</source>
         <translation>複製</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Options</source>
         <translation>選項</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
         <translation>關於</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="353"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
         <source>Screenshot </source>
         <translation>螢幕畫面擷圖 </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="357"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>點按二下在外部預設的影像圖檔檢視器中開啟螢幕畫面擷圖</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="535"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
         <source>Hide</source>
         <translation>隱藏</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="542"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
         <source>Show</source>
         <translation>顯示</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="611"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
         <source>%1 Files</source>
         <translation>%1 個檔案</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
         <source>Save As...</source>
         <translation>另存新檔…</translation>
     </message>

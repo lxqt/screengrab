@@ -289,63 +289,63 @@
         <translation>Лента с инструменти</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
         <translation>Създаване</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>Save</source>
         <translation>Запазване</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Copy</source>
         <translation>Копиране</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
         <translation>Относно</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <source>Quit</source>
         <translation>Изход</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="353"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
         <source>Screenshot </source>
         <translation>Снимка на екрана </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="357"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Щракнете двукратно, за да отворите снимката в приложението за преглед на изображения по подразбиране</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="535"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
         <source>Hide</source>
         <translation>Скриване</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="542"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
         <source>Show</source>
         <translation>Показване</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="611"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
         <source>%1 Files</source>
         <translation>%1 файла</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
         <source>Save As...</source>
         <translation>Запазване като...</translation>
     </message>
