@@ -1,3 +1,12 @@
+3.0.0 / 2025-05-17
+===================
+ * Added support for Wayland compositors that use "wlr screencopy protocol".
+ * Added a command-line option for saving screenshot and exiting without showing window.
+ * Show the window on the screen with cursor under X11.
+ * Fixed 2 old X11 bugs in auto-saving and `--minimized` command-line option.
+ * Use LXQt build tools for compilation.
+ * GUI cleanup.
+
 2.10.0 / 2025-04-17
 ===================
  * Made copying/saving notifications optional.
