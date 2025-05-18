@@ -72,7 +72,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->toolBar->addAction(actQuit);
 
     connect(_ui->delayBox, &QSpinBox::valueChanged, this, &MainWindow::delayBoxChange);
-    connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
     connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
     connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
@@ -114,6 +113,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
         _ui->labScr->hide();
         _ui->cbxScr->hide();
     }
+
+    // This connection should come here, after removing "Window" from the list for Wayland.
+    connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
 
     appIcon = QIcon::fromTheme (QStringLiteral("screengrab"));
     if (appIcon.isNull())
