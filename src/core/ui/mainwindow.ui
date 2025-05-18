@@ -114,29 +114,6 @@
         <property name="toolTip">
          <string>Type of screenshot</string>
         </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>Full screen</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Window</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Screen area</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Last selected area</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item>
