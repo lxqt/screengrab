@@ -72,7 +72,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     _ui->toolBar->addAction(actQuit);
 
     connect(_ui->delayBox, &QSpinBox::valueChanged, this, &MainWindow::delayBoxChange);
-    connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
     connect(_ui->checkIncludeCursor, &QCheckBox::toggled, this, &MainWindow::checkIncludeCursor);
     connect(_ui->checkNoDecoration, &QCheckBox::toggled, this, &MainWindow::checkNoDecoration);
     connect(_ui->checkZommMouseArea, &QCheckBox::toggled, this, &MainWindow::checkZommMouseArea);
@@ -83,7 +82,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
         // WARNING: If window shot becomes possible, change this and all occurrences of
         // _ui->cbxTypeScr->setCurrentIndex as well as MainWindow::typeScreenShotChange
         // in this file.
-        _ui->cbxTypeScr->removeItem(1);
+        _ui->cbxTypeScr->addItem(tr("Full screen"));
+        _ui->cbxTypeScr->addItem(tr("Screen area"));
+        _ui->cbxTypeScr->addItem(tr("Last selected area"));
 
         auto screens = QGuiApplication::screens();
         if (screens.size() > 1)
@@ -111,9 +112,17 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
     }
     else
     {
+        _ui->cbxTypeScr->addItem(tr("Full screen"));
+        _ui->cbxTypeScr->addItem(tr("Window"));
+        _ui->cbxTypeScr->addItem(tr("Screen area"));
+        _ui->cbxTypeScr->addItem(tr("Last selected area"));
+
         _ui->labScr->hide();
         _ui->cbxScr->hide();
     }
+
+    _ui->cbxTypeScr->setCurrentIndex(0);
+    connect(_ui->cbxTypeScr, &QComboBox::currentIndexChanged, this, &MainWindow::typeScreenShotChange);
 
     appIcon = QIcon::fromTheme (QStringLiteral("screengrab"));
     if (appIcon.isNull())
