@@ -229,124 +229,127 @@
         <translation>Ekinaalabikira mu kifaananyi</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="85"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="115"/>
         <source>Full screen</source>
         <translation>Lutimbe lwonna</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="116"/>
         <source>Window</source>
         <translation>Ddirisa erikolebwamu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="86"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="117"/>
         <source>Screen area</source>
         <translation>Kitundu kya lutimbe</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="87"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="118"/>
         <source>Last selected area</source>
         <translation>Ekyasemba okukwatibwa</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="144"/>
         <source>Delay:</source>
         <translation>Erindire:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Sikonda z&apos;ebeera erindira eryoke ekwate ekifaananyi</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source>None</source>
         <translation>Terinda</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="163"/>
         <source> sec</source>
         <translation> sikonda</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
         <translation>Wabewo akadirisa akatangaaza ebiriraanaye awali akasonga</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
         <translation>Tekwatiramu mutwe n&apos;enjegoyego by&apos;eddirisa</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="236"/>
         <source>Include mouse pointer</source>
         <translation>Ekwatiremu n&apos;akasonga</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="268"/>
         <source>toolBar</source>
         <translation>Kabaawo ak&apos;ebiyamba</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
         <translation>Kwata kipya</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
         <source>Save</source>
         <translation>Kazza</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
         <source>Copy</source>
         <translation>Kwata kkopi</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="47"/>
         <source>Options</source>
         <translation>Enteekateeka</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
         <translation>Ebifa ku ScreenGrab</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="50"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
         <source>Quit</source>
         <translation>Mala</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="353"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="367"/>
         <source>Screenshot </source>
         <translation>Kifaananyi </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="357"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Koona wano emirundi ebiri ekifaananyi okukibikkulira mu
 puloguramu eyategekedwa nga ey&apos;okukebera bifaananyi eya bulijjo</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="366"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="535"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="549"/>
         <source>Hide</source>
         <translation>Kisa</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="542"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="556"/>
         <source>Show</source>
         <translation>Erabike</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="611"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="625"/>
         <source>%1 Files</source>
         <translation>Fayiro %1</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="633"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="647"/>
         <source>Save As...</source>
         <translation>Kazzamu koppi...</translation>
     </message>
