@@ -229,62 +229,65 @@
         <translation>Ekrano kopijos tipas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="85"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="115"/>
         <source>Full screen</source>
         <translation>Visas ekranas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="116"/>
         <source>Window</source>
         <translation>Langas</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="86"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="117"/>
         <source>Screen area</source>
         <translation>Ekrano sritis</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="87"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="118"/>
         <source>Last selected area</source>
         <translation>Paskutinė žymėta sritis</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="144"/>
         <source>Delay:</source>
         <translation>Delsa:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Delsa, sekundėmis, prieš darant ekrano kopiją</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source>None</source>
         <translation>Nėra</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="163"/>
         <source> sec</source>
         <translation> sek.</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
         <translation>Didinti srities aplink pelę dydį</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
         <translation>Be langų dekoracijų</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="236"/>
         <source>Include mouse pointer</source>
         <translation>Įtraukti pelės rodyklę</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="268"/>
         <source>toolBar</source>
         <translation>Įrankių juosta</translation>
     </message>
@@ -319,33 +322,33 @@
         <translation>Išeiti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="367"/>
         <source>Screenshot </source>
         <translation>Ekrano kopija </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Spustelėkite du kartus, norėdami atverti ekrano kopiją numatytojoje paveikslų žiūryklėje</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="549"/>
         <source>Hide</source>
         <translation>Slėpti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="556"/>
         <source>Show</source>
         <translation>Rodyti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="625"/>
         <source>%1 Files</source>
         <translation>%1 failų</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="647"/>
         <source>Save As...</source>
         <translation>Įrašyti kaip...</translation>
     </message>

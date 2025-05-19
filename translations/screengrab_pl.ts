@@ -229,62 +229,65 @@
         <translation>Rodzaj zrzutu ekranu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="85"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="115"/>
         <source>Full screen</source>
         <translation>Pełny ekran</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="116"/>
         <source>Window</source>
         <translation>Okno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="86"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="117"/>
         <source>Screen area</source>
         <translation>Fragment ekranu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="87"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="118"/>
         <source>Last selected area</source>
         <translation>Ostatnio zaznaczony obszar</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="144"/>
         <source>Delay:</source>
         <translation>Opóźnienie:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Opóźnienie w sekundach przed wykonaniem zrzutu ekranu</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source>None</source>
         <translation>Brak</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="163"/>
         <source> sec</source>
         <translation> s</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
         <translation>Powiększ obszar przy kursorze</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
         <translation>Bez dekoracji okna</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="236"/>
         <source>Include mouse pointer</source>
         <translation>Uwzględnij wskaźnik myszy</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="268"/>
         <source>toolBar</source>
         <translation>pasek narzędzi</translation>
     </message>
@@ -319,33 +322,33 @@
         <translation>Wyjdź</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="367"/>
         <source>Screenshot </source>
         <translation>Zrzut ekranu </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Kliknij dwukrotnie, aby otworzyć zrzut ekranu w zewnętrznej domyślnej przeglądarce obrazów</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="549"/>
         <source>Hide</source>
         <translation>Ukryj</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="556"/>
         <source>Show</source>
         <translation>Pokaż</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="625"/>
         <source>%1 Files</source>
         <translation>%1 plików</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="647"/>
         <source>Save As...</source>
         <translation>Zapisz jako…</translation>
     </message>

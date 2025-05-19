@@ -229,62 +229,65 @@
         <translation>スクリーンショットの種類です</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="85"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="115"/>
         <source>Full screen</source>
         <translation>画面全体</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="116"/>
         <source>Window</source>
         <translation>ウィンドウ</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="86"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="117"/>
         <source>Screen area</source>
         <translation>画面の選択範囲</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="87"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="118"/>
         <source>Last selected area</source>
         <translation>最後に選択した範囲</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="144"/>
         <source>Delay:</source>
         <translation>待ち時間:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>スクリーンショットを取得する前に秒単位で待ちます</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="163"/>
         <source> sec</source>
         <translation> 秒</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
         <translation>マウスの周辺を拡大表示する</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
         <translation>ウィンドウの装飾(タイトル)を除く</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="236"/>
         <source>Include mouse pointer</source>
         <translation>マウスポインターを含める</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="268"/>
         <source>toolBar</source>
         <translation>ツールバー</translation>
     </message>
@@ -319,33 +322,33 @@
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="367"/>
         <source>Screenshot </source>
         <translation>スクリーンショット </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>ダブルクリックで、スクリーンショットを外部の既定の画像ビューアーで開きます</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="549"/>
         <source>Hide</source>
         <translation>メインウィンドウを非表示にする</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="556"/>
         <source>Show</source>
         <translation>メインウィンドウを表示する</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="625"/>
         <source>%1 Files</source>
         <translation>%1 ファイル</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="647"/>
         <source>Save As...</source>
         <translation>名前を付けて保存...</translation>
     </message>

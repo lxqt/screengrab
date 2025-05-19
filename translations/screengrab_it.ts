@@ -230,57 +230,60 @@
         <translation>Tipo di cattura</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="122"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="85"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="115"/>
         <source>Full screen</source>
         <translation>Schermo intero</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="127"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="116"/>
         <source>Window</source>
         <translation>Finestra</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="132"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="86"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="117"/>
         <source>Screen area</source>
         <translation>Area dello schermo</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="137"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="87"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="118"/>
         <source>Last selected area</source>
         <translation>Ultima area selezionata</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="167"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="144"/>
         <source>Delay:</source>
         <translation>Ritardo:</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="245"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
         <translation>Ingrandisce area intorno al cursore</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="252"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
         <translation>Escludi le decorazioni delle finestre</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="259"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="236"/>
         <source>Include mouse pointer</source>
         <translation>Cattura cursore</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="291"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="268"/>
         <source>toolBar</source>
         <translation>Barra degli strumenti</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="180"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="157"/>
         <source>Delay in seconds before taking screenshot</source>
         <translation>Ritardo in secondi prima di effettuare la cattura</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="186"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="163"/>
         <source> sec</source>
         <translation> ·sec</translation>
     </message>
@@ -310,18 +313,18 @@
         <translation>Copia</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="362"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
         <translation>Doppio clic per aprire la cattura in un editor esterno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
-        <location filename="../src/core/ui/mainwindow.cpp" line="540"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="549"/>
         <source>Hide</source>
         <translation>Nascondi</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="616"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="625"/>
         <source>%1 Files</source>
         <translation>%1 File</translation>
     </message>
@@ -331,22 +334,22 @@
         <translation>Informazioni</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="358"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="367"/>
         <source>Screenshot </source>
         <translation>Schermata </translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.ui" line="183"/>
+        <location filename="../src/core/ui/mainwindow.ui" line="160"/>
         <source>None</source>
         <translation>Nessuno</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="547"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="556"/>
         <source>Show</source>
         <translation>Mostra</translation>
     </message>
     <message>
-        <location filename="../src/core/ui/mainwindow.cpp" line="638"/>
+        <location filename="../src/core/ui/mainwindow.cpp" line="647"/>
         <source>Save As...</source>
         <translation>Salva con nome...</translation>
     </message>
