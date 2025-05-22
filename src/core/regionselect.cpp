@@ -295,7 +295,7 @@ void RegionSelect::drawRectSelection(QPainter &painter)
     else
     {
         painter.drawPixmap(_selectRect, _desktopPixmapClr, pixmapRect(_selectRect));
-        painter.setPen(QPen(QBrush(QColor(0, 0, 0, 255)), 2));
+        painter.setPen(QPen(QBrush(QColor(255, 255, 255, 127)), 2));
         painter.drawRect(_selectRect);
     }
 
