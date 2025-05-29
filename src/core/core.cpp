@@ -471,18 +471,30 @@ QString Core::getSaveFilePath(const QString &format)
 {
     QString initPath;
 
+    QDir dir(_conf->getSaveDir());
+    const QString fileName = _conf->getSaveFileName();
     do
     {
-        QDir dir(_conf->getSaveDir());
-        const QString filePath = dir.filePath(_conf->getSaveFileName());
         if (_conf->getDateTimeInFilename())
-            initPath = filePath + QStringLiteral("-") + getDateTimeFileName() + QStringLiteral(".") + format;
+        {
+            initPath = fileName.isEmpty()
+                       ? dir.filePath(getDateTimeFileName() + QStringLiteral(".") + format)
+                       : dir.filePath(fileName) + QStringLiteral("-") + getDateTimeFileName() + QStringLiteral(".") + format;
+        }
         else
         {
             if (_conf->getScrNum() != 0)
-                initPath = filePath + _conf->getScrNumStr() + QStringLiteral(".") + format;
+            {
+                initPath = fileName.isEmpty()
+                           ? dir.filePath(QStringLiteral("screengrab")) + _conf->getScrNumStr() + QStringLiteral(".") + format
+                           : dir.filePath(fileName) + _conf->getScrNumStr() + QStringLiteral(".") + format;
+            }
             else
-                initPath = filePath + QStringLiteral(".") + format;
+            {
+                initPath = fileName.isEmpty()
+                           ? dir.filePath(QStringLiteral("screengrab")) + QStringLiteral(".") + format
+                           : dir.filePath(fileName) + QStringLiteral(".") + format;
+            }
         }
     } while (checkExsistFile(initPath));
 
@@ -501,9 +513,12 @@ bool Core::checkExsistFile(const QString &path)
 
 QString Core::getDateTimeFileName()
 {
-    QString currentDateTime = QDateTime::currentDateTime().toString(_conf->getDateTimeTpl());
+    QString dateFormat = _conf->getDateTimeTpl();
+    if (dateFormat.isEmpty())
+        dateFormat = QStringLiteral("yyyy-MM-dd-hh:mm:ss");
+    QString currentDateTime = QDateTime::currentDateTime().toString(dateFormat);
 
-    if (currentDateTime == _conf->getLastSaveDate().toString(_conf->getDateTimeTpl()) && _conf->getScrNum() != 0)
+    if (currentDateTime == _conf->getLastSaveDate().toString(dateFormat) && _conf->getScrNum() != 0)
         currentDateTime += QStringLiteral("-") + _conf->getScrNumStr();
     else
         _conf->resetScrNum();
