@@ -87,11 +87,6 @@ message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT}
 message(STATUS "Enable D-Bus notifications: " ${SG_DBUS_NOTIFY})
 message(STATUS "Update source translation translations/*.ts files: " ${UPDATE_TRANSLATIONS})
 
-# docs
-# CMAKE_INSTALL_FULL_DOCDIR = CMAKE_INSTALL_PREFIX/CMAKE_INSTALL_DATADIR/doc/PROJECT_NAME
-message(STATUS "Documentation directory: " ${CMAKE_INSTALL_FULL_DOCDIR})
-add_definitions(-DSG_DOCDIR="${CMAKE_INSTALL_FULL_DOCDIR}")
-
 # app icon path
 add_definitions(-DSG_ICONPATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps/screengrab.svg")
 
@@ -217,8 +212,6 @@ qt6_generate_wayland_protocol_client_sources(screengrab FILES
 
 # installing
 install(TARGETS screengrab RUNTIME DESTINATION bin)
-# install html docs
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/html" DESTINATION "${CMAKE_INSTALL_FULL_DOCDIR}")
 # install config files
 install(FILES ${SCREENGRAB_CONFIG_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
 # install desktop files

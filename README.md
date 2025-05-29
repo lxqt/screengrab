@@ -50,8 +50,6 @@ You can use some or all of these parameters to customise your build.
 (usually - ~/.config/${app_name) ). Default setting: ON. In previous versions the
 config files were stored in ~/.screengrab (Set this parameter to "OFF" to store the config files here).
  * **-DSG_DBUS_NOTIFY** - Enable D-Bus notifications.
- * **-DSG_DOCDIR** - Name for the directory of user's documentation. Default setting:  "screengrab".
-Dfault setting: OFF.
  * **-DDEV_VERSION** - Set a dev-version here, maybe git describe $foo. Default not set.
 
 #### Build notes
@@ -71,7 +69,7 @@ package manager to search for string 'screengrab'.
 
 ## LICENSE
 
-Screengrab is licensed under the GPL v2. See file LICENSE in docs directory for more information
+Screengrab is licensed under the GPL v2. See file COPYING in the source directory for more information.
 
 
 ## Copyright
