@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Telif hakkı &amp;copy; 2013-2025, LXQt takımı</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel teşekkürler:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>ScreenGrab&apos;ı yarattığı için</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>wlr ekran kopyalama (screencopy) protokolünü desteklediği için</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran kaydını kaydet ve çık, pencere göstermeden</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -361,7 +361,9 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikdörtgen çizmek için tıkla ve sürükle,
+ekran kaydı almak için çift tıkla ya da Enter tuşuna bas,
+ya da Escape tuşuna basarak iptal et.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -580,12 +582,12 @@ dış kenarlara sığacak şekilde büyüyebilir</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Çoklu ekran ile</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="379"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni oturumda son seçilmiş ekranı hatırla</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="386"/>
