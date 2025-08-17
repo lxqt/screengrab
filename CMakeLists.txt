@@ -28,6 +28,11 @@ find_package(LayerShellQt ${SHELLQT_MINIMUM_VERSION} REQUIRED)
 find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 
+if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6GuiPrivate REQUIRED)
+    find_package(Qt6WaylandClientPrivate REQUIRED)
+endif()
+
 # right now we declare it as required
 find_package(X11 REQUIRED)
 set(HAVE_X11 1)
