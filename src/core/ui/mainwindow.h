@@ -74,6 +74,7 @@ private:
     QAction *actOptions;
     QAction *actAbout;
     QAction *actQuit;
+    QAction *actHideQuit;
     Config *_conf;
     QMenu *_trayMenu;
     bool _trayed;
