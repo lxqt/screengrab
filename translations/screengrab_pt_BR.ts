@@ -193,7 +193,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar captura de tela e sair sem mostrar a janela</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="603"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tela:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -361,7 +361,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique e arraste para desenhar um retângulo,
+dê dois cliques ou aperte Enter
+para fotografar a tela,
+ou aperte Escape para cancelar.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -462,12 +465,12 @@ para tirar uma screenshot.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Com múltiplas telas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="379"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Lembrar a última tela selecionada nesta sessão</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="386"/>

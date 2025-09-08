@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản quyền ©; 2013-2025, nhóm LXQt (&amp;c)</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chân thành cảm ơn:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>để tạo ẢnhChụpMànHình</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>để hỗ trợ giao thức sao chép màn hình wlr</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu ảnh chụp màn hình và thoát, không hiển thị cửa sổ</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Màn hình:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="48"/>
         <source>About</source>
-        <translation>Thông tin</translation>
+        <translation>Thông Tin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="49"/>
@@ -361,7 +361,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhấp và kéo để vẽ một hình chữ nhật,
+nhấp hai lần hoặc nhấn Enter
+để chụp ảnh màn hình,
+hoặc nhấn Escape để hủy.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -579,22 +582,22 @@ có thể rộng hơn để phù hợp với các cạnh ngoài</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Với nhiều màn hình</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="379"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Ghi nhớ màn hình đã chọn cuối cùng trong phiên tiếp theo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="386"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông báo khi lưu và sao chép</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="395"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng thời gian:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="462"/>
