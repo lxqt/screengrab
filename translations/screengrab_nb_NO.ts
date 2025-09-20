@@ -86,12 +86,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spesiell takk til:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>for å lage ScreenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre skjermbilde og avslutt, uten å vise vindu</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjerm:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -361,7 +361,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikk og dra for å tegne et rektangel,
+dobbelklikk eller trykk Enter
+for å ta et skjermbilde,
+eller trykk Escape for å avbryte.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -579,22 +582,22 @@ bli større for å tilpasses til ytre kanter</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>Med flere skjermer</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="379"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Husk sist valgte skjerm i neste økt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="386"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsle ved lagring og kopiering</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="395"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengde:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="462"/>
