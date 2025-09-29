@@ -186,7 +186,7 @@ void ConfigDialog::saveSettings()
     QDir screenshotDir(_ui->editDir->text());
     if (!screenshotDir.exists())
     {
-        QMessageBox msg;
+        QMessageBox msg(this);
         msg.setText(tr("Directory %1 does not exist. Do you want to create it?").arg(QDir::toNativeSeparators(screenshotDir.path()) + QDir::separator()));
         msg.setWindowTitle(QStringLiteral("ScreenGrab") + QStringLiteral(" - ") + tr("Warning"));
         msg.setIcon(QMessageBox::Question);
@@ -275,7 +275,7 @@ void ConfigDialog::selectDir()
 
 void ConfigDialog::restoreDefaults()
 {
-    QMessageBox msg;
+    QMessageBox msg(this);
     msg.setText(tr("Do you want to reset the settings to the defaults?"));
     msg.setWindowTitle(QStringLiteral("ScreenGrab") + QStringLiteral(" - ") + tr("Warning"));
     msg.setIcon(QMessageBox::Question);
@@ -388,7 +388,7 @@ bool ConfigDialog::checkUsedShortcuts()
 void ConfigDialog::showErrorMessage(const QString &text)
 {
     _ui->keyWidget->clearKeySequence();
-    QMessageBox msg;
+    QMessageBox msg(this);
     msg.setWindowTitle(tr("Error"));
     msg.setText(text);
     msg.setIcon(QMessageBox::Information);
