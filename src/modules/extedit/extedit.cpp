@@ -48,9 +48,7 @@ void ExtEdit::runExternalEditor()
 
     QString editFilename = core->getTempFilename(format);
     core->writeScreen(editFilename, format, true);
-
-    QProcess::startDetached(action->desktopFile().expandExecString().first(),
-                            QStringList() << editFilename);
+    action->desktopFile().startDetached(QStringList() << editFilename);
     _watcherEditedFile->addPath(editFilename);
 }
 
