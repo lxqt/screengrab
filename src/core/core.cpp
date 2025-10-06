@@ -659,13 +659,8 @@ void Core::openInExtViewer()
         auto app = mimeAppsDb.defaultApp(mt.name());
         if (app != nullptr)
         {
-            QString exec;
-            exec = app->expandExecString().first();
+            app->startDetached(QStringList() << tempFileName);
             delete app;
-            QStringList args;
-            args << tempFileName;
-
-            QProcess::startDetached(exec, args);
         }
     }
 }
