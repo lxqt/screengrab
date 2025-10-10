@@ -149,11 +149,8 @@ QVariant Config::value(const QString &key)
 
 void Config::killInstance()
 {
-    if (ptrInstance)
-    {
-        delete ptrInstance;
-        ptrInstance = nullptr;
-    }
+    delete ptrInstance;
+    ptrInstance = nullptr;
 }
 
 QString Config::getConfigDir()

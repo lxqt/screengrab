@@ -157,11 +157,8 @@ void Core::coreQuit()
             _wnd->close();
     }
 
-    if (corePtr)
-    {
-        delete corePtr;
-        corePtr = nullptr;
-    }
+    delete corePtr;
+    corePtr = nullptr;
 
     qApp->quit();
 }
