@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2013-2025, tým LXQt</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="142"/>
         <source>Special thanks to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Speciální poděkování pro:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="144"/>
         <source>for creating ScreenGrab</source>
-        <translation type="unfinished"></translation>
+        <translation>pro vytváření ScrenGrab</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
         <source>for supporting wlr screencopy protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>pro podporu wlr protokolu screencopy</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/core/core.cpp" line="85"/>
         <source>Save screenshot and exit, without showing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit snímek obrazovky a skončit, bez zobrazení okna</translation>
     </message>
     <message>
         <location filename="../src/core/core.cpp" line="575"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="73"/>
         <source>Screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrazovka:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="105"/>
@@ -274,7 +274,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="222"/>
         <source>Zoom area around mouse</source>
-        <translation>Přiblížit oblast okolo ukazovátka myši</translation>
+        <translation>Přiblížit oblast okolo ukazatele myši</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="229"/>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="371"/>
         <source>Double click to open screenshot in external default image viewer</source>
-        <translation>Dvojklepnutím snímek otevřete ve výchozím prohlížeči obrázků</translation>
+        <translation>Dvojklikem snímek otevřete ve výchozím prohlížeči obrázků</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="380"/>
@@ -361,7 +361,10 @@
 double click or press Enter
 to take a screenshot,
 or press Escape to cancel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknutím a tažením nakreslete obdélník,
+dvojklikem nebo stisknutím Enter
+pořiďte snímek obrazovky,
+nebo stisknutím Esc zrušte.</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="245"/>
@@ -369,10 +372,10 @@ or press Escape to cancel.</source>
 right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
-        <translation>Klepněte a natáhněte obdélník,
-klepnutím pravým tlačítkem
+        <translation>Klikněte a natáhněte obdélník,
+kliknutím pravým tlačítkem
 přizpůsobte hranám,
-dvojklepnutím nebo stiskem klávesy
+dvojklikem nebo stiskem klávesy
 Enter pořiďte snímek obrazovky.</translation>
     </message>
     <message>
@@ -558,7 +561,7 @@ Enter pořiďte snímek obrazovky.</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="355"/>
         <source>Open in external viewer on double click</source>
-        <translation>Při dvojklepnutí otevřít v externím prohlížeči</translation>
+        <translation>Při dvojkliku otevřít v externím prohlížeči</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="358"/>
@@ -575,27 +578,27 @@ se může zvětšit aby obsáhla vnější hrany</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="369"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>Klepnutím pravým tlačítkem uvnitř oblasti výběru přizpůsobíte hranám</translation>
+        <translation>Kliknutím pravým tlačítkem uvnitř oblasti výběru přizpůsobíte hranám</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
         <source>With multiple screens</source>
-        <translation type="unfinished"></translation>
+        <translation>S vícero obrazovkami</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="379"/>
         <source>Remember last selected screen in next session</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapamatovat si naposledy vybranou obrazovku pro příští relaci</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="386"/>
         <source>Notify on saving and copying</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozornit při ukládání a kopírování</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="395"/>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Délka trvání:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="462"/>
@@ -610,7 +613,7 @@ se může zvětšit aby obsáhla vnější hrany</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="469"/>
         <source>Minimize to tray on click close button</source>
-        <translation>Při klepnutí na tlačítko zavření zmenšit do oznamovací oblasti</translation>
+        <translation>Při kliknutí na tlačítko zavření minimalizovat do oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="472"/>
