@@ -176,32 +176,32 @@
         <translation>Запазване на екранната снимка и изход, без показване на прозорец</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>Снимката е запазена</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>Снимката е запазена в </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Името на записания файл се копира в клипборда</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Пътят на записания файл се копира в клипборда</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>Копиран</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Снимката е копирана в клипборда</translation>
     </message>

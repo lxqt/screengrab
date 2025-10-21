@@ -176,32 +176,32 @@
         <translation>Uložit snímek obrazovky a skončit, bez zobrazení okna</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>Uloženo do </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Název uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Popis umístění uloženého souboru je zkopírován do schránky</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>Zkopírováno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snímek obrazovky je zkopírován do schránky</translation>
     </message>

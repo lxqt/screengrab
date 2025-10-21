@@ -176,32 +176,32 @@
         <translation>保存截屏并退出，不显示窗口</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>已保存</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>已保存到 </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>保存的文件已经复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>保存的文件路径已复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>已复制</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>截屏已复制到剪贴板</translation>
     </message>

@@ -176,32 +176,32 @@
         <translation>Įrašyti ekrano kopiją ir išeiti nerodant lango</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>Įrašyta</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>Įrašyta į </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Įrašyto failo pavadinimas yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Kelias į įrašytą failą yra nukopijuotas į iškarpinę</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>Nukopijuota</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Ekrano kopija yra nukopijuota į iškarpinę</translation>
     </message>

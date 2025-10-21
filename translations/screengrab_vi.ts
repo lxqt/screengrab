@@ -176,32 +176,32 @@
         <translation>Lưu ảnh chụp màn hình và thoát, không hiển thị cửa sổ</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>Đã lưu</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>Đã lưu vào </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Tên của tập tin đã lưu đã được sao chép vào khay nhớ tạm</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Đường dẫn đến tập tin đã lưu đã được sao chép vào khay nhớ tạm</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>Đã sao chép</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Ảnh chụp màn hình đã được sao chép vào khay nhớ tạm</translation>
     </message>

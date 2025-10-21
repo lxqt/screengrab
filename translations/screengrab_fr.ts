@@ -176,32 +176,32 @@
         <translation>Enregistrer la capture d’écran et quitter, sans afficher la fenêtre</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved</source>
         <translation>Enregistrement</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="575"/>
+        <location filename="../src/core/core.cpp" line="590"/>
         <source>Saved to </source>
         <translation>Enregistré vers </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="597"/>
+        <location filename="../src/core/core.cpp" line="612"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Le nom du fichier a été copié dans le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="603"/>
+        <location filename="../src/core/core.cpp" line="618"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Le chemin du fichier a été copié dans le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Copied</source>
         <translation>Copié</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="626"/>
+        <location filename="../src/core/core.cpp" line="641"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La capture d&apos;écran a été copié dans le presse-papiers</translation>
     </message>
@@ -507,7 +507,7 @@ peut devenir plus grande pour s&apos;adapter aux bords extérieurs</translation>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="395"/>
         <source>Duration:</source>
-        <translation>Durée :</translation>
+        <translation>Durée&#xa0;:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="402"/>
