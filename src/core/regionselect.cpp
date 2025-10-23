@@ -73,7 +73,6 @@ RegionSelect::RegionSelect(Config* mainconf, const QRect& lastRect, QScreen *scr
 RegionSelect::~RegionSelect()
 {
     _conf = nullptr;
-    delete _conf;
 }
 
 void RegionSelect::sharedInit()
