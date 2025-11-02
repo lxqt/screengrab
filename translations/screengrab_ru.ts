@@ -146,22 +146,22 @@
 <context>
     <name>Core</name>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved</source>
         <translation>Сохранено</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="612"/>
+        <location filename="../src/core/core.cpp" line="609"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Имя сохранённого файла скопировано в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Copied</source>
         <translation>Скопировано</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved to </source>
         <translation>Сохранено в </translation>
     </message>
@@ -196,12 +196,12 @@
         <translation>Сохраните снимок экрана и выйдите без отображения окна</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="618"/>
+        <location filename="../src/core/core.cpp" line="615"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Путь к сохранённому файлу скопирован в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Снимок экрана скопирован в буфер обмена</translation>
     </message>
@@ -356,7 +356,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <location filename="../src/core/regionselect.cpp" line="147"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -369,7 +369,7 @@ or press Escape to cancel.</source>
 либо нажмите Escape для отмены.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="245"/>
+        <location filename="../src/core/regionselect.cpp" line="244"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -378,7 +378,7 @@ to take a screenshot.</source>
 Затем щёлкните два раза или нажмите Ввод, чтобы получить снимок экрана.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="305"/>
+        <location filename="../src/core/regionselect.cpp" line="304"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 пкс </translation>
     </message>

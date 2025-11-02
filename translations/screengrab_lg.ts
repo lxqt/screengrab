@@ -176,32 +176,32 @@
         <translation>Puloguramu ekwate kifaananyi ky&apos;ebiri ku lutimbe emale, nga tereese ddirisa lya yo</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved</source>
         <translation>Kikazidwa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved to </source>
         <translation>Kikazidwa mu fayiro </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="612"/>
+        <location filename="../src/core/core.cpp" line="609"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Erinnya lya fayiro ekazidwa liri awaterekebwa ebikoppedwa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="618"/>
+        <location filename="../src/core/core.cpp" line="615"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Ekkubo erigguka ku fayiro ekazidwa liri awaterekebwa ebikoppedwa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Copied</source>
         <translation>Kikoppolodwa</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Ekifaananyi kiri awaterekebwa ebikoppedwa</translation>
     </message>
@@ -357,7 +357,7 @@ puloguramu eyategekedwa nga ey&apos;okukebera bifaananyi eya bulijjo</translatio
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <location filename="../src/core/regionselect.cpp" line="147"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -369,7 +369,7 @@ nyiga erya Enter ekifaananyi kikwatibwe.
 Okubisazamu nyiga erya Escape.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="245"/>
+        <location filename="../src/core/regionselect.cpp" line="244"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -383,7 +383,7 @@ nyiga erya kkono emirundi ebiri oba
 nyiga erya Enter ekifaananyi kikwatibwe.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="305"/>
+        <location filename="../src/core/regionselect.cpp" line="304"/>
         <source>%1 x %2 pixels </source>
         <translation>pikiseli %1 x %2 </translation>
     </message>

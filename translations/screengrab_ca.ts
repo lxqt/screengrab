@@ -176,32 +176,32 @@
         <translation>Desa la captura de pantalla i surt, sense mostrar la finestra</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved to </source>
         <translation>Desat a </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="612"/>
+        <location filename="../src/core/core.cpp" line="609"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>El nom del fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="618"/>
+        <location filename="../src/core/core.cpp" line="615"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>El camí al fitxer desat es copia al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Copied</source>
         <translation>Copiat</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>La captura de pantalla es copia al porta-retalls</translation>
     </message>
@@ -356,7 +356,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <location filename="../src/core/regionselect.cpp" line="147"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -367,7 +367,7 @@ per fer una captura de pantalla
 o premeu Esc per cancel·lar-ho.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="245"/>
+        <location filename="../src/core/regionselect.cpp" line="244"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -378,7 +378,7 @@ doble clic o premeu Enter
 per fer una captura de pantalla.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="305"/>
+        <location filename="../src/core/regionselect.cpp" line="304"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 píxels </translation>
     </message>

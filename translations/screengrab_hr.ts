@@ -176,32 +176,32 @@
         <translation>Spremi snimku ekrana i izađi bez prikazivanja prozora</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved</source>
         <translation>Spremljeno</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved to </source>
         <translation>Spremljeno u </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="612"/>
+        <location filename="../src/core/core.cpp" line="609"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>Ime spremljene datoteke je kopirano u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="618"/>
+        <location filename="../src/core/core.cpp" line="615"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>Staza do spremljene datoteke je kopirana u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Copied</source>
         <translation>Kopirano</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>Snimka ekrana je kopirana u međuspremnik</translation>
     </message>
@@ -356,7 +356,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <location filename="../src/core/regionselect.cpp" line="147"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -367,7 +367,7 @@ za snimanje ekrana,
 ili pritisni Escape za prekid.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="245"/>
+        <location filename="../src/core/regionselect.cpp" line="244"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -378,7 +378,7 @@ pritisni dvaput ili pritisni Enter
 za snimanje ekrana.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="305"/>
+        <location filename="../src/core/regionselect.cpp" line="304"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 × %2 px </translation>
     </message>

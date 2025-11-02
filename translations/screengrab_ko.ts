@@ -176,32 +176,32 @@
         <translation>스크린샷을 저장하고 창을 표시하지 않고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved</source>
         <translation>저장됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="590"/>
+        <location filename="../src/core/core.cpp" line="587"/>
         <source>Saved to </source>
         <translation>저장 위치 </translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="612"/>
+        <location filename="../src/core/core.cpp" line="609"/>
         <source>Name of saved file is copied to the clipboard</source>
         <translation>저장된 파일의 이름이 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="618"/>
+        <location filename="../src/core/core.cpp" line="615"/>
         <source>Path to saved file is copied to the clipboard</source>
         <translation>저장된 파일의 경로가 클립보드에 복사됩니다</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Copied</source>
         <translation>복사됨</translation>
     </message>
     <message>
-        <location filename="../src/core/core.cpp" line="641"/>
+        <location filename="../src/core/core.cpp" line="638"/>
         <source>Screenshot is copied to clipboard</source>
         <translation>스크린숏이 클립보드에 복사되었습니다</translation>
     </message>
@@ -356,7 +356,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="148"/>
+        <location filename="../src/core/regionselect.cpp" line="147"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -367,7 +367,7 @@ Enter를 누르고,
 취소하려면 Esc를 누르세요.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="245"/>
+        <location filename="../src/core/regionselect.cpp" line="244"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -378,7 +378,7 @@ to take a screenshot.</source>
 더블클릭하거나 Enter를 눌러주세요.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="305"/>
+        <location filename="../src/core/regionselect.cpp" line="304"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 픽셀 </translation>
     </message>
