@@ -331,7 +331,7 @@ void Core::takeWaylandAreaScreenshot(bool checkCursor)
         return;
     auto ws = new LXQt::Wayland::ScreenShot(checkCursor ? _conf->getIncludeCursor() : false,
                                             _wnd->selectedScreen(),
-                                            _selector->getSelectionRect(),
+                                            _selector->getSelectionRectScaled(),
                                             this);
     connect(ws, &LXQt::Wayland::ScreenShot::screenShotReady, this,
             [this, ws] (const QPixmap& pixmap) {

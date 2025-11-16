@@ -50,6 +50,7 @@ public:
 
     QPixmap getSelection() const;
     QRect getSelectionRect() const;
+    QRect getSelectionRectScaled() const;
     QPoint getSelectionStartPos() const;
 
 protected:

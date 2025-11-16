@@ -15,6 +15,7 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  ***************************************************************************/
+#include <QDebug>
 
 #include "src/core/regionselect.h"
 
@@ -517,6 +518,24 @@ QRect RegionSelect::getSelectionRect() const
 
     QScreen *scr = _selectedScreen == nullptr ? qApp->primaryScreen() : _selectedScreen;
     return res.intersected(QRect(QPoint(0, 0), scr->size()));
+}
+
+QRect RegionSelect::getSelectionRectScaled() const
+{
+    // NOTE: "RegionSelect::getSelectionRect" have issue when QT_FACTOR_SCALE is not 1, some workaround here
+    qreal pixelRatio = _selectedScreen->devicePixelRatio();
+    QRectF res = getSelectionRect();
+    if ( pixelRatio != 1.0 ){
+        qreal tmpTop = res.top() * pixelRatio;
+        qreal tmpLeft = res.left() * pixelRatio;
+        qreal tmpBottom = res.bottom() * pixelRatio;
+        qreal tmpRight = res.right() * pixelRatio;
+        res.setTop(tmpTop);
+        res.setLeft(tmpLeft);
+        res.setBottom(tmpBottom);
+        res.setRight(tmpRight);
+    }
+    return res.toAlignedRect();
 }
 
 QPoint RegionSelect::getSelectionStartPos() const
