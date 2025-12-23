@@ -35,6 +35,9 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
     _ui->setupUi(this);
     conf = Config::instance();
 
+    // to match the default icon for QDialogButtonBox::Reset
+    _ui->buttonBox->button(QDialogButtonBox::RestoreDefaults)->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear")));
+
     connect(_ui->buttonBox->button(QDialogButtonBox::Save), &QPushButton::clicked, this, &ConfigDialog::saveSettings);
     connect(_ui->buttonBrowse, &QPushButton::clicked, this, &ConfigDialog::selectDir);
     connect(_ui->buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &ConfigDialog::restoreDefaults);
