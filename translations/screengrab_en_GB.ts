@@ -41,12 +41,12 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="107"/>
         <source>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</source>
-        <translation type="unfinished">Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</translation>
+        <translation>Licensed under the &lt;a href=%1&gt;GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="111"/>
         <source>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-2013, Artem &apos;DOOMer&apos; Galichkin</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
