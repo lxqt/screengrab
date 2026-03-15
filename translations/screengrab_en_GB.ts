@@ -51,17 +51,17 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="113"/>
         <source>Copyright &amp;copy; 2013-2025, LXQt team</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2013-2025, LXQt team</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="120"/>
         <source>You can join us and help us if you want. This is an invitation if you like this application.</source>
-        <translation type="unfinished"></translation>
+        <translation>You can join us and help us if you want. This is an invitation if you like this application.</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="123"/>
         <source>What you can do?</source>
-        <translation type="unfinished"></translation>
+        <translation>What you can do?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="126"/>
