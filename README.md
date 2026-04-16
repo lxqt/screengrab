@@ -69,12 +69,12 @@ package manager to search for string 'screengrab'.
 
 ## LICENSE
 
-Screengrab is licensed under the GPL v2. See file COPYING in the source directory for more information.
+ScreenGrab is licensed under the GPL v2. See file COPYING in the source directory for more information.
 
 
 ## Copyright
 
-(c) 2014-2025, LXQt Team
+(c) 2014-2026, LXQt Team
 (c) 2009-2013, Artem 'DOOMer' Galichkin
 
 ## Translation
