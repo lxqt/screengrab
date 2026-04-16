@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="143"/>
         <source>Marcio Moraes</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcio Moraes</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="145"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="146"/>
         <source>Gennadi Motsyo</source>
-        <translation type="unfinished"></translation>
+        <translation>Gennadi Motsyo</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="148"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="149"/>
         <source>Burjans L García D</source>
-        <translation type="unfinished"></translation>
+        <translation>Burjans L García D</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="151"/>
