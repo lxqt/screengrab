@@ -17,8 +17,8 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
 set(SHELLQT_MINIMUM_VERSION "6.0.0")
-set(QTXDG_MINIMUM_VERSION "4.3.0")
-set(LXQTBT_MINIMUM_VERSION "2.3.0")
+set(QTXDG_MINIMUM_VERSION "4.4.0")
+set(LXQTBT_MINIMUM_VERSION "2.4.0")
 
 find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)

@@ -1,3 +1,8 @@
+3.2.0 / 2026-04-20
+===================
+ * Assigned message boxes to the parent window.
+ * Updated translations and bumped the version.
+
 3.1.0 / 2025-11-05
 ===================
  * Better border color for selection rectangle on X11.
