@@ -115,7 +115,7 @@
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="190"/>
         <source>Directory %1 does not exist. Do you want to create it?</source>
-        <translation>Каталог %1 не существует. Вы хотите создать его?</translation>
+        <translation>Каталог %1 не существует. Хотите создать его?</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.cpp" line="279"/>
