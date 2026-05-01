@@ -279,7 +279,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="229"/>
         <source>No window decoration</source>
-        <translation>ウィンドウの装飾(タイトル)を除く</translation>
+        <translation>ウィンドウの装飾なし</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.ui" line="236"/>
@@ -373,9 +373,9 @@ right click to fit to edges,
 double click or press Enter
 to take a screenshot.</source>
         <translation>クリックしてドラッグで長方形を描き、
-それから境界に合わせるには右クリックして、
-ダブルクリックするか Enter キーを押して
-スクリーンショットを取得します。</translation>
+右クリックで端に合わせて調整する。
+ダブルクリックか Enter キーで
+スクリーンショットを撮影する。</translation>
     </message>
     <message>
         <location filename="../src/core/regionselect.cpp" line="304"/>
@@ -571,12 +571,13 @@ to take a screenshot.</source>
         <location filename="../src/core/ui/configwidget.ui" line="365"/>
         <source>If this is unchecked, the selected area
 might become larger to fit to outer edges</source>
-        <translation>これをオフにすると、選択した範囲が外側の境界に合うように大きくなります</translation>
+        <translation>このチェックを外すと、選択範囲が
+外側の端に合わせて拡大されることがある</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="369"/>
         <source>Fit to edges inside selected area by right clicking</source>
-        <translation>右クリックで選択した範囲の内側の境界に合わせる</translation>
+        <translation>右クリックで選択範囲の内側の端に合わせる</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="376"/>
@@ -596,7 +597,7 @@ might become larger to fit to outer edges</source>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="395"/>
         <source>Duration:</source>
-        <translation>間隔:</translation>
+        <translation>表示時間:</translation>
     </message>
     <message>
         <location filename="../src/core/ui/configwidget.ui" line="462"/>
