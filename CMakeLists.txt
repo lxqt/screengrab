@@ -100,6 +100,7 @@ endif()
 if(SG_DBUS_NOTIFY)
     find_package(Qt6DBus ${QT_MINIMUM_VERSION} REQUIRED)
     set(SCREENGRAB_SRC ${SCREENGRAB_SRC} src/core/dbusnotifier.cpp)
+    add_definitions( -DSG_DBUS_NOTIFY="1")
 endif()
 
 message(STATUS "Editing screenshots in external editor support: " ${SG_EXT_EDIT})
