@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
-        <translation>Новий</translation>
+        <translation>Створити</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="46"/>
