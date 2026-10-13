@@ -11,14 +11,14 @@ option(SG_DBUS_NOTIFY "Enable D-Bus notifications" ON)
 option(SG_EXT_EDIT "Enable ability to edit screenshots in external editor" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
-set(SCREENGRAB_VERSION "3.1.0")
+set(SCREENGRAB_VERSION "3.3.0")
 
 # Minimum Versions
 set(KF6_MINIMUM_VERSION "6.0.0")
-set(QT_MINIMUM_VERSION "6.6.0")
+set(QT_MINIMUM_VERSION "6.10.0")
 set(SHELLQT_MINIMUM_VERSION "6.6.0")
-set(QTXDG_MINIMUM_VERSION "4.4.0")
-set(LXQTBT_MINIMUM_VERSION "2.4.0")
+set(QTXDG_MINIMUM_VERSION "4.5.0")
+set(LXQTBT_MINIMUM_VERSION "2.5.0")
 
 find_package(Qt6Network ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
