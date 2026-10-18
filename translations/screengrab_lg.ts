@@ -357,7 +357,7 @@ puloguramu eyategekedwa nga ey&apos;okukebera bifaananyi eya bulijjo</translatio
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="147"/>
+        <location filename="../src/core/regionselect.cpp" line="148"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -369,7 +369,7 @@ nyiga erya Enter ekifaananyi kikwatibwe.
 Okubisazamu nyiga erya Escape.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="244"/>
+        <location filename="../src/core/regionselect.cpp" line="245"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -383,7 +383,7 @@ nyiga erya kkono emirundi ebiri oba
 nyiga erya Enter ekifaananyi kikwatibwe.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="304"/>
+        <location filename="../src/core/regionselect.cpp" line="305"/>
         <source>%1 x %2 pixels </source>
         <translation>pikiseli %1 x %2 </translation>
     </message>
