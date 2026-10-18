@@ -357,7 +357,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="147"/>
+        <location filename="../src/core/regionselect.cpp" line="148"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -368,7 +368,7 @@ per acquisire uno screenshot.
 Premi Esc invece per annullare.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="244"/>
+        <location filename="../src/core/regionselect.cpp" line="245"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -376,7 +376,7 @@ to take a screenshot.</source>
         <translation>Fare clic e trascinare per disegnare un rettangolo, fare clic con il tasto destro per adattare ai bordi, fare doppio clic o premere Invio per acquisire uno screenshot.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="304"/>
+        <location filename="../src/core/regionselect.cpp" line="305"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pixel </translation>
     </message>

@@ -356,7 +356,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="147"/>
+        <location filename="../src/core/regionselect.cpp" line="148"/>
         <source>Click and drag to draw a rectangle,
 double click or press Enter
 to take a screenshot,
@@ -369,7 +369,7 @@ padaryti ekrano kopiją arba paspauskite
 Grįžimo (Esc) klavišą norėdami atsisakyti.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="244"/>
+        <location filename="../src/core/regionselect.cpp" line="245"/>
         <source>Click and drag to draw a rectangle,
 right click to fit to edges,
 double click or press Enter
@@ -380,7 +380,7 @@ spustelėkite du kartus kairiuoju pelės mygtuku arba
 paspauskite Įvedimo (Enter) klavišą, kad padarytumėte ekrano kopiją.</translation>
     </message>
     <message>
-        <location filename="../src/core/regionselect.cpp" line="304"/>
+        <location filename="../src/core/regionselect.cpp" line="305"/>
         <source>%1 x %2 pixels </source>
         <translation>%1 x %2 pikselių </translation>
     </message>
