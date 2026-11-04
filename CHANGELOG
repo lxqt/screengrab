@@ -1,3 +1,9 @@
+3.3.0 / 2026-11-05
+===================
+ * CMake maintenance.
+ * Silenced layershell's warning.
+ * Updated the address of Free Software Foundation.
+
 3.2.0 / 2026-04-20
 ===================
  * Assigned message boxes to the parent window.
