@@ -739,18 +739,30 @@ QByteArray Core::getScreenData()
 
 void Core::regionGrabbed(bool grabbed)
 {
-    if (grabbed)
-    {
-        *_pixelMap = _selector->getSelection();
+    if (!grabbed)
+    { // the selection was cancelled (e.g. by Escape): don't show the initial pixmap
+        _selector->hide();
+        _selector->deleteLater();
+        _selector = nullptr;
 
-        int x = _selector->getSelectionStartPos().x();
-        int y = _selector->getSelectionStartPos().y();
-        int w = _pixelMap->rect().width() / _pixelMap->devicePixelRatio();
-        int h = _pixelMap->rect().height() / _pixelMap->devicePixelRatio();
-        _lastSelectedArea.setRect(x, y, w, h);
+        if (!_firstScreen) // the main window was hidden by hideToShot() before grabbing
+            _wnd->restoreFromShot();
 
-        checkAutoSave();
+        if (noWin()) // don't leave a hidden instance behind with "-n"
+            QTimer::singleShot(0, this, &Core::coreQuit);
+
+        return;
     }
+
+    *_pixelMap = _selector->getSelection();
+
+    int x = _selector->getSelectionStartPos().x();
+    int y = _selector->getSelectionStartPos().y();
+    int w = _pixelMap->rect().width() / _pixelMap->devicePixelRatio();
+    int h = _pixelMap->rect().height() / _pixelMap->devicePixelRatio();
+    _lastSelectedArea.setRect(x, y, w, h);
+
+    checkAutoSave();
 
     _wnd->updatePixmap(_pixelMap);
     showScreenshot();
