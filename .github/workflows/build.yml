@@ -23,7 +23,7 @@ jobs:
             libkf6windowsystem-dev liblayershellqtinterface-dev \
             lxqt-build-tools libqt6xdg-dev \
             libx11-dev libxext-dev libxrandr-dev \
-            libxcb1-dev libxcb-shm0-dev libxcb-util-dev
+            libxcb1-dev libxcb-shm0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-util-dev
 
       - uses: actions/checkout@v4
         with:
@@ -34,9 +34,9 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.email ci@example.invalid
           git config user.name CI
-          git checkout -B verify 87cebb2  # the fix commit
-          git rebase --onto 3.1.0 87cebb2~1 87cebb2 || { echo "patch does not apply to 3.1.0"; exit 1; }
-          git checkout -B verify 87cebb2
+          git rebase --onto 3.1.0 87cebb2~1 87cebb2   # result lands on detached HEAD / branch tip
+          git checkout -B verify
+          git log --oneline -2
 
       - name: Configure & build
         run: |
@@ -61,7 +61,7 @@ jobs:
             libkf6windowsystem-dev liblayershellqtinterface-dev \
             lxqt-build-tools libqt6xdg-dev \
             libx11-dev libxext-dev libxrandr-dev \
-            libxcb1-dev libxcb-shm0-dev libxcb-util-dev
+            libxcb1-dev libxcb-shm0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-util-dev
 
       - uses: actions/checkout@v4
 
