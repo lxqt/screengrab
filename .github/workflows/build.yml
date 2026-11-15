@@ -7,15 +7,16 @@ on:
 
 jobs:
   build:
-    name: cmake build (ubuntu 25.10, Qt 6.10)
-    runs-on: ubuntu-25.10
+    name: cmake build (ubuntu 26.04 container)
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:26.04
     steps:
-      - uses: actions/checkout@v4
-
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            git ca-certificates \
             build-essential cmake ninja-build \
             qt6-base-dev qt6-base-private-dev \
             qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools \
@@ -26,6 +27,8 @@ jobs:
             lxqt2-build-tools-dev \
             libx11-dev libxext-dev libxrandr-dev \
             libxcb1-dev libxcb-shm0-dev libxcb-util-dev
+
+      - uses: actions/checkout@v4
 
       - name: Configure
         run: |
