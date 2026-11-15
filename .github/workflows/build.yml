@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [fix/x11-region-cancel-esc]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: cmake build (ubuntu 25.10, Qt 6.10)
+    runs-on: ubuntu-25.10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential cmake ninja-build \
+            qt6-base-dev qt6-base-private-dev \
+            qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools \
+            qt6-wayland-dev \
+            libqt6svg6-dev \
+            libkf6windowsystem-dev \
+            liblayer-shell-qt-dev \
+            lxqt2-build-tools-dev \
+            libx11-dev libxext-dev libxrandr-dev \
+            libxcb1-dev libxcb-shm0-dev libxcb-util-dev
+
+      - name: Configure
+        run: |
+          cmake -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX=/usr
+
+      - name: Build
+        run: cmake --build build -j"$(nproc)"
