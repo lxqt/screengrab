@@ -85,6 +85,12 @@ Core::Core()
     QCommandLineOption optShowNoWin(QStringList() << QStringLiteral("n") << QStringLiteral("no-win"), tr("Save screenshot and exit, without showing window"));
     _cmdLine.addOption(optShowNoWin);
 
+    QCommandLineOption optCursor(QStringList() << QStringLiteral("c") << QStringLiteral("cursor"), tr("Include the mouse cursor in the screenshot"));
+    _cmdLine.addOption(optCursor);
+
+    QCommandLineOption optNoCursor(QStringLiteral("no-cursor"), tr("Do not include the mouse cursor in the screenshot"));
+    _cmdLine.addOption(optNoCursor);
+
     if (QGuiApplication::platformName() != QStringLiteral("wayland"))
         sleep(250);
 
@@ -695,6 +701,12 @@ void Core::processCmdLineOpts(const QStringList& arguments)
         if (_cmdLine.isSet(_screenTypeOpts.at(i)))
             _conf->setDefScreenshotType(i);
     }
+
+    // Check commandline parameters and set whether to include the mouse cursor
+    if (_cmdLine.isSet(QStringLiteral("cursor")) || _cmdLine.isSet(QStringLiteral("c")))
+        _conf->setIncludeCursor(true);
+    if (_cmdLine.isSet(QStringLiteral("no-cursor")))
+        _conf->setIncludeCursor(false);
 }
 
 bool Core::runAsMinimized()
