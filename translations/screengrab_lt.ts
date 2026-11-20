@@ -294,7 +294,7 @@
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="44"/>
         <source>New</source>
-        <translation>Nauja</translation>
+        <translation>Naujas</translation>
     </message>
     <message>
         <location filename="../src/core/ui/mainwindow.cpp" line="45"/>
