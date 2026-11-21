@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/core/ui/about.cpp" line="40"/>
         <source>About</source>
-        <translation>O aplikaci</translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <location filename="../src/core/ui/about.cpp" line="41"/>
