@@ -46,6 +46,7 @@ const int DEF_NOTIFICATION_TIMEOUT = 5;
 const bool DEF_DATETIME_FILENAME = false;
 const bool DEF_AUTO_SAVE = false;
 const bool DEF_AUTO_SAVE_FIRST = false;
+const bool DEF_AUTO_COPY = true;
 const QString DEF_DATETIME_TPL = QStringLiteral("yyyy-MM-dd-hh-mm-ss");
 const bool DEF_SHOW_TRAY = true;
 const bool DEF_ENABLE_EXT_VIEWER = true;
@@ -185,6 +186,10 @@ public:
     // auto save screenshot
     bool getAutoSave();
     void setAutoSave(bool val);
+
+    // auto copy screenshot to clipboard
+    bool getAutoCopy();
+    void setAutoCopy(bool val);
 
     // umage qualuty
     quint8 getImageQuality();

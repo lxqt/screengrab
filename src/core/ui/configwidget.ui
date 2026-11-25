@@ -198,6 +198,17 @@
           </layout>
          </item>
          <item>
+          <widget class="QCheckBox" name="checkAutoCopy">
+           <property name="toolTip">
+            <string>Copy the screenshot to the clipboard automatically after capturing.
+Note: the clipboard content may be lost when ScreenGrab quits unless a clipboard manager is running.</string>
+           </property>
+           <property name="text">
+            <string>Copy screenshot to clipboard automatically</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QGroupBox" name="groupQuality">
            <property name="title">
             <string>Image quality</string>
