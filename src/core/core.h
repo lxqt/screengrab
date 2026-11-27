@@ -117,6 +117,7 @@ private:
     static Core *corePtr;
 
     void checkAutoSave();
+    void autoCopy();
 
     void getActiveWindow();
     void grabCursor(int offsetX, int offsetY);

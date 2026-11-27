@@ -14,9 +14,18 @@ An application for creating screenshots for X11 and Wayland (using wlr-screencop
 * Edit directly in other applications
 * Automatic saving; insert date+time in custom filename
 * Copy file name or full path to clipboard
+* Automatic copying of screenshots to clipboard
 * Fit to edges by right click (X11 only)
 * Custom shortcuts
 * Command line options
+
+### Clipboard note
+
+Screenshots are copied to the system clipboard automatically by default; this can be
+disabled in the options. The clipboard uses the Qt clipboard, so the content is kept in
+the clipboard as long as ScreenGrab is running. To keep it after ScreenGrab quits (for
+example, when using the `-n` command-line option), a clipboard manager (such as Klipper
+or Clipman) must be running.
 
 ## Installation
 

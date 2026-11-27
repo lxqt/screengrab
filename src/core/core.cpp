@@ -240,6 +240,7 @@ void Core::screenShot(bool first, bool delayed)
         grabCursor(0, 0);
 
         checkAutoSave();
+        autoCopy();
         _wnd->updatePixmap(_pixelMap);
         showScreenshot();
         break;
@@ -248,6 +249,7 @@ void Core::screenShot(bool first, bool delayed)
     {
         getActiveWindow();
         checkAutoSave();
+        autoCopy();
         _wnd->updatePixmap(_pixelMap);
         showScreenshot();
         break;
@@ -266,6 +268,7 @@ void Core::screenShot(bool first, bool delayed)
     }
     default:
         getFullScreenPixmap(QGuiApplication::primaryScreen());
+        autoCopy();
         _wnd->updatePixmap(_pixelMap);
         showScreenshot();
         break;
@@ -315,6 +318,7 @@ void Core::waylandScreenShot(bool delayed)
             {
                 *_pixelMap = pixmap;
                 checkAutoSave();
+                autoCopy();
                 _wnd->updatePixmap(_pixelMap);
             }
             showScreenshot();
@@ -339,6 +343,7 @@ void Core::takeWaylandAreaScreenshot(bool checkCursor)
         {
             *_pixelMap = pixmap;
             checkAutoSave();
+            autoCopy();
             _wnd->updatePixmap(_pixelMap);
         }
         showScreenshot();
@@ -639,6 +644,12 @@ void Core::copyScreen()
     sendNotify(message);
 }
 
+void Core::autoCopy()
+{
+    if (_conf->getAutoCopy() && !_pixelMap->isNull())
+        copyScreen();
+}
+
 void Core::openInExtViewer()
 {
     if (_conf->getEnableExtView())
@@ -750,6 +761,7 @@ void Core::regionGrabbed(bool grabbed)
         _lastSelectedArea.setRect(x, y, w, h);
 
         checkAutoSave();
+        autoCopy();
     }
 
     _wnd->updatePixmap(_pixelMap);

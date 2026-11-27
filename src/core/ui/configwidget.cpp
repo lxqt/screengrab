@@ -127,6 +127,7 @@ void ConfigDialog::loadSettings()
     _ui->checkIncDate->setChecked(conf->getDateTimeInFilename());
     _ui->editDateTmeTpl->setText(conf->getDateTimeTpl());
     _ui->cbxCopyFileName->setCurrentIndex(conf->getAutoCopyFilenameOnSaving());
+    _ui->checkAutoCopy->setChecked(conf->getAutoCopy());
 
     // display tab
     _ui->checkNotify->setChecked(conf->hasNotification());
@@ -216,6 +217,7 @@ void ConfigDialog::saveSettings()
     conf->setDateTimeInFilename(_ui->checkIncDate->isChecked());
     conf->setDateTimeTpl(_ui->editDateTmeTpl->text());
     conf->setAutoCopyFilenameOnSaving(_ui->cbxCopyFileName->currentIndex());
+    conf->setAutoCopy(_ui->checkAutoCopy->isChecked());
     conf->setAutoSave(_ui->checkAutoSave->isChecked());
     conf->setAutoSaveFirst(_ui->checkAutoSaveFirst->isChecked());
     conf->setCloseInTray(_ui->checkInTray->isChecked());

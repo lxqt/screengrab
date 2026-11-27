@@ -42,6 +42,7 @@
 #define KEY_FILENAME_TO_CLB     "CopyFilenameToClipboard"
 #define KEY_AUTOSAVE            "autoSave"
 #define KEY_AUTOSAVE_FIRST      "autoSaveFirst"
+#define KEY_AUTO_COPY           "autoCopyScreenshot"
 
 #define KEY_SHOW_TRAY           "showTrayIcon"
 #define KEY_CLOSE_INTRAY        "closeInTray"
@@ -365,6 +366,16 @@ void Config::setAutoSave(bool val)
     setValue(QLatin1String(KEY_AUTOSAVE), val);
 }
 
+bool Config::getAutoCopy()
+{
+    return value(QLatin1String(KEY_AUTO_COPY)).toBool();
+}
+
+void Config::setAutoCopy(bool val)
+{
+    setValue(QLatin1String(KEY_AUTO_COPY), val);
+}
+
 quint8 Config::getImageQuality()
 {
     return value(QLatin1String(KEY_IMG_QUALITY)).toInt();
@@ -479,6 +490,7 @@ void Config::loadSettings()
     setDateTimeTpl(_settings->value(QLatin1String(KEY_DATETIME_TPL), DEF_DATETIME_TPL).toString());
     setAutoSave(_settings->value(QLatin1String(KEY_AUTOSAVE), DEF_AUTO_SAVE).toBool());
     setAutoSaveFirst(_settings->value(QLatin1String(KEY_AUTOSAVE_FIRST), DEF_AUTO_SAVE_FIRST).toBool());
+    setAutoCopy(_settings->value(QLatin1String(KEY_AUTO_COPY), DEF_AUTO_COPY).toBool());
     setNoDecoration(_settings->value(QLatin1String(KEY_NODECOR), DEF_X11_NODECOR).toBool());
     setImageQuality(_settings->value(QLatin1String(KEY_IMG_QUALITY), DEF_IMG_QUALITY).toInt());
     setIncludeCursor(_settings->value(QLatin1String(KEY_INCLUDE_CURSOR), DEF_INCLUDE_CURSOR).toBool());
@@ -517,6 +529,7 @@ void Config::saveSettings()
     _settings->setValue(QLatin1String(KEY_DATETIME_TPL), getDateTimeTpl());
     _settings->setValue(QLatin1String(KEY_AUTOSAVE), getAutoSave());
     _settings->setValue(QLatin1String(KEY_AUTOSAVE_FIRST), getAutoSaveFirst());
+    _settings->setValue(QLatin1String(KEY_AUTO_COPY), getAutoCopy());
     _settings->setValue(QLatin1String(KEY_IMG_QUALITY), getImageQuality());
     _settings->endGroup();
 
@@ -569,6 +582,7 @@ void Config::setDefaultSettings()
     setAutoCopyFilenameOnSaving(DEF_FILENAME_TO_CLB);
     setAutoSave(DEF_AUTO_SAVE);
     setAutoSaveFirst(DEF_AUTO_SAVE_FIRST);
+    setAutoCopy(DEF_AUTO_COPY);
     setIncludeCursor(DEF_INCLUDE_CURSOR);
     setCloseInTray(DEF_CLOSE_IN_TRAY);
     showNotification(DEF_HAS_NOTIFICATION);
