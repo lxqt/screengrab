@@ -1,0 +1,76 @@
+name: Build
+
+on:
+  push:
+    branches: [fix/x11-region-cancel-esc]
+  workflow_dispatch:
+
+jobs:
+  build-3-1-0:
+    # Compile-verify the patch against 3.1.0, the release shipped with the bug
+    name: 3.1.0 + patch (ubuntu 26.04)
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:26.04
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            git ca-certificates build-essential cmake ninja-build \
+            qt6-base-dev qt6-base-private-dev qt6-tools-dev qt6-tools-dev-tools \
+            qt6-l10n-tools qt6-wayland-dev libqt6svg6-dev \
+            libkf6windowsystem-dev liblayershellqtinterface-dev \
+            lxqt-build-tools libqt6xdg-dev \
+            libx11-dev libx11-xcb-dev libxext-dev libxrandr-dev \
+            libxcb1-dev libxcb-shm0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-util-dev
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply patch commit on top of 3.1.0
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.email ci@example.invalid
+          git config user.name CI
+          git rebase --onto 3.1.0 87cebb2~1 87cebb2   # result lands on detached HEAD / branch tip
+          git checkout -B verify
+          git log --oneline -2
+
+      - name: Configure & build
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build -j"$(nproc)"
+
+  build-master:
+    # master requires lxqt-build-tools>=2.5.0 / QtXdg>=4.5.0 which Ubuntu 26.04
+    # does not ship yet; relax the checks inside CI only (nothing is committed)
+    name: master + patch (relaxed min versions)
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:26.04
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            git ca-certificates build-essential cmake ninja-build \
+            qt6-base-dev qt6-base-private-dev qt6-tools-dev qt6-tools-dev-tools \
+            qt6-l10n-tools qt6-wayland-dev libqt6svg6-dev \
+            libkf6windowsystem-dev liblayershellqtinterface-dev \
+            lxqt-build-tools libqt6xdg-dev \
+            libx11-dev libx11-xcb-dev libxext-dev libxrandr-dev \
+            libxcb1-dev libxcb-shm0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-util-dev
+
+      - uses: actions/checkout@v4
+
+      - name: Relax min versions for Ubuntu 26.04 (CI-only)
+        run: |
+          sed -i 's/set(LXQTBT_MINIMUM_VERSION "2.5.0")/set(LXQTBT_MINIMUM_VERSION "2.3.0")/' CMakeLists.txt
+          sed -i 's/set(QTXDG_MINIMUM_VERSION "4.5.0")/set(QTXDG_MINIMUM_VERSION "4.3.0")/' CMakeLists.txt
+
+      - name: Configure & build
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build -j"$(nproc)"
